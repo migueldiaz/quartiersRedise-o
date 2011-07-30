@@ -1,0 +1,128 @@
+body { 
+font-family: Georgia; 
+line-height: 1.4;
+font-size: 12px;
+background: #fbfcfb url(../images/bg.jpg) repeat-x;
+margin: 0;
+padding: 0;
+}
+
+a { color: #121212; text-decoration: none;}
+a:hover { text-decoration: underline; }
+h1 { margin: 0; padding: 0; }
+h2 { margin: 0; padding: 0; }
+
+#wrap { 
+width: 800px;
+margin: 0 auto;
+}
+
+#header {
+height: 100px;
+}
+#header h1 {
+margin: 0;
+padding: 10px 0 0 20px;
+font-weight: 100;
+font-size: 30px;
+letter-spacing: -2px;
+}
+#header h1 a { text-decoration: none; color: #111; }
+#header h1 a:hover { text-decoration: none; border-bottom: 1px solid #111; }
+
+#header h2 { padding: 0 0 0 20px; margin: 0; color: #1F160F; font-weight: 100; font-size: 17px; }
+
+#menu {
+margin-top: 10px;
+height: 40px;
+line-height: 40px;
+}
+
+#menu ul {
+list-style-type: none;
+margin: 0;
+padding-left: 10px;
+}
+#menu ul li {
+display: block;
+float: left;
+}
+#menu ul li a {
+display: block;
+padding: 0 10px 0 10px;
+text-decoration: none;
+color: #fff;
+font-size: 14px;
+font-weight: 100;
+}
+#menu ul li a:hover {
+color: #111;
+background: #fff;
+}
+
+#top { background: url(../images/top.png) no-repeat; padding: 10px 0; }
+#bottom { background: url(../images/bottom.png) no-repeat; padding: 10px 0; }
+
+#contentwrap {
+padding: 0 20px;
+background: url(../images/content.png) repeat-y;
+}
+
+#content {
+float: left;
+width: 500px;
+padding-top: 10px;
+}
+#content h2 {
+margin: 0;
+color: #121212;
+line-height: 30px;
+font-size: 20px;
+font-weight: 100;
+}
+
+#content p { padding: 0 0 10px 0; }
+#content ul { padding: 0 20px 10px 30px; }
+
+#sidebar {
+float: right;
+width: 220px;
+background: #fff;
+}
+
+#sidebar h3 {
+height: 40px;
+line-height: 40px;
+font-weight: 600;
+font-size: 12px;
+margin: 0; padding: 0 0 0 10px; 
+color: #121212;
+}
+
+#sidebar p { padding: 0 10px 10px 10px; color: #232323; }
+
+#sidebar ul {
+padding: 10px 0 25px 30px;
+margin: 0;
+color: #121212;
+list-style-type: circle;
+}
+
+#sidebar ul li {
+padding: 0;
+margin: 0;
+}
+
+#sidebar ul ul { padding: 2px 0 2px 20px; }
+
+#footer { 
+text-align: center;
+background: url(../images/footer.jpg) repeat-x;
+height: 40px;
+line-height: 40px;
+color: #111;
+font-size: 12px;
+}
+#footer p { padding: 0; margin: 0; }
+#footer a { color: #111; }
+#footer a:hover { text-decoration: underline; }

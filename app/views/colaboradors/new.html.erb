@@ -1,0 +1,10 @@
+<h1><%= t('new')+' '+t('colaborador')%></h1>
+
+<%= render 'form' %>
+<br/>
+<%= link_to t('show'), @colaborador %> |
+<%if current_user.tipo=='traductor'%>
+<%= link_to t('back'), colaboradors_path(:modo=>'sintrad') %>
+<%else%>
+<%= link_to t('back'), colaboradors_path %>
+<%end%>

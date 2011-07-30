@@ -1,0 +1,17 @@
+<h2> <%= t('team')+' ' +@equipo.nombre %></h2>
+<p>
+<b><%= t('descripcionEs')%></b>
+<%= simple_format(@equipo.descripcionEs)%>
+</p>
+<p>
+<b><%= t('descripcionFr')%></b>
+<%= simple_format(@equipo.descripcionFr) %>
+</p>
+<%= link_to t('edit'),edit_equipo_path(@equipo)%>
+
+<%if current_user.tipo=='traductor'%>
+<%= link_to t('back')+' '+t('equipos'), equipos_path(:modo=>'sintrad') %>
+<%else%>
+
+<%= link_to t('back'),sitio_path(@equipo.sitio)%>
+<%end%>

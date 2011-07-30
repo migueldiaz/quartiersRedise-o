@@ -1,0 +1,25 @@
+<h1> <%= t('show')+' '+t('seccion')%></h1>
+
+<p id="notice"><%= notice %></p>
+
+<h3><%=t('paginas')%></h3>
+<table>
+<th><%= t('tituloEs')%></th>
+<th><%= t('tituloFr')%></th>
+<th></th>
+<th></th>
+<th></th>
+<%= render :partial => "paginas/pagina", :collection => @seccion.paginas %>
+</table>
+
+	<%if current_user.tipo=='traductor'%>
+		<%= link_to t('back'), seccions_path(:modo=>'sintrad') %>
+	<%else%>
+		<p><%= link_to t('new')+' '+t('pagina'), new_pagina_path(:id=>@seccion) %></p>
+		<%if !@seccion.presentacion.nil? %>
+			<%= link_to t('back'), presentacion_path(@seccion.presentacion) %>
+		<%else%>
+			<%= link_to t('back'), red_path(@seccion.red) %>
+		<%end%>
+	<%end%>
+

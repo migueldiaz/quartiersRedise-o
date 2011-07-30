@@ -1,0 +1,18 @@
+  <table>
+<tr><td>
+   <% if spanish %>
+    <%= simple_format(parrafo.textoes) %>
+  <%else%>
+    <%= simple_format(parrafo.textofr) %>
+ <%end%>
+ <td> 
+ <% if parrafo.imagen_url.to_s != "" %>
+<%= image_tag parrafo.imagen_url.to_s %>
+<% end %>
+</td>
+  <td><%= link_to t('show'), parrafo_path(parrafo)%></td>
+  <td><%= link_to t('edit'), edit_parrafo_path(parrafo)%></td>
+  <td><%= link_to t('destroy'), [parrafo.pagina, parrafo], :confirm => 'Are you sure?',  :method => :delete %></d>
+ </tr>
+</table>
+

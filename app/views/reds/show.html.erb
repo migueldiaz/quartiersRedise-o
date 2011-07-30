@@ -1,0 +1,19 @@
+<h2><%=t('seccionesT')%></h2>
+ <table>
+   <tr>
+   <th><%= t('tituloEs')%></th>
+   <th><%= t('tituloFr')%></th>
+   <th></th>
+   <th></th>
+   <th></th>
+   </tr>
+   <%= render :partial => "seccions/seccion", :collection => @red.seccions %>
+  </table
+  <br/>
+  <h3><%= t('new')+' '+t('seccion')%></h3>
+  <%= link_to t('new')+' '+t('seccion'),new_seccion_path(:id=>@red,:tipo=>'red') %> 
+  <br/><br/>
+  <%= link_to t('back'), sitio_path(:id=>@red.sitio)%>
+</p>
+
+

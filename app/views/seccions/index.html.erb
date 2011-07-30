@@ -1,0 +1,33 @@
+<h1><%= t('seccion')%></h1>
+
+<table>
+  <tr>
+  <th><%=t('secciones')%></th>
+  <th><%=t('seccionfr')%></th>
+   <% if ! current_user.tipo='traductor' %> 
+    <th></th>
+    <th></th>
+    <%end%>
+    <th></th>
+  </tr>
+
+<% @secciones.each do |seccion| %>
+  <tr>
+  <td><%= seccion.tituloes %></td>
+  <td><%= seccion.titulofr %></td>
+  <% if ! current_user.tipo='traductor' %> 
+  <td><%= link_to t('show'), seccion %></td>
+  <%end%>
+  <td><%= link_to t('edit'), edit_seccion_path(seccion) %></td>
+   <% if ! current_user.tipo='traductor' %> 
+  <td><%= link_to t('destroy'), seccion, :confirm => t('confirm'), :method => :delete %></td>
+  <%end%>
+  </tr>
+<% end %>
+</table>
+<br />
+<% if current_user.tipo='traductor' %> 
+<%= link_to t('traductor'), traductor_url %>
+<%else%>
+<%= link_to t('new')+' '+t('seccion'), new_seccion_path %>
+<%end%>

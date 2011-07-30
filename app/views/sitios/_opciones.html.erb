@@ -1,0 +1,13 @@
+<ul>
+<li><%= link_to 'Presentacion',presentacions_path(:id=>@sitio)%></li>
+<li><%= link_to 'Agenda',eventos_path(:id=>@sitio)%> </li>
+<li><%= link_to 'Colaboradores',colaboradors_path(:id=>@sitio)%> </li>
+<li><%= link_to 'Red',reds_path(:id=>@sitio)%></li>
+<li><%= link_to 'Contacto',contactos_path(:id=>@sitio)%></li>
+<%  if is_admin%>
+<li><%= link_to 'Usuarios del sitio',usuarios_path(:id=>@sitio)%></li>
+<% end %> 
+
+</ul>
+<!-- NOTA AÑADIR LAS DOS OPCIONES ESPECIFICAS DEL OTRO TIPO -->
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Quartiers du monde - admin</title>
+  <%= stylesheet_link_tag ('selcouth')%>
+  <%= stylesheet_link_tag ('scaffold')%>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+<div id="outer-container">
+    <div id="container">
+        <div id="header">
+            <%if is_admin %>
+              <h1><%= link_to 'Quartiers du monde',admin_path%></h1>
+           <%else%>
+              <h1><%= link_to 'Quartiers du monde',web_path%></h1>
+           <%end%>
+<br/>
+<h2><%=t :description%></h2>
+        </div>
+        <div id="nav">
+        	<div id="center-ul">
+                <ul>
+                    <li><%= link_to 'Asociacion', asociacion_path(:id=>@web) %></li>
+                    <li><%= link_to 'Proyecto', proyecto_path(@web) %></li>
+                    <li><%= link_to 'Equipos', equipos_path(@web) %></li>
+                </ul>
+			</div>
+        </div>
+        <div id="body">
+            <div id="content">
+               
+               <%= yield %>
+            </div>
+            
+            <div class="sidebar">
+                <ul>	
+                   <li>
+                        <h4><span>Navigate</span></h4>
+                        <ul class="blocklist">
+                           
+                          
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h4>About</h4>
+                        <ul>
+                            <li>
+                               
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h4>Search</h4>
+                        <ul>
+                            <li>
+                                <form method="get" class="searchform" action="http://wpdemo.justfreetemplates.com/" >
+                                    <p>
+                                        <input type="text" size="24" value="" name="s" class="s" />
+                                        <input type="submit" class="searchsubmit formbutton" value="Search" />
+                                    </p>
+                                </form>	
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h4>Sponsors</h4>
+                        <ul>
+                            <li><a href="http://www.themeforest.net/?ref=spykawg" title="premium templates"><strong>ThemeForest</strong></a> - premium HTML templates, WordPress themes and PHP scripts</li>
+                            <li><a href="http://www.dreamhost.com/r.cgi?259541" title="web hosting"><strong>Web hosting</strong></a> - 50 dollars off when you use promocode <strong>awesome50</strong></li>
+                            <li><a href="http://www.4templates.com/?aff=spykawg" title="4templates"><strong>4templates</strong></a> - brilliant premium templates</li>
+                        </ul>
+                    </li>
+                    
+                </ul> 
+            </div>
+            <div class="clear"></div>
+        </div>
+    
+        <div id="footer">
+            <div class="footer-content">
+                <p>&copy; YourSite 2010. Design by <a href="http://www.spyka.net">Free CSS Templates</a> | <a href="http://www.justfreetemplates.com">Free Web Templates</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

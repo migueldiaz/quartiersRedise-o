@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombreEs: MyString
+  nombreFr: MyString
+  aporta: false
+  infoEs: MyText
+  infoFr: MyText
+  direccion: MyText
+  imagen: MyString
+  sitio: 
+
+two:
+  nombreEs: MyString
+  nombreFr: MyString
+  aporta: false
+  infoEs: MyText
+  infoFr: MyText
+  direccion: MyText
+  imagen: MyString
+  sitio: 

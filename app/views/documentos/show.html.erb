@@ -1,0 +1,25 @@
+ <h1><%= t('show')+' '+t('documento')%></h1>
+ <p>
+    <b>Titulo ES:</b>
+    <%= @documento.doces %>
+  </p>
+ 
+   <p>
+    <b>Titulo Fr:</b>
+    <%=@documento.docfr %>
+  </p>
+ <p> 
+ <% if @documento.archivo_url.to_s != "" %>
+<%= link_to 'Documento', @documento.archivo_url.to_s %>
+<% end %>
+</p>
+
+<%= link_to t('edit'), edit_documento_path(@documento) %> <br/>
+<%if current_user.tipo=='traductor'%>
+<%= link_to t('back'), documentos_path(:modo=>'sintrad') %>
+<%= link_to t('traductor'), traductor_url %>
+<%else%>
+<%= link_to t('back'), pagina_path(:id=> @documento.pagina) %>
+<%end%>
+
+

@@ -1,0 +1,47 @@
+<%if !@seccion.nil?%> 
+ <% if spanish %>
+    <h1><%= @seccion.tituloes %> </h1> 
+  	<% @paginas.each do |pagina| %>
+ 		<h2><%= pagina.tituloes %> </h2> 
+		<% pagina.parrafos.each do |parrafo| %>
+			<%=  simple_format(parrafo.textoes) %>
+		    <% if parrafo.imagen_url.to_s != "" %>
+				<%= image_tag parrafo.imagen_url.to_s %>
+			<% end %>
+		
+		<%end%>
+  	        <ul>
+  			<% pagina.documentos.each do |documento| %>
+				<% if documento.archivo_url.to_s != "" %>
+				 <li><%=link_to documento.doces , documento.archivo_url.to_s %></li>
+		        <% end %>
+  				<%end%>
+  			</ul>
+  		
+  	<%end%>	
+ <%else%>
+ <h1><%= @seccion.titulofr %> </h1> 
+  	<% @paginas.each do |pagina| %>
+ 		<h2><%= pagina.tituloes %> </h2> 
+		<% pagina.parrafos.each do |parrafo| %>
+			<p><%= simple_format(parrafo.textofr)%></p>
+			<% if parrafo.imagen_url.to_s != "" %>
+				<%= image_tag parrafo.imagen_url.to_s %>
+			<% end %>
+  		<%end%>
+  		<ul>
+  		<% pagina.documentos.each do |documento| %>
+			<% if documento.archivo_url.to_s != "" %>
+			 <li><%=link_to documento.docfr , documento.archivo_url.to_s %></li>
+		      <% end %>
+  		
+  		<%end%>
+  		</ul>
+  	<%end%>
+<% end %>
+<%else%>
+Seccion por definir
+<%end%>
+  
+ 
+ 

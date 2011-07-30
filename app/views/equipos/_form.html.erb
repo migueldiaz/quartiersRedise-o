@@ -1,0 +1,37 @@
+<%= form_for (@equipo) do |f| %>
+<% if @equipo.errors.any? %>
+    <div id="error_explanation">
+     <!-- <h2><%= pluralize(@equipo.errors.count, "error") %> prohibited this contacto from being saved:</h2>
+-->
+      <ul>
+      <% @equipo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre,:disabled=> !is_admin %>
+  </div>
+   <div class="field">
+    <%= f.label t :descripcionEs  %><br />
+    <%= f.text_area :descripcionEs,:size=>"55x10" %>
+  </div>
+   <div class="field">
+    <%= f.label t :descripcionFr %><br />
+    <%= f.text_area :descripcionFr,:size=>"55x10" %>
+  </div>
+   <%if current_user.tipo=='traductor'%>
+  <div class="field">
+    <%= f.label t :revisado %><br />
+    <%= f.check_box :revisado %>
+  </div>
+  <%else%>
+  <%  f.hidden_field(:revisado)%>
+  <%end%>
+  <div class="actions">
+    <%= f.submit('Guardar') %>
+  </div>
+<% end %>

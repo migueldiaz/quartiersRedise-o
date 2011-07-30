@@ -1,0 +1,22 @@
+<h1> <%=t('zadmin')%></h1>
+<br/>
+<h3><%=t('lasociacion') %></h3>
+</ul>
+<li><%= link_to t('lasociacion'), asociacion_path(:id=>@web) %> </li>
+</ul>
+<h3><%=t('lproyecto')%></h3>
+</ul>
+<li><%= link_to t('lproyecto'), proyecto_path(@web) %> </li>
+</ul>
+<h3><%=t('lequipos')%></h3>
+<%if !@equipos.nil? %>
+<ul>
+<%= render :partial => "web/equipo", :collection => @equipos%>
+</ul>
+<%end%>
+<%= link_to t('new')+' '+t('equipo'),new_equipo_path(:id=>@web)%>
+<br/>
+<h3><%=t('ltraductores')%></h3>
+<%= link_to t('new')+' '+t('trad'),usuarios_path(:tipo=>'traductor')%>
+
+

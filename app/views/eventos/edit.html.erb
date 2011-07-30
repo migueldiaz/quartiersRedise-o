@@ -1,0 +1,6 @@
+<h1><%=t('new')+' '+t('evento') %></h1>
+
+<%= render 'formedit' %>
+
+<%= link_to t('show'), @evento %> |
+<%= link_to t('back'), eventos_path(:id=>@evento.sitio_id) %>

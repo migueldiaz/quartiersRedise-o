@@ -1,0 +1,35 @@
+<%= form_for @parrafo, :html => {:multipart => true} do |f| %>
+<!--@pagina, @pagina.parrafos.build]-->
+  <div class="field">
+    <%= f.label t :textoes %><br />
+    <%= f.text_area :textoes,:size=>'55x10' %>
+  </div>
+  <div class="field">
+    <%= f.label t :textofr %><br />
+    <%= f.text_area :textofr,:size=>'55x10' %>
+  </div>
+  <% if current_user.tipo=='traductor'%>  
+  <div class="field">
+    <%= f.label t :revisado %><br />
+    <%= f.check_box :revisado %>
+  </div>
+  <%else%>
+  <%  f.hidden_field(:revisado)%>
+  <%end%>
+ 
+ 
+ <div class="field">
+        <label><%= t('image')%></label>
+        <%= f.file_field :imagen %>
+    </div>
+
+   <div class="field">
+        <label>
+          <%= f.check_box :remove_imagen %>
+          <%= t('destroy')+' '+t('image')%>
+        </label>
+    </div>
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<% end %>

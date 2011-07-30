@@ -1,0 +1,20 @@
+<h1>Login</h1>
+
+ <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%end%>
+
+<%= form_tag sesiones_path do %>
+ <div class="field">
+   <%= label_tag :nombre  %> 
+   <%= text_field_tag :nombre,params[:email]%>
+ </div> 
+ <div class="field"> 
+   <%= label_tag :password  %> 
+   <%= password_field_tag :password%>
+ </div>
+  <div class="actions">
+   <p class='button'><%=submit_tag %></p>
+ </div>
+ <%end%>
+

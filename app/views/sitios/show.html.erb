@@ -1,0 +1,27 @@
+<% if !@sitio.asociacion.nil? %>
+<h1><%=t('asociacion')%></h1> 
+<%end%>
+<% if !@sitio.proyecto.nil? %>
+<h1>Proyecto</h1> 
+<%end%>
+<% if !@sitio.equipo.nil? %>
+<h1><%=t('equipo') +@sitio.equipo.nombre%></h1>
+<%end%>
+<p id="notice"><%= notice %></p>
+<%= render 'sitios/opciones'%>
+
+<% if !@sitio.equipo.nil? %>
+<h4><%=t('infoEquipo')%></h4>
+<ul>
+<li><%= link_to t('show')+' '+t('equipo'),equipo_path(@sitio.equipo)   %></li>
+<li><%= link_to t('edit')+' '+t('equipo'),edit_equipo_path(@sitio.equipo)  %></li>
+<%end%>
+<%if current_user.tipo=='traductor'%>
+<li><%= link_to t('back')+' '+t('equipos'), equipos_path(:modo=>'sintrad') %></li>
+<%else%>
+<li><%= link_to t('back'), trafico_url %></li>
+<%end%>
+</ul>
+<!--<%= link_to 'Edit', edit_sitio_path(@sitio) %> |
+<%= link_to 'Back', sitios_path %>-->
+

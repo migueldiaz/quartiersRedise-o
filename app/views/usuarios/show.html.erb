@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t('nombre')%></b>
+  <%= @usuario.nombre %>
+</p>
+
+<p>
+  <b><%=t('email')%></b>
+  <%= @usuario.email %>
+</p>
+<p>
+ <b><%=t('idioma')</b>
+  <%= t(@usuario.idioma) %>
+</p>
+<% if @usuario.tipo=='traductor'%>
+<p>
+ <b><%=t('traduceA')%></b>
+  <%=t(@usuario.traduceA) %>
+</p>
+<%end%>
+
+
+<%= link_to t('edit'), edit_usuario_path(@usuario) %> |
+<% if @usuario.tipo='traductor'%> 
+<%= link_to t('back'), usuarios_path(:tipo=>'traductor') %>
+<%else%>
+<%= link_to t('back'), usuarios_path(:id=>@usuario.sitio) %>
+<%end%>
+

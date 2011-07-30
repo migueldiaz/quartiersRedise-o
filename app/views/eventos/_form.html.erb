@@ -1,0 +1,45 @@
+<%= form_for @evento, :html => {:multipart => true} do |f| %>
+ <%= f.hidden_field :sitio_id, :value => @sitio.id %> 
+ <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label t(:fecha) %><br />
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label t(:tituloEs) %><br />
+    <%= f.text_field :tituloEs %>
+  </div>
+  <div class="field">
+    <%= f.label t(:tituloFr) %><br />
+    <%= f.text_field :tituloFr %>
+  </div>
+ 
+   <div class="field">
+        <label><%=t('imagen')%></label>
+      <%= f.file_field :imagen  %>
+    </div>
+
+   <div class="field">
+        <label>
+          <%= f.check_box :remove_imagen %>
+          Borrar la imagen
+        </label>
+    </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

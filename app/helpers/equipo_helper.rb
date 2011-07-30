@@ -1,0 +1,2 @@
+module EquipoHelper
+end

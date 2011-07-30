@@ -1,0 +1,13 @@
+<%if !contacto.nil?%>  
+  <tr>
+  <td><%= truncate(contacto.infoEs,:lenght=>20) %></td>
+  <td><%= truncate(contacto.infoFr,:lenght=>20) %></td>
+  <td><%= contacto.email %></td>
+  <td><%= link_to t('show'), contacto_path(contacto)%></td>
+  <td><%= link_to t('edit'), edit_contacto_path(contacto)%></td>
+</tr>
+<%end%>
+
+
+
+

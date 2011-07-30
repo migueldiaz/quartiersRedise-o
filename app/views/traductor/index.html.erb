@@ -1,0 +1,54 @@
+<h1> <%=t('tradm')+' '+ t(current_user.traduceA)%><h1>
+<br/>
+<h2>Los elementos sin traducir son del idioma: <%= t(current_user.traduceA)%></h2>
+<h4><%=link_to t('colaboradores'),colaboradors_path(:modo=>'todos')%> <%= @colaboradores.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),colaboradors_path(:modo=>'sintrad')%> <%=  @colaboradorSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),colaboradors_path(:modo=>'sinrevisar')%> <%=  @colaboradorSinRevisar.size%></li>
+</ul>
+<!---->
+<h4><%=link_to t('contacto'),contactos_path(:modo=>'todos')%> <%= @contactos.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),contactos_path(:modo=>'sintrad')%> <%=  @contactosSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),contactos_path(:modo=>'sinrevisar')%> <%=  @contactosSinRevisar.size%></li>
+</ul>
+
+<h4><%=link_to t('documentos'),documentos_path(:modo=>'todos')%> <%= @documentos.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),documentos_path(:modo=>'sintrad')%> <%=  @documentosSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),documentos_path(:modo=>'sinrevisar')%> <%=  @documentosSinRevisar.size%></li>
+</ul>
+
+<h4><%=link_to t('equipos'),equipos_path(:modo=>'todos')%> <%= @equipos.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),equipos_path(:modo=>'sintrad')%> <%=  @equiposSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),equipos_path(:modo=>'sinrevisar')%> <%=  @equiposSinRevisar.size%></li>
+</ul>
+
+<h4><%=link_to t('eventos'),eventos_path(:modo=>'todos')%> <%= @eventos.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),eventos_path(:modo=>'sintrad')%> <%=  @eventosSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),eventos_path(:modo=>'sinrevisar')%> <%=  @eventosSinRevisar.size%></li>
+</ul>
+
+<h4><%=link_to t('paginas'),paginas_path(:modo=>'todos')%> <%= @paginas.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),paginas_path(:modo=>'sintrad')%> <%=  @paginasSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),paginas_path(:modo=>'sinrevisar')%> <%=  @paginasSinRevisar.size%></li>
+</ul>
+
+<h4><%=link_to t('parrafos'),parrafos_path(:modo=>'todos')%> <%= @parrafos.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),parrafos_path(:modo=>'sintrad')%> <%=  @parrafosSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),parrafos_path(:modo=>'sinrevisar')%> <%=  @parrafosSinRevisar.size%></li>
+</ul>
+
+<h4><%=link_to t('seccionesT'),seccions_path(:modo=>'todos')%> <%= @secciones.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),seccions_path(:modo=>'sintrad')%> <%=  @seccionesSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),seccions_path(:modo=>'sinrevisar')%> <%=  @seccionesSinRevisar.size%></li>
+</ul>
+
+
+
+

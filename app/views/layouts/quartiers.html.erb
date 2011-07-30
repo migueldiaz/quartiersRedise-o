@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <%= stylesheet_link_tag('yellow') %>
+  <%= csrf_meta_tag %>
+<title>Quartiers beta 0.7</title>
+</head>
+<body>
+
+<div id="wrap">
+
+
+<div id="header">
+<h1><%=link_to 'Quartiers du monde',root_path%></h1>
+<h2>Emulacion de la recogida de datos en Quartiers original</h2>
+</div>
+
+<div id="contentwrap"> 
+
+<div id="content">
+
+    <%= yield %>
+
+</div>
+
+<div id="sidebar">
+<h3><%=t('lasociacion')%> </h3>
+<ul>
+	<li><%=link_to t('lasociacion'),quartiers_asociacion_path  %></li>
+	<%if !@sitio.nil? && !@sitio.asociacion.nil?%>
+	<ul>
+		<li><%=link_to t('presentacion'),quartiers_asociacion_path  %></li>
+    		<ul><%=render 'quartiers/presentaciones'%></ul>
+		<li><%= t('proyectos')%></li>
+			<ul><%=render 'quartiers/proyectos'%></ul>
+		<li><%=link_to t('colaboradores'),quartiers_colaborador_path(:id=>@sitio)%></li>
+		<li><%=link_to t('agenda'),quartiers_agenda_path(:id=>@sitio)%></li>
+		<li><%=link_to t('contacto'),quartiers_contacto_path(:id=>@sitio)%></li>
+	</ul>
+<%end%>
+</li></ul>
+<h3><%=t('lproyecto')%></h3>
+<ul>
+	<li><%=link_to t('lproyecto'),quartiers_proyecto_path  %></li>
+	<%if !@sitio.nil? && !@sitio.proyecto.nil?%>
+	<ul>
+		<li><%=link_to t('presentacion'),quartiers_proyecto_path  %></li>
+    		<ul><%=render 'quartiers/presentaciones'%></ul>
+		<li><%= t('proyectos')%></li>
+			<ul><%=render 'quartiers/proyectos'%></ul>
+		<li><%=link_to t('colaboradores'),quartiers_colaborador_path(:id=>@sitio)%></li>
+		<li><%=link_to t('agenda'),quartiers_agenda_path(:id=>@sitio)%></li>
+		<li><%=link_to t('contacto'),quartiers_contacto_path(:id=>@sitio)%></li>
+	</ul>
+	<%end%>
+</li></ul>
+<h3><%=t('lequipos')%></h3>
+<ul>
+	<li><%=link_to t('lequipos'),quartiers_equipos_path  %></li>
+	<%if !@equipos.nil?%>
+	<ul>
+	   	<%=render 'quartiers/listaEquipos'%>
+	</ul>
+	<%end%>
+</ul>
+
+<h3>Idiomas</h3>
+<ul>
+<li><%= link_to t('es'), root_path( :locale => 'es' ) %></li>
+<li><%= link_to t('fr'), root_path( :locale => 'fr' ) %></li>
+<li><%= link_to t('en'), root_path( :locale => 'en' ) %></li>
+</ul>
+</div>
+
+<div style="clear: both;"> </div>
+
+</div>
+
+<div id="footer">
+<p>&copy; Quartiers du monde 2011</p>
+</div>
+
+<div id="bottom"> </div>
+</div>
+
+</body>
+</html>

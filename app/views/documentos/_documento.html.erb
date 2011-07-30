@@ -1,0 +1,24 @@
+<table>
+ <tr>
+ <th><%=t('doces')%></th>
+ <th><%=t('docfr')%></th>
+ <th><%=t('enlace')%></th>
+ <th></th>
+ <th></th>
+ <th></th>
+ </tr>
+ 
+ <tr>
+   <td><%=documento.doces%></td>
+   <td><%=documento.docfr%></td>
+   <td>
+    <% if documento.archivo_url.to_s != "" %>
+     <%= link_to t('enlace'),documento.archivo_url.to_s %>
+   <% end %>
+   </td>
+   <td><%= link_to t('show'), documento_path(documento)%></td>
+   <td><%= link_to t('edit'), edit_documento_path(documento)%></td>
+   <td><%= link_to t('destroy'), [documento.pagina, documento], :confirm => t('confirm'),  :method => :delete %>
+   </td>
+ </tr>
+</table>

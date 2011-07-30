@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  infoEs: MyText
+  infoFr: MyText
+  email: MyString
+  sitio_id: 1
+
+two:
+  infoEs: MyText
+  infoFr: MyText
+  email: MyString
+  sitio_id: 1

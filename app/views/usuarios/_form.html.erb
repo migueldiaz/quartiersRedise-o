@@ -1,0 +1,47 @@
+<%= form_for(@usuario) do |f| %>
+  <% if @usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% @usuario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label t :email %><br />
+    <%= f.text_field :email %>
+  </div>
+ <div class="field">
+    <%= f.label t :idioma %><br />
+    <%= f.select :idioma,options_for_select([[t('es'), 'es'], [t('fr'), 'fr']]) %>
+  </div>
+  <% if is_admin%>
+  <div class="field">
+    <%= f.label t :traduceA %><br />
+    <%= f.select :traduceA,options_for_select([[t('es'), 'es'], [t('fr'), 'fr']]) %>
+  </div>
+  
+  <%end%>
+  <div class="field">
+    <%= f.label t :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+      <%= f.label t :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+  </div>
+  <% if params[:tipo]=='traductor'%>
+   <%= f.hidden_field :tipo,:value=>'traductor' %>
+  <%end%>
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<% end %>

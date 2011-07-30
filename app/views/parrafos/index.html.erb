@@ -1,0 +1,34 @@
+<h1><%=t('parrafos')%></h1>
+
+<table>
+  <tr>
+    <th><%=t('textoes')%></th>
+    <th><%=t('textofr')%></th> 
+   <% if !current_user.tipo=='traductor'%> 
+    <th></th><% end %>
+  </tr>
+
+<% @parrafos.each do |parrafo| %>
+  <tr>
+    <td><%= truncate(parrafo.textoes,:lenght=>22) %></td>
+    <td><%= parrafo.textofr %></td>
+      <% if !current_user.tipo=='traductor'%>  
+    <td><%= link_to t('show'), parrafo %></td>
+    <%end%>
+    <td><%= link_to t('edit'), edit_parrafo_path(parrafo) %></td>
+   <% if !current_user.tipo=='traductor'%>  
+    <td><%= link_to t('destroy'), parrafo, :confirm => t('confirm'), :method => :delete %></td>
+   <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if current_user.tipo=='traductor'%>
+<%= link_to t('traductor'),traductor_url %>
+<%else%>
+<%= link_to t('new'), new_parrafo_path %>
+<%end%>
+
+

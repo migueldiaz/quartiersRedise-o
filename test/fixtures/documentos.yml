@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  doces: MyString
+  docfr: MyString
+  pagina: 
+
+two:
+  doces: MyString
+  docfr: MyString
+  pagina: 
