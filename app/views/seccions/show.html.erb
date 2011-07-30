@@ -1,4 +1,10 @@
-<h1> <%= t('show')+' '+t('seccion')%></h1>
+<h1> <%= t('show')+' '%>
+<%if spanish %>
+<%=@seccion.tituloes%>
+<%else%>
+<%=@seccion.titulofr%>
+<%end%>
+</h1>
 
 <p id="notice"><%= notice %></p>
 

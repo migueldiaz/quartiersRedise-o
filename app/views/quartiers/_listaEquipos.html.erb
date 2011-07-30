@@ -1,9 +1,10 @@
 <% @equipos.each do |equipo| %>
 	<li><%=link_to equipo.nombre,quartiers_equipo_path(:id=>equipo) %></li>
-	<%  if @equipo==equipo %>
-	<ul>
-		<li><%=link_to t('presentacion'),quartiers_equipo_path  %></li>
-    		<ul><%=render 'quartiers/presentaciones'%></ul>
+	
+	<%  if  @equipo==equipo %>
+	<ul>                                                       
+		<li><%=link_to t('presentacion'),quartiers_seccion_path(:id=>@seccion)  %></li>
+    	<ul><%=render 'quartiers/presentaciones'%></ul>
 		<li><%= t('proyectos')%></li>
 			<ul><%=render 'quartiers/proyectos'%></ul>
 		<li><%=link_to t('colaboradores'),quartiers_colaborador_path(:id=>equipo.sitio)%></li>

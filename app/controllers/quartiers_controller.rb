@@ -29,17 +29,21 @@ class QuartiersController < ApplicationController
 	def seccion
  		@seccion=Seccion.find(params[:id])
  		@paginas=@seccion.paginas
+    	
     	if !@seccion.presentacion.nil?
     	  @sitio=@seccion.presentacion.sitio
     	else
     	  @sitio=@seccion.red.sitio
     	end
+    	
     	if !@sitio.asociacion.nil?
     	  @asociacion=@sitio
     	elsif !@sitio.proyecto.nil?
     	  @proyecto=@sitio
     	else
-    	 @equipo=@sitio
+    	   @web=Web.first
+    	   @equipo=@sitio.equipo
+    	   @equipos=@web.equipos
     	end
     	#@asociacion=Web.first.asociacion.sitio
 	end
@@ -82,17 +86,19 @@ class QuartiersController < ApplicationController
     def equipos
     	@web=Web.first
     	@equipos=@web.equipos
-    	@sitio=@equipos.first.sitio ###Solo para garantizar las validaciones
+    	#@sitio=@equipos.first.sitio ###Solo para garantizar las validaciones
     end
     def equipo
+       @equipo=Equipo.find(params[:id])
        @web=Web.first
        @equipos=@web.equipos
-       @equipo=Equipo.find(params[:id])
+       
        @sitio=@equipo.sitio
        if !@sitio.presentacion.nil?
-         @seccion=@sitio.presentacion   
+         @seccion=@sitio.presentacion .seccions.first  
          if !@seccion.nil?
-            redirect_to quartiers_seccion_path(:id=>@sitio) 
+          redirect_to quartiers_seccion_path(:id=>@seccion) 
+     
          end
        end
     end
