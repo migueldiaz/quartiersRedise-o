@@ -3,7 +3,7 @@ class QuartiersController < ApplicationController
  	def index 
   	#@eventos = Evento.where('sitio_id'=> @sitio)
   		@web=Web.first
-  		@sitio=@web.asociacion.sitio
+  		#@sitio=@web.asociacion.sitio
  	end
 #GET /quartiers/agenda
 	def agenda

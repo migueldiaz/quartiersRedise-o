@@ -3,6 +3,7 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ traductores: 'traductores'
  aportan: 'Socios colaborativos'
  noaportan: 'Socios asociativos'
  sitios: 'Sitios'

@@ -14,7 +14,9 @@
    <%= password_field_tag :password%>
  </div>
   <div class="actions">
-   <p class='button'><%=submit_tag %></p>
+   <p class='button'><%=submit_tag(t('save')) %></p>
  </div>
  <%end%>
+ <br/>
+ <%= link_to t('sitio'),root_path  %> 
 
