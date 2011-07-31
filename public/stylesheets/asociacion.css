@@ -1,0 +1,159 @@
+.idioma {
+  font-size: 10px;
+}
+body {
+  font-family: Verdana,Helvetica,Arial,sans-serif;
+  color: #666666;
+  font-size:9pt;
+	
+	
+}
+div{
+/*
+ border:1px solid red;
+*/
+}
+
+.seleccionado {
+  color: #ff6600;
+}
+.menu_superior{
+	list-style:none;
+	margin:0;
+	padding:0;
+  text-transform: uppercase;
+
+
+}
+
+.menu_superior ul{
+	list-style:none;
+margin-left:-27px;
+padding:none;
+
+}
+.menu_superior li{ 
+
+	padding:7px;
+	margin-left:8px;	margin-right:17px;
+
+
+	float:left;
+	color:white;
+	background-color:black;
+
+}
+
+.menu_superior li.seleccionado{ 
+
+
+	background-color:#fe4a00;
+
+}
+.transparent {
+        zoom: 1;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+}
+
+
+
+.contenido_central {
+  /*border-top: 1px dotted #666666;*/
+  background-image: url(../images/t.png);
+padding:10px;
+}
+.contenido_central .titulo {
+
+  margin-top: 0px;
+  margin-bottom: 7px;
+	font-size: 22px;
+padding-left:5px;
+	
+}
+.contenido_central .titulo span{
+background-color:#fe4a00;
+color:white;
+padding:5px;
+}
+.ficha {
+
+
+padding:10px;
+ /* border-radius: 20px 3px;
+border: 1px dotted #666666;
+ */
+
+
+}
+.ficha .modulo_ficha  .image{
+
+  margin: 10px 10px 10px 10px;
+border-radius: 20px 3px;
+border: 3px solid #fe4a00;
+/*border-color:white #fe4a00 white #fe4a00 ;*/
+
+}
+.ficha .modulo_ficha .titulo {
+  font-size: 14px;
+  background-image: url(../images/cubito_ff9900.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 16px;
+  margin-left: -2px;
+  margin-bottom: 10px;	
+
+
+color:white;
+       
+
+}
+.ficha .modulo_ficha{
+margin-top:20px;
+}
+.ficha .modulo_ficha .texto {
+color:black;
+  font-size: 13px;
+text-align:justify;
+}
+.ficha .modulo_ficha .titulo span{
+color:white;
+background-color:#fe4a00;
+padding:5px;
+}
+.documentacion li {
+  background-repeat: no-repeat;
+  font-size: 12px;
+  list-style-position: inside;
+}
+.documentacion li.pdf {
+  list-style-image: url(../images/pdf_min.jpg);
+}
+.documentacion li.txt {
+  list-style-image: url(../images/txt_min.jpg);
+}
+.documentacion li.doc {
+  list-style-image: url(../images/doc_min.jpg);
+}
+.documentacion li.rtf {
+  list-style-image: url(../images/rtf_min.jpg);
+}
+.documentacion li.mov {
+  list-style-image: url(../images/mov_min.jpg);
+}
+.documentacion li.mp3 {
+  list-style-image: url(../images/mp3_min.jpg);
+}
+
+.container{
+/* border-left: 1px dotted black;	 */
+}
+
+.copy{
+	border-top: 1px dotted black;	
+	border-bottom: 1px dotted black;	
+	   padding: 10px;
+    text-align: center;
+}
+
+
