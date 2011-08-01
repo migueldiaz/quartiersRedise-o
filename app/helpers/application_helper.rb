@@ -14,8 +14,16 @@ def spanish
      end
   end
 def idioma
-     return params[:locale]
-    
-  end
+     return params[:locale]  
+ end
+
+def comprueba valor
+ if valor == I18n.locale.to_s
+return "seleccionado"
+else
+return ""
+end
+
+end
 
 end

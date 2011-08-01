@@ -113,13 +113,13 @@
 
                 <div class="span-18 " >
                 <hr class="space">
-                    <!--
 		<div class="prepend-1  idioma">
-                        <span class="">Français</span>
+                        <span class="<%=comprueba "fr"%>"><%= link_to t('fr'), root_path( :locale => 'fr' ), :class=> comprueba ('fr') %></span>
                         <br>
-                        <span class="seleccionado">Español</span>
+                        <span class="<%=comprueba "es"%>"><%= link_to t('es'), root_path( :locale => 'es' ),
+ :class=> comprueba ('es') %></span>
                     </div>
-
+<!--
                     <div class="prepend-1 bottom">
                         <form name="buscador">
                             <input type="text" name="busqueda" value="" size="10"><a href="javascript:document.forms['buscador'].submit();"><img valign="bottom" src="images/btn-search.gif" width="18" height="18" alt="" border="0"></a>
