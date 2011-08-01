@@ -1,8 +1,10 @@
 class ColaboradorsController < ApplicationController
-  layout 'mono'
+  layout 'juan'
   # GET /colaboradors
   # GET /colaboradors.xml
   def index
+
+
   	if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
 			 @colaboradors = Colaborador.find(:all, :conditions => "nombreEs = '' || infoEs=''")
@@ -25,7 +27,7 @@ class ColaboradorsController < ApplicationController
   	 @noaportadores= Colaborador.find(:all, :conditions => "aporta = 'false'")
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { :layout=>"juan"} # index.html.erb 
       format.xml  { render :xml => @colaboradors }
       format.json  { render :json => @colaboradors }
     end

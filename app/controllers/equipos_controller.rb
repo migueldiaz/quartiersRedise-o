@@ -1,5 +1,5 @@
 class EquiposController < ApplicationController
- layout 'mono' 
+ layout 'juan' 
  def index
  
  
