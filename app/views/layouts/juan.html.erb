@@ -10,20 +10,18 @@
         <![endif]-->
        <%= stylesheet_link_tag('asociacion') %>
        <%= stylesheet_link_tag('drop-down-menu') %>
-       <%= stylesheet_link_tag('screen') %>
-       <%= stylesheet_link_tag('print') %>
+       <%= stylesheet_link_tag('screen') %>     
+  <%= stylesheet_link_tag('jquery.lightbox-0.5') %>
+    <!-- script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" / -->
+
        <%= stylesheet_link_tag('supersized') %>
-       
+       <%= javascript_include_tag('jquery.min') %>       
        <%= javascript_include_tag('menu') %>
        <%= javascript_include_tag('supersized.3.1.3.min') %>
-       <%= javascript_include_tag('jquery.min') %>
-        
-       
-        
-        
-       
 
-		
+        
+              <%= javascript_include_tag('jquery.lightbox-0.5.pack') %>
 		<script type="text/javascript">  
 			
 			jQuery(function($){
@@ -58,7 +56,12 @@
 					slide_counter           :   0,		//Display slide numbers
 					slide_captions          :   0,		//Slide caption (Pull from "title" in slides array)
 					slides 					:  	[		//Slideshow Images
-		{image : '../images/05.jpg', title:"", url:""},{image : '../images/02.jpg', title:"", url:""}, {image : '../images/00.jpg', title:"", url:""},{image : '../images/06.jpg', title:"", url:""},  {image : '../images/05.jpg', title:"", url:""},{image : '../images/01.jpg', title:"", url:""},{image : '../images/03.jpg', title:"", url:""} 
+														{image : 'imgs/05.jpg', title:"", url:""},  														{image : 'imgs/02.jpg', title:"", url:""}, 
+																											{image : 'imgs/00.jpg', title:"", url:""},  			
+					{image : 'imgs/06.jpg', title:"", url:""},  
+													{image : 'imgs/05.jpg', title:"", url:""},
+							 						{image : 'imgs/01.jpg', title:"", url:""},
+														{image : 'imgs/03.jpg', title:"", url:""} 
 														
 												]
 												
@@ -66,17 +69,49 @@
 		    });
 		    
 		</script>
+ <script type="text/javascript">
+    $(function() {
+        $('a.lightbox').lightBox();
+    });
+    </script>
+   	<style type="text/css">
+	/* jQuery lightBox plugin - Gallery style */
+	#gallery {
+	
+		padding: 10px;
+		width: 520px;
+	}
+	#gallery ul { list-style: none; }
+	#gallery ul li { display: inline; }
+	#gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	#gallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	#gallery ul a:hover { color: #fff; }
+	</style>        
+        
+       
+
+		
+		
+
 		
     </head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
-    <body><div id="supersized" class="speed" style="display: block; "><a target="_blank" style="display: block; opacity: 1; " class="prevslide"><img src="./home_files/01.jpg" style="width: 1349px; height: 930.81px; left: 0px; top: -165px; "></a><a target="_blank" style="display: block; opacity: 0.9613363699350574; " class="activeslide"><img src="./home_files/03.jpg" style="width: 1349px; height: 930.81px; left: 0px; top: -165px; "></a><a target="_blank"><img src="./home_files/05.jpg"></a></div><div id="supersized-loader" style="display: none; "></div>
+    <body>
+
 	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
 		<p>&nbsp;</p>
 	</div>
 
         <div class="container ">
-            <div class="span-24 append-bottom">
+            <div class="span-24 append-bottom" >
 
-                <div class="span-18 ">
+                <div class="span-18 " >
                 <hr class="space">
                     <!--
 		<div class="prepend-1  idioma">
@@ -92,22 +127,22 @@
                     </div>
 		-->
                     <hr class="space"><hr class="space"><hr class="space">                    <hr class="space"><hr class="space"><hr class="space">
-<div class="menu_superior ">
+<div class="menu_superior " >
 
 		<ul id="menu">
 			<li>
-			<a href="./home_files/home.htm">presentación</a>
+			<a href="#">presentación</a>
 			</li>
 			<li>
-			<a href="./home_files/home.htm">¿quiénes somos?</a>
+			<a href="#">¿quiénes somos?</a>
 			</li>
 			<li>
-			<a href="./home_files/home.htm">socios</a>
+			<a href="#">socios</a>
 			</li>
 			<li class="seleccionado">
-			<a href="./home_files/home.htm">proyectos</a>
-<ul style="display: none; ">
-			<li><a href="http://dl.dropbox.com/u/8688858/qdm/asociacion/indexsAsociacion.html#BARRIOS" title="Older projects">QDM-BARRIOS</a>
+			<a href="#">proyectos</a>
+<ul>
+			<li><a href="#BARRIOS" title="Older projects">QDM-BARRIOS</a>
 		<!--
 				<ul>
 					<li><a href="#" title="2003 projects">2003 projects</a></li>
@@ -116,45 +151,48 @@
 				</ul>
 		-->
 			</li>
-			<li><a href="http://dl.dropbox.com/u/8688858/qdm/asociacion/indexsAsociacion.html#MUJER" title="Active projects">QDM-MUJER</a></li>
+			<li><a href="#MUJER" title="Active projects">QDM-MUJER</a></li>
 		</ul>
 
 			</li>
 			<li>
-			<a href="./home_files/home.htm">contacto</a>
+			<a href="#">contacto</a>
 			</li>
 			<li>
-			<a href="./home_files/home.htm">agenda</a>
+			<a href="#">agenda</a>
 			</li>
 		</ul>
 </div>
- >
-                <div class="span-5 append-1 last " style="text-align:right;">
-                    <img src="../images/logo.png" alt="logo_qdm_a.gif">
+                </div>
+                <div class="span-5 append-1 last " style="text-align:right;" >
+                    <img src="imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
                 </div>
                 
             </div>
 		 <div class="span-24">
-		<hr class="space">
+		<hr class="space"/>
 		</div>
             <div class="span-24">
                 <div class="span-1">&nbsp;</div>
                 <div class="span-18  contenido_central ">
                     <div class="titulo ">
-			<span>
+			<span >
                         Présentation
 			<span>
-                      </span></span></div>
+                    </div>
                     <div class="ficha ">
 <div class="modulo_ficha">
-                          <div class="titulo  ">
+
+                        <div class="titulo  ">
 				<span>
                             Encourager une gouvernance participative et une citoyenneté affirmée au Sud et au Nord
 				</span>	
                             <br>
                         </div>
 			<div class="texto ">
-                        <img src="./home_files/ej01.jpg" alt="mini_imagen_ejemplo.jpg" class="image left" width="200">
+<a href="imgs/ej04zoom.jpg" class="lightbox" title="Encourager une gouvernance participative et une citoyenneté affirmée au Sud et au Nord">
+                        <img src="imgs/ej04mini.jpg"  class="image left " >
+</a>
                         Pour cela, Quartiers du Monde contribue à la construction d'espaces de dialogue et de réflexion avec la population et les autorités locales de différents quartiers pour chercher ensemble des alternatives de changement.
 			</div>
                         <br>
@@ -166,8 +204,10 @@
                            				<span> Que fait-on ?</span>
                         </div>
 <div class="texto ">
-                        <img src="./home_files/ej02.jpg" alt="mini_imagen_ejemplo2.jpg" class="image right" width="200">
-<ul>
+<a href="imgs/ej03zoom.jpg" class="lightbox" title="Que fait-on ?">
+                        <img src="imgs/ej03mini.jpg" alt="mini_imagen_ejemplo2.jpg" class="image left" >
+</a>
+<ul >
 <li>
 Animer un réseau Nord-Sud 
 </li>
@@ -229,6 +269,5 @@ Faciliter la réflexion de groupes d’habitants pour construire la participatio
             </div>
         </div>
 
-    
-
-</body></html>
+    </body>
+</html>
