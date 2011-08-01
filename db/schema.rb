@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110723205402) do
+ActiveRecord::Schema.define(:version => 20110731163919) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20110723205402) do
     t.datetime "updated_at"
     t.string   "imagen"
     t.boolean  "revisado",   :default => false
+    t.string   "imagenmini"
   end
 
   create_table "presentacions", :force => true do |t|

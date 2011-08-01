@@ -9,7 +9,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: paginadocumentos_development
+  database: quartier_dev
   pool: 5
   username: root
   password: root
@@ -22,7 +22,7 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: paginadocumentos_test
+  database: quartier_test
   pool: 5
   username: root
   password: root
@@ -32,7 +32,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: paginadocumentos_production
+  database: quartier_production
   pool: 5
   username: root
   password: root
