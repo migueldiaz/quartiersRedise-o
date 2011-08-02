@@ -6,9 +6,14 @@
 		<% pagina.parrafos.each do |parrafo| %>
 			<%=  simple_format(parrafo.textoes) %>
 		    <% if parrafo.imagen_url.to_s != "" %>
-				<%= image_tag parrafo.imagen_url.to_s %>
+				<%= image_tag parrafo.imagen_url.to_s,:size=>'200x150' %>
 			<% end %>
-		
+			 <% if parrafo.imagenmini_url.to_s != "" %>
+				<%= image_tag parrafo.imagenmini_url.to_s,:size=>'100x75' %>
+			<% end %>
+		     <% if parrafo.imagen_url.to_s != "" || parrafo.imagenmini_url.to_s != "" %>
+		     <p><%=parrafo.piefoto%></p>
+		     <%end%>
 		<%end%>
   	        <ul>
   			<% pagina.documentos.each do |documento| %>
@@ -28,11 +33,17 @@
 			<% if parrafo.imagen_url.to_s != "" %>
 				<%= image_tag parrafo.imagen_url.to_s %>
 			<% end %>
+			 <% if parrafo.imagenmini_url.to_s != "" %>
+				<%= image_tag parrafo.imagenmini_url.to_s,:size=>'100x75' %>
+			<% end %>
+		     <% if parrafo.imagen_url.to_s != "" || parrafo.imagenmini_url.to_s != "" %>
+		     <p><%= parrafo.piefotofr %></p>
+		     <%end%>
   		<%end%>
   		<ul>
   		<% pagina.documentos.each do |documento| %>
-			<% if documento.archivo_url.to_s != "" %>
-			 <li><%=link_to documento.docfr , documento.archivo_url.to_s %></li>
+			<% if documento.archivofr_url.to_s != "" %>
+			 <li><%=link_to documento.docfr , documento.archivofr_url.to_s %></li>
 		      <% end %>
   		
   		<%end%>

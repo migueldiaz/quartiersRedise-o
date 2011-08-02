@@ -19,7 +19,20 @@
 
 </p>
 <h3><%=t('documentos') %></h4>
+<table>
+ <tr>
+ <th><%=t('doces')%></th>
+ <th><%=t('enlace')%></th>
+ <th><%=t('docfr')%></th>
+ <th><%=t('enlace')%></th>
+ <th></th>
+ <th></th>
+ <th></th>
+ <th></th>
+ </tr>
 <%= render :partial => "documentos/documento", :collection => @pagina.documentos %>
+</table>
+<br/>
 <p>
 <%= link_to t('new')+' '+t('documento'), new_documento_path(:id=>@pagina) %>
 </p>

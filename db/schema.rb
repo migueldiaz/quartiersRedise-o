@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110731163919) do
+ActiveRecord::Schema.define(:version => 20110802160649) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20110731163919) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "revisado"
+    t.string   "url"
   end
 
   create_table "contactos", :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110731163919) do
     t.integer "pagina_id"
     t.string  "archivo"
     t.boolean "revisado"
+    t.string  "archivofr"
   end
 
   create_table "equipos", :force => true do |t|
@@ -89,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20110731163919) do
     t.string   "imagen"
     t.boolean  "revisado",   :default => false
     t.string   "imagenmini"
+    t.string   "piefoto"
+    t.string   "piefotofr"
   end
 
   create_table "presentacions", :force => true do |t|

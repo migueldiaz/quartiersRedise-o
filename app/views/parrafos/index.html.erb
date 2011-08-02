@@ -4,17 +4,18 @@
   <tr>
     <th><%=t('textoes')%></th>
     <th><%=t('textofr')%></th> 
-   <% if !current_user.tipo=='traductor'%> 
-    <th></th><% end %>
+    <th><%=t('piefoto')%></th>
+    <th><%=t('piefotofr')%></th> 
+    <th></th>
   </tr>
 
-<% @parrafos.each do |parrafo| %>
+<%  @parrafos.each do |parrafo| %>
   <tr>
     <td><%= truncate(parrafo.textoes,:lenght=>22) %></td>
-    <td><%= parrafo.textofr %></td>
-      <% if !current_user.tipo=='traductor'%>  
+    <td><%= truncate(parrafo.textofr,:lenght=>22) %></td>
+    <td><%= parrafo.piefoto%><td>
+     <td><%= parrafo.piefotofr%><td>
     <td><%= link_to t('show'), parrafo %></td>
-    <%end%>
     <td><%= link_to t('edit'), edit_parrafo_path(parrafo) %></td>
    <% if !current_user.tipo=='traductor'%>  
     <td><%= link_to t('destroy'), parrafo, :confirm => t('confirm'), :method => :delete %></td>

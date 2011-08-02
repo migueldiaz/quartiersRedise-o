@@ -3,6 +3,10 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ miniatura: 'Imagen para zoom'
+ piefoto: 'Pie de foto español'
+ piefotofr: 'Pie de foto francés' 
+ url: 'Sitio web'
  traductores: 'traductores'
  aportan: 'Socios colaborativos'
  noaportan: 'Socios asociativos'
@@ -50,10 +54,10 @@ es:
  equipos: 'Equipos'
  traductor: 'Ir a zona de traductor'
  eligeDoc: 'Selección de documento'
- doces: 'Título de enlace español'
- docfr: 'Título de enlace frances'
+ doces: 'Enlace español'
+ docfr: 'Enlace frances'
  documento: 'documento'
- enlace: 'Enlace'
+ enlace: 'Enlace al archivo'
  documentos: 'Documentos'
  revisado: 'Traducción revisada'
  contacto: 'Información de contacto'

@@ -1,5 +1,5 @@
 class ColaboradorsController < ApplicationController
-  layout 'juan'
+  layout 'mono'
   # GET /colaboradors
   # GET /colaboradors.xml
   def index
@@ -27,7 +27,7 @@ class ColaboradorsController < ApplicationController
   	 @noaportadores= Colaborador.find(:all, :conditions => "aporta = 'false'")
 
     respond_to do |format|
-      format.html { :layout=>"juan"} # index.html.erb 
+      format.html  # index.html.erb 
       format.xml  { render :xml => @colaboradors }
       format.json  { render :json => @colaboradors }
     end

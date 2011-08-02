@@ -1,18 +1,32 @@
 <h1><%=t('show')+' '+t('parrafo')%> </h1>
 <br/>
  <p>
-    <b>Texto ES:</b>
+    <b><%=t('textoes')%></b>
     <%= simple_format(@parrafo.textoes) %>
   </p>
  
    <p>
-    <b>Texto Fr:</b>
+     <b><%=t('textofr')%></b>
     <%= simple_format(@parrafo.textofr) %>
   </p>
  <p> 
  <% if @parrafo.imagen_url.to_s != "" %>
-<%= image_tag @parrafo.imagen_url.to_s %>
+<%= image_tag @parrafo.imagen_url.to_s, :size=>'200x150' %>
 <% end %>
+<% if @parrafo.imagenmini_url.to_s != "" %>
+<%= image_tag @parrafo.imagenmini_url.to_s, :size=>'100x75' %>
+<% end %>
+</p>
+<% if @parrafo.imagenmini_url.to_s != "" || @parrafo.imagen_url.to_s!= "" %>
+ <p>
+    <b><%=t('piefoto')%></b>
+    <%= @parrafo.piefoto%>
+  </p>
+  <p>
+    <b><%=t('piefotofr')%></b>
+    <%= @parrafo.piefoto%>
+  </p>
+<%end%>
 </p>
 <%  if current_user.tipo=='traductor'%>
  <%= link_to t('back'), parrafos_path(:modo=>'sintrad') %>

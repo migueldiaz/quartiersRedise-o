@@ -3,9 +3,9 @@ layout 'mono'
 def index 
    if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
-			 @parrafos = Parrafo.find(:all, :conditions => "textoes=''")
+			 @parrafos = Parrafo.find(:all, :conditions => "textoes='' || piefoto=''")
 	   else
-	    	 @parrafos = Parrafo.find(:all, :conditions => "textofr=''")	
+	    	 @parrafos = Parrafo.find(:all, :conditions => "textofr='' || piefotofr=''")	
 	   end
   
   elsif  params[:modo]=='sinrevisar'	

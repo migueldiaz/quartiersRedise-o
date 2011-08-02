@@ -26,9 +26,9 @@ class TraductorController < ApplicationController
 	   #Idioma Documentos
 	   @documentos=Documento.all
 	   if current_user.traduceA=='es'   
-		 @documentosSinTraducir = Documento.find(:all, :conditions => "docEs = ''" )
+		 @documentosSinTraducir = Documento.find(:all, :conditions => "docEs = '' || archivo = '' " )
 	   else
-	     @documentosSinTraducir = Documento.find(:all, :conditions => "docFr=''")
+	     @documentosSinTraducir = Documento.find(:all, :conditions => "docFr=''|| archivofr = ''")
 	   end
 	   @documentosSinRevisar = Documento.find(:all, :conditions => "revisado <> true")
 	   
@@ -60,11 +60,11 @@ class TraductorController < ApplicationController
 	   @paginasSinRevisar = Pagina.find(:all, :conditions => "revisado <> true")
 	   
 	    #Idioma Parrafos
-	    @parrafos=Parrafo.all
+	   @parrafos=Parrafo.all
 	   if current_user.traduceA=='es'   
-		 @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textoes = ''" )
+		 @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textoes = '' || piefoto = ''" )
 	   else
-	     @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textofr=''")
+	     @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textofr='' || piefotofr = ''")
 	   end
 	   @parrafosSinRevisar = Parrafo.find(:all, :conditions => "revisado <> true")
 	   

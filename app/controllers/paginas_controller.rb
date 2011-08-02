@@ -17,7 +17,7 @@ class PaginasController < ApplicationController
  	 @paginas = Pagina.all
   end
     
-    respond_to do |format|
+   respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @paginas }
     end
@@ -59,7 +59,7 @@ class PaginasController < ApplicationController
 
     respond_to do |format|
       if @pagina.save
-        format.html { redirect_to(@pagina, :notice => 'Pagina was successfully created.') }
+        format.html { redirect_to(@pagina, :notice => t('exito')) }
         format.xml  { render :xml => @pagina, :status => :created, :location => @pagina }
       else
         format.html { render :action => "new" }
@@ -75,7 +75,7 @@ class PaginasController < ApplicationController
 
     respond_to do |format|
       if @pagina.update_attributes(params[:pagina])
-        format.html { redirect_to(@pagina, :notice => 'Pagina was successfully updated.') }
+        format.html { redirect_to(@pagina, :notice => t('exito')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

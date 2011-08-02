@@ -8,9 +8,9 @@ layout 'mono'
  
   if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
-			 @documentos = Documento.find(:all, :conditions => "doces=''")
+			 @documentos = Documento.find(:all, :conditions => "doces='' || arhivo=''")
 	   else
-	    	 @documentos = Documento.find(:all, :conditions => "docfr=''")	
+	    	 @documentos = Documento.find(:all, :conditions => "docfr='' || archivofr=''")	
 	   end
   
   elsif  params[:modo]=='sinrevisar'	
