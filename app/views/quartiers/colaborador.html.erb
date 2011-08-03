@@ -17,16 +17,16 @@
 
 <h2><%=t('noaportan')%></h2>
 	<%if !@noaportan.nil?%>
-		<% @noaportan.each do |colaborador| %>
+		<% @noaportan.each do |colaboradorno| %>
 			<%if spanish%>
-				<h4><%= colaborador.nombreEs %></h4>
-				<p><%= colaborador.infoEs %></p>
+				<h4><%= colaboradorno.nombreEs %></h4>
+				<p><%= colaboradorno.infoEs %></p>
 			<%else%>
-				<h4><%= colaborador.nombreFr %></h4>
-				<p><%=colaborador.infoFr %></p>
+				<h4><%= colaboradonor.nombreFr %></h4>
+				<p><%=colaboradorno.infoFr %></p>
 			<%end%>
-			<% if colaborador.imagen_url.to_s != "" %>
-				<%= image_tag colaborador.imagen_url.to_s %>
+			<% if colaboradorno.imagen_url.to_s != "" %>
+				<%= image_tag colaboradorno.imagen_url.to_s %>
 			<% end %>
 		<%end%>
 	<%end%>
