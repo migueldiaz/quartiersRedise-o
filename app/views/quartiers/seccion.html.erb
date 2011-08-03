@@ -4,6 +4,7 @@
   	<% @paginas.each do |pagina| %>
  		<h2><%= pagina.tituloes %> </h2> 
 		<% pagina.parrafos.each do |parrafo| %>
+			<h2><%= parrafo.tituloes %></h2>
 			<%=  simple_format(parrafo.textoes) %>
 		    <% if parrafo.imagen_url.to_s != "" %>
 				<%= image_tag parrafo.imagen_url.to_s,:size=>'200x150' %>
@@ -29,6 +30,7 @@
   	<% @paginas.each do |pagina| %>
  		<h2><%= pagina.tituloes %> </h2> 
 		<% pagina.parrafos.each do |parrafo| %>
+			 <h2><%= parrafo.titulofr %></h2>
 			<p><%= simple_format(parrafo.textofr)%></p>
 			<% if parrafo.imagen_url.to_s != "" %>
 				<%= image_tag parrafo.imagen_url.to_s %>

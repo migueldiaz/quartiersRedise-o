@@ -1,5 +1,7 @@
  <table>
 <tr>
+<td><%=parrafo.tituloes%></td>
+<td><%=parrafo.titulofr%></td>
 <td><%=truncate(parrafo.textoes,:lenght=>12) %></td>
 <td><%=truncate(parrafo.textofr,:lenght=>12)  %></td>
 
@@ -13,6 +15,6 @@
   <td><%= link_to t('show'), parrafo_path(parrafo)%></td>
   <td><%= link_to t('edit'), edit_parrafo_path(parrafo)%></td>
   <td><%= link_to t('destroy'), [parrafo.pagina, parrafo], :confirm => t('confirm'),  :method => :delete %></d>
- </tr>
+</tr>
 </table>
 

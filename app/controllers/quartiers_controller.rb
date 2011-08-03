@@ -50,7 +50,7 @@ class QuartiersController < ApplicationController
 	def colaborador
 		@sitio=Sitio.find(params[:id])
 		@aportan=@sitio.colaboradors.where('aporta'=>'true')
-		@aportan=@sitio.colaboradors.where('aporta'=>'false')
+		@noaportan=@sitio.colaboradors.where('aporta'=>'false')
     
         @web=Web.first
     	@equipos=@web.equipos

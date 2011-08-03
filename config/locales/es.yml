@@ -3,6 +3,8 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ tituloes: 'Título en español'
+ titulofr: 'Título en francés'
  miniatura: 'Imagen para zoom'
  piefoto: 'Pie de foto español'
  piefotofr: 'Pie de foto francés' 

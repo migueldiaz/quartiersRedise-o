@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110802160649) do
+ActiveRecord::Schema.define(:version => 20110803173029) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(:version => 20110802160649) do
     t.string   "imagenmini"
     t.string   "piefoto"
     t.string   "piefotofr"
+    t.string   "tituloes"
+    t.string   "titulofr"
   end
 
   create_table "presentacions", :force => true do |t|

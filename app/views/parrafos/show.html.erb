@@ -1,6 +1,16 @@
 <h1><%=t('show')+' '+t('parrafo')%> </h1>
 <br/>
  <p>
+  <b><%=t('tituloes')%></b>
+   <%= @parrafo.tituloes %>
+ </p>
+ <p>
+  <b><%=t('titulofr')%></b>
+   <%= @parrafo.titulofr %>
+ </p>
+ 
+ 
+ <p>
     <b><%=t('textoes')%></b>
     <%= simple_format(@parrafo.textoes) %>
   </p>

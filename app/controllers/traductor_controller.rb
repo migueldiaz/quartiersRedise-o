@@ -62,9 +62,9 @@ class TraductorController < ApplicationController
 	    #Idioma Parrafos
 	   @parrafos=Parrafo.all
 	   if current_user.traduceA=='es'   
-		 @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textoes = '' || piefoto = ''" )
+		 @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textoes = '' || piefoto = '' ||tituloes='' && titulofr!='' " )
 	   else
-	     @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textofr='' || piefotofr = ''")
+	     @parrafosSinTraducir = Parrafo.find(:all, :conditions => "textofr='' || piefotofr = ''  ||tituloes='' && titulofr!='' ")
 	   end
 	   @parrafosSinRevisar = Parrafo.find(:all, :conditions => "revisado <> true")
 	   
