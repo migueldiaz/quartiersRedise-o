@@ -7,13 +7,13 @@ class TraductorController < ApplicationController
 	
 	
 	#Idioma Colaboradores
-	    @colaboradores=Colaborador.all
+	   @colaboradores=Colaborador.all
 	   if current_user.traduceA=='es'   
-		 @colaboradorSinTraducir = Colaborador.find(:all, :conditions => "nombreEs = '' || infoEs=''")
+		 @colaboradorSinTraducir = Colaborador.find(:all, :conditions => "nombreEs = '' || infoEs = ''")
 	   else
-	     @colaboradorSinTraducir = Colaborador.find(:all, :conditions => "nombreFr = '' || infoFr=''")
+	     @colaboradorSinTraducir = Colaborador.find(:all, :conditions => "nombreFr = '' || infoFr = ''")
 	   end
-	     @colaboradorSinRevisar = Colaborador.find(:all, :conditions => "revisado <> true")
+	     @colaboradorSinRevisar = Colaborador.find(:all, :conditions => "revisado = false")
 	 #Idioma Contactos
 	  @contactos=Contacto.all
 	   if current_user.traduceA=='es'   

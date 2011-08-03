@@ -1,13 +1,9 @@
-<%if colaboradorNo.aporta==false%>
-<table>
+<%if !colaboradorNo.aporta==true%>
  <tr>
    
     <td><%= colaboradorNo.nombreEs %></td>
     <td><%= colaboradorNo.nombreFr %></td>
-    <td><%= colaboradorNo.aporta %></td>
-    <td><%= colaboradorNo.infoEs %></td>
-    <td><%= colaboradorNo.infoFr %></td>
-    <td><%= colaboradorNo.direccion %></td>
+    <td><%= colaboradorNo.url %></td>
     <td> <% if colaboradorNo.imagen_url.to_s != "" %>
     <%= image_tag colaboradorNo.imagen_url.to_s %>
     <% end %></td>
@@ -15,7 +11,9 @@
 
    <td><%= link_to t('show'), colaborador_path(colaboradorNo)%></td>
    <td><%= link_to t('edit'), edit_colaborador_path(colaboradorNo)%></td>
-   <td><%= link_to t('destroy'), colaboradorNo, :confirm => 'Are you sure?',  :method => :delete %></td>
+   <% if !is_traductor %>
+   <td><%= link_to t('destroy'), colaboradorNo, :confirm =>t('confirm'),  :method => :delete %></td>
+   <%end%>
  </tr>
-</table>
 <%end%>
+

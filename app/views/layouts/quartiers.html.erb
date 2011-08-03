@@ -70,7 +70,13 @@
 <ul>
 <li><%= link_to t('es'), root_path( :locale => 'es' ) %></li>
 <li><%= link_to t('fr'), root_path( :locale => 'fr' ) %></li>
+<br/>
+<li><%= link_to t('es'), idioma_setspanish_url( :url => request.url ) %></li>
+<li><%= link_to t('fr'), idioma_setfrench_url( :url => request.url ) %></li>
 </ul>
+Español: <%= spanish%>
+Frances: <%= esfrances%>
+
 </div>
 
 <div style="clear: both;"> </div>

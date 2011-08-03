@@ -7,9 +7,9 @@ class ColaboradorsController < ApplicationController
 
   	if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
-			 @colaboradors = Colaborador.find(:all, :conditions => "nombreEs = '' || infoEs=''")
+			 @colaboradors = Colaborador.find(:all, :conditions => "nombreEs = '' or infoEs= '' ")
 	   else
-	    	 @colaboradors = Colaborador.find(:all, :conditions => "nombreFr = '' || infoFr=''")	
+	    	 @colaboradors = Colaborador.find(:all, :conditions => "nombreFr = '' or infoFr= '' ")	
 	   end
  	elsif  params[:modo]=='todos'
  	     @colaboradors = Colaborador.all
@@ -17,14 +17,15 @@ class ColaboradorsController < ApplicationController
  	
  	elsif  params[:modo]=='sinrevisar'
    		
-   		 @colaboradors = Colaborador.find(:all, :conditions => "revisado = 'false'")	
+   		 @colaboradors = Colaborador.find(:all, :conditions => "revisado != true")	
    	else
    			@sitio = Sitio.find(params[:id]) 
  			@colaboradors = @sitio.colaboradors.all
  	 end
  
-     @aportadores= Colaborador.find(:all, :conditions => "aporta = 'true'")
-  	 @noaportadores= Colaborador.find(:all, :conditions => "aporta = 'false'")
+     #@aportadores= @colaboradors.find(:all, :conditions => "aporta = true")
+     #Colaborador.find(:all, :conditions => "aporta = true")
+  	 #@noaportadores= Colaborador.find(:all, :conditions => "aporta = false")
 
     respond_to do |format|
       format.html  # index.html.erb 

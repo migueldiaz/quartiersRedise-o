@@ -3,10 +3,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :require_login,:except=>:quartiers
   before_filter :set_locale
-  helper_method :current_user
-  helper_method :valida_usuario, :is_admin,:is_traductor,:spanish,:require_login
+  helper_method :current_user,:setspanish
+  helper_method :valida_usuario,:is_admin,:is_traductor,:require_login
   
-  
+  def is_admin
+	if current_user.tipo.to_s=='admin'
+	  return true;
+	else
+		return false;
+	end
+end
   
 
  
@@ -26,38 +32,16 @@ class ApplicationController < ActionController::Base
   def current_user
    @current_user ||= Usuario.find(session[:usuario_id]) if session[:usuario_id]
   end
-  private 
-   
-  
-  
-  	def is_admin
-   		if current_user.nombre == 'admin'
-    		return true
-   		else
-    		return false
-   		end
-   	end
-   	
-   
-  	def is_traductor
-   		if current_user.tipo == 'traductor'
+ 
+ def is_traductor
+   		if current_user.tipo.to_s=='traductor'
     		return true
    		else
     		return false
    		end 
   	end
   	
-  	def spanish
-   		if  I18n.locale == 'es'
-    		return true
-   		else
-    		return false
-   		end 
-  	end
-  	
-  	
-
-  def set_locale
+   def set_locale
      if params.include?('locale')
        I18n.locale = params[:locale]
     end

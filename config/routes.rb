@@ -8,7 +8,8 @@ Paginadocumentos::Application.routes.draw do
   match 'quartiers/proyecto/' => 'quartiers#proyecto'
   match 'quartiers/equipos/' => 'quartiers#equipos'
   match 'quartiers/equipo/' => 'quartiers#equipo'
-
+  match 'idioma/setspanish/' =>    'idioma#setspanish'
+  match 'idioma/setfrench/' =>    'idioma#setfrench'
 
   root :to => "quartiers#index"
   get 'login' => 'sesiones#new', :as => 'login'
@@ -43,7 +44,7 @@ Paginadocumentos::Application.routes.draw do
   resources :presentacions
   resources :web
   resources :proyecto
-  
+  resources :sitios
   
   resources :sitios do
     resources :usuarios

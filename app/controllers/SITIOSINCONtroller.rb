@@ -15,11 +15,9 @@ layout 'mono'
   # GET /sitios/1
   # GET /sitios/1.xml
   def show
-   
     @sitio = Sitio.find(params[:id])
-    
     respond_to do |format|
-      format.html 
+      format.html # show.html.erb
       format.xml  { render :xml => @sitio }
     end
   end

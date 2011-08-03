@@ -1,32 +1,15 @@
 <%if colaboradorSi.aporta==true%>
-<table>
  <tr>
- 	<th><%=t('nombreEs')%></th>
- 	<th><%=t('nombreFr')%></th>
- 	<th><%=t('aporta')%></th>
- 	<th><%=t('infoEs')%></th>
- 	<th><%=t('infoFr')%></th>
- 	<th><%=t('direccion')%></th>
- 	<th><%=t('image')%></th>
- 	<th></th>
- 	<th></th>
- 	<th></th>
- 
- </tr>
- <tr>
-   
-    <td><%= colaboradorSi.nombreEs %></td>
+   <td><%= colaboradorSi.nombreEs %></td>
     <td><%= colaboradorSi.nombreFr %></td>
-    <td><%= t(colaboradorSi.aporta) %></td>
-    <td><%= colaboradorSi.infoEs %></td>
-    <td><%= colaboradorSi.infoFr %></td>
-    <td><%= colaboradorSi.direccion %></td>
+    <td><%= colaboradorSi.aporta %></td>
     <td> <% if colaboradorSi.imagen_url.to_s != "" %>
     <%= image_tag colaboradorSi.imagen_url.to_s %>
     <% end %></td>
    <td><%= link_to t('show'), colaborador_path(colaboradorSi)%></td>
    <td><%= link_to t('edit'), edit_colaborador_path(colaboradorSi)%></td>
+    <% if !is_traductor %>
    <td><%= link_to t('destroy'), colaboradorSi, :confirm => t('confirm'),  :method => :delete %></td>
+   <%end%>
  </tr>
-</table>
 <%end%>

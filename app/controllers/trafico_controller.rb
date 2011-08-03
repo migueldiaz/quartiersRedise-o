@@ -4,9 +4,9 @@ class TraficoController < ApplicationController
  			if is_traductor
       			 redirect_to traductor_url
    			elsif is_admin 
-         		redirect_to admin_path,:notice=>'Bienvenido administrador'
+         		redirect_to admin_path,:notice=>t('welcome')
      	 	else
-       	 		redirect_to sitio_path(usuario.sitio), :notice => 'Bienvenido' 
+       	 		redirect_to sitio_path(current_user.sitio), :notice => t('welcome')
      	 	end
      else
       	redirect_to root_path
