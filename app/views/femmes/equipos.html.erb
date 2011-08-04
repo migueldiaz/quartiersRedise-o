@@ -1,0 +1,8 @@
+<% @equipos.each do |equipo| %>
+ <h2><%=link_to equipo.nombre,femmes_equipo_path(:id=>equipo) %></h2>
+ <%if spanish%>
+ 	<p><%= equipo.descripcionEs%><p>
+ <%else%>
+	 <p><%= equipo.descripcionFr%><p>
+  <%end%>	
+<%end%>

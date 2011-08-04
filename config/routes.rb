@@ -12,13 +12,30 @@ Paginadocumentos::Application.routes.draw do
   match 'quartiers/equipo/' => 'quartiers#equipo'
   ##############################################
   match 'jeunes/presentacion'=> 'jeunes#presentacion'
-  match 'jeunes/colaboradores'=> 'jeunes#colaboradores'
+  match 'jeunes/seccion'=> 'jeunes#seccion'
+  match 'jeunes/colaborador'=> 'jeunes#colaborador'
   match 'jeunes/agenda'=> 'jeunes#agenda'
   match 'jeunes/proyectos'=> 'jeunes#proyectos'
   match 'jeunes/equipos'=> 'jeunes#equipos'
   match 'jeunes/equipo'=> 'jeunes#equipo'
   match 'jeunes/contacto'=> 'jeunes#contacto'
-  
+  ###################################################
+  match 'femmes/presentacion'=> 'femmes#presentacion'
+  match 'femmes/seccion'=> 'femmes#seccion'
+  match 'femmes/colaborador'=> 'femmes#colaborador'
+  match 'femmes/agenda'=> 'femmes#agenda'
+  match 'femmes/proyectos'=> 'femmes#proyectos'
+  match 'femmes/equipos'=> 'femmes#equipos'
+  match 'femmes/equipo'=> 'femmes#equipo'
+  match 'femmes/contacto'=> 'femmes#contacto'
+  ################################################
+  match 'asociation/presentacion'=> 'asociation#presentacion'
+  match 'asociation/seccion'=> 'asociation#seccion'
+  match 'asociation/colaborador'=> 'asociation#colaborador'
+  match 'asociation/agenda'=> 'asociation#agenda'
+  match 'asociation/proyectos'=> 'asociation#proyectos'
+  match 'asociation/contacto'=> 'asociation#contacto'
+  ######################
   
   
 

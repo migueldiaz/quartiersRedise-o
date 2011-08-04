@@ -26,45 +26,53 @@
 </div>
 
 <div id="sidebar">
+
 <h3><%=t('lasociacion')%> </h3>
 <ul>
-	<li><%=link_to t('lasociacion'),quartiers_asociacion_path  %></li>
-	<%if !@sitio.nil? && !@sitio.asociacion.nil?%>
+	<li><%=link_to t('lasociacion'),asociation_presentacion_path  %></li>
+	<%if !@asociacion.nil? %>
 	<ul>
-		<li><%=link_to t('presentacion'),quartiers_asociacion_path  %></li>
-    		<ul><%=render 'quartiers/presentaciones'%></ul>
+		<li><%=link_to t('presentacion'),asociation_presentacion_path  %></li>
+    		<ul><%=render 'asociation/presentaciones'%></ul>
 		<li><%= t('proyectos')%></li>
-			<ul><%=render 'quartiers/proyectos'%></ul>
-		<li><%=link_to t('colaboradores'),quartiers_colaborador_path(:id=>@sitio)%></li>
-		<li><%=link_to t('agenda'),quartiers_agenda_path(:id=>@sitio)%></li>
-		<li><%=link_to t('contacto'),quartiers_contacto_path(:id=>@sitio)%></li>
-	</ul>
-<%end%>
-</li></ul>
-<h3><%=t('lproyecto')%></h3>
-<ul>
-	<li><%=link_to t('lproyecto'),quartiers_proyecto_path  %></li>
-	<%if !@sitio.nil? && !@sitio.proyecto.nil?%>
-	<ul>
-		<li><%=link_to t('presentacion'),quartiers_proyecto_path  %></li>
-    		<ul><%=render 'quartiers/presentaciones'%></ul>
-		<li><%= t('proyectos')%></li>
-			<ul><%=render 'quartiers/proyectos'%></ul>
-		<li><%=link_to t('colaboradores'),quartiers_colaborador_path(:id=>@sitio)%></li>
-		<li><%=link_to t('agenda'),quartiers_agenda_path(:id=>@sitio)%></li>
-		<li><%=link_to t('contacto'),quartiers_contacto_path(:id=>@sitio)%></li>
+			<ul><%=render 'asociation/proyectos'%></ul>
+		<li><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
+		<li><%=link_to t('agenda'),asociation_agenda_path%></li>
+		<li><%=link_to t('contacto'),asociation_contacto_path%></li>
 	</ul>
 	<%end%>
 </li></ul>
-<h3><%=t('lequipos')%></h3>
+</li></ul>
+<h3><%=t('jeunes')%></h3>
 <ul>
-	<li><%=link_to t('lequipos'),quartiers_equipos_path  %></li>
-	<%if !@equipos.nil?%>
+	<li><%=link_to t('jeunes'),jeunes_presentacion_path  %></li>
+	<%if !@jeunes.nil? %>
 	<ul>
-	   	<%=render 'quartiers/listaEquipos'%>
+		<li><%=link_to t('presentacion'),jeunes_presentacion_path  %></li>
+    		<ul><%=render 'jeunes/presentaciones'%></ul>
+		<li><%= t('proyectos')%></li>
+			<ul><%=render 'jeunes/proyectos'%></ul>
+		<li><%=link_to t('colaboradores'),jeunes_colaborador_path%></li>
+		<li><%=link_to t('agenda'),jeunes_agenda_path%></li>
+		<li><%=link_to t('contacto'),jeunes_contacto_path%></li>
 	</ul>
 	<%end%>
-</ul>
+</li></ul>
+<h3><%=t('femmes')%></h3>
+<ul>
+	<li><%=link_to t('femmes'),femmes_presentacion_path  %></li>
+	<%if !@femmes.nil? %>
+	<ul>
+		<li><%=link_to t('presentacion'),femmes_presentacion_path  %></li>
+    		<ul><%=render 'femmes/presentaciones'%></ul>
+		<li><%= t('proyectos')%></li>
+			<ul><%=render 'femmes/proyectos'%></ul>
+		<li><%=link_to t('colaboradores'),femmes_colaborador_path%></li>
+		<li><%=link_to t('agenda'),femmes_agenda_path%></li>
+		<li><%=link_to t('contacto'),femmes_contacto_path%></li>
+	</ul>
+	<%end%>
+</li></ul>
 
 <h3>Idiomas</h3>
 <ul>
