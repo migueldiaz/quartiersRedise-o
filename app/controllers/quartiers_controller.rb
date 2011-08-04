@@ -1,5 +1,5 @@
 class QuartiersController < ApplicationController
-  	layout 'quartiers'
+  	layout 'juan'
  	def index 
   	#@eventos = Evento.where('sitio_id'=> @sitio)
   		@web=Web.first
@@ -16,6 +16,7 @@ class QuartiersController < ApplicationController
   		@asociacion=@web.asociacion
   		@sitio=@web.asociacion.sitio
   		@seccion=@sitio.presentacion.seccions.first
+
   		redirect_to quartiers_seccion_path(:id=>@seccion)
 	end
 	def proyecto

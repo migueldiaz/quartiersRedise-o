@@ -22,80 +22,7 @@
 
         
               <%= javascript_include_tag('jquery.lightbox-0.5.pack') %>
-		<script type="text/javascript">  
-			
-			jQuery(function($){
-				$.supersized({
-				
-					//Functionality
-					slideshow               :   1,		//Slideshow on/off
-					autoplay				:	1,		//Slideshow starts playing automatically
-					start_slide             :   1,		//Start slide (0 is random)
-					random					: 	0,		//Randomize slide order (Ignores start slide)
-					slide_interval          :   3000,	//Length between transitions
-					transition              :   1, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-					transition_speed		:	500,	//Speed of transition
-					new_window				:	1,		//Image links open in new window/tab
-					pause_hover             :   0,		//Pause slideshow on hover
-					keyboard_nav            :   1,		//Keyboard navigation on/off
-					performance				:	1,		//0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
-					image_protect			:	1,		//Disables image dragging and right click with Javascript
-					image_path				:	'imgs/', //Default image path
-
-					//Size & Position
-					min_width		        :   0,		//Min width allowed (in pixels)
-					min_height		        :   0,		//Min height allowed (in pixels)
-					vertical_center         :   1,		//Vertically center background
-					horizontal_center       :   1,		//Horizontally center background
-					fit_portrait         	:   1,		//Portrait images will not exceed browser height
-					fit_landscape			:   0,		//Landscape images will not exceed browser width
-					
-					//Components
-					navigation              :   1,		//Slideshow controls on/off
-					thumbnail_navigation    :   0,		//Thumbnail navigation
-					slide_counter           :   0,		//Display slide numbers
-					slide_captions          :   0,		//Slide caption (Pull from "title" in slides array)
-					slides 					:  	[		//Slideshow Images
-														{image : 'imgs/05.jpg', title:"", url:""},  														{image : 'imgs/02.jpg', title:"", url:""}, 
-																											{image : 'imgs/00.jpg', title:"", url:""},  			
-					{image : 'imgs/06.jpg', title:"", url:""},  
-													{image : 'imgs/05.jpg', title:"", url:""},
-							 						{image : 'imgs/01.jpg', title:"", url:""},
-														{image : 'imgs/03.jpg', title:"", url:""} 
-														
-												]
-												
-				}); 
-		    });
-		    
-		</script>
- <script type="text/javascript">
-    $(function() {
-        $('a.lightbox').lightBox();
-    });
-    </script>
-   	<style type="text/css">
-	/* jQuery lightBox plugin - Gallery style */
-	#gallery {
-	
-		padding: 10px;
-		width: 520px;
-	}
-	#gallery ul { list-style: none; }
-	#gallery ul li { display: inline; }
-	#gallery ul img {
-		border: 5px solid #3e3e3e;
-		border-width: 5px 5px 20px;
-	}
-	#gallery ul a:hover img {
-		border: 5px solid #fff;
-		border-width: 5px 5px 20px;
-		color: #fff;
-	}
-	#gallery ul a:hover { color: #fff; }
-	</style>        
-        
-       
+		<%=render "/layouts/morejs" %>
 
 		
 		
@@ -129,39 +56,7 @@
                     <hr class="space"><hr class="space"><hr class="space">                    <hr class="space"><hr class="space"><hr class="space">
 <div class="menu_superior " >
 
-		<ul id="menu">
-			<li>
-			<a href="#">presentación</a>
-			</li>
-			<li>
-			<a href="#">¿quiénes somos?</a>
-			</li>
-			<li>
-			<a href="#">socios</a>
-			</li>
-			<li class="seleccionado">
-			<a href="#">proyectos</a>
-<ul>
-			<li><a href="#BARRIOS" title="Older projects">QDM-BARRIOS</a>
-		<!--
-				<ul>
-					<li><a href="#" title="2003 projects">2003 projects</a></li>
-					<li><a href="#" title="2004 projects">2004 projects</a></li>
-					<li><a href="#" title="2005 projects">2005 projects</a></li>
-				</ul>
-		-->
-			</li>
-			<li><a href="#MUJER" title="Active projects">QDM-MUJER</a></li>
-		</ul>
-
-			</li>
-			<li>
-			<a href="#">contacto</a>
-			</li>
-			<li>
-			<a href="#">agenda</a>
-			</li>
-		</ul>
+	<%=render "/layouts/menu" %>
 </div>
                 </div>
                 <div class="span-5 append-1 last " style="text-align:right;" >
@@ -174,84 +69,10 @@
 		</div>
             <div class="span-24">
                 <div class="span-1">&nbsp;</div>
+                
                 <div class="span-18  contenido_central ">
-                    <div class="titulo ">
-			<span >
-                        Présentation
-			<span>
-                    </div>
-                    <div class="ficha ">
-<div class="modulo_ficha">
+                    <%= yield %>
 
-                        <div class="titulo  ">
-				<span>
-                            Encourager une gouvernance participative et une citoyenneté affirmée au Sud et au Nord
-				</span>	
-                            <br>
-                        </div>
-			<div class="texto ">
-<a href="imgs/ej04zoom.jpg" class="lightbox" title="Encourager une gouvernance participative et une citoyenneté affirmée au Sud et au Nord">
-                        <img src="imgs/ej04mini.jpg"  class="image left " >
-</a>
-                        Pour cela, Quartiers du Monde contribue à la construction d'espaces de dialogue et de réflexion avec la population et les autorités locales de différents quartiers pour chercher ensemble des alternatives de changement.
-			</div>
-                        <br>
-			</div>
-                        <div style="clear: both;">
-                        </div>
-<div class="modulo_ficha">
-                        <div class="titulo ">
-                           				<span> Que fait-on ?</span>
-                        </div>
-<div class="texto ">
-<a href="imgs/ej03zoom.jpg" class="lightbox" title="Que fait-on ?">
-                        <img src="imgs/ej03mini.jpg" alt="mini_imagen_ejemplo2.jpg" class="image left" >
-</a>
-<ul >
-<li>
-Animer un réseau Nord-Sud 
-</li>
-<li>
-Proposer des formations méthodologiques 
-</li>
-<li>
-Réaliser le suivi et l’évaluation de projets sociaux  
-</li>
-<li>
-Faciliter la réflexion de groupes d’habitants pour construire la participation dans leur quartier 
-</li>
-                          
-                        
-                        
-</ul>
-</div>
-</div>
-                        <div style="clear: both;"></div>
-<div class="modulo_ficha">
-                            <div class="titulo ">
-                               <span> Documentation</span>
-                            </div>
-                            <div class="documentacion seleccionado">
-                                <ul>
-                                    <li class="pdf">
-                                        Rapport des activités de l'association en 2005
-                                    </li>
-                                    <li class="txt">
-                                        Rapport des activités de l'association en 2006
-                                    </li>
-                                    <li class="doc">
-                                        Rapport des activités de l'association en 2007
-                                    </li>
-                                    <li class="mov">
-                                        Rapport des activités de l'association en 2008
-                                    </li>
-                                    <li class="rtf">
-                                        Rapport des activités de l'association en 2009
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-</div>
                     
                 </div>
                 <div class="span-24 append-bottom">
