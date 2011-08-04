@@ -52,6 +52,12 @@
     		<ul><%=render 'jeunes/presentaciones'%></ul>
 		<li><%= t('proyectos')%></li>
 			<ul><%=render 'jeunes/proyectos'%></ul>
+		<li><%=link_to t('lequipos'),jeunes_equipos_path %></li>
+		    <%if !@equipo.nil? %>
+		    	<ul><%= link_to @equipo.nombre,equipe_presentacion_path%>
+		    	<ul><%=render 'equipe/opciones'%></ul>
+		        </ul>
+		    <%end%>
 		<li><%=link_to t('colaboradores'),jeunes_colaborador_path%></li>
 		<li><%=link_to t('agenda'),jeunes_agenda_path%></li>
 		<li><%=link_to t('contacto'),jeunes_contacto_path%></li>

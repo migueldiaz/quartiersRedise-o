@@ -3,6 +3,8 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ actividades: 'Actividades'
+ 
  proyecto: 'Proyecto'
  jeunes: 'jóvenes del mundo'
  femmes: 'mujeres del mundo'

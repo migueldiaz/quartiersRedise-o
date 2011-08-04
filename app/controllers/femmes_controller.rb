@@ -2,6 +2,17 @@ class FemmesController < ApplicationController
  	layout 'quartiers'
  	
 #GET /quartiers/agenda
+	def sitio
+	@web=Web.first
+  	@femmes=@web.femmes
+	if @femmes.sitio.nil?
+		@femmes.sitio=Sitio.create
+	end
+	@sitio=@femmes.sitio
+	redirect_to sitio_path(:id=>@sitio)
+	end
+	
+	
 	def agenda
   		@web=Web.first
   		@femmes=@web.femmes

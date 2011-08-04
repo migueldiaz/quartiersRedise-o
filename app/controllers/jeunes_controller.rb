@@ -2,6 +2,17 @@ class JeunesController < ApplicationController
  	layout 'quartiers'
  	
 #GET /quartiers/agenda
+	def sitio
+	@web=Web.first
+  	@jeunes=@web.jeunes
+	if @jeunes.sitio.nil?
+		@jeunes.sitio=Sitio.create
+	end
+	@sitio=@jeunes.sitio
+	redirect_to sitio_path(:id=>@sitio)
+	end
+	
+	
 	def agenda
   		@web=Web.first
   		@jeunes=@web.jeunes
@@ -63,6 +74,7 @@ class JeunesController < ApplicationController
     	@web=Web.first
   		@jeunes=@web.jeunes
   		@equipos=@jeunes.equipos
+  		@sitio=@jeunes.sitio
     end
     def equipo
        @equipo=Equipo.find(params[:id])

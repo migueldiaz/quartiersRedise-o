@@ -11,6 +11,15 @@ Paginadocumentos::Application.routes.draw do
   match 'quartiers/equipos/' => 'quartiers#equipos'
   match 'quartiers/equipo/' => 'quartiers#equipo'
   ##############################################
+  match 'equipe/presentacion'=> 'equipe#presentacion'
+  match 'equipe/seccion'=> 'equipe#seccion'
+  match 'equipe/colaboradores'=> 'equipe#colaborador'
+  match 'equipe/agenda'=> 'equipe#agenda'
+  match 'equipe/actividades'=> 'equipe#actividades'
+  match 'equipe/contacto'=> 'equipe#contacto'
+  
+  #############################3
+  match 'jeunes/sitio' => 'jeunes#sitio'
   match 'jeunes/presentacion'=> 'jeunes#presentacion'
   match 'jeunes/seccion'=> 'jeunes#seccion'
   match 'jeunes/colaborador'=> 'jeunes#colaborador'
@@ -20,6 +29,7 @@ Paginadocumentos::Application.routes.draw do
   match 'jeunes/equipo'=> 'jeunes#equipo'
   match 'jeunes/contacto'=> 'jeunes#contacto'
   ###################################################
+  match 'femmes/sitio' => 'femmes#sitio'
   match 'femmes/presentacion'=> 'femmes#presentacion'
   match 'femmes/seccion'=> 'femmes#seccion'
   match 'femmes/colaborador'=> 'femmes#colaborador'

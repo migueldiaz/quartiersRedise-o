@@ -1,0 +1,9 @@
+<% @paginas.each do |pagina| %>
+	<% if spanish %>
+ 			<h2><%= pagina.tituloes %> </h2> 
+		<%else%>
+			<h2><%= pagina.titulofr %> </h2> 
+		<% end %>
+ 	
+<% end %>
+	
