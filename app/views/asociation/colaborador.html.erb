@@ -1,9 +1,12 @@
+<%= render :partial => "/shared/titulo",:locals => {:title => t('aportan')}%>
 
-<h2><%=t('aportan')%></h2>
+
+
 	<%if !@aportan.nil?%>
 		<% @aportan.each do |colaborador| %>
 			<%if spanish%>
-				<h4><%= colaborador.nombreEs %></h4>
+				<h4>JOOOOE<%= colaborador.method(:nombre.to_s+local2).call %></h4>			
+					<h4>QUUU<%= colaborador.url %></h4>
 				<p><%= colaborador.infoEs %></p>
 			<%else%>
 				<h4><%= colaborador.nombreFr %></h4>
@@ -22,7 +25,7 @@
 				<h4><%= colaboradorno.nombreEs %></h4>
 				<p><%= colaboradorno.infoEs %></p>
 			<%else%>
-				<h4><%= colaboradonor.nombreFr %></h4>
+				<h4><%= colaboradorno.nombreFr %></h4>
 				<p><%=colaboradorno.infoFr %></p>
 			<%end%>
 			<% if colaboradorno.imagen_url.to_s != "" %>
