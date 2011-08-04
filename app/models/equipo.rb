@@ -1,6 +1,7 @@
 class Equipo < ActiveRecord::Base
   
   #validates_presence_of :nombre
-  belongs_to :web
+  belongs_to :jeunes
+  belongs_to :femmes
   has_one :sitio , :dependent => :destroy
 end

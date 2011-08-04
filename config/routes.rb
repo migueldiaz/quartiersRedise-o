@@ -1,5 +1,7 @@
 Paginadocumentos::Application.routes.draw do
 
+
+  ################################################
   match 'quartiers/asociacion/' => 'quartiers#asociacion'
   match 'quartiers/seccion/' => 'quartiers#seccion'
   match 'quartiers/colaborador/' => 'quartiers#colaborador'
@@ -8,8 +10,17 @@ Paginadocumentos::Application.routes.draw do
   match 'quartiers/proyecto/' => 'quartiers#proyecto'
   match 'quartiers/equipos/' => 'quartiers#equipos'
   match 'quartiers/equipo/' => 'quartiers#equipo'
-  match 'idioma/setspanish/' =>    'idioma#setspanish'
-  match 'idioma/setfrench/' =>    'idioma#setfrench'
+  ##############################################
+  match 'jeunes/presentacion'=> 'jeunes#presentacion'
+  match 'jeunes/colaboradores'=> 'jeunes#colaboradores'
+  match 'jeunes/agenda'=> 'jeunes#agenda'
+  match 'jeunes/proyectos'=> 'jeunes#proyectos'
+  match 'jeunes/equipos'=> 'jeunes#equipos'
+  match 'jeunes/equipo'=> 'jeunes#equipo'
+  match 'jeunes/contacto'=> 'jeunes#contacto'
+  
+  
+  
 
   root :to => "quartiers#index"
   get 'login' => 'sesiones#new', :as => 'login'
@@ -26,15 +37,18 @@ Paginadocumentos::Application.routes.draw do
 
   resources :usuarios
   resources :sesiones
-  
+  resources:jeunes do
+   resources :sitio
+  end
  
   resources :web do
     resources :asociacion
-    resources :proyecto
     resources :equipos
+    resources :jeunes
+    resources :femmes
   end
-  
-  
+  resources :femmes
+  resources :jeunes
   resources :equipos
   resources :asociacion
   resources :reds

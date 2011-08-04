@@ -1,12 +1,7 @@
-<h1> <%= t('show')+' '%>
-<%if spanish %>
-<%=@seccion.tituloes%>
-<%else%>
-<%=@seccion.titulofr%>
-<%end%>
+<h1> 
+<%= t('show')+' '%><%if spanish %><%=@seccion.tituloes%><%else%><%=@seccion.titulofr%><%end%>
 </h1>
 
-<p id="notice"><%= notice %></p>
 
 <h3><%=t('paginas')%></h3>
 <table>

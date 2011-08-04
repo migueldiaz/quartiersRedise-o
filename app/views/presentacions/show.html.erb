@@ -1,6 +1,7 @@
-<h2><%=t('secciones')+' '+t('presentacion')%></h2>
+<h2><%=t("secciones")+" "+t("presentacion")%></h2>
+  <table>
   <%= render :partial => "seccions/seccion", :collection => @presentacion.seccions %>
-  
+  </table>
   <h3><%=t('new')+' '+t('seccion')%></h3>
   <%= link_to t('new'),new_seccion_path(:id=>@presentacion, :tipo=>'presentacion') %> | 
   <%= link_to t('back')+' al sitio', sitio_path(@presentacion.sitio)%>

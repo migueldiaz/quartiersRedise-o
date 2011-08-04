@@ -1,0 +1,2 @@
+module JeunesHelper
+end

@@ -3,6 +3,9 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ proyecto: 'Proyecto'
+ jeunes: 'jóvenes del mundo'
+ femmes: 'mujeres del mundo'
  tituloes: 'Título en español'
  titulofr: 'Título en francés'
  miniatura: 'Imagen para zoom'
@@ -25,13 +28,15 @@ es:
  es: "Español"
  fr: "Frances"
  en: "Ingles"
+ info: 'información'
  team: 'Equipo'
  trad: 'traductor'
  tradm: 'Traductor'
  avisoTraductor: 'Se muestran los elementos sin traducción en '
  lasociacion: 'La asociación'
- lproyecto: 'El proyecto'
- lequipos: 'Los equipos'
+ lproyecto: 'Los proyectos'
+ lequipos: 'Equipos'
+ 
  ltraductores: 'Equipo de traducción'
  zadmin: 'Zona de administración'
  textoes: "Texto en español"
@@ -39,7 +44,7 @@ es:
  parrafo: 'parrafo'
  seccion: "sección"
  pagina: 'página'
- paginas: 'Páginas'
+ paginas: 'Paginas'
  seccionesT: 'Secciones'
  parrafos: 'Parrafos'
  image: 'Imagen'
@@ -109,7 +114,7 @@ es:
  setLanguage: "Choisiez la langue"
  evento: 'evento'
  new: 'Añadir'
- confirm: '¿Está seguro?'
+ confirm: "Esta seguro?"
  time:
     formats:
       default: " %d/%m/%Y - %H : %m"

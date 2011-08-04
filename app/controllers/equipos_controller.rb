@@ -1,5 +1,5 @@
 class EquiposController < ApplicationController
- layout 'juan' 
+ layout 'mono' 
  def index
  
  
@@ -13,20 +13,39 @@ class EquiposController < ApplicationController
   elsif  params[:modo]=='sinrevisar'	
    		 @equipos = Equipo.find(:all, :conditions => "revisado = 'false'")	
   else
- 	  @equipos = Equipo.all
-  end
+ 	  @sitio=Sitio.find(params[:id])
+ 	  if !@sitio.jeunes.nil?
+ 	   @jeunes=@sitio.jeunes
+ 	   @equipos = @jeunes.equipos
+ 	  else
+ 	   @femmes=@sitio.femmes
+ 	   @equipos = @femmes.equipos
+ 	 end
  end
+end
 
  
  
  def new
-    @web=Web.find(params[:id])
-   @equipo = @web.equipos.create(params[:equipo])
+    @sitio=Sitio.find(params[:id])
+    if !@sitio.jeunes.nil?
+ 	   @jeunes=@sitio.jeunes
+ 	   @equipo = @jeunes.equipos.create(params[:equipo])
+ 	  else
+ 	   @femmes=@sitio.femmes
+ 	   @equipo = @femmes.equipos.create(params[:equipo])
+    end
+    
+   
  end
   def create 
-   
-    @web=Web.find(params[:id])
-    @equipo = @web.equipos.create(params[:equipo])
+ 	 if !@sitio.jeunes.nil?
+ 	   @jeunes=@sitio.jeunes
+ 	   @equipo = @jeunes.equipos.create(params[:equipo])
+ 	  else
+ 	   @femmes=@sitio.femmes
+ 	   @equipo = @femmes.equipos.create(params[:equipo])
+    end
  end
  
  
@@ -56,7 +75,18 @@ class EquiposController < ApplicationController
  end
   def destroy 
     @equipo = Equipo.find(params[:id])
-    @equipo.destroy
-    redirect_to admin_path
+   
+    if !@equipo.jeunes.nil?
+ 	   @jeunes=@equipo.jeunes
+ 	   @sitio=@jeunes.sitio
+ 	 
+ 	  else
+ 	   @femmes=@equipo.femmes
+ 	   @sitio=@femmes.sitio
+    end
+   
+      @equipo.destroy
+ 	  redirect_to equipos_path(:id=>@sitio)
+   
   end
 end

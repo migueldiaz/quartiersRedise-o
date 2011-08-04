@@ -28,14 +28,12 @@ class WebController < ApplicationController
      if @web.asociacion.nil?
        @web.asociacion=Asociacion.create
      end
-     if @web.proyecto.nil?
-       @web.proyecto=Proyecto.create
+     if @web.jeunes.nil?
+       @web.jeunes=Jeunes.create
+     end
+     if @web.femmes.nil?
+       @web.femmes=Femmes.create
      end
     
-    
-    
-      if !@web.equipos.nil?
-     @equipos=@web.equipos
-     end
   end
 end

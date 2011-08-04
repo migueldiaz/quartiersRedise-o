@@ -1,11 +1,15 @@
+<% if !@sitio.jeunes.nil? %>
+<h1><%=t('proyecto')+' '+t('jeunes')%></h1> 
+<%end%>
+
 <% if !@sitio.asociacion.nil? %>
 <h1><%=t('asociacion')%></h1> 
 <%end%>
-<% if !@sitio.proyecto.nil? %>
-<h1>Proyecto</h1> 
+<% if !@sitio.femmes.nil? %>
+<h1><%=t('proyecto')+' '+t('femmes')%></h1> 
 <%end%>
 <% if !@sitio.equipo.nil? %>
-<h1><%=t('equipo') +@sitio.equipo.nombre%></h1>
+<h1><%=t('team')+' '+@sitio.equipo.nombre%></h1>
 <%end%>
 <p id="notice"><%= notice %></p>
 <%= render 'sitios/opciones'%>
@@ -13,14 +17,24 @@
 <% if !@sitio.equipo.nil? %>
 <h4><%=t('infoEquipo')%></h4>
 <ul>
-<li><%= link_to t('show')+' '+t('equipo'),equipo_path(@sitio.equipo)   %></li>
-<li><%= link_to t('edit')+' '+t('equipo'),edit_equipo_path(@sitio.equipo)  %></li>
+<li><%= link_to t('show')+' '+t('info')+' '+t('equipo'),equipo_path(@sitio.equipo)   %></li>
+<li><%= link_to t('edit')+' '+t('info')+' '+t('equipo'),edit_equipo_path(@sitio.equipo)  %></li>
 <%end%>
+
 <%if current_user.tipo=='traductor'%>
 <li><%= link_to t('back')+' '+t('equipos'), equipos_path(:modo=>'sintrad') %></li>
 <%else%>
-<li><%= link_to t('back'), trafico_url %></li>
+ <%if !@sitio.equipo.nil? %>
+      	<%if !@sitio.equipo.jeunes.nil? %>
+   			<li><%= link_to t('back'), equipos_path(:id=>@sitio.equipo.jeunes.sitio) %></li>
+   		<%else%>
+    		<li><%= link_to t('back'), equipos_path(:id=>@sitio.equipo.femmes.sitio) %></li>
+    	<%end%>
+  <%else%>
+	<li><%= link_to t('back'), admin_url %></li>
+	<%end%>
 <%end%>
+
 </ul>
 <!--<%= link_to 'Edit', edit_sitio_path(@sitio) %> |
 <%= link_to 'Back', sitios_path %>-->

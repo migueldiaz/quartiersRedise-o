@@ -1,3 +1,4 @@
+<%# coding: utf-8 %>
 <%= form_for(@seccion) do |f| %>
   <% if @seccion.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +13,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :tituloes %><br />
+    <%= f.label t :tituloes %><br />
     <%= f.text_field :tituloes %>
   </div>
   <div class="field">
-    <%= f.label :titulofr %><br />
+    <%= f.label t :titulofr %><br />
     <%= f.text_field :titulofr %>
   </div>
    <% if current_user.tipo=='traductor'%>  

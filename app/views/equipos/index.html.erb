@@ -9,4 +9,10 @@
 <%= render :partial => "equipos/equipo", :collection => @equipos %>
 </table>
 <br/>
+<%  if current_user.tipo=='traductor'%>
 <%= link_to t('traductor'),traductor_url%>
+<%else%>
+<%= link_to t('new')+' '+t('equipo'),new_equipo_path(:id=>@sitio)%>
+<%= link_to t('back'),sitio_path(:id=>@sitio)%>
+
+<%end%>

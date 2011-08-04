@@ -1,8 +1,8 @@
-<%# coding: utf-8 %>
+ <%# coding: utf-8 %>
 <tr>
 <td><%= seccion.tituloes %></td>
 <td><%= seccion.titulofr %></td>
 <td><%= link_to t('show'), seccion %></td>
 <td><%= link_to t('edit'), edit_seccion_path(seccion) %></td>
-<td><%= link_to t('destroy'), seccion, :confirm => t('confirm'), :method => :delete %></td>
+<td><%= link_to t('destroy'), seccion, :confirm => t("confirm"), :method => :delete %></td>
 </tr>
