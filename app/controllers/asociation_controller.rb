@@ -1,5 +1,5 @@
 class AsociationController < ApplicationController
- 	layout 'quartiers'
+ 	layout 'juan'
  	
 #GET /quartiers/agenda
 	def agenda

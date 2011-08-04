@@ -1,4 +1,15 @@
+	<% if params[:controller]=="asociation" %>
+	<%if !@asociacion.nil? %>
 	<ul id="menu">
+		<%=render 'asociation/presentaciones'%>
+		<%=render 'asociation/proyectos'%>
+		<li><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
+		<li><%=link_to t('agenda'),asociation_agenda_path%></li>
+		<li><%=link_to t('contacto'),asociation_contacto_path%></li>
+	</ul>
+	<%end%>
+<% end %>
+	<!-- ul id="menu">
 			<li>
 			<a href="#">presentación</a>
 			</li>
@@ -12,13 +23,13 @@
 			<a href="#">proyectos</a>
 <ul>
 			<li><a href="#BARRIOS" title="Older projects">QDM-BARRIOS</a>
-		<!--
+
 				<ul>
 					<li><a href="#" title="2003 projects">2003 projects</a></li>
 					<li><a href="#" title="2004 projects">2004 projects</a></li>
 					<li><a href="#" title="2005 projects">2005 projects</a></li>
 				</ul>
-		-->
+
 			</li>
 			<li><a href="#MUJER" title="Active projects">QDM-MUJER</a></li>
 		</ul>
@@ -30,4 +41,4 @@
 			<li>
 			<a href="#">agenda</a>
 			</li>
-		</ul>
+		</ul -->

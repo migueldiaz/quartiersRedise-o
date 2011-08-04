@@ -1,11 +1,11 @@
-<%if !@seccion.nil?%> 
- <% if spanish %>
-    <h1><%= @seccion.tituloes %> </h1> 
+<%if !@seccion.nil?%>
+  <h1><%= @seccion.method(:titulo.to_s+local).call %> </h1> 
   	<% @paginas.each do |pagina| %>
- 		<h2><%= pagina.tituloes %> </h2> 
+ 		<h2><%= pagina.method(:titulo.to_s+local).call %> </h2> 
 		<% pagina.parrafos.each do |parrafo| %>
-			<h2><%= parrafo.tituloes %></h2>
-			<%=  simple_format(parrafo.textoes) %>
+
+			<h2><%= parrafo.method(:titulo.to_s+local).call %></h2>
+			<%=  simple_format(parrafo.method(:texto.to_s+local).call) %>
 		    <% if parrafo.imagen_url.to_s != "" %>
 				<%= image_tag parrafo.imagen_url.to_s,:size=>'200x150' %>
 			<% end %>
@@ -19,42 +19,17 @@
   	        <ul>
   			<% pagina.documentos.each do |documento| %>
 				<% if documento.archivo_url.to_s != "" %>
-				 <li><%=link_to documento.doces , documento.archivo_url.to_s %></li>
+				 <li><%=link_to documento.method(:doc.to_s+local).call , documento.archivo_url.to_s %></li>
 		        <% end %>
   				<%end%>
   			</ul>
   		
   	<%end%>	
- <%else%>
- <h1><%= @seccion.titulofr %> </h1> 
-  	<% @paginas.each do |pagina| %>
- 		<h2><%= pagina.tituloes %> </h2> 
-		<% pagina.parrafos.each do |parrafo| %>
-			 <h2><%= parrafo.titulofr %></h2>
-			<p><%= simple_format(parrafo.textofr)%></p>
-			<% if parrafo.imagen_url.to_s != "" %>
-				<%= image_tag parrafo.imagen_url.to_s %>
-			<% end %>
-			 <% if parrafo.imagenmini_url.to_s != "" %>
-				<%= image_tag parrafo.imagenmini_url.to_s,:size=>'100x75' %>
-			<% end %>
-		     <% if parrafo.imagen_url.to_s != "" || parrafo.imagenmini_url.to_s != "" %>
-		     <p><%= parrafo.piefotofr %></p>
-		     <%end%>
-  		<%end%>
-  		<ul>
-  		<% pagina.documentos.each do |documento| %>
-			<% if documento.archivofr_url.to_s != "" %>
-			 <li><%=link_to documento.docfr , documento.archivofr_url.to_s %></li>
-		      <% end %>
-  		
-  		<%end%>
-  		</ul>
-  	<%end%>
-<% end %>
+
+
 <%else%>
 Seccion por definir
 <%end%>
   
- 
+
  

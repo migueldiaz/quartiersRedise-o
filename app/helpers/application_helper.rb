@@ -1,6 +1,8 @@
 module ApplicationHelper
 
-
+def local
+	I18n.locale.to_s
+end
 
 def esfrances
      if I18n.locale.to_s=='fr'

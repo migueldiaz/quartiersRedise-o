@@ -11,7 +11,7 @@
 body {  }
 	img{ border:none; }
 	
-	#supersized-loader { position:absolute; top:50%; left:50%; z-index:10; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background-color:#111; background:rgba(0,0,0,0.8) url(../img/progress.gif) no-repeat center center; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+	#supersized-loader { position:absolute; top:50%; left:50%; z-index:10; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background-color:#111; background:rgba(0,0,0,0.8) url(/images/progress.gif) no-repeat center center; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
 	
 	#supersized { position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
 		#supersized img{ width:auto; height:auto; position:relative; display:none; outline:none; border:none; }
@@ -24,7 +24,7 @@ body {  }
 			#supersized a.prevslide img, #supersized a.activeslide img{ display:inline; }
 	
 	/*Controls Section*/
-	#controls-wrapper { margin:0 auto; height:62px; width:100%; bottom:0; left:0; z-index:4; background:url(../img/nav-bg.png) repeat-x; position:fixed; }
+	#controls-wrapper { margin:0 auto; height:62px; width:100%; bottom:0; left:0; z-index:4; background:url(/img/nav-bg.png) repeat-x; position:fixed; }
 		#controls { overflow:hidden; height:100%; text-align:left; z-index:5; padding:0 114px; /* Increase padding to give thumbnails room */ }
 			#slidecounter { float:left; color:#888; font:23px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:bold; text-shadow:#000 0 -1px 0; margin:19px 10px 18px 20px; }
 			#slidecaption { overflow:hidden; float:left; color:#FFF; font:16px "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:bold; text-shadow:#000 0 2px 0; margin:23px 20px 23px 0; }
