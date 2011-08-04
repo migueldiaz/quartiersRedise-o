@@ -1,0 +1,28 @@
+			<div class="modulo_ficha">
+	                        
+		<div class="modulo_ficha">
+			   <div class="titulo  ">
+				<span>
+			<%=title%>
+				</span>	
+            	<br>
+        	</div>
+                        
+			<div class="texto ">
+			
+			<%if defined?imagen%>
+			<% if defined?enlace_imagen %>
+<a href="<%=enlace_imagen%>" class="lightbox" title="<%= if defined?imagen_title then imagen_title end %>">
+						<img src="<%=imagen%>"  class="image <%= if defined?imagen_class then imagen_class end %> " >
+</a>
+			<% else %>
+
+                        <img src="<%=imagen%>"  class="image <%= if defined?imagen_class then imagen_class end %> " >
+			<% end %>
+			<%end %>
+				
+               <%=texto%>
+			</div><!-- texto -->
+			                        <br>
+			</div><!-- modulo ficha -->
+                    <div style="clear: both;" />
