@@ -30,22 +30,26 @@ class EquipeController < ApplicationController
   		@equipo=Equipo.find(params[:id])
      
         @sitio=@equipo.sitio
-  		@seccion=@sitio.presentacion.seccions.first
-    
-  	   redirect_to equipe_seccion_path(:id=>@seccion)
+  		@seccion=@sitio.presentacion.seccion
+     	@pagina=@seccion.paginas.first
+  	   redirect_to equipe_pagina_path(:id=>@pagina)
 	end
 	
 	
-	def seccion
- 		@seccion=Seccion.find(params[:id])
+	def pagina
+ 		@pagina=Pagina.find(params[:id])
+ 		@seccion=@pagina.seccion
  		@paginas=@seccion.paginas
     	
     	if !@seccion.presentacion.nil?
-    	  @sitio=@seccion.presentacion.sitio
+    	  @presentacion=@seccion.presentacion
+    	  @sitio=@presentacion.sitio
     	else
-    	  @sitio=@seccion.red.sitio
+    	  @red=@seccion.red
+    	  @sitio=@red.sitio
     	end
-    		@equipo=@sitio.equipo   	
+    	
+    	@equipo=@sitio.equipo   	
     	 if !@equipo.jeunes.nil?
     	 @jeunes=@equipo.jeunes
     	else
@@ -65,7 +69,12 @@ class EquipeController < ApplicationController
     
     end
     def actividades
-    # OJO AQUI, Se tienen que mostrar los proyectos
+   		@equipo=Equipo.find(params[:id])
+  		@red=@equipo.sitio.red
+  		@seccion=@red.seccion
+  		@pagina=@seccion.paginas.first
+
+  		redirect_to equipe_pagina_path(:id=>@pagina)
     end
     def agenda
     	

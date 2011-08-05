@@ -3,10 +3,13 @@ class PresentacionsController < ApplicationController
 
  def index
     @sitio=Sitio.find(params[:id])
-    if @sitio.presentacion==nil
+    if @sitio.presentacion.nil?
       @sitio.presentacion=Presentacion.new
     end
      @presentacion=  @sitio.presentacion
+     if @presentacion.seccion.nil?
+      @presentacion.seccion=Seccion.new
+     end
      redirect_to presentacion_path(@presentacion)
   end
 
@@ -20,9 +23,16 @@ class PresentacionsController < ApplicationController
 end
 
   def show
-   @presentacion = Presentacion.find(params[:id])
-   @sitio = Sitio.find(@presentacion.sitio)
-   @secciones=@presentacion.seccions.where('red_id'=> @red)
+   @sitio = Sitio.find(params[:id])
+    if @sitio.presentacion.nil?
+      @sitio.presentacion=Presentacion.new
+    end
+     @presentacion=  @sitio.presentacion
+     if @presentacion.seccion.nil?
+      @presentacion.seccion=Seccion.new
+     end
+  
+   @seccion=@presentacion.seccion
    
   end
 

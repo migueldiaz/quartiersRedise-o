@@ -22,18 +22,14 @@ class SeccionsController < ApplicationController
   # GET /seccions/1.xml
   def show
    @seccion = Seccion.find(params[:id])
-  if params[:tipo]=='presentacion'
-   @seccion = Seccion.find(params[:id])
-    if @seccion.presentacion_id!=0
-      @presentacion=Presentacion.find(@seccion.presentacion)
+   if !@seccion.presentacion.nil?
+    	@presentacion=@seccion.presentacion
+    	@sitio=@presentacion.sitio
+    else
+    	@red=@seccion.red
+    	@sitio=@red.sitio
     end
- end 
-  if params[:tipo]=='red'
-   @seccion = Seccion.find(params[:id])
-    if @seccion.red_id!=0
-      @red=Red.find(@seccion.red)
-    end
- end 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @seccion }

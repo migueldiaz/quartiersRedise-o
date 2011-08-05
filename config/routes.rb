@@ -12,7 +12,7 @@ Paginadocumentos::Application.routes.draw do
   match 'quartiers/equipo/' => 'quartiers#equipo'
   ##############################################
   match 'equipe/presentacion'=> 'equipe#presentacion'
-  match 'equipe/seccion'=> 'equipe#seccion'
+  match 'equipe/pagina'=> 'equipe#pagina'
   match 'equipe/colaboradores'=> 'equipe#colaborador'
   match 'equipe/agenda'=> 'equipe#agenda'
   match 'equipe/actividades'=> 'equipe#actividades'
@@ -21,7 +21,7 @@ Paginadocumentos::Application.routes.draw do
   #############################3
   match 'jeunes/sitio' => 'jeunes#sitio'
   match 'jeunes/presentacion'=> 'jeunes#presentacion'
-  match 'jeunes/seccion'=> 'jeunes#seccion'
+  match 'jeunes/pagina'=> 'jeunes#pagina'
   match 'jeunes/colaborador'=> 'jeunes#colaborador'
   match 'jeunes/agenda'=> 'jeunes#agenda'
   match 'jeunes/proyectos'=> 'jeunes#proyectos'
@@ -31,7 +31,7 @@ Paginadocumentos::Application.routes.draw do
   ###################################################
   match 'femmes/sitio' => 'femmes#sitio'
   match 'femmes/presentacion'=> 'femmes#presentacion'
-  match 'femmes/seccion'=> 'femmes#seccion'
+  match 'femmes/pagina'=> 'femmes#pagina'
   match 'femmes/colaborador'=> 'femmes#colaborador'
   match 'femmes/agenda'=> 'femmes#agenda'
   match 'femmes/proyectos'=> 'femmes#proyectos'
@@ -40,7 +40,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/contacto'=> 'femmes#contacto'
   ################################################
   match 'asociation/presentacion'=> 'asociation#presentacion'
-  match 'asociation/seccion'=> 'asociation#seccion'
+  match 'asociation/pagina'=> 'asociation#pagina'
   match 'asociation/colaborador'=> 'asociation#colaborador'
   match 'asociation/agenda'=> 'asociation#agenda'
   match 'asociation/proyectos'=> 'asociation#proyectos'
@@ -89,7 +89,7 @@ Paginadocumentos::Application.routes.draw do
   
   resources :sitios do
     resources :usuarios
-    resources:presentacion
+    resources :presentacion
     resources:contacto
     resources :red
     resources :colaboradors
@@ -98,10 +98,10 @@ Paginadocumentos::Application.routes.draw do
   
  
   resource :red do 
-    resources :seccions
+    resources :seccion
   end
   resource :presentacion do 
-    resources :seccions
+    resources :seccion
   end
  
   resources :seccions do

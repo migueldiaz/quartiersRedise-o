@@ -18,6 +18,17 @@ layout 'mono'
    
     @sitio = Sitio.find(params[:id])
     
+    if !@sitio.equipo.nil?
+       @equipo=@sitio.equipo
+       if !@equipo.jeunes.nil?
+         @jeunes=@equipo.jeunes
+       else
+         @femmes=@equipo.femmes
+       end
+    end
+    
+    
+    
     respond_to do |format|
       format.html 
       format.xml  { render :xml => @sitio }
@@ -44,7 +55,7 @@ layout 'mono'
   # POST /sitios.xml
   def create
     @sitio = Sitio.new(params[:sitio])
-
+    
     respond_to do |format|
       if @sitio.save
         format.html { redirect_to(@sitio, :notice => 'Sitio was successfully created.') }

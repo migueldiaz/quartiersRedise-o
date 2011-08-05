@@ -1,6 +1,8 @@
-<h1> 
-<%= t('show')+' '%><%if spanish %><%=@seccion.tituloes%><%else%><%=@seccion.titulofr%><%end%>
-</h1>
+<%if @seccion.red.nil?%>
+<h1> <%= t('presentacion')%></h1>
+<%else%>
+<h1> <%= t('red')%></h1>
+<%end%>
 
 
 <h3><%=t('paginas')%></h3>
@@ -18,9 +20,9 @@
 	<%else%>
 		<p><%= link_to t('new')+' '+t('pagina'), new_pagina_path(:id=>@seccion) %></p>
 		<%if !@seccion.presentacion.nil? %>
-			<%= link_to t('back'), presentacion_path(@seccion.presentacion) %>
+			<%= link_to t('back'), sitio_path(@seccion.presentacion.sitio) %>
 		<%else%>
-			<%= link_to t('back'), red_path(@seccion.red) %>
+			<%= link_to t('back'), sitio_path(@seccion.red.sitio) %>
 		<%end%>
 	<%end%>
 

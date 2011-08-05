@@ -1,6 +1,6 @@
 <tr>
   <td> <%= pagina.tituloes %> </td>
-  <td>  <%=pagina.titulofr %>
+  <td>  <%= pagina.titulofr %> </td>
   <td><%= link_to t('show'), pagina_path(pagina)%></td>
   <td><%= link_to t('edit'), edit_pagina_path(pagina)%></td>  
   <td><%= link_to t('destroy'), [pagina.seccion, pagina], :confirm => t('confirm'),  :method => :delete %></td>

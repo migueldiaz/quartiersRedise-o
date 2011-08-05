@@ -18,34 +18,38 @@ class JeunesController < ApplicationController
   		@jeunes=@web.jeunes
   		@sitio=@jeunes.sitio
 	end
+	
+	def proyectos
+  		@web=Web.first
+  		@jeunes=@web.jeunes
+  		@red=@jeunes.sitio.red
+  		@seccion=@red.seccion
+  		@pagina=@seccion.paginas.first
+
+  		redirect_to jeunes_pagina_path(:id=>@pagina)
+	end
+	
 	def presentacion
   		@web=Web.first
   		@jeunes=@web.jeunes
-  		@sitio=@jeunes.sitio
-  		@seccion=@sitio.presentacion.seccions.first
+  		@presentacion=@jeunes.sitio.presentacion
+  		@seccion=@presentacion.seccion
+  		@pagina=@seccion.paginas.first
 
-  		redirect_to jeunes_seccion_path(:id=>@seccion)
+  		redirect_to jeunes_pagina_path(:id=>@pagina)
 	end
-	def proyecto
-  		@web=Web.first
-  		@jeunes=@web.jeunes
-  		@sitio=@jeunes.sitio
-  		@seccion=@sitio.presentacion.seccions.first
-  		redirect_to jeunes_seccion_path(:id=>@seccion)
-	end
-	
-	def seccion
- 		@seccion=Seccion.find(params[:id])
- 		@paginas=@seccion.paginas
-    	
-    	if !@seccion.presentacion.nil?
-    	  @sitio=@seccion.presentacion.sitio
-    	else
-    	  @sitio=@seccion.red.sitio
-    	end
-    	
-    	@jeunes=@sitio.jeunes
-    	#@asociacion=Web.first.asociacion.sitio
+	def pagina
+		@pagina=Pagina.find(params[:id])
+		@seccion=@pagina.seccion
+		if !@seccion.presentacion.nil?
+	  		@sitio=@seccion.presentacion.sitio
+		    @presentacion=@sitio.presentacion
+		else
+	  		@sitio=@seccion.red.sitio
+		    @red=@sitio.red
+		end
+		@jeunes=@sitio.jeunes
+	    @paginas=@seccion.paginas
 	end
 	def colaborador
 		@web=Web.first
@@ -84,9 +88,10 @@ class JeunesController < ApplicationController
        
        @sitio=@equipo.sitio
        if !@sitio.presentacion.nil?
-         @seccion=@sitio.presentacion .seccions.first  
+         @seccion=@sitio.presentacion.seccion
+         @pagina=@seccion.paginas.first  
          if !@seccion.nil?
-          redirect_to jeunes_seccion_path(:id=>@seccion) 
+          redirect_to jeunes_pagina_path(:id=>@agina) 
      
          end
        end

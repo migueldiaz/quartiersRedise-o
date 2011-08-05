@@ -1,0 +1,16 @@
+
+<% if spanish %>
+ 		 <h1><%= @pagina.tituloes %> </h1> 
+	<%else%>
+		 <h1><%= @pagina.titulofr %> </h1> 
+<% end %> 
+<% @pagina.parrafos.each do |parrafo| %>
+	<h2> <%=parrafo.tituloes%></h2>
+ 	<%=parrafo.textoes%>
+	<% if parrafo.imagen_url.to_s != "" %>
+	<%= image_tag parrafo.imagen_url.to_s, :size=>'200x150' %>
+	<% end %>
+	<% if parrafo.imagenmini_url.to_s != "" %>
+	<%= image_tag parrafo.imagenmini_url.to_s, :size=>'100x75' %>
+	<% end %>
+<% end %>

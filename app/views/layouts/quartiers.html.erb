@@ -33,9 +33,13 @@
 	<%if !@asociacion.nil? %>
 	<ul>
 		<li><%=link_to t('presentacion'),asociation_presentacion_path  %></li>
-    		<ul><%=render 'asociation/presentaciones'%></ul>
-		<li><%= t('proyectos')%></li>
-			<ul><%=render 'asociation/proyectos'%></ul>
+    		<%if !@paginas.nil? && !@presentacion.nil?%>
+    			<ul><%=render 'asociation/paginas'%></ul>
+    		<%end%>
+		<li><%=link_to t('proyectos'),asociation_proyectos_path  %></li>
+		<%if !@paginas.nil? && !@red.nil?%>
+			<ul><%=render 'asociation/paginas'%></ul>
+		<%end%>
 		<li><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
 		<li><%=link_to t('agenda'),asociation_agenda_path%></li>
 		<li><%=link_to t('contacto'),asociation_contacto_path%></li>
@@ -49,9 +53,13 @@
 	<%if !@jeunes.nil? %>
 	<ul>
 		<li><%=link_to t('presentacion'),jeunes_presentacion_path  %></li>
-    		<ul><%=render 'jeunes/presentaciones'%></ul>
-		<li><%= t('proyectos')%></li>
-			<ul><%=render 'jeunes/proyectos'%></ul>
+    		<%if !@paginas.nil? && !@presentacion.nil?%>
+    			<ul><%=render 'jeunes/paginas'%></ul>
+    		<%end%>
+		<li><%=link_to t('proyectos'),jeunes_proyectos_path  %></li>
+		<%if !@paginas.nil? && !@red.nil?%>
+			<ul><%=render 'jeunes/paginas'%></ul>
+		<%end%>
 		<li><%=link_to t('lequipos'),jeunes_equipos_path %></li>
 		    <%if !@equipo.nil? %>
 		    	<ul><%= link_to @equipo.nombre,equipe_presentacion_path%>
@@ -70,9 +78,19 @@
 	<%if !@femmes.nil? %>
 	<ul>
 		<li><%=link_to t('presentacion'),femmes_presentacion_path  %></li>
-    		<ul><%=render 'femmes/presentaciones'%></ul>
-		<li><%= t('proyectos')%></li>
-			<ul><%=render 'femmes/proyectos'%></ul>
+    		<%if !@paginas.nil? && !@presentacion.nil?%>
+    			<ul><%=render 'femmes/paginas'%></ul>
+    		<%end%>
+		<li><%=link_to t('proyectos'),femmes_proyectos_path  %></li>
+		<%if !@paginas.nil? && !@red.nil?%>
+			<ul><%=render 'femmes/paginas'%></ul>
+		<%end%>
+			<li><%=link_to t('lequipos'),femmes_equipos_path %></li>
+		    <%if !@equipo.nil? %>
+		    	<ul><%= link_to @equipo.nombre,equipe_presentacion_path%>
+		    	<ul><%=render 'equipe/opciones'%></ul>
+		        </ul>
+		    <%end%>
 		<li><%=link_to t('colaboradores'),femmes_colaborador_path%></li>
 		<li><%=link_to t('agenda'),femmes_agenda_path%></li>
 		<li><%=link_to t('contacto'),femmes_contacto_path%></li>

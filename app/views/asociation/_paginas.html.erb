@@ -1,9 +1,8 @@
 <% @paginas.each do |pagina| %>
-	<% if spanish %>
- 			<h2><%= pagina.tituloes %> </h2> 
-		<%else%>
-			<h2><%= pagina.titulofr %> </h2> 
-		<% end %>
- 	
+	 <%if spanish%>
+	 	<li><%= link_to pagina.tituloes ,asociation_pagina_path(:id=>pagina) %> </li> 
+	<%else%>
+		<li><%= link_to pagina.titulofr ,asociation_pagina_path(:id=>pagina) %> </li> 
+ 	<%end%>
 <% end %>
 	

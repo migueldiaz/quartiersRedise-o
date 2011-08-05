@@ -1,9 +1,10 @@
-<h2><%=t("secciones")+" "+t("presentacion")%></h2>
+<h2><%=t("presentacion")%></h2>
+<br/>
   <table>
-  <%= render :partial => "seccions/seccion", :collection => @presentacion.seccions %>
+  <%= render :partial => "paginas/pagina", :collection => @seccion.paginas %>
   </table>
-  <h3><%=t('new')+' '+t('seccion')%></h3>
-  <%= link_to t('new'),new_seccion_path(:id=>@presentacion, :tipo=>'presentacion') %> | 
+  <h3><%=t('new')+' '+t('pagina')%></h3>
+  <%= link_to t('new'),new_pagina_path(:id=>@seccion) %> | 
   <%= link_to t('back')+' al sitio', sitio_path(@presentacion.sitio)%>
 </p>
 

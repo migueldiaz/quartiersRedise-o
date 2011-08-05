@@ -16,7 +16,7 @@ class ContactosController < ApplicationController
    		 @contactos = Contacto.find(:all, :conditions => "revisado = 'false'")	
   else
    	@sitio=Sitio.find(params[:id])
-      if @sitio.contacto==nil
+      if @sitio.contacto.nil?
      		@sitio.contacto=Contacto.new
       end
      	@contacto=  @sitio.contacto
@@ -40,7 +40,7 @@ end
 
   def show
    @contacto = Contacto.find(params[:id])
-   @sitio = Sitio.find(@contacto.sitio)
+   @sitio = @contacto.sitio
    
   end
    def edit

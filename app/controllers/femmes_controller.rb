@@ -18,34 +18,38 @@ class FemmesController < ApplicationController
   		@femmes=@web.femmes
   		@sitio=@femmes.sitio
 	end
+	
+	def proyectos
+  		@web=Web.first
+  		@femmes=@web.femmes
+  		@red=@femmes.sitio.red
+  		@seccion=@red.seccion
+  		@pagina=@seccion.paginas.first
+
+  		redirect_to femmes_pagina_path(:id=>@pagina)
+	end
+	
 	def presentacion
   		@web=Web.first
   		@femmes=@web.femmes
-  		@sitio=@femmes.sitio
-  		@seccion=@sitio.presentacion.seccions.first
+  		@presentacion=@femmes.sitio.presentacion
+  		@seccion=@presentacion.seccion
+  		@pagina=@seccion.paginas.first
 
-  		redirect_to femmes_seccion_path(:id=>@seccion)
+  		redirect_to femmes_pagina_path(:id=>@pagina)
 	end
-	def proyecto
-  		@web=Web.first
-  		@femmes=@web.femmes
-  		@sitio=@femmes.sitio
-  		@seccion=@sitio.presentacion.seccions.first
-  		redirect_to femmes_seccion_path(:id=>@seccion)
-	end
-	
-	def seccion
- 		@seccion=Seccion.find(params[:id])
- 		@paginas=@seccion.paginas
-    	
-    	if !@seccion.presentacion.nil?
-    	  @sitio=@seccion.presentacion.sitio
-    	else
-    	  @sitio=@seccion.red.sitio
-    	end
-    	
-    	@femmes=@sitio.femmes
-    	#@asociacion=Web.first.asociacion.sitio
+	def pagina
+		@pagina=Pagina.find(params[:id])
+		@seccion=@pagina.seccion
+		if !@seccion.presentacion.nil?
+	  		@sitio=@seccion.presentacion.sitio
+		    @presentacion=@sitio.presentacion
+		else
+	  		@sitio=@seccion.red.sitio
+		    @red=@sitio.red
+		end
+		@femmes=@sitio.femmes
+	    @paginas=@seccion.paginas
 	end
 	def colaborador
 		@web=Web.first
@@ -74,6 +78,7 @@ class FemmesController < ApplicationController
     	@web=Web.first
   		@femmes=@web.femmes
   		@equipos=@femmes.equipos
+  		@sitio=@femmes.sitio
     end
     def equipo
        @equipo=Equipo.find(params[:id])
@@ -83,9 +88,10 @@ class FemmesController < ApplicationController
        
        @sitio=@equipo.sitio
        if !@sitio.presentacion.nil?
-         @seccion=@sitio.presentacion .seccions.first  
+         @seccion=@sitio.presentacion.seccion
+         @pagina=@seccion.paginas.first  
          if !@seccion.nil?
-          redirect_to femmes_seccion_path(:id=>@seccion) 
+          redirect_to femmes_pagina_path(:id=>@agina) 
      
          end
        end

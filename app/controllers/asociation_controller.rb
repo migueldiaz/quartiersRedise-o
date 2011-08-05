@@ -1,5 +1,5 @@
 class AsociationController < ApplicationController
- 	layout 'juan'
+ 	layout 'quartiers'
  	
 #GET /quartiers/agenda
 	def agenda
@@ -7,14 +7,41 @@ class AsociationController < ApplicationController
   		@asociacion=@web.asociacion
   		@sitio=@asociacion.sitio
 	end
+	def proyectos
+  		@web=Web.first
+  		@asociacion=@web.asociacion
+  		@red=@asociacion.sitio.red
+  		@seccion=@red.seccion
+  		@pagina=@seccion.paginas.first
+
+  		redirect_to asociation_pagina_path(:id=>@pagina)
+	end
+	
 	def presentacion
   		@web=Web.first
   		@asociacion=@web.asociacion
-  		@sitio=@asociacion.sitio
-  		@seccion=@sitio.presentacion.seccions.first
+  		@presentacion=@asociacion.sitio.presentacion
+  		@seccion=@presentacion.seccion
+  		@pagina=@seccion.paginas.first
 
-  		redirect_to asociation_seccion_path(:id=>@seccion)
+  		redirect_to asociation_pagina_path(:id=>@pagina)
 	end
+	def pagina
+		@pagina=Pagina.find(params[:id])
+		@seccion=@pagina.seccion
+		if !@seccion.presentacion.nil?
+	  		@sitio=@seccion.presentacion.sitio
+	  		@presentacion=@seccion.presentacion
+		else
+	  		@sitio=@seccion.red.sitio
+	  		@red=@sitio.red
+		end
+		@asociacion=@sitio.asociacion
+	    @paginas=@seccion.paginas
+	end
+	
+	
+	
 	def asociacion
   		@web=Web.first
   		@asociation=@web.asociacion
