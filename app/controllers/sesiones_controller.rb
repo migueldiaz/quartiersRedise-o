@@ -8,17 +8,22 @@ class SesionesController < ApplicationController
   usuario=Usuario.authenticate(params[:nombre],params[:password])
    if usuario
        session[:usuario_id]=usuario.id
-       #redirect_to usuarios_path, :notice => 'Bienvenido'
-       redirect_to trafico_url 
-  
+     
+       if usuario.tipo=='traductor'
+          redirect_to traductor_url
+       elsif usuario.tipo=='admin'
+           redirect_to admin_path
+       else
+           redirect_to usuario.sitio
+       end
    else
-    flash.now.alert = 'Revisar usuario y clave'
+    flash.now.alert = t('revisardatos')
     render 'new'
    end 
   end
   def destroy
   session[:usuario_id] = nil
-  redirect_to login_path, :notice => "Logged out!"
+  redirect_to login_path, :notice => t('desconectado')
   end
 
 end

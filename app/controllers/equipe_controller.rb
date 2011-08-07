@@ -2,20 +2,19 @@ class EquipeController < ApplicationController
  	layout 'quartiers'
  	
 #GET /quartiers/agenda
-	def sitio
-		@equipo=@Equipo.find(params[:id])
+def sitio
+		@equipo=Equipo.find(params[:id])
 		if !@equipo.jeunes.nil?
   		  @jeunes=@equipo.jeunes
   		else
   		 @femmes=@equipo.femmes
   		end
-	    redirect_to equipo_presentacion_path(@equipo)
+	    
+	    redirect_to equipe_presentacion_path(:id=>@equipo)
 	
-	end
-	
-	
-	
-	def agenda
+end
+
+def agenda
   		@equipo=@Equipo.find(params[:id])
   		if !@equipo.jeunes.nil?
   		  @jeunes=@equipo.jeunes
@@ -25,28 +24,37 @@ class EquipeController < ApplicationController
   		 @equipos=@femmes.equipos
   		end
   		@sitio=@equipo.sitio
+end
+def presentacion
+  	@equipo=Equipo.find(params[:id]) 
+    @sitio=@equipo.sitio
+  	@presentacion=@sitio.presentacion
+   
+	if !@equipo.jeunes.nil?
+	   @jeunes=@equipo.jeunes
+	else
+	  @femmes=@equipo.femmes
 	end
-	def presentacion
-  		@equipo=Equipo.find(params[:id])
-     
-        @sitio=@equipo.sitio
-  		@seccion=@sitio.presentacion.seccion
-     	@pagina=@seccion.paginas.first
-  	   redirect_to equipe_pagina_path(:id=>@pagina)
-	end
+	@pagina=@presentacion.paginas.first
+	
+	if !@presentacion.paginas.nil? && !@pagina.nil? 	   
+  	 redirect_to equipe_pagina_path(:id=>@pagina)
+  	end
+end
 	
 	
-	def pagina
+def pagina
  		@pagina=Pagina.find(params[:id])
- 		@seccion=@pagina.seccion
- 		@paginas=@seccion.paginas
+ 		
     	
-    	if !@seccion.presentacion.nil?
-    	  @presentacion=@seccion.presentacion
+    	if !@pagina.presentacion.nil?
+    	  @presentacion=@pagina.presentacion
     	  @sitio=@presentacion.sitio
+    	  @paginas=@presentacion.paginas
     	else
-    	  @red=@seccion.red
+    	  @red=@pagina.red
     	  @sitio=@red.sitio
+    	  @paginas=@red.paginas
     	end
     	
     	@equipo=@sitio.equipo   	
@@ -55,8 +63,8 @@ class EquipeController < ApplicationController
     	else
     	  @femmes=@equipo.femmes
     	end
-	end
-	def colaborador
+end
+def colaborador
 		@equipo=Equipo.find(params[:id])
         @sitio=@equipo.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
@@ -66,17 +74,28 @@ class EquipeController < ApplicationController
         else
          @femmes=@equipo.femmes
         end
-    
-    end
-    def actividades
-   		@equipo=Equipo.find(params[:id])
-  		@red=@equipo.sitio.red
-  		@seccion=@red.seccion
-  		@pagina=@seccion.paginas.first
+end
 
-  		redirect_to equipe_pagina_path(:id=>@pagina)
-    end
-    def agenda
+def actividades
+	@equipo=Equipo.find(params[:id]) 
+    @sitio=@equipo.sitio
+  	@red=@sitio.red
+   
+	if !@equipo.jeunes.nil?
+	   @jeunes=@equipo.jeunes
+	else
+	  @femmes=@equipo.femmes
+	end
+	@pagina=@red.paginas.first
+	
+	if !@red.paginas.nil? && !@pagina.nil? 	   
+  	 redirect_to equipe_pagina_path(:id=>@pagina)
+  	end
+
+
+end
+
+def agenda
     	
     	@equipo=Equipo.find(params[:id])
   		if !@equipo.jeunes.nil?
@@ -88,8 +107,8 @@ class EquipeController < ApplicationController
   		end
   		@sitio=@equipo.sitio
      	@eventos=@sitio.eventos
-     end	
-    def contacto
+end	
+def contacto
     	@equipo=Equipo.find(params[:id])
   		
   		if !@equipo.jeunes.nil?
@@ -100,7 +119,6 @@ class EquipeController < ApplicationController
   		@sitio=@equipo.sitio
      	@contacto=@sitio.contacto
     
-    end
-   
-   
+end
+    
 end

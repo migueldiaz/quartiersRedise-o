@@ -1,9 +1,10 @@
 class TraductorController < ApplicationController
 	layout 'mono'
+	before_filter :require_traductor
 	def index
-	if !current_user.tipo=='traductor'
-	 redirect_to trafico_url
-	end
+	#if current_user.tipo!='traductor'
+	 #redirect_to trafico_url
+	#end
 	
 	
 	#Idioma Colaboradores
@@ -68,14 +69,7 @@ class TraductorController < ApplicationController
 	   end
 	   @parrafosSinRevisar = Parrafo.find(:all, :conditions => "revisado <> true")
 	   
-	    #Idioma Secciones
-	    @secciones=Seccion.all
-	   if current_user.traduceA=='es'   
-		 @seccionesSinTraducir = Seccion.find(:all, :conditions => "tituloes = ''" )
-	   else
-	     @seccionesSinTraducir = Seccion.find(:all, :conditions => "titulofr=''")
-	   end
-	   @seccionesSinRevisar = Seccion.find(:all, :conditions => "revisado <> true")
+	   
 	   
 	   
 	    

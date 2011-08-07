@@ -11,7 +11,7 @@
 <% if !@sitio.equipo.nil? %>
 <h1><%=t('team')+' '+@sitio.equipo.nombre%></h1>
 <%end%>
-
+<%# coding: utf-8 %>
 
 
 
@@ -25,17 +25,18 @@
 			<li><%= link_to t('show')+' '+t('info')+' '+t('equipo'),equipo_path(@sitio.equipo)   %></li>
 			<li><%= link_to t('edit')+' '+t('info')+' '+t('equipo'),edit_equipo_path(@sitio.equipo)  %></li>
   <%end%>
- 
+ <br/>
   <%if current_user.tipo=='traductor'%>
 		<li><%= link_to t('back')+' '+t('equipos'), equipos_path(:modo=>'sintrad') %></li>
+  <%elsif current_user.tipo=='admin'%>
+     <li><%= link_to t('back'), admin_url %></li> 
   <%else%>
  	<%if !@jeunes.nil? %>
       <li><%= link_to t('back'), sitio_path(:id=>@jeunes.sitio) %></li>	
     <%elsif !@femmes.nil?%>
        <li><%= link_to t('back'), sitio_path(:id=>@femmes.sitio) %></li>
-	<%else%>
-		<li><%= link_to t('back'), admin_url %></li>
 	<%end%>
+		
   <%end%>
   </ul>
 <!--<%= link_to 'Edit', edit_sitio_path(@sitio) %> |

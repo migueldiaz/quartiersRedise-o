@@ -1,0 +1,45 @@
+<%if !@seccion.nil?%>
+<%= render :partial => "/shared/titulo",:locals => {:title => @seccion.method(:titulo.to_s+local).call}%>
+  	<% @paginas.each do |pagina| %>
+  	  <div class="ficha ">
+ 		<h2><%= pagina.method(:titulo.to_s+local).call %> </h2> 
+		<% pagina.parrafos.each do |parrafo| %>
+
+   <%= render :partial => "/shared/modulo_ficha", :locals => {
+:title => parrafo.method(:titulo.to_s+local).call , 
+:texto=>simple_format(parrafo.method(:texto.to_s+local).call).html_safe, 
+:imagen_title=>parrafo.piefoto,
+:imagen=>parrafo.imagenmini_url.to_s, 
+:enlace_imagen=>parrafo.imagen_url.to_s, 
+:imagen_class=>"left"}
+%>                 
+
+		<%end%>
+		<%if !pagina.documentos.empty?%>
+		<div class="modulo_ficha">
+                            <div class="titulo ">
+                               <span><%=t('documentos')%> </span>
+                            </div>
+                            <div class="documentacion seleccionado">
+                                <ul>
+                                  <% pagina.documentos.each do |documento| %>
+									<% if documento.archivo_url.to_s != "" %>
+									 <li><%=link_to documento.method(:doc.to_s+local).call , documento.archivo_url.to_s %></li>
+									<% end %>
+					  				<%end%>
+                                </ul>
+                            </div>
+                        </div>
+		</div>
+		<%end%>
+  			
+  		</div>
+  	<%end%>	
+
+
+<%else%>
+Seccion por definir
+<%end%>
+  
+
+ 

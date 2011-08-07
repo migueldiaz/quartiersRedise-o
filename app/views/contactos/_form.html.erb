@@ -1,7 +1,7 @@
 <%= form_for (@contacto) do |f| %>
 <% if @contacto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>
+      <h2><%= t('avisoerror')%></h2>
 
       <ul>
       <% @contacto.errors.full_messages.each do |msg| %>

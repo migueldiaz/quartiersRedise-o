@@ -12,11 +12,13 @@ Paginadocumentos::Application.routes.draw do
   match 'quartiers/equipo/' => 'quartiers#equipo'
   ##############################################
   match 'equipe/presentacion'=> 'equipe#presentacion'
+  match 'equipe/proyectos'=> 'equipe#proyectos'
   match 'equipe/pagina'=> 'equipe#pagina'
   match 'equipe/colaboradores'=> 'equipe#colaborador'
   match 'equipe/agenda'=> 'equipe#agenda'
   match 'equipe/actividades'=> 'equipe#actividades'
   match 'equipe/contacto'=> 'equipe#contacto'
+  match 'equipe/sitio'=> 'equipe#sitio'
   
   #############################3
   match 'jeunes/sitio' => 'jeunes#sitio'
@@ -46,6 +48,8 @@ Paginadocumentos::Application.routes.draw do
   match 'asociation/proyectos'=> 'asociation#proyectos'
   match 'asociation/contacto'=> 'asociation#contacto'
   ######################
+  match 'idioma/spanish'=> 'idioma#setspanish'
+  match 'idioma/french'=> 'idioma#setfrench'
   
   
 
@@ -98,27 +102,21 @@ Paginadocumentos::Application.routes.draw do
   
  
   resource :red do 
-    resources :seccion
+    resources :paginas
   end
   resource :presentacion do 
-    resources :seccion
+    resources :paginas
   end
  
-  resources :seccions do
-  resources :paginas
-  resources :parrafos
-  resources :documentos
-end
   resources :paginas do
   resources :parrafos
   resources :documentos
  end
  resources :parrafos
  resources :documentos
- resources :seccions
+ 
  resources :paginas
  
- match 'quartiers/agenda/' => 'quartiers#agenda'
  resources :quartiers
    
 

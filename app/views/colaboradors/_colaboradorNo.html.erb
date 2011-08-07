@@ -1,11 +1,11 @@
-<%if !colaboradorNo.aporta==true%>
+<%if colaboradorNo.aporta==false%>
  <tr>
    
     <td><%= colaboradorNo.nombreEs %></td>
     <td><%= colaboradorNo.nombreFr %></td>
     <td><%= colaboradorNo.url %></td>
     <td> <% if colaboradorNo.imagen_url.to_s != "" %>
-    <%= image_tag colaboradorNo.imagen_url.to_s %>
+    <%= image_tag colaboradorNo.imagen_url.to_s,:size=>'80x70' %>
     <% end %></td>
 
 

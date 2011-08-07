@@ -1,8 +1,7 @@
 <%= form_for (@equipo) do |f| %>
 <% if @equipo.errors.any? %>
     <div id="error_explanation">
-     <!-- <h2><%= pluralize(@equipo.errors.count, "error") %> prohibited this contacto from being saved:</h2>
--->
+     <h2><%= t('avisoerror')%></h2>
       <ul>
       <% @equipo.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,7 +9,8 @@
       </ul>
     </div>
   <% end %>
-
+  <%= f.hidden_field :femmes_id%>
+   <%= f.hidden_field :jeunes_id%>
   <div class="field">
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre,:disabled=> !is_admin %>

@@ -2,11 +2,11 @@
 <li><%= link_to t('presentacion'),presentacion_path(:id=>@sitio)%></li>
 <li><%= link_to  t('agenda'),eventos_path(:id=>@sitio)%> </li>
 <li><%= link_to  t('colaboradores'),colaboradors_path(:id=>@sitio)%> </li>
-<li><%= link_to  t('red'),reds_path(:id=>@sitio)%></li>
+<li><%= link_to  t('red'),red_path(:id=>@sitio)%></li>
 <% if !@sitio.femmes.nil? || !@sitio.jeunes.nil? %>
 <li><%= link_to t('lequipos'), equipos_path(:id=>@sitio)%></li>
 <%end%>
-<li><%= link_to  t('contacto'),contactos_path(:id=>@sitio)%></li>
+<li><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
 <%  if is_admin%>
 <li><%= link_to  t('usuarios'),usuarios_path(:id=>@sitio)%></li>
 <% end %> 

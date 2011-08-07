@@ -1,5 +1,6 @@
 class WebController < ApplicationController
   layout 'mono' 
+  before_filter :require_admin
   def index
     
   end

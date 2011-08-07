@@ -1,16 +1,18 @@
 <%= form_for(@pagina) do |f| %>
   <% if @pagina.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pagina.errors.count, "error") %> prohibited this pagina from being saved:</h2>
+      <h2><%= t('avisoerror')%></h2>
 
       <ul>
       <% @pagina.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= t(msg) %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
+  
+  <%= f.hidden_field :presentacion_id%>
+  <%= f.hidden_field :red_id %>
   <div class="field">
     <%= f.label :tituloes %><br />
     <%= f.text_field :tituloes %>

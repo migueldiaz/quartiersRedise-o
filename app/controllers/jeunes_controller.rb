@@ -2,98 +2,97 @@ class JeunesController < ApplicationController
  	layout 'quartiers'
  	
 #GET /quartiers/agenda
-	def sitio
+def sitio
 	@web=Web.first
   	@jeunes=@web.jeunes
-	if @jeunes.sitio.nil?
+		if @jeunes.sitio.nil?
 		@jeunes.sitio=Sitio.create
-	end
+		end
 	@sitio=@jeunes.sitio
 	redirect_to sitio_path(:id=>@sitio)
-	end
+end
 	
 	
-	def agenda
+def agenda
   		@web=Web.first
   		@jeunes=@web.jeunes
   		@sitio=@jeunes.sitio
-	end
+end
 	
-	def proyectos
+def proyectos
   		@web=Web.first
   		@jeunes=@web.jeunes
   		@red=@jeunes.sitio.red
-  		@seccion=@red.seccion
-  		@pagina=@seccion.paginas.first
-
+ 
+  		@pagina=@red.paginas.first
+	   if !@pagina.nil?
   		redirect_to jeunes_pagina_path(:id=>@pagina)
-	end
+  	   end
+end
 	
-	def presentacion
-  		@web=Web.first
-  		@jeunes=@web.jeunes
-  		@presentacion=@jeunes.sitio.presentacion
-  		@seccion=@presentacion.seccion
-  		@pagina=@seccion.paginas.first
-
+def presentacion
+  	@web=Web.first
+  	@jeunes=@web.jeunes
+  	@presentacion=@jeunes.sitio.presentacion
+  	@pagina=@presentacion.paginas.first
+	if !@presentacion.paginas.nil? && !@pagina.nil?
   		redirect_to jeunes_pagina_path(:id=>@pagina)
-	end
-	def pagina
+  	end
+end
+
+def pagina
 		@pagina=Pagina.find(params[:id])
-		@seccion=@pagina.seccion
-		if !@seccion.presentacion.nil?
-	  		@sitio=@seccion.presentacion.sitio
-		    @presentacion=@sitio.presentacion
+		
+		if !@pagina.presentacion.nil?
+		    @sitio=@pagina.presentacion.sitio
+	  		@presentacion=@sitio.presentacion
+		    @paginas=@presentacion.paginas
 		else
-	  		@sitio=@seccion.red.sitio
-		    @red=@sitio.red
+	  		@sitio=@pagina.red.sitio
+	  		@red=@sitio.red
+	  		@paginas=@red.paginas
 		end
 		@jeunes=@sitio.jeunes
-	    @paginas=@seccion.paginas
-	end
-	def colaborador
+	    
+end
+
+def colaborador
 		@web=Web.first
   		@jeunes=@web.jeunes
   		@sitio=@jeunes.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)
-    
-    end
-    def agenda
+end
+
+def agenda
     	
     	@web=Web.first
   		@jeunes=@web.jeunes
   		@sitio=@jeunes.sitio
      	@eventos=@sitio.eventos
      	
-     end	
-    def contacto
+end	
+
+def contacto
     	@web=Web.first
   		@jeunes=@web.jeunes
   		@sitio=@jeunes.sitio
      	@contacto=@sitio.contacto
     
-    end
-    def equipos
+end
+
+def equipos
     	@web=Web.first
   		@jeunes=@web.jeunes
   		@equipos=@jeunes.equipos
   		@sitio=@jeunes.sitio
-    end
-    def equipo
-       @equipo=Equipo.find(params[:id])
-      
-       @jeunes=@equipo.jeunes
-       @equipos=jeunes.equipos
-       
-       @sitio=@equipo.sitio
-       if !@sitio.presentacion.nil?
-         @seccion=@sitio.presentacion.seccion
-         @pagina=@seccion.paginas.first  
-         if !@seccion.nil?
-          redirect_to jeunes_pagina_path(:id=>@agina) 
-     
-         end
-       end
-    end
+end
+
+def equipo
+  @equipo=Equipo.find(params[:id])
+  @jeunes=@equipo.jeunes
+  @equipos=jeunes.equipos
+  @sitio=@equipo.sitio
+  redirect_to equipe_sitio_path(:id=>@sitio)  
+end
 end

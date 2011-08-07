@@ -11,58 +11,46 @@ class AsociationController < ApplicationController
   		@web=Web.first
   		@asociacion=@web.asociacion
   		@red=@asociacion.sitio.red
-  		@seccion=@red.seccion
-  		@pagina=@seccion.paginas.first
-
+  		@pagina=@red.paginas.first
+ 		if !@pagina.nil?
   		redirect_to asociation_pagina_path(:id=>@pagina)
+		end
 	end
 	
 	def presentacion
   		@web=Web.first
   		@asociacion=@web.asociacion
   		@presentacion=@asociacion.sitio.presentacion
-  		@seccion=@presentacion.seccion
-  		@pagina=@seccion.paginas.first
-
+  		@pagina=@presentacion.paginas.first
+       if !@pagina.nil?
   		redirect_to asociation_pagina_path(:id=>@pagina)
+	   end
 	end
 	def pagina
 		@pagina=Pagina.find(params[:id])
-		@seccion=@pagina.seccion
-		if !@seccion.presentacion.nil?
-	  		@sitio=@seccion.presentacion.sitio
-	  		@presentacion=@seccion.presentacion
+		
+		if !@pagina.presentacion.nil?
+	  		@sitio=@pagina.presentacion.sitio
+	  		@presentacion=@sitio.presentacion
+		    @paginas=@presentacion.paginas
 		else
-	  		@sitio=@seccion.red.sitio
+	  		@sitio=@pagina.red.sitio
 	  		@red=@sitio.red
+	  		@paginas=@red.paginas
 		end
 		@asociacion=@sitio.asociacion
-	    @paginas=@seccion.paginas
+	    
 	end
 	
 	
 	
 	def asociacion
-  		@web=Web.first
-  		@asociation=@web.asociacion
-  		@sitio=@asociacion.sitio
-  		@seccion=@sitio.presentacion.seccions.first
-  		redirect_to asociation_seccion_path(:id=>@seccion)
+  		#@web=Web.first
+  		#@asociation=@web.asociacion
+  		
+  		redirect_to asociation_presentacion_path(:id=>@seccion)
 	end
 	
-	def seccion
- 		@seccion=Seccion.find(params[:id])
- 		@paginas=@seccion.paginas
-    	
-    	if !@seccion.presentacion.nil?
-    	  @sitio=@seccion.presentacion.sitio
-    	else
-    	  @sitio=@seccion.red.sitio
-    	end
-    	
-    	@asociacion=@sitio.asociacion
-    	#@asociacion=Web.first.asociacion.sitio
-	end
 	def colaborador
 		@web=Web.first
   		@asociacion=@web.asociacion

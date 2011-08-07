@@ -1,5 +1,18 @@
 <%= form_for @parrafo, :html => {:multipart => true} do |f| %>
-<!--@pagina, @pagina.parrafos.build]-->
+   <% if @parrafo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('avisoerror')%></h2>
+
+      <ul>
+      <% @parrafo.errors.full_messages.each do |msg| %>
+        <li><%= t(msg) %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <%= f.hidden_field :pagina_id %>
   <div class="field">
     <%= f.label t :tituloes %><br />
     <%= f.text_field :tituloes %>

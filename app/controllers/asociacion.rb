@@ -1,4 +1,5 @@
 class AsociacionController < ApplicationController
+ before_filter :require_login
  layout 'mono'
  def show
     @web=Web.find(params[:id])

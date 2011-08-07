@@ -1,6 +1,6 @@
-<h1> <%=t('tradm')+' '+ t(current_user.traduceA)%><h1>
+<h1> <%=t('tradm')+' '+t('idioma')+' '+ t(current_user.traduceA)%><h1>
 <br/>
-<h2>Los elementos sin traducir son del idioma: <%= t(current_user.traduceA)%></h2>
+<h2><%=t('avisoTraductor')%> <%= t(current_user.traduceA)%></h2>
 <h4><%=link_to t('colaboradores'),colaboradors_path(:modo=>'todos')%> <%= @colaboradores.size%></h4>
 <ul>
 <li><%=link_to t('sinTraducir'),colaboradors_path(:modo=>'sintrad')%> <%=  @colaboradorSinTraducir.size%></li>
@@ -43,11 +43,6 @@
 <li><%=link_to t('sinRevisar'),parrafos_path(:modo=>'sinrevisar')%> <%=  @parrafosSinRevisar.size%></li>
 </ul>
 
-<h4><%=link_to t('seccionesT'),seccions_path(:modo=>'todos')%> <%= @secciones.size%></h4>
-<ul>
-<li><%=link_to t('sinTraducir'),seccions_path(:modo=>'sintrad')%> <%=  @seccionesSinTraducir.size%></li>
-<li><%=link_to t('sinRevisar'),seccions_path(:modo=>'sinrevisar')%> <%=  @seccionesSinRevisar.size%></li>
-</ul>
 
 
 

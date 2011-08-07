@@ -5,7 +5,7 @@
   
 <p>
   <b><%= t('fecha')%>:</b>
-  <%= t(@evento.fecha,:date=>{:format=>:long})%>
+  <%= l @evento.fecha,:format=>:short%>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
    <%= @evento.tituloFr %>
 </p>
 <% if @evento.imagen_url.to_s != "" %>
-<%= image_tag @evento.imagen_url.to_s %>
+<%= image_tag @evento.imagen_url.to_s,:size=>'100x90' %>
 <% end %>
 <%= link_to t('edit'), edit_evento_path(@evento) %> |
 <% if current_user.tipo=='traductor'%>

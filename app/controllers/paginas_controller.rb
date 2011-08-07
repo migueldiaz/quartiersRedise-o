@@ -2,6 +2,7 @@ class PaginasController < ApplicationController
   layout 'mono'
   # GET /paginas
   # GET /paginas.xml
+  before_filter :require_login
   def index
     
      if params[:modo]=='sintrad'
@@ -37,8 +38,14 @@ class PaginasController < ApplicationController
   # GET /paginas/new
   # GET /paginas/new.xml
   def new
-    @seccion=Seccion.find(params[:id])
-    @pagina = @seccion.paginas.create(params[:pagina])
+    @sitio=Sitio.find(params[:id])
+    if params[:tipo].to_s=='red'  
+      @red=@sitio.red
+      @pagina = @red.paginas.new
+    elsif params[:tipo].to_s=='presentacion'  
+    	@presentacion=@sitio.presentacion
+   		@pagina = @presentacion.paginas.new
+    end
     
     respond_to do |format|
       format.html # new.html.erb
@@ -54,9 +61,14 @@ class PaginasController < ApplicationController
   # POST /paginas
   # POST /paginas.xml
   def create
-    @seccion=Seccion.find(params[:id])
-    @pagina = @seccion.paginas.create(params[:pagina])
-
+    
+    @pagina = Pagina.create(params[:pagina])
+    if !@pagina.presentacion.nil?
+      @presentation=@pagina.presentacion
+    else
+      @red=@pagina.red
+    end
+    
     respond_to do |format|
       if @pagina.save
         format.html { redirect_to(@pagina, :notice => t('exito')) }
@@ -87,11 +99,16 @@ class PaginasController < ApplicationController
   # DELETE /paginas/1
   # DELETE /paginas/1.xml
   def destroy
-    @seccion = Seccion.find(params[:seccion_id])
-    @pagina = @seccion.paginas.find(params[:id])
-    @pagina.destroy
-    redirect_to seccion_path(@seccion) 
-  
+    @pagina = Pagina.find(params[:id])
+    if !@pagina.presentacion.nil?
+     @presentacion=@pagina.presentacion
+     @pagina.destroy
+     redirect_to presentacion_path(@presentacion.sitio) 
+    else
+       @red=@pagina.red
+       @pagina.destroy
+       redirect_to red_path(@red.sitio) 
+     end
    # respond_to do |format|
   #    format.html {  redirect_to secion_path(@seccion) }
   #    format.xml  { head :ok }

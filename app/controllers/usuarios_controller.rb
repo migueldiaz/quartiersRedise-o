@@ -2,11 +2,13 @@ class UsuariosController < ApplicationController
   layout 'mono'
   # GET /usuarios
   # GET /usuarios.xml
- 
+ before_filter :require_login
    
   def index
     if params[:tipo]=='traductor'
        @usuarios=Usuario.where('tipo'=>'traductor')
+    elsif params[:tipo]=='admin'
+        @usuarios=Usuario.where('tipo'=>'admin')
     else
       @sitio=Sitio.find(params[:id])
       @usuarios = @sitio.usuarios.all
@@ -32,19 +34,20 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new
   # GET /usuarios/new.xml
  def new
-  if params[:tipo]=='traductor'
-  @usuario = Usuario.create(params[:usuario])
-  else
-   @sitio = Sitio.find(params[:id]) 
-   @usuario = @sitio.usuarios.create(params[:usuario])
+   if params[:tipo]=='traductor' || params[:tipo]=='admin'
+    @usuario=Usuario.new
+   else
+   	@sitio = Sitio.find(params[:id]) 
+   	@usuario = @sitio.usuarios.new
+   end
+   
+   respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @usuario }
+    end
   end 
    
-   # @sitio = Sitio.find(params[:id]) 
-   # @evento=Evento.new
-   
-  end
-
-
+  
 
   # GET /usuarios/1/edit
   def edit
@@ -56,10 +59,10 @@ class UsuariosController < ApplicationController
   ################################3
 
 def create
-  @sitio = Sitio.find(params[:id]) 
   
-  @usuario = @sitio.usuarios.create(params[:usuario])
-   
+  
+  @usuario = Usuario.create(params[:usuario])
+  @sitio=@usuario.sitio
 
     #@evento = Evento.new(params[:evento])
     respond_to do |format|
@@ -81,7 +84,7 @@ def create
     #@sitio=@usuario.sitio
     respond_to do |format|
       if @usuario.update_attributes(params[:usuario])
-        format.html { redirect_to(@usuario, :notice => 'Usuario was successfully updated.') }
+        format.html { redirect_to(@usuario, :notice => t('exitom')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

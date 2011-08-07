@@ -1,22 +1,21 @@
-<h1>Login</h1>
+<h1><%=t('acceder') %></h1>
+<br/>
 
  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <%end%>
-
+ <%end%>
 <%= form_tag sesiones_path do %>
  <div class="field">
-   <%= label_tag :nombre  %> 
-   <%= text_field_tag :nombre,params[:email]%>
+   <p><%= label_tag t :nombre  %> 
+   <%= text_field_tag :nombre,params[:email]%></p>
  </div> 
  <div class="field"> 
-   <%= label_tag :password  %> 
-   <%= password_field_tag :password%>
+  <p> <%= label_tag t :password  %> 
+   <%= password_field_tag :password%></p>
  </div>
   <div class="actions">
    <p class='button'><%=submit_tag(t('save')) %></p>
  </div>
  <%end%>
- <br/>
- <%= link_to t('sitio'),root_path  %> 
 
+ 

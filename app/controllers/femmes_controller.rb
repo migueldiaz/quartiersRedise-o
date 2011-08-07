@@ -1,86 +1,106 @@
 class FemmesController < ApplicationController
- 	layout 'quartiers'
+ 		layout 'quartiers'
  	
 #GET /quartiers/agenda
-	def sitio
+def sitio
 	@web=Web.first
   	@femmes=@web.femmes
-	if @femmes.sitio.nil?
+		if @femmes.sitio.nil?
 		@femmes.sitio=Sitio.create
-	end
+		end
 	@sitio=@femmes.sitio
 	redirect_to sitio_path(:id=>@sitio)
-	end
+end
 	
 	
-	def agenda
+def agenda
   		@web=Web.first
   		@femmes=@web.femmes
   		@sitio=@femmes.sitio
-	end
+end
 	
-	def proyectos
+def proyectos
   		@web=Web.first
   		@femmes=@web.femmes
   		@red=@femmes.sitio.red
-  		@seccion=@red.seccion
-  		@pagina=@seccion.paginas.first
-
+ 
+  		@pagina=@red.paginas.first
+	   if !@pagina.nil?
   		redirect_to femmes_pagina_path(:id=>@pagina)
-	end
+  	   end
+end
 	
-	def presentacion
-  		@web=Web.first
-  		@femmes=@web.femmes
-  		@presentacion=@femmes.sitio.presentacion
-  		@seccion=@presentacion.seccion
-  		@pagina=@seccion.paginas.first
-
+def presentacion
+  	@web=Web.first
+  	@femmes=@web.femmes
+  	@presentacion=@femmes.sitio.presentacion
+  	@pagina=@presentacion.paginas.first
+	if !@presentacion.paginas.nil? && !@pagina.nil?
   		redirect_to femmes_pagina_path(:id=>@pagina)
-	end
-	def pagina
+  	end
+end
+
+def pagina
 		@pagina=Pagina.find(params[:id])
-		@seccion=@pagina.seccion
-		if !@seccion.presentacion.nil?
-	  		@sitio=@seccion.presentacion.sitio
-		    @presentacion=@sitio.presentacion
+		
+		if !@pagina.presentacion.nil?
+		    @sitio=@pagina.presentacion.sitio
+	  		@presentacion=@sitio.presentacion
+		    @paginas=@presentacion.paginas
 		else
-	  		@sitio=@seccion.red.sitio
-		    @red=@sitio.red
+	  		@sitio=@pagina.red.sitio
+	  		@red=@sitio.red
+	  		@paginas=@red.paginas
 		end
 		@femmes=@sitio.femmes
-	    @paginas=@seccion.paginas
-	end
-	def colaborador
+	    
+end
+
+def colaborador
+		@web=Web.first
+  		@femmes=@web.femmes
+  		@sitio=@femmes.sitio
+		@aportan=@sitio.colaboradors.where('aporta'=>true)
+		@noaportan=@sitio.colaboradors.where('aporta'=>false)
+end
+
+def agenda
+    	
+    	@web=Web.first
+  		@femmes=@web.femmes
+  		@sitio=@femmes.sitio
+     	@eventos=@sitio.eventos
+end
+def colaborador
 		@web=Web.first
   		@femmes=@web.femmes
   		@sitio=@femmes.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)
     
-    end
-    def agenda
+end
+def agenda
     	
     	@web=Web.first
   		@femmes=@web.femmes
   		@sitio=@femmes.sitio
      	@eventos=@sitio.eventos
      	
-     end	
-    def contacto
+end	
+def contacto
     	@web=Web.first
   		@femmes=@web.femmes
   		@sitio=@femmes.sitio
      	@contacto=@sitio.contacto
     
-    end
-    def equipos
+ end
+def equipos
     	@web=Web.first
   		@femmes=@web.femmes
   		@equipos=@femmes.equipos
   		@sitio=@femmes.sitio
-    end
-    def equipo
+end
+def equipo
        @equipo=Equipo.find(params[:id])
       
        @femmes=@equipo.femmes
@@ -95,5 +115,5 @@ class FemmesController < ApplicationController
      
          end
        end
-    end
+end
 end

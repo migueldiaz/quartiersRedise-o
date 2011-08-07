@@ -22,8 +22,10 @@
 
 
 <%= link_to t('edit'), edit_usuario_path(@usuario) %> |
-<% if @usuario.tipo='traductor'%> 
+<% if @usuario.tipo=='traductor'%> 
 <%= link_to t('back'), usuarios_path(:tipo=>'traductor') %>
+<%elsif @usuario.tipo=='admin'%>
+<%= link_to t('back'), usuarios_path(:tipo=>'admin') %>
 <%else%>
 <%= link_to t('back'), usuarios_path(:id=>@usuario.sitio) %>
 <%end%>

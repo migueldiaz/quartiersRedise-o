@@ -1,13 +1,15 @@
-<h2>Informacion de contacto para <%= @contacto.sitio.nombreEs %></h2>
-  
+<h2><%=t('informacion')+' '+t('contacto')%></h2>
+  </br>
+  <p><b><%=t('email')%></b><%= @contacto.email %></p>
   <p><b><%=t('infoEs')%></b>
   <%= simple_format(@contacto.infoEs) %></p>
   <p><b><%=t('infoFr')%></b><%= simple_format(@contacto.infoFr) %></p>
-  <p><b><%=t('email')%></b><%= @contacto.email %></p>
+ 
    </br>
-  <%= link_to t('edit'), edit_contacto_path(@contacto)%> | 
-	<%if current_user.tipo=='traductor'%>
-	<%= link_to t('back'), contactos_path(:modo=>'sintrad') %>
+
+<%= link_to t('edit'),edit_contacto_path(@contacto)%> | 
+  <%if current_user.tipo=='traductor'%>
+  <%= link_to t('back'), contactos_path(:modo=>'sintrad') %>
 <%else%>
 <%= link_to t('back'), sitio_path(@contacto.sitio) %>
 <%end%>

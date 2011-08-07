@@ -14,7 +14,7 @@
 
 <% @eventos.each do |evento| %>
   <tr>
-    <td> <%= t(evento.fecha,:date=>{:format=>:long})%></td>  
+    <td> <%= l evento.fecha,:format => :short %></td>  
     <td><%= evento.tituloEs %></td>
     <td><%= evento.tituloFr %></td>
     <td>
@@ -24,9 +24,9 @@
     </td>
     <td><%= link_to t('show'), evento %></td>
     <td><%= link_to t('edit'), edit_evento_path(evento) %></td>
-  <% if !current_user.tipo=='traductor'%> 
+    <% if  current_user.tipo!='traductor' %> 
     <td><%= link_to t('destroy'), [evento], :confirm => t('confirm'), :method => :delete %></td>
-  <%end%>
+    <%end%>
   </tr>
 <hl/>
 <% end %>
@@ -37,5 +37,5 @@
 <%= link_to t('traductor'),traductor_url %>
 <%else%>
 <%= link_to t('new')+' '+t('evento'), new_evento_path(:id=>@sitio) %> | 
-<%= link_to t('back')+' al sitio',sitio_path(@sitio) %>
+<%= link_to t('back'),sitio_path(@sitio) %>
 <%end%>

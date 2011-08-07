@@ -1,6 +1,6 @@
 class ContactosController < ApplicationController
  layout 'mono' 
-
+ before_filter :require_login
  def index
    ###########################
    if params[:modo]=='sintrad'
@@ -31,6 +31,7 @@ class ContactosController < ApplicationController
 
   def new
   @sitio = Sitio.find(params[:id])
+  
   @contacto = @sitio.contacto.create(params[:sitio_id])
     respond_to do |format|
       format.html # new.html.erb
@@ -38,14 +39,18 @@ class ContactosController < ApplicationController
     end
 end
 
-  def show
-   @contacto = Contacto.find(params[:id])
-   @sitio = @contacto.sitio
-   
-  end
-   def edit
+def show
+   @sitio = Sitio.find(params[:id])
+ 	if @sitio.contacto.nil?
+ 	  @sitio.contacto=Contacto.create
+ 	end
+  	@contacto=@sitio.contacto
+end
+
+def edit
     @contacto = Contacto.find(params[:id])
-  end
+
+end
 
    # PUT /contactos/1
   # PUT /contactos/1.xml
@@ -54,7 +59,7 @@ end
 
     respond_to do |format|
       if @contacto.update_attributes(params[:contacto])
-        format.html { redirect_to(@contacto, :notice => 'Contacto was successfully updated.') }
+        format.html { redirect_to(@contacto, :notice => t('exitom')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -65,9 +70,9 @@ end
 
 
   def create
-    @sitio = sitio.find(params[:sitio_id])
-    @contacto = @sitio.contacto.create(params[:sitio_id])
-    redirect_to sitio_path(@sitio)
+     @sitio = sitio.find(params[:sitio_id])
+     @contacto = @sitio.contacto.create(params[:sitio_id])
+    #redirect_to sitio_path(@sitio)
   end
 end
 

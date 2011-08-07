@@ -1,11 +1,17 @@
-<h2><%=t("presentacion")%></h2>
-<br/>
-  <table>
-  <%= render :partial => "paginas/pagina", :collection => @seccion.paginas %>
-  </table>
-  <h3><%=t('new')+' '+t('pagina')%></h3>
-  <%= link_to t('new'),new_pagina_path(:id=>@seccion) %> | 
-  <%= link_to t('back')+' al sitio', sitio_path(@presentacion.sitio)%>
+<h2><%=t('presentacion')%></h2> 
+ <table>
+   <tr>
+   <th><%= t('tituloEs')%></th>
+   <th><%= t('tituloFr')%></th>
+   <th></th>
+   <th></th>
+   <th></th>
+   </tr>
+   <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
+  </table
+  <br/>
+  <h3><%= t('new')+' '+t('pagina')%></h3>
+  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'presentacion') %> 
+  <br/><br/>
+  <%= link_to t('back'), sitio_path(:id=>@sitio)%>
 </p>
-
-

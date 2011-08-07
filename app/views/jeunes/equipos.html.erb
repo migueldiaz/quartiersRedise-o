@@ -1,8 +1,7 @@
 <%if !@equipos.nil?%>
 	<% @equipos.each do |equipo| %>
 	
- 		<h2><%=link_to equipo.nombre,equipe_presentacion_path(:id=>equipo) %></h2>
- 		AAAA <%= equipo.id%> 
+ 		<h2><%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %></h2>
  		<%if spanish%>
  			<p><%= equipo.descripcionEs%><p>
  		<%else%>

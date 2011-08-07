@@ -32,7 +32,10 @@
 <% if !params[:id].nil?%>
 <%= link_to t('new')+' usuario', new_usuario_path(:id=>@sitio) %>
 |<%= link_to t('back'),sitio_path(@sitio)  %> 
-<%else%>
+<%elsif params[:tipo]=='traductor'%>
 <%= link_to t('new')+' usuario', new_usuario_path(:tipo=>'traductor') %>
- | <%= link_to t('back'),admin_path()  %> 
+<%= link_to t('back'),admin_path()  %> 
+<%elsif params[:tipo]=='admin'%>
+<%= link_to t('new')+' usuario', new_usuario_path(:tipo=>'admin') %>
+<%= link_to t('back'),admin_path()  %> 
 <%end%>

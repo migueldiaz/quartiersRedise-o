@@ -5,7 +5,7 @@
  <%else%>
  <p><%= @contacto.infoFr %></p>
  <%end%>
- <p><%= t('email')+' '+@contacto.email %></p>
+ <p><%= t('email')%><%=@contacto.email %></p>
 <%else%>
  Sin informacion de contaco
 <%end%>

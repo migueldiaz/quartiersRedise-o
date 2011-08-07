@@ -2,6 +2,7 @@ class ColaboradorsController < ApplicationController
   layout 'mono'
   # GET /colaboradors
   # GET /colaboradors.xml
+  before_filter :require_login
   def index
 
 
@@ -20,7 +21,7 @@ class ColaboradorsController < ApplicationController
    		 @colaboradors = Colaborador.find(:all, :conditions => "revisado != true")	
    	else
    			@sitio = Sitio.find(params[:id]) 
- 			@colaboradors = @sitio.colaboradors.all
+ 			@colaboradors = @sitio.colaboradors
  	 end
  
      #@aportadores= @colaboradors.find(:all, :conditions => "aporta = true")
@@ -49,7 +50,7 @@ class ColaboradorsController < ApplicationController
   # GET /colaboradors/new.xml
   def new
   @sitio = Sitio.find(params[:id]) 
-  @colaborador = @sitio.colaboradors.create(params[:colaborador]) 
+  @colaborador = @sitio.colaboradors.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -64,14 +65,13 @@ class ColaboradorsController < ApplicationController
 
   # POST /colaboradors
   # POST /colaboradors.xml
-  def create
-   # @colaborador = Colaborador.new(params[:colaborador])
-   @sitio = Sitio.find(params[:id]) 
-   @colaborador = @sitio.colaboradors.create(params[:colaborador]) 
-
+  def create 
+   @colaborador = Colaborador.create(params[:colaborador]) 
+   @sitio=@colaborador.sitio
+   
     respond_to do |format|
       if @colaborador.save
-        format.html { redirect_to(@colaborador, :notice => 'Colaborador was successfully created.') }
+        format.html { redirect_to(@colaborador, :notice =>  t('exito')) }
         format.xml  { render :xml => @colaborador, :status => :created, :location => @colaborador }
       else
         format.html { render :action => "new" }
@@ -87,7 +87,7 @@ class ColaboradorsController < ApplicationController
 
     respond_to do |format|
       if @colaborador.update_attributes(params[:colaborador])
-        format.html { redirect_to(@colaborador, :notice => 'Colaborador was successfully updated.') }
+        format.html { redirect_to(@colaborador, :notice =>  t('exitom')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

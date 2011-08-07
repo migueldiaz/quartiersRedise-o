@@ -1,5 +1,6 @@
 class ProyectoController < ApplicationController
   layout 'mono'
+  before_filter :require_login
  def show
     @web=Web.all.first    
      if @web.proyecto.nil?

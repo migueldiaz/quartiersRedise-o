@@ -1,0 +1,11 @@
+<%if !@sitio.red.nil?%>
+	<% @sitio.red.seccions.each do |seccion| %>
+		<% if spanish %>
+ 		 <li><%=link_to  seccion.tituloes,asociation_seccion_path(:id=>seccion)%> </li> 
+		 <%else%>
+		  <li><%=link_to seccion.titulofr,asociation_seccion_path(:id=>seccion) %> </li> 
+		<% end %>
+   <% end %>
+ 
+	
+<%end%>

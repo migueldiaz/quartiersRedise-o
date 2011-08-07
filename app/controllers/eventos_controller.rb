@@ -2,6 +2,7 @@ class EventosController < ApplicationController
   layout 'mono'
   # GET /eventos
   # GET /eventos.xml
+  before_filter :require_login
   def index
 
    if params[:modo]=='sintrad'
@@ -45,7 +46,8 @@ class EventosController < ApplicationController
   # GET /eventos/new.xml
   def new
     @sitio = Sitio.find(params[:id]) 
-  @evento = @sitio.eventos.create(params[:evento])
+    @evento = @sitio.eventos.new
+    #create(params[:evento])
    
    
    # @sitio = Sitio.find(params[:id]) 
@@ -65,9 +67,9 @@ class EventosController < ApplicationController
   # POST /eventos.xml
   def create
   
-  @sitio = Sitio.find(params[:id]) 
-  @evento = @sitio.eventos.create(params[:evento])
-   
+  #@sitio = Sitio.find(params[:id]) 
+  @evento = Evento.create(params[:evento])
+  @sitio=@evento.sitio
 
     #@evento = Evento.new(params[:evento])
     respond_to do |format|

@@ -1,9 +1,4 @@
 <h1><%=t('new')+' '+t('usuario')%></h1>
-
+<br/>
 <%= render 'form' %>
 
-<% if params[:tipo]='traductor'%> 
-<%= link_to t('back'), usuarios_path(:tipo=>'traductor') %>
-<%else%>
-<%= link_to t('back'), usuarios_path(:id=>@usuario.sitio) %>
-<%end%>

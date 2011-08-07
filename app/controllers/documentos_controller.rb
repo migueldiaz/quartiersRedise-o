@@ -3,6 +3,7 @@ layout 'mono'
 #########
 #Sustituir lo que proceda por documento
 # GET /paginas/1.xml
+ before_filter :require_login
  def index
  
  
@@ -15,14 +16,15 @@ layout 'mono'
   
   elsif  params[:modo]=='sinrevisar'	
    		 @documentos = Documento.find(:all, :conditions => "revisado = 'false'")	
+  
   else
- 	  @documentos = Documento.all
+ 	 @documentos = Documento.all
   end
- end
+end
 
  def new
   @pagina = Pagina.find(params[:id])
-  @documento = @pagina.documentos.create(params[:parrafo])
+  @documento = @pagina.documentos.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @documento }
@@ -31,13 +33,24 @@ end
 
 
 def create
-    @pagina = Pagina.find(params[:pagina_id])
-    @documento = @pagina.documentos.create(params[:parrafo])
-    redirect_to pagina_path(@pagina)
-  end
+   
+    @documento = Documento.create(params[:documento])
+    @pagina=@documento.pagina
+    
+     respond_to do |format|
+     	 if @documento.save
+       	 format.html { redirect_to(@documento, :notice =>  t('exito')) }
+        	format.xml  { render :xml => @documento, :status => :created, :location => @documento }
+     	 else
+      	  format.html { render :action => "new" }
+       	 format.xml  { render :xml => @documento.errors, :status => :unprocessable_entity }
+     	 end
+    end
+    
+end
 def show
    @documento = Documento.find(params[:id])
-   @pagina = Pagina.find(@documento.pagina)
+   @pagina = @documento.pagina
    
 end
  def destroy
@@ -45,13 +58,13 @@ end
     @documento = @pagina.documentos.find(params[:id])
     @documento.destroy
     redirect_to pagina_path(@pagina)
-  end
- def edit
+end
+def edit
    @documento = Documento.find(params[:id])
    @pagina = Pagina.find(@documento.pagina)
- end 
+end 
 
- def update
+def update
    @documento = Documento.find(params[:id])
  #  @pagina = Pagina.find(@documento.pagina)
 
@@ -64,7 +77,7 @@ end
         format.xml  { render :xml => @documento.errors, :status => :unprocessable_entity }
       end
     end
-  end
+end
  
 ################
 end

@@ -1,6 +1,6 @@
 class PresentacionsController < ApplicationController
  layout 'mono' 
-
+before_filter :require_login
  def index
     @sitio=Sitio.find(params[:id])
     if @sitio.presentacion.nil?
@@ -14,8 +14,8 @@ class PresentacionsController < ApplicationController
   end
 
   def new
-  @sitio = Sitio.find(params[:id])
-  @presentacion = @sitio.presentacion.create(params[:sitio_id])
+  @sitio = Sitio.find(params[:id]) 
+   @presentacion = @sitio.presentacion.create(params[:id]=>@sitio)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @presentacion }
@@ -23,22 +23,18 @@ class PresentacionsController < ApplicationController
 end
 
   def show
-   @sitio = Sitio.find(params[:id])
-    if @sitio.presentacion.nil?
-      @sitio.presentacion=Presentacion.new
-    end
-     @presentacion=  @sitio.presentacion
-     if @presentacion.seccion.nil?
-      @presentacion.seccion=Seccion.new
-     end
+ 	@sitio = Sitio.find(params[:id])
+ 	if @sitio.presentacion.nil?
+ 	  @sitio.presentacion=Presentacion.create
+ 	end
+  	@presentacion=@sitio.presentacion
+  	
   
-   @seccion=@presentacion.seccion
-   
   end
 
   def create
     @sitio = sitio.find(params[:sitio_id])
     @presentacion = @sitio.presentacion.create(params[:sitio_id])
-    redirect_to sitio_path(@sitio)
+    #redirect_to presentacion_path(@presentacion)
   end
 end

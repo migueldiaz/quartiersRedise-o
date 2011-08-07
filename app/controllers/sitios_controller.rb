@@ -1,4 +1,6 @@
 class SitiosController < ApplicationController
+ before_filter :require_login
+
 layout 'mono'
   # GET /sitios
   # GET /sitios.xml
@@ -26,9 +28,13 @@ layout 'mono'
          @femmes=@equipo.femmes
        end
     end
-    
-    
-    
+    if @sitio.presentacion.nil?
+    	@sitio.presentacion=Presentacion.create
+    end
+    if @sitio.red.nil?
+   	 @sitio.red=Red.create
+   end
+   
     respond_to do |format|
       format.html 
       format.xml  { render :xml => @sitio }
@@ -39,7 +45,7 @@ layout 'mono'
   # GET /sitios/new.xml
   def new
     @sitio = Sitio.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @sitio }
@@ -54,10 +60,11 @@ layout 'mono'
   # POST /sitios
   # POST /sitios.xml
   def create
-    @sitio = Sitio.new(params[:sitio])
+    @sitio = Sitio.create(params[:sitio])
     
     respond_to do |format|
       if @sitio.save
+         
         format.html { redirect_to(@sitio, :notice => 'Sitio was successfully created.') }
         format.xml  { render :xml => @sitio, :status => :created, :location => @sitio }
       else

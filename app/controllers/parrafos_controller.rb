@@ -1,5 +1,6 @@
 class ParrafosController < ApplicationController
 layout 'mono'
+before_filter :require_login
 def index 
    if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
@@ -18,7 +19,7 @@ end
 
 def new
   @pagina = Pagina.find(params[:id])
-  @parrafo = @pagina.parrafos.create(params[:parrafo])
+  @parrafo = @pagina.parrafos.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @parrafo }
@@ -27,15 +28,26 @@ end
 
 
 def create
-    @pagina = Pagina.find(params[:pagina_id])
-    @parrafo = @pagina.parrafos.create(params[:parrafo])
-    redirect_to pagina_path(@pagina)
-  end
+    @parrafo = Parrafo.create(params[:parrafo])
+    @pagina=@parrafo.pagina
+    
+    respond_to do |format|
+      if @parrafo.save
+        format.html { redirect_to(@parrafo, :notice =>  t('exito')) }
+        format.xml  { render :xml => @parrafo, :status => :created, :location => @parrafo }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @parrafo.errors, :status => :unprocessable_entity }
+      end
+    end
+
+
+
+end
   def show
    @parrafo = Parrafo.find(params[:id])
    @pagina = Pagina.find(@parrafo.pagina)
-    #@parrafo.destroy
-    #redirect_to parrafo_path(@parrafo)
+  
   end
  def destroy
     @pagina = Pagina.find(params[:pagina_id])

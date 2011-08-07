@@ -1,5 +1,6 @@
 class EquiposController < ApplicationController
  layout 'mono' 
+ before_filter :require_login
  def index
  
  
@@ -28,23 +29,30 @@ end
  
  def new
     @sitio=Sitio.find(params[:id])
-    if !@sitio.jeunes.nil?
- 	   @jeunes=@sitio.jeunes
- 	   @equipo = @jeunes.equipos.create(params[:equipo])
- 	  else
- 	   @femmes=@sitio.femmes
- 	   @equipo = @femmes.equipos.create(params[:equipo])
+    if !@sitio.femmes.nil?
+       @equipo=@sitio.femmes.equipos.new
+    else
+       @equipo=@sitio.jeunes.equipos.new
     end
-    
-   
  end
+ 
   def create 
- 	 if !@sitio.jeunes.nil?
- 	   @jeunes=@sitio.jeunes
- 	   @equipo = @jeunes.equipos.create(params[:equipo])
- 	  else
- 	   @femmes=@sitio.femmes
- 	   @equipo = @femmes.equipos.create(params[:equipo])
+ 	 @equipo=Equipo.create(params[:equipo])
+ 	 @equipo.sitio=Sitio.create
+ 	 if !@equipo.jeunes.nil?
+ 	    @jeunes=@equipo.jeunes
+ 	 else
+ 	    @femmes=@equipo.femmes
+ 	 end
+   
+     respond_to do |format|
+      if @equipo.save
+        format.html { redirect_to(@equipo.sitio, :notice =>  t('exito')) }
+        format.xml  { render :xml => @equipo.sitio, :status => :created, :location => @equipo.sitio }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @equipo.errors, :status => :unprocessable_entity }
+      end
     end
  end
  
@@ -68,10 +76,12 @@ end
   end
   def show 
    @equipo = Equipo.find(params[:id])
-   if @equipo.sitio.nil?
-     @equipo.sitio=Sitio.new
-    end   
-    
+   @sitio=@equipo.sitio
+   if !@equipo.jeunes.nil?
+      @jeunes=@equipo.jeunes
+   else
+      @femmes=@equipo.femmes
+   end
  end
   def destroy 
     @equipo = Equipo.find(params[:id])
@@ -83,7 +93,7 @@ end
  	  else
  	   @femmes=@equipo.femmes
  	   @sitio=@femmes.sitio
-    end
+      end
    
       @equipo.destroy
  	  redirect_to equipos_path(:id=>@sitio)

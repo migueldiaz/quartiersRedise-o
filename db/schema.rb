@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110804002244) do
+ActiveRecord::Schema.define(:version => 20110806003326) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -94,7 +94,9 @@ ActiveRecord::Schema.define(:version => 20110804002244) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "seccion_id"
-    t.boolean  "revisado",   :default => false
+    t.boolean  "revisado",        :default => false
+    t.integer  "presentacion_id"
+    t.integer  "red_id"
   end
 
   create_table "parrafos", :force => true do |t|

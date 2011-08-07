@@ -1,5 +1,5 @@
 
-<p id="notice"><%= notice %></p>
+
 
 <h1>
  <%= t('title')+': '%>
@@ -10,7 +10,7 @@
 <%end%>
 </h1>
 
-
+<p id="notice"><%= notice %></p>
 <!--Mostrar parrafos -->
 <h3><%=t('parrafos') %></h3>
 <%= render :partial => "parrafos/parrafo", :collection => @pagina.parrafos %>
@@ -40,5 +40,9 @@
 <!--seccion de parrafos-->
 
 <%= link_to t('edit')+' '+t('pagina'), edit_pagina_path(@pagina) %> |
-<%= link_to 'Volver a la seccion', seccion_path(:id=> @pagina.seccion) %>
+<%  if !@pagina.presentacion.nil?%>
+<%= link_to 'Volver', presentacion_path(@pagina.presentacion.sitio) %>
+<%else%>
+<%= link_to 'Volver',  red_path(@pagina.red.sitio) %>
+<%end%>
 

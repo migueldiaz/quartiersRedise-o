@@ -14,7 +14,7 @@
 
 <div id="header">
 <h1><%=link_to 'Quartiers du monde',root_path%></h1>
-<h2>Emulacion de la recogida de datos en Quartiers original</h2>
+<h2><%=t('description')%></h2>
 </div>
 
 <div id="contentwrap"> 
@@ -62,7 +62,7 @@
 		<%end%>
 		<li><%=link_to t('lequipos'),jeunes_equipos_path %></li>
 		    <%if !@equipo.nil? %>
-		    	<ul><%= link_to @equipo.nombre,equipe_presentacion_path%>
+		    	<ul><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
 		    	<ul><%=render 'equipe/opciones'%></ul>
 		        </ul>
 		    <%end%>
@@ -100,13 +100,11 @@
 
 <h3>Idiomas</h3>
 <ul>
-<li><%= link_to t('es'), root_path( :locale => 'es' ) %></li>
-<li><%= link_to t('fr'), root_path( :locale => 'fr' ) %></li>
+<li><%= link_to t('es'), idioma_spanish_path( :url=>request.url )  %></li>
+<li><%= link_to t('fr'), idioma_french_path( :url=>request.url ) %></li>
 <br/>
 
 </ul>
-Español: <%= spanish%>
-Frances: <%= esfrances%>
 
 </div>
 
