@@ -3,7 +3,6 @@ class CreateEquipos < ActiveRecord::Migration
     create_table :equipos do |t|
       t.references :web
 
-      t.timestamps
     end
   end
 

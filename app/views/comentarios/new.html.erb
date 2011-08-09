@@ -1,0 +1,10 @@
+<%if !params[:tipo]%>
+<h2><%=t('new')+' '+t('comentario')%></h2>
+<%else%>
+<h2><%=t('respuesta')+' '+t('comentario')%></h2>
+<%end%>
+<%= render 'jeunes/respuesta'%>
+<br/>
+<%= render 'form' %>
+
+<%= link_to t('back'), url_for(:back) %>

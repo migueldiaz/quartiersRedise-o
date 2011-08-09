@@ -1,0 +1,7 @@
+<%if spanish %>
+<p><%= truncate(comentario.textoes,:lenght=>50)%></p>
+
+<%else%>
+<p><%= truncate(comentario.textofr,:lenght=>50)%></p>
+<%end%>
+<%= link_to t('responder') ,new_comentario_path(:id=>comentario,:tipo=>'respuesta') %>

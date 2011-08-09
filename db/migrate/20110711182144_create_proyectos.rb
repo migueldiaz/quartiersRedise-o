@@ -3,7 +3,6 @@ class CreateProyectos < ActiveRecord::Migration
     create_table :proyectos do |t|
       t.references :web
 
-      t.timestamps
     end
   end
 

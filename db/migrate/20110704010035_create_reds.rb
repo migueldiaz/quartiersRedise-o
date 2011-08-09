@@ -3,7 +3,6 @@ class CreateReds < ActiveRecord::Migration
     create_table :reds do |t|
       t.references :sitio
 
-      t.timestamps
     end
   end
 

@@ -1,0 +1,26 @@
+<%= form_for(@foro) do |f| %>
+  <% if @foro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%=t('avisoerror')%></h2>
+
+      <ul>
+      <% @foro.errors.full_messages.each do |msg| %>
+        <li><%= t(msg) %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :sitio_id %>
+  <div class="field">
+    <%= f.label :tituloes %><br />
+    <%= f.text_field :tituloes %>
+  </div>
+  <div class="field">
+    <%= f.label :titulofr %><br />
+    <%= f.text_field :titulofr %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<% end %>

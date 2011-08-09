@@ -3,8 +3,6 @@ class CreatePaginas < ActiveRecord::Migration
     create_table :paginas do |t|
       t.string :tituloes
       t.string :titulofr
-
-      t.timestamps
     end
   end
 

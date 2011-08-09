@@ -3,6 +3,14 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ send: 'Enviar'
+ respuesta: 'Responder'
+ comentarios: 'Comentarios'
+ responder: 'responder'
+ comentario: 'comentario'
+ docprop: 'Documentación propuesta'
+ foro: 'foro'
+ foros: 'Foros'
  loginrequerido: 'Es necesario acceder para poder ver esta página'
  revisardatos: 'Usuario o clave incorrectos'
  desconectado: 'Desconexión correcta'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806003326) do
+ActiveRecord::Schema.define(:version => 20110809015427) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(:version => 20110806003326) do
     t.string   "url"
   end
 
+  create_table "comentarios", :force => true do |t|
+    t.text     "textoes"
+    t.text     "textofr"
+    t.integer  "foro_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comentario_id"
+  end
+
   create_table "contactos", :force => true do |t|
     t.text     "infoEs"
     t.text     "infoFr"
@@ -50,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20110806003326) do
     t.string  "archivo"
     t.boolean "revisado"
     t.string  "archivofr"
+    t.integer "foro_id"
   end
 
   create_table "equipos", :force => true do |t|
@@ -78,6 +88,14 @@ ActiveRecord::Schema.define(:version => 20110806003326) do
 
   create_table "femmes", :force => true do |t|
     t.integer  "web_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "foros", :force => true do |t|
+    t.string   "tituloes"
+    t.string   "titulofr"
+    t.integer  "sitio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

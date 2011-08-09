@@ -1,0 +1,21 @@
+<h1><%=t('show')+' '+t('foro')%></h1>
+<br/>
+<p id="notice"><%= notice %></p>
+<p>
+  <b><%=t('tituloes')%></b>
+  <%= @foro.tituloes %>
+</p>
+<p>
+  <b><%=t('titulofr')%></b>
+  <%= @foro.titulofr %>
+</p>
+<h3><%=t('docprop')%></h3>
+<%= render :partial => "documentos/documento", :collection => @foro.documentos %>
+<br/>
+<br/>
+<%= link_to t('new')+' '+t('documento'), new_documento_path(:id=>@foro,:tipo=>'foro') %> 
+<br/>
+<br/>
+
+<%= link_to t('edit'), edit_foro_path(@foro) %> |
+<%= link_to t('back'), foros_path(:id=>@foro.sitio) %>

@@ -23,8 +23,10 @@
 <%if current_user.tipo=='traductor'%>
 <%= link_to t('back'), documentos_path(:modo=>'sintrad') %>
 <%= link_to t('traductor'), traductor_url %>
+<%elsif !@documento.foro.nil?%>
+	<%= link_to t('back'), foro_path(:id=> @documento.foro) %>  
 <%else%>
-<%= link_to t('back'), pagina_path(:id=> @documento.pagina) %>
+	<%= link_to t('back'), pagina_path(:id=> @documento.pagina) %>    
 <%end%>
 
 

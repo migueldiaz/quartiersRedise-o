@@ -23,8 +23,13 @@ layout 'mono'
 end
 
  def new
-  @pagina = Pagina.find(params[:id])
-  @documento = @pagina.documentos.new
+  if params[:tipo]=='foro'
+   @foro=Foro.find(params[:id])
+   @documento=@foro.documentos.new  
+  else
+  	@pagina = Pagina.find(params[:id])
+  	@documento = @pagina.documentos.new
+  end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @documento }
@@ -35,7 +40,8 @@ end
 def create
    
     @documento = Documento.create(params[:documento])
-    @pagina=@documento.pagina
+    
+    #@pagina=@documento.pagina
     
      respond_to do |format|
      	 if @documento.save
@@ -54,10 +60,16 @@ def show
    
 end
  def destroy
-    @pagina = Pagina.find(params[:pagina_id])
-    @documento = @pagina.documentos.find(params[:id])
-    @documento.destroy
-    redirect_to pagina_path(@pagina)
+    @documento = Documento.find(params[:id])
+    if !@documento.pagina.nil?
+    	@pagina=@documento.pagina
+    	@documento.destroy
+    	redirect_to pagina_path(@pagina)
+    else
+       @foro=@documento.foro
+       @documento.destroy
+       redirect_to foro_path(@foro)
+    end
 end
 def edit
    @documento = Documento.find(params[:id])

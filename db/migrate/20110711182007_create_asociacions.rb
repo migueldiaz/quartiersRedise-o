@@ -3,7 +3,6 @@ class CreateAsociacions < ActiveRecord::Migration
     create_table :asociacions do |t|
       t.references :web
 
-      t.timestamps
     end
   end
 

@@ -1,6 +1,10 @@
 Paginadocumentos::Application.routes.draw do
 
 
+  resources :comentarios
+
+  resources :foros
+
   ################################################
   match 'quartiers/asociacion/' => 'quartiers#asociacion'
   match 'quartiers/seccion/' => 'quartiers#seccion'
@@ -22,6 +26,8 @@ Paginadocumentos::Application.routes.draw do
   
   #############################3
   match 'jeunes/sitio' => 'jeunes#sitio'
+  match 'jeunes/foros' => 'jeunes#foros'
+  match 'jeunes/foro' => 'jeunes#foro'
   match 'jeunes/presentacion'=> 'jeunes#presentacion'
   match 'jeunes/pagina'=> 'jeunes#pagina'
   match 'jeunes/colaborador'=> 'jeunes#colaborador'
@@ -32,6 +38,8 @@ Paginadocumentos::Application.routes.draw do
   match 'jeunes/contacto'=> 'jeunes#contacto'
   ###################################################
   match 'femmes/sitio' => 'femmes#sitio'
+  match 'femmes/foros' => 'femmes#foros'
+  match 'femmes/foro' => 'femmes#foro'
   match 'femmes/presentacion'=> 'femmes#presentacion'
   match 'femmes/pagina'=> 'femmes#pagina'
   match 'femmes/colaborador'=> 'femmes#colaborador'
@@ -71,7 +79,15 @@ Paginadocumentos::Application.routes.draw do
   resources:jeunes do
    resources :sitio
   end
- 
+  resources :foro do
+    resources :comentarios
+  end
+  
+  resources :comentario do
+   resources:comentarios
+  end
+  
+  resources :comentarios
   resources :web do
     resources :asociacion
     resources :equipos
@@ -98,6 +114,7 @@ Paginadocumentos::Application.routes.draw do
     resources :red
     resources :colaboradors
     resources :eventos
+    resources :foros
    end
   
  

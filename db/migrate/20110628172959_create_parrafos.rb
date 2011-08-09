@@ -4,8 +4,6 @@ class CreateParrafos < ActiveRecord::Migration
       t.text :textoes
       t.text :textofr
       t.references :pagina
-
-      t.timestamps
     end
   end
 

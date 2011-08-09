@@ -3,15 +3,22 @@ class JeunesController < ApplicationController
  	
 #GET /quartiers/agenda
 def sitio
-	@web=Web.first
-  	@jeunes=@web.jeunes
+  	@jeunes=Jeunes.first
 		if @jeunes.sitio.nil?
 		@jeunes.sitio=Sitio.create
 		end
 	@sitio=@jeunes.sitio
 	redirect_to sitio_path(:id=>@sitio)
 end
-	
+def foros
+	@jeunes=Jeunes.first
+	@foros=@jeunes.sitio.foros
+end
+def foro
+	@foro=Foro.find(params[:id])
+	@jeunes=@foro.sitio.jeunes
+	@foros=@jeunes.sitio.foros
+end
 	
 def agenda
   		@web=Web.first

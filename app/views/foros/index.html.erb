@@ -1,0 +1,26 @@
+<h1><%=t('foros')%></h1>
+
+<table>
+  <tr>
+    <th><%= t('tituloes')%></th>
+    <th><%= t('titulofr')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @foros.each do |foro| %>
+  <tr>
+    <td><%= foro.tituloes %></td>
+    <td><%= foro.titulofr %></td>
+    
+    <td><%= link_to t('show'), foro %></td>
+    <td><%= link_to t('edit'), edit_foro_path(foro) %></td>
+    <td><%= link_to t('destroy'), foro, :confirm => t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('new')+' '+t('foro'), new_foro_path(:id=>@sitio) %>

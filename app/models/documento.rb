@@ -1,5 +1,6 @@
 class Documento < ActiveRecord::Base
   belongs_to :pagina
+  belongs_to :foro
   mount_uploader :archivo,DocumentoUploader
   mount_uploader :archivofr,DocumentoUploader
 

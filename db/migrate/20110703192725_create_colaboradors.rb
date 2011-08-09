@@ -10,7 +10,6 @@ class CreateColaboradors < ActiveRecord::Migration
       t.string :imagen
       t.references :sitio
 
-      t.timestamps
     end
   end
 

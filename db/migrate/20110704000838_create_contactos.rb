@@ -6,7 +6,6 @@ class CreateContactos < ActiveRecord::Migration
       t.string :email
       t.integer :sitio_id
 
-      t.timestamps
     end
   end
 

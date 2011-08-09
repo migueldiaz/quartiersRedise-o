@@ -6,7 +6,6 @@ class CreateEventos < ActiveRecord::Migration
       t.string :tituloFr
       t.string :imagen
 
-      t.timestamps
     end
   end
 
