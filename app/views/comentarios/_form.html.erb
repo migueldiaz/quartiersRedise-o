@@ -1,17 +1,17 @@
 <%= form_for(@comentario) do |f| %>
   <% if @comentario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
-
-      <ul>
+      <h2><%= t('avisoeror') %></h2>
+	<ul>
       <% @comentario.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= t(msg) %></li>
       <% end %>
       </ul>
+    
     </div>
   <% end %>
-   <%= f.hidden_field :foro_id %>
-   <%= f.hidden_field :comentario_id %>
+   <%= f.text_field :foro_id %>
+  <%= f.text_field :comentario_id,:value=>params[:responde] %>
   <%if spanish%>
   <div class="field">
     <%= f.label t :textoes %><br />

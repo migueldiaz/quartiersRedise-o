@@ -1,0 +1,7 @@
+<%if spanish %>
+<p><%= truncate(@comentario.comentario.textoes,:lenght=>50)%></p>
+
+<%else%>
+<p><%= truncate(@comentario.comentario.textofr,:lenght=>50)%></p>
+<%end%>
+

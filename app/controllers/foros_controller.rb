@@ -14,8 +14,9 @@ class ForosController < ApplicationController
   # GET /foros/1
   # GET /foros/1.xml
   def show
-    @foro = Foro.find(params[:id])
-
+   @foro=Foro.find(params[:id])
+   @comentarios=@foro.comentarios
+  
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @foro }

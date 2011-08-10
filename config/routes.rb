@@ -96,6 +96,7 @@ Paginadocumentos::Application.routes.draw do
     resources :jeunes
     resources :femmes
   end
+  resources :foros
   resources :femmes
   resources :jeunes
   resources :equipos

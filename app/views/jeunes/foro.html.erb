@@ -9,7 +9,9 @@
     <%end%>
 <%end%>
 <h2><%=t('comentarios')%></h2>
-<%= render :partial => "jeunes/comentario", :collection => @foro.comentarios %>
+<ul>
+<%= render :partial => "comentarios/principal", :collection => @foro.comentarios %>
+</ul>
 <br/>
 <br/>
 <%= link_to t('new')+' '+t('comentario'),new_comentario_path(:id=>@foro)%>

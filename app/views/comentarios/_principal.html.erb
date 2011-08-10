@@ -1,0 +1,13 @@
+<%if principal.comentario_id.nil?%>
+<%if spanish %>
+	<li><%= truncate(principal.textoes,:lenght=>50)%>&nbsp;&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>principal) %></li>
+<%else%>
+	<li><%= truncate(principal.textofr,:lenght=>50)%>&nbsp;&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>principal) %></li>
+<%end%>
+<%if !principal.comentarios.nil?%>
+	<ul>
+	<%= render :partial => "comentarios/comentario", :collection => principal.comentarios %>
+	</ul>
+	<%end%>
+
+<%end%>

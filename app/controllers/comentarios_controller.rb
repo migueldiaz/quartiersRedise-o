@@ -15,7 +15,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/1.xml
   def show
     @comentario = Comentario.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @comentario }
@@ -25,19 +25,12 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new
   # GET /comentarios/new.xml
   def new
-   if params[:tipo]=='respuesta'
-		###Mucha atencion al orden
-	    @original=Comentario.find(params[:id])
-        @jeunes=@original.foro.sitio.jeunes
-	    @comentario=@original.comentarios.new
-	    @foro=@original.foro
-    else
-  	  @foro=Foro.find(params[:id])
-  	  @comentario = @foro.comentarios.new
-  	  @jeunes=@foro.sitio.jeunes
-  	end
-    @foros=@jeunes.sitio.foros
-    @comentarios=@foro.comentarios
+  
+   @foro=Foro.find(params[:id])
+   @comentario = @foro.comentarios.new
+   @jeunes=@foro.sitio.jeunes
+   @foros=@jeunes.sitio.foros
+   id=params[:respuesta]
     
     
     respond_to do |format|
@@ -55,9 +48,10 @@ class ComentariosController < ApplicationController
   # POST /comentarios.xml
   def create
     @comentario = Comentario.new(params[:comentario])
+    @foro=@comentario.foro
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to(jeunes_foro_path(:id=>@comentario.foro), :notice => t('exito')) }
+        format.html { redirect_to(jeunes_foro_path(:id=>@foro), :notice => t('exito')) }
         format.xml  { render :xml => @comentario.foro, :status => :created, :location => @comentario.foro }
       else
         format.html { render :action => "new" }
