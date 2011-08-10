@@ -3,6 +3,7 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ paginasasociadas: 'Páginas asociaciadas'
  documentacion: 'Documentación'
  send: 'Enviar'
  respuesta: 'Responder'

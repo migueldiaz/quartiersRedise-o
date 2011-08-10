@@ -1,8 +1,21 @@
-<% if spanish %>
- 	<h1><%= @pagina.tituloes %> </h1> 
+<%if @original.nil?%>
+	<% if spanish %>
+	 	<h1><%= @pagina.tituloes %> </h1> 
+	<%else%>
+		<h1><%= @pagina.titulofr %> </h1> 
+	<% end %> 
 <%else%>
-	<h1><%= @pagina.titulofr %> </h1> 
-<% end %> 
+   <% if spanish %>
+	 	<h1><%= link_to @original.tituloes,jeunes_pagina_path(:id=>@original) %>:&nbsp;<%= @pagina.tituloes %> </h1> 
+	<%else%>
+		<h1><%= link_to @original.titulofr,jeunes_pagina_path(:id=>@original) %>:&nbsp;<%= @original.titulofr %>:&nbsp;<%= @pagina.titulofr %> </h1> 
+	<% end %> 
+
+
+<%end%>
+
+
+
 <% @pagina.parrafos.each do |parrafo| %>
 	<% if spanish %>
  		<h2><%= parrafo.tituloes %> </h2> 
@@ -27,7 +40,9 @@
 		
 	<% end %>	
 <% end %>
+<%if !@pagina.documentos==nil %>
 <h2><%=t('documentacion')%></h2>
+<%end%>
 <ul>
 <% @pagina.documentos.each do |documento| %>
  	<% if spanish %>
@@ -45,3 +60,14 @@
  	<%end%>
 <%end%>
 </ul>
+<%if !@pagina.paginas.nil? && @pagina.pagina_id.nil?%>
+<h2><%=t('paginasasociadas')%></h2>
+	<% @pagina.paginas.each do |pagina| %>
+	 	<% if spanish %>
+	 		<li><%= link_to pagina.tituloes, jeunes_pagina_path(:id=>pagina)%></li>
+		<%else%>
+			<li><%= link_to pagina.titulofr, jeunes_pagina_path(:id=>pagina)%></li>
+	  	<% end %>	
+ 	
+	<%end%>
+<%end%>

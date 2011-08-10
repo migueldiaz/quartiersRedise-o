@@ -30,13 +30,22 @@
  <th></th>
  <th></th>
  </tr>
+  
+    
 <%= render :partial => "documentos/documento", :collection => @pagina.documentos %>
 </table>
 <br/>
 <p>
 <%= link_to t('new')+' '+t('documento'), new_documento_path(:id=>@pagina) %>
 </p>
-
+<%if !@pagina.documentacion.nil? || !@pagina.red.nil? && !@pagina.red.sitio.equipo.nil?%>
+  <h3><%=t('paginasasociadas')%></h3>
+    <%= render :partial => "paginas/pagina", :collection => @pagina.paginas %>
+  <br/>
+<p>
+<%= link_to t('new')+' '+t('pagina') ,new_pagina_path(:id=>@pagina,:raiz=>@pagina) %>
+</p>
+<%end%>
 <!--seccion de parrafos-->
 
 <%= link_to t('edit')+' '+t('pagina'), edit_pagina_path(@pagina) %> |
@@ -44,7 +53,9 @@
 <%= link_to 'Volver', presentacion_path(@pagina.presentacion.sitio) %>
 <%elsif !@pagina.red.nil?%>
 <%= link_to 'Volver',  red_path(@pagina.red.sitio) %>
-<%else%>
+<%elsif !@pagina.documentacion.nil?%>
 <%= link_to 'Volver',  documentacion_path(@pagina.documentacion.sitio) %>
+<%else%>
+<%= link_to 'Volver',  pagina_path(@pagina.pagina_id) %>
 <%end%>
 

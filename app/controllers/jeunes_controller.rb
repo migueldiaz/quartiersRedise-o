@@ -54,22 +54,22 @@ end
 
 def pagina
 		@pagina=Pagina.find(params[:id])
-		
+		@jeunes=Jeunes.first
+		@sitio=@jeunes.sitio
 		if !@pagina.presentacion.nil?
-		    @sitio=@pagina.presentacion.sitio
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
 		elsif !@pagina.red.nil?
-	  		@sitio=@pagina.red.sitio
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
-		else
-			@sitio=@pagina.documentacion.sitio
+		else 
 	  		@documentacion=@sitio.documentacion
 	  		@paginas=@documentacion.paginas
-		
 		end
-		@jeunes=@sitio.jeunes
+		if !@pagina.pagina_id.nil?
+	     @original=@paginas.where(:id=>@pagina.pagina_id).first
+		end
+		
 	    
 end
 

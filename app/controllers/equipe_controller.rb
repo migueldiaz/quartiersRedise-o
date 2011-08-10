@@ -51,11 +51,21 @@ def pagina
     	  @presentacion=@pagina.presentacion
     	  @sitio=@presentacion.sitio
     	  @paginas=@presentacion.paginas
-    	else
+    	elsif !@pagina.red.nil?
     	  @red=@pagina.red
     	  @sitio=@red.sitio
-    	  @paginas=@red.paginas
+    	   @paginas=@red.paginas
     	end
+    	  if !@pagina.pagina_id.nil?
+    	     @original=Pagina.where(:id=>@pagina.pagina_id).first
+	         @red=@original.red
+	    	 @paginas=@red.paginas
+	    	 @sitio=@red.sitio
+	      
+	         #@paginas.where(:id=>@pagina.pagina_id).first
+		  end
+		else
+    	
     	
     	@equipo=@sitio.equipo   	
     	 if !@equipo.jeunes.nil?

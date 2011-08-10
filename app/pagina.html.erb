@@ -27,6 +27,7 @@
 		
 	<% end %>	
 <% end %>
+<%if !@pagina.documentos.nil?%>
 <h2><%=t('documentacion')%></h2>
 <ul>
 <% @pagina.documentos.each do |documento| %>
@@ -45,3 +46,4 @@
  	<%end%>
 <%end%>
 </ul>
+<%end%>

@@ -32,7 +32,7 @@ class ContactosController < ApplicationController
   def new
   @sitio = Sitio.find(params[:id])
   
-  @contacto = @sitio.contacto.create(params[:sitio_id])
+  @contacto = @sitio.contacto.create(params[:sitio_id]=>@sitio)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @contacto }
@@ -55,7 +55,8 @@ end
    # PUT /contactos/1
   # PUT /contactos/1.xml
   def update
-    @contacto = Contacto.find(params[:id])
+   
+    @contacto =Contacto.find(params[:id])
 
     respond_to do |format|
       if @contacto.update_attributes(params[:contacto])

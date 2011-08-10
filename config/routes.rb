@@ -85,7 +85,7 @@ Paginadocumentos::Application.routes.draw do
     resources :comentarios
   end
   
-  resources :comentario do
+  resources :comentarios do
    resources:comentarios
   end
   
@@ -134,6 +134,7 @@ Paginadocumentos::Application.routes.draw do
   resources :paginas do
   resources :parrafos
   resources :documentos
+  resources:paginas 
  end
  resources :parrafos
  resources :documentos

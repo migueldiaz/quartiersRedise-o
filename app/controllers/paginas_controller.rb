@@ -38,16 +38,22 @@ class PaginasController < ApplicationController
   # GET /paginas/new
   # GET /paginas/new.xml
   def new
-    @sitio=Sitio.find(params[:id])
+    
     if params[:tipo].to_s=='red'  
+      @sitio=Sitio.find(params[:id])
       @red=@sitio.red
       @pagina = @red.paginas.new
-    elsif params[:tipo].to_s=='presentacion'  
+    elsif params[:tipo].to_s=='presentacion' 
+        @sitio=Sitio.find(params[:id]) 
     	@presentacion=@sitio.presentacion
    		@pagina = @presentacion.paginas.new
-    else
+    elsif params[:tipo].to_s=='documentacion' 
+       @sitio=Sitio.find(params[:id])
        @documentacion=@sitio.documentacion
        @pagina=@documentacion.paginas.new
+    else
+     @pagina=Pagina.find(params[:id])
+     @pagina=@pagina.paginas.new
     end
     
     respond_to do |format|
@@ -66,11 +72,11 @@ class PaginasController < ApplicationController
   def create
     
     @pagina = Pagina.create(params[:pagina])
-    if !@pagina.presentacion.nil?
-      @presentation=@pagina.presentacion
-    else
-      @red=@pagina.red
-    end
+    #if !@pagina.presentacion.nil?
+     # @presentation=@pagina.presentacion
+    #else
+     # @red=@pagina.red
+    #end
     
     respond_to do |format|
       if @pagina.save
@@ -112,10 +118,14 @@ class PaginasController < ApplicationController
        @red=@pagina.red
        @pagina.destroy
        redirect_to red_path(@red.sitio) 
-     else
+     elsif !@pagina.documentacion.nil?
        @documentacion=@pagina.documentacion
        @pagina.destroy
        redirect_to documentacion_path(@documentacion.sitio) 
+     else
+       destino=@pagina.pagina_id
+       @pagina.destroy
+       redirect_to pagina_path(:id=>destino)
      end
    # respond_to do |format|
   #    format.html {  redirect_to secion_path(@seccion) }

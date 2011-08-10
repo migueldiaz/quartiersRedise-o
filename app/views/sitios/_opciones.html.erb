@@ -8,7 +8,7 @@
 <li><%= link_to t('foros'), foros_path(:id=>@sitio)%></li>
 <li><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
 <%end%>
-<li><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
+<li><%= link_to  t('contacto'), contacto_path(@sitio.contacto)%></li>
 <%  if is_admin%>
 <li><%= link_to  t('usuarios'),usuarios_path(:id=>@sitio)%></li>
 <% end %> 

@@ -57,7 +57,7 @@
     			<ul><%=render 'jeunes/paginas'%></ul>
     		<%end%>
 		<li><%=link_to t('proyectos'),jeunes_proyectos_path  %></li>
-		<%if !@paginas.nil? && !@red.nil?%>
+		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
 			<ul><%=render 'jeunes/paginas'%></ul>
 		<%end%>
 		<li><%=link_to t('documentacion'),jeunes_documentacion_path  %></li>
@@ -90,7 +90,7 @@
     			<ul><%=render 'femmes/paginas'%></ul>
     		<%end%>
 		<li><%=link_to t('proyectos'),femmes_proyectos_path  %></li>
-		<%if !@paginas.nil? && !@red.nil?%>
+		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
 			<ul><%=render 'femmes/paginas'%></ul>
 		<%end%>
 		<li><%=link_to t('documentacion'),femmes_documentacion_path  %></li>
