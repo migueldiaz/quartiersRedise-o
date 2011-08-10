@@ -1,0 +1,26 @@
+<h2>Añadir un parrafo:</h2>
+<%= form_for @parrafo, :html => {:multipart => true} do |f| %>
+<!--@pagina, @pagina.parrafos.build]-->
+  <div class="field">
+    <%= f.label :textoes %><br />
+    <%= f.text_area :textoes %>
+  </div>
+  <div class="field">
+    <%= f.label :textofr %><br />
+    <%= f.text_area :textofr %>
+  </div>
+ <div class="field">
+        <label>Mi imagen</label>
+        <%= f.file_field :imagen %>
+    </div>
+
+   <div class="field">
+        <label>
+          <%= f.check_box :remove_imagen %>
+          Borrar la imagen
+        </label>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

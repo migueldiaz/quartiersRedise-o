@@ -34,6 +34,9 @@ layout 'mono'
     if @sitio.red.nil?
    	 @sitio.red=Red.create
    end
+   if @sitio.documentacion.nil?
+   	 @sitio.documentacion=Documentacion.create
+   end
    
     respond_to do |format|
       format.html 

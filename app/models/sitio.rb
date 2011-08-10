@@ -1,6 +1,7 @@
 class Sitio < ActiveRecord::Base
   
   has_one :presentacion, :dependent => :destroy
+  has_one :documentacion, :dependent => :destroy
   has_one :red, :dependent => :destroy
   has_one :contacto, :dependent => :destroy
   has_many :eventos, :dependent => :destroy

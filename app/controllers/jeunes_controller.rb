@@ -21,14 +21,12 @@ def foro
 end
 	
 def agenda
-  		@web=Web.first
-  		@jeunes=@web.jeunes
+  		@jeunes=Jeunes.first
   		@sitio=@jeunes.sitio
 end
 	
 def proyectos
-  		@web=Web.first
-  		@jeunes=@web.jeunes
+  		@jeunes=Jeunes.first
   		@red=@jeunes.sitio.red
  
   		@pagina=@red.paginas.first
@@ -38,11 +36,18 @@ def proyectos
 end
 	
 def presentacion
-  	@web=Web.first
-  	@jeunes=@web.jeunes
+  	@jeunes=Jeunes.first
   	@presentacion=@jeunes.sitio.presentacion
   	@pagina=@presentacion.paginas.first
 	if !@presentacion.paginas.nil? && !@pagina.nil?
+  		redirect_to jeunes_pagina_path(:id=>@pagina)
+  	end
+end
+def documentacion
+  	@jeunes=Jeunes.first
+  	@documentacion=@jeunes.sitio.documentacion
+  	@pagina=@documentacion.paginas.first
+	if !@documentacion.paginas.nil? && !@pagina.nil?
   		redirect_to jeunes_pagina_path(:id=>@pagina)
   	end
 end
@@ -54,18 +59,22 @@ def pagina
 		    @sitio=@pagina.presentacion.sitio
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
-		else
+		elsif !@pagina.red.nil?
 	  		@sitio=@pagina.red.sitio
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
+		else
+			@sitio=@pagina.documentacion.sitio
+	  		@documentacion=@sitio.documentacion
+	  		@paginas=@documentacion.paginas
+		
 		end
 		@jeunes=@sitio.jeunes
 	    
 end
 
 def colaborador
-		@web=Web.first
-  		@jeunes=@web.jeunes
+		@jeunes=Jeunes.first
   		@sitio=@jeunes.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)

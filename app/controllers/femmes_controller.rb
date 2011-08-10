@@ -3,8 +3,7 @@ class FemmesController < ApplicationController
  	
 #GET /quartiers/agenda
 def sitio
-	@web=Web.first
-  	@femmes=@web.femmes
+	@femmes=Femmes.first
 		if @femmes.sitio.nil?
 		@femmes.sitio=Sitio.create
 		end
@@ -14,14 +13,12 @@ end
 	
 	
 def agenda
-  		@web=Web.first
-  		@femmes=@web.femmes
+  		@femmes=Femmes.first
   		@sitio=@femmes.sitio
 end
 	
 def proyectos
-  		@web=Web.first
-  		@femmes=@web.femmes
+  		@femmes=Femmes.first
   		@red=@femmes.sitio.red
  
   		@pagina=@red.paginas.first
@@ -31,11 +28,18 @@ def proyectos
 end
 	
 def presentacion
-  	@web=Web.first
-  	@femmes=@web.femmes
+  	@femmes=Femmes.first
   	@presentacion=@femmes.sitio.presentacion
   	@pagina=@presentacion.paginas.first
 	if !@presentacion.paginas.nil? && !@pagina.nil?
+  		redirect_to femmes_pagina_path(:id=>@pagina)
+  	end
+end
+def documentacion
+  	@femmes=Femmes.first
+  	@documentacion=@femmes.sitio.documentacion
+  	@pagina=@documentacion.paginas.first
+	if !@documentacion.paginas.nil? && !@pagina.nil?
   		redirect_to femmes_pagina_path(:id=>@pagina)
   	end
 end
@@ -47,18 +51,22 @@ def pagina
 		    @sitio=@pagina.presentacion.sitio
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
-		else
+		elsif !@pagina.red.nil?
 	  		@sitio=@pagina.red.sitio
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
+		else
+			@sitio=@pagina.documentacion.sitio
+	  		@documentacion=@sitio.documentacion
+	  		@paginas=@documentacion.paginas
+		
 		end
 		@femmes=@sitio.femmes
 	    
 end
 
 def colaborador
-		@web=Web.first
-  		@femmes=@web.femmes
+		@femmes=Femmes.first
   		@sitio=@femmes.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)
@@ -72,8 +80,7 @@ def agenda
      	@eventos=@sitio.eventos
 end
 def colaborador
-		@web=Web.first
-  		@femmes=@web.femmes
+		@femmes=Femmes.first
   		@sitio=@femmes.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)
@@ -81,22 +88,19 @@ def colaborador
 end
 def agenda
     	
-    	@web=Web.first
-  		@femmes=@web.femmes
+    	@femmes=Femmes.first
   		@sitio=@femmes.sitio
      	@eventos=@sitio.eventos
      	
 end	
 def contacto
-    	@web=Web.first
-  		@femmes=@web.femmes
+    	@femmes=Femmes.first
   		@sitio=@femmes.sitio
      	@contacto=@sitio.contacto
     
  end
 def equipos
-    	@web=Web.first
-  		@femmes=@web.femmes
+    	@femmes=Femmes.first
   		@equipos=@femmes.equipos
   		@sitio=@femmes.sitio
 end

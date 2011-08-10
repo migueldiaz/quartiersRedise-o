@@ -1,6 +1,7 @@
 class Pagina < ActiveRecord::Base
 belongs_to :presentacion,:foreign_key => "presentacion_id"
 belongs_to :red,:foreign_key => "red_id"
+belongs_to :documentacion,:foreign_key => "documentacion_id"
 has_many :parrafos, :dependent => :destroy
 has_many :documentos, :dependent => :destroy
 validate :valida_titulo

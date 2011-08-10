@@ -42,7 +42,9 @@
 <%= link_to t('edit')+' '+t('pagina'), edit_pagina_path(@pagina) %> |
 <%  if !@pagina.presentacion.nil?%>
 <%= link_to 'Volver', presentacion_path(@pagina.presentacion.sitio) %>
-<%else%>
+<%elsif !@pagina.red.nil?%>
 <%= link_to 'Volver',  red_path(@pagina.red.sitio) %>
+<%else%>
+<%= link_to 'Volver',  documentacion_path(@pagina.documentacion.sitio) %>
 <%end%>
 

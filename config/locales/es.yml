@@ -3,6 +3,7 @@
 
 es:
  #######OPCIONES DE LOS SITIOS
+ documentacion: 'Documentación'
  send: 'Enviar'
  respuesta: 'Responder'
  comentarios: 'Comentarios'

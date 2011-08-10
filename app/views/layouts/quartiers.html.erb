@@ -60,6 +60,10 @@
 		<%if !@paginas.nil? && !@red.nil?%>
 			<ul><%=render 'jeunes/paginas'%></ul>
 		<%end%>
+		<li><%=link_to t('documentacion'),jeunes_documentacion_path  %></li>
+		<%if !@paginas.nil? && !@documentacion.nil?%>
+			<ul><%=render 'jeunes/paginas'%></ul>
+		<%end%>
 		<li><%=link_to t('foros'),jeunes_foros_path %></li>
 		 	<%if !@foros.nil? %>
 		    	<ul><%=render 'jeunes/foros'%></ul>
@@ -87,6 +91,10 @@
     		<%end%>
 		<li><%=link_to t('proyectos'),femmes_proyectos_path  %></li>
 		<%if !@paginas.nil? && !@red.nil?%>
+			<ul><%=render 'femmes/paginas'%></ul>
+		<%end%>
+		<li><%=link_to t('documentacion'),femmes_documentacion_path  %></li>
+		<%if !@paginas.nil? && !@documentacion.nil?%>
 			<ul><%=render 'femmes/paginas'%></ul>
 		<%end%>
 		<li><%=link_to t('foros'),femmes_foros_path %></li>

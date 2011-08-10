@@ -45,6 +45,9 @@ class PaginasController < ApplicationController
     elsif params[:tipo].to_s=='presentacion'  
     	@presentacion=@sitio.presentacion
    		@pagina = @presentacion.paginas.new
+    else
+       @documentacion=@sitio.documentacion
+       @pagina=@documentacion.paginas.new
     end
     
     respond_to do |format|
@@ -100,14 +103,19 @@ class PaginasController < ApplicationController
   # DELETE /paginas/1.xml
   def destroy
     @pagina = Pagina.find(params[:id])
+    
     if !@pagina.presentacion.nil?
      @presentacion=@pagina.presentacion
      @pagina.destroy
      redirect_to presentacion_path(@presentacion.sitio) 
-    else
+    elsif !@pagina.red.nil?
        @red=@pagina.red
        @pagina.destroy
        redirect_to red_path(@red.sitio) 
+     else
+       @documentacion=@pagina.documentacion
+       @pagina.destroy
+       redirect_to documentacion_path(@documentacion.sitio) 
      end
    # respond_to do |format|
   #    format.html {  redirect_to secion_path(@seccion) }

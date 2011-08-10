@@ -23,4 +23,7 @@
 
 <br />
 
-<%= link_to t('new')+' '+t('foro'), new_foro_path(:id=>@sitio) %>
+<%= link_to t('new')+' '+t('foro'), new_foro_path(:id=>@sitio) %> | 
+<%if current_user.tipo!='traductor'%>
+<%= link_to t('back'), sitio_path(@sitio) %>
+<%end%>
