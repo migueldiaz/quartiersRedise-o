@@ -9,6 +9,8 @@
   <b><%=t('titulofr')%></b>
   <%= @foro.titulofr %>
 </p>
+<h3><%=t('comentarios')%></h3>
+<%= link_to t('comentarios'), comentarios_path(:id=>@foro,:vista=>'gestion') %> 
 <h3><%=t('docprop')%></h3>
 <%= render :partial => "documentos/documento", :collection => @foro.documentos %>
 <br/>

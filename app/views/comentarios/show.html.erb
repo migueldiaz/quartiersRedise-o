@@ -1,15 +1,16 @@
+<h1><%=t('show')+' '+t('comentario')%></h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Textoes:</b>
+  <b><%=t('textoes')%></b>
   <%= @comentario.textoes %>
 </p>
 
 <p>
-  <b>Textofr:</b>
+  <b><%=t('textoes')%></b>
   <%= @comentario.textofr %>
 </p>
 
 
-<%= link_to 'Edit', edit_comentario_path(@comentario) %> |
-<%= link_to 'Back', comentarios_path %>
+<%= link_to t('edit'), edit_comentario_path(@comentario,:vista=>'gestion') %> |
+<%= link_to t('back'), comentarios_path(:id=>@comentario.foro,:vista=>'gestion') %>

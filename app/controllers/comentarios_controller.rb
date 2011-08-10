@@ -1,5 +1,13 @@
 class ComentariosController < ApplicationController
-  layout 'quartiers'
+  layout :another_by_method
+  def another_by_method
+    if !params[:vista]
+      "quartiers"
+    else
+      "mono"
+    end
+  end
+
   
   def index
     @foro=Foro.find(params[:id])
@@ -67,7 +75,7 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.update_attributes(params[:comentario])
-        format.html { redirect_to(@comentario, :notice => t('exito')) }
+        format.html { redirect_to(comentario_path(@comentario,:vista=>'gestion'), :notice => t('exito')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -80,9 +88,9 @@ class ComentariosController < ApplicationController
   # DELETE /comentarios/1.xml
   def destroy
     @comentario = Comentario.find(params[:id])
-    #@foro=@comentario.foro
+    @foro=@comentario.foro
     @comentario.destroy
-    redirect_to foro_path(@foro)
+    redirect_to comentarios_path(:id=>@foro,:vista=>'gestion')
     
   end
 end

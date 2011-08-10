@@ -1,10 +1,9 @@
-<h1>Listing comentarios</h1>
-
+<h1><%=t('comentarios')%></h1>
+<br/>
 <table>
   <tr>
-    <th>Textoes</th>
-    <th>Textofr</th>
-    <th>Foro</th>
+    <th><%=t('textoes')%></th>
+    <th><%=t('textofr')%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,16 +11,15 @@
 
 <% @comentarios.each do |comentario| %>
   <tr>
-    <td><%= comentario.textoes %></td>
-    <td><%= comentario.textofr %></td>
-    <td><%= comentario.foro %></td>
-    <td><%= link_to 'Show', comentario %></td>
-    <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
-    <td><%= link_to 'Destroy', comentario, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= truncate(comentario.textoes,:lenght=>40) %></td>
+    <td><%= truncate(comentario.textofr,:lenght=>40) %></td>
+  
+    <td><%= link_to t('show'), comentario_path(comentario,:vista=>'gestion') %></td>
+    <td><%= link_to t('edit'), edit_comentario_path(comentario,:vista=>'gestion') %></td>
+    <td><%= link_to t('destroy'), comentario, :confirm => t('confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Comentario', new_comentario_path %>
+<%=link_to t('back'),foro_path(@foro)%>
