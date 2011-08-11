@@ -38,6 +38,12 @@
 <p>
 <%= link_to t('new')+' '+t('documento'), new_documento_path(:id=>@pagina) %>
 </p>
+<h3><%=t('galeria')%></h3>
+  <%= render :partial => "imagens/imagen", :collection => @pagina.imagens %>
+<br/>
+<p>
+<%= link_to t('new')+' '+t('imagen'), new_imagen_path(:id=>@pagina) %>
+</p>
 <%if !@pagina.documentacion.nil? || !@pagina.red.nil? && !@pagina.red.sitio.equipo.nil?%>
   <h3><%=t('paginasasociadas')%></h3>
     <%= render :partial => "paginas/pagina", :collection => @pagina.paginas %>

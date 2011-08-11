@@ -1,0 +1,33 @@
+<%= form_tag contacto_correo_path(:id=>@contacto), :method => :post do %>
+   
+  
+   <div class="field">
+    <%= label_tag t :nombre %>
+    <%= text_field_tag :nombre, params[:nombre] %>
+  </div>
+  <div class="field">
+    <%= label_tag t :apellidos %>
+    <%= text_field_tag :apellidos, params[:apellidos] %>
+  </div>
+   <div class="field">
+    <%= label_tag t :organizacion %>
+    <%= text_field_tag :organizacion, params[:organizacion] %>
+  </div>
+  <div class="field">
+    <%= label_tag t :telefono %>
+    <%= text_field_tag :telefono, params[:telefono] %>
+  </div>
+  <div class="field">
+    <%= label_tag t :ciudad %>
+    <%= text_field_tag :ciudad, params[:ciudad] %>
+  </div>
+  <div class="field">
+    <%= label_tag t :email %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag t :mensaje %>
+    <%= text_area_tag :mensaje, params[:mensaje],:size=>'50x20' %>
+  </div>
+  <div class="actions"><%= submit_tag  t('send') %></div>
+<% end %>

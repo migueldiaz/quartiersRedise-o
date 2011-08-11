@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110810211226) do
+ActiveRecord::Schema.define(:version => 20110811181901) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -104,6 +104,13 @@ ActiveRecord::Schema.define(:version => 20110810211226) do
     t.integer  "sitio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "imagens", :force => true do |t|
+    t.string  "piefoto"
+    t.string  "piefotofr"
+    t.string  "imagen"
+    t.integer "pagina_id"
   end
 
   create_table "jeunes", :force => true do |t|

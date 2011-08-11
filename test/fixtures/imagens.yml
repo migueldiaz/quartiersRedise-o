@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  piefoto: MyString
+  piefotofr: MyString
+  imagen: MyString
+  pagina: 
+
+two:
+  piefoto: MyString
+  piefotofr: MyString
+  imagen: MyString
+  pagina: 

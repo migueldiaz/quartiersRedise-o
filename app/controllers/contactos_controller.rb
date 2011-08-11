@@ -1,6 +1,20 @@
 class ContactosController < ApplicationController
  layout 'mono' 
  before_filter :require_login
+ def correo
+ 	@contacto=Contacto.find(params[:id])
+ 	
+ 	Contacto_mailer.contacto.deliver
+ 	if !@contacto.sitio.jeunes.nil?
+    	redirect_to jeunes_contacto_path,:notice=>'Correo enviado'
+   elsif !@contacto.sitio.jeunes.nil?
+   		 redirect_to femmes_contacto_path,:notice=>'Correo enviado'
+   else
+   	 	redirect_to asociation_contacto_path,:notice=>'Correo enviado'
+   end
+ end
+ 
+ 
  def index
    ###########################
    if params[:modo]=='sintrad'

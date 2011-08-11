@@ -4,7 +4,7 @@ Paginadocumentos::Application.routes.draw do
   resources :comentarios
 
   resources :foros
-
+  match 'contacto/correo/' => 'contactos#correo'
   ################################################
   match 'quartiers/asociacion/' => 'quartiers#asociacion'
   match 'quartiers/seccion/' => 'quartiers#seccion'
@@ -130,8 +130,9 @@ Paginadocumentos::Application.routes.draw do
   resource :presentacion do 
     resources :paginas
   end
- 
+  resources :imagens
   resources :paginas do
+  resources :imagens
   resources :parrafos
   resources :documentos
   resources:paginas 

@@ -12,6 +12,7 @@
 			<% if colaborador.imagen_url.to_s != "" %>
 				<%= image_tag colaborador.imagen_url.to_s %>
 			<% end %>
+				<%=link_to colaborador.nombreEs, url_for(:host => colaborador.url)%>
 		<%end%>
 	<%end%>
 

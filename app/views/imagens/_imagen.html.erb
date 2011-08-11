@@ -1,0 +1,14 @@
+ <tr>
+   <td>
+    <% if imagen.imagen_url.to_s != "" %>
+     <%= image_tag imagen.imagen_url.to_s,:size=>'100x90' %>
+   <% end %>
+   </td>
+   <td><%=imagen.piefoto%></td>
+   <td><%=imagen.piefotofr%></td>
+   
+   <td><%= link_to t('show'), imagen%></td>
+   <td><%= link_to t('edit'), edit_imagen_path(imagen)%></td>
+   <td><%= link_to t('destroy'), [imagen], :confirm => t('confirm'),  :method => :delete %>
+   </td>
+ </tr>

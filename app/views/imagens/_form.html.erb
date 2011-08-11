@@ -1,0 +1,46 @@
+<br/>
+<%= form_for @imagen, :html => {:multipart => true} do |f| %>
+ <% if @imagen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('avisoerror')%></h2>
+
+      <ul>
+      <% @imagen.errors.full_messages.each do |msg| %>
+        <li><%= t(msg) %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <%if @imagen.imagen_url.to_s!=''%>
+   <%= image_tag @imagen.imagen_url.to_s %>
+   <div class="field">
+        <label>
+          <%= f.check_box :remove_imagen %>
+          <%= t('destroy')%>
+        </label>
+    </div>
+  <%end%>
+ 
+ <%=  f.hidden_field :pagina_id%>
+  <div class="field">
+    <%= f.label t :piefoto %><br />
+    <%= f.text_field :piefoto %>
+  </div>
+   <div class="field">
+    <%= f.label t :piefotofr %><br />
+    <%= f.text_field :piefotofr %>
+  </div>
+  <div class="field">
+        <label><%=t('imagen')%></label>
+        <%= f.file_field :imagen %>
+  </div>
+  
+  
+  
+  
+  
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<% end %>
