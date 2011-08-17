@@ -1,7 +1,7 @@
 
 		    		<%if !@paginas.nil? && !@red.nil?%>
 				<li <%=menu_seleccionada 'pagina'%>><%=link_to t('proyectos'),asociation_proyectos_path  %>			
-						<ul><%=render 'asociation/paginas'%></ul>
+						<ul class="submenu"><%=render 'asociation/paginas'%></ul>
 						</li>
 						<% else %>
 										<li><%=link_to t('proyectos'),asociation_proyectos_path  %>			

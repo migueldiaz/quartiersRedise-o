@@ -6,6 +6,9 @@ padding:0;
 	margin:0;
 */
 }
+#menu ul.submenu{
+	font-size:80%;
+}
 #menu li {
 	float:left;
 	position:relative;
