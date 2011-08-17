@@ -1,0 +1,12 @@
+	<ul>
+	<% if current_user %>
+	  <li> <%= link_to "Log out", log_out_path %></li>
+	  <% else %>
+		<li><%= link_to t("acceder"), login_path %></li>
+	  <% end %>
+	</ul>
+	<h3><%=t('elegiridioma') %></h3>
+	<ul>
+	<li><%= link_to t('es'), idioma_spanish_path( :url=>request.url )  %></li>
+	<li><%= link_to t('fr'), idioma_french_path( :url=>request.url ) %></li>
+	</ul>

@@ -18,16 +18,33 @@
        <%= stylesheet_link_tag('supersized') %>
        <%= javascript_include_tag('jquery.min') %>       
        <%= javascript_include_tag('menu') %>
-       <%= javascript_include_tag('supersized.3.1.3.min') %>
+       <%= javascript_include_tag('supersized.3.1.3.min') %> 
 
         
-              <%= javascript_include_tag('jquery.lightbox-0.5.pack') %>
-		<%=render "/layouts/morejs" %>
+              <%= javascript_include_tag('jquery.lightbox-0.5.pack') %>          
+
+              
+              
+		 <%=render "/layouts/morejs" %> 
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700' rel='stylesheet' type='text/css'/>
+		<!-- utilizar google font
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Geo" />
+-->
+<!--       
+<%= javascript_include_tag('jquery.lettering-0.6.1.min') %>
+<%= stylesheet_link_tag('jquery-lettering') %>
 
 		
-		
-
-		
+<script>
+  $(document).ready(function() {
+    $(".fancy_title").lettering();
+  });
+</script>
+--- y esto se incluye al body --- 
+<div id="logo">
+<h1 class="fancy_title">Some Title</h1>
+</div>
+	-->	
     </head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
     <body>
 
@@ -51,13 +68,13 @@
                         <form name="buscador">
                             <input type="text" name="busqueda" value="" size="10"><a href="javascript:document.forms['buscador'].submit();"><img valign="bottom" src="images/btn-search.gif" width="18" height="18" alt="" border="0"></a>
                         </form>
-                    </div>
+				</div>
 		-->
                     <hr class="space"><hr class="space"><hr class="space">                    <hr class="space"><hr class="space"><hr class="space">
 <div class="menu_superior " >
-<!-- %=render "layouts/menu_ant" % -->
 
-	<%=render "/layouts/menu" %>
+<%=render "/layouts/menu" %>
+
 </div>
                 </div>
                 <div class="span-5 append-1 last " style="text-align:right;" >

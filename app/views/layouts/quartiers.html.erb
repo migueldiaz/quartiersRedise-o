@@ -28,25 +28,8 @@
 <div id="sidebar">
 
 <h3><%=t('lasociacion')%> </h3>
-<ul>
-	<li><%=link_to t('lasociacion'),asociation_presentacion_path  %></li>
-	<%if !@asociacion.nil? %>
-	<ul>
-		<li><%=link_to t('presentacion'),asociation_presentacion_path  %></li>
-    		<%if !@paginas.nil? && !@presentacion.nil?%>
-    			<ul><%=render 'asociation/paginas'%></ul>
-    		<%end%>
-		<li><%=link_to t('proyectos'),asociation_proyectos_path  %></li>
-		<%if !@paginas.nil? && !@red.nil?%>
-			<ul><%=render 'asociation/paginas'%></ul>
-		<%end%>
-		<li><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
-		<li><%=link_to t('agenda'),asociation_agenda_path%></li>
-		<li><%=link_to t('contacto'),asociation_contacto_path%></li>
-	</ul>
-	<%end%>
-</li></ul>
-</li></ul>
+<%=render "/layouts/menu" %>
+<!-- ></li></ul -->
 <h3><%=t('jeunes')%></h3>
 <ul>
 	<li><%=link_to t('jeunes'),jeunes_presentacion_path  %></li>

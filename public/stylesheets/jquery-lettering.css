@@ -1,0 +1,18 @@
+#logo{font-weight: normal;text-transform:uppercase;font-family:'FranchiseRegular','HelveticaNeue-Bold','League Gothic','Impact',sans-serif;font-size:50px;margin-bottom:-32px;margin-left:10px;color:#c44032;text-shadow:#863027 -4px 4px 0;margin-top:30px;}
+#logo .char2, #logo .char11{color:#e36b23;text-shadow:#9b4d1f -4px 4px 0}
+#logo .char3, #logo .char10{z-index:10;color:#e6c92e;text-shadow:#9c8b26 -4px 4px 0}
+#logo .char4, #logo .char9{color:#5da028;text-shadow:#427021 -4px 4px 0}
+#logo .char5, #logo .char8{color:#4584be;text-shadow:#2f597f -4px 4px 0}
+#logo .char6, #logo .char7{color:#7073cf;text-shadow:#4a4d88 -4px 4px 0}
+#logo .char1{-webkit-transform:rotate(-3deg)}
+#logo .char3{top:-1px;-webkit-transform:rotate(2deg)}
+#logo .char4{top:-7px}
+#logo .char6{top:-7px;-webkit-transform:rotate(2deg)}
+#logo .char7{}
+#logo .char8{top:1px;-webkit-transform:rotate(-2deg)}
+#logo .char9{-webkit-transform:rotate(2deg)}
+#logo .char10{top:-65px;width:36px;}
+#logo .char10:hover{-webkit-transition-duration:0.4s;}
+#logo .char11{top:2px;left:-30px;width:50px;-webkit-transform:rotate(-3deg)}
+#logo .char12{left:-24px}
+
