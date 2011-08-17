@@ -1,18 +1,16 @@
 <%= render :partial => "/shared/titulo",:locals => {:title => t('aportan')}%>
 <div class="ficha ">
-
-
 <% hola="" %>
 <% if !@aportan.nil?%>
 		<% @aportan.each do |colaborador| %>
 		<% hola+="<div class='colaborador'>" %>
 			<%if spanish %>
-			<% hola+="<h4>"+colaborador.nombreEs+"</h4>" %>
+			<% hola+="<div class='nombre'>"+colaborador.nombreEs+"</div>" %>
 			<%else%>
-			<% hola+="<h4>"+colaborador.nombreFr+"</h4>" %>
+			<% hola+="<div class='nombre'>"+colaborador.nombreFr+"</div>" %>
 			<%end%>
-			<% hola+="<h4>"+colaborador.url+"</h4>" %>		
-				<% hola+="<h4>"+colaborador.method(:info.to_s+local.capitalize).call+"</h4>" %>			
+			<% hola+="<div class='url'>"+colaborador.url+"</divh4>" %>		
+				<% hola+="<div class='descripcion'>"+colaborador.method(:info.to_s+local.capitalize).call+"</div>" %>			
 					<% if colaborador.imagen_url.to_s != "" %>
 				<%= image_tag colaborador.imagen_url.to_s %>
 			<%  end %>

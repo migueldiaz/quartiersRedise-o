@@ -16,6 +16,9 @@ h2 { margin: 0; padding: 0; }
 width: 800px;
 margin: 0 auto;
 }
+div .colaborador.nombre{
+	background-color:red;
+}
 
 #header {
 height: 100px;
