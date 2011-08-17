@@ -1,52 +1,43 @@
-<%= render :partial => "/shared/titulo",:locals => {:title => t('aportan')}%>
+<h1><%=t('aportan')%></h1>
 <div class="ficha ">
-<% hola="" %>
 <% if !@aportan.nil?%>
 		<% @aportan.each do |colaborador| %>
-		<% hola+="<div class='colaborador'>" %>
+		<div class='colaborador'>
 			<%if spanish %>
-			<% hola+="<div class='nombre'>"+colaborador.nombreEs+"</div>" %>
+			<div class="nombre"><%=colaborador.nombreEs%></div>
 			<%else%>
-			<% hola+="<div class='nombre'>"+colaborador.nombreFr+"</div>" %>
+			<div class="nombre"><%=colaborador.nombreFr%></div>
 			<%end%>
-			<% hola+="<div class='url'>"+colaborador.url+"</divh4>" %>		
-				<% hola+="<div class='descripcion'>"+colaborador.method(:info.to_s+local.capitalize).call+"</div>" %>			
+			<div class="url"><%=colaborador.url%></div>		
+				<div class="descripcion"><%=colaborador.method(:info.to_s+local.capitalize).call%></div>		
 					<% if colaborador.imagen_url.to_s != "" %>
 				<%= image_tag colaborador.imagen_url.to_s %>
 			<%  end %>
-					<% 	hola+="</div>" %>
+		</div>
 		<%end%>
 	
 	<%end%>
-	
-	   <%= render :partial => "/shared/modulo_ficha", :locals => {
-:title => t('aportan'), 
-:texto=>hola.html_safe}
-%>                 
-
-<% hola="" %>
+</div>
+<hr class="space"><hr class="space"><hr class="space">
+<h1 ><%=t('noaportan')%></h1>
+<div class="ficha">
 <% if !@noaportan.nil?%>
 		<% @noaportan.each do |colaborador| %>
-		<% 			hola+="<div class=''colaborador'>" %>
+		<div class='colaborador'>
 			<%if spanish %>
-			<% hola+="<h4>"+colaborador.nombreEs+"</h4>" %>
+			<div class="nombre"><%=colaborador.nombreEs%></div>
 			<%else%>
-			<% hola+="<h4>"+colaborador.nombreFr+"</h4>" %>
+			<div class="nombre"><%=colaborador.nombreFr%></div>
 			<%end%>
-			<% hola+="<h4>"+colaborador.url+"</h4>" %>		
-						<% hola+="<h4>"+colaborador.method(:info.to_s+local.capitalize).call+"</h4>" %>			
+			<div class="url"><%=colaborador.url%></div>		
+				<div class="descripcion"><%=colaborador.method(:info.to_s+local.capitalize).call%></div>		
 					<% if colaborador.imagen_url.to_s != "" %>
 				<%= image_tag colaborador.imagen_url.to_s %>
 			<%  end %>
-					<% 	hola+="</div>" %>
+		</div>
 		<%end%>
 	
 	<%end%>
-	
-   <%= render :partial => "/shared/modulo_ficha", :locals => {
-:title => t('noaportan'), 
-:texto=>hola.html_safe}
-%>                 
 </div>
 
 

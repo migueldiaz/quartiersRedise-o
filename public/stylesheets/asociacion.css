@@ -13,7 +13,33 @@ div{
  border:1px solid red;
 */
 }
-
+.colaborador{
+float: left;
+    height: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    overflow: visible;
+    padding: 30px 10px;
+    text-align: center;
+    white-space: nowrap;
+    width: 200px;
+    
+      -moz-border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0 1px 1px #E1E1E1;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BBBBBB;
+    margin: 0 3px 10px 0;
+    position: relative;
+}
+	/*
+		white-space:pre-line;
+	white-space:pre-wrap;
+	*/ 
+.colaborador .nombre{
+	
+	width:200px;
+	white-space:pre-wrap; 
+}
 .seleccionado {
   color: #ff6600;
 }
@@ -69,6 +95,7 @@ padding:10px;
   margin-bottom: 7px;
 	font-size: 22px;
 padding-left:5px;
+font-family:"Lora";font-weight: 400;
 	
 }
 .contenido_central .titulo span{
