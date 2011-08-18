@@ -46,7 +46,7 @@ div{
 }
 .colaborador{
 float: left;
-    height: 100px;
+    height: 140px;
     margin-right: 10px;
     margin-top: 10px;
     overflow: visible;
@@ -55,7 +55,10 @@ float: left;
     white-space: nowrap;
     width: 200px;
     
-      -moz-border-radius: 5px 5px 5px 5px;
+      -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+      
     -moz-box-shadow: 0 1px 1px #E1E1E1;
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #BBBBBB;
@@ -98,7 +101,9 @@ padding:none;
 	float:left;
 	color:white;
 	background-color:black;
-
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
 }
 
 .menu_superior li.seleccionado{ 
@@ -119,6 +124,9 @@ padding:none;
   /*border-top: 1px dotted #666666;*/
   background-image: url(../images/t.png);
 padding:10px;
+      -webkit-border-radius: 10px 10px 10px 10px;
+-moz-border-radius:  10px 10px 10px 10px;
+border-radius:  10px 10px 10px 10px;
 }
 .contenido_central .titulo {
 
