@@ -3,22 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
  <title>Quartiers</title>
-  <%= stylesheet_link_tag ('style')%>
-   <%= stylesheet_link_tag('screen') %>     
-  <%= stylesheet_link_tag ('scaffold')%>
-  <%= javascript_include_tag :defaults %>
+        <%= stylesheet_link_tag('asociacion') %>
+       <%= stylesheet_link_tag('drop-down-menu') %>
+       <%= stylesheet_link_tag('screen') %>     
+       <%= stylesheet_link_tag('gestion') %>     
+
+  	<%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag('menu') %>
   <%= csrf_meta_tag %>
+  		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700' rel='stylesheet' type='text/css'/>
 </head>
 <body>
         <div class="container ">
             <div class="span-24 append-bottom" >
-                <h1><%= link_to 'Quartiers du monde',trafico_url%></h1>   
+            <h2> <%=t('zadmin')%> QDM</h2>
                 	<%=render "/layouts/menu_admin" %>         
             </div>
             <div class="span-24 append-bottom" >
             	<div class="span-4">
-            	<h3><%=t :menu%></h3>
 
+
+            		<ul class="menus" style="background-color:red;">
+            		<!-- 
+            							 link_to t('lasociacion'), asociacion_path(:id=>@web) 
+            		-->
+					<li><%= link_to t('lasociacion'), asociacion_path(:id=>1) %> </li>
+					<li><%= link_to t('proyecto')+' '+t('jeunes'), jeunes_sitio_path %> </li>
+					<li><%= link_to t('proyecto')+' '+t('femmes'), femmes_sitio_path %> </li>
+					<li><%= link_to t('show')+' '+t('traductores'),usuarios_path(:tipo=>'traductor')%></li>
+					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
+					</ul>				
             	</div>
             	<div class="span-19 append-bottom">
 			   <%= yield %>

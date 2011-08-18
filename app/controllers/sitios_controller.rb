@@ -6,7 +6,7 @@ layout 'mono'
   # GET /sitios.xml
   def index
     @sitios = Sitio.all
-
+    logger.info 'informational message'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @sitios }
@@ -17,9 +17,8 @@ layout 'mono'
   # GET /sitios/1
   # GET /sitios/1.xml
   def show
-   
-    @sitio = Sitio.find(params[:id])
-    
+   logger.info '*******************************show'
+   @sitio = Sitio.find(params[:id])
     if !@sitio.equipo.nil?
        @equipo=@sitio.equipo
        if !@equipo.jeunes.nil?

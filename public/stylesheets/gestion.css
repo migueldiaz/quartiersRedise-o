@@ -1,0 +1,160 @@
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+
+/* CSS Document */
+.menus, .menus ul {
+	list-style:none;font-family:"Nunito";font-weight: 400;font-size:1.2em;
+	/*
+padding:0;
+	margin:0;
+*/
+}
+.menus ul.submenu{
+	font-size:80%;
+}
+.menus li {
+	float:left;
+	position:relative;
+	color:white;
+	background-color:gray;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding:10px;
+	 margin-left: -2.2em;
+	 margin-top:10px;
+	 width:100%;
+	/*
+line-height:4.5em;
+	width:10em;
+*/
+}
+.menus li ul {
+	position:absolute;
+	margin-top:-0.2em;
+	margin-left:.5em; /* for IE */
+	display:none;
+	
+}
+.menus ul li ul {
+	margin-top:-3em;
+	margin-left:7em;
+}
+/* ******************************************************************* */
+/* SHOW SUBMENU  1 */
+.menus li:hover ul, .menus li.over ul {
+	display:block;
+
+}
+.menus li:hover ul ul, .menus li.over ul ul {
+	display:none;
+}
+/* SHOW SUBMENU  2 */
+.menus ul li:hover ul, .menus ul li.over ul {
+	display:block;
+}
+/* ******************************************************************* */
+/* STYLING UP THE LINKS */
+
+.menus  li a {
+
+	display:block;
+
+	
+	
+	color:white;
+
+	text-decoration:none;
+
+}
+
+.menus li  a:hover {
+
+	color:black;
+}
+.menus li.seleccionado a:hover {
+
+	color:black;
+}
+
+.menus ul a {
+
+	display:block;
+
+	
+	background:black;
+	color:white;
+
+	text-decoration:none;
+	
+
+}
+
+.menus ul a:hover {
+background:#fe4a00;
+	color:white;
+}
+
+.menus ul {
+
+}
+
+.menus ul a {
+	
+	background:black;
+}
+
+/* ******************************************************************* */
+
+.menus {
+	z-index:1;
+}
+.menus ul {
+	z-index:2;
+}
+.menus ul ul {
+	z-index:3;
+}
+
+/* ******************************************************************* */
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul li { float: left; height: 1%; }
+* html ul li a { height: 1%; }
+/* End */
+
