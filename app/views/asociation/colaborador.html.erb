@@ -2,39 +2,18 @@
 <div class="ficha ">
 <% if !@aportan.nil?%>
 		<% @aportan.each do |colaborador| %>
-		<div class='colaborador'>
-			<%if spanish %>
-			<div class="nombre"><%=colaborador.nombreEs%></div>
-			<%else%>
-			<div class="nombre"><%=colaborador.nombreFr%></div>
-			<%end%>
-			<div class="url"><%=colaborador.url%></div>		
-				<div class="descripcion"><%=colaborador.method(:info.to_s+local.capitalize).call%></div>		
-					<% if colaborador.imagen_url.to_s != "" %>
-				<%= image_tag colaborador.imagen_url.to_s %>
-			<%  end %>
-		</div>
+			<%=render "ficha_colaborador",  :colaborador=>colaborador %>
 		<%end%>
-	
-	<%end%>
+<%end%>
 </div>
 <hr class="space"><hr class="space"><hr class="space">
 <h1 ><%=t('noaportan')%></h1>
 <div class="ficha">
 <% if !@noaportan.nil?%>
 		<% @noaportan.each do |colaborador| %>
-		<div class='colaborador'>
-			<%if spanish %>
-			<div class="nombre"><%=colaborador.nombreEs%></div>
-			<%else%>
-			<div class="nombre"><%=colaborador.nombreFr%></div>
-			<%end%>
-			<div class="url"><%=colaborador.url%></div>		
-				<div class="descripcion"><%=colaborador.method(:info.to_s+local.capitalize).call%></div>		
-					<% if colaborador.imagen_url.to_s != "" %>
-				<%= image_tag colaborador.imagen_url.to_s %>
-			<%  end %>
-		</div>
+
+			<%=render "ficha_colaborador",  :colaborador=>colaborador %>
+		
 		<%end%>
 	
 	<%end%>
