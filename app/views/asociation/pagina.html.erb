@@ -24,10 +24,9 @@
 </ul>
 <% @pagina.imagens.each do |imagen| %>
 <%= render :partial => "/shared/img", :locals => {
-:imagen=>imagen.imagen_url, 
-:enlace_imagen=>"imgs/ej04zoom.jpg", 
-:imagen_class=>"left",
-:imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call
+:imagen=>imagen.imagenmini_url, 
+:enlace_imagen=>imagen.imagen_url, 
+:imagen_class=>"left"
 }
 %> 	
  		
