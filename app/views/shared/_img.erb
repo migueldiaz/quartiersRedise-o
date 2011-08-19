@@ -2,7 +2,7 @@
 		<div class="img-shadow">
 	<% if defined?enlace_imagen %>
 		<a href="<%=enlace_imagen%>" class="lightbox" title="<%= if defined?imagen_title then imagen_title end %>">
-		<img src="<%=imagen%>"  class="image <%= if defined?imagen_class then imagen_class end %> " >
+		<img src="<%= if imagen="" then enlace_imagen else imagen end %>"  class="image <%= if defined?imagen_class then imagen_class end %> " >
 </a>
 	<% else %>
 

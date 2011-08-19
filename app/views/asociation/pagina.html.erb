@@ -3,7 +3,6 @@
  		
 <% @pagina.parrafos.each do |parrafo| %>
  		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2> 
- 		 		<p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
 <%= render :partial => "/shared/img", :locals => {
 :imagen=>parrafo.imagenmini_url, 
 :enlace_imagen=>parrafo.imagen_url, 
@@ -11,6 +10,7 @@
 :imagen_title=>parrafo.method(dame_nombre_metodo 'piefoto').call
 }
 %> 	
+ 		 		<p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
 <% end %>
                     <div style="clear: both;" />
 <h2><%=t('documentacion')%></h2>
