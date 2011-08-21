@@ -3,6 +3,7 @@
   <td>  <%= pagina.titulofr %> </td>
   <td><%= link_to t('show'), pagina_path(pagina)%></td>
   <td><%= link_to t('edit'), edit_pagina_path(pagina)%></td>    
+  
   <%if !pagina.presentacion.nil?%>
   <td><%= link_to t('destroy'), [pagina], :confirm => t('confirm'),  :method => :delete %></td>
   <%else%>

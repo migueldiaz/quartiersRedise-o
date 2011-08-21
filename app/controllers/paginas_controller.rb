@@ -4,7 +4,7 @@ class PaginasController < ApplicationController
   # GET /paginas.xml
   before_filter :require_login
   def index
-    
+
      if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
 			 @paginas = Pagina.find(:all, :conditions => "tituloes=''")
@@ -21,6 +21,7 @@ class PaginasController < ApplicationController
    respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @paginas }
+      format.json
     end
   end
 
@@ -28,10 +29,11 @@ class PaginasController < ApplicationController
   # GET /paginas/1.xml
   def show
     @pagina = Pagina.find(params[:id])
-    
+        logger.info "showwwwwwwwwwwwwwwwwww paginas"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pagina }
+       format.json  { render :json => @pagina }
     end
   end
 
@@ -70,7 +72,7 @@ class PaginasController < ApplicationController
   # POST /paginas
   # POST /paginas.xml
   def create
-    
+    logger.info "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
     @pagina = Pagina.create(params[:pagina])
     #if !@pagina.presentacion.nil?
      # @presentation=@pagina.presentacion
@@ -78,15 +80,22 @@ class PaginasController < ApplicationController
      # @red=@pagina.red
     #end
     
+   
     respond_to do |format|
       if @pagina.save
+
         format.html { redirect_to(@pagina, :notice => t('exito')) }
         format.xml  { render :xml => @pagina, :status => :created, :location => @pagina }
-      else
+
+
+  		  format.js   
+  		   else
         format.html { render :action => "new" }
         format.xml  { render :xml => @pagina.errors, :status => :unprocessable_entity }
+	    format.js  
       end
     end
+   
   end
 
   # PUT /paginas/1
