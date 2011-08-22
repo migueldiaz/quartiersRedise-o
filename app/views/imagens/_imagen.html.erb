@@ -3,6 +3,11 @@
     <% if imagen.imagen_url.to_s != "" %>
      <%= image_tag imagen.imagen_url.to_s,:size=>'100x90' %>
    <% end %>
+   
+    <%if imagen.imagenmini_url.to_s!=''%>
+   <%= image_tag imagen.imagenmini_url.to_s,:size=>'100x80' %>
+  <%end%>
+   
    </td>
    <td><%=imagen.piefoto%></td>
    <td><%=imagen.piefotofr%></td>

@@ -22,6 +22,16 @@
     </div>
   <%end%>
  
+  <%if @imagen.imagenmini_url.to_s!=''%>
+   <%= image_tag @imagen.imagenmini_url.to_s %>
+   <div class="field">
+        <label>
+          <%= f.check_box :remove_imagenmini %>
+          <%= t('destroy')%>
+        </label>
+    </div>
+  <%end%>
+ 
  <%=  f.hidden_field :pagina_id%>
   <div class="field">
     <%= f.label t :piefoto %><br />
@@ -34,6 +44,10 @@
   <div class="field">
         <label><%=t('imagen')%></label>
         <%= f.file_field :imagen %>
+  </div>
+   <div class="field">
+        <label><%=t('miniatura')%></label>
+        <%= f.file_field :imagenmini %>
   </div>
   
   
