@@ -1,59 +1,44 @@
-<% if spanish %>
- 	<h1><%= @pagina.tituloes %> </h1> 
-<%else%>
-	<h1><%= @pagina.titulofr %> </h1> 
-<% end %> 
+<h1><%=@pagina.send(:titulo.to_s+local)%></h1>
+<hr class="space">
 <% @pagina.parrafos.each do |parrafo| %>
-	<% if spanish %>
- 		<h2><%= parrafo.tituloes %> </h2> 
- 		<p><%=simple_format(parrafo.textoes)%><p>
-	<%else%>
-		<h2><%= parrafo.titulofr %> </h2> 
-		<p><%=simple_format(parrafo.textofr)%><p>
-	<% end %> 
+ 		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2>
+<%
+if !parrafo.imagenmini_url.nil? and !parrafo.imagenmini_url.empty?
+@img_existente=parrafo.imagenmini_url
+else
+@img_existente=parrafo.imagen_url
+end
+%>
+ 		 
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>@img_existente, 
+:enlace_imagen=>parrafo.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>parrafo.method(dame_nombre_metodo 'piefoto').call
+}
+%> 	
+<p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
+<hr class="space"><hr class="space">
+ <% end %>
 
-	<% if parrafo.imagen_url.to_s != "" %>
-		<%= image_tag parrafo.imagen_url.to_s, :size=>'200x150' %>
-	<% end %>
-	<% if parrafo.imagenmini_url.to_s != "" %>
-		<%= image_tag parrafo.imagenmini_url.to_s, :size=>'100x75' %>
-	<% end %>
-	<% if parrafo.imagen_url.to_s != "" || parrafo.imagenmini_url.to_s != ""%>
-		<% if spanish %>
- 			<p><%= parrafo.piefoto %> </p> 
-		<%else%>
-			<p><%= parrafo.piefotofr %> </p> 
-		<% end %> 
-		
-	<% end %>	
-<% end %>
 <h2><%=t('documentacion')%></h2>
 <ul>
 <% @pagina.documentos.each do |documento| %>
- 	<% if spanish %>
  		<% if documento.archivo_url.to_s != "" %>
- 		 	<li><%= link_to documento.doces, documento.archivo_url.to_s %></li>
+ 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.archivo_url.to_s %></li>
 		<%else%>
-			<li><%= documento.doces %></li>
+			<li>FALTA DOC EN BD!! :::: <%= documento.doces %></li>
   		<% end %>	
- 	<%else%>
- 		<% if documento.archivofr_url.to_s != "" %>
- 		 	<li><%= link_to documento.docfr, documento.archivofr_url.to_s %></li>
-		<%else%>
-			<li><%= documento.docfr %></li>
-  		<% end %>	
- 	<%end%>
 <%end%>
 </ul>
 <% @pagina.imagens.each do |imagen| %>
- 	
- 		<% if imagen.imagen_url.to_s != "" %>
- 		  <%= image_tag imagen.imagen_url.to_s %>
-		<%end%>
-	<% if spanish %>	
- 		<%=imagen.piefoto%>
-    <%else%>
-     <%=imagen.piefotofr%>
-     <%end%>
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>imagen.imagenmini_url, 
+:enlace_imagen=>imagen.imagen_url, 
+:imagen_class=>"left"
+}
+%> 	
+ 		
+
 <%end%>
 

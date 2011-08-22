@@ -1,33 +1,22 @@
 
-<h2><%=t('aportan')%></h2>
-	<%if !@aportan.nil?%>
-		<% @aportan.each do |colaborador| %>
-			<%if spanish%>
-				<h4><%= colaborador.nombreEs %></h4>
-				<p><%= colaborador.infoEs %></p>
-			<%else%>
-				<h4><%= colaborador.nombreFr %></h4>
-				<p><%=colaborador.infoFr %></p>
-			<%end%>
-			<% if colaborador.imagen_url.to_s != "" %>
-				<%= image_tag colaborador.imagen_url.to_s %>
-			<% end %>
-				<%=link_to colaborador.nombreEs, url_for(:host => colaborador.url)%>
-		<%end%>
-	<%end%>
+<h1 ><%=t('noaportan')%></h1>
+<div class="ficha">
+<% if !@noaportan.nil?%>
+		<% @noaportan.each do |colaborador| %>
 
-<h2><%=t('noaportan')%></h2>
-	<%if !@noaportan.nil?%>
-		<% @noaportan.each do |colaboradorno| %>
-			<%if spanish%>
-				<h4><%= colaboradorno.nombreEs %></h4>
-				<p><%= colaboradorno.infoEs %></p>
-			<%else%>
-				<h4><%= colaboradonor.nombreFr %></h4>
-				<p><%=colaboradorno.infoFr %></p>
-			<%end%>
-			<% if colaboradorno.imagen_url.to_s != "" %>
-				<%= image_tag colaboradorno.imagen_url.to_s %>
-			<% end %>
+			<%=render "/shared/ficha_colaborador",  :colaborador=>colaborador %>
+		
 		<%end%>
+	
 	<%end%>
+</div>
+<hr class="space"><hr class="space"><hr class="space">
+<h1><%=t('aportan')%></h1>
+<div class="ficha ">
+<% if !@aportan.nil?%>
+		<% @aportan.each do |colaborador| %>
+			<%=render "/shared/ficha_colaborador",  :colaborador=>colaborador %>
+		<%end%>
+<%end%>
+</div>
+

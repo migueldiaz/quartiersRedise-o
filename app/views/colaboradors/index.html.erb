@@ -1,13 +1,14 @@
 <h1><%= t('colaboradores')%></h1>
-<h4>Socios colaborativos</h4>
-<table>
-<%= render :partial => "colaboradors/colaboradorSi", :collection => @colaboradors %>
-</table>
 <h4>Socios asociativos</h4>
 
 <table>
 <%= render :partial => "colaboradors/colaboradorNo", :collection => @colaboradors %>
 </table>
+<h4>Socios colaborativos</h4>
+<table>
+<%= render :partial => "colaboradors/colaboradorSi", :collection => @colaboradors %>
+</table>
+
 <br/>
 <% if current_user.tipo=='traductor'%>
 <%= link_to t('back'),traductor_url %>

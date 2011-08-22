@@ -2,8 +2,16 @@
 <hr class="space">
 <% @pagina.parrafos.each do |parrafo| %>
  		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2> 
+<%
+if !parrafo.imagenmini_url.nil? and !parrafo.imagenmini_url.empty?
+@img_existente=parrafo.imagenmini_url
+else
+@img_existente=parrafo.imagen_url
+end
+%>
+ 		 
 <%= render :partial => "/shared/img", :locals => {
-:imagen=>parrafo.imagenmini_url, 
+:imagen=>@img_existente, 
 :enlace_imagen=>parrafo.imagen_url, 
 :imagen_class=>"left",
 :imagen_title=>parrafo.method(dame_nombre_metodo 'piefoto').call

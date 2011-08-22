@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(:version => 20110811181901) do
     t.text     "descripcionEs"
     t.text     "descripcionFr"
     t.boolean  "revisado"
-    t.integer  "sitio_id"
     t.integer  "jeunes_id"
     t.integer  "femmes_id"
   end
