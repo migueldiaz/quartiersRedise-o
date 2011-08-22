@@ -3,17 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
  <title>Quartiers</title>
+
+
         <%= stylesheet_link_tag('asociacion') %>
        <%= stylesheet_link_tag('drop-down-menu') %>
        <%= stylesheet_link_tag('screen') %>     
        <%= stylesheet_link_tag('gestion') %>     
+       <%= javascript_include_tag('jquery.min') %>       
+              <%= javascript_include_tag('rails-jquery') %>                
 
-  	<%= javascript_include_tag :defaults %>
-    <%= javascript_include_tag('menu') %>
+       
+           <%= javascript_include_tag('menu') %>
+
   <%= csrf_meta_tag %>
-  		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700' rel='stylesheet' type='text/css'/>
+  		<!-- link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700' rel='stylesheet' type='text/css'/ -->
 </head>
 <body>
+<div id="states">
+</div>
         <div class="container ">
             <div class="span-24 append-bottom" >
             <h2> <%=t('zadmin')%> QDM</h2>
@@ -34,7 +41,7 @@
 					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
 					</ul>				
             	</div>
-            	<div class="span-19 append-bottom">
+            	<div class="span-19 append-bottom" id="rails_yield">
 			   <%= yield %>
                	</div>
             </div>

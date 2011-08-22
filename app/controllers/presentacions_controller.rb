@@ -23,13 +23,19 @@ before_filter :require_login
 end
 
   def show
+  logger.info "shhhhhhhhhhhhhhhhhhhhhh"
  	@sitio = Sitio.find(params[:id])
  	if @sitio.presentacion.nil?
  	  @sitio.presentacion=Presentacion.create
  	end
   	@presentacion=@sitio.presentacion
-  	
-  
+	
+     respond_to do |format|
+     logger.info("inentando encontrar el tmeplaea")
+      format.html # index.html.erb
+      format.json {render :json => @presentacion.paginas.to_json}
+      
+    end
   end
 
   def create
