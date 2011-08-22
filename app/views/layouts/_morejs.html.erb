@@ -32,13 +32,23 @@
 					slide_counter           :   0,		//Display slide numbers
 					slide_captions          :   0,		//Slide caption (Pull from "title" in slides array)
 					slides 					:  	[		//Slideshow Images
+					<%if params[:controller]=="asociation" %>
 														{image : '/imgs/05.jpg', title:"", url:""},  														{image : '/imgs/02.jpg', title:"", url:""}, 
 																											{image : '/imgs/00.jpg', title:"", url:""},  			
 					{image : '/imgs/06.jpg', title:"", url:""},  
 													{image : '/imgs/05.jpg', title:"", url:""},
 							 						{image : '/imgs/01.jpg', title:"", url:""},
 														{image : '/imgs/03.jpg', title:"", url:""} 
-														
+							<%else%>
+											{image : '/imgs/j-00.jpg', title:"", url:""}, 
+											{image : '/imgs/j-01.jpg', title:"", url:""}, 											{image : '/imgs/j-02.jpg', title:"", url:""}, 
+										{image : '/imgs/j-03.jpg', title:"", url:""}, 
+										{image : '/imgs/j-04.jpg', title:"", url:""}, 
+										{image : '/imgs/j-05.jpg', title:"", url:""}, 
+										{image : '/imgs/j-06.jpg', title:"", url:""}, 										{image : '/imgs/j-07.jpg', title:"", url:""}, 
+																				{image : '/imgs/j-08.jpg', title:"", url:""}, 
+																														{image : '/imgs/j-09.jpg', title:"", url:""}, 					{image : '/imgs/j-11.jpg', title:"", url:""}, 					{image : '/imgs/j-10.jpg', title:"", url:""}, 					{image : '/imgs/j-12.jpg', title:"", url:""}, 					{image : '/imgs/j-13.jpg', title:"", url:""}, 					{image : '/imgs/j-14.jpg', title:"", url:""}, 
+									<%end %>					
 												]
 												
 				}); 

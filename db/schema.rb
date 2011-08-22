@@ -18,14 +18,6 @@ ActiveRecord::Schema.define(:version => 20110822183052) do
     t.datetime "updated_at"
   end
 
-  create_table "claves", :force => true do |t|
-    t.string   "clave"
-    t.integer  "jeunes_id"
-    t.integer  "femmes_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "colaboradors", :force => true do |t|
     t.string   "nombreEs"
     t.string   "nombreFr"
@@ -118,7 +110,6 @@ ActiveRecord::Schema.define(:version => 20110822183052) do
     t.string  "piefotofr"
     t.string  "imagen"
     t.integer "pagina_id"
-    t.string  "miniatura"
     t.string  "imagenmini"
   end
 
@@ -196,17 +187,6 @@ ActiveRecord::Schema.define(:version => 20110822183052) do
     t.integer  "equipo_id"
     t.integer  "jeunes_id"
     t.integer  "femmes_id"
-  end
-
-  create_table "usuarioforos", :force => true do |t|
-    t.string   "nombre"
-    t.string   "email"
-    t.string   "clave"
-    t.integer  "jeunes_id"
-    t.integer  "femmes_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "idioma"
   end
 
   create_table "usuarios", :force => true do |t|
