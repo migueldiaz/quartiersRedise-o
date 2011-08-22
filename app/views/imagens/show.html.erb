@@ -6,6 +6,12 @@
   <% end %>
  </p>
  <p>
+ 
+    <%if @imagen.imagenmini_url.to_s!=''%>
+   <%= image_tag @imagen.imagenmini_url.to_s,:size=>'100x80' %>
+  <%end%>
+ </p>
+ <p>
     <b><%=t('piefoto')%></b>
     <%= @imagen.piefoto %>
  </p>

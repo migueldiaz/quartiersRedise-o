@@ -10,10 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811181901) do
+ActiveRecord::Schema.define(:version => 20110822183052) do
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "claves", :force => true do |t|
+    t.string   "clave"
+    t.integer  "jeunes_id"
+    t.integer  "femmes_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -110,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20110811181901) do
     t.string  "piefotofr"
     t.string  "imagen"
     t.integer "pagina_id"
+    t.string  "miniatura"
+    t.string  "imagenmini"
   end
 
   create_table "jeunes", :force => true do |t|
@@ -186,6 +196,17 @@ ActiveRecord::Schema.define(:version => 20110811181901) do
     t.integer  "equipo_id"
     t.integer  "jeunes_id"
     t.integer  "femmes_id"
+  end
+
+  create_table "usuarioforos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "email"
+    t.string   "clave"
+    t.integer  "jeunes_id"
+    t.integer  "femmes_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "idioma"
   end
 
   create_table "usuarios", :force => true do |t|
