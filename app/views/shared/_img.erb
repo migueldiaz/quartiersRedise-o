@@ -1,14 +1,14 @@
-<%if defined?imagen%>
+<%if !imagen.nil? and !imagen.empty?%>
 		<div class="img-shadow">
-	<% if defined?enlace_imagen %>
-		<a href="<%=enlace_imagen%>" class="lightbox" title="<%= if defined?imagen_title then imagen_title end %>">
-		<img src="<%= if imagen="" then enlace_imagen else imagen end %>"  class="image <%= if defined?imagen_class then imagen_class end %> " >
+	<% if !enlace_imagen.nil? and !enlace_imagen.empty? %>
+		<a href="<%=enlace_imagen%>" class="lightbox" title="<%= if !imagen_title.nil? and !imagen_title.empty? then imagen_title end %>">
+		<img src="<%= if imagen.empty? then enlace_imagen else imagen end %>"  class="image <%= if !imagen_class.nil? and !imagen_class.empty? then imagen_class end %> " >
 </a>
 	<% else %>
 
-        <img src="<%=imagen%>"  class="image <%= if defined?imagen_class then imagen_class end %> " >
+        <img src="<%=imagen%>"  class="image <%= if !imagen_class.nil? and !imagen_class.empty? then imagen_class end %> " >
 	<% end %>
-	<% if defined?imagen_title  %>
+	<% if !imagen_title.nil? and !imagen_title.empty?  %>
 	<cite><%=imagen_title%></cite>
 	<%end%>
 	</div>
