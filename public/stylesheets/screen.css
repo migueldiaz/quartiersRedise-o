@@ -265,3 +265,24 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
+#idiomas ul li {  
+		display: inline;  
+
+
+}
+#idiomas ul li a.seleccionado{
+
+         	      opacity: 0.5;
+          color:black;
+                    background-color:white; /* Color de fondo */ ”
+}
+#idiomas ul li a, a:focus{
+          color:white;
+		 padding: 2px 7px; /*Separar el texto*/  
+         margin:5px; /* Separar los botones */  	
+         opacity: 0.1;
+          background-color:black; /* Color de fondo */ ”
+}
+#idiomas ul li  a:hover {
+         opacity: 0.5;
+}

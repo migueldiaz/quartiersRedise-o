@@ -12,7 +12,7 @@ fr:
  exito: 'Sauvagarde correcte'
  back: 'Retourner'
  fecha: 'Date et heure'
- spanish: 'spagnol'
+ spanish: 'Español'
  french: 'français'
  tituloEs: 'Titre en spagnol'
  tituloFr: 'Titre en français'
@@ -20,7 +20,7 @@ fr:
  show: "Voir"
  edit: "Editer"
  destroy: "Efffacer"
- es: "Spagnol"
+ es: "Español"
  fr: "Français"
  en: "Anglais"
  description: "Chaque quartier..."

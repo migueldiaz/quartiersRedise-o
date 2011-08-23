@@ -57,8 +57,11 @@
 
                 <div class="span-18 " >
                 <hr class="space">
-		<div class="prepend-1  idioma">
-                   A
+		<div class="idioma" id="idiomas">
+		<ul >
+		<li ><%=link_to t('es'), url_for( :locale => 'es', :id=>params[:id] ) , :class=>comprueba('es')%></li>
+		<li><%=link_to t('fr'), url_for( :locale => 'fr' , :id=>params[:id]), :class=>comprueba('fr') %></li>
+		</ul>
                     </div>
 <!--
                     <div class="prepend-1 bottom">
