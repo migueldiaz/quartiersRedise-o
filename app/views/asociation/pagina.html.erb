@@ -20,7 +20,7 @@ end
 <p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
 <hr class="space"><hr class="space">
  <% end %>
-
+<% if (!@pagina.documentos.empty?) then %>
 <h2><%=t('documentacion')%></h2>
 <ul>
 <% @pagina.documentos.each do |documento| %>
@@ -31,6 +31,7 @@ end
   		<% end %>	
 <%end%>
 </ul>
+<% end if %>
 <% @pagina.imagens.each do |imagen| %>
 <%= render :partial => "/shared/img", :locals => {
 :imagen=>imagen.imagenmini_url, 

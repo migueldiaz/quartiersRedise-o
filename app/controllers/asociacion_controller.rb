@@ -5,7 +5,7 @@ class AsociacionController < ApplicationController
     @asociacion=@web.asociacion 
     if @asociacion.nil?
     @web.asociacion =Asociacion.new
-    end
+  end
     if @asociacion.sitio.nil?
      @asociacion.sitio=Sitio.new
     end    
