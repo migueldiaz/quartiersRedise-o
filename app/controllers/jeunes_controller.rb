@@ -63,10 +63,12 @@ def pagina
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
 		else 
+    logger.info "+++++++++++++++++++++++++++++++++++++++++++++++++++++++cargando documentacion de jeunes c"  
 	  		@documentacion=@sitio.documentacion
 	  		@paginas=@documentacion.paginas
 		end
 		if !@pagina.pagina_id.nil?
+    logger.info "++++++++++++++////////////////////////"  
 	     @original=@paginas.where(:id=>@pagina.pagina_id).first
 		end
 		

@@ -60,20 +60,19 @@
     $(".miniatura").load(function() {
     if($(this).width()>200){ 
     	$(this).width(200);
-        	if($(this).height()>200){
+    }else if($(this).height()>200){
    	  			$(this).height(200);
-    		}
-    };
+    		
+	}
 });
     $(".miniatura_socio").load(function() {
     if($(this).width()>200){ 
     	$(this).width(200);
-        	if($(this).height()>170){
+        	
+    }else if($(this).height()>170){
    	  			$(this).height(170);
-    		}
-    };
+	}	
 });
-
 });
 
 </script>

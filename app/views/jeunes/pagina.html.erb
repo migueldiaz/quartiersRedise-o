@@ -1,7 +1,18 @@
+<%
+if(!@original.nil?) then
+%>
+	<h2><%= link_to @original.send(:titulo.to_s+local)+">" ,jeunes_pagina_path(:id=>@original) %> <%=@pagina.send(:titulo.to_s+local)%></h2>
+<%
+else
+%>
 <h1><%=@pagina.send(:titulo.to_s+local)%></h1>
+<%
+end
+%>
+
 <hr class="space">
 <% @pagina.parrafos.each do |parrafo| %>
- 		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2>
+ 		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2> 
 <%
 if !parrafo.imagenmini_url.nil? and !parrafo.imagenmini_url.empty?
 @img_existente=parrafo.imagenmini_url
@@ -20,8 +31,29 @@ end
 <p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
 <hr class="space"><hr class="space">
  <% end %>
-<% if (!@pagina.documentos.empty?) then %>
 
+<% if !@pagina.imagens.empty? then %>
+<div class="galeria">
+<h2><%=t('galeria')%></h2>
+<% @pagina.imagens.each do |imagen| %>
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>imagen.imagenmini_url, 
+:enlace_imagen=>imagen.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call,
+:galeria=>true
+}
+%> 	
+<%end%>
+</div>
+<hr class="space"><hr class="space">
+
+<%end%>
+
+
+
+ <% if (!@pagina.documentos.empty?) then %>
+<div class="documentacion">
 <h2><%=t('documentacion')%></h2>
 <ul>
 <% @pagina.documentos.each do |documento| %>
@@ -32,16 +64,19 @@ end
   		<% end %>	
 <%end%>
 </ul>
-<%end if%>
+</div>
 
-<% @pagina.imagens.each do |imagen| %>
-<%= render :partial => "/shared/img", :locals => {
-:imagen=>imagen.imagenmini_url, 
-:enlace_imagen=>imagen.imagen_url, 
-:imagen_class=>"left"
-}
-%> 	
- 		
+<% end if %>
 
+  <% if (!@pagina.paginas.empty?) then %>
+<div class="subpaginas">
+<h2><%=t('paginas')%></h2>
+<ul>
+<% @pagina.paginas.each do |pagi| %>
+	<li><%= link_to pagi.send(:titulo.to_s+local) ,jeunes_pagina_path(:id=>pagi) %></li>
 <%end%>
+</ul>
+</div>
 
+<% end if %>
+ 
