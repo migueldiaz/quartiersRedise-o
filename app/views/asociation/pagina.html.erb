@@ -20,7 +20,30 @@ end
 <p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
 <hr class="space"><hr class="space">
  <% end %>
-<% if (!@pagina.documentos.empty?) then %>
+
+<% if !@pagina.imagens.empty? then %>
+<div class="galeria">
+<h2><%=t('galeria')%></h2>
+
+<% @pagina.imagens.each do |imagen| %>
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>imagen.imagenmini_url, 
+:enlace_imagen=>imagen.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call,
+:galeria=>true
+}
+%> 	
+<%end%>
+</div>
+<hr class="space"><hr class="space">
+
+<%end%>
+
+
+
+ <% if (!@pagina.documentos.empty?) then %>
+<div class="documentacion">
 <h2><%=t('documentacion')%></h2>
 <ul>
 <% @pagina.documentos.each do |documento| %>
@@ -31,15 +54,8 @@ end
   		<% end %>	
 <%end%>
 </ul>
+</div>
+
 <% end if %>
-<% @pagina.imagens.each do |imagen| %>
-<%= render :partial => "/shared/img", :locals => {
-:imagen=>imagen.imagenmini_url, 
-:enlace_imagen=>imagen.imagen_url, 
-:imagen_class=>"left"
-}
-%> 	
- 		
 
-<%end%>
-
+ 
