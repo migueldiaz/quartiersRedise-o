@@ -56,6 +56,19 @@
 		    
 		</script>
  <script type="text/javascript">
+ $(document).ready(function() {
+    $(".miniatura").load(function() {
+    if($(this).width()>200){ 
+    	$(this).width(200);
+        	if($(this).height()>200){
+   	  			$(this).height(200);
+    		}
+    }
+});
+});
+
+</script>
+ <script type="text/javascript">
     $(function() {
         $('a.lightbox').lightBox();
     });
