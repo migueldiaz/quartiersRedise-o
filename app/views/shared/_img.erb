@@ -1,3 +1,9 @@
+<%
+if imagen.nil? and !enlace_imagen.nil?
+imagen=enlace_imagen
+end
+imagen_title=imagen_title[0,15]+"..." if imagen_title.length>10 
+%>
 <%if !imagen.nil? and !imagen.empty?%>
 		<div class="img-shadow">
 	<% if !enlace_imagen.nil? and !enlace_imagen.empty? %>
