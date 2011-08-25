@@ -3,10 +3,8 @@
 es:
  addimagen:'Selección de imágen'
  
- contacto_mailer:
-   contacto:
-   	subject: 'Correo enviado desde el formulario de contacto'
  #######OPCIONES DE LOS SITIOS
+ Imagenmini: 'Imagen zoom'
  galeria: 'Galería de imagenes'
  paginasasociadas: 'Páginas asociaciadas'
  documentacion: 'Documentación'
