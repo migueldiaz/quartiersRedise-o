@@ -2,6 +2,17 @@ class AsociationController < ApplicationController
  	layout 'juan'
  	
 #GET /quartiers/agenda
+	def sitio
+  	@asociacion=Asociacion.first
+		if @asociacion.sitio.nil?
+		@asociacion.sitio=Sitio.create
+		end
+	@sitio=@asociacion.sitio
+	redirect_to sitio_path(:id=>@sitio)
+end
+	
+	
+	
 	def agenda
   		@web=Web.first
   		@asociacion=@web.asociacion

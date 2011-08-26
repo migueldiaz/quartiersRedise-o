@@ -222,6 +222,8 @@ es:
     
  avisoerror: 'Hay errores que impiden continuar'
  activerecord:
+  models:
+     Imagenmini: 'Imagen zoom'
   errors:
       template:
           body: 'Hubo problemas con los siguientes campos'
