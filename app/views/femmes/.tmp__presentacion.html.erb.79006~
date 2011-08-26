@@ -7,7 +7,6 @@
 		  <h1><%= seccion.titulofr %> </h1> 
 		<% end %>
    <% end %>
-<%end%>
  
-<%end%>
 	
+<%end%>

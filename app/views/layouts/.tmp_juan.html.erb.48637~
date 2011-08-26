@@ -1,3 +1,5 @@
+
+<!-- saved from url=(0069)http://dl.dropbox.com/u/8688858/qdm/asociacion/indexsAsociacion.html# -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
        		<meta http-equiv="X-UA-Compatible" content="IE=8">
@@ -7,8 +9,8 @@
             <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
         <![endif]-->
        <%= stylesheet_link_tag('asociacion') %>
-       <%= stylesheet_link_tag('drop-down-menu-jeunes') %>
-       <%= stylesheet_link_tag('screen_jeunes') %>     
+       <%= stylesheet_link_tag('drop-down-menu') %>
+       <%= stylesheet_link_tag('screen') %>     
   <%= stylesheet_link_tag('jquery.lightbox-0.5') %>
     <!-- script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" / -->
@@ -24,7 +26,7 @@
               
               
 		 <%=render "/layouts/morejs" %> 
-		<link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Gloria+Hallelujah|Cabin+Sketch:700|Sue+Ellen+Francisco|Nunito:400|Walter+Turncoat' rel='stylesheet' type='text/css'/>
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700' rel='stylesheet' type='text/css'/>
 		<!-- utilizar google font
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Geo" />
 -->
@@ -53,20 +55,31 @@
         <div class="container ">
             <div class="span-24 append-bottom" >
 
-                <div class="span-24 " >
-                <h1 style="line-height:0.6"><%=t('qdm') %></h1>
-                <h2 style="color:white;"><%=t('qdmsubtitle')%></h2>
-				<%=render  "/shared/menu_idioma"%>
-
+                <div class="span-18 " >
+                <hr class="space">
+		<div class="idioma" id="idiomas">
+		<ul >
+		<li ><%=link_to t('es'), url_for( :locale => 'es', :id=>params[:id] ) , :class=>comprueba('es')%></li>
+		<li><%=link_to t('fr'), url_for( :locale => 'fr' , :id=>params[:id]), :class=>comprueba('fr') %></li>
+		</ul>
+                    </div>
+<!--
+                    <div class="prepend-1 bottom">
+                        <form name="buscador">
+                            <input type="text" name="busqueda" value="" size="10"><a href="javascript:document.forms['buscador'].submit();"><img valign="bottom" src="images/btn-search.gif" width="18" height="18" alt="" border="0"></a>
+                        </form>
+				</div>
+		-->
+                    <hr class="space"><hr class="space"><hr class="space">                    <hr class="space"><hr class="space"><hr class="space">
 <div class="menu_superior " >
 
 <%=render "/layouts/menu" %>
 
 </div>
                 </div>
-                <!-- div class="span-5 append-1 last " style="text-align:right;" >
+                <div class="span-5 append-1 last " style="text-align:right;" >
                     <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
-                </div -->
+                </div>
                 
             </div>
 		 <div class="span-24">
