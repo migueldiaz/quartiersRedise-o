@@ -7,7 +7,7 @@
  </p>
  <p>
  
-    <%if @imagen.imagenmini_url.to_s!=''%>
+  <%if @imagen.imagenmini_url.to_s!=""%>
    <%= image_tag @imagen.imagenmini_url.to_s,:size=>'100x80' %>
   <%end%>
  </p>

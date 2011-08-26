@@ -25,6 +25,7 @@ Paginadocumentos::Application.routes.draw do
   match 'equipe/sitio'=> 'equipe#sitio'
   
   #############################3
+   match '/jeunes/'=> 'jeunes#presentacion'
   match 'jeunes/documentacion' => 'jeunes#documentacion'
   match 'jeunes/sitio' => 'jeunes#sitio'
   match 'jeunes/foros' => 'jeunes#foros'
@@ -38,6 +39,7 @@ Paginadocumentos::Application.routes.draw do
   match 'jeunes/equipo'=> 'jeunes#equipo'
   match 'jeunes/contacto'=> 'jeunes#contacto'
   ###################################################
+   match '/femmes/'=> 'femmes#presentacion'
   match 'femmes/documentacion' => 'femmes#documentacion'
   match 'femmes/sitio' => 'femmes#sitio'
   match 'femmes/foros' => 'femmes#foros'
@@ -51,6 +53,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/equipo'=> 'femmes#equipo'
   match 'femmes/contacto'=> 'femmes#contacto'
   ################################################
+  match '/asociation/'=> 'asociation#presentacion'
   match 'asociation/presentacion'=> 'asociation#presentacion'
   match 'asociation/pagina'=> 'asociation#pagina'
   match 'asociation/colaborador'=> 'asociation#colaborador'

@@ -2,11 +2,10 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 es:
  addimagen:'Selección de imágen'
- galeria: 'Galería de imágenes'
- contacto_mailer:
-   contacto:
-   	subject: 'Correo enviado desde el formulario de contacto'
+ 
  #######OPCIONES DE LOS SITIOS
+ Imagenmini: 'Imagen zoom'
+ galeria: 'Galería de imagenes'
  paginasasociadas: 'Páginas asociaciadas'
  documentacion: 'Documentación'
  send: 'Enviar'
@@ -223,6 +222,8 @@ es:
     
  avisoerror: 'Hay errores que impiden continuar'
  activerecord:
+  models:
+     Imagenmini: 'Imagen zoom'
   errors:
       template:
           body: 'Hubo problemas con los siguientes campos'

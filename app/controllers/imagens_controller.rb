@@ -72,7 +72,7 @@ def update
  #  @pagina = Pagina.find(@documento.pagina)
 
     respond_to do |format|
-      if @imagen.update_attributes(params[:documento])
+      if @imagen.update_attributes(params[:imagen])
         format.html { redirect_to(@imagen, :notice => t('exitom')) }
         format.xml  { head :ok }
       else
