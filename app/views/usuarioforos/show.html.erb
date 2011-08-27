@@ -1,0 +1,21 @@
+<h1><%=t('show')+' '+t('usuario')%> </h1>
+<p id="notice"><%= notice %></p>
+jeunes <%= @usuarioforo.jeunes %>
+femmes <%= @usuarioforo.femmes %>
+<p>
+  <b><%=t('name')%></b>
+  <%= @usuarioforo.nombre %>
+</p>
+
+<p>
+  <b><%=t('email')%></b>
+  <%= @usuarioforo.email %>
+</p>
+<p>
+ <b><%=t('idioma')%></b>
+  <%= t(@usuarioforo.idioma) %>
+</p>
+<%= link_to t('edit'), edit_usuarioforo_path(@usuarioforo) %> 
+<%= link_to t('login'), loginforo_path %> 
+
+

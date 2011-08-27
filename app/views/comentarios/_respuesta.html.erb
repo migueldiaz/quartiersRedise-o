@@ -1,7 +1,5 @@
 <%if spanish %>
-<p><%= truncate(@comentario.comentario.textoes,:lenght=>50)%></p>
-
+	<li><%= comentario.tituloes%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>@comentario) %></li>
 <%else%>
-<p><%= truncate(@comentario.comentario.textofr,:lenght=>50)%></p>
+	<li><%=comentario.titulofr%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
 <%end%>
-

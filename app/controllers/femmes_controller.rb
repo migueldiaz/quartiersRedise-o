@@ -120,4 +120,23 @@ def equipo
          end
        end
 end
+def acceso
+	@femmes=Femmes.first
+	
+end
+def foros
+    if !usuarioforologado
+      redirect_to femmes_acceso_path
+    end
+	@femmes=Femmes.first
+	@foros=@femmes.sitio.foros
+end
+def foro
+     if !usuarioforologado
+      redirect_to femmes_acceso_path
+    end
+	@foro=Foro.find(params[:id])
+	@femmes=@foro.sitio.femmes
+	@foros=@femmes.sitio.foros
+end
 end

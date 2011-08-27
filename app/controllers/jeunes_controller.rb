@@ -10,11 +10,20 @@ def sitio
 	@sitio=@jeunes.sitio
 	redirect_to sitio_path(:id=>@sitio)
 end
+def acceso
+	@jeunes=Jeunes.first	
+end
 def foros
+    if !usuarioforologado
+      redirect_to jeunes_acceso_path
+    end
 	@jeunes=Jeunes.first
 	@foros=@jeunes.sitio.foros
 end
 def foro
+     if !usuarioforologado
+      redirect_to jeunes_acceso_path
+    end
 	@foro=Foro.find(params[:id])
 	@jeunes=@foro.sitio.jeunes
 	@foros=@jeunes.sitio.foros

@@ -5,6 +5,21 @@ class ForosController < ApplicationController
   def index
     @sitio=Sitio.find(params[:id])
     @foros=@sitio.foros
+    
+    if !@sitio.jeunes.nil?
+     	 @jeunes=@sitio.jeunes
+     	 if @jeunes.clave.nil?
+        	 @jeunes.clave=Clave.new
+     	 end
+     	 @clave=@jeunes.clave
+    else
+    	 @femmes=@sitio.femmes
+    	  if @femmes.clave.nil?
+         @femmes.clave=Clave.new
+      end
+       @clave=@femmes.clave
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @foros }

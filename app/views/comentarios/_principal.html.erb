@@ -1,8 +1,8 @@
 <%if principal.comentario_id.nil?%>
-<%if spanish %>
-	<li><%= truncate(principal.textoes,:lenght=>50)%>&nbsp;&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>principal) %></li>
+<%if spanish || !spanish&& principal.titulofr.blank?%>
+	<li><%=link_to principal.tituloes,principal%>&nbsp;|| &nbsp;<%=link_to principal.usuarioforo.nombre,principal.usuarioforo%>&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>principal) %></li>
 <%else%>
-	<li><%= truncate(principal.textofr,:lenght=>50)%>&nbsp;&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>principal) %></li>
+	<li><%=link_to principal.titulofr,principal%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>principal) %></li>
 <%end%>
 <%if !principal.comentarios.nil?%>
 	<ul>

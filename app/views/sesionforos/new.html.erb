@@ -1,0 +1,21 @@
+<h1><%=t('acceder') %></h1>
+<br/>
+
+ <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+ <%end%>
+<%= form_tag sesionforos_path do %>
+ <div class="field">
+   <p><%= label_tag t :email  %> 
+   <%= text_field_tag :email%></p>
+ </div> 
+ <div class="field"> 
+  <p> <%= label_tag t :password  %> 
+   <%= password_field_tag :password%></p>
+ </div>
+  <div class="actions">
+   <p class='button'><%=submit_tag(t('save')) %></p>
+ </div>
+ <%end%>
+
+ 

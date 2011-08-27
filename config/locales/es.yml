@@ -1,8 +1,9 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 es:
- addimagen:'Selección de imágen'
- 
+ addimagen: 'Selección de imágen'
+ clave: 'Clave'
+ name: 'Nombre'
  #######OPCIONES DE LOS SITIOS
  Imagenmini: 'Imagen zoom'
  galeria: 'Galería de imagenes'

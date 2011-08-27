@@ -1,7 +1,7 @@
 <%if spanish %>
-	<li><%= truncate(comentario.textoes,:lenght=>50)%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
+	<li><%=link_to comentario.tituloes,comentario%>&nbsp;|| &nbsp;<%=link_to comentario.usuarioforo.nombre,comentario.usuarioforo%>&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
 <%else%>
-	<li><%= truncate(comentario.textofr,:lenght=>50)%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
+	<li><%=link_to comentario.titulofr,comentario%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
 <%end%>
 <%if !comentario.comentarios.nil?%>
 	<ul>

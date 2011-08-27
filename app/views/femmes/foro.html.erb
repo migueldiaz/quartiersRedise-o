@@ -1,0 +1,17 @@
+<h1><%= t('foro').capitalize+' '%>
+<% if spanish%><%=@foro.tituloes%><%else%><%=@foro.titulofr%><%end%></h1>
+<h2><%=t('docprop')%></h2>
+<% @foro.documentos.each do |documento| %>
+     <% if spanish %>
+     	 <li><%= link_to documento.doces,documento.archivo_url.to_s %></li>
+     <%else%>
+    	 <li><%= link_to documento.docfr,documento.archivofr_url.to_s %></li>
+    <%end%>
+<%end%>
+<h2><%=t('comentarios')%></h2>
+<ul>
+<%= render :partial => "comentarios/principal", :collection => @foro.comentarios %>
+</ul>
+<br/>
+<br/>
+<%= link_to t('new')+' '+t('comentario'),new_comentario_path(:id=>@foro)%>

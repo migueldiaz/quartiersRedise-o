@@ -1,7 +1,7 @@
 <%= form_for(@comentario) do |f| %>
   <% if @comentario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= t('avisoeror') %></h2>
+      <h2><%= t('avisoerror') %></h2>
 	<ul>
       <% @comentario.errors.full_messages.each do |msg| %>
         <li><%= t(msg) %></li>
@@ -10,15 +10,26 @@
     
     </div>
   <% end %>
-   <%= f.hidden_field :foro_id %>
+  <%= f.hidden_field :usuarioforo_id,:value=>usuarioforologado.id %>
+  <%= f.hidden_field :foro_id %>
   <%= f.hidden_field :comentario_id,:value=>params[:responde] %>
-  <%if spanish || params[:vista]%>
+  <%if usuarioforologado.idioma=='es' || params[:vista]%>
+   <div class="field">
+    <%= f.label t :tituloes %><br />
+    <%= f.text_field :tituloes%>
+  </div>
+
   <div class="field">
     <%= f.label t :textoes %><br />
     <%= f.text_area :textoes,:size=>'40x10' %>
   </div>
   <%end%>
-  <%if !spanish || params[:vista]%>
+  <%if usuarioforologado.idioma=='fr' || params[:vista]%>
+  <div class="field">
+    <%= f.label t :titulofr %><br />
+    <%= f.text_field :titulofr%>
+  </div>
+  
   <div class="field">
     <%= f.label t :textofr %><br />
     <%= f.text_area :textofr ,:size=>'40x10'%>

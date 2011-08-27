@@ -1,0 +1,25 @@
+<% if params[:tipo]=='jeunes'%> 
+<h1><%=t('clavejeunes')%></h1>
+<%else%>
+<h1><%=t('clavefemmes')%></h1>
+<%end%>
+
+<%= form_for @clave, do |f| %>	
+   		
+   		
+ 		
+  		
+		 <div class="field">
+  		 <p><%= f.label t :clave %> 
+   		<%= f.text_field :clave %></p>
+ 		</div> 
+	
+  <div class="actions">
+   <p class='button'><%=f.submit(t('save')) %></p>
+ </div>
+<%end%>
+<%if !@clave.jeunes.nil?%>
+ <%= link_to t('back'),foros_path(:id=>@clave.jeunes.sitio)  %> 
+ <%else%>
+ <%= link_to t('back'),foros_path(:id=>@clave.femmes.sitio)  %> 
+ <%end%>

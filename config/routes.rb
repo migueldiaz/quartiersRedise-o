@@ -1,8 +1,13 @@
 Paginadocumentos::Application.routes.draw do
 
-
+  get "desconectar" => "sesionforos#destroy", :as => "desconectar"
+  get 'registroforo'=>"usuarioforos#new",:as=>'registroforo'
+  get 'loginforo' => 'sesionforos#new', :as => 'loginforo'
+  resources :sesionforos
+  resources :claves
   resources :comentarios
-
+  resources :usuarioforos
+  get "foro/clave" => "claves#edit", :as => "foro/clave"
   resources :foros
   match 'contacto/correo/' => 'contactos#correo'
   ################################################
@@ -26,6 +31,7 @@ Paginadocumentos::Application.routes.draw do
   
   #############################3
    match '/jeunes/'=> 'jeunes#presentacion'
+   match 'jeunes/acceso' => 'jeunes#acceso'
   match 'jeunes/documentacion' => 'jeunes#documentacion'
   match 'jeunes/sitio' => 'jeunes#sitio'
   match 'jeunes/foros' => 'jeunes#foros'
@@ -40,6 +46,7 @@ Paginadocumentos::Application.routes.draw do
   match 'jeunes/contacto'=> 'jeunes#contacto'
   ###################################################
    match '/femmes/'=> 'femmes#presentacion'
+   match 'femmes/acceso' => 'femmes#acceso'
   match 'femmes/documentacion' => 'femmes#documentacion'
   match 'femmes/sitio' => 'femmes#sitio'
   match 'femmes/foros' => 'femmes#foros'

@@ -3,7 +3,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
   
-  helper_method :is_admin,:is_traductor,:current_user,:require_login
+  helper_method :is_admin,:is_traductor,:current_user,:require_login,:usuarioforologado
+  
+  def usuarioforologado
+   @usuarioforologado ||= Usuarioforo.find(session[:usuarioforo_id]) if session[:usuarioforo_id]
+end
+  
+  def require_usuarioforo
+     if usuarioforologado.nil?
+      flash[:error] = t('loginrequerido')
+      redirect_to jeunes_acceso_path # halts request cycle
+	end
+end
+
+  
   
 def require_admin
     if  current_user.nil? || current_user.tipo!='admin'
