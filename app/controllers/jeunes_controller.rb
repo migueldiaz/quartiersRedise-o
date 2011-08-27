@@ -109,6 +109,8 @@ def contacto
 end
 
 def equipos
+   logger.info "///////////////////////EN EQUIPOs: ******************************"
+
     	@web=Web.first
   		@jeunes=@web.jeunes
   		@equipos=@jeunes.equipos
@@ -116,6 +118,7 @@ def equipos
 end
 
 def equipo
+
   @equipo=Equipo.find(params[:id])
   @jeunes=@equipo.jeunes
   @equipos=jeunes.equipos

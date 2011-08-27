@@ -3,7 +3,6 @@ class EquiposController < ApplicationController
  before_filter :require_login
  def index
  
- 
   if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
 			 @equipos = Equipo.find(:all, :conditions => "descripcionEs=''")

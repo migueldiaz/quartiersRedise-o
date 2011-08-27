@@ -1,5 +1,5 @@
 class EquipeController < ApplicationController
- 	layout 'quartiers'
+ 	layout 'juan_equipe'
  	
 #GET /quartiers/agenda
 def sitio
@@ -45,7 +45,7 @@ end
 	
 def pagina
  		@pagina=Pagina.find(params[:id])
- 		
+
     	
     	if !@pagina.presentacion.nil?
     	  @presentacion=@pagina.presentacion
@@ -72,7 +72,8 @@ def pagina
     	 @jeunes=@equipo.jeunes
     	else
     	  @femmes=@equipo.femmes
-    	end
+   end
+     logger.info "///////////////////////EN EQUIPO concreto:"+@equipo.nombre+" ******************************"
 end
 def colaborador
 		@equipo=Equipo.find(params[:id])

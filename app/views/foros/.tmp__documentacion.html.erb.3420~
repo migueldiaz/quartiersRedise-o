@@ -1,0 +1,2 @@
+<table>
+<%  @foro.documentos.each do |documento|
