@@ -30,6 +30,20 @@ class PaginasController < ApplicationController
   def show
     @pagina = Pagina.find(params[:id])
         logger.info "showwwwwwwwwwwwwwwwwww paginas"
+        
+#        belongs_to :presentacion,:foreign_key => "presentacion_id"
+#belongs_to :red,:foreign_key => "red_id"
+#belongs_to :documentacion,:foreign_key => "documentacion_id"
+
+if !@pagina.presentacion.nil?
+  @sitio=@pagina.presentacion.sitio
+  elsif !@pagina.red.nil?
+  @sitio=@pagina.red.sitio
+  elsif
+    @sitio=@pagina.documentacion.sitio
+
+end
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pagina }

@@ -1,12 +1,8 @@
 <h2><%=t('presentacion')%></h2> 
 <div class="opciones_generales">
-	<ul style="list-style: none outside none;" >
-		<li style="float:left; margin-left:10px;background-color:black;">
-			<%= link_to t('back'), sitio_path(:id=>@sitio)%>
-		</li>
-		<li style="float:left; margin-left:10px;background-color:black;">
-	  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'presentacion') %> 
-		</li>
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver_sitio" %>         
+		<%=render :partial=>"/shared/opcion_nueva_pagina",:locals => { :tipo_pagina => 'presentacion' } %>         
 	</ul>
 </div>
  <table>
@@ -19,3 +15,9 @@
    </tr>
    <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
   </table
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver_sitio" %>         
+		<%=render :partial=>"/shared/opcion_nueva_pagina",:locals => { :tipo_pagina => 'presentacion' } %>         
+	</ul>
+</div>

@@ -1,5 +1,5 @@
 <%
-style=" style='width:100%;padding:5px;font-size:10px;background-color:none;' "
+style=" style='width:auto;padding:5px;font-size:10px;float:none;' "
 %>
 <li <%=style%>><%= link_to t('presentacion'),presentacion_path(:id=>@sitio)%></li>
 <li <%=style%>><%= link_to  t('agenda'),eventos_path(:id=>@sitio)%> </li>

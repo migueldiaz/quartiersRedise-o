@@ -1,0 +1,48 @@
+<h1><%=t('show')+' '+t('parrafo')%> </h1>
+<br/>
+ <p>
+  <b><%=t('tituloes')%></b>
+   <%= @parrafo.tituloes %>
+ </p>
+ <p>
+  <b><%=t('titulofr')%></b>
+   <%= @parrafo.titulofr %>
+ </p>
+ 
+ 
+ <p>
+    <b><%=t('textoes')%></b>
+    <%= simple_format(@parrafo.textoes) %>
+  </p>
+ 
+   <p>
+     <b><%=t('textofr')%></b>
+    <%= simple_format(@parrafo.textofr) %>
+  </p>
+ <p> 
+ <% if @parrafo.imagen_url.to_s != "" %>
+<%= image_tag @parrafo.imagen_url.to_s, :size=>'200x150' %>
+<% end %>
+<% if @parrafo.imagenmini_url.to_s != "" %>
+<%= image_tag @parrafo.imagenmini_url.to_s, :size=>'100x75' %>
+<% end %>
+</p>
+<% if @parrafo.imagenmini_url.to_s != "" || @parrafo.imagen_url.to_s!= "" %>
+ <p>
+    <b><%=t('piefoto')%></b>
+    <%= @parrafo.piefoto%>
+  </p>
+  <p>
+    <b><%=t('piefotofr')%></b>
+    <%= @parrafo.piefoto%>
+  </p>
+<%end%>
+</p>
+<%  if current_user.tipo=='traductor'%>
+ <%= link_to t('back'), parrafos_path(:modo=>'sintrad') %>
+<%else%>
+<%= link_to t('edit'), edit_parrafo_path(@parrafo) %> |
+<%= link_to t('back'), pagina_path(:id=> @parrafo.pagina) %>
+ <%end%>
+ 
+
