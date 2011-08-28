@@ -1,0 +1,28 @@
+<h1><%=t('sitios')%></h1>
+
+<table>
+  <tr>
+    <th>Nombrees</th>
+    <th>Nombrefr</th>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sitios.each do |sitio| %>
+  <tr>
+    <td><%= sitio.nombreEs %></td>
+    <td><%= sitio.nombreFr %></td>
+    <td><%= sitio.tipo %></td>
+    <td><%= link_to t('show'), sitio %></td>
+    <td><%= link_to t('edit'), edit_sitio_path(sitio) %></td>
+    <td><%= link_to t('destroy'), sitio, :confirm => t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to t('new')+' '+t('sitio'), new_sitio_path %>

@@ -103,9 +103,11 @@ line-height:4.5em;
 
 }
 
-.menus li  a:hover {
+.menus li  a:hover, focus {
 
 	color:black;
+	padding: 0px 0px;
+	margin:0px;
 }
 .menus li.seleccionado a:hover {
 
@@ -117,7 +119,6 @@ line-height:4.5em;
 	display:block;
 
 	
-	background:black;
 	color:white;
 
 	text-decoration:none;
@@ -136,7 +137,7 @@ background:#fe4a00;
 
 .menus ul a {
 	
-	background:black;
+	/*background:black;*/
 }
 
 /* ******************************************************************* */
@@ -158,3 +159,6 @@ background:#fe4a00;
 * html ul li a { height: 1%; }
 /* End */
 
+.menus li.seleccionado{
+	background-color:#FE4A00;
+}

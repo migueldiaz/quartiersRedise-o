@@ -17,7 +17,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= render 'shared/opciones'%>
+<%= render 'sitios/opciones'%>
 
   <% if !@sitio.equipo.nil? %>
 		<h4><%=t('infoEquipo')%></h4>

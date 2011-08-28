@@ -10,20 +10,7 @@
 <p id="notice"><%= notice %></p>
 <!--Mostrar parrafos -->
 <h3><%=t('parrafos') %></h3>
- <table>
- 	<tr>
- 		<th>tituloesp</th>
- 		<th>titulofra</th>
- 		<th>descr_esp</th>
- 		<th>descr_fra</th>
- 		<th>imagen_zoom</th>
- 		<th>imagen_mini</th>
- 		<th>detalle</th>
- 		<th>editar</th>
- 		<th>borrar</th>
- 	</tr>
 <%= render :partial => "parrafos/parrafo", :collection => @pagina.parrafos %>
-</table>
 <p>
 <%= link_to t('new')+' '+t('parrafo'), new_parrafo_path(:id=>@pagina) %>
 

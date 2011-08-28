@@ -1,4 +1,14 @@
 <h2><%=t('presentacion')%></h2> 
+<div class="opciones_generales">
+	<ul style="list-style: none outside none;" >
+		<li style="float:left; margin-left:10px;background-color:black;">
+			<%= link_to t('back'), sitio_path(:id=>@sitio)%>
+		</li>
+		<li style="float:left; margin-left:10px;background-color:black;">
+	  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'presentacion') %> 
+		</li>
+	</ul>
+</div>
  <table>
    <tr>
    <th><%= t('tituloEs')%></th>
@@ -9,9 +19,3 @@
    </tr>
    <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
   </table
-  <br/>
-  <h3><%= t('new')+' '+t('pagina')%></h3>
-  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'presentacion') %> 
-  <br/><br/>
-  <%= link_to t('back'), sitio_path(:id=>@sitio)%>
-</p>

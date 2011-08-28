@@ -1,0 +1,6 @@
+<h1> Quartiers du monde </h1>
+<%= link_to t('Asociacion'), asociacion_path(@web) %>
+<%= link_to t('proyecto'), proyecto_path(@web) %>
+<br>
+
+

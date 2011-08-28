@@ -10,7 +10,9 @@
        <%= stylesheet_link_tag('screen') %>     
        <%= stylesheet_link_tag('gestion') %>     
        <%= javascript_include_tag('jquery.min') %>       
-        <%= javascript_include_tag('rails-jquery') %>                
+              <%= javascript_include_tag('rails-jquery') %>                
+
+       
            <%= javascript_include_tag('menu') %>
 
   <%= csrf_meta_tag %>
@@ -32,29 +34,9 @@
             		<!-- 
             							 link_to t('lasociacion'), asociacion_path(:id=>@web) 
             		-->
-					<li class="<%=comprueba_admin_sel('asociacion', @sitio)%>"><%= link_to t('lasociacion'), asociacion_path(:id=>1) %> 
-					</li>
-					<% if !@sitio.nil? and !@sitio.asociacion.nil? %>
-					<ul >
-						<%= render 'shared/opciones'%>
-					</ul>
-					<% end %>
-					<li class="<%=comprueba_admin_sel('jeunes', @sitio)%>"><%= link_to t('proyecto')+' '+t('jeunes'), jeunes_sitio_path %> 
-					</li>
-					<% if !@sitio.nil? and !@sitio.jeunes.nil? %>
-					<ul >
-						<%= render 'shared/opciones'%>
-					</ul>
-					<% end %>
-
-					<li class="<%=comprueba_admin_sel('femmes', @sitio)%>"><%= link_to t('proyecto')+' '+t('femmes'), femmes_sitio_path %> 
-					</li>
-										<% if !@sitio.nil? and !@sitio.femmes.nil? %>
-					<ul >
-						<%= render 'shared/opciones'%>
-					</ul>
-					<% end %>
-
+					<li><%= link_to t('lasociacion'), asociacion_path(:id=>1) %> </li>
+					<li><%= link_to t('proyecto')+' '+t('jeunes'), jeunes_sitio_path %> </li>
+					<li><%= link_to t('proyecto')+' '+t('femmes'), femmes_sitio_path %> </li>
 					<li><%= link_to t('show')+' '+t('traductores'),usuarios_path(:tipo=>'traductor')%></li>
 					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
 					</ul>				
