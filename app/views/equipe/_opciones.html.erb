@@ -1,5 +1,7 @@
-style=" style='width:auto;padding:5px;font-size:10px;' "
-<li <%=@style%>><%= link_to t('presentacion'),equipe_presentacion_path(:id=>@equipo)%>
+<%
+style=" style='width:auto;padding:5px;font-size:10px;float:none;' "
+%>
+<li <%=style%>><%= link_to t('presentacion'),equipe_presentacion_path(:id=>@equipo)%>
 	<%if !@paginas.nil? && !@presentacion.nil?%>
     	<ul class="submenu"><%=render 'equipe/paginas'%></ul>
     <%end%>
