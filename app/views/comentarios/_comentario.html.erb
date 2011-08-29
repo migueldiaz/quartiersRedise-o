@@ -1,7 +1,7 @@
-<%if spanish %>
+<%if spanish&&!comentario.tituloes.blank? || !spanish&& comentario.titulofr.blank?%>
 	<li><%=link_to comentario.tituloes,comentario%>&nbsp;|| &nbsp;<%=link_to comentario.usuarioforo.nombre,comentario.usuarioforo%>&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
-<%else%>
-	<li><%=link_to comentario.titulofr,comentario%>&nbsp;&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
+<%elsif !spanish&&!comentario.titulofr.blank? || spanish&& comentario.tituloes.blank?%>
+	<li><%=link_to comentario.titulofr,comentario%>&nbsp;|| &nbsp;<%=link_to comentario.usuarioforo.nombre,comentario.usuarioforo%>&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
 <%end%>
 <%if !comentario.comentarios.nil?%>
 	<ul>
