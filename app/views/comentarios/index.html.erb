@@ -2,6 +2,8 @@
 <br/>
 <table>
   <tr>
+    <th><%=t('tituloes')%></th>
+    <th><%=t('titulofr')%></th>
     <th><%=t('textoes')%></th>
     <th><%=t('textofr')%></th>
     <th></th>
@@ -11,8 +13,10 @@
 
 <% @comentarios.each do |comentario| %>
   <tr>
-    <td><%= truncate(comentario.textoes,:lenght=>40) %></td>
-    <td><%= truncate(comentario.textofr,:lenght=>40) %></td>
+     <td><%=comentario.tituloes%></td>
+    <td><%=comentario.titulofr%></td>
+    <td><%= truncate(comentario.textoes,:lenght=>25) %></td>
+    <td><%= truncate(comentario.textofr,:lenght=>25) %></td>
   
     <td><%= link_to t('show'), comentario_path(comentario,:vista=>'gestion') %></td>
     <td><%= link_to t('edit'), edit_comentario_path(comentario,:vista=>'gestion') %></td>

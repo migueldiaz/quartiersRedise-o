@@ -9,7 +9,7 @@ class Sitio < ActiveRecord::Base
   has_many:usuarios, :dependent => :destroy
   has_many :equipos, :dependent => :destroy
   has_many :foros, :dependent =>:destroy
-  
+  has_many :fondos,:dependent =>:destroy
   belongs_to :jeunes
   belongs_to :femmes
   belongs_to :asociacion

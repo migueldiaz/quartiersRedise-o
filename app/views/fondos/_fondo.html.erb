@@ -1,0 +1,13 @@
+ <tr>
+   <td>
+    <% if fondo.imagen_url.to_s != "" %>
+     <%= image_tag fondo.imagen_url.to_s,:size=>'100x90' %>
+   <% end %>
+   
+ 
+   
+   <td><%= link_to t('show'), fondo%></td>
+   <td><%= link_to t('edit'), edit_fondo_path(fondo)%></td>
+   <td><%= link_to t('destroy'), [fondo], :confirm => t('confirm'),  :method => :delete %>
+   </td>
+ </tr>
