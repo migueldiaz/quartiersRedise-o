@@ -1,0 +1,12 @@
+<h1><%=t('fondos')%></h1>
+<table>
+<tr>
+<th><%=t('imagen')%></th>
+<th></th>
+<th></th>
+</tr>
+<%= render :partial => "fondos/fondo", :collection => @fondos %>
+</table>
+<%= link_to t('new'),new_fondo_path(:id=>@sitio) %>
+<br/>
+<%= link_to t('back'),sitio_path(:id=>@sitio) %>
