@@ -1,5 +1,0 @@
-<h1><%=t('new')+' '+t('pagina')%></h1>
-<br>
-<%= render 'form' %>
-
-
