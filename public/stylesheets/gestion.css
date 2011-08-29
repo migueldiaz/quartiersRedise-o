@@ -39,6 +39,8 @@
 /* CSS Document */
 .menus, .menus ul {
 	list-style:none;font-family:"Nunito";font-weight: 400;font-size:1.2em;
+	 margin: 0 0.3em 0.2em 0;
+    padding-left: 1.5em;
 	/*
 padding:0;
 	margin:0;
@@ -164,7 +166,7 @@ background:#fe4a00;
 	background-color:#FE4A00;
 }
 .opciones_generales{
-	
+	margin-bottom:70px;
 }
 .opciones_generales ul{
 		list-style: none outside none;display:block;
@@ -195,5 +197,41 @@ background:#fe4a00;
 }
 .opciones_generales li  a:hover{
 		color:white;
-
 	}
+	
+.listado_registros{
+	border: 1px solid #FE4A00;
+    border-collapse: collapse;
+	padding:3px;
+	
+}
+.listado_registros thead th{
+	color:#FE4A00;
+	font-size:2em;
+
+}
+.listado_registros th{
+	background-color:white;
+
+	color:#4d4d4d;
+	border-right: 1px dashed #66CCFF;
+	border-top: 1px dashed #66CCFF;
+}
+.listado_registros tr{
+	background-color:white;
+}
+.listado_registros td{
+	border-bottom: 1px solid #FE4A00;
+    border-top: 1px solid transparent;
+	padding: 8px;
+		border-right: 1px dashed #66CCFF;
+
+}
+
+.listado_registros_div{
+	float:none;
+	padding-left:2px;
+	padding-right:2px;
+	padding-bottom:1px;
+	width:100%;
+}

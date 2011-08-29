@@ -10,11 +10,9 @@ style=" style='width:100%;padding:5px;font-size:12px;background-color:none;' "
 <li <%=style%>><%= link_to t('foros'), foros_path(:id=>@sitio)%></li>
 <li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
 <%end%>
-<li <%=style%>><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to  t('fondos'),fondos_path(:id=>@sitio)%></li>
+<li <%=style%>><%= link_to  t('contacto'), contacto_path(@sitio.contacto)%></li>
 <%  if is_admin%>
 <li <%=style%>><%= link_to  t('usuarios'),usuarios_path(:id=>@sitio)%></li>
-
 <% end %> 
 
 <!-- NOTA AÑADIR LAS DOS OPCIONES ESPECIFICAS DEL OTRO TIPO -->

@@ -28,18 +28,15 @@
             	<div class="span-4">
 
 
-            		<ul class="menus" style="background-color:red;">
-            		<!-- 
-            							 link_to t('lasociacion'), asociacion_path(:id=>@web) 
-            		-->
+            		<ul class="menus" >
 					<li class="<%=comprueba_admin_sel('asociacion', @sitio)%>"><%= link_to t('lasociacion'), asociacion_path(:id=>1) %> 
 					</li>
 					<% if !@sitio.nil? and !@sitio.asociacion.nil? %>
-					<ul >
+					<ul style="padding-left:0em;" >
 						<%= render 'shared/opciones'%>
 					</ul>
 					<% end %>
-					<li class="<%=comprueba_admin_sel('jeunes', @sitio)%>"><%= link_to t('proyecto')+' '+t('jeunes'), jeunes_sitio_path %> 
+					<li class="<%=comprueba_admin_sel('jeunes', @sitio)%>" style="z-index:1"><%= link_to t('proyecto')+' '+t('jeunes'), jeunes_sitio_path %> 
 					</li>
 					<% if !@sitio.nil? and !@sitio.jeunes.nil? %>
 					<ul >
