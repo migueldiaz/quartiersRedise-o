@@ -1,4 +1,10 @@
 <h2><%=t('presentacion')%></h2> 
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver_sitio" %>         
+		<%=render :partial=>"/shared/opcion_nueva_pagina",:locals => { :tipo_pagina => 'presentacion' } %>         
+	</ul>
+</div>
  <table>
    <tr>
    <th><%= t('tituloEs')%></th>
@@ -9,9 +15,9 @@
    </tr>
    <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
   </table
-  <br/>
-  <h3><%= t('new')+' '+t('pagina')%></h3>
-  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'presentacion') %> 
-  <br/><br/>
-  <%= link_to t('back'), sitio_path(:id=>@sitio)%>
-</p>
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver_sitio" %>         
+		<%=render :partial=>"/shared/opcion_nueva_pagina",:locals => { :tipo_pagina => 'presentacion' } %>         
+	</ul>
+</div>

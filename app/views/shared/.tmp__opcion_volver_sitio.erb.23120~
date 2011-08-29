@@ -2,7 +2,6 @@
 if imagen.nil? and !enlace_imagen.nil?
 imagen=enlace_imagen
 end
-imagen_title=imagen_title[0,15]+"..." if imagen_title.length>10 
 %>
 <%if !imagen.nil? and !imagen.empty?%>
 		<div class="img-shadow">
@@ -15,7 +14,7 @@ imagen_title=imagen_title[0,15]+"..." if imagen_title.length>10
         <img  class="image miniatura <%= if !imagen_class.nil? and !imagen_class.empty? then imagen_class end %> " >
 	<% end %>
 	<% if !imagen_title.nil? and !imagen_title.empty?  %>
-	<cite><%=imagen_title%></cite>
+	<cite><%= if imagen_title.length>25 then imagen_title[0,25]+"..." else imagen_title end%></cite>
 	<%end%>
 	</div>
 <%end %>

@@ -4,9 +4,7 @@ Bienvenido a la zona de administración de QDM
 <script type="text/javascript">
 <!--
 function ajo(){
-
-    
-console.log('ee');
+  console.log('obteniendo datos json'); 
 
 $.getJSON('/presentacions/1.json', function(data) {
 nodo=data;
@@ -22,9 +20,9 @@ nodo=data;
 
 }
 $('#foo').bind('click', function() {
-  console.log('User clicked on "foo."');
+  console.log('clickeando en enlace ajax: "foo."');
 	ajo();  
 });
 -->
 </script>
-	<div id="resultado"></div>
+<div id="resultado"></div>

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 end
   
   def require_usuarioforo
+    
      if usuarioforologado.nil?
       flash[:error] = t('loginrequerido')
       redirect_to jeunes_acceso_path # halts request cycle

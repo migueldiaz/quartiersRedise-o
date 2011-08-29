@@ -1,5 +1,5 @@
 <%
-style=" style='width:auto;padding:5px;font-size:10px;float:none;z-index:-1;' "
+style=" style='width:auto;padding:5px;font-size:10px;float:none;' "
 %>
 <li <%=style%>><%= link_to t('presentacion'),equipe_presentacion_path(:id=>@equipo)%>
 	<%if !@paginas.nil? && !@presentacion.nil?%>
