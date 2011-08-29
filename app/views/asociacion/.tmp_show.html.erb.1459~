@@ -1,0 +1,6 @@
+<h1>Asociacion de la web</h1>
+Id propietario <%= @asociacion.web %>
+<br/>
+<%= link_to 'Sitio de la asociacion',sitio_path(@asociacion.sitio)%>
+<%= link_to 'Volver a web', admin_path%>
+	

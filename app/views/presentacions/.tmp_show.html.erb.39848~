@@ -1,11 +1,22 @@
-<h2><%=t('presentacion')%></h2> 
+
 <div class="opciones_generales">
 	<ul  >
-		<%=render :partial=>"/shared/opcion_volver_sitio" %>         
+		<%=render :partial=>"/shared/opcion_volver_sitio", :locals=>{:met=>sitio_path(:id=>@sitio)} %>         
 		<%=render :partial=>"/shared/opcion_nueva_pagina",:locals => { :tipo_pagina => 'presentacion' } %>         
 	</ul>
 </div>
- <table>
+<div class="listado_registros_div">
+	
+ <table class="listado_registros">
+ 	   <tr>
+   <thead>
+   	<tr>
+   		<th colspan=5><%=t('presentacion')%></th>
+   	</tr>
+	
+   </thead>
+   </tr>
+
    <tr>
    <th><%= t('tituloEs')%></th>
    <th><%= t('tituloFr')%></th>
@@ -14,10 +25,11 @@
    <th></th>
    </tr>
    <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
-  </table
+  </table>
+</div>
 <div class="opciones_generales">
 	<ul  >
-		<%=render :partial=>"/shared/opcion_volver_sitio" %>         
+		<%=render :partial=>"/shared/opcion_volver_sitio", :locals=>{:met=>sitio_path(:id=>@sitio)} %>         
 		<%=render :partial=>"/shared/opcion_nueva_pagina",:locals => { :tipo_pagina => 'presentacion' } %>         
 	</ul>
 </div>
