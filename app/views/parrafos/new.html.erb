@@ -1,5 +1,7 @@
 <h1><%=t('new')+' '+ t('parrafo')   %></h1>
-<br/>
+<div class="opciones_generales formulario">
 <%= render 'form' %>
-
-<%= link_to t('back'), pagina_path(@parrafo.pagina)%>
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('back'), :path_volver=>pagina_path(@parrafo.pagina)} %>         
+	</ul>
+</div>

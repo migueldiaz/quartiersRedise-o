@@ -1,0 +1,6 @@
+<% if spanish %>
+ 		 <h2><%= @pagina.textoes %> </h2> 
+	<%else%>
+		 <h2><%= @pagina.textofr %> </h2> 
+<% end %>   
+
