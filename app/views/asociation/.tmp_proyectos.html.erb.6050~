@@ -1,2 +1,0 @@
-<h1><%= t('proyectos')%></h1>
-<p>En estos momentos no se ha creado ninguna pagina en proyectos</p>

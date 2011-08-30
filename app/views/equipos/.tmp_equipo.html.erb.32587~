@@ -1,9 +1,0 @@
-<% if !equipo.nil?%>
- <tr>
-  <td><%= equipo.nombre %></td>
-  <td><%=truncate(equipo.descripcionEs,:lenght=>20) %></td>
-  <td><%=truncate(equipo.equipo.descripcionFr,:lenght=>20) %></td>
-  <td><%= link_to t('show'), equipo_path(equipo)%></td>
-  <td><%= link_to t('edit'), edit_equipo_path(equipo)%></td> 
- </tr>
-<%end%>
