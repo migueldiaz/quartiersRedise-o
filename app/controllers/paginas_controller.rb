@@ -29,7 +29,7 @@ class PaginasController < ApplicationController
   # GET /paginas/1.xml
   def show
     @pagina = Pagina.find(params[:id])
-        logger.info "showwwwwwwwwwwwwwwwwww paginas"
+        logger.info "showwwwwwwwwwwwwwwwwww paginas"+@pagina.to_s
         
 #        belongs_to :presentacion,:foreign_key => "presentacion_id"
 #belongs_to :red,:foreign_key => "red_id"
@@ -39,9 +39,11 @@ if !@pagina.presentacion.nil?
   @sitio=@pagina.presentacion.sitio
   elsif !@pagina.red.nil?
   @sitio=@pagina.red.sitio
-  elsif
-    @sitio=@pagina.documentacion.sitio
-
+  elsif !@pagina.pagina.nil?
+  @sitio=@pagina.pagina.red.sitio
+  else
+   @sitio=@pagina.documentacion.sitio
+#  logger.info "por aqui!!"+@pagina.documentacion.nil?.to_s
 end
 
     respond_to do |format|
