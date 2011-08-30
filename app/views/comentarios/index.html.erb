@@ -20,10 +20,16 @@
   
     <td><%= link_to t('show'), comentario_path(comentario,:vista=>'gestion') %></td>
     <td><%= link_to t('edit'), edit_comentario_path(comentario,:vista=>'gestion') %></td>
+   <%if current_user.tipo!='traductor'%>
     <td><%= link_to t('destroy'), comentario, :confirm => t('confirm'), :method => :delete %></td>
+  <%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
-<%=link_to t('back'),foro_path(@foro)%>
+<%if current_user.tipo=='traductor'%>
+    <%=link_to t('back'),traductor_url%>
+<%else%>
+     <%=link_to t('back'),foro_path(@foro)%>
+<%end%>

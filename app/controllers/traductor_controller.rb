@@ -6,6 +6,15 @@ class TraductorController < ApplicationController
 	 #redirect_to trafico_url
 	#end
 	
+	#Idioma Comentarios
+	@comentarios=Comentario.all
+	 	if current_user.traduceA=='es'   
+		 @comentariosSinTraducir = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' ")
+	   else
+	     @comentariosSinTraducir = Comentario.find(:all, :conditions => "textofr = '' || titulofr = ''")
+	   end
+	   @comentariosSinRevisar = Comentario.find(:all, :conditions => "revisado = false")
+	
 	
 	#Idioma Colaboradores
 	   @colaboradores=Colaborador.all

@@ -35,6 +35,21 @@
     <%= f.text_area :textofr ,:size=>'40x10'%>
   </div>
   <%end%>
+  <%if current_user.tipo=='traductor'%>
+   <div class="field">
+    <%= f.label t :revisado %><br />
+    <%= f.check_box :revisado%>
+  </div>
+   <div class="field">
+    <%= f.label t :revisadofr %><br />
+    <%= f.check_box :revisadofr %>
+  </div>
+  <%else%>
+  <div class="field">
+     <%= f.hidden_field :revisadofr,:value=>false %>
+    <%= f.hidden_field :revisado,:value=>false %>
+  </div>
+  <%end%>
  
   <div class="actions">
     <%= f.submit(t('send'))%>

@@ -12,9 +12,20 @@ class ComentariosController < ApplicationController
 
   
   def index
-    @foro=Foro.find(params[:id])
-    @comentarios=@foro.comentarios
-
+    
+    if params[:modo]=='sinrevisar'
+    @comentarios=Comentario.find(:all, :conditions => "revisado = false")
+    elsif params[:modo]=='sintrad'
+    	if current_user.traduceA=='es'   
+		  @comentarios = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' ")
+	   	else
+	      @comentarios = Comentario.find(:all, :conditions => "textofr = '' || titulofr = ''")
+	   	end
+    else
+    	@foro=Foro.find(params[:id])
+    	@comentarios=@foro.comentarios
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @comentarios }
@@ -89,6 +100,7 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.update_attributes(params[:comentario])
+       
         format.html { redirect_to(comentario_path(@comentario,:vista=>'gestion'), :notice => t('exito')) }
         format.xml  { head :ok }
       else

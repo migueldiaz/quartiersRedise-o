@@ -36,8 +36,8 @@ end
 
 def require_login
      if current_user.nil?
-      flash[:error] = t('loginrequerido')
-      redirect_to trafico_url # halts request cycle
+        flash[:error] = t('loginrequerido')
+        redirect_to trafico_url # halts request cycle
 	end
 end
   

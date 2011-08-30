@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110829163412) do
+ActiveRecord::Schema.define(:version => 20110830190343) do
 
   create_table "asociacions", :force => true do |t|
     t.integer "web_id"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.text    "direccion"
     t.string  "imagen"
     t.integer "sitio_id"
-    t.boolean "revisado",  :default => false
+    t.boolean "revisado",   :default => false
     t.string  "url"
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "comentarios", :force => true do |t|
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.string   "tituloes"
     t.string   "titulofr"
     t.integer  "usuarioforo_id"
+    t.boolean  "revisado",       :default => false
+    t.boolean  "revisadofr"
   end
 
   create_table "contactos", :force => true do |t|
@@ -54,7 +57,8 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.text    "infoFr"
     t.string  "email"
     t.integer "sitio_id"
-    t.boolean "revisado", :default => false
+    t.boolean "revisado",   :default => false
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "documentacions", :force => true do |t|
@@ -68,9 +72,10 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.string  "docfr"
     t.integer "pagina_id"
     t.string  "archivo"
-    t.boolean "revisado",  :default => false
+    t.boolean "revisado",   :default => false
     t.string  "archivofr"
     t.integer "foro_id"
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "equipos", :force => true do |t|
@@ -81,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.boolean "revisado",      :default => false
     t.integer "jeunes_id"
     t.integer "femmes_id"
+    t.boolean "revisadofr",    :default => false
   end
 
   create_table "eventos", :force => true do |t|
@@ -89,7 +95,8 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.string   "tituloFr"
     t.string   "imagen"
     t.integer  "sitio_id"
-    t.boolean  "revisado", :default => false
+    t.boolean  "revisado",   :default => false
+    t.boolean  "revisadofr", :default => false
   end
 
   create_table "femmes", :force => true do |t|
@@ -109,6 +116,8 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.integer  "sitio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "revisado",   :default => false
+    t.boolean  "revisadofr", :default => false
   end
 
   create_table "imagens", :force => true do |t|
@@ -116,6 +125,8 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.string  "piefotofr"
     t.string  "imagen"
     t.integer "pagina_id"
+    t.boolean "revisado",   :default => false
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "jeunes", :force => true do |t|
@@ -131,6 +142,7 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.integer "red_id"
     t.integer "documentacion_id"
     t.integer "pagina_id"
+    t.boolean "revisadofr",       :default => false
   end
 
   create_table "parrafos", :force => true do |t|
@@ -138,11 +150,12 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.text    "textofr"
     t.integer "pagina_id"
     t.string  "imagen"
-    t.boolean "revisado",  :default => false
+    t.boolean "revisado",   :default => false
     t.string  "piefoto"
     t.string  "piefotofr"
     t.string  "tituloes"
     t.string  "titulofr"
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "presentacions", :force => true do |t|
@@ -166,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20110829163412) do
     t.integer  "presentacion_id"
     t.integer  "red_id"
     t.boolean  "revisado",        :default => false
+    t.boolean  "revisadofr",      :default => false
   end
 
   create_table "sitios", :force => true do |t|

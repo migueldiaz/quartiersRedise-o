@@ -1,6 +1,16 @@
 <h1> <%=t('tradm')+' '+t('idioma')+' '+ t(current_user.traduceA)%><h1>
 <br/>
 <h2><%=t('avisoTraductor')%> <%= t(current_user.traduceA)%></h2>
+
+
+
+<h4><%=link_to t('comentarios'),comentarios_path(:modo=>'todos',:vista=>'gestion')%> <%= @comentarios.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),comentarios_path(:modo=>'sintrad',:vista=>'gestion')%> <%=  @comentariosSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),comentarios_path(:modo=>'sinrevisar',:vista=>'gestion')%> <%=  @comentariosSinRevisar.size%></li>
+</ul>
+<!---->
+
 <h4><%=link_to t('colaboradores'),colaboradors_path(:modo=>'todos')%> <%= @colaboradores.size%></h4>
 <ul>
 <li><%=link_to t('sinTraducir'),colaboradors_path(:modo=>'sintrad')%> <%=  @colaboradorSinTraducir.size%></li>
