@@ -80,14 +80,3 @@ end
 
 <% end  %>
  
-   <% if (!@original.nil? and @original.paginas.length>1) then %>
-<div class="subpaginas">
-<h2><%=t('paginas')%></h2>
-<ul>
-<% @original.paginas.each do |pagi| %>
-	<li ><%= link_to pagi.send(:titulo.to_s+local) ,jeunes_pagina_path(:id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %></li>
-<%end%>
-</ul>
-</div>
-
-<% end  %>

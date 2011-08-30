@@ -1,19 +1,14 @@
-<h2><%=t('red')%></h2>
- <table>
-   <tr>
-   <th><%= t('tituloEs')%></th>
-   <th><%= t('tituloFr')%></th>
-   <th></th>
-   <th></th>
-   <th></th>
-   </tr>
+<p id="notice"><%= notice %></p>
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>@red.sitio} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('pagina'), :path_volver=>new_pagina_path(:id=>@sitio,:tipo=>'red')} %>         
+	</ul>
+</div>
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>5,:title=>t('red'), 
+		:columns=>[t('tituloEs'), t('tituloFr'),"detalle", "editar", "borrar"]} %>
    <%= render :partial => "paginas/pagina", :collection => @red.paginas %>
-  </table
-  <br/>
-  <h3><%= t('new')+' '+t('pagina')%></h3>
-  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'red') %> 
-  <br/><br/>                                        
-  <%= link_to t('back'), @red.sitio%>
-</p>
-
-
+</table>

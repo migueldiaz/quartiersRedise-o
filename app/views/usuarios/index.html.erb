@@ -1,18 +1,26 @@
-<h1><%=t('usuarios')%></h1>
-<br/>
-<table>
-  <tr>
-    <th><%=t('nombre')%></th>
-    <th><%=t('email')%></th>
-    <th><%=t('idioma')%></th>
-  <% if params[:tipo]=='traductor'%> 
-    <th><%=t('traduceA')%></th>
-    <%end%>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<%
+ if !params[:id].nil?
+path_volver=sitio_path(@sitio)
+path_new=new_usuario_path(:id=>@sitio)
+elsif params[:tipo]=='traductor'
+path_volver=admin_path()
+path_new=new_usuario_path(:tipo=>'traductor')
+elsif params[:tipo]=='admin'
+path_volver=admin_path()
+path_new=new_usuario_path(:tipo=>'admin')
+end
+if params[:tipo]=='traductor'
+n_columnas=7
+columns=[t('nombre'), t('email'),t('idioma'),t('traduceA'), "detalle", "editar", "borrar"]
+else
+n_columnas=6
+columns=[t('nombre'), t('email'),t('idioma'), "detalle", "editar", "borrar"]
+end
+%>
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>n_columnas,:title=>t('usuarios'), 
+		:columns=>columns} %>
 <% @usuarios.each do |usuario| %>
   <tr>
     <td><%= usuario.nombre %></td>
@@ -28,15 +36,15 @@
 <% end %>
 </table>
 
+
 <br />
 
-<% if !params[:id].nil?%>
-<%= link_to t('new')+' usuario', new_usuario_path(:id=>@sitio) %>
-|<%= link_to t('back'),sitio_path(@sitio)  %> 
-<%elsif params[:tipo]=='traductor'%>
-<%= link_to t('new')+' usuario', new_usuario_path(:tipo=>'traductor') %>
-<%= link_to t('back'),admin_path()  %> 
-<%elsif params[:tipo]=='admin'%>
-<%= link_to t('new')+' usuario', new_usuario_path(:tipo=>'admin') %>
-<%= link_to t('back'),admin_path()  %> 
-<%end%>
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>path_volver} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('usuario'), :path_volver=>path_new} %>         
+	</ul>
+</div>
+

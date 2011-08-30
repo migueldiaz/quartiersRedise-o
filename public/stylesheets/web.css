@@ -21,5 +21,32 @@
 		 padding: 2px 7px; /*Separar el texto*/  
          opacity: 0.5;
 }
+.subpaginas ul {
+    font-size: 1.5em;
+    margin-left: 31px;
+    margin-top: -15px;
+}
+	.subpaginas ul li a{
+		color:gray;
+		text-decoration:none;
+
+	}
+	.subpaginas ul li a:hover{
+		color:black;
+
+	}
+	.subpaginas ul li {
+font-family: "Gloria Hallelujah";
+font-size: 1.1em;
+font-weight: 400;
+
+}
+	.subpaginas ul li a.selected{
+text-decoration:underline;
+		color:black;
+		font-size: 1.3em;
+
+
+}
 
 
