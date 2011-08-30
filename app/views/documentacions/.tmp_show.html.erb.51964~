@@ -1,0 +1,18 @@
+<h2><%=t('documentacion')%></h2> 
+<br>
+ <table>
+   <tr>
+   <th><%= t('tituloEs')%></th>
+   <th><%= t('tituloFr')%></th>
+   <th></th>
+   <th></th>
+   <th></th>
+   </tr>
+   <%= render :partial => "paginas/pagina", :collection => @documentacion.paginas %>
+  </table
+  <br/>
+  <h3><%= t('new')+' '+t('pagina')%></h3>
+  <%= link_to t('new')+' '+t('pagina'),new_pagina_path(:id=>@sitio,:tipo=>'documentacion') %> 
+  <br/><br/>
+  <%= link_to t('back'), sitio_path(:id=>@sitio)%>
+</p>

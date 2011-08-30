@@ -1,17 +1,13 @@
 <h1><%=t('foros')%></h1>
 <br/>
-<p><b><%=t('claveactual')%>&nbsp;</b>
-<%=link_to t('edit'),foro_clave_path(:id=>@clave)%></p>
-
-<table>
-  <tr>
-    <th><%= t('tituloes')%></th>
-    <th><%= t('titulofr')%></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<p>
+	<b><%=t('claveactual')%>&nbsp;</b>
+<%=link_to t('edit'),foro_clave_path(:id=>@clave)%>
+</p>
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>5, :title=>t('fondos'), 
+		:columns=>[t('tituloes') ,t('titulofr') , t("show"), t('edit'), t('destroy')]} %>
 <% @foros.each do |foro| %>
   <tr>
     <td><%= foro.tituloes %></td>
@@ -24,9 +20,18 @@
 <% end %>
 </table>
 
-<br />
 
-<%= link_to t('new')+' '+t('foro'), new_foro_path(:id=>@sitio) %> | 
-<%if current_user.tipo!='traductor'%>
-<%= link_to t('back'), sitio_path(@sitio) %>
-<%end%>
+
+
+
+
+  <div class="opciones_generales">
+	<ul  >
+		<%if current_user.tipo!='traductor'%>
+
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>sitio_path(@sitio)} %>         
+	<%end%>
+	<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('foro'), :path_volver=>new_foro_path(:id=>@sitio)} %>  
+	</ul>
+</div>

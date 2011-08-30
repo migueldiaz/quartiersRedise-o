@@ -1,0 +1,32 @@
+ <%
+if current_user.tipo!='traductor'
+n_columnas=7
+columns=[t('nombreEs'), t('nombreFr'),t("url"),t("imagen"), "detalle", "editar", "borrar"]
+else
+n_columnas=6
+columns=[t('nombreEs'), t('nombreFr'),t("url"), t("imagen"), "detalle", "editar"]
+end
+ 
+%>
+
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>n_columnas,:title=>t('aportan'), 
+		:columns=>columns} %>
+<%= render :partial => "colaboradors/colaboradorNo", :collection => @colaboradors %>
+</table>
+
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>n_columnas,:title=>t('noaportan'), 
+		:columns=>columns} %>
+<%= render :partial => "colaboradors/colaboradorSi", :collection => @colaboradors %>
+</table>
+
+
+<% if current_user.tipo=='traductor'%>
+<%= link_to t('back'),traductor_url %>
+<%else%>
+<%= link_to t('new')+' '+t('colaborador'), new_colaborador_path(:id=>@sitio) %> | 
+<%= link_to t('back'),sitio_path(@sitio) %>
+<%end%>

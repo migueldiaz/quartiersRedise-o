@@ -2,8 +2,7 @@
  <tr>
    <td><%= colaboradorSi.nombreEs %></td>
     <td><%= colaboradorSi.nombreFr %></td>
-     <td><%= colaboradorSi.url %></td>
-   <td> <% if colaboradorSi.imagen_url.to_s != "" %>
+    <td> <% if colaboradorSi.imagen_url.to_s != "" %>
     <%= image_tag colaboradorSi.imagen_url.to_s,:size=>'80x70' %>
     <% end %></td>
    <td><%= link_to t('show'), colaborador_path(colaboradorSi)%></td>

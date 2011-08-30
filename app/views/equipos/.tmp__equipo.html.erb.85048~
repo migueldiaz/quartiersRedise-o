@@ -1,0 +1,10 @@
+<% if !equipo.nil?%>
+ <tr>
+  <td><%= equipo.nombre %></td>
+  <td><%= equipo.descripcionEs %></td>
+  <td><%= equipo.descripcionFr%></td>
+  <td><%= link_to t('show')+' '+t('sitio'), equipo.sitio%></td> 
+  <td><%= link_to t('edit'), edit_equipo_path(equipo)%></td> 
+  <td><%= link_to t('destroy'), equipo, :confirm => t('confirm'),  :method => :delete %></td>
+ </tr>
+<%end%>

@@ -1,18 +1,36 @@
-<h1><%=t('equipos')%></h1>
-<table>
-<tr>
-<th><%=t('nombreEquipo')%></th>
-<th><%=t('informacionEs')%></th>
-<th><%=t('informacionFr')%></th>
-<th></th>
-</tr>
+<div class="opciones_generales">
+	<ul  >
+		<% if current_user.tipo=='traductor'%>
+					<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('traductor'), :path_volver=>traductor_url} %>  
+
+			<%else%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>sitio_path(@sitio)} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('equipo'), :path_volver=>new_equipo_path(:id=>@sitio)} %>  
+	<%end%>
+		       
+	</ul>
+</div>
+
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>6,:title=>t('equipos'), 
+		:columns=>[t('nombreEquipo'), t('informacionEs'),t("informacionFr"), t("show"), t('edit'), t('destroy')]} %>
 <%= render :partial => "equipos/equipo", :collection => @equipos %>
 </table>
-<br/>
-<%  if current_user.tipo=='traductor'%>
-<%= link_to t('traductor'),traductor_url%>
-<%else%>
-<%= link_to t('new')+' '+t('equipo'),new_equipo_path(:id=>@sitio)%>
-<%= link_to t('back'),sitio_path(:id=>@sitio)%>
+<div class="opciones_generales">
+	<ul  >
+		<% if current_user.tipo=='traductor'%>
+					<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('traductor'), :path_volver=>traductor_url} %>  
 
-<%end%>
+			<%else%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>sitio_path(@sitio)} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('equipo'), :path_volver=>new_equipo_path(:id=>@sitio)} %>  
+	<%end%>
+		       
+	</ul>
+</div>
+
