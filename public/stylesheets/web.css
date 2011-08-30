@@ -3,9 +3,8 @@
 
 
 }
-#idiomas ul li a .seleccionado{
-
-         	      opacity: 0.5;
+#idiomas ul li a.seleccionado, a:focus.seleccionado {
+         	      opacity: 0.6;
           color:black;
                     background-color:white; /* Color de fondo */ ”
 		 padding: 2px 7px; /*Separar el texto*/  
@@ -14,12 +13,12 @@
           color:white;
 		 padding: 2px 7px; /*Separar el texto*/  
          margin:5px; /* Separar los botones */  	
-         opacity: 0.1;
+         opacity: 0.8;
           background-color:black; /* Color de fondo */ ”
 }
 #idiomas ul li  a:hover {
 		 padding: 2px 7px; /*Separar el texto*/  
-         opacity: 0.5;
+         opacity: 1;
 }
 .subpaginas ul {
     font-size: 1.5em;
