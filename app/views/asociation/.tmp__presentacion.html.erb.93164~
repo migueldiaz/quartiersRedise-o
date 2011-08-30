@@ -1,0 +1,13 @@
+<%if !@sitio.presentacion.nil?%>
+ <%if !@sitio.presentacion.seccions.nil?%>
+	<% @sitio.presentacion.seccions.each do |seccion| %>
+		<% if spanish %>
+ 		 <h1><%= seccion.tituloes %> </h1> 
+		 <%else%>
+		  <h1><%= seccion.titulofr %> </h1> 
+		<% end %>
+   <% end %>
+<%end%>
+ 
+<%end%>
+	

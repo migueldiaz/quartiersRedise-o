@@ -45,6 +45,14 @@ def dame_nombre_metodo valor
 	end
 end 
 
+def dame_nombre_metodo_bis valor
+  if(I18n.locale.to_s=='es')
+    valor+"es"
+  else
+    valor+"fr"
+  end
+end 
+
 def menu_seleccionada opcion
 	if opcion.to_s == params[:action]
 		return "class='seleccionado'"

@@ -2,6 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 es:
  fondos: 'Fondos para el sitio'
+ paginas_de: 'Paginas de sección:'
  fondo: 'imagen de fondo'
  addimagen: 'Selección de imágen'
  clave: 'Clave'
