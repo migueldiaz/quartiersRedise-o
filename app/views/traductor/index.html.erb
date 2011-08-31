@@ -10,6 +10,20 @@
 <li><%=link_to t('sinRevisar'),comentarios_path(:modo=>'sinrevisar',:vista=>'gestion')%> <%=  @comentariosSinRevisar.size%></li>
 </ul>
 <!---->
+<h4><%=link_to t('foros'),foros_path(:modo=>'todos',:vista=>'gestion')%> <%= @foros.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),foros_path(:modo=>'sintrad',:vista=>'gestion')%> <%=  @forosSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),foros_path(:modo=>'sinrevisar',:vista=>'gestion')%> <%=  @forosSinRevisar.size%></li>
+</ul>
+<!---->
+<h4><%=link_to t('imagenes'),imagens_path(:modo=>'todos')%> <%= @imagenes.size%></h4>
+<ul>
+<li><%=link_to t('sinTraducir'),imagens_path(:modo=>'sintrad')%> <%=  @imagenesSinTraducir.size%></li>
+<li><%=link_to t('sinRevisar'),imagens_path(:modo=>'sinrevisar')%> <%=  @imagenesSinRevisar.size%></li>
+</ul>
+<!---->
+
+<!---->
 
 <h4><%=link_to t('colaboradores'),colaboradors_path(:modo=>'todos')%> <%= @colaboradores.size%></h4>
 <ul>

@@ -40,22 +40,7 @@
   <div class="field">
     <%= f.label t :direccion %><br />
     <%= f.text_area :direccion,:size=>'55x10' %>
-  </div>
-  <%if current_user.tipo=='traductor'%>
-  <div class="field">
-    <%= f.label t :revisado %><br />
-    <%= f.check_box :revisado %>
-  </div>
-  <%else%>
-  <%  f.hidden_field(:revisado)%>
-  <%end%>
-   <div class="field">
-        <label><%=t('imagen')%></label>
-      <%= f.file_field :imagen  %>
-    </div>
-    
-    
-
+  </div>    
    <div class="field">
         <% if @colaborador.imagen_url.to_s != "" %>
         <%= image_tag @colaborador.imagen_url.to_s %>
@@ -66,6 +51,21 @@
         </label>
         <% end %> 
     </div>
+     <div class="field">
+        <label><%=t('imagen')%></label>
+      <%= f.file_field :imagen  %>
+    </div>
+   <%if current_user.tipo=='traductor'%>
+	 <div class="field">
+		<%= f.label t :revisado %>
+		<%= f.check_box :revisado%>
+		<%= f.label t :revisadofr %>	
+		<%= f.check_box :revisadofr %>
+	  </div>
+  <%else%>
+	<%= f.hidden_field :revisadofr,:value=>false %>
+	<%= f.hidden_field :revisado,:value=>false %>
+ <%end%>
   <div class="actions">
     <%= f.submit(t('save')) %>
   </div>

@@ -7,6 +7,7 @@ es:
  addimagen: 'Selección de imágen'
  clave: 'Clave'
  name: 'Nombre'
+ imagenes: 'Imagenes'
  #######OPCIONES DE LOS SITIOS
  Imagenmini: 'Imagen zoom'
  galeria: 'Galería de imagenes'
@@ -103,7 +104,8 @@ es:
  documento: 'documento'
  enlace: 'Enlace al archivo'
  documentos: 'Documentos'
- revisado: 'Traducción revisada'
+ revisado: 'Traducción revisada español'
+ revisadofr: 'Traducción revisada francés'
  contacto: 'Contacto'
  colaboradores: 'Colaboradores'
  siAporta: 'Sí'
