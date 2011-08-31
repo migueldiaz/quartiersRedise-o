@@ -13,10 +13,12 @@ layout 'mono'
 	   else
 	    	 @imagenes = Imagen.find(:all, :conditions => "docfr='' || archivofr=''")	
 	   end
-  
   elsif  params[:modo]=='sinrevisar'	
-   		 @imagenes = Imagen.find(:all, :conditions => "revisado = 'false'")	
-  
+   		if current_user.traduceA=='es'   
+			  @imagenes = Imagen.find(:all, :conditions => "revisado = 'false'")	
+	   	else
+	    	 @imagenes = Imagen.find(:all, :conditions => "revisadofr = 'false'")	
+	   	end
   else
  	 @imagenes = Imagen.all
   end

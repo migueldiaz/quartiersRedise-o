@@ -27,7 +27,11 @@ class ContactosController < ApplicationController
  	    @contactos = Contacto.all
  
   elsif  params[:modo]=='sinrevisar'	
-   		 @contactos = Contacto.find(:all, :conditions => "revisado = 'false'")	
+   		if current_user.traduceA=='es'   
+   			 @contactos = Contacto.find(:all, :conditions => "revisado = 'false'")	
+ 		else
+ 			 @contactos = Contacto.find(:all, :conditions => "revisadofr = 'false'")	
+ 		end
   else
    	@sitio=Sitio.find(params[:id])
       if @sitio.contacto.nil?

@@ -8,9 +8,12 @@ def index
 	   else
 	    	 @parrafos = Parrafo.find(:all, :conditions => "textofr='' || piefotofr=''")	
 	   end
-  
-  elsif  params[:modo]=='sinrevisar'	
-   		 @parrafos = Parrafo.find(:all, :conditions => "revisado = 'false'")	
+  elsif  params[:modo]=='sinrevisar'
+  		if current_user.traduceA=='es'   
+			 @parrafos = Parrafo.find(:all, :conditions => "revisado = 'false'")
+	   	else
+	    	 @parrafos = Parrafo.find(:all, :conditions => "revisadofr = 'false'")
+	   	end 		 	
   else
  	 @parrafos = Parrafo.all
   end

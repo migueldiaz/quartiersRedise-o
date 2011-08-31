@@ -3,23 +3,39 @@ class ForosController < ApplicationController
   # GET /foros.xml
   layout 'mono'
   def index
-    @sitio=Sitio.find(params[:id])
-    @foros=@sitio.foros
-    
-    if !@sitio.jeunes.nil?
-     	 @jeunes=@sitio.jeunes
-     	 if @jeunes.clave.nil?
-        	 @jeunes.clave=Clave.new
-     	 end
-     	 @clave=@jeunes.clave
-    else
-    	 @femmes=@sitio.femmes
-    	  if @femmes.clave.nil?
-         @femmes.clave=Clave.new
-      end
-       @clave=@femmes.clave
-    end
-    
+    	
+    if params[:modo]=='sintrad'
+  	   if current_user.traduceA=='es'   
+			 @foros = Foro.find(:all, :conditions => "tituloes=''")
+	   else
+	    	 @foros = Foro.find(:all, :conditions => "titulofr=''")	
+	   end
+  elsif  params[:modo]=='sinrevisar'	
+   		if current_user.traduceA=='es'   
+			 @foros = Foro.find(:all, :conditions => "revisado = 'false'")	
+	   	else
+	    	  @foros = Foro.find(:all, :conditions => "revisadofr = 'false'")	
+	   	end	
+  elsif params[:modo]=='todos'
+   @foros=Foro.all
+  
+  else
+    	@sitio=Sitio.find(params[:id])
+    	@foros=@sitio.foros
+    		if !@sitio.jeunes.nil?
+     	 		@jeunes=@sitio.jeunes
+     	 		if @jeunes.clave.nil?
+        			 @jeunes.clave=Clave.new
+     	 		end
+     	 		@clave=@jeunes.clave
+    		else
+    	 		@femmes=@sitio.femmes
+    	  		if @femmes.clave.nil?
+         			@femmes.clave=Clave.new
+      			end
+       			@clave=@femmes.clave
+    		end
+    end 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @foros }

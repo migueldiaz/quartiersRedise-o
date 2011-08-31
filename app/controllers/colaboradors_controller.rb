@@ -4,30 +4,25 @@ class ColaboradorsController < ApplicationController
   # GET /colaboradors.xml
   before_filter :require_login
   def index
-
-
-  	if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @colaboradors = Colaborador.find(:all, :conditions => "nombreEs = '' or infoEs= '' ")
-	   else
-	    	 @colaboradors = Colaborador.find(:all, :conditions => "nombreFr = '' or infoFr= '' ")	
-	   end
+  	if params[:modo]=='sintrad' &&
+  	   	if current_user.traduceA=='es'   
+			@colaboradors = Colaborador.find(:all, :conditions => "nombreEs = '' or infoEs= '' ")
+	   	else
+	   		@colaboradors = Colaborador.find(:all, :conditions => "nombreFr = '' or infoFr= '' ")	
+	   	end
  	elsif  params[:modo]=='todos'
- 	     @colaboradors = Colaborador.all
- 	    
- 	
+ 	     @colaboradors = Colaborador.all	
  	elsif  params[:modo]=='sinrevisar'
-   		
-   		 @colaboradors = Colaborador.find(:all, :conditions => "revisado != true")	
+   	   if current_user.traduceA=='es'   
+   		 @colaboradors = Colaborador.find(:all, :conditions => "revisado revisado=false")	
+   	   else
+   	     @colaboradors = Colaborador.find(:all, :conditions => "revisadofr revisado=false")
+   	   end
    	else
-   			@sitio = Sitio.find(params[:id]) 
- 			@colaboradors = @sitio.colaboradors
+   		@sitio = Sitio.find(params[:id]) 
+ 		@colaboradors = @sitio.colaboradors
  	 end
  
-     #@aportadores= @colaboradors.find(:all, :conditions => "aporta = true")
-     #Colaborador.find(:all, :conditions => "aporta = true")
-  	 #@noaportadores= Colaborador.find(:all, :conditions => "aporta = false")
-
     respond_to do |format|
       format.html  # index.html.erb 
       format.xml  { render :xml => @colaboradors }

@@ -14,12 +14,16 @@ class ComentariosController < ApplicationController
   def index
     
     if params[:modo]=='sinrevisar'
-    @comentarios=Comentario.find(:all, :conditions => "revisado = false")
+    	if current_user.traduceA=='es'   
+    		@comentarios=Comentario.find(:all, :conditions => "revisado = false")
+    	else
+    		@comentarios=Comentario.find(:all, :conditions => "revisadofr = false")
+        end
     elsif params[:modo]=='sintrad'
     	if current_user.traduceA=='es'   
-		  @comentarios = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' ")
+		  	@comentarios = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' ")
 	   	else
-	      @comentarios = Comentario.find(:all, :conditions => "textofr = '' || titulofr = ''")
+	      	@comentarios = Comentario.find(:all, :conditions => "textofr = '' || titulofr = ''")
 	   	end
     else
     	@foro=Foro.find(params[:id])

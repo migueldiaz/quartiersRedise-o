@@ -13,7 +13,11 @@ class PaginasController < ApplicationController
 	   end
   
   elsif  params[:modo]=='sinrevisar'	
-   		 @paginas = Pagina.find(:all, :conditions => "revisado = 'false'")	
+   	   if current_user.traduceA=='es'   
+			@paginas = Pagina.find(:all, :conditions => "revisado = 'false'")
+	   else
+	    	@paginas = Pagina.find(:all, :conditions => "revisadofr = 'false'")
+	   end 	 	
   else
  	 @paginas = Pagina.all
   end

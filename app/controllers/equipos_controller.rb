@@ -11,7 +11,11 @@ class EquiposController < ApplicationController
 	   end
   
   elsif  params[:modo]=='sinrevisar'	
-   		 @equipos = Equipo.find(:all, :conditions => "revisado = 'false'")	
+   		if current_user.traduceA=='es'   
+			 @equipos = Equipo.find(:all, :conditions => "revisado = 'false'")	
+	   	else
+	    	  @equipos = Equipo.find(:all, :conditions => "revisadofr = 'false'")	
+	   	end	
   else
  	  @sitio=Sitio.find(params[:id])
  	  if !@sitio.jeunes.nil?

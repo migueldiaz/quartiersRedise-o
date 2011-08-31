@@ -13,10 +13,13 @@ class EventosController < ApplicationController
 	   end
  	elsif  params[:modo]=='todos'
  	     @eventos = Evento.all
- 	    
- 	
+ 
  	elsif  params[:modo]=='sinrevisar'
-   	 @eventos = Evento.find(:all, :conditions => "revisado = 'false'")	
+   	 	if current_user.traduceA=='es'   
+			@eventos = Evento.find(:all, :conditions => "revisado = 'false'")	
+	   else
+	    	@eventos = Evento.find(:all, :conditions => "revisadofr = 'false'")	
+	   end	
    	else
    	   @sitio = Sitio.find(params[:id]) 
        @eventos=@sitio.eventos.all

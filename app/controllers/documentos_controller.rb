@@ -15,8 +15,11 @@ layout 'mono'
 	   end
   
   elsif  params[:modo]=='sinrevisar'	
-   		 @documentos = Documento.find(:all, :conditions => "revisado = 'false'")	
-  
+   	 	if current_user.traduceA=='es'   
+			 @documentos = Documento.find(:all, :conditions => "revisado = 'false'")	 
+	   	else
+	    	 @documentos = Documento.find(:all, :conditions => "revisadofr = 'false'")	
+	   	end		
   else
  	 @documentos = Documento.all
   end
