@@ -1,0 +1,93 @@
+<%
+if(!@original.nil?) then
+%>
+	<h2><%= link_to @original.send(:titulo.to_s+local)+">" ,jeunes_pagina_path(:id=>@original) %> <%=@pagina.send(:titulo.to_s+local)%></h2>
+<%
+else
+%>
+<h1><%=@pagina.send(:titulo.to_s+local)%></h1>
+<%
+end
+%>
+
+<hr class="space">
+<% @pagina.parrafos.each do |parrafo| %>
+ 		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2> 
+<%
+if !parrafo.imagenmini_url.nil? and !parrafo.imagenmini_url.empty?
+@img_existente=parrafo.imagenmini_url
+else
+@img_existente=parrafo.imagen_url
+end
+%>
+ 		 
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>@img_existente, 
+:enlace_imagen=>parrafo.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>parrafo.method(dame_nombre_metodo 'piefoto').call
+}
+%> 	
+<p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
+<hr class="space"><hr class="space">
+ <% end %>
+
+<% if !@pagina.imagens.empty? then %>
+<div class="galeria">
+<h2><%=t('galeria')%></h2>
+<% @pagina.imagens.each do |imagen| %>
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>imagen.imagenmini_url, 
+:enlace_imagen=>imagen.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call,
+:galeria=>true
+}
+%> 	
+<%end%>
+</div>
+<hr class="space"><hr class="space">
+
+<%end%>
+
+
+
+ <% if (!@pagina.documentos.empty?) then %>
+<div class="documentacion">
+<h2><%=t('documentacion')%></h2>
+<ul>
+<% @pagina.documentos.each do |documento| %>
+ 		<% if documento.archivo_url.to_s != "" %>
+ 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.archivo_url.to_s %></li>
+		<%else%>
+			<li>FALTA DOC EN BD!! :::: <%= documento.doces %></li>
+  		<% end %>	
+<%end%>
+</ul>
+</div>
+
+<% end %>
+
+  <% if (!@pagina.paginas.empty?) then %>
+<div class="subpaginas">
+<h2><%=t('paginas')%></h2>
+<ul>
+<% @pagina.paginas.each do |pagi| %>
+	<li><%= link_to pagi.send(:titulo.to_s+local) ,jeunes_pagina_path(:id=>pagi) %></li>
+<%end%>
+</ul>
+</div>
+
+<% end  %>
+ 
+   <% if (!@original.nil? and @original.paginas.length>1) then %>
+<div class="subpaginas">
+<h2><%=t('paginas')%></h2>
+<ul>
+<% @original.paginas.each do |pagi| %>
+	<li ><%= link_to pagi.send(:titulo.to_s+local) ,jeunes_pagina_path(:id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %></li>
+<%end%>
+</ul>
+</div>
+
+<% end  %>

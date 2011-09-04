@@ -1,5 +1,5 @@
 class FemmesController < ApplicationController
- 		layout 'quartiers'
+  layout 'juan_femmes'
  	
 #GET /quartiers/agenda
 def sitio

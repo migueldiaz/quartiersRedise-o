@@ -47,19 +47,20 @@
 		<li><%=link_to t('contacto'),jeunes_contacto_path%></li>
 	</ul>
 	<%end%>
-
-
 	<% if params[:controller]=="equipe" %>
-		<ul id="menu">
-			<li><%=link_to t('lequipos'),femmes_equipos_path %></li>
+	<ul id="menu">
+		
+				<li><%=link_to t('lequipos'),jeunes_equipos_path %></li>
 		    <%if !@equipo.nil? %>
-				<li><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
+		    	<li><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
 				<%=render 'equipe/opciones'%>
-		    <%end%>
-		</ul>
-	<%end%>
 
-		<% if params[:controller]=="femmes" %>
+		        
+	</ul>
+		    <%end%>
+
+	<%end%>
+	<% if params[:controller]=="femmes" %>
 	<ul id="menu">
 		<li><%=link_to t('presentacion'),femmes_presentacion_path  %>
     		<%if !@paginas.nil? && !@presentacion.nil?%>
@@ -93,6 +94,19 @@
 		<li><%=link_to t('agenda'),femmes_agenda_path%></li>
 		<li><%=link_to t('contacto'),femmes_contacto_path%></li>
 	</ul>
+	<%end%>
+	<% if params[:controller]=="equipe" %>
+	<ul id="menu">
+		
+				<li><%=link_to t('lequipos'),femmes_equipos_path %></li>
+		    <%if !@equipo.nil? %>
+		    	<li><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
+				<%=render 'equipe/opciones'%>
+
+		        
+	</ul>
+		    <%end%>
+
 	<%end%>
 
 	

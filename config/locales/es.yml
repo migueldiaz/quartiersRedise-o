@@ -63,6 +63,8 @@ es:
  agenda: 'Agenda'
  qdm: 'BARRIOS DEL MUNDO'
  qdmsubtitle: 'HISTORIAS URBANAS'
+ qdmfemmes: 'MUJERES DEL MUNDO'
+ qdmfemmessubtitle: 'SUBTITULO DE MUJERES'
  ##########
  es: "Español"
  fr: "Français"

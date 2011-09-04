@@ -8,6 +8,7 @@
           color:black;
                     background-color:white; /* Color de fondo */ ”
 		 padding: 2px 7px; /*Separar el texto*/  
+         margin:5px; /* Separar los botones */  	
 }
 #idiomas ul li a, a:focus{
           color:white;
@@ -19,6 +20,7 @@
 #idiomas ul li  a:hover {
 		 padding: 2px 7px; /*Separar el texto*/  
          opacity: 1;
+         margin:5px; /* Separar los botones */  	
 }
 .subpaginas ul {
     font-size: 1.5em;
@@ -75,4 +77,36 @@
     font-size: 1.3em;
 }
 
+.opciones_generales{
+	margin-bottom:70px;
+}
+.opciones_generales ul{
+		list-style: none outside none;display:block;
 
+	
+}
+.opciones_generales li{
+		-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	padding:5px;
+	float:left; 
+	margin-right:20px;
+	margin-left:-10px;
+	background-color:#E5E5E5;
+
+}
+.opciones_generales li.seleccionado{
+	 background-color: #FE4A00;
+}
+.opciones_generales li:hover {
+	background-color:#FE4A00;
+	}
+.opciones_generales li a{
+	color:#FFF;
+	padding:2px;
+}
+.opciones_generales li a:link, a:hover, a:focus, a:visited, a:active{
+}
+.opciones_generales li  a:hover{
+		color:white;
+	}

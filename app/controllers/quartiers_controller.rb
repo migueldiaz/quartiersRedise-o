@@ -1,5 +1,5 @@
 class QuartiersController < ApplicationController
-  	layout 'quartiers'
+  	layout 'juan'
  	def index 
   	#@eventos = Evento.where('sitio_id'=> @sitio)
   		@web=Web.first

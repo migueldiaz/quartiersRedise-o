@@ -1,70 +1,21 @@
-<%= render :partial => "/shared/titulo",:locals => {:title => "Bienvenido a quartiers"}%>
+<%= render :partial => "/shared/titulo",:locals => {:title => "Bienvenido a quartiers:seleccione un subportal"}%>
 
 
 <div class="ficha ">
-   <%= render :partial => "/shared/modulo_ficha", :locals => {
-:title => "Bienvenido a quartiers", 
-:texto=>"<p>Los enlaces del menu de la izquierda deben recoger correctamente los datos, y mostrarlos de manera similar a
-los que se muestran en la asociacion con cierto formato<p>
-<p>Cierto formato implica controlar el local seleccionado. Eliminar titulos ,.. <p>
-<p>Para cada elemento, por ejemplo la presentacion. => se manda a un controlador que carga los datos correspondientes y los muestra aqui, siempre dentro de quartiers_controller<p>".html_safe}
-%>                 
-                 
-                    
-<%= render :partial => "/shared/modulo_ficha", :locals => {
-:title => "Encourager une gouvernance participative et une citoyenneté affirmée au Sud et au Nord", 
-:texto=>" Pour cela, Quartiers du Monde contribue à la construction d'espaces de dialogue et de réflexion avec la population et les autorités locales de différents quartiers pour chercher ensemble des alternatives de changement.", 
-:imagen_title=>"Encourager une gouvernance participative et une citoyenneté affirmée au Sud et au Nord", 
-:imagen=>"imgs/ej04mini.jpg", 
-:enlace_imagen=>"imgs/ej04zoom.jpg", 
-:imagen_class=>"left"}
-%>
-						
+<div class="opciones_generales">
+<ul>
+<li class="seleccionado">
+		<%=link_to t('presentacion'),asociation_presentacion_path  %>
+</li>
+<li class="seleccionado">
+	<%=link_to t('jeunes'),jeunes_presentacion_path  %>
+</li>
+<li class="seleccionado">
+		<%=link_to t('femmes'),femmes_presentacion_path  %>
+</li>
+</ul>
+</div>
+	
 
-<%= render :partial => "/shared/modulo_ficha", :locals => {
-:title => "Que fait-on ?", 
-:texto=>  ("<ul >
-<li>
-Animer un réseau Nord-Sud 
-</li>
-<li>
-Proposer des formations méthodologiques 
-</li>
-<li>
-Réaliser le suivi et l’évaluation de projets sociaux  
-</li>
-<li>
-Faciliter la réflexion de groupes d’habitants pour construire la participation dans leur quartier 
-</li>
-</ul>").html_safe, 
-:imagen_title=>"Que fait-on ?", 
-:imagen=>"imgs/ej03mini.jpg", 
-:enlace_imagen=>"imgs/ej03zoom.jpg", 
-:imagen_class=>"left"}
-%>
-<div class="modulo_ficha">
-                            <div class="titulo ">
-                               <span> Documentation</span>
-                            </div>
-                            <div class="documentacion seleccionado">
-                                <ul>
-                                    <li class="pdf">
-                                        Rapport des activités de l'association en 2005
-                                    </li>
-                                    <li class="txt">
-                                        Rapport des activités de l'association en 2006
-                                    </li>
-                                    <li class="doc">
-                                        Rapport des activités de l'association en 2007
-                                    </li>
-                                    <li class="mov">
-                                        Rapport des activités de l'association en 2008
-                                    </li>
-                                    <li class="rtf">
-                                        Rapport des activités de l'association en 2009
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 </div>
 

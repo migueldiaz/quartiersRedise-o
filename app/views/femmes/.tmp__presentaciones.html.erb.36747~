@@ -1,4 +1,3 @@
-NO SE USA:
 <%if !@sitio.presentacion.nil?%>
   <% if !@sitio.presentacion.seccions.nil? %> 
 	<% @sitio.presentacion.seccions.each do |seccion| %>
@@ -8,7 +7,8 @@ NO SE USA:
 		  <li><%=link_to seccion.titulofr,femmes_seccion_path(:id=>seccion) %> </li> 
 		<% end %>
    <% end %>
-  <% end %>	
+  <% end %>
+	
 <%end%>
 
 
