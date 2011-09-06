@@ -1,0 +1,105 @@
+	
+
+<% if params[:controller]=="asociation" %>
+	<%if !@asociacion.nil? %>
+	<ul id="menu">
+		<%=render "asociation/presentaciones" %>  	
+			<%=render "asociation/proyectos" %>  
+		<li <%=menu_seleccionada 'colaborador'%>><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
+		
+		<li <%=menu_seleccionada 'agenda'%>><%=link_to t('agenda'),asociation_agenda_path%></li>
+		<li <%=menu_seleccionada 'contacto'%>><%=link_to t('contacto'),asociation_contacto_path%></li>
+	</ul>
+	<%end%>
+<% end %>
+	<% if params[:controller]=="jeunes" %>
+	<ul id="menu">
+		<li><%=link_to t('presentacion'),jeunes_presentacion_path  %>
+    		<%if !@paginas.nil? && !@presentacion.nil?%>
+    			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
+    		<%end%>
+    		</li>
+		<li><%=link_to t('proyectos'),jeunes_proyectos_path  %>
+		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
+			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
+		<%end%>
+		</li>
+		<li><%=link_to t('documentacion'),jeunes_documentacion_path  %>
+		<%if !@paginas.nil? && !@documentacion.nil?%>
+			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
+		<%end%>
+		</li>
+		<li><%=link_to t('foros'),jeunes_foros_path %>
+		 	<%if !@foros.nil? %>
+		    	<ul class="submenu"><%=render 'jeunes/foros'%></ul>
+		    <%end%>
+		    </li>
+		<li><%=link_to t('lequipos'),jeunes_equipos_path %>
+		  
+		    <%if !@equipo.nil? %>
+		    	<ul class="submenu"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
+		    	<ul class="submenu"><%=render 'equipe/opciones'%></ul>
+		        </ul>
+		    <%end%>
+		    </li>
+		<li><%=link_to t('colaboradores'),jeunes_colaborador_path%></li>
+		<li><%=link_to t('agenda'),jeunes_agenda_path%></li>
+		<li><%=link_to t('contacto'),jeunes_contacto_path%></li>
+	</ul>
+	<%end%>
+
+
+	<% if params[:controller]=="equipe" %>
+		<ul id="menu">
+			<%
+			path_equipos_general=femmes_equipos_path
+			if !@equipo.jeunes.nil?
+			path_equipos_general=jeunes_equipos_path
+			end
+			%> 
+			<li><%=link_to t('lequipos'),path_equipos_general %></li>
+		    <%if !@equipo.nil? %>
+				<li><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
+				<%=render 'equipe/opciones'%>
+		    <%end%>
+		</ul>
+	<%end%>
+
+		<% if params[:controller]=="femmes" %>
+	<ul id="menu">
+		<li><%=link_to t('presentacion'),femmes_presentacion_path  %>
+    		<%if !@paginas.nil? && !@presentacion.nil?%>
+    			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
+    		<%end%>
+    		</li>
+		<li><%=link_to t('proyectos'),femmes_proyectos_path  %>
+		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
+			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
+		<%end%>
+		</li>
+		<li><%=link_to t('documentacion'),femmes_documentacion_path  %>
+		<%if !@paginas.nil? && !@documentacion.nil?%>
+			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
+		<%end%>
+		</li>
+		<li><%=link_to t('foros'),femmes_foros_path %>
+		 	<%if !@foros.nil? %>
+		    	<ul class="submenu"><%=render 'femmes/foros'%></ul>
+		    <%end%>
+		    </li>
+		<li><%=link_to t('lequipos'),femmes_equipos_path %>
+		  
+		    <%if !@equipo.nil? %>
+		    	<ul class="submenu"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
+		    	<ul class="submenu"><%=render 'equipe/opciones'%></ul>
+		        </ul>
+		    <%end%>
+		    </li>
+		<li><%=link_to t('colaboradores'),femmes_colaborador_path%></li>
+		<li><%=link_to t('agenda'),femmes_agenda_path%></li>
+		<li><%=link_to t('contacto'),femmes_contacto_path%></li>
+	</ul>
+	<%end%>
+
+	
+	

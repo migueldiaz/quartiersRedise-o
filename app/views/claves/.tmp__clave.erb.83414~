@@ -1,0 +1,16 @@
+<%= form_tag claves_path do %>
+
+ <div class="field"> 
+  <p> <%= label_tag t :clave  %> 
+   <%= password_field_tag :clave%></p>
+ <% if !@jeunes.nil?%> 
+   <%= hidden_field_tag :tipo,'jeunes'%>
+
+ <% elsif !@femmes.nil?%> 
+    <%= hidden_field_tag :tipo,'femmes'%>
+ <% end%> 
+ </div>
+  <div class="actions">
+   <p class='button'><%=submit_tag(t('send')) %></p>
+ </div>
+ <%end%>

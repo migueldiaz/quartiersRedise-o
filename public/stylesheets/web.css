@@ -23,13 +23,15 @@
          margin:5px; /* Separar los botones */  	
 }
 .subpaginas ul {
-    font-size: 1.5em;
-    margin-left: 31px;
+  /*  font-size: 1.5em;*/
+    margin-left: -10px;
     margin-top: -15px;
+			list-style: square outside none;
+
 }
 
 .subpaginas ul li a {
-    color: gray;
+    color: #000;
     text-decoration: none;
 }
 
@@ -39,15 +41,14 @@
 
 .subpaginas ul li {
     font-family: "Gloria Hallelujah";
-    font-size: 1.1em;
     font-weight: 400;
 }
 
 .subpaginas ul li a.selected {
     text-decoration: underline;
     color: black;
-    font-size: 1.3em;
 }
+
 .documentacion ul {
     font-size: 1.5em;
     margin-left: 0px;
@@ -81,7 +82,8 @@
 	margin-bottom:70px;
 }
 .opciones_generales ul{
-		list-style: none outside none;display:block;
+		list-style: none outside none;
+		display:block;
 
 	
 }

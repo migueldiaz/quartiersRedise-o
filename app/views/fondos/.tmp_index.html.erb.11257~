@@ -1,0 +1,22 @@
+ 
+  <div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>sitio_path(@sitio)} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('imagen'), :path_volver=>new_fondo_path(:id=>@sitio)} %>  
+	</ul>
+</div>
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>4, :title=>t('fondos'), 
+		:columns=>[t('imagen') , t("show"), t('edit'), t('destroy')]} %>
+<%= render :partial => "fondos/fondo", :collection => @fondos %>
+</table>
+
+  <div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>sitio_path(@sitio)} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('imagen'), :path_volver=>new_fondo_path(:id=>@sitio)} %>  
+	</ul>
+</div>

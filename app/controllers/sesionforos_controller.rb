@@ -1,5 +1,5 @@
 class SesionforosController < ApplicationController
-  layout 'quartiers'
+  layout 'juan'
   
   def new
   

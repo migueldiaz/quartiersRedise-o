@@ -48,8 +48,7 @@
 		    
 		</script>
  <script type="text/javascript">
- $(document).ready(
- function() {
+ $(document).ready(function() {
     $(".miniatura").load(function() {
     if($(this).width()>200){ 
     	$(this).width(200);
@@ -66,9 +65,6 @@
    	  			$(this).height(170);
 	}	
 });
-
-$(".submenu").fadeIn(500);
-$(".submenu").fadeOut(1000);
 });
 
 </script>

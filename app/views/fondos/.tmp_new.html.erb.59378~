@@ -1,0 +1,3 @@
+<h1><%= t('new')+' '+t('fondo')%></h1>
+<br/>
+<%= render 'form'%>
