@@ -4,6 +4,14 @@ def local
 	I18n.locale.to_s
 end
 
+def js_slideshow colleccion
+          resultado=""
+           colleccion.each do  |fondo|
+          resultado+="{image : '"+fondo.imagen.to_s+"', title:'', url:''}"
+          resultado+="," if(colleccion.index(fondo)!=(colleccion.length-1))
+        end
+      resultado
+end
 
 
 def esfrances

@@ -1,0 +1,80 @@
+<%  if !@pagina.presentacion.nil?
+
+path_v=presentacion_path(@pagina.presentacion.sitio)
+
+elsif !@pagina.red.nil?
+path_v= red_path(@pagina.red.sitio) 
+elsif !@pagina.documentacion.nil?
+path_v= documentacion_path(@pagina.documentacion.sitio)
+else
+path_v= pagina_path(@pagina.pagina_id) 
+end
+titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo'))
+%>
+
+<p id="notice"><%= notice %></p>
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>path_v} %>         
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit')+' '+t('pagina'), :path_volver=>edit_pagina_path(@pagina)} %>         
+	</ul>
+</div>
+<!--Mostrar parrafos -->
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>9,:title=>titulo_pagina+': ('+t("parrafos")+')', 
+		:columns=>[t('tituloesp'), t('titulofra'),"descr_esp", "descr_fra", "imagen_zoom", "imagen_mini", "detalle", "editar", "borrar"]} %>
+<%= render :partial => "parrafos/parrafo", :collection => @pagina.parrafos %>
+</table>
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('new')+' '+t('parrafo'), :path_volver=>new_parrafo_path(:id=>@pagina)} %>         
+	</ul>
+</div>
+
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>8,:title=>titulo_pagina+": "+t('documentos'), :columns=>[t('doces'), t('enlace'),t('docfr'), t('enlace')]} %>  
+    
+<%= render :partial => "documentos/documento", :collection => @pagina.documentos %>
+</table>
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('new')+' '+t('documento'), :path_volver=>new_documento_path(:id=>@pagina)} %>         
+	</ul>
+</div>
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>7,:title=>titulo_pagina+": "+t('galeria'), :columns=>[t('zoom'), t('min')]} %>  
+  <%= render :partial => "imagens/imagen", :collection => @pagina.imagens %>
+</table>
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('new')+' '+t('imagen'), :path_volver=>new_imagen_path(:id=>@pagina)} %>         
+	</ul>
+</div>
+
+
+<%if !@pagina.documentacion.nil? || !@pagina.red.nil? && !@pagina.red.sitio.equipo.nil?%>
+   <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>5,:title=>titulo_pagina+": "+t('paginasasociadas'), 
+:columns=>[t('tituloes'), t('titulofr')]} %>  
+    <%= render :partial => "paginas/pagina", :collection => @pagina.paginas %>
+</table>
+  <div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('new')+' '+t('pagina'), :path_volver=>new_pagina_path(:id=>@pagina,:raiz=>@pagina)} %>         
+	</ul>
+</div>
+<%end%>
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>path_v} %>         
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit')+' '+t('pagina'), :path_volver=>edit_pagina_path(@pagina)} %>         
+	</ul>
+</div>
+
+
+
