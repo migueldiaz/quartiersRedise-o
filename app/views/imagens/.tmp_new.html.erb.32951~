@@ -1,5 +1,0 @@
-<h1><%=t('new')+' '+t('imagen')%></h1>
-<br/>
-<%= render 'imagens/form' %>
-
-
