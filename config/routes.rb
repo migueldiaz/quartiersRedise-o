@@ -9,6 +9,7 @@ Paginadocumentos::Application.routes.draw do
   resources :usuarioforos
   resources :fondos
   resources :seccions
+  resources :busquedas
   get "foro/clave" => "claves#edit", :as => "foro/clave"
   resources :foros
   match 'contacto/correo/' => 'contactos#correo'

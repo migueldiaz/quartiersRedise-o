@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'sunspot_rails'
 gem 'rails', '3.0.5'
 gem 'carrierwave' 
 # Bundle edge Rails instead:

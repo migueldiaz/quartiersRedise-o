@@ -9,6 +9,11 @@ has_many :documentos, :dependent => :destroy
 has_many :paginas, :dependent => :destroy
 validate :valida_titulo
  
+  searchable do
+   		text :tituloes
+   		text :titulofr
+    end
+ 
 def valida_titulo
   errors.add_to_base 'avisotitulo' if tituloes.blank? and titulofr.blank? 
 end

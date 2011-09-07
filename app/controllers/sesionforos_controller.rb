@@ -12,7 +12,7 @@ class SesionforosController < ApplicationController
        if !usuarioforo.jeunes.nil?
           redirect_to jeunes_foros_path
       
-       elis !usuarioforo.femmes.nil?
+       elsif !usuarioforo.femmes.nil?
          redirect_to femmes_foros_path
        end
    else

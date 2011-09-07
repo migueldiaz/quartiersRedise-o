@@ -6,7 +6,7 @@
 </p>
  <table class="listado_registros">
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
-		:locals =>{ :n_columns=>5, :title=>t('fondos'), 
+		:locals =>{ :n_columns=>5, :title=>t('foros'), 
 		:columns=>[t('tituloes') ,t('titulofr') , t("show"), t('edit'), t('destroy')]} %>
 <% @foros.each do |foro| %>
   <tr>

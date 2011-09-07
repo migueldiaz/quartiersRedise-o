@@ -1,6 +1,16 @@
 class EquipeController < ApplicationController
- 	layout 'juan_equipe'
- 	
+ 	#layout 'juan_equipe'
+ 	 layout :segun_proyecto
+ 
+  
+  def segun_proyecto
+     @equipo=Equipo.find(params[:id])
+     if !@equipo.jeunes.nil?
+       'juan_jeunes'
+     else
+       'quartiers'
+     end
+ end
 #GET /quartiers/agenda
 def sitio
 		@equipo=Equipo.find(params[:id])

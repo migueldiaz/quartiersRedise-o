@@ -1,0 +1,14 @@
+<h3>Equipos -  Resultados: <%= @equipos.size %> </h3>
+<ul>
+<% @equipos.each do |equipo| %>
+   <li><%= link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %>
+  <%=truncate(equipo.descripcionEs)%>
+   <% if !equipo.jeunes.nil?%>
+   equipo de Jeunes
+   <%else%>
+   equipo de femmes
+   <%end%>
+   
+   </li>
+<% end %>
+<ul>

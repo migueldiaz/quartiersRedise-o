@@ -13,9 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110830190343) do
 
   create_table "asociacions", :force => true do |t|
-    t.integer  "web_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "web_id"
   end
 
   create_table "claves", :force => true do |t|
@@ -27,19 +25,17 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
   end
 
   create_table "colaboradors", :force => true do |t|
-    t.string   "nombreEs"
-    t.string   "nombreFr"
-    t.boolean  "aporta"
-    t.text     "infoEs"
-    t.text     "infoFr"
-    t.text     "direccion"
-    t.string   "imagen"
-    t.integer  "sitio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "revisado"
-    t.string   "url"
-    t.boolean  "revisadofr", :default => false
+    t.string  "nombreEs"
+    t.string  "nombreFr"
+    t.boolean "aporta"
+    t.text    "infoEs"
+    t.text    "infoFr"
+    t.text    "direccion"
+    t.string  "imagen"
+    t.integer "sitio_id"
+    t.boolean "revisado",   :default => false
+    t.string  "url"
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "comentarios", :force => true do |t|
@@ -57,14 +53,12 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
   end
 
   create_table "contactos", :force => true do |t|
-    t.text     "infoEs"
-    t.text     "infoFr"
-    t.string   "email"
-    t.integer  "sitio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "revisado"
-    t.boolean  "revisadofr", :default => false
+    t.text    "infoEs"
+    t.text    "infoFr"
+    t.string  "email"
+    t.integer "sitio_id"
+    t.boolean "revisado",   :default => false
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "documentacions", :force => true do |t|
@@ -78,23 +72,21 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
     t.string  "docfr"
     t.integer "pagina_id"
     t.string  "archivo"
-    t.boolean "revisado"
+    t.boolean "revisado",   :default => false
     t.string  "archivofr"
     t.integer "foro_id"
     t.boolean "revisadofr", :default => false
   end
 
   create_table "equipos", :force => true do |t|
-    t.integer  "web_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "nombre"
-    t.text     "descripcionEs"
-    t.text     "descripcionFr"
-    t.boolean  "revisado"
-    t.integer  "jeunes_id"
-    t.integer  "femmes_id"
-    t.boolean  "revisadofr",    :default => false
+    t.integer "web_id"
+    t.string  "nombre"
+    t.text    "descripcionEs"
+    t.text    "descripcionFr"
+    t.boolean "revisado",      :default => false
+    t.integer "jeunes_id"
+    t.integer "femmes_id"
+    t.boolean "revisadofr",    :default => false
   end
 
   create_table "eventos", :force => true do |t|
@@ -102,17 +94,13 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
     t.string   "tituloEs"
     t.string   "tituloFr"
     t.string   "imagen"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "sitio_id"
     t.boolean  "revisado",   :default => false
     t.boolean  "revisadofr", :default => false
   end
 
   create_table "femmes", :force => true do |t|
-    t.integer  "web_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "web_id"
   end
 
   create_table "fondos", :force => true do |t|
@@ -137,63 +125,49 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
     t.string  "piefotofr"
     t.string  "imagen"
     t.integer "pagina_id"
-    t.string  "imagenmini"
     t.boolean "revisado",   :default => false
     t.boolean "revisadofr", :default => false
   end
 
   create_table "jeunes", :force => true do |t|
-    t.integer  "web_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "web_id"
   end
 
   create_table "paginas", :force => true do |t|
-    t.string   "tituloes"
-    t.string   "titulofr"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "seccion_id"
-    t.boolean  "revisado",         :default => false
-    t.integer  "presentacion_id"
-    t.integer  "red_id"
-    t.integer  "documentacion_id"
-    t.integer  "pagina_id"
-    t.boolean  "revisadofr",       :default => false
+    t.string  "tituloes"
+    t.string  "titulofr"
+    t.integer "seccion_id"
+    t.boolean "revisado",         :default => false
+    t.integer "presentacion_id"
+    t.integer "red_id"
+    t.integer "documentacion_id"
+    t.integer "pagina_id"
+    t.boolean "revisadofr",       :default => false
   end
 
   create_table "parrafos", :force => true do |t|
-    t.text     "textoes"
-    t.text     "textofr"
-    t.integer  "pagina_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "imagen"
-    t.boolean  "revisado",   :default => false
-    t.string   "imagenmini"
-    t.string   "piefoto"
-    t.string   "piefotofr"
-    t.string   "tituloes"
-    t.string   "titulofr"
-    t.boolean  "revisadofr", :default => false
+    t.text    "textoes"
+    t.text    "textofr"
+    t.integer "pagina_id"
+    t.string  "imagen"
+    t.boolean "revisado",   :default => false
+    t.string  "piefoto"
+    t.string  "piefotofr"
+    t.string  "tituloes"
+    t.string  "titulofr"
+    t.boolean "revisadofr", :default => false
   end
 
   create_table "presentacions", :force => true do |t|
-    t.integer  "sitio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "sitio_id"
   end
 
   create_table "proyectos", :force => true do |t|
-    t.integer  "web_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "web_id"
   end
 
   create_table "reds", :force => true do |t|
-    t.integer  "sitio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "sitio_id"
   end
 
   create_table "seccions", :force => true do |t|
@@ -233,25 +207,19 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
   end
 
   create_table "usuarios", :force => true do |t|
-    t.string   "nombre"
-    t.string   "email"
-    t.string   "rol"
-    t.boolean  "admin"
-    t.string   "crypted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
-    t.integer  "sitio_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "password_hash"
-    t.string   "idioma"
-    t.string   "tipo"
-    t.string   "traduceA"
+    t.string  "nombre"
+    t.string  "email"
+    t.string  "crypted_password"
+    t.string  "password_salt"
+    t.string  "persistence_token"
+    t.integer "sitio_id"
+    t.string  "password_hash"
+    t.string  "idioma"
+    t.string  "tipo"
+    t.string  "traduceA"
   end
 
   create_table "webs", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

@@ -1,0 +1,6 @@
+<h3>Paginas -  Resultados: <%= @paginas.size %> </h3>
+<ul>
+<% @paginas.each do |pagina| %>
+    <li><%= enlacepagina(pagina) %></li>
+<% end %>
+</ul>

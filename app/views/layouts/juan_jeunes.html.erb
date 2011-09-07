@@ -77,10 +77,15 @@
             <div class="span-24">
                 <div class="<%= content_for?(:menu_izq) ? 'span-3 contenido_central' : 'span-1 ' %> "><%=yield :menu_izq%></div>
                 
+<<<<<<< HEAD
                 <div class="<%= content_for?(:menu_izq) ? 'span-18' : 'span-16' %> last contenido_central ">
                     <%= yield %>
+=======
+                <div class="span-18 last contenido_central ">
+                  <%= render 'busquedas/buscar'%>
+>>>>>>> Busquedas a punto de cerrarse, faltan helpers. Closes#65
 
-                    
+                 <%= yield %>
                 </div>
                 </div>
                 <div class="span-24 append-bottom">

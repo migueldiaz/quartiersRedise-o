@@ -20,7 +20,7 @@
 <div id="contentwrap"> 
 
 <div id="content">
-
+     <%= render 'busquedas/buscar'%>
     <%= yield %>
 
 </div>
@@ -82,8 +82,8 @@
 		<%end%>
 		<li><%=link_to t('foros'),femmes_foros_path %></li>
 			<li><%=link_to t('lequipos'),femmes_equipos_path %></li>
-		    <%if !@equipo.nil? %>
-		    	<ul><%= link_to @equipo.nombre,equipe_presentacion_path%>
+		     <%if !@equipo.nil? %>
+		    	<ul><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
 		    	<ul><%=render 'equipe/opciones'%></ul>
 		        </ul>
 		    <%end%>
