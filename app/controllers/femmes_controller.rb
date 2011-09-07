@@ -51,12 +51,16 @@ def pagina
 		if !@pagina.presentacion.nil?
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
+        @seccion_menu=:presentacion
 		elsif !@pagina.red.nil?
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
+                @seccion_menu=:proyectos
+
 		else 
 	  		@documentacion=@sitio.documentacion
 	  		@paginas=@documentacion.paginas
+        @seccion_menu=:documentacion
 		end
 		if !@pagina.pagina_id.nil?
 	     @original=@paginas.where(:id=>@pagina.pagina_id).first
@@ -121,6 +125,8 @@ def equipo
        end
 end
 def acceso
+          @seccion_menu=:foros
+
 	@femmes=Femmes.first
 	
 end
@@ -130,6 +136,8 @@ def foros
     end
 	@femmes=Femmes.first
 	@foros=@femmes.sitio.foros
+            @seccion_menu=:foros
+
 end
 def foro
      if !usuarioforologado
@@ -138,5 +146,7 @@ def foro
 	@foro=Foro.find(params[:id])
 	@femmes=@foro.sitio.femmes
 	@foros=@femmes.sitio.foros
+            @seccion_menu=:foros
+
 end
 end

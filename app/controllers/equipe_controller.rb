@@ -1,6 +1,6 @@
 class EquipeController < ApplicationController
- 	#layout 'juan_equipe'
- 	 layout :segun_proyecto
+ 	layout 'juan_equipe'
+ 	# layout :segun_proyecto
  
   
   def segun_proyecto
@@ -46,7 +46,7 @@ def presentacion
 	  @femmes=@equipo.femmes
 	end
 	@pagina=@presentacion.paginas.first
-	
+
 	if !@presentacion.paginas.nil? && !@pagina.nil? 	   
   	 redirect_to equipe_pagina_path(:id=>@pagina)
   	end
@@ -61,10 +61,14 @@ def pagina
     	  @presentacion=@pagina.presentacion
     	  @sitio=@presentacion.sitio
     	  @paginas=@presentacion.paginas
+                  @seccion_menu=:presentacion
+
     	elsif !@pagina.red.nil?
     	  @red=@pagina.red
     	  @sitio=@red.sitio
     	   @paginas=@red.paginas
+                  @seccion_menu=:actividades
+
     	end
     	  if !@pagina.pagina_id.nil?
     	     @original=Pagina.where(:id=>@pagina.pagina_id).first

@@ -11,6 +11,8 @@ def sitio
 	redirect_to sitio_path(:id=>@sitio)
 end
 def acceso
+  @seccion_menu=:foros
+
 	@jeunes=Jeunes.first	
 end
 def foros
@@ -19,6 +21,8 @@ def foros
     end
 	@jeunes=Jeunes.first
 	@foros=@jeunes.sitio.foros
+    @seccion_menu=:foros
+
 end
 def foro
      if !usuarioforologado
@@ -27,6 +31,7 @@ def foro
 	@foro=Foro.find(params[:id])
 	@jeunes=@foro.sitio.jeunes
 	@foros=@jeunes.sitio.foros
+  @seccion_menu=:foros
 end
 	
 def agenda
@@ -56,6 +61,7 @@ def documentacion
   	@jeunes=Jeunes.first
   	@documentacion=@jeunes.sitio.documentacion
   	@pagina=@documentacion.paginas.first
+
 	if !@documentacion.paginas.nil? && !@pagina.nil?
   		redirect_to jeunes_pagina_path(:id=>@pagina)
   	end
@@ -68,13 +74,19 @@ def pagina
 		if !@pagina.presentacion.nil?
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
+        @seccion_menu=:presentacion
+
 		elsif !@pagina.red.nil?
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
+        @seccion_menu=:proyectos
+
 		else 
     logger.info "+++++++++++++++++++++++++++++++++++++++++++++++++++++++cargando documentacion de jeunes c"  
 	  		@documentacion=@sitio.documentacion
 	  		@paginas=@documentacion.paginas
+                @seccion_menu=:documentacion
+
 		end
 		if !@pagina.pagina_id.nil?
     logger.info "++++++++++++++////////////////////////"  

@@ -67,4 +67,18 @@ def menu_seleccionada opcion
 	end
 end
 
+def menu_seleccionada_bis opcion
+if request.url.include? opcion.to_s 
+"class='seleccionado'"
+end
+end
+
+def menu_seleccionada_tris opcion
+if @seccion_menu == opcion 
+"class='seleccionado'"
+end
+end
+
+
+
 end
