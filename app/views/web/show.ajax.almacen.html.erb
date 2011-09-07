@@ -1,0 +1,28 @@
+Bienvenido a la zona de administración de QDM
+<br><a href="#" id="foo">ejemplo listado paginas presentacion ajax-json</a>
+
+<script type="text/javascript">
+<!--
+function ajo(){
+  console.log('obteniendo datos json'); 
+
+$.getJSON('/presentacions/1.json', function(data) {
+nodo=data;
+  resultado=$('#resultado');
+  $.each(nodo, function(key, val) {
+ 	 $.each(val.pagina, function(keyI, valI) {
+ 	 if(keyI=='tituloes')
+  		//resultado.append(keyI+': '+valI+'<br />');
+  		 resultado.append(valI+'<br />');
+  	});
+  });
+  });
+
+}
+$('#foo').bind('click', function() {
+  console.log('clickeando en enlace ajax: "foo."');
+	ajo();  
+});
+-->
+</script>
+<div id="resultado"></div>

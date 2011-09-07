@@ -1,4 +1,3 @@
-<div class="detalle_gestion">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -42,20 +41,10 @@
 </p>
 
 <br/>
+<%= link_to t('edit'), edit_colaborador_path(@colaborador) %> |
+<%if current_user.tipo=='traductor'%>
+<%= link_to t('back'), colaboradors_path(:modo=>'sintrad') %>
+<%else%>
+<%= link_to t('back'), colaboradors_path(:id=>@colaborador.sitio) %>
+<%end%>
 
-<div class="opciones_generales">
-	<ul  >
-		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=>  edit_colaborador_path(@colaborador)} %>
-		<%if current_user.tipo=='traductor'%>      
-		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:modo=>'sintrad')} %>   
-		<%else%>         
-		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:id=>@colaborador.sitio)} %>   
-		<%end%>         
-	</ul>
-</div>
-
-
-
-
-
-</div>

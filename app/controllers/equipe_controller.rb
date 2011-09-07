@@ -1,40 +1,27 @@
 class EquipeController < ApplicationController
- 	layout 'juan_equipe'
- 	# layout :segun_proyecto
+ #	layout 'juan_equipe'
+ 	 layout 'juan_equipe' 
  
-  
+#selecciona mujer y si no coge por defecto el de jovenes
   def segun_proyecto
-     @equipo=Equipo.find(params[:id])
-     if !@equipo.jeunes.nil?
-       'juan_jeunes'
-     else
-       'quartiers'
-     end
+    if @equipo.jeunes.nil?
+    render :layout => 'juan_femmes'
+    end
  end
 #GET /quartiers/agenda
 def sitio
 		@equipo=Equipo.find(params[:id])
 		if !@equipo.jeunes.nil?
+  
   		  @jeunes=@equipo.jeunes
   		else
+
   		 @femmes=@equipo.femmes
   		end
-	    
 	    redirect_to equipe_presentacion_path(:id=>@equipo)
 	
 end
 
-def agenda
-  		@equipo=@Equipo.find(params[:id])
-  		if !@equipo.jeunes.nil?
-  		  @jeunes=@equipo.jeunes
-  		  @equipos=@jeunes.equipos
-  		else
-  		 @femmes=@equipo.femmes
-  		 @equipos=@femmes.equipos
-  		end
-  		@sitio=@equipo.sitio
-end
 def presentacion
   	@equipo=Equipo.find(params[:id]) 
     @sitio=@equipo.sitio
@@ -87,6 +74,8 @@ def pagina
     	else
     	  @femmes=@equipo.femmes
    end
+         segun_proyecto      
+
      logger.info "///////////////////////EN EQUIPO concreto:"+@equipo.nombre+" ******************************"
 end
 def colaborador
@@ -98,7 +87,9 @@ def colaborador
          @jeunes=@equipo.jeunes
         else
          @femmes=@equipo.femmes
-        end
+     end
+                  segun_proyecto      
+
 end
 
 def actividades
@@ -112,13 +103,24 @@ def actividades
 	  @femmes=@equipo.femmes
 	end
 	@pagina=@red.paginas.first
-	
+
 	if !@red.paginas.nil? && !@pagina.nil? 	   
   	 redirect_to equipe_pagina_path(:id=>@pagina)
   	end
 
 
 end
+#def agenda
+#      @equipo=@Equipo.find(params[:id])
+#      if !@equipo.jeunes.nil?
+#        @jeunes=@equipo.jeunes
+#        @equipos=@jeunes.equipos
+#      else
+#       @femmes=@equipo.femmes
+#       @equipos=@femmes.equipos
+#      end
+#      @sitio=@equipo.sitio
+#end
 
 def agenda
     	
@@ -132,7 +134,11 @@ def agenda
   		end
   		@sitio=@equipo.sitio
      	@eventos=@sitio.eventos
+            segun_proyecto      
+
 end	
+
+
 def contacto
     	@equipo=Equipo.find(params[:id])
   		
@@ -143,7 +149,8 @@ def contacto
   		end
   		@sitio=@equipo.sitio
      	@contacto=@sitio.contacto
-    
+                segun_proyecto      
+
 end
     
 end

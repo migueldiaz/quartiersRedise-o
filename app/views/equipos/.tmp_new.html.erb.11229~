@@ -1,0 +1,5 @@
+<h1><%=t('new')+' '+t('equipo')%></h1>
+<br/>
+<%= render 'form' %>
+
+

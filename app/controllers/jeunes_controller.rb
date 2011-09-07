@@ -129,6 +129,8 @@ def equipos
   		@sitio=@jeunes.sitio
 end
 
+
+
 def equipo
 
   @equipo=Equipo.find(params[:id])
@@ -137,4 +139,12 @@ def equipo
   @sitio=@equipo.sitio
   redirect_to equipe_sitio_path(:id=>@sitio)  
 end
+
+def buscador
+        @web=Web.first
+      @jeunes=@web.jeunes
+      @sitio=@jeunes.sitio
+
+end
+
 end

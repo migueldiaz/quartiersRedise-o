@@ -1,6 +1,15 @@
+<div class="detalle_gestion">
 <h1>Asociacion de la web</h1>
 Id propietario <%= @asociacion.web %>
 <br/>
-<%= link_to 'Sitio de la asociacion',sitio_path(@asociacion.sitio)%>
-<%= link_to 'Volver a web', admin_path%>
-	
+
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>admin_path} %>   
+
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>'Sitio de la asociacion', :path_volver=> sitio_path(@asociacion.sitio)} %>         
+	</ul>
+</div>
+
+</div>	

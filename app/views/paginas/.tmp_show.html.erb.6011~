@@ -1,5 +1,3 @@
-
-
 <%  if !@pagina.presentacion.nil?
 
 path_v=presentacion_path(@pagina.presentacion.sitio)
@@ -77,5 +75,6 @@ titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo'))
 		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit')+' '+t('pagina'), :path_volver=>edit_pagina_path(@pagina)} %>         
 	</ul>
 </div>
+
 
 
