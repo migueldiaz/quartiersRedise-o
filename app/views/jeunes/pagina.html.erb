@@ -36,6 +36,8 @@ end
 <div class="galeria">
 <h2><%=t('galeria')%></h2>
 <% @pagina.imagens.each do |imagen| %>
+<div class="ficha colaborador">
+
 <%= render :partial => "/shared/img", :locals => {
 :imagen=>imagen.imagenmini_url, 
 :enlace_imagen=>imagen.imagen_url, 
@@ -44,6 +46,7 @@ end
 :galeria=>true
 }
 %> 	
+</div>
 <%end%>
 </div>
 <hr class="space"><hr class="space">

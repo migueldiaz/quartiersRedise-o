@@ -79,7 +79,7 @@
  	<%=yield :menu_izq%>
 	</div>
 
-                <div class="<%= content_for?(:menu_izq) ? 'span-18' : 'span-16' %> last contenido_central ">
+                <div class="<%= !content_for?(:menu_izq) ? 'span-18' : 'span-18' %> last contenido_central ">
 
 
 

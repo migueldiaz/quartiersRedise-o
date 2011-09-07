@@ -53,9 +53,8 @@
     $(".miniatura").load(function() {
 		    if($(this).width()>200){ 
 		    	$(this).width(200);
-		    }
-		if($(this).height()>150){
-		   	  			$(this).height(150);
+		    }else if($(this).height()>200){
+		   	  			$(this).height(200);
 			}
 		});
 		
@@ -63,8 +62,7 @@
     if($(this).width()>200){ 
     	$(this).width(200);
         	
-    }
-	if($(this).height()>170){
+    }else if($(this).height()>170){
    	  			$(this).height(170);
 	}	
 });
