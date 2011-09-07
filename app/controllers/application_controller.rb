@@ -3,7 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
   
-  helper_method :is_admin,:is_traductor,:current_user,:require_login,:usuarioforologado
+  helper_method :is_admin,:is_traductor,:current_user,:require_login,:usuarioforologado,:validausuariositio
+  
+  def validausuariositio(sitio)
+ 	 if current_user.tipo!='admin' && current_user.tipo!='traductor' && current_user.sitio!=sitio
+   	 	redirect_to trafico_url
+  	 end
+  end
   
   def usuarioforologado
    @usuarioforologado ||= Usuarioforo.find(session[:usuarioforo_id]) if session[:usuarioforo_id]

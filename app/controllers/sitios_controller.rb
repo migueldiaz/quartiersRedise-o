@@ -19,6 +19,7 @@ layout 'mono'
   def show
    logger.info '*******************************show'
    @sitio = Sitio.find(params[:id])
+   
     if !@sitio.equipo.nil?
        @equipo=@sitio.equipo
        if !@equipo.jeunes.nil?
@@ -37,10 +38,11 @@ layout 'mono'
    	 @sitio.documentacion=Documentacion.create
    end
    
-    respond_to do |format|
-      format.html 
-      format.xml  { render :xml => @sitio }
-    end
+   validausuariositio(@sitio)
+    #respond_to do |format|
+     # format.html 
+      #format.xml  { render :xml => @sitio }
+    #end
   end
 
   # GET /sitios/new
