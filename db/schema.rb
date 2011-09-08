@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830190343) do
+ActiveRecord::Schema.define(:version => 20110908211605) do
 
   create_table "asociacions", :force => true do |t|
     t.integer "web_id"
@@ -116,8 +116,10 @@ ActiveRecord::Schema.define(:version => 20110830190343) do
     t.integer  "sitio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "revisado",   :default => false
-    t.boolean  "revisadofr", :default => false
+    t.boolean  "revisado",      :default => false
+    t.boolean  "revisadofr",    :default => false
+    t.text     "descripciones"
+    t.text     "descripcionfr"
   end
 
   create_table "imagens", :force => true do |t|

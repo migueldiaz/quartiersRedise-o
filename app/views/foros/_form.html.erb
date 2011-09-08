@@ -15,9 +15,14 @@
     <%= f.label t :tituloes %><br />
     <%= f.text_field :tituloes %>
   </div>
+  
+   <div class="field">
+    <%= f.label t :descripciones %><br />
+    <%= f.text_area :descripciones,:size=>'55x10' %>
+  </div>
   <div class="field">
-    <%= f.label t :titulofr %><br />
-    <%= f.text_field :titulofr %>
+    <%= f.label t :descripcionfr %><br />
+    <%= f.text_area :descripcionfr,:size=>'55x10' %>
   </div>
     <%if current_user.tipo=='traductor'%>
 	 <div class="field">

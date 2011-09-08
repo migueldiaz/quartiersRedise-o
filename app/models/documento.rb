@@ -4,10 +4,7 @@ class Documento < ActiveRecord::Base
   mount_uploader :archivo,DocumentoUploader
   mount_uploader :archivofr,DocumentoUploader
 
-  searchable do
-   		text :doces
-   		text :docfr
-  end
+  
 
   validate :valida_enlacetitulo
   validate :valida_titulo

@@ -153,7 +153,7 @@ es:
  seccion: "Secciones"
  secciones: "Titulo de la seccion español"
  seccionfr: "Titulo de la seccion frances"
- setLanguage: "Choisiez la langue"
+ setLanguage: "Ejija el idioma"
  evento: 'evento'
  new: 'Añadir'
  confirm: "Esta seguro?"
@@ -249,7 +249,7 @@ es:
           empty: "no puede dejarse vacío"
           blank: "no puede estar en blanco"
           too_long: "es demasiado largo (el maximo es {{count}} caracteres)"
-          too_short: "is too short (el mínimo es {{count}} caracteres)"
+          too_short: "es demasiado corto (el mínimo es {{count}} caracteres)"
           wrong_length: "longitud incorrecta (debería tener {{count}} caracteres)"
           taken: "ya está en uso"
           not_a_number: "no es un número"
