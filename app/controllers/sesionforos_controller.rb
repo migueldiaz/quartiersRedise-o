@@ -1,5 +1,12 @@
 class SesionforosController < ApplicationController
-  layout 'quartiers'
+  layout 'juan_jeunes'
+  
+  def segun_proyecto
+    if @usuarioforo.jeunes.nil?
+    render :layout => 'juan_femmes'
+    end
+ end
+
   
   def new
   

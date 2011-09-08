@@ -1,16 +1,21 @@
 class ComentariosController < ApplicationController
-  layout :another_by_method
+  #layout :another_by_method
+  layout "juan_jeunes"
   before_filter :require_usuarioforo
   
-  def another_by_method
-    if !params[:vista]
-      "quartiers"
-    else
-      "mono"
-    end
-  end
+#  def another_by_method
+#    if !params[:vista]
+#      "juan_jeunes"
+#    else
+#      "juan_jeunes"
+#    end
+#  end
 
-  
+  def segun_proyecto
+    if @sitio.jeunes.nil?
+    render :layout => 'juan_femmes'
+    end
+ end
   def index
     
     if params[:modo]=='sinrevisar'
@@ -29,12 +34,13 @@ class ComentariosController < ApplicationController
     	@foro=Foro.find(params[:id])
     	@comentarios=@foro.comentarios
     end
-    
+    segun_proyecto
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @comentarios }
     end
   end
+  
 
   # GET /comentarios/1
   # GET /comentarios/1.xml
@@ -48,6 +54,7 @@ class ComentariosController < ApplicationController
     else
       @jeunes=@sitio.jeunes
     end
+    segun_proyecto
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @comentario }
@@ -68,6 +75,7 @@ class ComentariosController < ApplicationController
       @femmes=@sitio.femmes
    end
    #id=params[:respuesta]
+   segun_proyecto
    respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @comentario }
@@ -77,6 +85,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/1/edit
   def edit
     @comentario = Comentario.find(params[:id])
+    segun_proyecto
   end
 
   # POST /comentarios

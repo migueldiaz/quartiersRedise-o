@@ -1,5 +1,12 @@
 class UsuarioforosController < ApplicationController
-layout 'quartiers'
+layout 'juan_jeunes'
+
+  def segun_proyecto
+    if @usuarioforo.jeunes.nil?
+    render :layout => 'juan_femmes'
+    end
+ end
+
 def new
 	if params[:tipo]=='jeunes'
 		@jeunes=Jeunes.first
@@ -7,7 +14,10 @@ def new
     else
        @femmes=Femmes.first
        @usuarioforo=@femmes.usuarioforos.new
-    end
+
+
+end
+segun_proyecto
 end
 def show
 @usuarioforo=Usuarioforo.find(params[:id])
@@ -18,9 +28,13 @@ def show
        @femmes=@usuarioforo.femmes
         @foros=@femmes.sitio.foros
     end
+    segun_proyecto
+
 end
  def edit
   @usuarioforo=Usuarioforo.find(params[:id])
+  segun_proyecto
+
   end
 def create
   
