@@ -9,6 +9,14 @@
   <b><%=t('titulofr')%></b>
   <%= @foro.titulofr %>
 </p>
+<p>
+  <b><%=t('descripciones')%></b>
+  <%= @foro.descripciones %>
+</p>
+<p>
+  <b><%=t('descripcionfr')%></b>
+  <%= @foro.descripcionfr %>
+</p>
 
 <h3><%=t('comentarios')%></h3>
 <%= link_to t('comentarios'), comentarios_path(:id=>@foro,:vista=>'gestion') %> 
