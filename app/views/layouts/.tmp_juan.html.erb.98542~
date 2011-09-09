@@ -1,3 +1,5 @@
+
+<!-- saved from url=(0069)http://dl.dropbox.com/u/8688858/qdm/asociacion/indexsAsociacion.html# -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
        		<meta http-equiv="X-UA-Compatible" content="IE=8">
@@ -6,26 +8,26 @@
         <!--[if lt IE 8]>
             <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
         <![endif]-->
-       <%= stylesheet_link_tag('drop-down-menu-jeunes') %>
-       <%= stylesheet_link_tag('screen_jeunes') %>     
+       <%= stylesheet_link_tag('asociacion') %>
+       <%= stylesheet_link_tag('drop-down-menu') %>
+       <%= stylesheet_link_tag('screen') %>     
+       <%= stylesheet_link_tag('web') %>     
   <%= stylesheet_link_tag('jquery.lightbox-0.5') %>
     <!-- script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" / -->
-
        <%= stylesheet_link_tag('supersized') %>
-       <%= javascript_include_tag('jquery.min') %>       
-       <%= javascript_include_tag('menu') %>
-       <%= javascript_include_tag('supersized.3.1.3.min') %> 
 
-       		<link rel="stylesheet/less" type="text/css" href="/javascripts/colors.less">
-              <%= javascript_include_tag('less-1.1.3.min') %>          
- 
-              <%= javascript_include_tag('jquery.lightbox-0.5') %>          
+       <%= javascript_include_tag('jquery.min') %>       
+       <%= javascript_include_tag('supersized.3.1.3.min') %> 
+		<link rel="stylesheet/less" type="text/css" href="/javascripts/colors.less">
+          <%= javascript_include_tag('less-1.1.3.min') %>          
+          <%= javascript_include_tag('jquery.lightbox-0.5') %>          
+	       <%= javascript_include_tag('menu') %>
 
               
               
 		 <%=render "/layouts/morejs" %> 
-		<link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Gloria+Hallelujah|Cabin+Sketch:700|Sue+Ellen+Francisco|Nunito:400|Walter+Turncoat' rel='stylesheet' type='text/css'/>
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700' rel='stylesheet' type='text/css'/>
 		<!-- utilizar google font
 <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Geo" />
 -->
@@ -46,6 +48,9 @@
 	-->	
     </head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
     <body>
+					
+
+		
 	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
 		<p>&nbsp;</p>
 	</div>
@@ -53,31 +58,33 @@
         <div class="container ">
             <div class="span-24 append-bottom" >
 
-                <div class="span-24 " >
-                <h1 style="line-height:0.6"><%=t('qdm') %></h1>
-                <h2 style="color:white;"><%=t('qdmsubtitle')%></h2>
+                <div class="span-18 " >
+                <hr class="space">
 				<%=render  "/shared/menu_idioma"%>
-
+	    <hr class="space">
+		<hr class="space">
+		<hr class="space">
+		<hr class="space">
+		<hr class="space">
+		<hr class="space">
 <div class="menu_superior " >
 
 <%=render "/layouts/menu" %>
 
 </div>
                 </div>
-                <!-- div class="span-5 append-1 last " style="text-align:right;" >
+                <div class="span-5 append-1 last " style="text-align:right;" >
                     <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
-                </div -->
+                </div>
                 
             </div>
 		 <div class="span-24">
 		<hr class="space"/>
 		</div>
             <div class="span-24">
- <div class="<%= content_for?(:menu_izq) ? 'span-3 contenido_central' : 'span-1' %> ">
- 	<%=yield :menu_izq%>
-	</div>
-
-                <div class="<%= !content_for?(:menu_izq) ? 'span-18' : 'span-18' %> last contenido_central ">
+                <div class="span-1">&nbsp;</div>
+                
+                <div class="span-18 last contenido_central ">
                     <%= yield %>
 
                     
