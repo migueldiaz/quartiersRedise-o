@@ -1,6 +1,6 @@
 class ComentariosController < ApplicationController
   #layout :another_by_method
-  layout "juan_jeunes"
+  layout :segun_proyecto
   before_filter :require_usuarioforo
   
 #  def another_by_method
@@ -12,8 +12,19 @@ class ComentariosController < ApplicationController
 #  end
 
   def segun_proyecto
-    if @sitio.jeunes.nil?
-    render :layout => 'juan_femmes'
+    if params[:vista]
+     'mono'
+    else
+      if !params[:tipo] && !params[:responde]
+         @comentario=Comentario.find(params[:id])
+      end
+      
+      if params[:tipo] ||!@comentario.foro.sitio.jeunes.nil? 
+       
+       'juan_jeunes'
+      else
+       'juan_femmes'
+      end
     end
  end
   def index

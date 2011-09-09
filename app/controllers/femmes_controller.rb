@@ -133,15 +133,19 @@ end
 def foros
     if !usuarioforologado
       redirect_to femmes_acceso_path
+    elsif usuarioforologado.femmes.nil?
+      redirect_to jeunes_foros_path
     end
 	@femmes=Femmes.first
 	@foros=@femmes.sitio.foros
-            @seccion_menu=:foros
+    @seccion_menu=:foros
 
 end
 def foro
      if !usuarioforologado
       redirect_to femmes_acceso_path
+     elsif usuarioforologado.femmes.nil?
+      redirect_to jeunes_foros_path
     end
 	@foro=Foro.find(params[:id])
 	@femmes=@foro.sitio.femmes

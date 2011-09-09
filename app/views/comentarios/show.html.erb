@@ -20,7 +20,7 @@
 <%end%>
 
 
-<%if params[:gestion] && !current_user.tipo=='traductor' %>
+<%if params[:gestion] && !current_user.tipo=='traductor' ||params[:vista]%>
 	<%= link_to t('edit'), edit_comentario_path(@comentario,:vista=>'gestion') %> |
 	<%= link_to t('back'), comentarios_path(:id=>@comentario.foro,:vista=>'gestion') %>
 <%elsif current_user.tipo=='traductor' %>

@@ -18,7 +18,10 @@ end
 def foros
     if !usuarioforologado
       redirect_to jeunes_acceso_path
+    elsif usuarioforologado.jeunes.nil?
+      redirect_to femmes_foros_path
     end
+    
 	@jeunes=Jeunes.first
 	@foros=@jeunes.sitio.foros
     @seccion_menu=:foros
@@ -27,6 +30,8 @@ end
 def foro
      if !usuarioforologado
       redirect_to jeunes_acceso_path
+     elsif usuarioforologado.jeunes.nil?
+      redirect_to femmes_foros_path
     end
 	@foro=Foro.find(params[:id])
 	@jeunes=@foro.sitio.jeunes

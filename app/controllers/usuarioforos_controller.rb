@@ -7,17 +7,24 @@ layout 'juan_jeunes'
     end
  end
 
+def index
+	if params[:tipo]=='jeunes'
+		@jeunes=Jeunes.first
+		@usuarios=@jeunes.usuarioforos
+    else
+       @femmes=Femmes.first
+       @usuarios=@femmes.usuarioforos
+    end
+end
+
 def new
 	if params[:tipo]=='jeunes'
 		@jeunes=Jeunes.first
 		@usuarioforo=@jeunes.usuarioforos.new
     else
        @femmes=Femmes.first
-       @usuarioforo=@femmes.usuarioforos.new
-
-
-end
-segun_proyecto
+       @usuarioforo=@femmes.usuarioforos.new 
+    end
 end
 def show
 @usuarioforo=Usuarioforo.find(params[:id])

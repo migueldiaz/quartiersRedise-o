@@ -6,5 +6,10 @@
         <li>
             <%=link_to t('fr'), url_for( :locale => 'fr' , :id=>params[:id]), :class=>comprueba('fr') %>
         </li>
+          <li>
+          <%if usuarioforologado%>
+    <%= link_to t('desconectar'),desconectar_url  %> 
+    <%end%>
+    </li>
     </ul>
 </div>
