@@ -38,9 +38,9 @@
       <%= f.label t :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
   </div>
-  <% if params[:tipo]=='traductor' %>
+  <% if params[:tipo]=='traductor'  && current_user.tipo=='admin' %>
    <%= f.hidden_field :tipo,:value=>'traductor' %>
-  <%elsif params[:tipo]=='admin' %>
+  <%elsif params[:tipo]=='admin'  && current_user.tipo=='admin' %>
   <%= f.hidden_field :tipo,:value=>'admin' %>
   <%end%>
   <%= f.hidden_field :sitio_id %>
