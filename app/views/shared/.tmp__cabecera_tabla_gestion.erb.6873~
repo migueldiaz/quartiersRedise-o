@@ -1,0 +1,15 @@
+<!-- :locals =>{ :n_columns=>5,:title=>t('presentacion'), :columns=>[t('tituloEs'), t('tituloFr')]} -->
+
+	<tr>
+   <thead>
+   	<tr>
+   		<th colspan=<%=n_columns%>><%=title%></th>
+   	</tr>
+   </thead>
+   </tr>
+
+   <tr>
+   	<% n_columns.times do |num| %>
+	   <th><%=  columns[num]  %></th>
+	<%end%>
+   </tr>
