@@ -1,21 +1,7 @@
+@import "functions.less";
+@import "menu_superior.less";
 @color_naranja:#fe4a00;
-.div_border (@width: 10px) {
-	-webkit-border-radius: @width @width @width @width;
-	-moz-border-radius:  @width @width @width @width;
-	border-radius:  @width @width @width @width;
-}
-.paddingueo(@width: 2px, @height: 7px){
-	padding: @width @height;  
 
-}
-.white_on_black(){
-	color:white;
-	background-color:black; 
-}
-.black_on_white(){
-	color:blacK;
-	background-color:white; 
-}
 
 /*subpaginas ejemplo:  http://localhost:3000/jeunes/pagina?id=25 */
 .subpaginas{
@@ -170,9 +156,7 @@ float: left;
 
 
 
-.menu_superior li{ 
-	.div_border(6px);
-}
+
 /*imagenes con sombra y con cita*/
 .img-shadow {
 	float:left;
@@ -204,95 +188,7 @@ float: left;
   }
   
 
-/*drop down menu*/
-div.menu_superior{
-	list-style:none;
-	margin:0;
-	padding:0;
- 	text-transform: uppercase;
-	ul{
-		list-style:none;
-		margin-left:-27px;
-		padding:none;
-	}
-	li{ 
-		padding:7px;
-		margin-left:8px;	
-		margin-right:17px;
-		float:left;
-		.white_on_black;
-	}
-}
-/*menu superior*/
-/*el menu ya es un ul por lo que la referencia a ul dentro de menu se refiere al segundo menu*/
-@menu_font_size:1.2em;
-#menu{
-	ul{
-		a{
-			display:block;
-			.white_on_black;
-			text-decoration:none;
-			& :hover{
-				background:@color_naranja;
-			}
-		}
-		list-style:none;
-		font-family:"Nunito";
-		font-weight: 400;
-		font-size:@menu_font_size;
-		.submenu{
-			font-size:@menu_font_size;
-			}
-		li{
-			ul{
-				margin-top:-3em;
-				margin-left:7em;
-			}
-		}
-	}
 
-
-		li{
-		& .seleccionado{
-			background-color:@color_naranja;
-			color:black;
-			& :hover{
-				background-color:black;
-				color:@color_naranja;
-			}
-		} 
-
-		float:left;
-		position:relative;
-		/* SHOW SUBMENU  1 */
-		& :hover ul, .over ul{
-			display:block;
-		}
-		&:hover ul ul, .over ul ul{
-			display:none;
-		}
-		a{
-			display:block;
-			color:white;
-			text-decoration:none;
-			&:hover{
-				color:@color_naranja;
-			}
-		}
-		ul {
-			position:absolute;
-			margin-top:-0.2em;
-			margin-left:.5em; /* for IE */
-			display:none;
-			& .submenu a:hover{
-					background-color:black;
-					color:@color_naranja;
-				}
-
-		}
-	}
-
-}
 
 /*div documentacion*/
 .documentacion{

@@ -1,0 +1,47 @@
+/*ficha*/
+
+.ficha {
+	padding:10px;
+	.modulo_ficha {
+	margin: 10px 10px 10px 10px;
+	border-radius: 20px 3px;
+	border: 3px solid #fe4a00;
+		
+	}
+	.image{
+	margin: 10px 10px 10px 10px;
+	border-radius: 20px 3px;
+	border: 3px solid #fe4a00;
+		
+	}
+	.modulo_ficha{
+		
+	}
+	.titulo{
+		
+	}
+}
+
+.ficha .modulo_ficha .titulo {
+  font-size: 14px;
+  background-image: url(../images/cubito_ff9900.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 16px;
+  margin-left: -2px;
+  margin-bottom: 10px;	
+color:white;
+}
+.ficha .modulo_ficha{
+margin-top:20px;
+}
+.ficha .modulo_ficha .texto {
+color:black;
+  font-size: 13px;
+text-align:justify;
+}
+.ficha .modulo_ficha .titulo span{
+color:white;
+background-color:#fe4a00;
+padding:5px;
+}
