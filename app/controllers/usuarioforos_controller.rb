@@ -1,9 +1,9 @@
 class UsuarioforosController < ApplicationController
-layout 'juan_jeunes'
+layout 'mono'
 
   def segun_proyecto
     if @usuarioforo.jeunes.nil?
-    render :layout => 'juan_femmes'
+    render :layout => 'mono'
     end
  end
 
@@ -75,5 +75,4 @@ def create
 
 
 
-##################3
 end

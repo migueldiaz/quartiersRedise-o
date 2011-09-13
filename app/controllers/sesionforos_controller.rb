@@ -33,8 +33,13 @@ class SesionforosController < ApplicationController
    	end
   end
   def destroy
+    @usuarioforo=Usuarioforo.find(session[:usuarioforo_id])
+    path=jeunes_acceso_path
+     if @usuarioforo.jeunes.nil?
+       path=femmes_acceso_path
+    end
   session[:usuarioforo_id] = nil
-  redirect_to jeunes_acceso_path, :notice => t('desconectado')
+  redirect_to path, :notice => t('desconectado')
   end
 
 end

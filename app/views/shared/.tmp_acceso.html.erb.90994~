@@ -1,0 +1,17 @@
+<h1>Acceso foros</h1>
+<p id="notice"><%= notice %></p>
+ <div class="span-9">
+ 	
+ 
+<h2>Usuario no registrado</h2>
+<p>Introduzca la clave de acceso y registrese</p>
+<%= render 'claves/clave'%>
+ </div>
+ 
+ <div class="span-9 last colaborador" style="width:300px;">
+ 	
+<h2>Usuario registrado</h2>
+<p>Acceda</p>
+<%= render 'sesionforos/new'%>
+ </div>
+

@@ -1,9 +1,1 @@
-<h1>Acceso foros</h1>
-<p id="notice"><%= notice %></p>
-<h2>Usuario no registrado</h2>
-<p>Introduzca la clave de acceso y registrese</p>
-<%= render 'claves/clave'%>
-<h2>Usuario registrado</h2>
-<p>Acceda</p>
-<%= render 'sesionforos/new'%>
-
+<%=render(:file => "/shared/acceso.html.erb",  :locals => {:pathito=>"jeunes"})  %>

@@ -1,4 +1,15 @@
+<%
+if(!@original.nil?) then
+%>
+	<h2><%= link_to @original.send(:titulo.to_s+local)+">" ,send(pathito+"_pagina_path", :id=>@original) %> <%=@pagina.send(:titulo.to_s+local)%></h2>
+<%
+else
+%>
 <h1><%=@pagina.send(:titulo.to_s+local)%></h1>
+<%
+end
+%>
+
 <hr class="space">
 <% @pagina.parrafos.each do |parrafo| %>
  		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2> 
@@ -24,8 +35,9 @@ end
 <% if !@pagina.imagens.empty? then %>
 <div class="galeria">
 <h2><%=t('galeria')%></h2>
-
 <% @pagina.imagens.each do |imagen| %>
+<div class="ficha colaborador">
+
 <%= render :partial => "/shared/img", :locals => {
 :imagen=>imagen.imagenmini_url, 
 :enlace_imagen=>imagen.imagen_url, 
@@ -34,6 +46,7 @@ end
 :galeria=>true
 }
 %> 	
+</div>
 <%end%>
 </div>
 <hr class="space"><hr class="space">
@@ -56,6 +69,30 @@ end
 </ul>
 </div>
 
-<% end  %>
+<% end %>
+
+<% content_for :menu_izq do%>
+
+  <% if (!@pagina.paginas.empty?) then %>
+<div class="subpaginas">
+<h2><%=t('paginas')%></h2>
+<ul>
+<% @pagina.paginas.each do |pagi| %>
+	<li><%= link_to pagi.send(:titulo.to_s+local) ,send(pathito+"_pagina_path", :id=>pagi, :class=>if (pagi==@pagina) then 'selected' end) %></li>
+<%end%>
+</ul>
+</div>
 
  
+<% elsif (!@original.nil? and @original.paginas.length>1) then %>
+<div class="subpaginas">
+<h2><%=t('paginas')%></h2>
+<ul>
+<% @original.paginas.each do |pagi| %>
+<li ><%= link_to pagi.send(:titulo.to_s+local) ,send(pathito+"_pagina_path", :id=>pagi) , :class=>if (pagi==@pagina) then 'selected' end %></li>
+<%end%>
+</ul>
+</div>
+<%end%>
+
+<% end  %>

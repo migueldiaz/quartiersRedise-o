@@ -17,8 +17,7 @@
 <% if usuarioforologado==@usuarioforo ||params[:vista]%> 
 <%= link_to t('edit'), edit_usuarioforo_path(@usuarioforo) %> 
 <%else%>
-<%=link_to t('back'),usuarioforos_path(:tipo=>params[:tipo])%>
-
+<%= link_to t('back'),url_for(:back)  %>
 <%end%> 
 
 

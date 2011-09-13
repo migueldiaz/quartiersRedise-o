@@ -1,15 +1,17 @@
 <h1><%=t('foros')%></h1>
-
-  <div class="opciones_generales">
-	<ul  >
-	<%=render :partial=>"/shared/opcion_gestion", 
-		:locals=>{:mensaje=> t('edit')+t('claveactual'), :path_volver=>foro_clave_path(:id=>@clave)} %>  
-	<%=render :partial=>"/shared/opcion_gestion", 
-		:locals=>{:mensaje=> t('usuariosforo'), :path_volver=>usuarioforos_path(:tipo=>params[:tipo])} %>  
-	</ul>
-</div>
-
-
+<br/>
+<p>
+	<b><%=t('claveactual')%>&nbsp;</b>
+<%=link_to t('edit'),foro_clave_path(:id=>@clave)%>
+</p>
+<p>
+<b><%=t('usuariosforo')%>&nbsp;</b>
+<%if !@jeunes.nil?%>
+<%=link_to t('show'),usuarioforos_path(:tipo=>'jeunes')%>
+<%else%>
+<%=link_to t('show'),usuarioforos_path(:tipo=>'femmes')%>
+<%end%>
+</p>
  <table class="listado_registros">
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
 		:locals =>{ :n_columns=>5, :title=>t('foros'), 
