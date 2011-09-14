@@ -15,6 +15,15 @@
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre,:disabled=> !is_admin %>
   </div>
+    <div class="field">
+    <%= f.label t :x  %><br />
+    <%= f.text_field :x %>
+  </div>
+  <div class="field">
+    <%= f.label t :y  %><br />
+    <%= f.text_field :y %>
+  </div>
+  
    <div class="field">
     <%= f.label t :descripcionEs  %><br />
     <%= f.text_area :descripcionEs,:size=>"55x10" %>
