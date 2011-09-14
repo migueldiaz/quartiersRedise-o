@@ -8,6 +8,7 @@ layout 'mono'
  end
 
 def index
+  session[:tipo_foro]=params[:tipo]
 	if params[:tipo]=='jeunes'
 		@jeunes=Jeunes.first
 		@usuarios=@jeunes.usuarioforos
@@ -18,7 +19,7 @@ def index
 end
 
 def new
-	if params[:tipo]=='jeunes'
+	if session[:tipo_foro]=='jeunes'
 		@jeunes=Jeunes.first
 		@usuarioforo=@jeunes.usuarioforos.new
     else

@@ -125,6 +125,8 @@ def equipo
        end
 end
 def acceso
+    session[:tipo_foro]="femmes"
+
           @seccion_menu=:foros
 
 	@femmes=Femmes.first

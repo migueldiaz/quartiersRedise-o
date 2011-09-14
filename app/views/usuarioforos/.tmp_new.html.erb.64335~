@@ -1,2 +1,0 @@
-<h1>Registro de acceso a los foros</h1>
-<%= render 'usuarioforos/form'%>

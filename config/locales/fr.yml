@@ -26,6 +26,8 @@ fr:
  es: "Español"
  fr: "Français"
  en: "Anglais"
+ usuariosforo: 'Usurios de Foros'
+ claveactual: 'Clave actual'
  description: "Chaque quartier..."
  title: "Titre"
  seccion: "Seccions"

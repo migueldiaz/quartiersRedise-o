@@ -11,6 +11,7 @@ def sitio
 	redirect_to sitio_path(:id=>@sitio)
 end
 def acceso
+  session[:tipo_foro]="jeunes"
   @seccion_menu=:foros
 
 	@jeunes=Jeunes.first	
