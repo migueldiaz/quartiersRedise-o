@@ -1,0 +1,42 @@
+<br/>
+<%= form_for @fondo, :html => {:multipart => true} do |f| %>
+ <% if @fondo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('avisoerror')%></h2>
+
+      <ul>
+      <% @fondo.errors.full_messages.each do |msg| %>
+        <li><%= t(msg) %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+ <%if @fondo.imagen_url.to_s!=''%>
+   <%= image_tag @fondo.imagen_url.to_s %>
+   <div class="field">
+        <label>
+          <%= f.check_box :remove_imagen %>
+          <%= t('destroy')%>
+        </label>
+    </div>
+  <%end%>
+ 
+ 
+ 
+ <%=  f.hidden_field :sitio_id%>
+ 
+  <div class="field">
+        <label><%=t('imagen')%></label>
+        <%= f.file_field :imagen %>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<% end %>

@@ -8,6 +8,6 @@
  
  
 
-<%= link_to t('edit'), edit_fondo_path(@fondo) %> 
+<%= link_to t('edit'), edit_imagen_path(@fondo) %> 
 <%= link_to t('back'), fondos_path(:id=>@fondo.sitio) %> 
 
