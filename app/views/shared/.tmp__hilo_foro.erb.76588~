@@ -1,0 +1,16 @@
+<div class="hilo">
+	<div class="mensaje">
+		<%=link_to hilo.method(:titulo.to_s+locale.to_s).call, hilo%>
+	</div>
+		<div class="usuario">
+		<%=link_to hilo.usuarioforo.nombre,hilo.usuarioforo%>
+		</div>
+		&nbsp;
+		<%=image_tag("mail_reply_sender.png")%>
+		<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>hilo) %>
+		<%if !hilo.comentarios.nil?%>
+			<div class="subhilo">
+			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios %>
+			</div>
+		<%end%>
+</div>
