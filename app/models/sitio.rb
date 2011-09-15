@@ -14,5 +14,5 @@ class Sitio < ActiveRecord::Base
   belongs_to :femmes
   belongs_to :asociacion
   belongs_to :proyecto
-  belongs_to :equipo
+  belongs_to :equipo,:foreign_key => "equipo_id"
 end

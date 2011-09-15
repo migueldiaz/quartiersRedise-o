@@ -5,15 +5,15 @@ class Parrafo < ActiveRecord::Base
   
   validate :valida_parrafo
  
-   searchable do
-  	  	text :textoes
-   		text :textofr
-   		text :piefoto
-   		text :piefotofr
-   		text :tituloes
-   		text :titulofr
+   #searchable do
+  #	  	text :textoes
+   #		text :textofr
+   #		text :piefoto
+   #		text :piefotofr
+   #		text :tituloes
+   #		text :titulofr
    		
-    end
+   # end
  
  
 def valida_parrafo
