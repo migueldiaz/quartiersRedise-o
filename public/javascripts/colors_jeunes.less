@@ -11,4 +11,58 @@ h1{
 p{
 font-family:"Gloria Hallelujah";	
 }
+.hilo_foro{
+		@color1:#FF6E32;
+		@color2:#8b6914;
+	.hilo{
+		.div_border(6px);
+		color:@color1;
+		background-color:@color1;
+		padding:5px;
+		margin-top:10px;
+		.usuario{
+			.div_border(6px);
+				padding:3px;
+				background-color:@color_naranja;
+				float:right;
+		}
+		.mensaje{
+			
+			float:left;
+		}
+		a{
+			color:black;
+			    		text-decoration: none;
+
+		}
+		.hilo{
+			background-color:lighten(@color1, 10%);
+			.usuario{ background-color:lighten(@color1, 5%);}
+			.hilo{
+				background-color:lighten(@color1, 20%);
+				.usuario{ background-color:lighten(@color1, 15%);}
+				.hilo{
+					background-color:lighten(@color1, 30%);
+					.usuario{ background-color:lighten(@color1, 25%);}
+
+					.hilo{
+						background-color:lighten(@color1, 40%);
+						.usuario{ background-color:lighten(@color1, 35%);}
+
+					}
+				}
+
+			}
+
+		}
+
+	}
+	.subhilo{
+		margin-left:15px;
+		margin-bottom:5px;
+
+	}
+	
+}
+
 @import "resto.less";
