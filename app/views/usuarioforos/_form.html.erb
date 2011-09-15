@@ -23,6 +23,10 @@
     <%= f.label t :idioma %><br />
     <%= f.select :idioma,options_for_select([[t('es'), 'es'], [t('fr'), 'fr']]) %>
   </div>
+  <div class="field">
+    <%= f.label t :equipo %><br />
+     <%= f.collection_select :equipo_id, Equipo.all, :id, :nombre, :prompt => t('prompt')  %>
+  </div>
   
   <!-- div class="field">
     <%= f.label t :clave %><br />

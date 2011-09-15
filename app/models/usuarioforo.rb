@@ -1,6 +1,7 @@
 class Usuarioforo < ActiveRecord::Base
   belongs_to :jeunes
   belongs_to :femmes
+  #has_one :equipo
   has_many :comentarios
   
   # el password no se utiliza, el usuario se confronta con el mail y la clave es de foro jeunes/femme
