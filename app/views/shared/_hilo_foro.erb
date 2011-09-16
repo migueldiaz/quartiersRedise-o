@@ -1,6 +1,6 @@
 <div class="hilo">
 	<div class="mensaje">
-<a class="nav_link" id="<%=hilo.id%>"><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
+<a class="nav_link" id="<%=hilo.id%>" pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo)%>"><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
 		<!-- <%=link_to hilo.method(:titulo.to_s+locale.to_s).call, hilo%> -->
 	</div>
 		<div class="usuario">
@@ -9,7 +9,6 @@
 		<br>
 		<div class="detalle"></div>
 		&nbsp;
-		<%= link_to image_tag("mail_reply_sender.png", :width=>'20px') ,new_comentario_path(:id=>@foro,:responde=>hilo) %>
 		<%if !hilo.comentarios.nil?%>
 			<div class="subhilo">
 			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios %>

@@ -27,22 +27,21 @@
 
 <script type="text/javascript">
 <!--
-	
+
 	 $(".nav_link").click(function() {
 	 	if (window.console) {
 			console.log('obteniendo datos json');
 		} 
 ide=$(this).attr('id');
-//resultado=$(this).parent().parent().find('div').filter('[class=detalle]').slice(0,1);
-//resultado.css('background','red');
+comentario_url=$(this).attr('pepe');
 resultado=$(this).parent().parent().find('.detalle').slice(0,1);
-resultado.empty();
-resultado.append('<h3>Loading</h3>');
-//$(this).parent().parent().find($('.detalle')).css('background','red');
 url_json='/comentarios/'+ide+'.json';
 	 	if (window.console) {
 			console.log(url_json);
 		} 
+
+resultado.empty();
+resultado.append('<h3>Loading</h3>');
 
 $.getJSON(url_json, function(data) {
 
@@ -51,16 +50,25 @@ nodo=data;
 resultado.empty();
 
   $.each(nodo, function(key, val) {
-  	  		resultado.append('<h1>'+val['titulo<%=locale.to_s%>']+'</h1>');
-  	  		resultado.append('<h3>'+val['texto<%=locale.to_s%>']+'</h3>');
+resultado.append('<h1>'+val['titulo<%=locale.to_s%>']+'</h1>');
+resultado.append('<h3>'+val['texto<%=locale.to_s%>']+'</h3>');
+resultado.append('<a class=\'close\'>close</a>');
+resultado.append('<a href="'+comentario_url+'"><img width="20px" src="/images/mail_reply_sender.png?1316086075" alt="Mail_reply_sender"></a>');
 
  	
   });
+  $('.close').live('click', function() {
+  	$(this).parent().empty();
+  // Live handler called.
+});
+  resultado.desplegado=true;
   });
+
 
 
 
 
 });
+
 -->
 </script>
