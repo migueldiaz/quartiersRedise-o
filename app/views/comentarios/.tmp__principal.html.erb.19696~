@@ -1,0 +1,6 @@
+<%if principal.comentario_id.nil?%>
+<%= render :partial => "/shared/hilo_foro", :locals => {
+:hilo=>principal}
+%>
+<%end%>
+

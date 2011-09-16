@@ -1,0 +1,12 @@
+	<div class="menu_superior">
+	<ul id="menu" style="font-size:75%;">
+	<li style="margin-right:0px;"><%= link_to 'HomeGestion',trafico_url%></li>
+		<% if current_user %>
+	  <li style="margin-right:0px;"> <%= link_to "Log out", log_out_path %></li>
+	  <% else %>
+		<li style="margin-right:0px;"><%= link_to t("acceder"), login_path %></li>
+	  <% end %>
+	<li style="margin-right:0px;"><%= link_to t('es'), idioma_spanish_path( :url=>request.url )  %></li>
+	<li style="margin-right:0px;"><%= link_to t('fr'), idioma_french_path( :url=>request.url ) %></li>
+	</ul>
+</div>

@@ -69,6 +69,8 @@ class ComentariosController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @comentario }
+      format.json {render :json => @comentario.to_json}
+
     end
   end
 

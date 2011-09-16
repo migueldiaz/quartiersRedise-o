@@ -29,30 +29,17 @@
 <!--
 	
 	 $(".nav_link").click(function() {
-	 	if (window.console) {
-			console.log('obteniendo datos json');
-		} 
+console.log('obteniendo datos json'); 
 ide=$(this).attr('id');
-//resultado=$(this).parent().parent().find('div').filter('[class=detalle]').slice(0,1);
-//resultado.css('background','red');
-resultado=$(this).parent().parent().find('.detalle').slice(0,1);
-resultado.empty();
-resultado.append('<h3>Loading</h3>');
+resultado=$(this).parent().parent().find('div').filter('[class=detalle]').slice(0,1);
+resultado.css('background','red');
+//$(this).parent().parent().find('.detalle').css('background','red');
 //$(this).parent().parent().find($('.detalle')).css('background','red');
-url_json='/comentarios/'+ide+'.json';
-	 	if (window.console) {
-			console.log(url_json);
-		} 
-
-$.getJSON(url_json, function(data) {
-
-
+$.getJSON('/comentarios/'+ide+'.json', function(data) {
 nodo=data;
-resultado.empty();
-
   $.each(nodo, function(key, val) {
-  	  		resultado.append('<h1>'+val['titulo<%=locale.to_s%>']+'</h1>');
-  	  		resultado.append('<h3>'+val['texto<%=locale.to_s%>']+'</h3>');
+  	  		resultado.append(val['titulo<%=locale.to_s%>']+'<br />');
+  	  		resultado.append(val['texto<%=locale.to_s%>']+'<br />');
 
  	
   });
