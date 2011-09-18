@@ -39,7 +39,6 @@
                 <div class="span-1">&nbsp;</div>
                 
                 <div class="span-18 last contenido_central ">
-
                     <%= yield %>
 
                     

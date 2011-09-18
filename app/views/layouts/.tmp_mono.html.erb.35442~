@@ -59,8 +59,7 @@
 					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
 					</ul>				
             	</div>
-				<div  id="rails_yield">kk</div>
-	            	<div class="span-19 append-bottom"  >
+            	<div class="span-19 append-bottom" id="rails_yield">
 			   <%= yield %>
                	</div>
             </div>

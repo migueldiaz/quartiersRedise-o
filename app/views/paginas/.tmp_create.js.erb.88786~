@@ -1,0 +1,4 @@
+miDiv=$('#rails_yield');
+miDiv.css("background-color", "#abacab");
+miDiv.html("<%= @pagina.tituloes %>");
+showStates(@paginas.to_json, true);

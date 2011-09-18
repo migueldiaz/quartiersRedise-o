@@ -1,6 +1,6 @@
 <div class="hilo">
 	<div class="mensaje">
-<a class="nav_link" id="<%=hilo.id%>" pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo)%>"><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
+<a class="nav_link" id="<%=hilo.id%>" pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo)%>" href="javascript:void(0);"><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
 		<!-- <%=link_to hilo.method(:titulo.to_s+locale.to_s).call, hilo%> -->
 	</div>
 		<div class="usuario">
