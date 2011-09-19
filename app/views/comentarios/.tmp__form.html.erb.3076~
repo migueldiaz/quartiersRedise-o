@@ -14,9 +14,9 @@
   <%= f.hidden_field :foro_id %>
   <%= f.hidden_field :comentario_id,:value=>params[:responde] %>
   
- <%  if !current_user.nil? and current_user.tipo=='admin' && !params[:tipo] &&!params[:responde] %>
+  <% if current_user.tipo=='admin' && !params[:tipo] &&!params[:responde]%>
   
-  <% end %>
+  <%end%> 
    <div class="field">
     <b>Ejemplo de fecha:</b>2011-08-26 19:15:03 --- 02/05/2011 15:14</br>
     <br/>
@@ -51,7 +51,7 @@
   </div>
   <%if usuarioforologado.idioma=='fr' || params[:vista]%>
   <%end%>
-  <%if !current_user.nil? and current_user.tipo=='traductor'%>
+  <%if current_user.tipo=='traductor'%>
    <div class="field">
     <%= f.label t :revisado %><br />
     <%= f.check_box :revisado%>

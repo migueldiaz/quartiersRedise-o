@@ -14,6 +14,7 @@
 
        <%= javascript_include_tag('jquery.min') %>       
         <%= javascript_include_tag('rails-jquery') %>                
+        <%= javascript_include_tag('application') %>                
            <%= javascript_include_tag('menu') %>
 
   <%= csrf_meta_tag %>
@@ -59,7 +60,8 @@
 					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
 					</ul>				
             	</div>
-            	<div class="span-19 append-bottom" id="rails_yield">
+				<div  id="rails_yield">kk</div>
+	            	<div class="span-19 append-bottom"  >
 			   <%= yield %>
                	</div>
             </div>

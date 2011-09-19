@@ -92,8 +92,15 @@ class ComentariosController < ApplicationController
    respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @comentario }
+
     end
   end
+
+#  def response
+#       respond_to do |format|
+#         format.js
+#      end
+#  end
 
   # GET /comentarios/1/edit
   def edit

@@ -15,7 +15,7 @@ class Usuario < ActiveRecord::Base
   validates_presence_of :email
   validates_presence_of :nombre
  
- 
+
   def self.authenticate(nombre, password)
     usuario = find_by_nombre(nombre)
     if usuario && usuario.password_hash == BCrypt::Engine.hash_secret(password, usuario.password_salt)

@@ -23,7 +23,7 @@ end
     <% end %>
     </td>
     <td><%= link_to t('show'), evento %></td>
-    <td><%= link_to t('edit'), edit_evento_path(evento),:class=>'edit_post' %></td>
+    <td><%= link_to t('edit'), edit_evento_path(evento) %></td>
     <% if  current_user.tipo!='traductor' %> 
     <td><%= link_to t('destroy'), [evento], :confirm => t('confirm'), :method => :delete, :remote=>true,:class=>'delete_post' %></td>
     <%end%>

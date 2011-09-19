@@ -1,8 +1,5 @@
 <h1><%= t('foro').capitalize+' '%>
 <% if spanish%><%=@foro.tituloes%><%else%><%=@foro.titulofr%><%end%></h1>
-
-<div id="quillo"><h1></h1></div>
-
 <% content_for :menu_izq do%>
 
 <h2><%=t('docprop')%></h2>
@@ -35,17 +32,15 @@
 	 	if (window.console) {
 			console.log('obteniendo datos json');
 		} 
-		ide=$(this).attr('id');
-		comentario_url=$(this).attr('pepe');
-		resultado=$(this).parent().parent().find('.detalle').slice(0,1);
-		url_json='/comentarios/'+ide+'.json';
+ide=$(this).attr('id');
+comentario_url=$(this).attr('pepe');
+resultado=$(this).parent().parent().find('.detalle').slice(0,1);
+url_json='/comentarios/'+ide+'.json';
 	 	if (window.console) {
 			console.log(url_json);
 		} 
 
 resultado.empty();
-resultado.fadeIn();  
-
 resultado.append('<h3>Loading</h3>');
 
 $.getJSON(url_json, function(data) {
@@ -57,20 +52,13 @@ resultado.empty();
   $.each(nodo, function(key, val) {
 resultado.append('<h1>'+val['titulo<%=locale.to_s%>']+'</h1>');
 resultado.append('<h3>'+val['texto<%=locale.to_s%>']+'</h3>');
-resultado.append('<a class=\'close\' href=\'javascript:void(0);\'><%= t('close')%></a>');
-resultado.append('<a class=\'coment\' href=\''+comentario_url+'\'><%=t('comentario')%></a>');
+resultado.append('<a class=\'close\' href=\'javascript:void(0);\'>close</a>');
+resultado.append('<a href="'+comentario_url+'"><img width="20px" src="/images/mail_reply_sender.png?1316086075" alt="Mail_reply_sender"></a>');
 
  	
   });
   $('.close').live('click', function() {
-
-  	$(this).parent().fadeOut();  
-  //	$(this).parent().empty();
-  // Live handler called.
-});
-  $('.coment').live('click', function() {
-
-  //	$(this).parent().empty();
+  	$(this).parent().empty();
   // Live handler called.
 });
   resultado.desplegado=true;

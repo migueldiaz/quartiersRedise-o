@@ -114,8 +114,11 @@ class EventosController < ApplicationController
     @evento = Evento.find(params[:id])
     @sitio=Sitio.find(@evento.sitio)
     @evento.destroy
-    redirect_to eventos_path(:id=>@sitio)  
+     respond_to do |format|
+        format.html {  redirect_to eventos_path(:id=>@sitio)   }  
+        format.js   { render :nothing => true }  
 
+      end
 
     #@evento = Evento.find(params[:id])
     #@sitio=Sitio.find(@evento.sitio_id)
