@@ -1,7 +1,6 @@
 <h1><%= t('foro').capitalize+' '%>
 <% if spanish%><%=@foro.tituloes%><%else%><%=@foro.titulofr%><%end%></h1>
 
-<div id="quillo"><h1></h1></div>
 
 <% content_for :menu_izq do%>
 
@@ -18,6 +17,9 @@
 
 
 <h2><%=t('comentarios')%></h2>
+<div style="text-align:center;">
+<%= link_to t('new')+' '+t('comentario_al_tema'),new_comentario_path(:id=>@foro,:tipo=>'jeunes'), :class=>'comment'%>
+</div>
 
 
 
@@ -26,8 +28,9 @@
 </div>
 <br/>
 <br/>
-<%= link_to t('new')+' '+t('comentario'),new_comentario_path(:id=>@foro,:tipo=>'jeunes')%>
-
+<div style="text-align:center;">
+<%= link_to t('new')+' '+t('comentario_al_tema'),new_comentario_path(:id=>@foro,:tipo=>'jeunes'), :class=>'comment'%>
+</div>
 
 <script type="text/javascript">
 <!--
@@ -42,21 +45,26 @@
 	} 
 
 	resultado=$(this).parent().parent().find('.detalle').slice(0,1);
+	//mensaje=$(this).parent().parent().find('.mensaje').slice(0,1);
+	//mensaje.fadeOut();
 	resultado.empty();
 	resultado.fadeIn();  
-	resultado.append('<h3>Loading</h3>');
+	resultado.append('<div class="descripcion">Loading</div>');
 	
 	$.getJSON(url_json, function(data) {
 		nodo=data;
 		resultado.empty();
+		
 		$.each(nodo, function(key, val) {
-			resultado.append('<h1>'+val['titulo<%=locale.to_s%>']+'</h1>');
-			resultado.append('<h3>'+val['texto<%=locale.to_s%>']+'</h3>');
-			resultado.append('<a class=\'close\' href=\'javascript:void(0);\'><%= t('close')%></a>');
-			resultado.append('<a class=\'coment\' href=\''+comentario_url+'\'><%=t('responder')%></a>');
+			resultado.append('<div class="descripcion">'+val['texto<%=locale.to_s%>']+'</div>');
+			enlace1='<a class=\'close\' href=\'javascript:void(0);\'><%= t('close')%></a> ';
+			enlace2='<a class=\'comment\' href=\''+comentario_url+'\'><%=t('responder')%></a>';
+			resultado.append('<div style="text-align:center;margin-top:10px;">'+enlace1+enlace2+'</div>');
 		});
 		$('.close').live('click', function() {
-			$(this).parent().fadeOut();  
+//			mensaje=$(this).parent().parent().parent().find('.mensaje').slice(0,1);
+	//		mensaje.fadeIn();
+			$(this).parent().parent().fadeOut();  
 			//	$(this).parent().empty();
 			// Live handler called.
 		});
