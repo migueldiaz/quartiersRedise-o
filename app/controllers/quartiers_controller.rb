@@ -14,6 +14,7 @@ class QuartiersController < ApplicationController
     def load
       logger.info "load ----------------"+params[:id]
         @comentario=Comentario.find(params[:id])
+        @foro=@comentario.foro
     respond_to do |format|
         format.js   {render :layout => false}  
     end

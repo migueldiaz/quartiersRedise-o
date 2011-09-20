@@ -1,7 +1,39 @@
-miDiv=$('#pee');
-miDiv.css("background-color", "#abacab");
-miDiv.html("<%= escape_javascript( render(:partial => "/shared/hilo_foro", :locals => {
-:hilo=>@comentario}) ) %>");
+<h1><%= t('foro').capitalize+' '%>
+<% if spanish%><%=@foro.tituloes%><%else%><%=@foro.titulofr%><%end%></h1>
+
+
+<% content_for :menu_izq do%>
+
+<h2><%=t('docprop')%></h2>
+<% @foro.documentos.each do |documento| %>
+     <% if spanish %>
+     	 <li><%= link_to documento.doces,documento.archivo_url.to_s %></li>
+     <%else%>
+    	 <li><%= link_to documento.docfr,documento.archivofr_url.to_s %></li>
+    <%end%>
+<%end%>
+<%end%>
+
+
+
+<h2><%=t('comentarios')%></h2>
+<div style="text-align:center;">
+<%= link_to t('new')+' '+t('comentario_al_tema'),new_comentario_path(:id=>@foro,:tipo=>'jeunes'), :class=>'comment'%>
+</div>
+
+
+
+<div class="hilo_foro">
+<%= render :partial => "comentarios/principal", :collection => @foro.comentarios %>
+</div>
+<br/>
+<br/>
+<div style="text-align:center;">
+<%= link_to t('new')+' '+t('comentario_al_tema'),new_comentario_path(:id=>@foro,:tipo=>'jeunes'), :class=>'comment'%>
+</div>
+
+<script type="text/javascript">
+<!--
 
 	$(".nav_link").click(function() {
 	ide=$(this).attr('id');
@@ -26,7 +58,7 @@ miDiv.html("<%= escape_javascript( render(:partial => "/shared/hilo_foro", :loca
 		$.each(nodo, function(key, val) {
 			resultado.append('<div class="descripcion">'+val['texto<%=locale.to_s%>']+'</div>');
 			enlace1='<a class=\'close\' href=\'javascript:void(0);\'><%= t('close')%></a> ';
-			enlace2='<a data-remote="true" class=\'comment\' href=\''+comentario_url+'\'><%=t('responder')%></a>';
+			enlace2='<a class=\'comment\' href=\''+comentario_url+'\'><%=t('responder')%></a>';
 			resultado.append('<div style="text-align:center;margin-top:10px;">'+enlace1+enlace2+'</div>');
 		});
 		$('.close').live('click', function() {
@@ -43,4 +75,6 @@ miDiv.html("<%= escape_javascript( render(:partial => "/shared/hilo_foro", :loca
 	});
 	});
 
+-->
+</script>
 

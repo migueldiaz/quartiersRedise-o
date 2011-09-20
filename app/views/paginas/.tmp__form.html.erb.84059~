@@ -1,8 +1,6 @@
 
 <!-- form_for(@pagina,:remote => true) esto era para llamada ajax-->
-<!--  form_for(@pagina,:remote => true)  do |f|  -->
-<%= form_for(@pagina) do |f| %>
-
+<%= form_for(@pagina,:remote => true)  do |f| %>
   <% if @pagina.errors.any? %>
     <div id="error_explanation">
       <h2><%= t('avisoerror')%></h2>
