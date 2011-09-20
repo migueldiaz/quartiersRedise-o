@@ -1,0 +1,71 @@
+<div class="hilo">
+	<div class="mensaje">
+<a class="nav_link" id="<%=hilo.id%>" pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo)%>" href="javascript:void(0);"><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
+	</div>
+		<div class="usuario">
+		<%=link_to hilo.usuarioforo.nombre,hilo.usuarioforo%>
+		</div>
+		<br>
+		<div class="detalle"></div>
+		&nbsp;
+		<%if !hilo.comentarios.nil?%>
+			<div class="subhilo">
+			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios %>	
+			</div>
+		<%end%>
+</div>
+<script type="text/javascript">
+<!--
+
+	 $(".nav_link").click(function() {
+	 	if (window.console) {
+			console.log('obteniendo datos json');
+		} 
+		ide=$(this).attr('id');
+		comentario_url=$(this).attr('pepe');
+		resultado=$(this).parent().parent().find('.detalle').slice(0,1);
+		url_json='/comentarios/'+ide+'.json';
+	 	if (window.console) {
+			console.log(url_json);
+		} 
+
+resultado.empty();
+resultado.fadeIn();  
+
+resultado.append('<h3>Loading</h3>');
+
+$.getJSON(url_json, function(data) {
+
+
+nodo=data;
+resultado.empty();
+
+  $.each(nodo, function(key, val) {
+resultado.append('<h1>'+val['titulo<%=locale.to_s%>']+'</h1>');
+resultado.append('<h3>'+val['texto<%=locale.to_s%>']+'</h3>');
+resultado.append('<a class=\'close\' href=\'javascript:void(0);\'><%= t('close')%></a>');
+resultado.append('<a class=\'coment\' href=\''+comentario_url+'\'><%=t('responder')%></a>');
+
+ 	
+  });
+  $('.close').live('click', function() {
+
+  	$(this).parent().fadeOut();  
+  //	$(this).parent().empty();
+  // Live handler called.
+});
+  $('.coment').live('click', function() {
+
+  //	$(this).parent().empty();
+  // Live handler called.
+});
+  });
+
+
+
+
+
+});
+
+-->
+</script>

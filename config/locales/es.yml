@@ -1,6 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-es:
+es: 
+ close: 'Cerrar'
  prompt: 'Elija'
  x: 'Coordenada x'
  y: 'Coordenada y'
@@ -26,6 +27,7 @@ es:
  comentarios: 'Comentarios'
  responder: 'responder'
  comentario: 'comentario'
+ responder: 'responder'
  docprop: 'Documentación propuesta'
  foro: 'foro'
  foros: 'Foros'
