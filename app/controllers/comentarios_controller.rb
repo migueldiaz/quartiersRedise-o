@@ -52,6 +52,7 @@ class ComentariosController < ApplicationController
     end
   end
   
+  
 
   # GET /comentarios/1
   # GET /comentarios/1.xml

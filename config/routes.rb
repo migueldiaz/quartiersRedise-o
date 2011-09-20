@@ -64,7 +64,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/equipo'=> 'femmes#equipo'
   match 'femmes/contacto'=> 'femmes#contacto'
   ################################################
-  match '/asociation/'=> 'asociation#presentacion'
+  match '/asociation/'=> 'asoqciation#presentacion'
   match 'asociation/presentacion'=> 'asociation#presentacion'
   match 'asociation/pagina'=> 'asociation#pagina'
   match 'asociation/colaborador'=> 'asociation#colaborador'
@@ -74,6 +74,8 @@ Paginadocumentos::Application.routes.draw do
   ######################
   match 'idioma/spanish'=> 'idioma#setspanish'
   match 'idioma/french'=> 'idioma#setfrench'
+  match 'quartiers/prueba'=> 'quartiers#prueba'
+  match 'quartiers/load'=> 'quartiers#load'
   
   
 

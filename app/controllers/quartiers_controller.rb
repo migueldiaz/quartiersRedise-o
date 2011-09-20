@@ -6,6 +6,20 @@ class QuartiersController < ApplicationController
   		#@sitio=@web.asociacion.sitio
  	end
 #GET /quartiers/agenda
+    def prueba
+    respond_to do |format|
+      format.html # index.html.erb
+    end
+  end
+    def load
+      logger.info "load ----------------"+params[:id]
+        @comentario=Comentario.find(params[:id])
+    respond_to do |format|
+        format.js   {render :layout => false}  
+    end
+  end
+
+
 	def agenda
   		@web=Web.first
   		@asociacion=@web.asociacion.sitio

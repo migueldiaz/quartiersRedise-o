@@ -11,4 +11,6 @@ class AsociacionController < ApplicationController
     end    
     redirect_to sitio_path(@asociacion.sitio)    
   end
+  
+
 end
