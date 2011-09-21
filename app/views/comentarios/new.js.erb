@@ -1,3 +1,34 @@
-miDiv=$('#como');
-miDiv.css("background-color", "#abacab");
-miDiv.html("<%= escape_javascript( render  'form') %>");
+   var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+               id="#dialog";     
+
+        //Set height and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+         
+        //transition effect     
+        $('#mask').fadeIn(1000);    
+        $('#mask').fadeTo("slow",0.8);  
+     
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+               
+        //Set the popup window to center
+      //  $(id).css('top',  winH/2-$(id).height()/2);
+      //  $(id).css('left', winW/2-$(id).width()/2);
+     	  var scrolledX = document.body.scrollLeft || document.documentElement.scrollLeft || self.pageXOffset;
+    var scrolledY = document.body.scrollTop || document.documentElement.scrollTop || self.pageYOffset;
+
+    var screenWidth = document.body.clientWidth || document.documentElement.clientWidth || self.innerWidth;
+    var screenHeight = document.body.clientHeight || document.documentElement.clientHeight || self.innerHeight;
+
+    var left = scrolledX + (screenWidth - $(id).width())/2;
+    var top = scrolledY + (screenHeight - $(id).height())/2;
+	    $(id).css('top',  top);
+        $(id).css('left', left);
+
+        //transition effect
+        $(id).fadeIn(2000); 
+
+miDiv=$('#dialog');
+miDiv.append("<%= escape_javascript( render  'form_remote') %>");

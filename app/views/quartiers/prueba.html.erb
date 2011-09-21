@@ -1,4 +1,55 @@
 <h2><%=t('prueba')%></h2>
+<a href="#dialog" name="modal">Simple Modal Window</a>
+ 
+<div id="boxes">
+ 
+    <div id="dialog" class="window">
+        <b>Testing of Modal Window</b> | 
+         
+        <!-- close button is defined as close class -->
+        <a href="#" class="close">Close it</a>
+ <div id="formulario"></div>
+    </div>
+ 
+     
+    <!-- Do not remove div#mask, because you'll need it to fill the whole screen --> 
+<div id="mask"></div>
+</div>
+<style>
+<style>
+body {
+}
+
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #dialog {
+  width:475px; 
+  height:403px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+</style></style>
+
 <div id="como">como</div>
 
 <div id="pee" class="hilo_foro">pee</div>

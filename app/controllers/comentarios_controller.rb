@@ -15,7 +15,7 @@ class ComentariosController < ApplicationController
     if params[:vista]
      'mono'
     else
-      if !params[:tipo] && !params[:responde]
+      if !params[:tipo] && !params[:responde] && params[:id]
          @comentario=Comentario.find(params[:id])
       end
       
@@ -118,12 +118,13 @@ class ComentariosController < ApplicationController
      respond_to do |format| 
       if @comentario.save && !@sitio.jeunes.nil?
       	 format.html { redirect_to(jeunes_foro_path(:id=>@foro), :notice => t('exito')) }
+        format.js
       elsif  @comentario.save && !@sitio.femmes.nil?
       	format.html { redirect_to(femmes_foro_path(:id=>@foro), :notice => t('exito')) }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
-      end
+    end
    end
   end
 

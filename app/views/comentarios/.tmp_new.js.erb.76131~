@@ -1,0 +1,3 @@
+miDiv=$('#como');
+miDiv.css("background-color", "#abacab");
+miDiv.html("<%= escape_javascript( render  'form') %>");
