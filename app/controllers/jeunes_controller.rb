@@ -24,7 +24,7 @@ def foros
     end
     
 	@jeunes=Jeunes.first
-	@foros=@jeunes.sitio.foros
+	@foros=@jeunes.sitio.foros.reverse
     @seccion_menu=:foros
 
 end
@@ -36,7 +36,7 @@ def foro
     end
 	@foro=Foro.find(params[:id])
 	@jeunes=@foro.sitio.jeunes
-	@foros=@jeunes.sitio.foros
+	@foros=@jeunes.sitio.foros.reverse
   @seccion_menu=:foros
 end
 	

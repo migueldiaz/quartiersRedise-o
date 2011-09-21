@@ -1,16 +1,19 @@
 <div class="hilo">
+	<div class="fecha">(<%=hilo.created_at%>)</div>
 	<div class="mensaje">
+		
 		<a class="nav_link" id="<%=hilo.id%>" pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo)%>" href="javascript:void(0);"><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
 	</div>
+	
 		<div class="usuario">
-		<%=link_to hilo.usuarioforo.nombre,hilo.usuarioforo%>
+		<%=link_to hilo.usuarioforo.nombre,hilo.usuarioforo%> 
 		</div>
 		<br>
 		<div class="detalle"></div>
 		&nbsp;
 		<%if !hilo.comentarios.nil?%>
 			<div class="subhilo">
-			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios %>	
+			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios.sort_by( &:created_at ).reverse  %>	
 			</div>
 		<%end%>
 </div>

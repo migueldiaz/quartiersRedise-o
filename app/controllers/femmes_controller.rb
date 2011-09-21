@@ -139,7 +139,7 @@ def foros
       redirect_to jeunes_foros_path
     end
 	@femmes=Femmes.first
-	@foros=@femmes.sitio.foros
+	@foros=@femmes.sitio.foros.reverse
     @seccion_menu=:foros
 
 end
@@ -151,7 +151,7 @@ def foro
     end
 	@foro=Foro.find(params[:id])
 	@femmes=@foro.sitio.femmes
-	@foros=@femmes.sitio.foros
+	@foros=@femmes.sitio.foros.reverse
             @seccion_menu=:foros
 
 end

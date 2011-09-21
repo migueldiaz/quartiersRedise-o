@@ -93,7 +93,7 @@ class ComentariosController < ApplicationController
    respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @comentario }
-  format.js
+      format.js
     end
   end
 
