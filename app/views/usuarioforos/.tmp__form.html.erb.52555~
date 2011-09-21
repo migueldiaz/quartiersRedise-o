@@ -25,14 +25,7 @@
   </div>
   <div class="field">
     <%= f.label t :equipo %><br />
-	<%
-if session[:tipo_foro]=='jeunes' 	
-	condition=['jeunes_id = ?', 1]
-else
-	condition=['femmes_id = ?', 1]
-end
-%>
-     <%= f.collection_select :equipo_id, Equipo.find(:all, :conditions => condition), :id, :nombre, :prompt => t('prompt')  %>
+     <%= f.collection_select :equipo_id, Equipo.all, :id, :nombre, :prompt => t('prompt')  %>
   </div>
   
   <!-- div class="field">
