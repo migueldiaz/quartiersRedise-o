@@ -4,6 +4,10 @@ class QuartiersController < ApplicationController
   	#@eventos = Evento.where('sitio_id'=> @sitio)
   		@web=Web.first
   		#@sitio=@web.asociacion.sitio
+          respond_to do |format|
+      format.html  {render :layout => 'index'}  
+    end
+
  	end
 #GET /quartiers/agenda
     def prueba

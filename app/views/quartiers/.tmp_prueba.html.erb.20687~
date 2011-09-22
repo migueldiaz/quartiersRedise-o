@@ -1,5 +1,0 @@
-<h2><%=t('prueba')%></h2>
-<div id="como">como</div>
-
-<div id="pee" class="hilo_foro">pee</div>
-<%= link_to 'load',quartiers_load_path(:id=>12), :remote=>true %>

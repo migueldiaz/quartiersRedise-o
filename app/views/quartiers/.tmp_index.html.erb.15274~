@@ -5,7 +5,7 @@
 <div class="opciones_generales">
 <ul>
 <li class="seleccionado">
-		<%=link_to t('asociacion'),asociation_presentacion_path, :title=>"que titulo tan bonito"  %>
+		<%=link_to t('presentacion'),asociation_presentacion_path  %>
 </li>
 <li class="seleccionado">
 	<%=link_to t('jeunes'),jeunes_presentacion_path  %>
