@@ -14,6 +14,99 @@
 
 /* @group #navigation-show */
 
+#navigation-show {
+	position: absolute;
+	width: 100%;
+//	font-size: 100px;
+	height: 120px;
+	top: 13%;
+}
+
+#navigation-show li {
+	width: 100%;
+	text-align: center;
+	background: url(images/drop-shadow.png) no-repeat center 122px;
+
+}
+#navigation-show li {
+	font-size: 16px;
+}
+
+#navigation-show li.limpia {
+	font-size: 50px;
+}
+
+#navigation-show li div.mapa {
+}
+#navigation-show li div.info {
+	position: absolute;
+	top: 10%;
+		font-size: 50px;
+	
+	width: 100%;
+	background-color: rgba(122,122,122,0.37);
+}
+#navigation-show li div.infodet {
+	position: absolute;
+	top: 30%;
+	left:30%;
+	width: 60%;
+	text-align:left;
+	background-color: rgba(255,255,122,0.57);
+	color:black;
+	padding:5px;
+}
+#navigation-show li div.discreta {
+	position: absolute;
+	top: 150px;
+	left:30%;
+	width: 60%;
+	text-align:left;
+	background-color: rgba(255,255,122,0.57);
+	color:black;
+	padding:5px;
+}
+#navigation-show li div.infodet2 {
+	position: absolute;
+	top: 60%;
+	right:30%;
+	width: 50%;
+	text-align:right;
+	background-color: rgba(122,255,255,0.37);
+	color:black;
+	padding:5px;
+}
+
+.ltie9 #navigation-show li {
+	background: none;
+}
+
+#navigation-demo ul.nav {
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	text-align: center;
+}
+
+#navigation-demo ul.nav li {
+	display: inline-block;
+	margin: 0 6px;
+	background: #fff;
+	//width: 30px;
+	height: 30px;
+	line-height: 33px;
+	cursor: pointer;
+	
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	color: #fe4801;
+	padding: 0 13px 0 13px;
+}
+
+.ltie8 #navigation-demo ul.nav li {
+	display: inline;
+}
 
 
 

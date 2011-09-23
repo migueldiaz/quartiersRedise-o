@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>hola mundo js</title>
+  <script src="processing.js"></script>
+  <script src="init.js"></script>
+  <script src="jquery-1.5.min.js"></script>
+</head>
+<body>
+
+<canvas width="300" height="300" id="pepito" data-processing-sources="pepito.pde"></canvas>
+<script type="text/javascript">
+function tracear(){
+	//alert(data.encoding);
+	 var pjs = Processing.getInstanceById("pepito");
+	 pjs.pintaRectRojo();
+}
+
+function listEvents(root) {
+    var feed = root;
+    var objetos = feed.objetos || [];
+	 var pjs = Processing.getInstanceById("pepito");
+	 pjs.println( "eaaa");
+
+	// pjs.println(entries);
+	
+        for (var i = 0; i < objetos.length; ++i) {
+      var objeto = objetos[i];
+      var title = objeto.id;
+      var con = objeto.color;
+	
+
+  	 pjs.println( title+" - "+con );
+
+    }
+
+	/*
+	var html = ['<ul>'];
+
+    for (var i = 0; i < entries.length; ++i) {
+      var entry = entries[i];
+      var title = entry.title.$t;
+      var start = (entry['gd$when']) ? entry['gd$when'][0].startTime : "";	
+
+      html.push('<li>', start, ' ', title, '</li>');
+    }
+
+    html.push('</ul>');
+    document.getElementById("agenda").innerHTML = html.join("");
+    */
+  }
+</script>
+
+</body>
+</html>

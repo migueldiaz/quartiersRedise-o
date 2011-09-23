@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>sampleando js</title>
+</head>
+<body>
+<script type="text/javascript">
+	Function.prototype.method = function(name, func) {
+
+			this.prototype[name] = func;
+		
+		
+	};
+
+	String.method('trim', function() {
+		return this.replace(/^\s+|\s+$/g, '');
+	});
+	document.writeln('"' + "   neat   	".trim() + '"');
+
+	var f1 = function guay(valor) {
+		document.writeln(valor + "<br>");
+	}
+	var add = function(a, b) {
+		if (typeof a !== 'number' || typeof b !== 'number') {
+			throw {
+				name : 'TypeError',
+				message : 'add needs numbers'
+			}
+		}
+		return a + b;
+	}
+
+	f1("hola!");
+	f1("adios");
+	var try_it = function() {
+		try {
+			add("seven");
+		} catch (e) {
+			document.writeln(e.name + ': ' + e.message);
+		}
+	}
+	try_it();
+</script>
+
+sampleando js!
+</body>
+</html>
