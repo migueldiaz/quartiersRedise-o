@@ -9,7 +9,11 @@
 <!--[if gte IE 9]> <html class="notready ie ltie10 ie9"><![endif]-->
 	<meta charset="utf-8">
 
+
+
 	<title>QuartiersDumonde.org</title>
+
+
 
 	<!-- link href='http://fonts.googleapis.com/css?family=Josefin+Slab:regular,bolditalic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css' -->
@@ -22,6 +26,12 @@ less="colors_index.less"
 <link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
 	<link href="slideshow_files/css.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8">	
+
+
+
+
+
+
 
 
 </head>
@@ -42,9 +52,30 @@ less="colors_index.less"
 			<div style="position: absolute; z-index: 1; display: none; left: 0px; top: 0px; visibility: hidden; opacity: 0;" id="introduction" class="page">
 				<h1 id="title">Welcome/bienvenido</h1>
 				<div id="intro-show">
+					
+				<h1>INTRO SHOWWWWW</h1>
 				</div>
 			</div>
-
+			<div style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="mixed-content" class="page">
+				
+				<div style="position: relative;" id="mixed-show">
+					
+					<!-- Notice the class names define the transitions, the child classname is simply for IE6&7, not required for SlideShow -->
+					
+					<img style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" src="slideshow_files/front.jpg" class="child">
+					<div style="background: url(&quot;content/mixed-content/surf1.jpg&quot;) repeat scroll 0% 0% transparent; position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="transition:pushLeft duration:1000 child"></div>
+					<div style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="threesixty" class="child">
+						<br>
+						<img src="slideshow_files/360.jpg">
+						<p>I don't think I stuck this ...</p>
+					</div>
+					<h1 style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="transition:blindRight duration:250 child">
+						Oh, right, you don't need to use images. <br><br>Use whatever content you want. <br><br>SlideShow just grabs the immediate children elements for your slides.
+					</h1>
+					<img style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" src="slideshow_files/toeside.jpg" class="child">
+				</div>
+				
+			</div>
 			<div style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="navigation-demo" class="page">
 				
 				<ul id="navigation-show">
@@ -52,8 +83,6 @@ less="colors_index.less"
 									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/></div>
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
 									<div class="infodet">
-												
-
 									Esta sería la home del site: <br>
 									El mapa interactivo llevaría información de lineas superpuestas en función de la participación internacional de los foros, además 
 									se marcarían puntos de atención para indicar encuentros de proyectos de mujeres y jovenes, y noticias de la asociación
@@ -65,7 +94,7 @@ less="colors_index.less"
 </li>
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 					
-														<div class="info"><%=link_to t('asociacion'),asociation_presentacion_path, :title=>"title asociacion"  %> </div>
+														<div class="info">Asociación QuartiersDuMonde</div>
 									<div class="discreta">
 					Ficha de asociación QDM: pequeña descripción, últimas noticias y enlace a pagina de información detallada de asociación
 					<hr>
@@ -76,7 +105,7 @@ less="colors_index.less"
 					</li>
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniCirculos.jpg" height="420px"/></div>
-									<div class="info"> <%=link_to 'Barrios del Mundo: Historias Urbanas',jeunes_presentacion_path  %></div>
+									<div class="info">Barrios del Mundo: Historias Urbanas</div>
 									<div class="infodet">
 									Se ofrece mapa interactivo donde se representa la actividad de los foros además de los encuentros y actividades internacionales.
 									En relación a información: partiendo de una pequeña descripción del proyecto de jovenes, se ofrece un listado de noticias relevantes del proyecto además del acceso a página de de talle <br>
@@ -86,7 +115,7 @@ less="colors_index.less"
 					</li>
 					<li  style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniCuadrados.jpg" height="420px"/></div>
-									<div class="info"><%=link_to 'Mujeres del Mundo : una red de protagonistas solidarias',femmes_presentacion_path  %>  </div>
+									<div class="info">Mujeres del Mundo : una red de protagonistas solidarias</div>
 																		<div class="infodet">
 									Se ofrece mapa interactivo donde se representa la actividad de los foros además de los encuentros y actividades internacionales.
 									En relación a información: partiendo de una pequeña descripción del proyecto de mujeres, se ofrece un listado de noticias relevantes del proyecto además del acceso a página de de talle <br>
@@ -99,17 +128,38 @@ less="colors_index.less"
 
 				<ul class="nav">
 					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;">HOME</li>
-					<li><%=t('asociacion')%></li>
-					<li><%=t('jeunes')%></li>
-					<li><%=t('femmes')%></li>
-					<li><%=t('contacto')%></li>
+					<li>ASOCIACION</li>
+					<li>PROYECTO BARRIOS DEL MUNDO</li>
+					<li>PROYECTO MUJERES DEL MUNDO</li>
+				    <li>CONTACTO</li>
 				</ul>
 				
 				<p id="use-your-keyboard">... de toutes façons, chaque quartier est un monde ...</p>
 			
 			</div>
+			<div style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="custom-transitions" class="page">
+			
+				<div style="position: relative;" id="transition-show">
+					<img style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" src="slideshow_files/1.jpg">
+					<img style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" src="slideshow_files/2.jpg">
+					<img style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" src="slideshow_files/3.jpg">
+					<img style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" src="slideshow_files/4.jpg">
+				</div>
+			
+			</div>
+			<div style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="links" class="page">
+			
+				<ul>
+					<li><a href="http://mootools.net/forge/p/slideshow">Download from the Forge</a></li>
+					<li><a href="http://moodocs.net/rpflo/mootools-rpflo/SlideShow">Docs at moodocs.net</a></li>
+					<li><a href="http://github.com/rpflorence/SlideShow">Fork / Watch on Github</a></li>
+					<li><a href="http://ryanflorence.com/slideshow-1-released">Blog post <i>(ask for help in the comments)</i></a></li>
+				</ul>
+			
+			</div>
 		</div>
-		<cite id="copy"><!-- designed / developed by <a href="http://enjava.com/">enjava.com</a> --></cite>
+		<!--  <a href="http://ryanflorence.com/slideshow/demo.js" id="view-source">view source</a> -->
+		<cite id="copy">designed / developed by <a href="http://enjava.com/">enjava.com</a></cite>
 	</div>
 	
 	<script type="text/javascript" src="slideshow_files/mootools-yui-compressed.js"></script>
