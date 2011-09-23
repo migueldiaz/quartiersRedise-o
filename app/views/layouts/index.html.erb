@@ -19,9 +19,12 @@ google_fonts="http://fonts.googleapis.com/css?family=Josefin+Slab:regular,boldit
 less="colors_index.less"
 	
 %>
+<link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
+<%= javascript_include_tag('less-1.1.3.min') %>          
+
 <link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
-	<link href="slideshow_files/css.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8">	
+	<!-- link href="slideshow_files/css.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8" >	 -->
 
 
 </head>
@@ -30,8 +33,8 @@ less="colors_index.less"
 		<div id="content">
 		
 		<ul style="top: 0px;" id="nav">
-			<li class="">Español/Français</li>
-			<li class="" >mapa-web</li>
+			<li class=""><a href="#">Español</a>/Français</li>
+			<li class="current" ><a href="#">mapa-web</a></li>
 			<li class=""><div style="padding:5px;">
 			<form> Buscar: <input size="5" type="text" name="buscar"/><img src="imgs/search1.gif"/></form>
 			</div></li>
@@ -46,7 +49,6 @@ less="colors_index.less"
 			</div>
 
 			<div style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="navigation-demo" class="page">
-				
 				<ul id="navigation-show">
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/></div>
@@ -97,19 +99,20 @@ less="colors_index.less"
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="limpia">Información de contacto y enlaces para seguimiento en facebook, feed de videos (blip.tv, vimeo...) ...</li>
 				</ul>
 
-				<ul class="nav">
+								<ul class="nav">
 					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;">HOME</li>
 					<li><%=t('asociacion')%></li>
 					<li><%=t('jeunes')%></li>
 					<li><%=t('femmes')%></li>
 					<li><%=t('contacto')%></li>
 				</ul>
+
 				
-				<p id="use-your-keyboard">... de toutes façons, chaque quartier est un monde ...</p>
+				<p id="ultima_slogan">... de toutes façons, chaque quartier est un monde ...</p>
 			
 			</div>
 		</div>
-		<cite id="copy"><!-- designed / developed by <a href="http://enjava.com/">enjava.com</a> --></cite>
+		<cite id="copy">designed / developed by <a href="http://enjava.com/">enjava.com</a></cite>
 	</div>
 	
 	<script type="text/javascript" src="slideshow_files/mootools-yui-compressed.js"></script>

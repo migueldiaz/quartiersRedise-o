@@ -1,47 +1,231 @@
 @import "functions.less";
 /* @import "menu_superior.less"; */
 @color_naranja: #fe4a00;
-html {
-    overflow-y: scroll;
+/* @override http://localhost:8888/style.css */
+
+/* @override http://localhost:8888/style.css */
+
+/* @override http://localhost:8888/style.css */
+
+/* @override http://localhost:8888/style.css */
+
+/* @group Blueprint */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+.ie6 html, .ie7 html, .ie8 html {
+    overflow: hidden;
+}
+
+body {
+    font-size: 100%;
+    color: #535353;
+    background: #fff;
+    font-family:  'Josefin Slab', "Helvetica Neue", Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#wallpaper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.notready #content {
+    left: -999px;
+    width: 0;
+}
+
+.ready #content {
+    left: 0;
+    width: 100%;
+}
+
+#copy {
+    font-size: 12px;
+    position: absolute;
+    font-style: normal;
+    width: 220px;
+    text-align: left;
+    color: #687176;
+
+.rotate(270deg);
+
+
+
+	left: -90px;
+	bottom: 60%;
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
 }
 
 
 
+.ie #copy {
+	left:  20px;
+	bottom: 10px;
+}
+a {
+	color: #c80019;
+	text-decoration: none;
+}
 
-#navigation{
-	background:#fff;
-		.about > *{background:#eee;}
-	}
-#navigation-slideshow{
-	width:800px;height:400px;margin:auto;overflow:hidden;position:relative;
-	 ul{position:absolute;top:20px;left:0px;width:800px;z-index:2;color:#000;padding:0;margin:0;list-style:none;text-align:center;cursor:default;}
-	 li{display:inline-block;margin-right:10px;
-		
 
-	 }
-	 a {
-	 	display:block;
-		padding:7px;
-				background:white;
-		 .div_border(10px);
-		 			&:hover {
- 							color:white;
+#nav {
+	position: relative;
+	display: inline-block;
+	list-style: none;
+	text-align: center;
+	-webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+	box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+	z-index: 3;
+	background: #CED2D6;
+	background: rgba(222,227,231,0.37);
+	
+	li {
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+	& .current
+		{
+		background: rgba(255,255,255,0.5);
+		}
 
-				background:@color_naranja;
-				}
+	
+}
+ a {
+	display: block;
+	font-size: 20px;
+	padding: 10px 20px;
+& :hover {
+	background: rgba(226,227,232,0.51);
+}
+}
 
-		&.current{
-			color:white;
-				background:@color_naranja;
-			&:hover {
-				color:@color_naranja;
-				background:white;
-				}
-			}
-	}
-	}
-.tip-wrap{z-index:3;}
-.tip{background:rgba(255,255,255,0.5);color:#000;width:200px;height:auto;padding:10px;font-size:85%;text-align:center;}
-.tip-top{height:0;width:0px;border-style:solid;border-color:transparent transparent rgba(255,255,255,0.5) transparent;border-width:10px;margin-left:100px;}
+}
+
+.ltie8 #nav {
+	display: inline;
+}
+
+.ltie8 #nav li {
+	display: inline;
+}
+
+.ltie9 #nav {
+	border: solid 1px #A8B1B8;
+	border-top: none;
+}
+
+#introduction h1 {
+	text-align: center;
+	position: absolute;
+	bottom: 20%;
+	width: 100%;
+	font-size: 20px;
+	background: url(../slideshow_files/images/drop-shadow.png) no-repeat center 182px;
+	 p {
+	text-align: center;
+	font-size: 30px;
+	color: #979797;
+	width: 100%;
+}
+}
+
+.ltie9 #introduction h1 {
+	background: none;
+}
+.page {
+	text-align: left;
+}
+
+#intro-show {
+	position: absolute;
+	bottom: 25%;
+	width: 100%;
+}
+
+#introduction p {
+	text-align: center;
+	font-size: 20px;
+	color: #979797;
+	width: 100%;
+}
+
+.normal {
+color: #fe4801;
+	background: #fff;
+}
+
+.current {
+color: #fff;
+	background: #fe4801;
+}
+
+#main-show {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.page {
+	width: 100%;
+	height: 100%;
+}
+#introduction h1 {
+	text-align: center;
+	position: absolute;
+	bottom: 20%;
+	width: 100%;
+	font-size: 170px;
+	background: url(images/drop-shadow.png) no-repeat center 182px;
+}
+
+.ltie9 #introduction h1 {
+	background: none;
+}
+
+
+
+#ultima_slogan {
+	width: 100%;
+	position: absolute;
+	bottom: 4%;
+	text-align: center;
+}
+
 
 /* @import "resto.less"; */
