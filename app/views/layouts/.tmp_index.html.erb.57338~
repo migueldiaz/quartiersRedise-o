@@ -21,10 +21,12 @@ less="colors_index.less"
 %>
 <link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
 <%= javascript_include_tag('less-1.1.3.min') %>          
+<%= javascript_include_tag('processing') %>          
 
 <link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
-	<!-- link href="slideshow_files/css.css" rel="stylesheet" type="text/css"> -->
-	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8" >	
+	<!-- link href="slideshow_files/css.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8" >	 -->
+
 
 
 </head>
@@ -34,11 +36,11 @@ less="colors_index.less"
 		
 		<ul style="top: 0px;" id="nav">
 			<li class=""><a href="#">Español</a>/Français</li>
-			<li class="current" ><a href="#">mapa-web</a></li>
-			<li class=""><div style="padding:5px;">
+			<!-- li class="current" ><a href="#">mapa-web</a></li -->
+			<!-- li class=""><div style="padding:5px;">
 			<form> Buscar: <input size="5" type="text" name="buscar"/><img src="imgs/search1.gif"/></form>
-			</div></li>
-			<li class="" >logging/registro</li>
+			</div></li -->
+			<!-- li class="" >logging/registro</li -->
 		</ul>
 		
 		<div id="main-show">
@@ -51,7 +53,11 @@ less="colors_index.less"
 			<div style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="navigation-demo" class="page">
 				<ul id="navigation-show">
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/></div>
+									<div class="mapa" style="margin:50px;">	
+									
+													<canvas data-processing-sources="/pde/additive_wave.pde"></canvas>  
+
+									<!-- img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/ --></div>
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
 									<div class="infodet">
 												
@@ -95,8 +101,16 @@ less="colors_index.less"
 	
 									 </div>
 									
-					</li>
-					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="limpia">Información de contacto y enlaces para seguimiento en facebook, feed de videos (blip.tv, vimeo...) ...</li>
+				<canvas data-processing-sources="/pde/bezzier.pde"></canvas>  
+	</li>
+					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="limpia">
+					
+					
+
+<canvas data-processing-sources="/pde/arm.pde"></canvas>  
+
+
+								Información de contacto y enlaces para seguimiento en facebook, feed de videos (blip.tv, vimeo...) ...</li>
 				</ul>
 
 								<ul class="nav">
@@ -114,6 +128,7 @@ less="colors_index.less"
 		</div>
 		<cite id="copy">designed / developed by <a href="http://enjava.com/">enjava.com</a></cite>
 	</div>
+	
 	
 	<script type="text/javascript" src="slideshow_files/mootools-yui-compressed.js"></script>
 	<script type="text/javascript" charset="utf-8" src="slideshow_files/combined-google.js"></script>

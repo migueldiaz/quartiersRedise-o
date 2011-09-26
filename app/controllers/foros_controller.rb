@@ -39,6 +39,7 @@ class ForosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @foros }
+      format.json {render :json => @foros.to_json}
     end
   end
 

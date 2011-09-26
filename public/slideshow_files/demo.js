@@ -72,7 +72,7 @@ var App = new Class({
 			
 			// change class of current tab
 			navs.removeClass('current');
-			navs[slideData.next.index].addClass('current');
+	//		navs[slideData.next.index].addClass('current');
 		}.bind(this));
 		return this;
 	},

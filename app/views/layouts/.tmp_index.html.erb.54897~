@@ -35,21 +35,12 @@ less="colors_index.less"
 		<div id="content">
 		
 		<ul style="top: 0px;" id="nav">
-		    <li >
-		    <%=link_to( t('es'), url_for( :locale => 'es', :id=>params[:id] ) , :class=>comprueba('es')) if esfrances %>
-			<%=t('es') if !esfrances %>
-			</li>
-			
-		    <li >
-			<%=link_to( t('fr'), url_for( :locale => 'fr', :id=>params[:id] ) , :class=>comprueba('fr')) if spanish %>
-				<%=t('fr') if !spanish %>
-
-			</li>
-			<!-- li class="current" ><a href="#">mapa-web</a></li -->
-			<!-- li class=""><div style="padding:5px;">
+			<li class=""><a href="#">Español</a>/Français</li>
+			<li class="current" ><a href="#">mapa-web</a></li>
+			<li class=""><div style="padding:5px;">
 			<form> Buscar: <input size="5" type="text" name="buscar"/><img src="imgs/search1.gif"/></form>
-			</div></li -->
-			<!-- li class="" >logging/registro</li -->
+			</div></li>
+			<li class="" >logging/registro</li>
 		</ul>
 		
 		<div id="main-show">
@@ -64,6 +55,7 @@ less="colors_index.less"
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa" style="margin:50px;">	
 									
+													<canvas data-processing-sources="/pde/additive_wave.pde"></canvas>  
 
 									<!-- img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/ --></div>
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
@@ -86,8 +78,6 @@ less="colors_index.less"
 					Ficha de asociación QDM: pequeña descripción, últimas noticias y enlace a pagina de información detallada de asociación
 					<hr>
 					El acceso a la información detallada se presenta en otro diseño de página más acorde a una mayor cantidad de información
-																		<canvas data-processing-sources="/pde/additive_wave.pde"></canvas>  
-
 									 </div>
 
 					
