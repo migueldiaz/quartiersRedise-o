@@ -1,7 +1,7 @@
 class Usuarioforo < ActiveRecord::Base
   belongs_to :jeunes
   belongs_to :femmes
-  #has_one :equipo
+ # has_one :equipo
   has_many :comentarios
  validates_uniqueness_of :email
   def tipo

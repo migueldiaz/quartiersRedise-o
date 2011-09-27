@@ -15,7 +15,11 @@ def index
     else
        @femmes=Femmes.first
        @usuarios=@femmes.usuarioforos
-    end
+   end
+       respond_to do |format|
+      format.html # index.html.erb
+      format.json {render :json => @usuarios.to_json}
+      end
 end
 
 def new

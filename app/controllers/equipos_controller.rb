@@ -26,6 +26,11 @@ class EquiposController < ApplicationController
  	   @equipos = @femmes.equipos
  	 end
  end
+        respond_to do |format|
+      format.html # index.html.erb
+      format.json {render :json => @equipos.to_json}
+      end
+
 end
 
  

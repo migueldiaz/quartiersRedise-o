@@ -39,7 +39,11 @@ class ForosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @foros }
-      format.json {render :json => @foros.to_json}
+      format.json {render :json => @foros.to_json(:include => { 
+                                                :comentarios => {:only => :tituloes , :include => { :comentarios => {:only => :tituloes } },:only => :tituloes } 
+                                                              }
+                                                )
+                  }
     end
   end
 
@@ -52,6 +56,11 @@ class ForosController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @foro }
+    format.json {render :json => @foro.comentarios.sort_by( &:created_at ).reverse.to_json(:include => {
+                                        :comentarios => {:only => :tituloes, :include=>{:usuarioforo=>{:only=>[:equipo_id]}}}} ,:only => [:tituloes, :created_at],:include=>{:usuarioforo=>{:only=>[ :equipo_id]}}
+                                        )
+          }
+
     end
   end
 

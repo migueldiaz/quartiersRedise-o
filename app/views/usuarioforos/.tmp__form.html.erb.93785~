@@ -1,0 +1,49 @@
+<%= form_for(@usuarioforo) do |f| %>
+  <% if @usuarioforo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('avisoerror')%></h2>
+    
+      <ul>
+      <% @usuarioforo.errors.full_messages.each do |msg| %>
+        <li><%= t(msg) %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t :name %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label t :email %><br />
+    <%= f.text_field :email %>
+  </div>
+ <div class="field">
+    <%= f.label t :idioma %><br />
+    <%= f.select :idioma,options_for_select([[t('es'), 'es'], [t('fr'), 'fr']]) %>
+  </div>
+  <div class="field">
+    <%= f.label t :equipo %><br />
+	<%
+if session[:tipo_foro]=='jeunes' 	
+	condition=['jeunes_id = ?', 1]
+else
+	condition=['femmes_id = ?', 1]
+end
+%>
+     <%= f.collection_select :equipo_id, Equipo.find(:all, :conditions => condition), :id, :nombre, :prompt => t('prompt')  %>
+  </div>
+  
+  <!-- div class="field">
+    <%= f.label t :clave %><br />
+    <%= f.text_field :clave %>
+  </div -->
+  
+ 
+  <%= f.hidden_field :jeunes_id %>
+  <%= f.hidden_field :femmes_id %>
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<% end %>
