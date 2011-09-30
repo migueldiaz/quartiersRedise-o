@@ -6,9 +6,6 @@
     <th><%=t('titulofr')%></th>
     <th><%=t('textoes')%></th>
     <th><%=t('textofr')%></th>
-    <th><%=t('created')%></th>
-    <th><%=t('usuario')%></th>
-    <th><%=t('equipo')%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,10 +17,7 @@
     <td><%=comentario.titulofr%></td>
     <td><%= truncate(comentario.textoes,:lenght=>25) %></td>
     <td><%= truncate(comentario.textofr,:lenght=>25) %></td>
-      <td><%=comentario.created_at%></td>
-      <td><%=comentario.usuarioforo.nombre%></td>
-      <td><%=comentario.usuarioforo.equipo_id%></td>
-
+  
     <td><%= link_to t('show'), comentario_path(comentario,:vista=>'gestion') %></td>
     <td><%= link_to t('edit'), edit_comentario_path(comentario,:vista=>'gestion') %></td>
    <%if current_user.tipo!='traductor'%>
