@@ -37,6 +37,14 @@ def foro
 	@foro=Foro.find(params[:id])
 	@jeunes=@foro.sitio.jeunes
 	@foros=@jeunes.sitio.foros.reverse
+  
+   ##########Visualizacion correos unicos
+   #@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
+   #@correos=@usuarios.collect(&:email).uniq
+   
+   ##########  
+  
+  
   @seccion_menu=:foros
 end
 	

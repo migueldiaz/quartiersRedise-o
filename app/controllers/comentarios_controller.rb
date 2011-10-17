@@ -115,16 +115,29 @@ class ComentariosController < ApplicationController
     @comentario = Comentario.create(params[:comentario])
     @foro=@comentario.foro
     @sitio=@foro.sitio
+    
+   
+    
+  
+     
      respond_to do |format| 
       if @comentario.save && !@sitio.jeunes.nil?
       	 format.html { redirect_to(jeunes_foro_path(:id=>@foro), :notice => t('exito')) }
-        format.js
+         format.js
       elsif  @comentario.save && !@sitio.femmes.nil?
       	format.html { redirect_to(femmes_foro_path(:id=>@foro), :notice => t('exito')) }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
-    end
+      end
+    ############Aqui enviamos los correos
+     @usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
+     @usuarios.each do |usuario|
+    	AvisoMailer.aviso_foro(usuario,@comentario).deliver
+     end
+    #############
+    #AvisoMailer.aviso_foro(@comentario).deliver
+    
    end
   end
 
