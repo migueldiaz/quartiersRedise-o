@@ -101,7 +101,7 @@ def contacto
     	@femmes=Femmes.first
   		@sitio=@femmes.sitio
      	@contacto=@sitio.contacto
-    
+         @email = Email.new
  end
 def equipos
     	@femmes=Femmes.first

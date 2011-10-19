@@ -1,5 +1,8 @@
 Paginadocumentos::Application.routes.draw do
 
+   match 'notifica' => 'email#new', :as => 'notifica', :via => :get
+   match 'notifica' => 'email#create', :as => 'notifica', :via => :post
+   resources :email
   get "desconectar" => "sesionforos#destroy", :as => "desconectar"
   get 'registroforo'=>"usuarioforos#new",:as=>'registroforo'
   get 'loginforo' => 'sesionforos#new', :as => 'loginforo'

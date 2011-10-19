@@ -83,7 +83,7 @@ end
   		@asociacion=@web.asociacion
   		@sitio=@asociacion.sitio
      	@contacto=@sitio.contacto
-    
+        @email = Email.new
     end
    
    

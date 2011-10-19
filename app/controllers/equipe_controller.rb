@@ -149,8 +149,9 @@ def contacto
   		end
   		@sitio=@equipo.sitio
      	@contacto=@sitio.contacto
-                segun_proyecto      
-
+        @email = Email.new 
+                #segun_proyecto      
+  
 end
     
 end

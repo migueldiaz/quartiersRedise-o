@@ -131,11 +131,11 @@ def contacto
   		@jeunes=@web.jeunes
   		@sitio=@jeunes.sitio
      	@contacto=@sitio.contacto
-    
+         @email = Email.new
 end
 
 def equipos
-   logger.info "///////////////////////EN EQUIPOs: ******************************"
+   #logger.info "///////////////////////EN EQUIPOs: ******************************"
 
     	@web=Web.first
   		@jeunes=@web.jeunes

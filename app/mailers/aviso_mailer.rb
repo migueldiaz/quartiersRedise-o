@@ -1,5 +1,5 @@
 class AvisoMailer < ActionMailer::Base
-  default :from => "no-reply@quartiersdumonde.org"
+  default :from => "donotreply@quartiersdumonde.org"
   
  # def aviso_foro(comentario)
  #   @comentario=comentario

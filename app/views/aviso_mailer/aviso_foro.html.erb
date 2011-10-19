@@ -1,11 +1,16 @@
-<h1></h1>
-<p>Idioma del usuario notificado: <%=@idioma%></p>
-<p>Nuevo comentario:
-<%=@comentario.textoes%></p>
-<br/>
-<h3>Usuario</h3>
-<p><%=@usuario.nombre%></p>
-<p><%=@usuario.email%></p>
+<%if @idioma=='es'%>
+
+Nuevo comentario: <%= @foro.tituloes  %> 
+   <%=@comentario.tituloes%>
+   
+    <%=@comentario.textoes%>
+
+<%else%>
+Nouveaux comentaire: <%= @foro.tituloes  %> 
+   <%=@comentario.titulofr%>
+   
+    <%=@comentario.textofr%>
+<%end%>
 
 
 

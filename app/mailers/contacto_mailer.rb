@@ -1,15 +1,18 @@
 class ContactoMailer < ActionMailer::Base
-  default :from => "qdm@quartiersumonde.org"
+   default from: "donotreply@quartiersdumonde.org"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.contacto_mailer.contacto.subject
   #
-  def contacto
-    @greeting = t('subject')
-    
-    mail :to => "to@example.org"
-    mail :body=>""
+  def contactar(email)
+ 	 @email=email
+ 	 mail(:to=>email.destino,:subject => "Contacto formulario web")
+  end
+
+  def traduccion
+  #@traductores=Usuarios.find(all,)
   end
 end
+

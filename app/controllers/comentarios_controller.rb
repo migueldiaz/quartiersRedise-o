@@ -130,12 +130,7 @@ class ComentariosController < ApplicationController
         format.html { render :action => "new" }
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
       end
-    ############Aqui enviamos los correos
-     @usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
-     @usuarios.each do |usuario|
-    	AvisoMailer.aviso_foro(usuario,@comentario).deliver
-     end
-    #############
+   
     #AvisoMailer.aviso_foro(@comentario).deliver
     
    end
@@ -146,6 +141,18 @@ class ComentariosController < ApplicationController
   def update
     @comentario = Comentario.find(params[:id])
 
+    ############Aqui enviamos los correos
+    if @comentario.revisado==true && comentario.revisadofr==true
+     	@foro=@comentario.foro
+     	@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
+     	@usuarios.each do |usuario|
+    		AvisoMailer.aviso_foro(usuario,@comentario).deliver
+     	end
+    end
+    #############
+   
+   
+   
     respond_to do |format|
       if @comentario.update_attributes(params[:comentario])
        
