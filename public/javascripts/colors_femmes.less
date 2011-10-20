@@ -11,4 +11,106 @@ h1{
 p{
 font-family:"Lora";	
 }
+a.comment{
+			.div_border(6px);
+				padding:3px;
+				background-color:#1e90ff;
+				.bordear(#fff);
+				margin-left:15px;
+				color:white;
+				text-decoration:none;
+				font-size:1.5em;
+				font-family:Nunito;
+				}
+
+.hilo_foro{
+		@color1:#FF6E32;
+		@color2:#8b6914;
+	.hilo{
+		.div_border(6px);
+		color:@color1;
+		background-color:@color1;
+		padding:5px;
+		margin-top:10px;
+		.usuario{
+			.div_border(6px);
+				padding:3px;
+				background-color:@color_naranja;
+				float:right;
+				
+		}
+		.comment{
+			.div_border(6px);
+				padding:3px;
+				background-color:#add8e6;
+				.bordear(#000);
+				margin-left:15px;
+								font-size:1.2em;
+
+
+				}
+		.close{
+			.div_border(6px);
+				padding:3px;
+				background-color:#add8e6;
+				.bordear(#000);
+								font-size:1.2em;
+				font-family:Nunito;
+
+
+				}
+		.mensaje{
+			
+			float:left;
+			font-size:2em;
+			font-family:"Cabin Sketch";
+		}
+			.fecha{
+					color:black;
+					font-family:"Cabin Sketch";
+					font-size:0.8em;
+				}
+		.descripcion{
+			font-family:"Gloria Hallelujah";	
+			font-size:1.2em;
+
+		}
+		a{
+			color:black;
+			    		text-decoration: none;
+
+		}
+		.hilo{
+			background-color:lighten(@color1, 10%);
+			.usuario{ background-color:lighten(@color1, 5%);}
+			.hilo{
+				background-color:lighten(@color1, 20%);
+				.usuario{ background-color:lighten(@color1, 15%);}
+				.hilo{
+					background-color:lighten(@color1, 30%);
+					.usuario{ background-color:lighten(@color1, 25%);}
+
+					.hilo{
+						background-color:lighten(@color1, 40%);
+						.usuario{ background-color:lighten(@color1, 35%);}
+
+					}
+				}
+
+			}
+
+		}
+			.detalle{
+				clear:both;
+				color:black;
+			}
+
+	}
+	.subhilo{
+		margin-left:15px;
+		margin-bottom:5px;
+
+	}
+	
+}
 @import "resto.less";
