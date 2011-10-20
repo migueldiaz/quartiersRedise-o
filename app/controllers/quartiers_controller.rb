@@ -10,11 +10,12 @@ class QuartiersController < ApplicationController
 
  	end
 #GET /quartiers/agenda
-    def prueba
+  def prueba
     respond_to do |format|
       format.html # index.html.erb
     end
   end
+  
     def load
       logger.info "load ----------------"+params[:id]
         @comentario=Comentario.find(params[:id])
