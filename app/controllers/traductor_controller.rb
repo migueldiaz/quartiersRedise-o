@@ -1,6 +1,8 @@
 class TraductorController < ApplicationController
 	layout 'mono'
 	before_filter :require_traductor
+    
+
 	def index
 	#if current_user.tipo!='traductor'
 	 #redirect_to trafico_url

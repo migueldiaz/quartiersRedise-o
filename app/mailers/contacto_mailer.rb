@@ -11,8 +11,6 @@ class ContactoMailer < ActionMailer::Base
  	 mail(:to=>email.destino,:subject => "Contacto formulario web")
   end
 
-  def traduccion
-  #@traductores=Usuarios.find(all,)
-  end
+  
 end
 

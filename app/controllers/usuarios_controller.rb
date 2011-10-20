@@ -106,8 +106,6 @@ def create
      @usuario.destroy
       redirect_to usuarios_path(:id=>@sitio)  
     end 
-   
-    
-   
   end
+  
 end

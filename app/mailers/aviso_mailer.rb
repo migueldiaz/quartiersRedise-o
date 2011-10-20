@@ -11,6 +11,20 @@ class AvisoMailer < ActionMailer::Base
  #  	  mail(:to => usuario.email, :subject => @foro.tituloes)
  #   end
   #end
+  def traductor(usuario) 
+    mail(:to => usuario.email, :subject => "Nuevas traducciones en el sitio")
+  end
+  
+    
+  def notifica	
+		@traductores=Usuario.find(:all,:conditions=>"tipo='traductor'" )   	 
+		@traductores.each do |traductor|
+			puts traductor.email
+			AvisoMailer.traductor(traductor).deliver
+	    end
+	end
+
+ 
   def aviso_foro(usuario,comentario)
       @comentario=comentario
       @foro=comentario.foro;
@@ -20,4 +34,6 @@ class AvisoMailer < ActionMailer::Base
       
       mail(:to => usuario.email, :subject => "Nueva actividad en "+@foro.tituloes)
   end
+  
+ 
 end

@@ -77,6 +77,19 @@ def create
       end
     end
   end
+  
+  def destroy
+    @usuarioforo = Usuarioforo.find(params[:id])
+    
+    if @usuarioforo.jeunes.nil?
+      @tipo='femmes'
+    else 
+     @tipo='jeunes'
+    end
+     @usuarioforo.destroy
+      redirect_to usuarioforos_path(:tipo=>@tipo)  
+   
+  end
 
 
 
