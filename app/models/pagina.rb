@@ -1,4 +1,8 @@
 class Pagina < ActiveRecord::Base
+
+belongs_to :protagonistas,:foreign_key => "protagonistas_id"
+belongs_to :enfoque,:foreign_key => "enfoque_id"
+belongs_to :vision,:foreign_key => "vision_id"
 belongs_to :presentacion,:foreign_key => "presentacion_id"
 belongs_to :red,:foreign_key => "red_id"
 belongs_to :documentacion,:foreign_key => "documentacion_id"

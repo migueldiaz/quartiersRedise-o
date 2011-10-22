@@ -6,6 +6,9 @@ Paginadocumentos::Application.routes.draw do
   get "desconectar" => "sesionforos#destroy", :as => "desconectar"
   get 'registroforo'=>"usuarioforos#new",:as=>'registroforo'
   get 'loginforo' => 'sesionforos#new', :as => 'loginforo'
+  resources :protagonistas
+  resources :enfoque
+  resources :vision
   resources :sesionforos
   resources :claves
   resources :comentarios
@@ -67,7 +70,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/equipo'=> 'femmes#equipo'
   match 'femmes/contacto'=> 'femmes#contacto'
   ################################################
-  match '/asociation/'=> 'asoqciation#presentacion'
+  match '/asociation/'=> 'asociation#presentacion'
   match 'asociation/presentacion'=> 'asociation#presentacion'
   match 'asociation/pagina'=> 'asociation#pagina'
   match 'asociation/colaborador'=> 'asociation#colaborador'

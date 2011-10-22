@@ -71,11 +71,17 @@ titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo'))
 	</ul>
 </div>
 <%end%>
+
 <div class="opciones_generales">
+	
+	<% if @pagina.vision.nil?%>
 	<ul  >
 		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>path_v} %>         
 		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit')+' '+t('pagina'), :path_volver=>edit_pagina_path(@pagina)} %>         
 	</ul>
+	<%else%>
+	<%= link_to t('back'),@pagina.vision.sitio%>
+	<%end%>
 </div>
 
 

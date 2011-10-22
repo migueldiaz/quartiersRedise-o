@@ -1,5 +1,7 @@
 class Sitio < ActiveRecord::Base
-  
+  has_one :protagonistas, :dependent => :destroy
+  has_one :enfoque, :dependent => :destroy
+  has_one :vision, :dependent => :destroy
   has_one :presentacion, :dependent => :destroy
   has_one :documentacion, :dependent => :destroy
   has_one :red, :dependent => :destroy

@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  protagonistas_id: 1
+
+two:
+  protagonistas_id: 1

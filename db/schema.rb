@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110915105521) do
+ActiveRecord::Schema.define(:version => 20111022220040) do
+
+  create_table "add_protagonistas_to_paginas", :force => true do |t|
+    t.integer  "protagonistas_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "asociacions", :force => true do |t|
     t.integer  "web_id"
@@ -82,6 +88,12 @@ ActiveRecord::Schema.define(:version => 20110915105521) do
     t.string  "archivofr"
     t.integer "foro_id"
     t.boolean "revisadofr", :default => false
+  end
+
+  create_table "enfoques", :force => true do |t|
+    t.integer  "sitio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "equipos", :force => true do |t|
@@ -164,6 +176,9 @@ ActiveRecord::Schema.define(:version => 20110915105521) do
     t.integer  "documentacion_id"
     t.integer  "pagina_id"
     t.boolean  "revisadofr",       :default => false
+    t.integer  "vision_id"
+    t.integer  "enfoque_id"
+    t.integer  "protagonistas_id"
   end
 
   create_table "parrafos", :force => true do |t|
@@ -183,6 +198,12 @@ ActiveRecord::Schema.define(:version => 20110915105521) do
   end
 
   create_table "presentacions", :force => true do |t|
+    t.integer  "sitio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "protagonistas", :force => true do |t|
     t.integer  "sitio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -252,6 +273,10 @@ ActiveRecord::Schema.define(:version => 20110915105521) do
     t.string   "idioma"
     t.string   "tipo"
     t.string   "traduceA"
+  end
+
+  create_table "visions", :force => true do |t|
+    t.integer "sitio_id"
   end
 
   create_table "webs", :force => true do |t|
