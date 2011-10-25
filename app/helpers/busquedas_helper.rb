@@ -38,6 +38,10 @@ module BusquedasHelper
       else
            return link_to parrafo.tituloes,asociation_pagina_path(:id=>parrafo.pagina)
       end
+   elsif !parrafo.pagina.vision.nil?
+       return link_to parrafo.tituloes,asociation_vision_path
+   
+   
    else
        if !documentacion.jeunes.nil?
          return link_to parrafo.tituloes,jeunes_pagina_path(:id=>parrafo.pagina)

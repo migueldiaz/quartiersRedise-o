@@ -1,7 +1,10 @@
 <% if params[:controller]=="asociation" %>
 	<%if !@asociacion.nil? %>
 	<ul id="menu">
-		<%=render "asociation/presentaciones" %>  	
+		<%=render "asociation/presentaciones" %> 
+			<li <%=menu_seleccionada_bis asociation_vision_path %>><%=link_to t('vision'),asociation_vision_path%></li>
+			<%=render "asociation/enfoque" %>
+			<%=render "asociation/protagonistas" %>    
 			<%=render "asociation/proyectos" %>  
 		<li <%=menu_seleccionada_bis asociation_colaborador_path %> ><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
 		

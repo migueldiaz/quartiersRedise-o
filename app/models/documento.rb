@@ -9,13 +9,11 @@ class Documento < ActiveRecord::Base
   validate :valida_enlacetitulo
   validate :valida_titulo
  
-  searchable do
-  	  	text :doces
-   		text :docfr
-   		#attachment :adjunto
-   		
-   		
-    end
+#  searchable do
+#  	  	text :doces
+#   		text :docfr
+   		#attachment :adjunto		
+#    end
 
     def adjunto
     	puts archivo.path

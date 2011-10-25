@@ -4,16 +4,16 @@ class Parrafo < ActiveRecord::Base
   mount_uploader :imagenmini,ImagenUploader
   
   validate :valida_parrafo
+  #attr_accessible :tituloes
  
-   searchable do
-  	  	text :textoes
-   		text :textofr
-   		text :piefoto
-   		text :piefotofr
-   		text :tituloes
-   		text :titulofr
-   		
-    end
+  # searchable do
+  #	  	text :textoes
+  # 		text :textofr
+  # 		text :piefoto
+  # 		text :piefotofr
+  # 		text :tituloes
+  # 		text :titulofr		
+  #  end
  
  
 def valida_parrafo

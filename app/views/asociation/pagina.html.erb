@@ -1,7 +1,9 @@
 <h1><%=@pagina.send(:titulo.to_s+local)%></h1>
 <hr class="space">
 <% @pagina.parrafos.each do |parrafo| %>
- 		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2> 
+ 		<!--<h2><%= parrafo.tituloes %> </h2>
+ 		Misterios inexcrutables, al poner este comentario funciona , antes no lo hacia-->
+ 		<h2><%= parrafo.method(:titulo.to_s+locale.to_s).call %> </h2>  
 <%
 if !parrafo.imagenmini_url.nil? and !parrafo.imagenmini_url.empty?
 @img_existente=parrafo.imagenmini_url

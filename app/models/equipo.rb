@@ -5,11 +5,11 @@ class Equipo < ActiveRecord::Base
   belongs_to :femmes
   has_one :sitio #, :dependent => :destroy
   
-  searchable do
-   		text :nombre
-   		text :descripcionEs
-   		text :descripcionFr
-    end
+#  searchable do
+#   		text :nombre
+#   		text :descripcionEs
+#   		text :descripcionFr
+#    end
   
   validates_presence_of :nombre
 end
