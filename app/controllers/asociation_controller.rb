@@ -1,7 +1,34 @@
 class AsociationController < ApplicationController
  	layout 'juan'
  	
-#GET /quartiers/agenda
+ 	
+ 	
+ 	
+ 	def vision
+ 		@asociacion=Asociacion.first
+ 		@sitio=@asociacion.sitio
+ 		@vision=@sitio.vision
+ 		redirect_to asociation_pagina_path(:id=>@vision.pagina)
+ 	end
+ 	def enfoque
+  		@asociacion=Asociacion.first
+  		@enfoque=@asociacion.sitio.enfoque
+  		@pagina=@enfoque.paginas.first
+ 		if !@pagina.nil?
+  		redirect_to asociation_pagina_path(:id=>@pagina)
+		end
+ 		
+ 	end
+ 	def protagonistas
+ 		@asociacion=Asociacion.first
+  		@protagonistas=@asociacion.sitio.protagonistas
+  		@pagina=@protagonistas.paginas.first
+ 		if !@pagina.nil?
+  		redirect_to asociation_pagina_path(:id=>@pagina)
+		end
+ 		
+ 	end
+	#GET /quartiers/agenda
 	def sitio
   	@asociacion=Asociacion.first
 		if @asociacion.sitio.nil?
@@ -14,13 +41,11 @@ end
 	
 	
 	def agenda
-  		@web=Web.first
-  		@asociacion=@web.asociacion
+  		@asociacion=Asociacion.first
   		@sitio=@asociacion.sitio
 	end
 	def proyectos
-  		@web=Web.first
-  		@asociacion=@web.asociacion
+  		@asociacion=Asociacion.first
   		@red=@asociacion.sitio.red
   		@pagina=@red.paginas.first
  		if !@pagina.nil?
@@ -44,10 +69,22 @@ end
 	  		@sitio=@pagina.presentacion.sitio
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
-		else
+		elsif !@pagina.red.nil?
 	  		@sitio=@pagina.red.sitio
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
+	  	elsif !@pagina.vision.nil?
+	  	    @sitio=@pagina.vision.sitio
+	  		@vision=@sitio.vision
+	  		@pagina=@vision.pagina
+	  	elsif !@pagina.enfoque.nil?
+	  	    @sitio=@pagina.enfoque.sitio
+	  		@enfoque=@sitio.enfoque
+	  		@paginas=@enfoque.paginas
+	  	elsif !@pagina.protagonistas.nil?
+	  	    @sitio=@pagina.protagonistas.sitio
+	  		@protagonistas=@sitio.protagonistas
+	  		@paginas=@protagonistas.paginas
 		end
 		@asociacion=@sitio.asociacion
 	    
