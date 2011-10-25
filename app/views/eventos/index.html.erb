@@ -19,7 +19,7 @@ end
     <td><%= evento.tituloFr %></td>
     <td>
     <% if evento.imagen_url.to_s != "" %>
-    <%= image_tag evento.imagen_url.to_s %>
+   <%= image_tag evento.imagen.to_s,:size=>'100x80' %>
     <% end %>
     </td>
     <td><%= link_to t('show'), evento %></td>

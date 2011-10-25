@@ -1,3 +1,4 @@
+<div class="detalle_gestion">
 <h1><%= t('show')+' '+t('evento')%></h1>
 
 <p id="notice"><%= notice %></p>
@@ -17,10 +18,23 @@
    <%= @evento.tituloFr %>
 </p>
 <% if @evento.imagen_url.to_s != "" %>
+<p>
+	
 <%= image_tag @evento.imagen_url.to_s,:size=>'100x90' %>
+</p>
 <% end %>
-<%= link_to t('edit'), edit_evento_path(@evento) %> |
-<% if current_user.tipo=='traductor'%>
-<%= link_to t('back'),  eventos_path(:modo=>'sintrad') %>
-<%else%><%= link_to t('back'),  eventos_path(:id=>@evento.sitio_id) %>
-<%end%>
+
+<div class="opciones_generales">
+	<ul  >
+				<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_evento_path(@evento)} %>         
+	<%if current_user.tipo=='traductor'%>      
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>eventos_path(:modo=>'sintrad')} %>   
+		<%else%>
+
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>eventos_path(:id=> @evento.sitio_id)} %>   
+		<%end%>         
+	</ul>
+</div>
+
+
+</div>

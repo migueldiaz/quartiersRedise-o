@@ -3,7 +3,6 @@ class AsociationController < ApplicationController
  	
  	
  	
- 	
  	def vision
  		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
@@ -28,7 +27,19 @@ class AsociationController < ApplicationController
 		end
  		
  	end
-	#GET /quartiers/agenda
+	
+#GET /quartiers/agenda
+	def vision
+	@asociacion=Asociacion.first
+	@sitio=@asociacion.sitio
+	@vision=@sitio.vision
+	@pagina=@vision.pagina
+	redirect_to asociation_pagina_path(:id=>@pagina)
+	
+	end
+	
+	
+	
 	def sitio
   	@asociacion=Asociacion.first
 		if @asociacion.sitio.nil?
@@ -62,7 +73,7 @@ end
   		redirect_to asociation_pagina_path(:id=>@pagina)
 	   end
 	end
-	def pagina
+	def pagina #Contemplar aqui los nuevos casos
 		@pagina=Pagina.find(params[:id])
 		
 		if !@pagina.presentacion.nil?

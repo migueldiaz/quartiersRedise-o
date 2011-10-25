@@ -65,7 +65,7 @@ GEM
       activesupport (= 3.0.5)
       rake (>= 0.9.2)
       thor (~> 0.14.4)
-    rake (0.9.2)
+    rake (0.9.2.2)
     rsolr (0.12.1)
       builder (>= 2.1.2)
     sunspot (1.2.1)
@@ -88,4 +88,5 @@ DEPENDENCIES
   carrierwave
   mysql
   rails (= 3.0.5)
+  rake (= 0.9.2.2)
   sunspot_rails

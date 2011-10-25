@@ -1,0 +1,28 @@
+ <h1><%= t('show')+' '+t('imagen')%></h1>
+ 
+  <p> 
+  <% if @imagen.imagen_url.to_s != "" %>
+  <%= image_tag @imagen.imagen_url.to_s,:size=>'150x120' %>
+  <% end %>
+ </p>
+ <p>
+ 
+  <%if @imagen.imagenmini_url.to_s!=""%>
+   <%= image_tag @imagen.imagenmini_url.to_s,:size=>'100x80' %>
+  <%end%>
+ </p>
+ <p>
+    <b><%=t('piefoto')%></b>
+    <%= @imagen.piefoto %>
+ </p>
+
+   <p>
+     <b><%=t('piefotofr')%></b>
+    <%=@imagen.piefotofr %>
+  </p>
+ 
+ 
+
+<%= link_to t('edit'), edit_imagen_path(@imagen) %> 
+<%= link_to t('back'), pagina_path(@imagen.pagina) %> 
+

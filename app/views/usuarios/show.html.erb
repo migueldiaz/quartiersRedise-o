@@ -1,3 +1,4 @@
+<div class="detalle_gestion">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,14 +20,19 @@
   <%=t(@usuario.traduceA) %>
 </p>
 <%end%>
-
-
-<%= link_to t('edit'), edit_usuario_path(@usuario) %> |
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_usuario_path(@usuario)} %>         
 <% if @usuario.tipo=='traductor'%> 
-<%= link_to t('back'), usuarios_path(:tipo=>'traductor') %>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarios_path(:tipo=>'traductor')} %>   
 <%elsif @usuario.tipo=='admin'%>
-<%= link_to t('back'), usuarios_path(:tipo=>'admin') %>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarios_path(:tipo=>'admin')} %>   
 <%else%>
-<%= link_to t('back'), usuarios_path(:id=>@usuario.sitio) %>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarios_path(:id=>@usuario.sitio)} %>   
 <%end%>
 
+	</ul>
+</div>
+
+
+</div>
