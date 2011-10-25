@@ -1,0 +1,26 @@
+<h1><%= t('show')+' '+t('evento')%></h1>
+
+<p id="notice"><%= notice %></p>
+
+  
+<p>
+  <b><%= t('fecha')%>:</b>
+  <%= l @evento.fecha,:format=>:short%>
+</p>
+
+<p>
+  <b><%= t('tituloEs')%>:</b>
+   <%= @evento.tituloEs %>
+</p>
+<p>
+  <b><%= t('tituloFr')%>:</b>
+   <%= @evento.tituloFr %>
+</p>
+<% if @evento.imagen_url.to_s != "" %>
+<%= image_tag @evento.imagen_url.to_s,:size=>'100x90' %>
+<% end %>
+<%= link_to t('edit'), edit_evento_path(@evento) %> |
+<% if current_user.tipo=='traductor'%>
+<%= link_to t('back'),  eventos_path(:modo=>'sintrad') %>
+<%else%><%= link_to t('back'),  eventos_path(:id=>@evento.sitio_id) %>
+<%end%>

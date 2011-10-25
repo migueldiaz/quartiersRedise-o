@@ -1,0 +1,50 @@
+<div class="detalle_gestion">
+	
+
+ <h1><%= t('show')+' '+t('documento')%></h1>
+ <p>
+    <b><%=t('tituloEs')%></b>
+    <%= @documento.doces %>
+ </p>
+ <p> 
+  <% if @documento.archivo_url.to_s != "" %>
+  <%= link_to t('documento'), @documento.archivo_url.to_s %>
+  <% end %>
+ </p>
+   <p>
+     <b><%=t('tituloFr')%></b>
+    <%=@documento.docfr %>
+  </p>
+  <p> 
+  <% if @documento.archivofr_url.to_s != "" %>
+  <%= link_to t('documento'), @documento.archivofr_url.to_s %>
+  <% end %>
+ </p>
+
+<%
+path_v=nil
+
+if current_user.tipo=='traductor'
+path_v=documentos_path(:modo=>'sintrad') 
+
+elsif !@documento.foro.nil?
+path_v=foro_path(:id=> @documento.foro)
+
+else
+path_v= pagina_path(:id=> @documento.pagina)
+
+end
+%>
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>path_v} %>   
+		<%if current_user.tipo=='traductor'%>      
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('traductor'), :path_volver=> traductor_url} %>
+		<%end%>         
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_documento_path(@documento)} %>         
+	</ul>
+</div>
+
+</div>
+
