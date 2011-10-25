@@ -8,7 +8,6 @@
 		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('show'), :path_volver=> @colaborador} %>         
 <%if current_user.tipo=='traductor'%>
 		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:modo=>'sintrad')} %>   
-
 <%else%>
 		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:id=>@colaborador.sitio)} %>   
 <%end%>

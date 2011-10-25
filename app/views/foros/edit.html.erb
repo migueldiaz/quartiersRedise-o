@@ -1,6 +1,12 @@
+<div class="detalle_gestion">
 <h1><%= t('edit')+' '+t('foro') %></h1>
 <br/>
 <%= render 'form' %>
 
-<%= link_to t('show'), @foro %> |
-<%= link_to t('back'), url_for(:back) %>
+<div class="opciones_generales">
+<ul>
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('show'), :path_volver=> @foro} %>         
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>url_for(:back)} %>   
+</ul>
+</div>
+</div>
