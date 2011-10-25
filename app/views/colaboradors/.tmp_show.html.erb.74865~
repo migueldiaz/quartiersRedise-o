@@ -1,0 +1,61 @@
+<div class="detalle_gestion">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t('nombreEs') %></b>
+  <%= @colaborador.nombreEs %>
+</p>
+
+<p>
+  <b><%=t('nombreFr') %></b>
+  <%= @colaborador.nombreFr %>
+</p>
+
+<p>
+  <b><%=t('aporta') %></b>
+  <% if @colaborador.aporta %>
+   <%= t('siAporta')%>
+   <%else%>
+   <%= t('noAporta')%>
+   <%end%>
+</p>
+
+<p>
+  <b><%=t('infoEs') %></b>
+  <%= @colaborador.infoEs %>
+</p>
+
+<p>
+  <b><%=t('infoFr') %></b>
+  <%= @colaborador.infoFr %>
+</p>
+
+<p>
+  <b><%=t('direccion') %></b>
+  <%= @colaborador.direccion %>
+</p>
+
+<p>
+  <% if @colaborador.imagen_url.to_s != "" %>
+<%= image_tag @colaborador.imagen_url.to_s %>
+<% end %>
+</p>
+
+<br/>
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=>  edit_colaborador_path(@colaborador)} %>
+		<%if current_user.tipo=='traductor'%>      
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:modo=>'sintrad')} %>   
+		<%else%>         
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:id=>@colaborador.sitio)} %>   
+		<%end%>         
+	</ul>
+</div>
+
+
+
+
+
+</div>

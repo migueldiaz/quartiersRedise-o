@@ -1,0 +1,24 @@
+<h2>Resultados para: <%=params[:search]%></h2>
+<%if params[:texto] ||params[:todo]%>
+	<h3>Parrafos <%= @parrafos.size %> </h3>
+	<% @parrafos.each do |parrafo| %>
+	  <tr>
+	    <td><%= link_to muestrapagina(parrafo) %></td>
+	  </tr>
+	<% end %>
+<% end %>
+<%if params[:paginas] ||params[:todo]%>
+	<%= render "busquedas/pagina"%>
+<%end%>
+<%if params[:equipo] ||params[:todo]%>
+	<%= render "busquedas/equipo"%>
+<% end %>
+<%if params[:documentos] ||params[:todo]%>
+<h3>Documentos <%= @documentos.size %> </h3>
+<% @documentos.each do |documento| %>
+  <tr>
+    <td><%= link_to documento.doces,documento.archivo.to_s %></td>
+  </tr>
+<% end %>
+<% end %>
+
