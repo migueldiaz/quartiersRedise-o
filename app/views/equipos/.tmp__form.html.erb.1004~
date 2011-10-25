@@ -44,6 +44,6 @@
 	<%= f.hidden_field :revisado,:value=>false %>
   <%end%>
   <div class="actions">
-    <%= f.submit('Guardar', :class=>"button") %>
+    <%= f.submit('Guardar') %>
   </div>
 <% end %>

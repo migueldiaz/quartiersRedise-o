@@ -1,4 +1,3 @@
-<div class="detalle_gestion">
 <h2> <%= t('team')+'  '+@equipo.nombre %></h2>
 <p>
 	<b><%= t('descripcionEs')%></b>
@@ -22,4 +21,3 @@
   <%end%>
   
 <%end%>
-</div>
