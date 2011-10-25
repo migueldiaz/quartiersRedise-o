@@ -1,0 +1,6 @@
+<h1><%= t('edit')+' '+t('foro') %></h1>
+<br/>
+<%= render 'form' %>
+
+<%= link_to t('show'), @foro %> |
+<%= link_to t('back'), url_for(:back) %>

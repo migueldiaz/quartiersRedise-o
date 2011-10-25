@@ -68,6 +68,6 @@
   <%end%>
  
   <div class="actions">
-    <%= f.submit(t('send'), :class=>"button")%>
+    <%= f.submit(t('send'))%>
   </div>
 <% end %>

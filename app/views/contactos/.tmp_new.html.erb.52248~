@@ -1,0 +1,8 @@
+<h1><%= t('new')+' '+t('parrafo')%></h1>
+<br/>
+<%= render 'form' %>
+<%if current_user.tipo=='traductor'%>
+	<%= link_to t('back'), contactos_path(:modo=>'sintrad') %>
+<%else%>
+<%= link_to t('back'), contactos_path(@contacto.sitio) %>
+<%end%>
