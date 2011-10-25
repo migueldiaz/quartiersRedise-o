@@ -7,7 +7,7 @@ class BusquedasController < ApplicationController
  def index
     
       @buscadocumento=Documento.search do
-   	   fulltext params[:search]
+   	  fulltext params[:search]
      end
      
      @buscaequipo=Equipo.search do

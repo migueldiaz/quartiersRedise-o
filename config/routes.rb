@@ -73,6 +73,7 @@ Paginadocumentos::Application.routes.draw do
   match '/asociation/'=> 'asociation#presentacion'
   match 'asociation/presentacion'=> 'asociation#presentacion'
   match 'asociation/pagina'=> 'asociation#pagina'
+   match 'asociation/vision'=> 'asociation#vision'
   match 'asociation/colaborador'=> 'asociation#colaborador'
   match 'asociation/agenda'=> 'asociation#agenda'
   match 'asociation/proyectos'=> 'asociation#proyectos'
