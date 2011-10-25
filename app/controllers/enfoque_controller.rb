@@ -1,6 +1,7 @@
 class EnfoqueController < ApplicationController
 	 layout 'mono' 
      before_filter :require_login
+     
 	def show
 		@sitio=Sitio.find(params[:id])
 		if @sitio.enfoque.nil?
