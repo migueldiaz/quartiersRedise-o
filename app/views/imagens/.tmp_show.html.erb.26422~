@@ -1,4 +1,3 @@
-<div class="detalle_gestion">
  <h1><%= t('show')+' '+t('imagen')%></h1>
  
   <p> 
@@ -24,15 +23,6 @@
  
  
 
+<%= link_to t('edit'), edit_imagen_path(@imagen) %> 
+<%= link_to t('back'), pagina_path(@imagen.pagina) %> 
 
-<div class="opciones_generales">
-	<ul  >
-		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_imagen_path(@imagen)} %>         
-
-		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>pagina_path(:id=> @imagen.pagina)} %>   
-	</ul>
-</div>
-
-
-
-</div>
