@@ -1,6 +1,4 @@
-<div class="detalle_gestion">
 <h1><%= t('edit')+' '+t('documento')%></h1>
 <br/>
 <%= render 'documentos/form' %>
-</div>
 
