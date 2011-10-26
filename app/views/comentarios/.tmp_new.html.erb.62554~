@@ -1,11 +1,16 @@
 <div class="detalle_gestion">
-<h1><%=t('new')+' '+t('foro')%></h1>
+<%if !params[:responde]%>
+<h2><%=t('new')+' '+t('comentario')%></h2>
+<%else%>
+<h2><%=t('respuesta')+' '+t('comentario')%></h2>
+<%end%>
 <br/>
+
 <%= render 'form' %>
 <div class="opciones_generales">
 	<ul  >
-
 		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>url_for(:back)} %>   
+
 </ul>
 </div>
 

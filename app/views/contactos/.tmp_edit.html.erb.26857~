@@ -1,0 +1,5 @@
+<div class="detalle_gestion">
+<h1><%=t('edit')+' '+t('informacion')+' '+t('contacto')%></h1>
+<br/>
+<%= render 'contactos/form' %>
+</div>

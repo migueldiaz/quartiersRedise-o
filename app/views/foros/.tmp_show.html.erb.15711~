@@ -1,0 +1,51 @@
+<div class="detalle_gestion">
+<h1><%=t('show')+' '+t('foro')%></h1>
+<br/>
+<p id="notice"><%= notice %></p>
+<p>
+  <b><%=t('tituloes')%></b>
+  <%= @foro.tituloes %>
+</p>
+<p>
+  <b><%=t('titulofr')%></b>
+  <%= @foro.titulofr %>
+</p>
+<p>
+  <b><%=t('descripciones')%></b>
+  <%= @foro.descripciones %>
+</p>
+<p>
+  <b><%=t('descripcionfr')%></b>
+  <%= @foro.descripcionfr %>
+</p>
+
+<h3><%=t('comentarios')%></h3>
+<div class="opciones_generales">
+    <ul>
+        <%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('comentarios'), :path_volver=>comentarios_path(:id=>@foro,:vista=>'gestion')} %>
+    </ul>
+</div>
+
+<table class="listado_registros">
+    <%= render :partial => "/shared/cabecera_tabla_gestion",
+    :locals =>{ :n_columns=>8,:title=>t('docprop'), :columns=>[t('doces'), t('enlace'),t('docfr'), t('enlace')]} %>
+    <%= render :partial => "documentos/documento", :collection => @foro.documentos %>
+</table>
+<div class="opciones_generales">
+    <ul>
+        <%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('new')+' '+t('documento'), :path_volver=>new_documento_path(:id=>@foro,:tipo=>'foro')} %>
+    </ul>
+</div>
+
+
+
+
+<br/>
+<div class="opciones_generales">
+	<ul  >
+
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_foro_path(@foro)} %>         
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>foros_path(:id=>@foro.sitio)} %>   
+</ul>
+</div>
+</div>
