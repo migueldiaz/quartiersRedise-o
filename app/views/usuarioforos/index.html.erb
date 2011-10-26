@@ -11,7 +11,7 @@
     <td><%= usuario.nombre %></td>
     <td><%= usuario.email %></td>
     <td><%= t(usuario.idioma) %></td>
-    <td><%= usuario.equipo_id %></td>
+    <td> <%if !usuario.equipo.nil?%><%= usuario.equipo.nombre %><%end%></td>
      <% if params[:tipo]=='traductor'%> 
     <td><%= t(usuario.traduceA) %></td>
     <%end%>

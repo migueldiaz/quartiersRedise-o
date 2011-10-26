@@ -4,7 +4,7 @@ class Equipo < ActiveRecord::Base
   belongs_to :jeunes
   belongs_to :femmes
   has_one :sitio #, :dependent => :destroy
-  
+  has_many :usuarioforos
 #  searchable do
 #   		text :nombre
 #   		text :descripcionEs
