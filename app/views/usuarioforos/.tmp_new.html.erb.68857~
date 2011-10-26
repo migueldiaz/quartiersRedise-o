@@ -1,4 +1,2 @@
-<div class="detalle_gestion">
 <h1>Registro de acceso a los foros</h1>
 <%= render 'usuarioforos/form'%>
-</div>

@@ -1,3 +1,4 @@
+<div class="detalle_gestion">
 <h1><%=t('show')+' '+t('usuario')%> </h1>
 <p id="notice"><%= notice %></p>
 
@@ -14,11 +15,20 @@
  <b><%=t('idioma')%></b>
   <%= t(@usuarioforo.idioma) %>
 </p>
+<div class="opciones_generales">
+	<ul  >
+		    
+
+
 <% if usuarioforologado==@usuarioforo ||params[:vista]%> 
-<%= link_to t('edit'), edit_usuarioforo_path(@usuarioforo) %> 
+<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_usuarioforo_path(@usuarioforo)} %>     
 <%else%>
-<%=link_to t('back'),usuarioforos_path(:tipo=>session[:tipo_foro])%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarioforos_path(:tipo=>session[:tipo_foro])} %>   
+
 
 <%end%> 
+	</ul>
+</div>
 
 
+</div>

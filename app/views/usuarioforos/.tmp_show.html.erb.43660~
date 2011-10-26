@@ -1,0 +1,24 @@
+<h1><%=t('show')+' '+t('usuario')%> </h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t('name')%></b>
+  <%= @usuarioforo.nombre %>
+</p>
+
+<p>
+  <b><%=t('email')%></b>
+  <%= @usuarioforo.email %>
+</p>
+<p>
+ <b><%=t('idioma')%></b>
+  <%= t(@usuarioforo.idioma) %>
+</p>
+<% if usuarioforologado==@usuarioforo ||params[:vista]%> 
+<%= link_to t('edit'), edit_usuarioforo_path(@usuarioforo) %> 
+<%else%>
+<%=link_to t('back'),usuarioforos_path(:tipo=>session[:tipo_foro])%>
+
+<%end%> 
+
+

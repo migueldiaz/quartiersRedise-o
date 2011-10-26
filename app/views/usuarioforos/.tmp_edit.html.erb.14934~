@@ -1,0 +1,7 @@
+<h1><%=t('edit')+' '+t('usuario')%></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('show'), @usuarioforo %> 
+
+
