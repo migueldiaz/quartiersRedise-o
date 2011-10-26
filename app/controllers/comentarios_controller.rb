@@ -1,7 +1,7 @@
 class ComentariosController < ApplicationController
   #layout :another_by_method
   layout :segun_proyecto
-  before_filter :require_usuarioforo
+  before_filter :autentifica
   
 #  def another_by_method
 #    if !params[:vista]
@@ -10,8 +10,14 @@ class ComentariosController < ApplicationController
 #      "juan_jeunes"
 #    end
 #  end
+def autentifica
+  if(session[:usuario_id]==nil)
+  require_usuarioforo
+  end
+end
 
   def segun_proyecto
+    
     if params[:vista]
      'mono'
     else
@@ -20,7 +26,6 @@ class ComentariosController < ApplicationController
       end
       
       if params[:tipo] ||!@comentario.foro.sitio.jeunes.nil? 
-       
        'juan_jeunes'
       else
        'juan_femmes'
@@ -28,7 +33,6 @@ class ComentariosController < ApplicationController
     end
  end
   def index
-    
     if params[:modo]=='sinrevisar'
     	if current_user.traduceA=='es'   
     		@comentarios=Comentario.find(:all, :conditions => "revisado = false")
