@@ -32,7 +32,7 @@
 	<%= f.hidden_field :revisado,:value=>false %>
   <%end%>
   <div class="actions">
-    <%= f.submit(t('save')) %>
-  </div>
+    <%= f.submit(t('save'), :class=>"button") %>
+	  </div>
 <%= f.hidden_field  :tipo, :value=>params[:tipo]%>
 <% end %>

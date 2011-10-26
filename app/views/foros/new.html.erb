@@ -1,5 +1,12 @@
+<div class="detalle_gestion">
 <h1><%=t('new')+' '+t('foro')%></h1>
 <br/>
 <%= render 'form' %>
+<div class="opciones_generales">
+	<ul  >
 
-<%= link_to t('back'),url_for(:back)  %>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>url_for(:back)} %>   
+</ul>
+</div>
+
+</div>

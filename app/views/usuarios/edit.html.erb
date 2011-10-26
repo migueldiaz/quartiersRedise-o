@@ -1,12 +1,19 @@
+<div class="detalle_gestion">
 <h1><%=t('edit')+' '+t('usuario')%></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @usuario %> |
-
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('Show'), :path_volver=> @usuario} %>         
 <% if @usuario.tipo!='traductor'%> 
-<%= link_to t('back'), usuarios_path(:id=>@usuario.sitio) %>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarios_path(:id=>@usuario.sitio)} %>   
 <%else%>
-<%= link_to t('back'), usuarios_path(:tipo=>'traductor') %>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarios_path(:tipo=>'traductor')} %>   
+
 <%end%>
 
+	</ul>
+</div>
+
+
+</div>

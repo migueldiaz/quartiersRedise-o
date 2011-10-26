@@ -1,0 +1,13 @@
+<h1><%=t('documentos')%></h1>
+<table>
+<tr>
+<th><%=t('nombreEs')%></th>
+<th><%=t('nombreFr')%></th>
+<th><%=t('enlace')%></th>
+<th></th>
+<th></th>
+</tr>
+<%= render :partial => "documentos/documentotabla", :collection => @documentos %>
+</table>
+<br/>
+<%= link_to t('traductor'),traductor_url %>

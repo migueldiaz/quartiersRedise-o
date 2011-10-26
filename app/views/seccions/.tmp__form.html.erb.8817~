@@ -1,0 +1,38 @@
+<%# coding: utf-8 %>
+<%= form_for(@seccion) do |f| %>
+  <% if @seccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@seccion.errors.count, "error") %> prohibited this seccion from being saved:</h2>
+
+      <ul>
+      <% @seccion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t :tituloes %><br />
+    <%= f.text_field :tituloes %>
+  </div>
+  <div class="field">
+    <%= f.label t :titulofr %><br />
+    <%= f.text_field :titulofr %>
+  </div>
+    <%if current_user.tipo=='traductor'%>
+	 <div class="field">
+		<%= f.label t :revisado %>
+		<%= f.check_box :revisado%>
+		<%= f.label t :revisadofr %>	
+		<%= f.check_box :revisadofr %>
+	  </div>
+   <%else%>
+	<%= f.hidden_field :revisadofr,:value=>false %>
+	<%= f.hidden_field :revisado,:value=>false %>
+  <%end%>
+  <div class="actions">
+    <%= f.submit(t('save')) %>
+  </div>
+<%= f.hidden_field  :tipo, :value=>params[:tipo]%>
+<% end %>

@@ -1,0 +1,20 @@
+  <p>
+    <b><%=t('textoes')%></b>
+    <%= simple_format(parrafo.textoes) %>
+  </p>
+ 
+   <p>
+    <b><%=t('textofr')%></b>
+    <%= simple_format(parrafo.textofr) %>
+  </p>
+ <p> 
+ <% if parrafo.imagen_url.to_s != "" %>
+<%= image_tag parrafo.imagen_url.to_s %>
+<% end %>
+</p>
+<td><%= link_to t('show'), parrafo_path(parrafo)%></td>
+<td><%= link_to t('editar'), edit_parrafo_path(parrafo)%></td>
+<%= link_to t('destroy'), [parrafo.pagina, parrafo], :confirm => t('confirm'),  :method => :delete %>
+
+
+

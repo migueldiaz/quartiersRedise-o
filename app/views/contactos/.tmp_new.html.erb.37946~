@@ -1,0 +1,16 @@
+<div class="detalle_gestion">
+<h1><%= t('new')+' '+t('parrafo')%></h1>
+<br/>
+<%= render 'form' %>
+<div class="opciones_generales">
+	<ul  >
+<%if current_user.tipo=='traductor'%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>contactos_path(:modo=>'sintrad')} %>   
+<%else%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>contactos_path(@contacto.sitio)} %>   
+<%end%>
+
+</ul>
+</div>
+
+</div>

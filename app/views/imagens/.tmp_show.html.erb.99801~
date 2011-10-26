@@ -1,0 +1,38 @@
+<div class="detalle_gestion">
+ <h1><%= t('show')+' '+t('imagen')%></h1>
+ 
+  <p> 
+  <% if @imagen.imagen_url.to_s != "" %>
+  <%= image_tag @imagen.imagen_url.to_s,:size=>'150x120' %>
+  <% end %>
+ </p>
+ <p>
+ 
+  <%if @imagen.imagenmini_url.to_s!=""%>
+   <%= image_tag @imagen.imagenmini_url.to_s,:size=>'100x80' %>
+  <%end%>
+ </p>
+ <p>
+    <b><%=t('piefoto')%></b>
+    <%= @imagen.piefoto %>
+ </p>
+
+   <p>
+     <b><%=t('piefotofr')%></b>
+    <%=@imagen.piefotofr %>
+  </p>
+ 
+ 
+
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_imagen_path(@imagen)} %>         
+
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>pagina_path(:id=> @imagen.pagina)} %>   
+	</ul>
+</div>
+
+
+
+</div>

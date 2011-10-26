@@ -1,0 +1,38 @@
+<div class="detalle_gestion">
+<h1><%=t('show')+' '+t('comentario')%></h1>
+<p id="notice"><%= notice %></p>
+<% if spanish && !params[:gestion] %>
+<p>
+  <b><%=t('tituloes')%></b>
+  <%= @comentario.tituloes %>
+</p><p>
+  <b><%=t('textoes')%></b>
+  <%= simple_format(@comentario.textoes) %>
+</p>
+<%elsif !spanish && !params[:gestion]%>
+<p>
+ <b><%=t('titulofr')%></b>
+  <%= @comentario.titulofr %>
+</p><p>
+  <b><%=t('textofr')%></b>
+  <%= @comentario.textofr %>
+</p>
+<%end%>
+
+
+<%if params[:gestion] && !current_user.tipo=='traductor' ||params[:vista]%>
+	<%= link_to t('edit'), edit_comentario_path(@comentario,:vista=>'gestion') %> |
+	<%= link_to t('back'), comentarios_path(:id=>@comentario.foro,:vista=>'gestion') %>
+<%elsif current_user.tipo=='traductor' %>
+<%= link_to t('edit'), edit_comentario_path(@comentario,:vista=>'gestion') %> |
+	<%= link_to t('back'), comentarios_path(:modo=>'sintrad',:vista=>'gestion') %>
+
+<%else%>
+   <%= link_to t('responder') ,new_comentario_path(:id=>@comentario.foro,:responde=>@comentario) %>
+	   <% if !@comentario.foro.sitio.femmes.nil?%> 
+			   <%= link_to t('back'), femmes_foro_path(:id=>@comentario.foro) %>
+	   <% else %> 
+		     <%= link_to t('back'), jeunes_foro_path(:id=>@comentario.foro) %>
+		<%end%>     
+<%end%>
+</div>
