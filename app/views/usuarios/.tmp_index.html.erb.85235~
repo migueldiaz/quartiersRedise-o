@@ -1,0 +1,50 @@
+<%
+ if !params[:id].nil?
+path_volver=sitio_path(@sitio)
+path_new=new_usuario_path(:id=>@sitio)
+elsif params[:tipo]=='traductor'
+path_volver=admin_path()
+path_new=new_usuario_path(:tipo=>'traductor')
+elsif params[:tipo]=='admin'
+path_volver=admin_path()
+path_new=new_usuario_path(:tipo=>'admin')
+end
+if params[:tipo]=='traductor'
+n_columnas=7
+columns=[t('nombre'), t('email'),t('idioma'),t('traduceA'), "detalle", "editar", "borrar"]
+else
+n_columnas=6
+columns=[t('nombre'), t('email'),t('idioma'), "detalle", "editar", "borrar"]
+end
+%>
+ <table class="listado_registros">
+ 	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>n_columnas,:title=>t('usuarios'), 
+		:columns=>columns} %>
+<% @usuarios.each do |usuario| %>
+  <tr>
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.email %></td>
+    <td><%= t(usuario.idioma) %></td>
+     <% if params[:tipo]=='traductor'%> 
+    <td><%= t(usuario.traduceA) %></td>
+    <%end%>
+    <td><%= link_to t('show'), usuario %></td>
+    <td><%= link_to t('edit'), edit_usuario_path(usuario) %></td>
+    <td><%= link_to t('destroy'), usuario, :confirm => t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>path_volver} %>         
+		<%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=>t('new')+' '+t('usuario'), :path_volver=>path_new} %>         
+	</ul>
+</div>
+
