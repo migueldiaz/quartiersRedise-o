@@ -53,7 +53,7 @@ end
 
 <%end%>
 
-<% content_for :menu_izq do%>
+
 
  <% if (!@pagina.documentos.empty?) then %>
 <div class="documentacion">
@@ -71,6 +71,7 @@ end
 
 <% end %>
 
+<% content_for :menu_izq do%>
 
   <% if (!@pagina.paginas.empty?) then %>
 <div class="subpaginas">

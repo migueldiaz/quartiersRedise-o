@@ -1,9 +1,9 @@
 <html>
-	<%=render :file => "/layouts/_head.html.erb", :locals => {
-:google_fonts=>"http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700",
-:less=>"colors.less"
-
+		<%=render :file => "/layouts/_head.html.erb", :locals => {
+:google_fonts=>"http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Gloria+Hallelujah|Cabin+Sketch:700|Sue+Ellen+Francisco|Nunito:400|Walter+Turncoat",
+:less=>"colors_jeunes.less"
 } %>
+
     <body>
 	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
 		<p>&nbsp;</p>
@@ -12,36 +12,31 @@
         <div class="container ">
             <div class="span-24 append-bottom" >
 
-                <div class="span-18 " >
-                <hr class="space">
+                <div class="span-24 " >
+                <h1 style="line-height:0.6"><%=t('qdm') %></h1>
+                <h2 style="color:white;"><%=t('qdmsubtitle')%></h2>
 				<%=render  "/shared/menu_idioma"%>
-	    <hr class="space">
-		<hr class="space">
-		<hr class="space">
-		<hr class="space">
-		<hr class="space">
-		<hr class="space">
+
 <div class="menu_superior " >
 
 <%=render "/layouts/menu" %>
 
 </div>
                 </div>
-                <div class="span-5 append-1 last " style="text-align:right;" >
+                <!-- div class="span-5 append-1 last " style="text-align:right;" >
                     <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
-                </div>
+                </div -->
                 
             </div>
 		 <div class="span-24">
 		<hr class="space"/>
 		</div>
             <div class="span-24">
- <div class="<%= content_for?(:menu_izq) ? 'span-4 contenido_central' : 'span-1' %> ">
+ <div class="<%= content_for?(:menu_izq) ? 'span-3 contenido_central' : 'span-1' %> ">
  	<%=yield :menu_izq%>
 	</div>
 
-                <div class="<%= !content_for?(:menu_izq) ? 'span-17' : 'span-17' %> last contenido_central ">
-
+                <div class="<%= !content_for?(:menu_izq) ? 'span-18' : 'span-18' %> last contenido_central ">
                     <%= yield %>
 
                     
