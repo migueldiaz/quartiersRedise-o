@@ -1,7 +1,19 @@
+  <%
+  idecito=0
+idiomita="es"
+  if @comentario.usuarioforo!=nil
+idecito=@comentario.usuarioforo.id
+idiomita=@comentario.usuarioforo.idioma
+	else
+idecito=usuarioforologado.id
+idiomita=usuarioforologado.idioma
+end
+  %>
+
 <div class="detalle_gestion">
 <h1><%=t('show')+' '+t('comentario')%></h1>
 <p id="notice"><%= notice %></p>
-<% if spanish && !params[:gestion] %>
+<% if idiomita=='es' && !params[:gestion] %>
 <p>
   <b><%=t('tituloes')%></b>
   <%= @comentario.tituloes %>
@@ -9,7 +21,7 @@
   <b><%=t('textoes')%></b>
   <%= simple_format(@comentario.textoes) %>
 </p>
-<%elsif !spanish && !params[:gestion]%>
+<%elsif idiomita=='fr' && !params[:gestion]%>
 <p>
  <b><%=t('titulofr')%></b>
   <%= @comentario.titulofr %>

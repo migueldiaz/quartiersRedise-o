@@ -16,6 +16,7 @@ class SesionforosController < ApplicationController
   usuarioforo=Usuarioforo.authenticate(params[:email],params[:password])
    if usuarioforo
        session[:usuarioforo_id]=usuarioforo.id
+       session[:usuarioforo_nombre]=usuarioforo.email
        I18n.locale=usuarioforo.idioma
        if !usuarioforo.jeunes.nil?
 

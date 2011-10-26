@@ -12,37 +12,44 @@
   <% end %>
   <%
   idecito=0
+idiomita="es"
   if @comentario.usuarioforo!=nil
 idecito=@comentario.usuarioforo.id
+idiomita=@comentario.usuarioforo.idioma
 	else
 idecito=usuarioforologado.id
+idiomita=usuarioforologado.idioma
+
 end
   %>
   <%= f.hidden_field :usuarioforo_id,:value=>idecito %>
   <%= f.hidden_field :foro_id %>
   <%= f.hidden_field :comentario_id,:value=>params[:responde] %>
   
- <%  if !current_user.nil? and current_user.tipo=='admin' && !params[:tipo] &&!params[:responde] %>
+ <!--
+   if !current_user.nil? and current_user.tipo=='admin' && !params[:tipo] &&!params[:responde]
   
-  <% end %>
    <div class="field">
     <b>Ejemplo de fecha:</b>2011-08-26 19:15:03 --- 02/05/2011 15:14</br>
-    <br/>
-    <%= f.label t :created_at %><br />
-    <%= f.text_field :created_at%>
+    <br/>descomentar codigo
+    f.label t :created_at_admin <br /> 
+     f.text_field :created_at_admin
   </div>
+  end  -->
   
-  
-   <div class="field">
+  <% if idiomita=='es' || (!current_user.nil? && current_user.tipo=='admin') %>
+     <div class="field">
     <%= f.label t :tituloes %><br />
     <%= f.text_field :tituloes%>
   </div>
-
   <div class="field">
     <%= f.label t :textoes %><br />
     <%= f.text_area :textoes,:size=>'40x10' %>
   </div>
- 
+  <%end%>
+
+   <% if idiomita=='fr' || (!current_user.nil? && current_user.tipo=='admin') %>
+
   <div class="field">
     <%= f.label t :titulofr %><br />
     <%= f.text_field :titulofr%>
@@ -52,6 +59,8 @@ end
     <%= f.label t :textofr %><br />
     <%= f.text_area :textofr ,:size=>'40x10'%>
   </div>
+
+  <%end%>
   <%if !current_user.nil? and current_user.tipo=='traductor'%>
    <div class="field">
     <%= f.label t :revisado %><br />
