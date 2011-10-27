@@ -26,13 +26,14 @@ class AvisoMailer < ActionMailer::Base
 
  
   def aviso_foro(usuario,comentario)
+      I18n.locale = usuario.idioma
       @comentario=comentario
       @foro=comentario.foro;
       @email=usuario.email
       @usuario=usuario
       @idioma=usuario.idioma
-      
-      mail(:to => usuario.email, :subject => "Nueva actividad en "+@foro.tituloes)
+   
+      mail(:to => usuario.email, :subject =>t('foro')+@foro.tituloes)
   end
   
  

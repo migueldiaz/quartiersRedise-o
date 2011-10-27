@@ -5,8 +5,13 @@
   <p><b><%=t('infoEs')%></b>
   <%= simple_format(@contacto.infoEs) %></p>
   <p><b><%=t('infoFr')%></b><%= simple_format(@contacto.infoFr) %></p>
- 
-   </br>
+   <p><%= simple_format(@contacto.infoFr) %></p>
+   <p><b><%=t('descripciones')%></b>
+  <%= simple_format(@contacto.descripciones) %></p>
+  <p><b><%=t('descripcionfr')%></b><%= simple_format(@contacto.descripcionfr) %></p>
+   <p><%= simple_format(@contacto.descripcionfr) %></p>
+  
+  </br>
 <div class="opciones_generales">
 	<ul  >
 		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_contacto_path(@contacto)} %>         

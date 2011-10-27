@@ -22,7 +22,7 @@ class ClavesController < ApplicationController
    				redirect_to registroforo_path(:tipo=>'femmes')
  			else
   			redirect_to femmes_acceso_path
-  			end	
+  		end	
 		end
 	end#######
 

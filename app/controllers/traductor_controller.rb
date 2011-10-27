@@ -51,10 +51,10 @@ class TraductorController < ApplicationController
 	#Idioma Contactos
 	@contactos=Contacto.all
 	if current_user.traduceA=='es'   
-		@contactosSinTraducir = Contacto.find(:all, :conditions => "infoEs = ''" )
+		@contactosSinTraducir = Contacto.find(:all, :conditions => "infoEs = '' || descripciones=''" )
 		@contactosSinRevisar = Contacto.find(:all, :conditions => "revisado = false")
 	else
-	    @contactosSinTraducir = Contacto.find(:all, :conditions => "infoFr=''")
+	    @contactosSinTraducir = Contacto.find(:all, :conditions => "infoFr='' || descripcionfr=''")
 		@contactosSinRevisar = Contacto.find(:all, :conditions => "revisadofr = false")
 	end
 	    

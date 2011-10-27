@@ -120,10 +120,6 @@ end
     @foro=@comentario.foro
     @sitio=@foro.sitio
     
-   
-    
-  
-     
      respond_to do |format| 
       if @comentario.save && !@sitio.jeunes.nil?
       	 format.html { redirect_to(jeunes_foro_path(:id=>@foro), :notice => t('exito')) }
