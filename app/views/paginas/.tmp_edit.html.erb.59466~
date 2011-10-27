@@ -1,4 +1,0 @@
-<h1><%=t('edit')+' '+t('pagina') %></h1>
-<br/>
-<%= render 'form' %>
-

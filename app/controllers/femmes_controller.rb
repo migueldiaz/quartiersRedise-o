@@ -94,7 +94,7 @@ def agenda
     	
     	@femmes=Femmes.first
   		@sitio=@femmes.sitio
-     	@eventos=@sitio.eventos
+       @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC')  
      	
 end	
 def contacto

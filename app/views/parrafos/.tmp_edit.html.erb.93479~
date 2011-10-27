@@ -1,3 +1,0 @@
-<h1><%=t('edit')+' '+t('parrafo')%> </h1>
-</br>
-<%= render 'parrafos/form' %>

@@ -123,8 +123,9 @@ end
     	@web=Web.first
   		@asociacion=@web.asociacion
   		@sitio=@asociacion.sitio
-     	@eventos=@sitio.eventos
-     	
+
+       @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC')  
+
      end	
     def contacto
     	@web=Web.first

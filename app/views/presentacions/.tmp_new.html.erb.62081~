@@ -1,5 +1,0 @@
-<h1><%=t('new')+' '+t('presentacion')%></h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', paginas_path %>

@@ -1,7 +1,0 @@
-<div class="detalle_gestion">
-<h1><%=t('new')+' '+t('documento')%></h1>
-<br/>
-<%= render 'form' %>
-</div>
-
-
