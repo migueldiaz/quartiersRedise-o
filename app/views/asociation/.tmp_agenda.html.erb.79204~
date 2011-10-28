@@ -1,1 +1,0 @@
-<%=render(:file => "/shared/agenda.html.erb", :locals => {:pathito=>"equipe"})  %>

@@ -14,7 +14,7 @@
    <%= password_field_tag :password%></p>
  </div>
   <div class="actions">
-   <p class='button'><%=submit_tag(t('save'), :class=>"boton") %></p>
+   <p class='button'><%=submit_tag(t('save')) %></p>
  </div>
  <%end%>
 
