@@ -4,14 +4,7 @@
 :less=>"colors_jeunes.less"
 } %>
 
-
     <body>
-		<!--Loading display while images load-->
-<div id="loading">&nbsp;</div>
-<!--Slides-->
-<div id="supersized"></div>
-
-
 	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
 		<p>&nbsp;</p>
 	</div>
@@ -39,16 +32,14 @@
 		<hr class="space"/>
 		</div>
             <div class="span-24">
- <div class="<%= content_for?(:menu_izq) ? 'span-4 contenido_central' : 'span-1' %> ">
+ <div class="<%= content_for?(:menu_izq) ? 'span-3 contenido_central' : 'span-1' %> ">
  	<%=yield :menu_izq%>
 	</div>
 
-                <div class="<%= !content_for?(:menu_izq) ? 'span-17' : 'span-17' %> last contenido_central ">
+                <div class="<%= !content_for?(:menu_izq) ? 'span-18' : 'span-18' %> last contenido_central ">
+                    <%= yield %>
 
-
-
-
-                 <%= yield %>
+                    
                 </div>
                 </div>
                 <div class="span-24 append-bottom">
@@ -65,6 +56,5 @@
                 </div>
             </div>
         </div>
-
     </body>
 </html>
