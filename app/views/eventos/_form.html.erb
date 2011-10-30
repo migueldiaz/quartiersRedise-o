@@ -24,6 +24,14 @@
     <%= f.label t(:tituloFr) %><br />
     <%= f.text_field :tituloFr %>
   </div>
+  <div class="field">
+    <%= f.label t :descripciones %><br />
+    <%= f.text_area :descripciones,:size=>'55x10' %>
+  </div>
+  <div class="field">  
+    <%= f.label t :descripcionfr%><br />
+    <%= f.text_area :descripcionfr,:size=>'55x10' %>
+   </div>
  
    <div class="field">
         <label><%=t('imagen')%></label>

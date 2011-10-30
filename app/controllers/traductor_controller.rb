@@ -82,10 +82,10 @@ class TraductorController < ApplicationController
 	#Idioma Eventos
 	@eventos=Evento.all
 	if current_user.traduceA=='es'   
-		@eventosSinTraducir = Evento.find(:all, :conditions => "tituloEs = ''" )
+		@eventosSinTraducir = Evento.find(:all, :conditions => "tituloEs = '' || descripciones=''"  )
 		@eventosSinRevisar = Evento.find(:all, :conditions => "revisado = false")
 	else
-		@eventosSinTraducir = Evento.find(:all, :conditions => "tituloFr=''")
+		@eventosSinTraducir = Evento.find(:all, :conditions => "tituloFr=''  || descripciones=''")
 		@eventosSinRevisar = Evento.find(:all, :conditions => "revisadofr = false")
 	end
 	   
