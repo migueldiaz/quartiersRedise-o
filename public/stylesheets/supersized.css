@@ -18,7 +18,7 @@ Website: www.buildinternet.com/project/supersized
         border:none;
     }
     body {
-        overflow:hidden;/*Needed to eliminate scrollbars*/
+       /* overflow:hidden;Needed to eliminate scrollbars*/
         background:#000;
     }
     /*Area to place content normally*/
