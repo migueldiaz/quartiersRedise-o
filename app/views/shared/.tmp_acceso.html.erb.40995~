@@ -1,7 +1,0 @@
-<h1>Acceso foros</h1>
-<p id="notice"><%= notice %></p>
-
- 	
-<h2>Usuario registrado</h2>
-<%= render 'sesionforos/new'%>
-
