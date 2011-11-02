@@ -50,14 +50,12 @@ jQuery(function($){
  <script type="text/javascript">
  $(document).ready(function() {
 
-    $(".miniatura").load(function() {
-		    if($(this).width()>200){ 
-		    	$(this).width(200);
-		    }
-		if($(this).height()>150){
-		   	  			$(this).height(150);
-			}
-		});
+    $(".miniatura").load(
+	function() {
+		    if($(this).width()>200){ $(this).width(200);}
+		if($(this).height()>150){$(this).height(150);}
+		}
+		);
 		
   $(".miniatura_socio").load(function() {
     if($(this).width()>200){ 
