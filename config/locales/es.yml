@@ -1,9 +1,11 @@
 
 es: 
+ usuariosforos: 'Usuarios de los foros'
+ emailenuso: 'Ya existe un usuario con ese email'
  protagonistas: 'Protagonistas'
  vision: 'Visión'
  enfoque: 'Enfoque'
- enviook : 'Su mensaje se envio correctamente'
+ enviook: 'Su mensaje se envio correctamente'
  enviobad: 'Hay campos por rellenar en el formulario'
  home: 'Home'
  close: 'Cerrar'
