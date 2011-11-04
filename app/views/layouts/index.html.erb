@@ -32,6 +32,7 @@ less="colors_index.less"
 
 </head>
  <body>
+
 	<img id="wallpaper" src="slideshow_files/background.jpg">
 		<div id="content">
 		
@@ -55,6 +56,7 @@ less="colors_index.less"
 		
 		<div id="main-show">
 			<div style="position: absolute; z-index: 1; display: none; left: 0px; top: 0px; visibility: hidden; opacity: 0;" id="introduction" class="page">
+
 				<h1 id="title">Welcome/bienvenido</h1>
 				<div id="intro-show">
 				</div>
@@ -64,7 +66,12 @@ less="colors_index.less"
 				<ul id="navigation-show">
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa" style="margin:50px;">	
-									
+									 <% if browser.chrome? %>
+  <h1>ESTAS UTILIZANDO CHROME!!!</h1>
+<% end %>			
+									 <% if browser.firefox? %>
+  <h1>ESTAS UTILIZANDO firefox!!!</h1>
+<% end %>			
 
 									<!-- img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/ --></div>
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
