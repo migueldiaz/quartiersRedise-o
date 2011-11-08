@@ -1,18 +1,27 @@
 PFont fontA;
-int numeroForos;
 ArrayList comentarios;
 ArrayList comentariosRepresentados= new ArrayList();
 ArrayList equipos = new ArrayList();
 ArrayList equiposRepresentados = new ArrayList();
 float anchoComentario;
 ArrayList filas;
-toxi.color.TColor c1;
 int anchoMaximoComentario=0;
 float altoBanda;
+int framesPorComentario = 5;
+Log log=new Log();
+
+void reset(){
+	comentariosRepresentados= new ArrayList();
+	loop();
+}
+void parar(){
+	noLoop();
+}
 
 void setup(){
+	log.info("ahi vaaa");
 	fontA=loadFont("Courier New");
-	colorMode(HSB, 1);
+	colorMode(HSB, 100);
 	background(0);
 	size(800, 518);
 	smooth();
@@ -36,14 +45,13 @@ void setup(){
 	fill(0.10,0.80,0.70);
 	text("size equipos"+equipos.size(), 400,400);
 
-		c1 = toxi.color.TColor.newRGB(random(1),0,0);
+		c1 = toxi.color.TColor.newRGB(random(100),0,0);
 	altoBanda = height / equipos.size();
 	
 	
 }
- int framesPorComentario = 5;
 void draw(){
-	background(1);
+	background(100);
 	pushStyle();
 	noFill();
 	strokeWeight(1);
@@ -67,7 +75,7 @@ void draw(){
 		for(Rectangulo r:comentariosRepresentados){
 			//println(comentariosRepresentados.size());
 			Fila f=dameFila(r.comentario.usuario.equipo);
-			stroke(r.comentario.usuario.equipo.col, map(r.comentario.texto.length(), 30,anchoMaximoComentario, 0.30,0.50));
+			stroke(r.comentario.usuario.equipo.col, map(r.comentario.texto.length(), 30,anchoMaximoComentario, 30,50));
 //			noStroke();
 			float mapR = map(r.comentario.texto.length(), 30,anchoMaximoComentario, 10,60);
 			strokeWeight(mapR);

@@ -38,7 +38,7 @@ class Equipo {
 				mapeaValor(tColor.brightness()));
 	}
  	protected float mapeaValor(float ta) {
-		return ta;
+	return map(ta, 0, 1, 0, 100);
 	}
  
 }

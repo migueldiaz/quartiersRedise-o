@@ -30,9 +30,8 @@ less="colors_index.less"
 
 <script type="text/javascript">
 					function reseteaP5(id) {
-						Processing.getInstanceById(id).reset();
-						if(id=="foros")Processing.getInstanceById("foros_escale").parar();
-						if(id=="foros_escale")Processing.getInstanceById("foros").parar();
+						Processing.getInstanceById(id).reset();;
+						Processing.getInstanceById(id).reset();;
 						}
 </script>
 
@@ -71,12 +70,18 @@ less="colors_index.less"
 			<div style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="navigation-demo" class="page">
 				<ul id="navigation-show">
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
+									<div class="mapa" style="margin:50px;">	
+									 <% if browser.chrome? %>
+  <h1>ESTAS UTILIZANDO CHROME!!!</h1>
+<% end %>			
+									 <% if browser.firefox? %>
+  <h1>ESTAS UTILIZANDO firefox!!!</h1>
+<% end %>			
 
+									<!-- img src="imgs/PetersOutlineLargeMiniLineas.jpg" height="420px"/ --></div>
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
 	 <canvas id="foros" 
-data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>
-  
-									<!--
+data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>  
 									<div class="infodet">
 												
 
@@ -85,21 +90,19 @@ data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/c
 									 </div>
 
 						<h1>HOLA</h1>
-						-->
 </li>
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 					
 														<div class="info"><%=link_to t('asociacion'),asociation_presentacion_path, :title=>"title asociacion"  %> </div>
 <canvas id="foros_escale" 
 data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde  pde/servicio_toxi_color.pde pde/escala.pde pde/servicio_escala.pde pde/transicion_escala.pde pde/pintado_comentario.pde pde/movimiento.pde pde/mensaje.pde pde/log.pde"></canvas>  								
-<!--
 									<div class="discreta">
 										
 					Ficha de asociación QDM: pequeña descripción, últimas noticias y enlace a pagina de información detallada de asociación
 					<hr>
 					El acceso a la información detallada se presenta en otro diseño de página más acorde a una mayor cantidad de información
+
 	 </div>
--->
 
 					
 					</li>
@@ -119,14 +122,16 @@ data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pd
 																		<div class="infodet">
 									Se ofrece mapa interactivo donde se representa la actividad de los foros además de los encuentros y actividades internacionales.
 									En relación a información: partiendo de una pequeña descripción del proyecto de mujeres, se ofrece un listado de noticias relevantes del proyecto además del acceso a página de de talle <br>
-	<
+	
 									 </div>
 									
+				<canvas data-processing-sources="/pde/bezzier.pde"></canvas>  
 	</li>
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="limpia">
 					
 					
 
+<canvas data-processing-sources="/pde/arm.pde"></canvas>  
 
 
 								Información de contacto y enlaces para seguimiento en facebook, feed de videos (blip.tv, vimeo...) ...</li>
