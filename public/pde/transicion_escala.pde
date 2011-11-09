@@ -57,7 +57,7 @@ class TransicionEscala {
 		if (esTiempoDeCambioDeSecuencia) {
 			contadorMovimientos++;
 			loadMovimientoActual();
-			log.info("cambiando secuenciaaaaaaaaaaaaaaaaaaaaa");
+			log.debug("cambiando secuenciaaaaaaaaaaaaaaaaaaaaa");
 			contadorDeTransicionActual = 0;
 			contadorDeTransicionMovimiento=0;
 			determinaEscalasEnFuncionDeMovimiento();
@@ -106,17 +106,17 @@ class TransicionEscala {
 
 		if(movimientoActual.valor==overview){
 			escalaAnterior=new Escala(escalaSiguiente);
-			log.info("___________________overview");
+			log.debug("___________________overview");
 		}else if(movimientoActual.valor==zoom_in){
-			log.info("___________________ zoom_in");
+			log.debug("___________________ zoom_in");
 			escalaAnterior=new Escala(escalaSiguiente);
 			escalaSiguiente = servicioEscala.calculaEscala(true, width, height);
 		}else if(movimientoActual.valor==zoom){
-			log.info("___________________ zoom");
+			log.debug("___________________ zoom");
 			escalaAnterior=new Escala(escalaSiguiente);
 	
 		}else if(movimientoActual.valor==zoom_out){
-			log.info("___________________ zoom_out");
+			log.debug("___________________ zoom_out");
 			addSiguienteComentarioAListaRepresentacion();			
 			escalaSiguiente = servicioEscala.calculaEscala(false, width, height);
 		}else{
@@ -126,7 +126,7 @@ class TransicionEscala {
 
 	void addSiguienteComentarioAListaRepresentacion() {
 		ComentarioEscale comentarioActual = comentarios.get(comentariosRepresentados.size());
-		comentariosRepresentados.add(new PintadoComentario( comentarioActual, font));
+		comentariosRepresentados.add(new ComentarioEscalaMapa( comentarioActual, font));
 		EquipoEscale inE = comentarioActual.usuario.equipo;
 
 		boolean existeEquipo = equipos.contains(inE);

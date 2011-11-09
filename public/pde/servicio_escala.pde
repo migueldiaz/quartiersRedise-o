@@ -64,7 +64,7 @@ class ServicioEscala {
 	}
 
 	private EquipoEscale dameEquipoDeUltimoComent() {
-		return comentariosRepresentados.get(comentariosRepresentados.size() - 1).comentario.usuario.equipo;
+		return comentariosRepresentados.get(comentariosRepresentados.size() - 1).usuario.equipo;
 	}
 
 

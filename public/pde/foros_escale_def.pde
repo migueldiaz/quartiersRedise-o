@@ -9,14 +9,12 @@
 	Log log=new Log();
 	
 
-void reset(){
+public void parar(){
 	//comentariosRepresentados= new ArrayList();
-	//TODO
-	loop();
-}
-
-void parar(){
 	noLoop();
+}
+public void reset(){
+	loop();
 }
 
 void setup(){
@@ -48,10 +46,9 @@ void setup(){
 void draw(){
 	transicionEscala.escalayposiciona();
 		image(mapa, 0, 0);
-		
-		rect(100,100,100,100);
+	
 		for (int i = 0; i < comentariosRepresentados.size(); i++) {
-			PintadoComentario pintadoComentario = comentariosRepresentados.get(i);
+			ComentarioEscalaMapa pintadoComentario = comentariosRepresentados.get(i);
 
 			pintadoComentario.pinta( transicionEscala.getSumaTiempos(),transicionEscala.movs[0].timeFrames+(transicionEscala.movs[1].timeFrames/2));
 

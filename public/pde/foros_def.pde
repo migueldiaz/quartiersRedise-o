@@ -10,16 +10,16 @@ float altoBanda;
 int framesPorComentario = 5;
 Log log=new Log();
 
-void reset(){
+public void parar(){
+	noLoop();
+}
+public void reset(){
 	comentariosRepresentados= new ArrayList();
 	loop();
 }
-void parar(){
-	noLoop();
-}
 
 void setup(){
-	log.info("ahi vaaa");
+	log.debug("ahi vaaa");
 	fontA=loadFont("Courier New");
 	colorMode(HSB, 100);
 	background(0);
@@ -131,7 +131,7 @@ void draw(){
 			float posicion = (comentariosRepresentados.size()) * anchoComentario;
 			float posicionY = (idEquipo - 1) * altoBanda;
 
-			Rectangulo r = new Rectangulo( posicion, posicionY, anchoComentario, altoBanda, comentarioActual);
+			Rectangulo r = new Rectangulo( posicion, posicionY, anchoComentario, altoBanda, comentarioActual,framesPorComentario);
 
 			comentariosRepresentados.add(r);
 			rectanguloActual=r;

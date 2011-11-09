@@ -29,20 +29,11 @@ less="colors_index.less"
 	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8" >	 -->
 
 <script type="text/javascript">
-	var mycars=["foros","foros_escale", "foros_bandas"];
-					function reseteaP5(id){
+					function reseteaP5(id) {
 						Processing.getInstanceById(id).reset();
-						for (var i = 0; i < mycars.length; i++) {
-							var carIn = mycars[i];
-								//alert("examinando"+carIn+"dddd"+id);								
-							if (carIn != id) {
-								//alert("parando"+carIn);								
-								Processing.getInstanceById(carIn).parar();
-							}
-							
+						if(id=="foros")Processing.getInstanceById("foros_escale").parar();
+						if(id=="foros_escale")Processing.getInstanceById("foros").parar();
 						}
-					}
-					
 </script>
 
 </head>
@@ -100,7 +91,7 @@ data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/c
 					
 														<div class="info"><%=link_to t('asociacion'),asociation_presentacion_path, :title=>"title asociacion"  %> </div>
 <canvas id="foros_escale" 
-data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde  pde/servicio_toxi_color.pde pde/escala.pde pde/servicio_escala.pde pde/transicion_escala.pde pde/comentario_escala_mapa.pde pde/movimiento.pde pde/mensaje.pde pde/log.pde"></canvas>  								
+data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde  pde/servicio_toxi_color.pde pde/escala.pde pde/servicio_escala.pde pde/transicion_escala.pde pde/pintado_comentario.pde pde/movimiento.pde pde/mensaje.pde pde/log.pde"></canvas>  								
 <!--
 									<div class="discreta">
 										
@@ -113,10 +104,14 @@ data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pd
 					
 					</li>
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
+									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniCirculos.jpg" height="420px"/></div>
 									<div class="info"> <%=link_to 'Barrios del Mundo: Historias Urbanas',jeunes_presentacion_path  %></div>
-
-						<canvas id="foros_bandas" 
-data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/rectangulo_banda.pde pde/servicio_toxi_color.pde"></canvas>  			
+									<div class="infodet">
+									Se ofrece mapa interactivo donde se representa la actividad de los foros además de los encuentros y actividades internacionales.
+									En relación a información: partiendo de una pequeña descripción del proyecto de jovenes, se ofrece un listado de noticias relevantes del proyecto además del acceso a página de de talle <br>
+	
+									 </div>
+									
 					</li>
 					<li  style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniCuadrados.jpg" height="420px"/></div>
@@ -140,7 +135,7 @@ data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foro
 					<ul class="nav">
 					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;" onclick="reseteaP5('foros')">HOME</li>
 					<li onclick="reseteaP5('foros_escale')"><%=t('asociacion')%></li>
-					<li onclick="reseteaP5('foros_bandas')"><%=t('jeunes')%></li>
+					<li><%=t('jeunes')%></li>
 					<li><%=t('femmes')%></li>
 					<li><%=t('contacto')%></li>
 				</ul>

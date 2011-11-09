@@ -17,13 +17,9 @@ class Usuario {
 	public void pinta(){
 		rect(100,100,100,100);
 	}
+	
  	public void addComentario(ComentarioForo c) {
 		comentarios.add(c);
-		/*
-		 * if(equipo.spring!=null){
-		 * equipo.spring.setRestLength(equipo.spring.getRestLength()-50);
-		 * equipo.spring.setStrength(equipo.spring.getStrength()+random(1)); }
-		 */
 	}
  
 }
