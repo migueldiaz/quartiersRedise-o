@@ -5,7 +5,7 @@ layout 'mono'
 # GET /paginas/1.xml
  before_filter :require_login
  def index
- 
+   require_traductor
  
   if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
