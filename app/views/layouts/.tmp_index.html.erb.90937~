@@ -98,7 +98,7 @@ data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/c
 </li>
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 					
-														<div class="info"><%=t('asociacion')%>><%=link_to t('entrar'),asociation_presentacion_path, :title=>"title asociacion"  %> </div>
+														<div class="info"><%=link_to t('asociacion'),asociation_presentacion_path, :title=>"title asociacion"  %> </div>
 <canvas id="foros_escale" 
 data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde  pde/servicio_toxi_color.pde pde/escala.pde pde/servicio_escala.pde pde/transicion_escala.pde pde/comentario_escala_mapa.pde pde/movimiento.pde pde/mensaje.pde pde/log.pde"></canvas>  								
 <!--
@@ -113,14 +113,14 @@ data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pd
 					
 					</li>
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-									<div class="info"><%=t('jeunes')%>><%=link_to t('entrar') ,jeunes_presentacion_path  %></div>
+									<div class="info"> <%=link_to 'Barrios del Mundo: Historias Urbanas',jeunes_presentacion_path  %></div>
 
 						<canvas id="foros_bandas" 
 data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/rectangulo_banda.pde pde/servicio_toxi_color.pde"></canvas>  			
 					</li>
 					<li  style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 									<div class="mapa">	<img src="imgs/PetersOutlineLargeMiniCuadrados.jpg" height="420px"/></div>
-									<div class="info"><%=t('femmes')%>><%=link_to t('entrar'),femmes_presentacion_path  %>  </div>
+									<div class="info"><%=link_to 'Mujeres del Mundo : una red de protagonistas solidarias',femmes_presentacion_path  %>  </div>
 																		<div class="infodet">
 									Se ofrece mapa interactivo donde se representa la actividad de los foros además de los encuentros y actividades internacionales.
 									En relación a información: partiendo de una pequeña descripción del proyecto de mujeres, se ofrece un listado de noticias relevantes del proyecto además del acceso a página de de talle <br>

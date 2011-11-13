@@ -10,22 +10,24 @@ float altoBanda;
 int framesPorComentario = 75;
 Log log=new Log();
 	float anchoComentario;
-
-public void parar(){
+void parar(){
 	//comentariosRepresentados= new ArrayList();
 	noLoop();
 }
-public void reset(){
+void reset(){
 		log.info("try reset!");
+		 comentariosRepresentados= new ArrayList();
+ equipos = new ArrayList();
+ equiposRepresentados = new ArrayList();
+		
 	loop();
 }
-
 void setup(){
 	log.debug("ahi vaaa");
-	fontA=loadFont("Courier New");
+	fontA=loadFont("Courier");
 	colorMode(HSB, 100);
 	background(100);
-	size(800, 600);
+	size(800, 400);
 	smooth();
 	textFont(fontA, 36);  
 	
@@ -54,7 +56,7 @@ void draw(){
 		if (comprueba || (rectanguloActual != null && rectanguloActual.isPintando())) {
 		log.debug(rectanguloActual.comentario.titulo);
 			rectanguloActual.pinta();
-			pintaMensaje(color(100), rectanguloActual.comentario.titulo, 250, rectanguloActual.y+rectanguloActual.heighto/2, 20, LEFT);
+			pintaMensaje(color(0), rectanguloActual.comentario.titulo, 250, rectanguloActual.y+rectanguloActual.heighto/2, 20, LEFT);
 		}
 		pintaNombresEquipos();
 }
@@ -97,20 +99,23 @@ private void pintaReticulaEquipos() {
 		pushStyle();
 		for (Fila f:filas) {
 			EquipoEscale equipo = f.equipo;
-			noStroke();
 			fill(100);
+			int tam=12;
+			textSize(tam);
+			textFont(fontA);
+			noStroke();
 			rect(100-10, f.y+(f.height/2)-10, textWidth(equipo.nombre)+20, textAscent()+20);
-			pintaMensaje(equipo.col, equipo.nombre.toUpperCase(), 100, f.y+(f.height/2),  22, LEFT);
+			pintaMensaje(color(0), equipo.nombre.toUpperCase(), 100, f.y+(f.height/2),  tam, LEFT);
 			
 		}
 		popStyle();
 	}
 
 	 void pintaMensaje(int c, String mensaje, float x, float y,  int tam, int align) {
-		textFont(fontA);
+		textSize(tam);
+		textFont(fontA, tam);
 		fill(0);
 		noStroke();
-		textSize(tam);
 		textAlign(align);
 		// g.rect(x, y, textWidth(mensaje), textAscent());
 		fill(c);

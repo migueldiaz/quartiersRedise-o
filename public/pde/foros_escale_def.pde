@@ -24,7 +24,9 @@ void setup(){
 	
 	colorMode(HSB, 100);
 	background(0);
-	size(mapa.width, mapa.height);
+		//size(mapa.width, mapa.height);
+	
+	size(mapa.width*(400/mapa.height), 400);
 	smooth();
 	
 	loadEquipos();	
@@ -45,7 +47,7 @@ void setup(){
 }
 void draw(){
 	transicionEscala.escalayposiciona();
-		image(mapa, 0, 0);
+		image(mapa, 0, 0,width,height);
 	
 		for (int i = 0; i < comentariosRepresentados.size(); i++) {
 			ComentarioEscalaMapa pintadoComentario = comentariosRepresentados.get(i);

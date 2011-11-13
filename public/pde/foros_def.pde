@@ -9,26 +9,27 @@ int anchoMaximoComentario=0;
 float altoBanda;
 int framesPorComentario = 5;
 Log log=new Log();
+int altoCuadro=30;
 
-public void parar(){
+void parar(){
 	noLoop();
 }
-public void reset(){
-	comentariosRepresentados= new ArrayList();
+void reset(){
+		comentariosRepresentados= new ArrayList();
+	
 	loop();
 }
 
 void setup(){
 	log.debug("ahi vaaa");
-	fontA=loadFont("Courier New");
+	fontA=loadFont("Courier");
 	colorMode(HSB, 100);
 	background(0);
-	size(800, 518);
+	size(800, 400);
 	smooth();
-	textFont(fontA, 36);  
+	textFont(fontA, 50);  
 	
 	loadEquipos();	
-	//println("equipos size::: "+equipos.size());
 	ServicioLoadForosXML servicioLoadForos=new ServicioLoadForosXML();
 	comentarios=servicioLoadForos.loadComentarios(equipos);
 	int numeroComentarios = comentarios.size();
@@ -62,9 +63,18 @@ void draw(){
 		boolean comprueba = compruebaTiempoDeAparicionComentario(framesPorComentario);
 		pintaComentarios(false);
 		pintaComentarios(true);
+	if(comentariosRepresentados.size()>0 && comentariosRepresentados.size()!=comentarios.size()){
+		ComentarioForo lastComentario=comentariosRepresentados.get(comentariosRepresentados.size()-1).comentario;
+		fill(color(0),40);
+		textSize(30);
+		textFont(fontA, 30);
+		rect(0, height/2-25, width,textAscent()+25);
+		pintaMensaje(color(100),lastComentario.titulo, width/2, height/2-textAscent()/2, 30, CENTER);
 	
+	}
 	pintaNombresEquipos();
 }
+
 
 	private void pintaComentarios(boolean linea) {
 		int contadorLineas=1;
@@ -72,31 +82,38 @@ void draw(){
 		strokeCap(SQUARE);
 
 		int posicionX=200;
+			float anchoCuadro=width/filas.size();
 		for(Rectangulo r:comentariosRepresentados){
 			//println(comentariosRepresentados.size());
 			Fila f=dameFila(r.comentario.usuario.equipo);
-			stroke(r.comentario.usuario.equipo.col, map(r.comentario.texto.length(), 30,anchoMaximoComentario, 30,50));
+			float transparenciaLinea=100;
+			if(!f.ratonOn)
+			transparenciaLinea= map(r.comentario.texto.length(), 30,anchoMaximoComentario, 30,50);
+			else
+			transparenciaLinea=100;			
+			stroke(r.comentario.usuario.equipo.col,transparenciaLinea);
 //			noStroke();
 			float mapR = map(r.comentario.texto.length(), 30,anchoMaximoComentario, 10,60);
 			strokeWeight(mapR);
 			noFill();
 			int ancho = 0;
 			float puntoY=0;
-			int posYLineaTiempo = height-10;
-			if(r.y>posYLineaTiempo) puntoY=posYLineaTiempo+200;
+			int posYLineaTiempo = height;
+			if(r.y>posYLineaTiempo) puntoY=posYLineaTiempo+100;
 			else 
-				puntoY=posYLineaTiempo-200;
+				puntoY=posYLineaTiempo-100;
 			//while(ancho<r.width){
 			float fX = posicionX+mapR/2;
+			
 			if(!linea)
-				  bezier(f.x+textWidth(f.equipo.nombre)/2, 70, 
+				  bezier(f.x+anchoCuadro/2, 20, 
 						  fX-fX/2, puntoY, 
 						  fX, puntoY, 
 						  fX, posYLineaTiempo);
 					stroke(color(0), 100);
 					strokeWeight(1);
 					if(linea)
-						  bezier(f.x+textWidth(f.equipo.nombre)/2, 70, 
+						  bezier(f.x+anchoCuadro/2, 20, 
 							  fX-fX/2, puntoY, 
 							  fX, puntoY, 
 							  fX, posYLineaTiempo);
@@ -132,7 +149,6 @@ void draw(){
 			float posicionY = (idEquipo - 1) * altoBanda;
 
 			Rectangulo r = new Rectangulo( posicion, posicionY, anchoComentario, altoBanda, comentarioActual,framesPorComentario);
-
 			comentariosRepresentados.add(r);
 			rectanguloActual=r;
 			Equipo inE = comentarioActual.usuario.equipo;
@@ -146,8 +162,37 @@ void draw(){
 		}
 		return false;
 	}
+	 void pintaMensaje(int c, String mensaje, float x, float y, int tam, int align) {
+		noStroke();
+		textAlign(align);
+		fill(c);
+		text(mensaje, x, y + textAscent());
+	}
 
+void mouseMoved() {
+	if(mouseY<=altoCuadro){
+		for (Fila f:filas) {
+			if(mouseX>=f.x && mouseX<=f.x+(width/filas.size())){
+				log.debug("estoy en alto de: "+f.equipo.nombre);
+				f.ratonOn=true;
+			}else{
+				f.ratonOn=false;
+			}
+		}
+	}else{
+			muestraTituloForo();
+	}
 
+}
+void mouseOut() {
+		for (Fila f:filas) {
+				f.ratonOn=false;
+		}
+}
+void muestraTituloForo(){
+	log.info("tituloForo");
+	
+}
 
 	private void pintaNombresEquipos() {
 		pushStyle();
@@ -156,22 +201,25 @@ void draw(){
 		int contador = 0;
 		for (Fila f:filas) {
 			Equipo equipo = f.equipo;
-			stroke(color(100));
-			fill(equipo.col);
-			textFont(fontA);
 			textSize(22);
-			rect(f.x, 50, textWidth(equipo.nombre.toUpperCase())+20, textAscent()+20);
-			pintaMensaje(color(0), equipo.nombre.toUpperCase(), f.x, 70, 22, LEFT);
+			textFont(fontA);
+			fill(color(100));
+			float anchoCuadro=width/filas.size();
+			rect(f.x, 0, anchoCuadro, altoCuadro);
+			stroke(equipo.col);
+			if(f.ratonOn)
+			fill(equipo.col,100);
+			else
+			fill(equipo.col,50);
+			
+			//textWidth(equipo.nombre.toUpperCase())+20
+			rect(f.x, 0, anchoCuadro,altoCuadro);
+
+			pintaMensaje(color(0), equipo.nombre.toUpperCase(), f.x+anchoCuadro/2, altoCuadro/2, 22, CENTER);
+
 			contador++;
 		}
 		popStyle();
-	}
-	 void pintaMensaje(int c, String mensaje, float x, float y, int tam, int align) {
-		noStroke();
-		textAlign(align);
-		// g.rect(x, y, textWidth(mensaje), textAscent());
-		fill(c);
-		text(mensaje, x, y + textAscent());
 	}
 
 

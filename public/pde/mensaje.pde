@@ -4,12 +4,11 @@ class Mensaje  {
 
 	public Mensaje( PFont font, String mensaje, int tam) {
 		this.mensaje = mensaje;
-		textFont(font);
+		textFont(font, tam);
 		textAlign(CENTER);
 		textSize(tam);
 		textWidtho = textWidth(mensaje)+5;
-		textAscento = textAscent();
-		log.info();
+		textAscento = textAscent()+5;
 	}
 
 	int contadorPintadoMensaje;
@@ -38,9 +37,9 @@ class Mensaje  {
 		}
 		fill(colorFondo, transparencia);
 		noStroke();
-		rect(x-4 - textWidtho / 2, y, textWidtho+6, textAscento);
+		rect(x - textWidtho / 2, y-(textAscento/2), textWidtho, textAscento);
 		fill(colorTexto, transparencia);
-		text(mensaje, x+2.5, y-2.5 + textAscento);
+		text(mensaje, x, y+(textAscento/2)-2);
 		popStyle();
 
 		if (!yaSaturado)

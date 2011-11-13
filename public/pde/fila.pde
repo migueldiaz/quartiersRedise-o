@@ -5,7 +5,7 @@ class Fila {
 	 float height;
 	Equipo equipo;
 	ArrayList rectangulos = new ArrayList();
-	
+	boolean ratonOn;
 	public Fila(float x, float y, float width, float height, Equipo equipo) {
 		this.x = x;
 		this.y = y;
