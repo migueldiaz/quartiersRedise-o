@@ -17,7 +17,8 @@ def acceso
 	@jeunes=Jeunes.first	
 end
 def foros
-    if !usuarioforologado
+   session[:tipo_foro]="jeunes"
+   if !usuarioforologado
       redirect_to jeunes_acceso_path
     elsif usuarioforologado.jeunes.nil?
       redirect_to femmes_foros_path

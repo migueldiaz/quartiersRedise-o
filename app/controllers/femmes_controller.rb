@@ -125,14 +125,16 @@ def equipo
        end
 end
 def acceso
-    session[:tipo_foro]="femmes"
+  session[:tipo_foro]="femmes"
 
-          @seccion_menu=:foros
+  @seccion_menu=:foros
 
 	@femmes=Femmes.first
 	
 end
+
 def foros
+  session[:tipo_foro]="femmes"
     if !usuarioforologado
       redirect_to femmes_acceso_path
     elsif usuarioforologado.femmes.nil?

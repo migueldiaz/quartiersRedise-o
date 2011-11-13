@@ -13,7 +13,12 @@ class SesionforosController < ApplicationController
   end
  
   def create 
-  usuarioforo=Usuarioforo.authenticate(params[:email],params[:password])
+    tipo_f=session[:tipo_foro]
+    if tipo_f=='femmes'
+      usuarioforo=Usuarioforo.authenticate_femmes(params[:email],params[:password])
+    else
+        usuarioforo=Usuarioforo.authenticate_jeunes(params[:email],params[:password])
+    end
    if usuarioforo
        session[:usuarioforo_id]=usuarioforo.id
        session[:usuarioforo_nombre]=usuarioforo.email

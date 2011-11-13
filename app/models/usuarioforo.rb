@@ -31,13 +31,21 @@ class Usuarioforo < ActiveRecord::Base
   
 	end
   # el password no se utiliza, el usuario se confronta con el mail y la clave es de foro jeunes/femme
-   def self.authenticate(email, password)
-    usuario = find_by_email(email)
+   def self.authenticate_femmes(email, password )
+    usuario = find_by_email_and_femmes_id(email,1)
     if usuario
       usuario
     else
       nil
     end
   end
-  
+     def self.authenticate_jeunes(email, password )
+    usuario = find_by_email_and_jeunes_id(email,1)
+    if usuario
+      usuario
+    else
+      nil
+    end
+  end
+
 end
