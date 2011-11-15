@@ -46,7 +46,7 @@ end
 	      	@comentarios = Comentario.find(:all, :conditions => "textofr = '' && titulofr = ''")
 	   	end
      elsif params[:modo]=='todos'
-     @comentarios=Comentario.find(:all, :order => "created_at  DESC")
+     @comentarios=Comentario.find(:all, :order => "created_at  DESC limit 20")
     
     else
     	@foro=Foro.find(params[:id])

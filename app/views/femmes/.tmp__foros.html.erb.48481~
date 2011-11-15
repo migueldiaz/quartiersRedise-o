@@ -1,5 +1,0 @@
-<% @foros.each do |foro|
-trad=Traduccion.new(foro, :titulo)
-%>
-<li><%= link_to trad.resultado,femmes_foro_path(:id=>foro, :locale=>I18n.locale), :style=>trad.alternativaCSS %></li>
-<%end%>

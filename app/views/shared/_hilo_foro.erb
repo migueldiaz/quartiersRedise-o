@@ -8,7 +8,9 @@
 	</div>
 	
 		<div class="usuario">
+			<%if !hilo.usuarioforo.nil? then %>
 		<%=link_to hilo.usuarioforo.nombre,hilo.usuarioforo%> 
+		<%end%>
 		</div>
 		<br>
 		<div class="detalle"></div>
