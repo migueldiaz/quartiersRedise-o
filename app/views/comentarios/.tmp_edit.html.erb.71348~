@@ -1,6 +1,0 @@
-<div class="detalle_gestion">
-<h1><%=t('edit')+' '+t('comentario')%></h1>
-<br/>
-<%= render 'form' %>
-</div>
- 
