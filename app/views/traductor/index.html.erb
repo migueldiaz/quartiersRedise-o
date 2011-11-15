@@ -5,32 +5,32 @@
 
 
 <h4><%=link_to t('comentarios'),comentarios_path(:modo=>'todos',:vista=>'gestion')%> <%= @comentarios.size%></h4>
+
 <ul>
-<li><%=link_to t('sinTraducir'),comentarios_path(:modo=>'sintrad',:vista=>'gestion')%> <%=  @comentariosSinTraducir.size%></li>
-<li><%=link_to t('sinRevisar'),comentarios_path(:modo=>'sinrevisar',:vista=>'gestion')%> <%=  @comentariosSinRevisar.size%></li>
+<li><%=link_to t('sinTraducir'),comentarios_path(:modo=>'sintrad',:vista=>'gestion')%> <%=  @comentariosST.size%></li>
+<li><%=link_to t('sinRevisar'),comentarios_path(:modo=>'sinrevisar',:vista=>'gestion')%> <%=  @comentariosSR.size%></li>
 </ul>
-<!---->
+<!--
 <h4><%=link_to t('foros'),foros_path(:modo=>'todos',:vista=>'gestion')%> <%= @foros.size%></h4>
 <ul>
 <li><%=link_to t('sinTraducir'),foros_path(:modo=>'sintrad',:vista=>'gestion')%> <%=  @forosSinTraducir.size%></li>
 <li><%=link_to t('sinRevisar'),foros_path(:modo=>'sinrevisar',:vista=>'gestion')%> <%=  @forosSinRevisar.size%></li>
 </ul>
-<!---->
+
 <h4><%=link_to t('imagenes'),imagens_path(:modo=>'todos')%> <%= @imagenes.size%></h4>
 <ul>
 <li><%=link_to t('sinTraducir'),imagens_path(:modo=>'sintrad')%> <%=  @imagenesSinTraducir.size%></li>
 <li><%=link_to t('sinRevisar'),imagens_path(:modo=>'sinrevisar')%> <%=  @imagenesSinRevisar.size%></li>
 </ul>
-<!---->
 
-<!---->
+
 
 <h4><%=link_to t('colaboradores'),colaboradors_path(:modo=>'todos')%> <%= @colaboradores.size%></h4>
 <ul>
 <li><%=link_to t('sinTraducir'),colaboradors_path(:modo=>'sintrad')%> <%=  @colaboradorSinTraducir.size%></li>
 <li><%=link_to t('sinRevisar'),colaboradors_path(:modo=>'sinrevisar')%> <%=  @colaboradorSinRevisar.size%></li>
 </ul>
-<!---->
+
 <h4><%=link_to t('contacto'),contactos_path(:modo=>'todos')%> <%= @contactos.size%></h4>
 <ul>
 <li><%=link_to t('sinTraducir'),contactos_path(:modo=>'sintrad')%> <%=  @contactosSinTraducir.size%></li>
@@ -66,7 +66,7 @@
 <li><%=link_to t('sinTraducir'),parrafos_path(:modo=>'sintrad')%> <%=  @parrafosSinTraducir.size%></li>
 <li><%=link_to t('sinRevisar'),parrafos_path(:modo=>'sinrevisar')%> <%=  @parrafosSinRevisar.size%></li>
 </ul>
-
+-->
 
 
 

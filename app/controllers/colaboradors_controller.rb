@@ -14,9 +14,9 @@ class ColaboradorsController < ApplicationController
  	     @colaboradors = Colaborador.all	
  	elsif  params[:modo]=='sinrevisar'
    	   if current_user.traduceA=='es'   
-   		 @colaboradors = Colaborador.find(:all, :conditions => "revisado revisado=false")	
+   		 @colaboradors = Colaborador.find(:all, :conditions => "revisado=false")	
    	   else
-   	     @colaboradors = Colaborador.find(:all, :conditions => "revisadofr revisado=false")
+   	     @colaboradors = Colaborador.find(:all, :conditions => "revisado=false")
    	   end
    	else
    		@sitio = Sitio.find(params[:id]) 

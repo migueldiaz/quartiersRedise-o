@@ -41,10 +41,13 @@ end
         end
     elsif params[:modo]=='sintrad'
     	if current_user.traduceA=='es'   
-		  	@comentarios = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' ")
+		  	@comentarios = Comentario.find(:all, :conditions => "textoes = '' && tituloes = '' ")
 	   	else
-	      	@comentarios = Comentario.find(:all, :conditions => "textofr = '' || titulofr = ''")
+	      	@comentarios = Comentario.find(:all, :conditions => "textofr = '' && titulofr = ''")
 	   	end
+     elsif params[:modo]=='todos'
+     @comentarios=Comentario.find(:all, :order => "created_at  DESC")
+    
     else
     	@foro=Foro.find(params[:id])
     	@comentarios=@foro.comentarios

@@ -8,6 +8,17 @@ class TraductorController < ApplicationController
 	 #redirect_to trafico_url
 	#end
 	
+	
+	#Idioma Comentarios
+	@comentarios=Comentario.all
+	if current_user.traduceA=='es'   
+		@comentariosST = Comentario.where(:textoes=>" ") 
+		#Comentario.find(:all, :conditions => "textoes = ''")
+	    @comentariosSR = Comentario.find(:all, :conditions => "revisado = false")
+	else
+	    @comentariosST = Comentario.find(:all, :conditions => "textofr = '' ")
+	    @comentariosSR = Comentario.find(:all, :conditions => "revisadofr = false")
+	end
 	#Idioma secciones
 	#Idioma foros
 	@imagenes=Imagen.all
@@ -28,15 +39,7 @@ class TraductorController < ApplicationController
 	    @forosSinTraducir = Foro.find(:all, :conditions => "titulofr = ''")
 	    @forosSinRevisar = Foro.find(:all, :conditions => "revisadofr = false")
 	end
-	#Idioma Comentarios
-	@comentarios=Comentario.all
-	if current_user.traduceA=='es'   
-		@comentariosSinTraducir = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' ")
-	    @comentariosSinRevisar = Comentario.find(:all, :conditions => "revisado = false")
-	else
-	    @comentariosSinTraducir = Comentario.find(:all, :conditions => "textofr = '' || titulofr = ''")
-	    @comentariosSinRevisar = Comentario.find(:all, :conditions => "revisadofr = false")
-	end
+	
 	
 	#Idioma Colaboradores
 	@colaboradores=Colaborador.all

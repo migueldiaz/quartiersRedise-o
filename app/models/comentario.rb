@@ -2,7 +2,7 @@ class Comentario < ActiveRecord::Base
   belongs_to :foro,:foreign_key => "foro_id"
   has_many :comentarios,:dependent=>:destroy
   belongs_to :usuarioforo
- #attr_accessor :textoes,:textofr,:comentario
+   #attr_accessor :textoes,:textofr,:comentario
   
    validate :valida_comentario
  

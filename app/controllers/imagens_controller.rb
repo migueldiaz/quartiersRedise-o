@@ -9,9 +9,9 @@ layout 'mono'
  
   if params[:modo]=='sintrad'
   	   if current_user.traduceA=='es'   
-			 @imagenes = Imagen.find(:all, :conditions => "doces='' || arhivo=''")
+			 @imagenes = Imagen.find(:all, :conditions => "piefoto='' ")
 	   else
-	    	 @imagenes = Imagen.find(:all, :conditions => "docfr='' || archivofr=''")	
+	    	 @imagenes = Imagen.find(:all, :conditions => "piefotofr='' ")	
 	   end
   elsif  params[:modo]=='sinrevisar'	
    		if current_user.traduceA=='es'   
