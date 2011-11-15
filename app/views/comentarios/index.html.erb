@@ -1,12 +1,12 @@
 	 <table class="listado_registros">
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
 		:locals =>{ :n_columns=>10,:title=>t('comentarios'), 
-		:columns=>[t('tituloes'), t('titulofr'),t("textoes"),t("textofr"),t("created"),t("usuario"),t("equipo"), t("show"), t('edit'), t('destroy')]} %>
+		:columns=>[t('tituloes'),t("textoes"), t('titulofr'),t("textofr"),t("created"),t("usuario"),t("equipo"), t("show"), t('edit'), t('destroy')]} %>
 <% @comentarios.each do |comentario| %>
   <tr>
      <td><%=comentario.tituloes%></td>
-    <td><%=comentario.titulofr%></td>
     <td><%= truncate(comentario.textoes,:lenght=>25) %></td>
+    <td><%=comentario.titulofr%></td>
     <td><%= truncate(comentario.textofr,:lenght=>25) %></td>
       <td><%=comentario.created_at%></td>
       <td><%=comentario.usuarioforo.nombre%></td>

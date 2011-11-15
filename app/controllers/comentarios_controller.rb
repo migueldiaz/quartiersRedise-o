@@ -25,7 +25,7 @@ end
          @comentario=Comentario.find(params[:id])
       end
       
-      if params[:tipo] ||!@comentario.foro.sitio.jeunes.nil? 
+      if params[:tipo] && !@comentario.foro.sitio.jeunes.nil? 
        'juan_jeunes'
       else
        'juan_femmes'
@@ -95,6 +95,7 @@ end
    elsif !@sitio.femmes.nil?
       @femmes=@sitio.femmes
    end
+   @sitio.fondos
    #id=params[:respuesta]
    segun_proyecto
    respond_to do |format|
@@ -145,7 +146,7 @@ end
     @comentario = Comentario.find(params[:id])
 
     ############Aqui enviamos los correos
-    if @comentario.revisado==true && comentario.revisadofr==true
+    if @comentario.revisado==true && @comentario.revisadofr==true
      	@foro=@comentario.foro
      	@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
      	@usuarios.each do |usuario|

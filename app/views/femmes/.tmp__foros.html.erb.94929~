@@ -1,0 +1,7 @@
+<% @foros.each do |foro| %>
+     <% if spanish %>
+     	 <li><%= link_to foro.tituloes,femmes_foro_path(:id=>foro, :locale=>:es) %></li>
+     <%else%>
+    	 <li><%=link_to foro.titulofr,femmes_foro_path(:id=>foro, :locale=>:fr)%></li>
+    <%end%>
+<%end%>

@@ -63,6 +63,14 @@ class ForosController < ApplicationController
     end
   end
 
+ def remotando
+  @prueba=""
+    respond_to do |format|
+    format.json {render :json =>@prueba}
+
+    end
+  end
+
   # GET /foros/new
   # GET /foros/new.xml
   def new

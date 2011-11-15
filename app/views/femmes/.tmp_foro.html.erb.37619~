@@ -1,0 +1,1 @@
+<%=render(:file => "/shared/foro.html.erb",:locals => {:pathito=>"femmes"} )  %>

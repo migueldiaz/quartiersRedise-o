@@ -1,10 +1,10 @@
 <div class="hilo">
 	<div class="fecha">(<%=hilo.created_at%>)</div>
 	<div class="mensaje">
-		<%trad=Traduccion.new(hilo, :titulo)%>
-		<a class="nav_link" id="<%=hilo.id%>" style="<%=trad.alternativaCSS%>"
-		pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo, :locale=>I18n.locale)%>" href="javascript:void(0);">
-			>><%=trad.resultado%></a>
+		
+		<a class="nav_link" id="<%=hilo.id%>" 
+		pepe="<%=new_comentario_path(:id=>@foro,:responde=>hilo)%>" href="javascript:void(0);">
+			>><%=hilo.method(:titulo.to_s+locale.to_s).call%></a>
 	</div>
 	
 		<div class="usuario">

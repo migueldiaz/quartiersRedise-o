@@ -1,10 +1,8 @@
 <h1><%= t('foros')+' '+t('femmes')%></h1>
 <ul>
-<% @foros.each do |foro| %>
-     <% if spanish %>
-     	 <li><h2><%= link_to foro.tituloes,femmes_foro_path(:id=>foro) %></h2></li>
-     <%else%>
-    	 <li><h2><%= link_to foro.titulofr,femmes_foro_path(:id=>foro) %></h2></li>
-    <%end%>
+<% @foros.each do |foro| 
+trad=Traduccion.new(foro, :titulo)
+%>
+<li><h2><%= link_to trad.resultado,femmes_foro_path(:id=>foro, :locale=>I18n.locale), :style=>trad.alternativaCSS %></h2></li>
 <%end%>
 </ul>

@@ -22,7 +22,12 @@ class SesionforosController < ApplicationController
    if usuarioforo
        session[:usuarioforo_id]=usuarioforo.id
        session[:usuarioforo_nombre]=usuarioforo.email
+       logger.info("---------------------------------------------------------------")
+       logger.info(I18n.locale)
+       logger.info(usuarioforo.idioma)
        I18n.locale=usuarioforo.idioma
+       logger.info(I18n.locale)
+       logger.info("--------------------------///////////////////////////-------------------------------------")
        if !usuarioforo.jeunes.nil?
 
         registrado=['jeunes', 'jeune', 'joven', 'jove'].include? params[:password]

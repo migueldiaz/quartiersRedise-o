@@ -66,8 +66,6 @@ jQuery(function($){
 	if($(this).height()>170){
    	  			$(this).height(170);
 	}	
-					
-
 });
 $(".submenu").fadeIn(500);
 

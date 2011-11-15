@@ -21,6 +21,19 @@ def esfrances
        return false 
      end
   end
+
+def alternativa_idioma
+  return "color:yellow;"
+end
+
+def dame_otro_idioma
+     if I18n.locale.to_s=='fr'
+      return 'es'
+     else 
+       return 'fr' 
+     end
+  end
+
 def spanish
    if I18n.locale.to_s=='es'
       return true
@@ -52,6 +65,9 @@ def dame_nombre_metodo valor
 		valor+"fr"
 	end
 end 
+def alternativa_idioma
+  return "color:yellow;background-color:gray;"
+end
 
 def dame_nombre_metodo_bis valor
   if(I18n.locale.to_s=='es')

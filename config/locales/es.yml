@@ -84,7 +84,7 @@ es:
  qdm: 'BARRIOS DEL MUNDO'
  qdmsubtitle: 'HISTORIAS URBANAS'
  qdmfemmes: 'MUJERES DEL MUNDO'
- qdmfemmessubtitle: 'SUBTITULO DE MUJERES'
+ qdmfemmessubtitle: 'UNA RED DE PROTRAGONISTAS SOLIDARIAS'
  ##########
  es: "Español"
  fr: "Français"
@@ -92,6 +92,7 @@ es:
  team: 'Equipo'
  trad: 'traductor'
  tradm: 'Traductor'
+ acceso: 'Acceso'
  avisoTraductor: 'Solo se muestran los elementos sin traducir del idioma: '
  lasociacion: 'La asociación'
  lproyecto: 'Los proyectos'
@@ -129,6 +130,7 @@ es:
  revisado: 'Traducción revisada español'
  revisadofr: 'Traducción revisada francés'
  contacto: 'Contacto'
+ created: 'fecha de creación'
  colaboradores: 'Colaboradores'
  siAporta: 'Sí'
  noAporta: 'No'

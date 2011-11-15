@@ -1,0 +1,5 @@
+<%if spanish&& !comentario.tituloes.blank? || !spanish&& comentario.titulofr.blank?%>
+	<li><%= comentario.tituloes%>&nbsp;|| &nbsp;<%=link_to comentario.usuarioforo.nombre,comentario.usuarioforo%>&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>@comentario) %></li>
+<%elsif !spanish && !comentario.titulofr.blank? || spanish&& comentario.tituloes.blank?%>
+	<li><%=comentario.titulofr%>&nbsp;|| &nbsp;<%=link_to comentario.usuarioforo.nombre,comentario.usuarioforo%>&nbsp;<%= link_to t('responder') ,new_comentario_path(:id=>@foro,:responde=>comentario) %></li>
+<%end%>
