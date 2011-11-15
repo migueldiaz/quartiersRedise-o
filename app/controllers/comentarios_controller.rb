@@ -126,7 +126,10 @@ end
     
      respond_to do |format| 
       if @comentario.save && !@sitio.jeunes.nil?
-          AvisoMailer.notifica
+         	@traductores=Usuario.where(:tipo=>'traductor')	
+         	@traductores.each do |traductor|
+         	 AvisoMailer.traductor(traductor).deliver
+         	end
       	 format.html { redirect_to(jeunes_foro_path(:id=>@foro), :notice => t('exito')) }
          format.js
       elsif  @comentario.save && !@sitio.femmes.nil?
