@@ -4,7 +4,19 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   
   helper_method :is_admin,:is_traductor,:current_user,:require_login,:usuarioforologado,:validausuariositio
-  
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+ 
+  private
+ 
+  def record_not_found
+    session[:usuario]=nil
+     @url= request.url
+     flash[:error] = 'Error al acceder a '+@url+'. Se ha enviado el aviso correspondiente'
+    AvisoMailer.error(@url).deliver
+    redirect_to login_path
+   
+    #render :text => "404 No encontrado", :status => 404
+  end
   def validausuariositio(sitio)
  	 if current_user.tipo!='admin' && current_user.tipo!='traductor' && current_user.sitio!=sitio
    	 	redirect_to trafico_url

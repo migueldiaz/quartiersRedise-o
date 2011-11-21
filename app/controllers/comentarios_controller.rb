@@ -135,7 +135,7 @@ end
       elsif  @comentario.save && !@sitio.femmes.nil?
       	format.html { redirect_to(femmes_foro_path(:id=>@foro), :notice => t('exito')) }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", }
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
       end
    
