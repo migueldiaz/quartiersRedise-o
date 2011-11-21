@@ -46,7 +46,7 @@ end
 	      	@comentarios = Comentario.find(:all, :conditions => "textofr = '' && titulofr = ''")
 	   	end
      elsif params[:modo]=='todos'
-     @comentarios=Comentario.find(:all, :order => "created_at  DESC")
+     @comentarios=Comentario.find(:all, :order => "created_at  DESC limit 20")
     
     else
     	@foro=Foro.find(params[:id])
@@ -123,7 +123,7 @@ end
     @comentario = Comentario.create(params[:comentario])
     @foro=@comentario.foro
     @sitio=@foro.sitio
-    
+    ###OJO AQUI VALIDACION Y NOTIFICACION
      respond_to do |format| 
       if @comentario.save && !@sitio.jeunes.nil?
          	@traductores=Usuario.where(:tipo=>'traductor')	

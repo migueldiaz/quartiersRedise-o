@@ -22,8 +22,11 @@ Paginadocumentos::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-    #ActionMailer::Base.smtp_settings = {
-   config.action_mailer.smtp_settings ={
+    config.action_mailer.raise_delivery_errors = false
+
+  
+    #ActionMailer::Base.smtp_settings = 
+ config.action_mailer.smtp_settings ={
 
 :address => "smtp.1and1.es",
 :port => 587,
@@ -33,10 +36,5 @@ Paginadocumentos::Application.configure do
 :password => 'peyote82',
 :enable_starttls_auto=>true
 }
-
-    	
-  
- 
-
 end
 

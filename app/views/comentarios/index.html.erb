@@ -9,8 +9,8 @@
     <td><%=comentario.titulofr%></td>
     <td><%= truncate(comentario.textofr,:lenght=>25) %></td>
       <td><%=comentario.created_at%></td>
-      <td><%=comentario.usuarioforo.nombre%></td>
-      <td><%=comentario.usuarioforo.equipo_id%></td>
+      <td><%=if !comentario.usuarioforo.nil? then comentario.usuarioforo.nombre end%></td>
+      <td><%=if !comentario.usuarioforo.nil? then comentario.usuarioforo.equipo_id end %></td>
 
     <td><%= link_to t('show'), comentario_path(comentario,:vista=>'gestion') %></td>
     <td><%= link_to t('edit'), edit_comentario_path(comentario,:vista=>'gestion') %></td>
