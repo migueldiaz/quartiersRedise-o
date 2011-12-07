@@ -18,7 +18,10 @@ trad=Traduccion.new(documento, :doc)
 <!--<h2>Correos unicos: <%=@correos %></h2>-->
 <h2><%=t('comentarios')%></h2>
 <div style="text-align:center;">
+   <%if ['ada.bazan@quartiersdumonde.org', 'natalia.resimont@quartiersdumonde.org', 'carine.troussel@quartiersdumonde.org', 'jennifer.quintas@quartiersdumonde.org', 'juanantonioruz@gmail.com'].include? session[:usuarioforo_nombre]%>
+
 <%= link_to t('new')+' '+t('comentario_al_tema'),new_comentario_path(:id=>@foro,:tipo=>pathito), :class=>'comment'%>
+<%end%>
 </div>
 
 
