@@ -36,12 +36,11 @@ end
      f.text_field :created_at_admin
   </div>
   end  -->
-  <!--
     		   <div class="field">
   				  <%= f.label t :comentario_parent %><br />
   				  <%= f.text_field :tituloes%>
   			</div>
--->
+
   <% if idiomita=='es' || (!current_user.nil? && current_user.tipo=='admin') || params[:vista] && current_user.traduceA='traductor'
   %>
   		   <div class="field">
