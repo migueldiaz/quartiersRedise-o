@@ -17,7 +17,7 @@
 		&nbsp;
 		<%if !hilo.comentarios.nil?%>
 			<div class="subhilo">
-			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios.sort_by( &:created_at )  %>	
+			<%= render :partial => "comentarios/comentario", :collection => hilo.comentarios.sort_by( &:created_at ).reverse  %>	
 			</div>
 		<%end%>
 </div>

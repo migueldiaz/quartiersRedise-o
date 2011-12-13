@@ -27,7 +27,7 @@ trad=Traduccion.new(documento, :doc)
 
 
 <div class="hilo_foro">
-<%= render :partial => "comentarios/principal", :collection => @foro.comentarios.sort_by( &:created_at )  %>
+<%= render :partial => "comentarios/principal", :collection => @foro.comentarios.sort_by( &:created_at ).reverse  %>
 </div>
 <br/>
 <br/>

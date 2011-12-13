@@ -35,5 +35,5 @@ production:
   database: quartier_production
   pool: 5
   username: root
-  password: root
+  password: jumianguel2011
   socket: /var/run/mysqld/mysqld.sock

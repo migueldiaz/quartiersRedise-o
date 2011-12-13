@@ -1,0 +1,4 @@
+<%= render :partial => "/shared/hilo_foro", :locals => {
+:hilo=>comentario}
+%>
+	
