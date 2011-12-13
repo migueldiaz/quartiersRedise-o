@@ -51,7 +51,7 @@ class ForosController < ApplicationController
   # GET /foros/1.xml
   def show
    @foro=Foro.find(params[:id])
-   @comentarios=@foro.comentarios
+   @comentarios=@foro.comentarios.sort_by( &:created_at )
   
     respond_to do |format|
       format.html # show.html.erb
