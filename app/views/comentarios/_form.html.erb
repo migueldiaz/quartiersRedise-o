@@ -25,7 +25,7 @@ end
   <%= f.hidden_field :usuarioforo_id,:value=>idecito %>
   <%= f.hidden_field :foro_id %>
   <%= f.hidden_field :comentario_id,:value=>params[:responde] %>
-  
+   <%=f.hidden_field :created_at_admin,:value=>Time.now%>
  <!--
    if !current_user.nil? and current_user.tipo=='admin' && !params[:tipo] &&!params[:responde]
   
@@ -33,7 +33,7 @@ end
     <b>Ejemplo de fecha:</b>2011-08-26 19:15:03 --- 02/05/2011 15:14</br>
     <br/>descomentar codigo
     f.label t :created_at_admin <br /> 
-     f.text_field :created_at_admin
+     <%=f.hidden_field :created_at_admin,:value=>Time.now%>
   </div>
   end  -->
   <% if idiomita=='es' || (!current_user.nil? && current_user.tipo=='admin') || params[:vista] && current_user.traduceA='traductor'
