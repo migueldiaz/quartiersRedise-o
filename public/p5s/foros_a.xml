@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comentarios type="array">
+  <comentario>
+    <created-at type="datetime">2008-05-26T09:55:00Z</created-at>
+    <comentario-id type="integer">18</comentario-id>
+    <id type="integer">19</id>
+    <textoes>hola un gustostaso saber de lo que tu piensas 
+y opinas y a la vez que nos infirmes de las 
+actividades que se estas realizando en tu 
+barrio..oye un abrazote grande para ti muchos 
+besos y utro grande para jamila y larbin de tu 
+equipo ahahah diles que los extra&#241;o 
+muchisimo...siiii??? por fa...... 
+
+atte: nelly escobar 
+BARRIOS DEL MUNDO EL ALTO-BOLIVIA
+</textoes>
+    <tituloes>que alegria saber de ti</tituloes>
+    <usuarioforo>
+      <nombre>nelly</nombre>
+      <id type="integer">14</id>
+      <equipo-id type="integer">4</equipo-id>
+      <email>nelly</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2008-05-13T12:59:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">38</id>
+    <textoes>hola a todos los compa&#241;eros de barrios del 
+mundo en todo el mundo, solo queria hacerles 
+llegar mis saludos a cada joven que compone 
+barrios de cada pais yo soy de Bolivia - La 
+Paz y m da gusto saber que alhun dia uno de 
+ustedes va ha poder leer lo que escrib&#237; tarde 
+o temprano estoy contenta de pertenecer a 
+Barrios del mundo realmente es muy importante 
+para mi spero que para ustedes tambein lo sea. 
+ahora no se que decirle de las mil cosas que 
+quisiera compartirles no se con que empezar 
+estar&#233; otro dia escribiendoles me despido fue 
+un grato placer escribirles.
+</textoes>
+    <tituloes> como estan</tituloes>
+    <usuarioforo>
+      <nombre>geovanna</nombre>
+      <id type="integer">2</id>
+      <equipo-id type="integer">2</equipo-id>
+      <email>geovanna</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2007-09-07T23:14:00Z</created-at>
+    <comentario-id type="integer">18</comentario-id>
+    <id type="integer">20</id>
+    <textoes>hna flmghrib khddamin 3la dak chi wa baz ana 
+b3da tanmrg hchm chwia awla golia mazal jdid 
+mazal mafahm walo 
+</textoes>
+    <tituloes>hchouma 3lik</tituloes>
+    <usuarioforo>
+      <nombre>ana chahd</nombre>
+      <id type="integer">15</id>
+      <equipo-id type="integer">6</equipo-id>
+      <email>ana chahd</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2007-07-10T16:06:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">37</id>
+    <textoes>Hola a todos los amigos del proyecto barrios del mundo, espero que todos esten bien, saludo a todos los equipos, y espero que nuestra amistad mejorar&#225; gracias a este foro de di&#225;logo, espero sus respuestas, y hasta pronto. Su amiga Khalid de Marruecos.
+</textoes>
+    <tituloes>Hola</tituloes>
+    <usuarioforo>
+      <nombre>khalid</nombre>
+      <id type="integer">3</id>
+      <equipo-id type="integer">1</equipo-id>
+      <email>khalido</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2007-06-18T17:46:00Z</created-at>
+    <comentario-id type="integer">17</comentario-id>
+    <id type="integer">18</id>
+    <textoes>Hola a todo el mundo, hola a los compa&#241;eros del proyecto Barrios del Mundo, en Marruecos y en todas partes en el mundo. 
+Yo soy Khalid, 25 a&#241;os, y hago parte del equipo de Barrios del Mundo en Marruecos. Estoy muy contento participar con Ustedes a este proyecto, porque he aprendido bastantes cosas. 
+En cuanto a la pregunta de Jamila, de Barcelona, nosotros en Marruecos, trabajamos el proyecto con varias actividades de formaci&#243;n sobre el tema del trabajo, encuentros con actores institucionales y sociales, encuentros con los j&#243;venes del barrio en la cuidad de Sal&#233; u otras ciudades de Marruecos. Hacemos investigaciones sobre el tema del trabajo, encuentros de experiencia y muchas otras actividades. 
+Si quieres saber m&#225;s, mi email: khalid.quartiersdumonde.maroc.fr 
+Saludo a todo el mundo y a todos los j&#243;venes de Senegal, Mal&#237;, Marruecos, Espa&#241;a, Francia, Bolivia, Colombia y Brasil. 
+</textoes>
+    <tituloes>Hola</tituloes>
+    <usuarioforo>
+      <nombre>jamila</nombre>
+      <id type="integer">12</id>
+      <equipo-id type="integer">10</equipo-id>
+      <email>jamila</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2007-04-24T13:59:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">36</id>
+    <textoes>Hola a todos los participantes de Barrios del Mundo, me pesento : me llamo Younes Hamdoun miembro del Comit&#233; Regional de Marruecos exactamente en la ciudad de Sal&#233;, m gustaria hacerme nuevos amigos de todas partes del mundo y sobre todo con los miembros de Barrios del Mundo y ahi esta mi mail "hamdouni_ y@hotmail.com " y espero que me escriban ok?
+</textoes>
+    <tituloes>Presentaci&#243;n</tituloes>
+    <usuarioforo>
+      <nombre>younes</nombre>
+      <id type="integer">4</id>
+      <equipo-id type="integer">7</equipo-id>
+      <email>younese</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2007-02-05T13:01:00Z</created-at>
+    <comentario-id type="integer">34</comentario-id>
+    <id type="integer">35</id>
+    <textoes>Hola Sonia, yo estoy de acuerdo contigo, si dices que se debe incitar a los estudios a los j&#243;venes de tu barrio. &#191;Pero cu&#225;les son la perspectivas que preconizas para los j&#243;venes que han depasado la edad escolar y que se hunden en la ociosidad.
+</textoes>
+    <tituloes>Perspectivas</tituloes>
+    <usuarioforo>
+      <nombre>khadidiatou Faye</nombre>
+      <id type="integer">30</id>
+      <equipo-id type="integer">1</equipo-id>
+      <email>khadidiatou Faye</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2006-11-09T14:22:00Z</created-at>
+    <comentario-id type="integer">17</comentario-id>
+    <id type="integer">21</id>
+    <textoes>Este mensaje es para el grupo de chicas de Barcelona. Es para agradecerles vuestra acogida. Quer&#237;a absolutamente agradecer en nombre de mi grupo la presentaci&#243;n que nos hicieron durante nuestra estancia en su ciudad y la visita guiada de sus barrios&#8230; Pasamos un momento bueno con vosotras y tambi&#233;n momentos de risas. Espero que va a durar y les decimos hasta pronto en Montreuil. 
+Mucho animo para seguir y seguimos en contacto. 
+El grupo de Montreuil (Oumar)
+</textoes>
+    <tituloes>El grupo de chicas de Barcelona</tituloes>
+    <usuarioforo>
+      <nombre>Oumar (Q.D.M. Montreuil)</nombre>
+      <id type="integer">16</id>
+      <equipo-id type="integer">6</equipo-id>
+      <email>Oumar (Q.D.M. Montreuil)</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2006-10-06T10:29:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">34</id>
+    <textoes>Los j&#243;venes de mi barrio no tienen la noci&#243;n de estudiar, algunos ni siquiera van a la escuela. Pienso que hay que motivar a los j&#243;venes a estudiar, para un avance de mi barrio y tambi&#233;n de mi patria.
+</textoes>
+    <tituloes>J&#243;venes de mi barrio</tituloes>
+    <usuarioforo>
+      <nombre>sonia senegal</nombre>
+      <id type="integer">29</id>
+      <equipo-id type="integer">1</equipo-id>
+      <email>sonia senegal</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2006-09-18T11:09:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">33</id>
+    <textoes>para m&#237;, ser joven en mi barrio es participar en las actividades que los jovenes organizamos para el desarrollo de la localidad.
+</textoes>
+    <tituloes>ser joven en mi barrio</tituloes>
+    <usuarioforo>
+      <nombre>ya fatou</nombre>
+      <id type="integer">28</id>
+      <equipo-id type="integer">8</equipo-id>
+      <email>ya fatou</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2006-09-06T17:08:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">32</id>
+    <textoes>Pienso que el ser joven en mi barrio se traduce primero por frecuentaciones y luego en la forma de vestirse. Pero hay que decir que los j&#243;venes siempre les marginalizan en las tomas de decisiones, sea en la familia o en los espacios p&#250;blicos. Pero gracias al proyecto Barrios del Mundo, empiezan a descubrir que ser joven no significa s&#243;lo jugar f&#250;tbol e ir a discotecas, sino que tambi&#233;n se trata de expresar tu opini&#243;n y aportar a la pol&#237;tica del Estado y a las decisiones tomadas en tu barrio.
+</textoes>
+    <tituloes>Espacio p&#250;blico</tituloes>
+    <usuarioforo>
+      <nombre>bira senegal</nombre>
+      <id type="integer">27</id>
+      <equipo-id type="integer">1</equipo-id>
+      <email>bira senegal</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-12-05T17:17:00Z</created-at>
+    <comentario-id type="integer">15</comentario-id>
+    <id type="integer">16</id>
+    <textoes>Hola a todos los participantes del proyeto BDM. MOHAMED ALILOU les agradece a todos los formadores de la &#250;ltima sesi&#243;n de formaci&#243;n sobre las t&#233;cnicas de video. Gracias a enda. Les agradesco una vez mas a las se&#241;oras Ada, Pilar, Silvana y Alice y a todos quienes estan en relaci&#243;n con Barrios del Mundo.
+</textoes>
+    <tituloes>Asociacion achabal laayayda, agradecimientos</tituloes>
+    <usuarioforo>
+      <nombre>mohamed alilou</nombre>
+      <id type="integer">11</id>
+      <equipo-id type="integer">10</equipo-id>
+      <email>mohamed alilou</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-11-23T11:53:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">31</id>
+    <textoes>Salam alaykoum amigos participantes del proyecto Barrios del Mundo. 
+Yo soy Youssef Sa&#239;di, miembro de la asociaci&#243;n Achbal La&#226;yayda para el desarrollo, y miembro del Comit&#233; de diagn&#243;stico. 
+Hoy est&#225;n los miembros de enda Colombia (Pilar), Barcelona (Silvana) y Francia (Ada y Alice). Nos dan una formaci&#243;n en el tema de comunicaci&#243;n y con la c&#225;mara pasamos buenos momentos. Estoy muy muy feliz y espero qua va a seguir aqu&#237; y con los otros pa&#237;ses, y n particular los pa&#237;ses sub-desarrollados. 
+Gracias. Youssef
+</textoes>
+    <tituloes>Hermanos contra el imperialismo</tituloes>
+    <usuarioforo>
+      <nombre>Youssef Sa&#239;di</nombre>
+      <id type="integer">26</id>
+      <equipo-id type="integer">8</equipo-id>
+      <email>Youssef Sa&#239;di</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-11-03T10:23:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">30</id>
+    <textoes>Para mi los roles y el lugar que los j&#243;venes deben tener en este mundo de injusticia donde la lei del mas fuerte es siempre la mejor, pero nosotros los j&#243;venes sobre todos los africanos y los latino americanos deber&#237;amos luchar contra toda otra forma de violencia, miren a los africanos que acaban de ser re-enviados a sus paises de manera tan violenta... a seguir
+</textoes>
+    <tituloes>Que lugar y roles deben tener los jovenes?</tituloes>
+    <usuarioforo>
+      <nombre>konate birama</nombre>
+      <id type="integer">25</id>
+      <equipo-id type="integer">8</equipo-id>
+      <email>konate birama</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-10-07T15:37:00Z</created-at>
+    <comentario-id type="integer">13</comentario-id>
+    <id type="integer">14</id>
+    <textoes>Hola Birama!!! 
+me pareci&#243; muy interesante tu comentario acerca de 
+la juventud.... al final del mismo preguntabas lo 
+siguiente: &#191;cu&#225;les son los roles y deberes de los 
+j&#243;venes en su barrio? 
+
+caminar con libertad, trabajar con dignidad, jugar 
+con la paz, observar nuestras similitudes, desechar 
+lo superfluo.... mover monta&#241;as, difuminar fronteras, 
+ir a la playa, limpiar el cielo, sonreir... 
+y ser jovenes todo el resto de la vida...jajajaja 
+
+un abrazo amigo 
+</textoes>
+    <tituloes> &#191;cu&#225;les son los roles y deberes de los j&#243;venes?</tituloes>
+    <usuarioforo>
+      <nombre>omar</nombre>
+      <id type="integer">9</id>
+      <equipo-id type="integer">6</equipo-id>
+      <email>omar</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-05-09T12:08:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">29</id>
+    <textoes>Estoy muy contento participar en esta p&#225;gina con mis amigos que conoc&#237; en Dakar. Pas&#233; un semana que nunca olvidar&#233;. Conoc&#237; a muchas personas de diferentes pa&#237;ses, y a pesar de las diferencias, tratamos de crear un peque&#241;o mundo familial. Hablamos, consultamos, presentamos nuestras opiniones, y adem&#225;s, compartimos sue&#241;os, esperanzas de un futuro de paz, de tolenria y de amor. I LOVE YOU FOREVER MY FRIENDS.
+</textoes>
+    <tituloes>Salam Alikom</tituloes>
+    <usuarioforo>
+      <nombre>MOHAMED</nombre>
+      <id type="integer">24</id>
+      <equipo-id type="integer">10</equipo-id>
+      <email>MOHAMED</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-03-07T13:30:00Z</created-at>
+    <comentario-id type="integer">27</comentario-id>
+    <id type="integer">28</id>
+    <textoes>hola soy pedro mi barrio es son cotoner aun 
+que ya no es lo que era.........yo las veces 
+que estoy hay me lo paso bien con todos mis 
+colegas nos reimos mucho no solo estamos 
+consumiendo drogas como dicen en otros 
+comentarios nuestro barrio es muy tranquilo no 
+es muy alegre por k la gente no pasea mucho. 
+aora en nuestro barrio hay chinos,nigerianos, 
+argentinos,rumanos....... y ami almenos no me 
+importa yo siempre tengo esta teoria (cuantos 
+mas seamos mejor) jejejejejejej chaoooooo
+</textoes>
+    <tituloes>mi barrio</tituloes>
+    <usuarioforo>
+      <nombre>P.J</nombre>
+      <id type="integer">23</id>
+      <equipo-id type="integer">7</equipo-id>
+      <email>P.J</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-03-07T13:25:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">27</id>
+    <textoes>hola a todos y todas!!! 
+Weno pues mi nombre es Margarita Ferr&#225;n Prades 
+y tengo 16 a&#241;os y me gustaria comentaros como 
+es mi barrio y mi ciudad soy de Palma de 
+Mallorca mi barrio es son forteza es un barrio 
+como otros no es ni lujoso ni pobre es un 
+barrio comun alli tengo mis amigos pero suele 
+estar mas en son cotoner es otro barrio de 
+palma alli estoy con mis amigas y amigos 
+solemos hacer lo que para nosotros aqui es 
+normal es decir: jugar a futbol a basketball 
+etc... tambien solemos consumir drogas por que 
+aqui quien no consuma drogas es para nosotros 
+como un estraterrestre pero en fin ... no es 
+que lo hagamos con frecuencia... los fines de 
+semana solemos hirnos de marcha a cualquier 
+discoteca y intentamos parsarnoslo lo mejor 
+posible se me olvidaba comentaros que nuestros 
+amigos son dominicanos es decir de santa 
+domingo y nos parece de las mejores personas 
+que conozcamos ... como cualquier otra gente 
+weno gente espero que os haya gustado mi 
+barrio yo ya me despido con un beso y un 
+abrazo chaooo
+</textoes>
+    <tituloes>como es mi barrio</tituloes>
+    <usuarioforo>
+      <nombre>marga</nombre>
+      <id type="integer">22</id>
+      <equipo-id type="integer">7</equipo-id>
+      <email>marga</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2005-02-09T11:42:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">26</id>
+    <textoes>Hola a tod@s! 
+Para nosotros nuestro barrio, Son Roca, es uno 
+de los m&#225;s desfavorecidos de Palma. Estamos 
+situados en la periferia, rodeados de otros 
+barrios de mayor nivel socioecon&#243;mico. 
+Sin embargo, nos sentimos muy identificados con 
+nuestro barrio y nuestra gente; aunque no 
+dispongamos de grandes instalaciones ni otra 
+clase de lujos, en Son Roca todos somos una 
+familia, excepto en los &#250;ltimos diez a&#241;os, en 
+que la polaci&#243;n de inmigrantes que han venido 
+buscando un sitio mejor para vivir se han 
+instalado en el barrio, y otras muchas personas 
+de aqu&#237; tambi&#233;n se han movido del barrio, 
+esperando encontrar algo mejor. 
+Los j&#243;venes del barrio estamos poco motivados en 
+general, ya que quien no estudia, trabaja y el 
+tiempo libre que nos queda lo dedicamos a 
+consumir drogas o a jugar a f&#250;tol. 
+Entre los j&#243;venes, un grupo reducido 
+participamos en otras actividades, como el grupo 
+de Confirmaci&#243;n (religioso), de apoyo a 
+proyectos socioculturales como Na&#252;m, o Barrios 
+del Mundo, que ocupan nuestro tiempo. 
+Para finalizar, queremos decir que el proyecto 
+Barrios del Mundo nos est&#225; demostrando que 
+podemos y debemos trabajar en equipo para poder 
+mejorar nuestro barrio, y el mundo. 
+
+Saludos, 
+Rebeca y Jos&#233; &#193;ngel
+</textoes>
+    <tituloes>Desde Palma</tituloes>
+    <usuarioforo>
+      <nombre>Rebeca y Jos&#233; &#193;ngel</nombre>
+      <id type="integer">21</id>
+      <equipo-id type="integer">9</equipo-id>
+      <email>Rebeca y Jos&#233; &#193;ngel</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T14:54:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">25</id>
+    <textoes>Hola chicos ! 
+
+Somos del equipo de j&#243;venes de &#171; SIKOSANIYA &#187; que aportamos nuestra contribuci&#243;n al proyecto &#8220;Barrios del Mundo&#8221; en nuestro barrio SIKORO. 
+Aqu&#237; va la respuesta de algunos miembros de nuestro equipo a su pregunta &#8220;&#191;Qu&#233; es ser joven en mi barrio? 
+
+Se&#241;or Mahamane MA&#207;GA, Director general de la asociaci&#243;n de desarrollo del Barrio &#8211; club de amigos de M&#233;kin Sikoro &#8220;ADQ-CAMS&#8221;: Ser joven es contribuir al bienestar social de su barrio participando efectivamente a las acciones de desarrollo 
+
+Aliou B.B. SIDIBE : ser joven en mi barrio es : 
+-Pensar en las estructuras de desarrollo de mi barrio (lucha contra el analfabetismo, la pobreza, la exclusi&#243;n y las enfermedades sexualmente transmisibles adem&#225;s del VIH SIDA). 
+-Pensar en el realizaci&#243;n personal de la juventud, 
+-Participar a la toma de decisi&#243;n sobre los problemas del barrio, 
+-Pensar en el saneamiento y la salud de mi barrio 
+-Estar disponible para las actividades de mi barrio, como pueda 
+
+Dramane DIARRA : en mi barrio, un joven es alguien que participa a las acciones de desarrollo del barrio poco importa cual sea su condici&#243;n social. 
+
+Amadou DOLO : Un joven en el barrio representa un elemento llave para el desarrollo de su barrio, es decir para cumplir su rol f&#237;sico e intelectual. 
+
+Moussa TOUNKARA : Ser joven en mi barrio es contribuir y participar a las acciones de desarrollo. Es entregarse para el buen funcionamiento de las actividades que conciernen el desarrollo del barrio. 
+
+Hamidou MA&#207;GA : Ser joven en mi barrio es participar a las acciones de desarrollo como por ejemplo el proyecto Barrios del Mundo. Significa tambi&#233;n ser din&#225;mico y perseverante. 
+
+Bakary TRAORE : Un joven es una persona entre 21 a 30 a&#241;os de edad. Es una persona que debe participar en las acciones de desarrollo de su barrio. En esta definici&#243;n el joven es un agente activo del desarrollo de su barrio. 
+
+Moussa N&#8217;Faly BAGAYOKO : Ser joven en el barrio es antes que nada ser responsable de si mismo mostrando el ejemplo a los ni&#241;os, como por ejemplo no botar basuras en cualquier lugar, tratar de dar consejos entre ellos y en la familia, no dejar tiradas las aguas usadas en la calle. En conclusi&#243;n, dar un buen desarrollo al barrio 
+
+Les enviamos de vuelta la pelota pregunt&#225;ndoles tambi&#233;n : que es ser joven en vuestro barrio ? 
+
+Gracias
+</textoes>
+    <tituloes> &#191;Qu&#233; es ser joven en mi barrio?</tituloes>
+    <usuarioforo>
+      <nombre>SIKOSANIYA</nombre>
+      <id type="integer">20</id>
+      <equipo-id type="integer">8</equipo-id>
+      <email>SIKOSANIYA</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T12:57:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">24</id>
+    <textoes>hola me llamo alexandra me gustaria que me contaran como es la vida en otros paises. yo les cuento que aunque en colombia es un poco 
+dificil, me siento orgullosa de ser colombiana. 
+pasando a otro parte les cuento que hace poco hago parte de el grupo Barrios del Mundo el cuales es un espacio en el que puedo aprender 
+muchas cosas buenas pero tambien puedo 
+divertirme mucho. espero una respuesta pronto 
+gracias chaos..... 
+</textoes>
+    <tituloes>cuenteme</tituloes>
+    <usuarioforo>
+      <nombre>alexandra bogota</nombre>
+      <id type="integer">19</id>
+      <equipo-id type="integer">3</equipo-id>
+      <email>alexandra bogota</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T12:57:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">23</id>
+    <textoes>Somos Lucy y Benjamin del proyecto Barrios del Mundo el Alto,y tambien queremos compartir algunas esperiencias de aprendizaje, respecto a la Investigacion Accion Accion Participativa y el como nos favorecio en todo el trabajo que realizamos en el trnascurso del a&#241;o junto a nuestros facilitadores. 
+Cabe recordarles que el grupo Base de El Alto "Bolivia" tuvimos una serie de 
+capacitaciones a cargo a diferentes expertos como ser: La se&#241;ora Pilar Trujillo (Genero) Catalina Cartografia Social) y el se&#241;or Alasan Faye y la se&#241;ora Ada Bazan(IAP) quienes nos 
+hicieron comprender muchos aspectos 
+relacionados a las tematicas mencionadas. 
+Tambien agradecer a los mismos por compartir con nosotros sus conocimientos.Los cuales fueron siendo utilizados en todas nuestras 
+reuniones y en si en todo el proceso del proyecto Barrios El Alto. 
+En el transcurso de todo el a&#241;o nuestros facilliadores constantemente nos repiten que nosotros no solo somos el futuro si no que somos el presente y que si queremos mejorar nuestra calidad de vida esta en nuestras manos 
+por que depende mucho de nuestro accionar dentro de los diferentes ambitos. 
+Entonces nosotros ya no somos sujetos de observacion e investigacion sino que ahora somos actores y participamos en la planificacion de todas las actividades que realizamos en el proyecto. Como lo menciona la 
+metodologia de la IAP. 
+Nosotros somos quiene a partir de nuestras diversas necesidades e inquietudes que tenemos como jovenes lanzamos propuestas y queremos que 
+la sociedad y nuestros gobernates nos tomen en cuenta y nos escuchen. 
+De esta iniciativa nosotros empezamos a incursionar en diferentes ambitos como por ejemplo: participamos en la consulta a la ciudadania rumbo a la Asamble Constituyente junto a Derechos Humanos, en la cual expusimos cuales 
+son nuestras necesidades y problemas y que alternativas de solucion le damos, basandonos en nuestra Constitucion Politica del Estado. 
+Actualmente tambien estamos participando del "Consejo Municipal de la Juventud" el cual abarca a los 9 distritos de la ciudad de El Alto, siendo nosotros representantes del 
+distrito No 1 . 
+gracias a nuestra perseverancia como la de muchos otros jovenes que perteneces a diferentes grupos juveniles, pudimos organizar 
+un "FORO JUVENIL ALTE&#209;O RUMBO A LAS ELECCIONES MUNICIPALES 2004" 
+Para el mismo realizamos diferentes encuentros con cada distrito con el objetivo de trabajar una propuesta, la cual se elaboro en funcion a 
+tres aspectos: Desarrollo Politico, Desarrollo Social y Desarrollo Humano. 
+La propuesta fue elaborada por jovenes de los 9 distritos y se la presento a los diferentes candidatos el dia del foro, en el cual los mismos se comprometieron a tomar en cuenta 
+nuestra propuesta el que fuera elegido, firmando un acta de compromiso el mismo dia del foro. 
+Tambien recordar que la Cartografia social nos ayuda a analizar nuestra situacion de vida basandonos en como era nuestro pasado, como es nuestro presente y el como quisieramos que sea 
+en el futuro.Las representaciones de los mismos pueden reflejar cuales son nuestras necesidades y a partir de ellas poder dar alternativas de solucion. 
+Respecto a Genero se podria decir que es como transversal de todo este proceso porque esta inmersa en todo lo que se refiere a igualdad de oportunidades sin ningun tipo de discriminacion. 
+Por que ahora los roles pueden ser compartidos sin irse a extremos como ser el machismo y el feminismo. 
+Ahora los jovenes somos escuchados y esto solo es el comienzo de un largo camino a recorrer y estos son resultados de un trabajo reflexivo 
+orientado por las corrientes metodologicas de la IAP, Cartografia Social,Genero y el apoyo de nuestros queridos facilitadores. Los cuales nos ayudan a direccionar nuestros diferentes objetivos y metas como jovenes del proyecto "Barrios del Mundo El Alto - Bolivia"
+</textoes>
+    <tituloes>Socializacion de Aprendizajes</tituloes>
+    <usuarioforo>
+      <nombre>Lucy y Benjamin "El Alto"</nombre>
+      <id type="integer">18</id>
+      <equipo-id type="integer">4</equipo-id>
+      <email>Lucy y Benjamin "El Alto"</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T12:54:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">22</id>
+    <textoes>En todos los sitios de BOGOTA hay jovenes que, de acuerdo a sus a sus posibilidades, entre otras cosas buscan siempre la manera de superarse y de hacer aportes que le sirvan a 
+los demas, es por eso que nuestra experiencia en BARRIOS DEL MUNDO, ha sido tan provechosa para todos los que hemos pasado por este proceso, ya que entre otras muchas cosas mas, hemos indagado acerca de la vida actual y 
+pasada de nuestros barrios con medios como la cartografia social con lo que podemos concientizarnos de los temas en los que podemos intervenir para mejorar el sitio en el que vivimos y en el que algun dia viviran nuestros 
+hijos. 
+
+Gracias a todas las personas y organizaciones que trabajan en equipo con nos nosotros por que sin duda alguna estamos haciendo una labor muy 
+grande que con el tiempo dara resultados que nos haran sentirnos orgullosos de lo que hoy hacemos.
+</textoes>
+    <tituloes>Comment vivent les jeunes &#224; Bogota</tituloes>
+    <usuarioforo>
+      <nombre>Sandra Karlina Gutierrez</nombre>
+      <id type="integer">17</id>
+      <equipo-id type="integer">2</equipo-id>
+      <email>Sandra Karlina Gutierrez</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T12:52:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">17</id>
+    <textoes>yo soy Jamila, del proyecto barrios del mundo 
+en Barcelona... queremos saber en est&#225;is 
+trabajando en Marruecos para proyecto. 
+
+Nosotras tenemos un grupo de chicas que se 
+re&#250;ne los s&#225;bados para hacer diferentes 
+actividades como entrevistar a mujeres del 
+barrio, entre nosotras y a chicos del barrio y 
+otras actividades que hemos propuesto entre 
+todas. 
+
+Un saludo desde Barcelona. BSLAMA
+</textoes>
+    <tituloes>salam alaykom</tituloes>
+    <usuarioforo>
+      <nombre>jamila</nombre>
+      <id type="integer">12</id>
+      <equipo-id type="integer">10</equipo-id>
+      <email>jamila</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T12:52:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">15</id>
+    <textoes>Pour commencer, je parlerai des probl&#232;mes des jeunes qu'il y a dans le quartier, comme le manque de travail, d'&#233;ducation et le plus important: le manque de lieu pour passer son temps libre. 
+C'est pour cela que nous avons d&#233;cid&#233; de cr&#233;er une maison de la culture dans le quartier avec les amis de enda Am&#233;rique latine. De l&#224; nous pouvons faire des choses productives pour nous les jeunes, comme cr&#233;er une cha&#238;ne communautaire, le th&#232;me du genre et la projection de films tant pour les enfants, jeunes et adultes. 
+Dans la maison de la culture, nous passons des moments agr&#233;ables et amusants. Ce lieu est devenu un des rares lieux o&#249; nous les jeunes, nous pouvons nous r&#233;unir, c'est &#224; dire un espace public...
+</textoes>
+    <tituloes>j&#243;venes en San Luis</tituloes>
+    <usuarioforo>
+      <nombre>Doris Ramos</nombre>
+      <id type="integer">10</id>
+      <equipo-id type="integer">3</equipo-id>
+      <email>Doris Ramos</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-16T12:35:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">13</id>
+    <textoes>La juventud se define como la etapa de la vida del hombre entre la infancia y la edad viril. Seg&#250;n la constituci&#243;n de Mal&#237; la juventud se sit&#250;a entre los 18 y 35 a&#241;os. Constituye la parte activa de la sociedad: 
+
+Un joven en el barrio es considerado como una riqueza muy grande. Justo despu&#233;s de su iniciaci&#243;n, los j&#243;venes deben conocer nuestros valores culturales y ancestrales, saber conjugarlos con las realidades de la &#233;poca conservando al mismo tiempo nuestra identidad. 
+
+Los j&#243;venes son la &#250;nica fuente disponible del tercer mundo para realizar los objetivos de desarrollo social y econ&#243;mico. La falta de capital, la existencia de enfermedades end&#233;micas, consecuencia de sequ&#237;as continuas&#8230; en los pa&#237;ses del tercer mundo, encontraremos la soluci&#243;n a trav&#233;s de la valorizaci&#243;n de sus talentos humanos. 
+
+La participaci&#243;n es un deber para todo joven, a partir del momento en que el hombre vive en sociedad y trata de tener ciertas relaciones con sus semejantes, lo que hace la diferencia entre un hombre y un animal. Es por esto que un joven de un barrio debe insistir para hacer parte del equipo del programa de su barrio. Todo joven debe hacer esto dentro de los grupos a los cuales pertenece en su barrio. Si no lo hace entonces estar&#225; de &#233;l mismo integrando las palas mec&#225;nicas, las carretillas y los picos... 
+
+Los j&#243;venes deben concientizarse en el barrio, la concientizaci&#243;n humana es una conciencia perpetua. Cuando una estructura social se vuelve un obst&#225;culo al ejercicio de la reflexi&#243;n critica, es deshumanizadora. Es normal que las estructuras sociales en las que vivimos puedan transformar para satisfacer las necesidades. 
+
+Los j&#243;venes deben participar a los esfuerzos realizados en vista de mejorar el nivel de vida en el barrio. Son la base de las acciones en las comunidades. 
+
+Y nosotros les preguntamos: &#191;cu&#225;les son los roles y deberes de los j&#243;venes en su barrio? 
+
+BIRAMA KONATE presidente de los j&#243;venes NIAMAKORO / BAMAKO/ MALI
+</textoes>
+    <tituloes> &#191;Qu&#233; es ser joven en el barrio?</tituloes>
+    <usuarioforo>
+      <nombre>BIRAMA KONATE</nombre>
+      <id type="integer">8</id>
+      <equipo-id type="integer">1</equipo-id>
+      <email>BIRAMA KONATE</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-01T10:11:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">12</id>
+    <textoes>enda america latina nos ha brindado la 
+oportunidad de buscar nuevas formas de vida y 
+union en nuestra comunidad. 
+nosotros como jovenes esperamos en un futuro 
+tener buenos resultados con los proyectos que 
+nos hemos planteado como grupo barrios del mundo 
+tambien nos han brindado la oportunidad de 
+integrarnos como jovenes y personas en una 
+sociedad integra...
+</textoes>
+    <tituloes>san luis bogota</tituloes>
+    <usuarioforo>
+      <nombre>tola and magu</nombre>
+      <id type="integer">7</id>
+      <equipo-id type="integer">3</equipo-id>
+      <email>tola and magu</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-12-01T10:09:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">11</id>
+    <textoes>Para empezar les cuento que como jovenes no 
+tenemos muchas p&#242;sibilidades en el barrio 
+debido a que nos catalogan algunas personas 
+como bagos o sin oficio pero "PORFIN" 
+encontramos a enda America Latina y a barrios 
+del mundo que nos dieron la pocibilidada de 
+darles a conocer nuestros proyectos como tener 
+una biblioteca publica en el barrio y para el 
+barrio tambien tener una casa de la 
+cultura,tener un lugar especifico para que se 
+reuna la jente a dialogar o almenos para 
+recochar, tenemos varios planes como seguir 
+teniendo barios intercambios por todo el pais a 
+y por todo el planeta.Bueno eso es un peque&#241;o 
+resumen de lo que nosotros como barrios del 
+mundo queremos para los jovenes por los jovenes 
+y con los jovenes. chaito pues
+</textoes>
+    <tituloes>posibilidades que nos dan en el barrio San Luis</tituloes>
+    <usuarioforo>
+      <nombre>Johanna Garcia</nombre>
+      <id type="integer">6</id>
+      <equipo-id type="integer">9</equipo-id>
+      <email>Johanna Garcia</email>
+    </usuarioforo>
+  </comentario>
+  <comentario>
+    <created-at type="datetime">2004-11-30T22:18:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">10</id>
+    <textoes>hola me lamo Ivan soy del grupo de BDM de este 
+a&#241;o y quiero contarles todo lo que hemos hecho 
+hasta ahora. 
+primero les voy a hablar de lo que hemos hehco 
+de cartografia social el metodo que utilisamos 
+fue, localizar la carretera pirncipal y de hay 
+comensavamos a sacar el colegio, las casas y 
+todo uqe nos acordavamoas ha si comenso la 
+cartografia social. 
+Otro tema que me gusto mucho fue el tema de 
+genero por que se formo un debate entre 
+hombres y mujeres de como se trataba a la 
+mujer o como la sociedad trata e se porblema, 
+el grupo comenso a dialogar sobre el tema y de 
+hay salieron muchas cosas por discutir, 
+despues vimos un video sobre el tema que se 
+trataba de un se&#241;or que tenia un sue&#241;o donde 
+se canviaban los papeles el hombre hasia de 
+mujer y la mujer de hombre. 
+ya para despedirme les digo que este poryecto 
+me a paresido muy vacano 
+</textoes>
+    <tituloes>Sobre los m&#233;todos de trabajo</tituloes>
+    <usuarioforo>
+      <nombre>ivan Nieto</nombre>
+      <id type="integer">5</id>
+      <equipo-id type="integer">3</equipo-id>
+      <email>ivan Nieto</email>
+    </usuarioforo>
+  </comentario>
+</comentarios>

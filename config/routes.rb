@@ -61,6 +61,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/sitio' => 'femmes#sitio'
   match 'femmes/foros' => 'femmes#foros'
   match 'femmes/foro' => 'femmes#foro'
+  match 'femmes/forito' => 'femmes#forito'
   match 'femmes/presentacion'=> 'femmes#presentacion'
   match 'femmes/pagina'=> 'femmes#pagina'
   match 'femmes/colaborador'=> 'femmes#colaborador'

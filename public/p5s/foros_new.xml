@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comentarios type="array">
+  <comentario>
+    <created-at type="datetime">2011-01-25T09:55:00Z</created-at>
+    <comentario-id type="integer" nil="true"></comentario-id>
+    <id type="integer">39</id>
+    <textoes>EL NUEVO</textoes>
+    <tituloes>EL NUEVO!!</tituloes>
+    
+   <usuarioforo>
+			<nombre>mohamed alilou</nombre>
+			<id type="integer">11</id>
+			<equipo-id type="integer">10</equipo-id>
+			<email>mohamed alilou</email>
+		</usuarioforo>
+    
+  </comentario>
+  
+ 
+
+
+</comentarios>

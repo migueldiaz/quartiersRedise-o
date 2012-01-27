@@ -159,6 +159,11 @@ def foro
             @seccion_menu=:foros
        logger.info("---------------------------------------------------------------")
        logger.info(I18n.locale)
-
 end
+def forito
+   
+  foro
+ render :layout=>'foro_interactivo'
+end
+
 end
