@@ -28,8 +28,4 @@
     <nombre>Rio de Janeiro</nombre>
     <id type="integer">17</id>
   </equipo>
-  <equipo>
-    <nombre>Barcelona</nombre>
-    <id type="integer">21</id>
-  </equipo>
 </equipos>
