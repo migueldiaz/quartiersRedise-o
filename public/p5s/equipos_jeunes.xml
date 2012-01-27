@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos type="array">
+  <equipo>
+    <nombre>BAMAKO</nombre>
+    <id type="integer">1</id>
+  </equipo>
+  <equipo>
+    <nombre>BARCELONA</nombre>
+    <id type="integer">2</id>
+  </equipo>
+  <equipo>
+    <nombre>BOGOT&#193;</nombre>
+    <id type="integer">3</id>
+  </equipo>
+  <equipo>
+    <nombre>EL ALTO</nombre>
+    <id type="integer">4</id>
+  </equipo>
+  <equipo>
+    <nombre>EVRY</nombre>
+    <id type="integer">5</id>
+  </equipo>
+  <equipo>
+    <nombre>MONTREUIL</nombre>
+    <id type="integer">6</id>
+  </equipo>
+  <equipo>
+    <nombre>PALMA DE MALLORCA</nombre>
+    <id type="integer">7</id>
+  </equipo>
+  <equipo>
+    <nombre>PIKINE</nombre>
+    <id type="integer">8</id>
+  </equipo>
+  <equipo>
+    <nombre>RIO DE JANEIRO</nombre>
+    <id type="integer">9</id>
+  </equipo>
+  <equipo>
+    <nombre>SAL&#201;</nombre>
+    <id type="integer">10</id>
+  </equipo>
+</equipos>

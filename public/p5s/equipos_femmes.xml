@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos type="array">
+  <equipo>
+    <nombre>Bamako</nombre>
+    <id type="integer">11</id>
+  </equipo>
+  <equipo>
+    <nombre>Bogot&#225;</nombre>
+    <id type="integer">12</id>
+  </equipo>
+  <equipo>
+    <nombre>El Alto</nombre>
+    <id type="integer">13</id>
+  </equipo>
+  <equipo>
+    <nombre>Ouarzazate</nombre>
+    <id type="integer">14</id>
+  </equipo>
+  <equipo>
+    <nombre>Paris</nombre>
+    <id type="integer">15</id>
+  </equipo>
+  <equipo>
+    <nombre>Pikine</nombre>
+    <id type="integer">16</id>
+  </equipo>
+  <equipo>
+    <nombre>Rio de Janeiro</nombre>
+    <id type="integer">17</id>
+  </equipo>
+</equipos>

@@ -31,7 +31,7 @@ void draw(){
 	background(100);
 	if(frameCount%(30*30)==0){
 		CeldaRet c=reticulaRet.celdaSeleccionada;
-		reticulaRet.incluyeXML("foros_new.xml",c.comentario);
+		reticulaRet.incluyeXML("../p5s/foros_new.xml",c.comentario);
 		navegadorTemporalComentarios.init(reticulaRet.comentariosOrdenadosFecha);
 		navegadorUsuarios.init(reticulaRet.usuarios);
 		log.info("alla va!");

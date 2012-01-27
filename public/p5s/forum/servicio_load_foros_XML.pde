@@ -9,7 +9,7 @@ class ServicioLoadForosXML {
 	ArrayList procesaXML(String xmlFile){
 	ArrayList comentarios=new ArrayList();
 
-	XMLElement xml = new XMLElement(this, "../p5s/"+xmlFile);
+	XMLElement xml = new XMLElement(this, xmlFile);
 	int numSites = xml.getChildCount();
 	XMLElement[] kids = xml.getChildren();
 	//println("numero de elementos en " + kids.length);
