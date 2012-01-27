@@ -29,6 +29,9 @@ class EquiposController < ApplicationController
         respond_to do |format|
       format.html # index.html.erb
       format.json {render :json => @equipos.to_json}
+      format.xml {render :json => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre])}
+            #format.xml  { render :xml => @foro.comentarios.sort_by( &:created_at ).reverse.to_xml(:only => [:id, :tituloes,:textoes, :created_at,  :comentario_id],:include=>{:usuarioforo=>{:only=>[:id, :nombre, :email, :equipo_id]}})}
+
       end
 
 end
