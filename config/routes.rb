@@ -1,5 +1,6 @@
 Paginadocumentos::Application.routes.draw do
 
+    match 'comentarios/nuevo'=> 'quartiers#load'
    match 'notifica' => 'email#new', :as => 'notifica', :via => :get
    match 'notifica' => 'email#create', :as => 'notifica', :via => :post
    resources :email

@@ -16,7 +16,7 @@ class EquiposController < ApplicationController
 	   	else
 	    	  @equipos = Equipo.find(:all, :conditions => "revisadofr = 'false'")	
 	   	end	
-  else
+  elsif params[:id]
  	  @sitio=Sitio.find(params[:id])
  	  if !@sitio.jeunes.nil?
  	   @jeunes=@sitio.jeunes
@@ -25,11 +25,18 @@ class EquiposController < ApplicationController
  	   @femmes=@sitio.femmes
  	   @equipos = @femmes.equipos
  	 end
+ elsif params[:tipo]=='jeunes'
+ @jeunes=Jeunes.first
+ @equipos=@jeunes.equipos
+ elsif  params[:tipo]=='femmes'
+ @femmes=Femmes.first
+ @equipos=@femmes.equipos
  end
-        respond_to do |format|
-      format.html # index.html.erb
-      format.json {render :json => @equipos.to_json}
-      end
+ 
+ respond_to do |format|
+ format.html # index.html.erb
+ format.json {render :json => @equipos.to_json}
+ end
 
 end
 

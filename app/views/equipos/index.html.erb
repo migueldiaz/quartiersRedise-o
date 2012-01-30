@@ -19,6 +19,7 @@
 		:columns=>[t('nombreEquipo'), t('informacionEs'),t("informacionFr"), t("show"), t('edit'), t('destroy')]} %>
 <%= render :partial => "equipos/equipo", :collection => @equipos %>
 </table>
+
 <div class="opciones_generales">
 	<ul  >
 		<% if current_user.tipo=='traductor'%>

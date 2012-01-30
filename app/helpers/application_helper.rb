@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+def nuevoscomentarios(identificador)
+
+ @comentario=Comentario.find(identificador)
+ @foro=@comentario.foro
+ @comentarios=@foro.comentarios.all(:conditions => ["id > ?",identificador+1])
+ return @comentarios
+end
+
+
 def local
 	I18n.locale.to_s
 end
