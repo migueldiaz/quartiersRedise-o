@@ -1,19 +1,14 @@
 class ServicioLoadEquipos {
 
-	List<Equipo> equipos= new ArrayList<Equipo>();
+	List<Equipo> equipos;
 	ServicioLoadForosXML forosXMLLoad;
+		ServicioLoadEquiposXML loadEquipos=new ServicioLoadEquiposXML();
+	
 	public ServicioLoadEquipos() {
-			equipos.add(new Equipo( 1, "bamako", "Niamakoro y Sicoro"));
-			equipos.add(new Equipo( 2, "barcelona", "Casc Antic"));
-			equipos.add(new Equipo( 3, "bogota", "Chapinero"));
-			equipos.add(new Equipo( 4, "elalto",  "Santa Rosa"));
-			equipos.add(new Equipo( 5, "evry",  "Pyramides"));
-			equipos.add(new Equipo( 6, "montreuil","Bel-Pêche"));
-			equipos.add(new Equipo( 7, "palma",  "Son Roca y Son Gotleu"));
-			equipos.add(new Equipo( 8, "pikine", "Wakhinane"));
-			equipos.add(new Equipo( 9, "rio",  "La Maré y Rio das Pedras"));
-			equipos.add(new Equipo( 10, "sale", "Karyan El Oued"));
-			equipos.add(new Equipo( 11, "QDM", "QDM"));
+		String urlE="../p5s/equipos_femmes.xml";
+		//log.debug(urlE);
+			equipos=loadEquipos.procesaXML(urlE);
+			// println(equipos);   
 			ArrayList listaColoresEquipo = new ServicioToxiColor().iniciaColoresEquiposBis();
 			for (int i = 0; i < equipos.size(); i++){
 				equipos.get(i).setColor(listaColoresEquipo.get(i));
