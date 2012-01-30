@@ -37,16 +37,6 @@ class EquiposController < ApplicationController
  format.html # index.html.erb
  format.json {render :json => @equipos.to_json}
  end
-<<<<<<< HEAD
-=======
-        respond_to do |format|
-      format.html # index.html.erb
-      format.json {render :json => @equipos.to_json}
-      format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre])}
-            #format.xml  { render :xml => @foro.comentarios.sort_by( &:created_at ).reverse.to_xml(:only => [:id, :tituloes,:textoes, :created_at,  :comentario_id],:include=>{:usuarioforo=>{:only=>[:id, :nombre, :email, :equipo_id]}})}
-
-      end
->>>>>>> 657be5335ea4877fe09b2ecdead2f0b271c0b5c5
 
 end
 

@@ -4,10 +4,8 @@ class ServicioLoadEquipos {
 	ServicioLoadForosXML forosXMLLoad;
 		ServicioLoadEquiposXML loadEquipos=new ServicioLoadEquiposXML();
 	
-	public ServicioLoadEquipos() {
-		String urlE="../p5s/equipos_femmes.xml";
-		//log.debug(urlE);
-			equipos=loadEquipos.procesaXML(urlE);
+	public ServicioLoadEquipos(String xmlEquipos) {
+			equipos=loadEquipos.procesaXML(xmlEquipos);
 			// println(equipos);   
 			ArrayList listaColoresEquipo = new ServicioToxiColor().iniciaColoresEquiposBis();
 			for (int i = 0; i < equipos.size(); i++){

@@ -142,6 +142,9 @@ def equipos
   		@jeunes=@web.jeunes
   		@equipos=@jeunes.equipos
   		@sitio=@jeunes.sitio
+        respond_to do |format|
+            format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre])}
+    end
 end
 
 
@@ -160,6 +163,11 @@ def buscador
       @jeunes=@web.jeunes
       @sitio=@jeunes.sitio
 
+end
+def forito
+   
+  foro
+ render :layout=>'foro_interactivo'
 end
 
 end

@@ -13,7 +13,10 @@ class ServicioLoadForosXML {
 	int numSites = xml.getChildCount();
 	XMLElement[] kids = xml.getChildren();
 	//println("numero de elementos en " + kids.length);
+	int contador=0;
 	for (XMLElement el : kids) {
+	contador++;
+	
 			String fecha = el.getChild("created-at").getContent();
 			/* parsear fecha */
 			String texto = el.getChild("textoes").getContent();
@@ -43,13 +46,17 @@ class ServicioLoadForosXML {
 			e.comentarios.add(com);
 			comentarios.add(com);
 	}
+				//println("saliendo de comentarios"+contador);
+	
 			return comentarios;
 }
+	
 
 	Equipo getEquipo(int id, ArrayList equipos) {
-		Equipo e = equipos.get(id - 1);
-		if(e==null) return equipos.get(equipos.size()-1);
-		return e;
+	for(Equipo e:equipos){
+		if(e.id==id) return e;
+	}
+	return equipos.get(0);
 	}
 
  

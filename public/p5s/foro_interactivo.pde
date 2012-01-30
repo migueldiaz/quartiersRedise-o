@@ -18,10 +18,12 @@ void setup(){
 	hint(DISABLE_OPENGL_2X_SMOOTH);
 	colorMode(HSB, 100);
 	background(80);
-	size(800, 600);
+	//size(800, 600);
+		size($(window).width(), $(window).height());
 	//smooth();
-	 var query = Request.parameter('id');
-	reticulaRet = new ReticulaRet("../foros/"+query+".xml",200, 80, width - 220, height-90);
+	 var idForo = Request.parameter('id');
+	 var equiposSitio = Request.parameter('equipos');
+	reticulaRet = new ReticulaRet("/"+equiposSitio+"/equipos.xml", "../foros/"+idForo+".xml",200, 80, width - 220, height-90);
 	navegadorUsuarios=new NavegadorUsuarios(reticulaRet.usuarios, reticulaRet.getHeight(), reticulaRet.getX(), reticulaRet.getY());
 	navegadorTemporalComentarios=new NavegadorTemporalComentarios(reticulaRet.comentariosOrdenadosFecha, reticulaRet.getX(),  reticulaRet.getWidth());
 

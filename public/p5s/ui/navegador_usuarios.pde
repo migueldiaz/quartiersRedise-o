@@ -32,16 +32,17 @@ public void init(List<UsuarioForo> usuarios) {
 				colorTexto=usu.equipo.col;
 				
 			}
+			float distanciaNumero=20;
 			fill(colorFondo);
 			noStroke();
 			rect(0, posY, _x-50, heightUsuarioBox);
 			fill(usu.equipo.col);
-			rect(0, posY, heightUsuarioBox, heightUsuarioBox);
+			rect(0, posY, distanciaNumero, heightUsuarioBox);
 			textSize(10);
 			fill(100);
 			text("["+usu.comentarios.size()+"]", 1, posY+heightUsuarioBox/2);
 			fill(colorTexto);
-			text(usu.nombre, heightUsuarioBox+5, posY+heightUsuarioBox/2);
+			text(usu.nombre, distanciaNumero+5, posY+heightUsuarioBox/2);
 		}		
 	}
 
@@ -53,6 +54,7 @@ public void init(List<UsuarioForo> usuarios) {
 				log.info("click en usuarios"+posUsuario+" usu: "+usuarioForo);
 				List<ComentarioForo> comentarios = usuarioForo.comentarios;
 				// TODO : Collections.sort(comentarios, new ComparatorFecha());
+				log.debug(usuarioForo.equipo.nombre);
 				return comentarios.get(0);
 			}
 		return null;
