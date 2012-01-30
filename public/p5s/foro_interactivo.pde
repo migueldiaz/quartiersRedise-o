@@ -31,9 +31,9 @@ void setup(){
 Refresco r=new Refresco();
 void draw(){
 	background(100);
-	if(frameCount%(30*2)==0){
+	if(frameCount%(30*30)==0){
 		CeldaRet c=reticulaRet.celdaSeleccionada;
-		reticulaRet.incluyeXML("/comentarios/nuevos/13.xml",c.comentario);
+		reticulaRet.incluyeXML("/comentarios/nuevos/"+reticulaRet.dameUltimoIdComentario()+".xml",c.comentario);
 		navegadorTemporalComentarios.init(reticulaRet.comentariosOrdenadosFecha);
 		navegadorUsuarios.init(reticulaRet.usuarios);
 		log.info("alla va!");
