@@ -17,12 +17,11 @@ class ComentariosController < ApplicationController
   end
 def nuevos
 
-	 if params[:id]
-		 Integer identificador=Integer(params[:id])
- 	 	 @comentario=Comentario.find(identificador)
+	 @comentario=Comentario.find(params[:id])
+		 Integer identificador=Integer(params[:id]) 	
       	 @foro=@comentario.foro
-     	 @comentarios=@foro.comentarios.all(:conditions => ["id > ?",identificador+1])
-	end
+     	 @comentarios=@foro.comentarios.all(:conditions => ["id > ?",identificador])
+	
  	respond_to do |format|
      	 format.xml {render :xml =>  @comentarios.sort_by( &:created_at ).reverse.to_xml(:only => [:id, :tituloes,:textoes, :created_at,  :comentario_id],:include=>{:usuarioforo=>{:only=>[:id, :nombre, :email, :equipo_id]}})}
     end
@@ -94,6 +93,7 @@ end
       @jeunes=@sitio.jeunes
     end
     segun_proyecto
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @comentario }
