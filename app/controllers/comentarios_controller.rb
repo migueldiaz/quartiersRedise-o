@@ -10,8 +10,22 @@ class ComentariosController < ApplicationController
 #      "juan_jeunes"
 #    end
 #  end
+ def nuevoscomentarios(identificador)
+    
+     return @comentarios
+  
+  end
+def nuevos
 
-def nuevo
+	 if params[:id]
+		 Integer identificador=Integer(params[:id])
+ 	 	 @comentario=Comentario.find(identificador)
+      	 @foro=@comentario.foro
+     	 @comentarios=@foro.comentarios.all(:conditions => ["id > ?",identificador+1])
+	end
+ 	respond_to do |format|
+     	 format.xml {render :xml =>  @comentarios.sort_by( &:created_at ).reverse.to_xml(:only => [:id, :tituloes,:textoes, :created_at,  :comentario_id],:include=>{:usuarioforo=>{:only=>[:id, :nombre, :email, :equipo_id]}})}
+    end
 
 end
 

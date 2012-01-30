@@ -6,7 +6,7 @@ module ApplicationHelper
     @foro=@comentario.foro
     @comentarios=@foro.comentarios.all(:conditions => ["id > ?",identificador+1])
     # return @comentarios
-    respond_to do |format|
+  	  respond_to do |format|
       format.xml {render :xml =>  @comentarios.sort_by( &:created_at ).reverse.to_xml(:only => [:id, :tituloes,:textoes, :created_at,  :comentario_id],:include=>{:usuarioforo=>{:only=>[:id, :nombre, :email, :equipo_id]}})}
     end
   end
