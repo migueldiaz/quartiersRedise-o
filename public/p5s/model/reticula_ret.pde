@@ -16,12 +16,12 @@ class ReticulaRet implements TreeDisplayable{
 
 	 ServicioLoadEquipos servicioLoadEquipos;
 	
-	public ReticulaRet(String xml, float x1, float y1, float ancho, float alto){
+	public ReticulaRet(String xmlEquipos,String xml, float x1, float y1, float ancho, float alto){
 		this.x1 = x1;
 		this.y1 = y1;
 		this.ancho = ancho;
 		this.alto = alto;
-		servicioLoadEquipos = new ServicioLoadEquipos();
+		servicioLoadEquipos = new ServicioLoadEquipos(xmlEquipos);
 		comentariosExistentesDB = servicioLoadEquipos.loadXML(xml);
 		resetReticulaConComentariosDB(false);
 
@@ -284,7 +284,10 @@ float anchoColumna = getWidth() / cc.columnas;
 				fill(0);
 				//|| celda==celdaSeleccionada ampliar condicion para que aparezca texto en celda seleccionada
 				//(celda.getHeight()==celda.getHeightFinal()
+				if(celda!=celdaSeleccionada)
 				celda.rectangleConTexto.setMedidas(celda.getX(), celda.getY(), celda.getWidth(), celda.getHeight());
+				else
+				celda.rectangleConTexto.setMedidas(celda.getX(), celda.getY(), celda.getWidth()-100, celda.getHeight());
 				celda.rectangleConTexto.display(false);
 				// text(celda.comentario.usuario.nombre, celdaX, celdaY +
 				// celdaHeight / 4);
@@ -293,7 +296,6 @@ float anchoColumna = getWidth() / cc.columnas;
 			}
 		}
 	}
-
 
 
 	public void raton(int mouseX, int mouseY) {

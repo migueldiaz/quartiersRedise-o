@@ -148,6 +148,7 @@ data-processing-sources="../p5s/foro_interactivo.pde ../p5s/log.pde ../p5s/recta
 ../p5s/ui/navegador_temporal_comentarios.pde 
 ../p5s/forum/servicio_load_equipos.pde 
 ../p5s/forum/servicio_load_foros_XML.pde 
+../p5s/forum/servicio_load_equipos_XML.pde 
 ../p5s/forum/servicio_mensajes.pde 
 ../p5s/calculos/calculo_profundidad_columna.pde 
 ../p5s/calculos/redimensionador_posicionador_elementos.pde 

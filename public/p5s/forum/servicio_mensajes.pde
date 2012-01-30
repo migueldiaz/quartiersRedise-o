@@ -10,19 +10,38 @@ class ServicioMensajes {
 	public List<ComentarioForo> loadMensajes(List<ComentarioForo> comentarios) {
 		this.comentarios=comentarios;
 		 for(ComentarioForo c:comentarios){
-			 if(!usuarios.contains(c.usuario)){
+		 		//println("comentario.id: "+c.id+"  usuario.id: "+c.usuario.id);
+		 		//println(compruebaExiste(usuarios, c.usuario));
+			 if(!compruebaExiste(usuarios, c.usuario)){
+				 //println("intentando incluir incluido!");
 				 usuarios.add(c.usuario);
+				 //println("consiguiendo incluir incluido!");
 			 }
+			 	//println("otro...");
+			 
 		 }
+		 
 		List<ComentarioForo> organizaMensajes2 = organizaLosMensajes();
 		for(ComentarioForo c:organizaMensajes2){
 			organizaMensajes.add(c);
 			}
 		return organizaMensajes2;
 	}
+	
+	boolean compruebaExiste(List<Usuario> usus, Usuario us){
+	for(Usuario ux:usus){
+	if(ux.id==us.id){
+	 return true;
+	 }
+	}
+	 return false;
+	
+	}
+	
 	 List<ComentarioForo> organizaLosMensajes() {
 		log.info("numero mensajes:" + comentarios.size());
 		List<Usuario> usuariosParticipantes = dameUsuariosParticipantes(comentarios);
+			//	 				 println("sssssss!");
 		log.info("usuarios:" + usuariosParticipantes.size());
 		
 		return relacionaParentChildrens(comentarios);
@@ -32,7 +51,7 @@ class ServicioMensajes {
 		for (ComentarioForo ce : comentarios) {
 			Usuario usuarioEscale = ce.usuario;
 			// TODO reimplementar en javascript el metodo equals...
-			if (!usuarios.contains(usuarioEscale))
+			if (!compruebaExiste(usuarios,usuarioEscale))
 				usuarios.add(usuarioEscale);
 		}
 		return usuarios;

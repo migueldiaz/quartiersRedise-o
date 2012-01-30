@@ -107,6 +107,9 @@ def equipos
     	@femmes=Femmes.first
   		@equipos=@femmes.equipos
   		@sitio=@femmes.sitio
+        respond_to do |format|
+            format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre])}
+    end
 end
 def equipo
        @equipo=Equipo.find(params[:id])
