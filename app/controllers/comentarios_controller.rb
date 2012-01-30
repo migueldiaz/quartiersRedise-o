@@ -10,6 +10,12 @@ class ComentariosController < ApplicationController
 #      "juan_jeunes"
 #    end
 #  end
+
+def nuevo
+
+end
+
+
 def autentifica
   if(session[:usuario_id]==nil)
   require_usuarioforo
