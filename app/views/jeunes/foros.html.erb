@@ -4,7 +4,7 @@
 trad=Traduccion.new(foro, :titulo)
 %>
 <li><h2><%= link_to trad.resultado,jeunes_foro_path(:id=>foro, :locale=>I18n.locale), :style=>trad.alternativaCSS %></h2>
- <h4><%= link_to 'interactivo',jeunes_forito_path(:id=>foro,:equipos=>'jeunes', :locale=>I18n.locale), :style=>trad.alternativaCSS %></h4></li>
+ <h4><%= link_to 'interactivo',jeunes_forito_path(:usuarioforo_id=>session[:usuarioforo_id], :id=>foro,:equipos=>'jeunes', :locale=>I18n.locale), :style=>trad.alternativaCSS %></h4></li>
 <%end%>
 </ul>
 

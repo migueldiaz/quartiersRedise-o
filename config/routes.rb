@@ -55,6 +55,7 @@ Paginadocumentos::Application.routes.draw do
   match 'jeunes/equipo'=> 'jeunes#equipo'
   match 'jeunes/contacto'=> 'jeunes#contacto'
   match 'jeunes/buscador'=> 'jeunes#buscador'
+  match 'jeunes/forito' => 'jeunes#forito'
   ###################################################
    match '/femmes/'=> 'femmes#presentacion'
    match 'femmes/acceso' => 'femmes#acceso'
