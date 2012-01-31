@@ -10,7 +10,19 @@ public void reset(){
 }
 public void newComentario(String titulo, String texto){
 	println("comentarioAntID:"+reticulaRet.celdaSeleccionada.comentario.id+":::"+titulo+"---"+texto+"________from p5s");
+	$.ajax({
+	  type: "POST",
+	  url: "/comentarios",
+	  data: "usuarioforo_id="+usuarioforo_id+"&foro_id="+idForo+"&textoes=hola&tituloes=adios"
+	}).fail(function() { alert("error"); })
+	.done(function( msg ) {
+	println("se fini la comunicacion");
+	  //alert( "Data Saved: " + msg );
+	});
+	
 }
+int idForo;
+int usuarioforo_id;
 void setup(){
 //	font=loadFont("Courier");
 //textMode(SCREEN);	
@@ -21,8 +33,8 @@ void setup(){
 	//size(800, 600);
 		size($(window).width(), $(window).height());
 	//smooth();
-	 var idForo = Request.parameter('id');
-	 var usuarioforo_id = Request.parameter('usuarioforo_id');
+	  idForo = Request.parameter('id');
+	  usuarioforo_id = Request.parameter('usuarioforo_id');
 	 var equiposSitio = Request.parameter('equipos');
 	// println("usuarioForo_id"+usuarioforo_id);
 	reticulaRet = new ReticulaRet("/"+equiposSitio+"/equipos.xml", "../foros/"+idForo+".xml",200, 80, width - 220, height-90);
