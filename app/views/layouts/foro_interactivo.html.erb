@@ -9,6 +9,7 @@
 <%= javascript_include_tag('toxiclibs') %>          
 <%= javascript_include_tag('jquery-1.7.1') %>          
 
+  <%= csrf_meta_tag %>
 
  <script type="text/javascript">
  	 var Request = {	
@@ -35,19 +36,9 @@
 					function openModal(ide, usuario, titulo, texto){
 					//	console.log(usuario);
 						$('#comentario_anterior').html(usuario+'<br>'+titulo+'<br>'+texto.substring(0,300)+"...");
-						  $('.window .close').click(function (e) {
-						        //Cancel the link behavior
-						        e.preventDefault();
-						        $('#mask, .window').hide();
-						    });    
-						  $('.window .enviar').click(function (e) {
-						        //Cancel the link behavior
-						        e.preventDefault();
-						        //alert('enviando!'+$('#comentario').val());
-						        var pjs = Processing.getInstanceById('foro_interactivo');
-						        pjs.newComentario($('#titulo').val(), $('#comentario').val());
-						        $('#mask, .window').hide();
-						    });    
+						$('#comentario').val('');
+						$('#titulo').val('');
+
 						//  $('#mask').click(function () {
 						//        $(this).hide();
 						//        $('.window').hide();
@@ -78,6 +69,30 @@
   
 						}
 
+ $(document).ready(function () {
+ $('.window .close').click(function (e) {
+						        //Cancel the link behavior
+						        e.preventDefault();
+						        $('#mask, .window').hide();
+						    });    
+						  $('.window .enviar').click(oki);
+						  function oki(e) {
+						        //Cancel the link behavior
+						        e.preventDefault();
+						       // alert('enviando!'+$('#comentario').val());
+							   if($('#titulo').val()==''){
+							    alert('debe rellenar el titulo del comentario \n doivent remplir le titre commenter');
+							   }else if($('#comentario').val()==''){
+							    alert('debe rellenar el texto del comentario \n doivent remplir le texte commenter');
+							   }else{
+						        var pjs = Processing.getInstanceById('foro_interactivo');
+						        pjs.newComentario($('#titulo').val(), $('#comentario').val());
+						        $('#mask, .window').hide();
+								}
+								return false;
+						    }    
+
+});
 
 
 						
@@ -101,7 +116,6 @@
   padding:20px;
 }
  
- 
 /* Customize your modal window here, you can add background image too */
 #boxes #dialog {
   width:100%; 
@@ -119,7 +133,7 @@
     <div id="dialog" class="window">
          <form id="formulario">
          <b>Respondiendo a:</b>
-         <div id="comentario_anterior" style="width:50%;">  </div>
+         <div id="comentario_anterior" style="width:80%;overflow:auto;">  </div>
          <input type="text" id="titulo" size="80" /><br>
          <br>
          <textarea id="comentario" rows="20" cols="90">escribe aqui tu comentario</textarea><br>

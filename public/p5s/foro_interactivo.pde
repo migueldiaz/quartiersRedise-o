@@ -9,14 +9,18 @@ public void reset(){
 	
 }
 public void newComentario(String titulo, String texto){
-	println("comentarioAntID:"+reticulaRet.celdaSeleccionada.comentario.id+":::"+titulo+"---"+texto+"________from p5s");
+	//println("comentarioAntID:"+reticulaRet.celdaSeleccionada.comentario.id+":::"+titulo+"---"+texto+"________from p5s");
 	$.ajax({
 	  type: "POST",
 	  url: "/comentarios",
-	  data: "usuarioforo_id="+usuarioforo_id+"&foro_id="+idForo+"&textoes=hola&tituloes=adios"
+	    beforeSend: function( xhr ) {
+    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+  },
+	  
+	  data: "comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[textoes]="+texto+"&comentario[tituloes]="+titulo
 	}).fail(function() { alert("error"); })
 	.done(function( msg ) {
-	println("se fini la comunicacion");
+	//println("se fini la comunicacion");
 	  //alert( "Data Saved: " + msg );
 	});
 	
