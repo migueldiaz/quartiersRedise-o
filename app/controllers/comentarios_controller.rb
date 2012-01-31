@@ -141,7 +141,9 @@ end
   # POST /comentarios
   # POST /comentarios.xml
   def create
+    params[:comentario][:created_at_admin]=Time.now.to_s
     @comentario = Comentario.create(params[:comentario])
+    #@comentario.created_at=Time.now
     @foro=@comentario.foro
     @sitio=@foro.sitio
     ###OJO AQUI VALIDACION Y NOTIFICACION

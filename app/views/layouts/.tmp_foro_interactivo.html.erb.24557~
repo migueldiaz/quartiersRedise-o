@@ -35,7 +35,7 @@
 						}
 					function openModal(ide, usuario, titulo, texto){
 					//	console.log(usuario);
-						$('#comentario_anterior').html(usuario+'<br>'+titulo+'<br>'+texto.substring(0,300)+"...");
+						$('#comentario_anterior').html(usuario+'<br>'+titulo+'<br>'+texto+"...");
 						$('#comentario').val('');
 						$('#titulo').val('');
 
@@ -133,10 +133,11 @@
     <div id="dialog" class="window">
          <form id="formulario">
          <b>Respondiendo a:</b>
-         <div id="comentario_anterior" style="width:80%;overflow:auto;">  </div>
+         <div id="comentario_anterior" style="width:80%;overflow:auto;height:130px">  </div>
+		 <hr>
          <input type="text" id="titulo" size="80" /><br>
          <br>
-         <textarea id="comentario" rows="20" cols="90">escribe aqui tu comentario</textarea><br>
+         <textarea id="comentario" rows="15" cols="90">escribe aqui tu comentario</textarea><br>
          </form>
         <!-- close button is defined as close class -->
         <a href="#" class="close" style="color:white;background-color:black; padding:5px;">Cerrar</a>
