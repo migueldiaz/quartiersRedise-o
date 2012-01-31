@@ -35,7 +35,7 @@
 						}
 					function openModal(ide, usuario, titulo, texto){
 					//	console.log(usuario);
-						$('#comentario_anterior').html(usuario+'<br>'+titulo+'<br>'+texto+"...");
+						$('#comentario_anterior').html(usuario+'<br>'+titulo+'<br>'+texto.substring(0,300)+"...");
 						$('#comentario').val('');
 						$('#titulo').val('');
 
