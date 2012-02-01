@@ -16,12 +16,13 @@ public void newComentario(String titulo, String texto){
 	    beforeSend: function( xhr ) {
     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
   },
-	  
-	  data: "comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[textoes]="+texto+"&comentario[tituloes]="+titulo
-	}).fail(function() { alert("error"); })
+	  data: "forito=true&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[textoes]="+texto+"&comentario[tituloes]="+titulo
+	}).fail(function() { alert("error SENDING MESSAGE FORUM \n contact webmaster: juanantonioruz@gmail.com"); })
 	.done(function( msg ) {
-	//println("se fini la comunicacion");
+	//println("se fini la comunicacion"+msg);
 	  //alert( "Data Saved: " + msg );
+	  refresca();
+	  reticulaRet.seleccionaComentarioPorID(msg);
 	});
 	
 }
@@ -46,16 +47,20 @@ void setup(){
 	navegadorTemporalComentarios=new NavegadorTemporalComentarios(reticulaRet.comentariosOrdenadosFecha, reticulaRet.getX(),  reticulaRet.getWidth());
 
 }
-Refresco r=new Refresco();
-void draw(){
-	background(100);
-	if(frameCount%(30*30)==0){
+void refresca(){
 		CeldaRet c=reticulaRet.celdaSeleccionada;
 		reticulaRet.incluyeXML("/comentarios/nuevos/"+reticulaRet.dameUltimoIdComentario()+".xml",c.comentario);
 		navegadorTemporalComentarios.init(reticulaRet.comentariosOrdenadosFecha);
 		navegadorUsuarios.init(reticulaRet.usuarios);
 		log.info("alla va!");
 		r.reset();
+}
+
+Refresco r=new Refresco();
+void draw(){
+	background(100);
+	if(frameCount%(30*30)==0){
+		refresca();
 	}
 	r.display();
 	

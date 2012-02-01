@@ -152,11 +152,22 @@ end
          	@traductores=Usuario.where(:tipo=>'traductor')	
          	@traductores.each do |traductor|
          	 AvisoMailer.traductor(traductor).deliver
-         	end
+         end
+         if(params[:forito]=='true')
+         format.html {
+          render :text=>@comentario.id
+          }
+        else
       	 format.html { redirect_to(jeunes_foro_path(:id=>@foro), :notice => t('exito')) }
-         format.js
+        end         
       elsif  @comentario.save && !@sitio.femmes.nil?
+           if(params[:forito]=='true')
+         format.html {
+          render :text=>@comentario.id
+          }
+        else
       	format.html { redirect_to(femmes_foro_path(:id=>@foro), :notice => t('exito')) }
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }

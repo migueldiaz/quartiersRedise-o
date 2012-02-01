@@ -17,6 +17,8 @@ public void init(List<UsuarioForo> usuarios) {
 		// TODO Collections.sort(usuariosForo, new ComparatorEquipoUsuario());
 		int numeroUsuarios = usuarios.size();
 		heightUsuarioBox = this._height / numeroUsuarios;
+				usuariosForo = usuarios;
+		
 	}
 	public void display(CeldaRet celdaSeleccionada) {
 		for(int j=0; j<usuariosForo.size(); j++){
@@ -40,6 +42,7 @@ public void init(List<UsuarioForo> usuarios) {
 			rect(0, posY, distanciaNumero, heightUsuarioBox);
 			textSize(10);
 			fill(100);
+			log.info("["+usu.comentarios.size()+"]"+usu.nombre);
 			text("["+usu.comentarios.size()+"]", 1, posY+heightUsuarioBox/2);
 			fill(colorTexto);
 			text(usu.nombre, distanciaNumero+5, posY+heightUsuarioBox/2);

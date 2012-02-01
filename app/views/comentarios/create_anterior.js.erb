@@ -1,0 +1,48 @@
+$('#mask, .window').hide();
+miDiv=$('#pee');
+miDiv.css("background-color", "#abacab");
+miDiv.html("<%= escape_javascript( render :partial => "comentarios/principal", :collection => @foro.comentarios.sort_by( &:created_at ).reverse) %>");
+
+
+
+	$(".nav_link").click(function() {
+	ide=$(this).attr('id');
+	comentario_url=$(this).attr('pepe');
+	url_json='/comentarios/'+ide+'.json';
+	
+	if (window.console) {
+		console.log('obteniendo datos json: '+url_json);
+	} 
+
+	resultado=$(this).parent().parent().find('.detalle').slice(0,1);
+	//mensaje=$(this).parent().parent().find('.mensaje').slice(0,1);
+	//mensaje.fadeOut();
+	resultado.empty();
+	resultado.fadeIn();  
+	resultado.append('<div class="descripcion">Loading</div>');
+	
+	$.getJSON(url_json, function(data) {
+		nodo=data;
+		resultado.empty();
+		
+		$.each(nodo, function(key, val) {
+			resultado.append('<div class="descripcion">'+val['texto<%=locale.to_s%>']+'</div>');
+			enlace1='<a class=\'close\' href=\'javascript:void(0);\'><%= t('close')%></a> ';
+			enlace2='<a data-remote="true" class=\'comment\' href=\''+comentario_url+'\'><%=t('responder')%></a>';
+			resultado.append('<div style="text-align:center;margin-top:10px;">'+enlace1+enlace2+'</div>');
+		});
+		$('.close').live('click', function() {
+//			mensaje=$(this).parent().parent().parent().find('.mensaje').slice(0,1);
+	//		mensaje.fadeIn();
+			$(this).parent().parent().fadeOut();  
+			//	$(this).parent().empty();
+			// Live handler called.
+		});
+		$('.coment').live('click', function() {
+			//	$(this).parent().empty();
+			// Live handler called.
+		});
+	});
+	});
+
+

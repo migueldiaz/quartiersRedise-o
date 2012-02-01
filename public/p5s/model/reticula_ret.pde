@@ -216,6 +216,8 @@ float anchoColumna = getWidth() / cc.columnas;
 
 		servicioMensajes.loadMensajes(comentariosExistentesDB);
 		usuarios = servicioMensajes.usuarios;
+//		for(UsuarioForo u:usuarios)
+//			u.equipo=encuentra(servicioLoadEquipos.equipos, u.equipo.id)
 		mensajes = servicioMensajes.organizaMensajes;
 		log.info("mensajessize:" + mensajes.size());
 		comentariosOrdenadosFecha = servicioMensajes.getComentariosOrdenadosFecha();
@@ -555,6 +557,28 @@ float anchoColumna = getWidth() / cc.columnas;
 		recalculaRet();
 
 	}
+	public void seleccionaComentarioPorID(int idBuscado) {
+		buscada = null;
+		for (CeldaRet c : celdasPrimeraColumna) {
+			buscaPorID(c, idBuscado);
+			if (buscada != null) {
+				celdaSeleccionada = buscada;
+			}
+		}
+		recalculaRet();
+
+	}
+		public void buscaPorID(CeldaRet celda, int idBuscado) {
+		if (celda.comentario.id == idBuscado) {
+			buscada = celda;
+			return;
+		} else
+			for (CeldaRet cc : celda.childdren)
+				buscaPorID(cc, idBuscado);
+
+	}
+	
+	
 	public void busca(CeldaRet celda, ComentarioForo c) {
 		if (celda.comentario == c) {
 			buscada = celda;
