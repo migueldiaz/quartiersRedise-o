@@ -16,7 +16,7 @@ public void newComentario(String titulo, String texto){
 	    beforeSend: function( xhr ) {
     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
   },
-	  data: "forito=true&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[textoes]="+texto+"&comentario[tituloes]="+titulo
+	  data: "forito=true&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+titulo
 	}).fail(function() { alert("error SENDING MESSAGE FORUM \n contact webmaster: juanantonioruz@gmail.com"); })
 	.done(function( msg ) {
 	//println("se fini la comunicacion"+msg);
@@ -28,6 +28,8 @@ public void newComentario(String titulo, String texto){
 }
 int idForo;
 int usuarioforo_id;
+String locale;
+String otro_locale;
 void setup(){
 //	font=loadFont("Courier");
 //textMode(SCREEN);	
@@ -39,6 +41,9 @@ void setup(){
 		size($(window).width(), $(window).height());
 	//smooth();
 	  idForo = Request.parameter('id');
+	  locale = Request.parameter('idioma');
+	  if(locale=="es") otro_locale="fr";
+	  else otro_locale="es";
 	  usuarioforo_id = Request.parameter('usuarioforo_id');
 	 var equiposSitio = Request.parameter('equipos');
 	// println("usuarioForo_id"+usuarioforo_id);

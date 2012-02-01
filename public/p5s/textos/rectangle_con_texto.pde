@@ -70,7 +70,9 @@ class RectangleConTexto {
 			log.debug(comentario.titulo);
 			float margen=20;
 			//println(anchoRectangle);
-			text(" > > "+comentario.titulo+"\n"+comentario.texto, posXRectangle+margen, posYRectangle+margen, anchoRectangle-(margen*2), (altoRectangle-margen)-5);
+			String version="";
+			if(!comentario.estaTraducido()) version=" _ waiting translation _";
+			text(" > > "+comentario.dameTituloI18N()+version+"\n"+comentario.dameTextoI18N(), posXRectangle+margen, posYRectangle+margen, anchoRectangle-(margen*2), (altoRectangle-margen)-5);
 			// desactivado el recuento de letras y calculo de ancho ... consume mucho procesador
 			
 		}

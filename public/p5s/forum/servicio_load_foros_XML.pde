@@ -19,8 +19,10 @@ class ServicioLoadForosXML {
 	
 			String fecha = el.getChild("created-at").getContent();
 			/* parsear fecha */
-			String texto = el.getChild("textoes").getContent();
-			String titulo = el.getChild("tituloes").getContent();
+			String texto = el.getChild("texto"+locale).getContent();
+			String texto_alternativo = el.getChild("texto"+otro_locale).getContent();
+			String titulo = el.getChild("titulo"+locale).getContent();
+			String titulo_alternativo = el.getChild("titulo"+otro_locale).getContent();
 			int idComentario = int(el.getChild("id").getContent());		
 			String idComentarioParentString = el.getChild("comentario-id").getContent();
 			int idComentarioParent = 0;
@@ -40,7 +42,7 @@ class ServicioLoadForosXML {
 			usuario = e.addUsuario(usuario);
 			
 			
-			ComentarioForo com=new ComentarioForo(idComentario, idComentarioParent, titulo,texto, usuario);
+			ComentarioForo com=new ComentarioForo(idComentario, idComentarioParent, titulo,texto,titulo_alternativo,texto_alternativo, usuario);
 			usuario.addComentario(com);
 			
 			e.comentarios.add(com);
