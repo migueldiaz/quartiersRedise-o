@@ -166,7 +166,7 @@ float anchoColumna = getWidth() / cc.columnas;
 		} else {
 			// columna 0 celdaParent=null;
 		}
-		CeldaRet celdaNueva = new CeldaRet(celdaAnterior, celdaParent, columna, comentario, new RectangleConTexto( comentario.texto));
+		CeldaRet celdaNueva = new CeldaRet(celdaAnterior, celdaParent, columna, comentario, new RectangleConTexto( comentario));
 		columna.getCeldas().add(celdaNueva);
 		if (col == 0)
 			celdasPrimeraColumna.add(celdaNueva);

@@ -1,5 +1,5 @@
 class RectangleConTexto {
-		private  String mensaje;
+		private  ComentarioForo comentario;
 
 		private  float posXRectangle;
 
@@ -15,9 +15,10 @@ class RectangleConTexto {
 		float posYLetter;
 		float posXLetter;
 
-		public RectangleConTexto( String mensaje, float posXRectangle, float posYRectangle, int anchoRectangle,
+		public RectangleConTexto( ComentarioForo comentario_s, float posXRectangle, float posYRectangle, int anchoRectangle,
 				int altoRectangle) {
-			this.mensaje = mensaje;
+				println("ahra aqui!!");
+			this.comentario = comentario_s;
 			this.posXRectangle = posXRectangle;
 			this.posYRectangle = posYRectangle;
 			this.anchoRectangle = anchoRectangle;
@@ -26,8 +27,8 @@ class RectangleConTexto {
 			posXLetter = posXRectangle;
 		}
 
-		public RectangleConTexto(String texto) {
-			mensaje = texto;
+		public RectangleConTexto(ComentarioForo comentario) {
+			this.comentario = comentario;
 		}
 
 		public void reduceAlto(int incremento) {
@@ -66,10 +67,10 @@ class RectangleConTexto {
 			//	textMode(SCREEN);
 			
 			//float transparenciaDown = map(altoRectangle, 0, 150, 50, 100);
-			log.debug(mensaje);
+			log.debug(comentario.titulo);
 			float margen=20;
 			//println(anchoRectangle);
-			text(mensaje, posXRectangle+margen, posYRectangle+margen, anchoRectangle-(margen*2), (altoRectangle-margen)-5);
+			text(" > > "+comentario.titulo+"\n"+comentario.texto, posXRectangle+margen, posYRectangle+margen, anchoRectangle-(margen*2), (altoRectangle-margen)-5);
 			// desactivado el recuento de letras y calculo de ancho ... consume mucho procesador
 			
 		}
