@@ -110,7 +110,10 @@ public void keyPressed() {
 		}else if(key=='c'){
 		ComentarioForo comentarioSeleccionado=reticulaRet.celdaSeleccionada.comentario;
 		String t=comentarioSeleccionado.texto;
-		String tt=t.substring(50);
+		
+		String tt="";
+		if(t!=null)
+		tt=t.substring(50);
 		  openModal(comentarioSeleccionado.id,comentarioSeleccionado.usuario.nombre, comentarioSeleccionado.titulo,comentarioSeleccionado.texto);
 		
 		}
