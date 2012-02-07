@@ -35,6 +35,12 @@ class ReticulaRet implements TreeDisplayable{
 			
 	
 	}
+		public void reset() {
+		seleccionaPrimeraCeldaComentario();
+		
+		calculaPosicionesTamanyosReticulaInicial(true);
+		recalculaRet(true);
+	}
 	private void resetReticulaConComentariosDB(boolean menos) {
 		loadComentariosXML();
 
@@ -543,9 +549,7 @@ float anchoColumna = getWidth() / cc.columnas;
 		}
 	}
 	
-	public void reset() {
-		recalculaRet(true);
-	}
+
 	public void selecciona(ComentarioForo comentarioTimeSel) {
 		buscada = null;
 		for (CeldaRet c : celdasPrimeraColumna) {
