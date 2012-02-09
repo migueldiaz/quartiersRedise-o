@@ -16,5 +16,10 @@ class ServicioToxiColor {
 		return listaColoresEquipo;
 	}
 
+	public toxi.color.TColor dameColorQDM(){
+	 return toxi.color.TColor.newHex("c9c9c9");
+	}
+
+	
  
 }

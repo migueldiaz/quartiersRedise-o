@@ -3,14 +3,19 @@ class ServicioLoadEquipos {
 	List<Equipo> equipos;
 	ServicioLoadForosXML forosXMLLoad;
 		ServicioLoadEquiposXML loadEquipos=new ServicioLoadEquiposXML();
+	toxi.color.TColor colorQDM; 
 	
 	public ServicioLoadEquipos(String xmlEquipos) {
 			equipos=loadEquipos.procesaXML(xmlEquipos);
 			// println(equipos);   
-			ArrayList listaColoresEquipo = new ServicioToxiColor().iniciaColoresEquiposBis();
+			ServicioToxiColor stc=new ServicioToxiColor();
+			ArrayList listaColoresEquipo = stc.iniciaColoresEquiposBis();
 			for (int i = 0; i < equipos.size(); i++){
 				equipos.get(i).setColor(listaColoresEquipo.get(i));
 			}
+			 Equipo equipoQDM=new Equipo(999,"QDM", "QDM");
+			 equipoQDM.setColor(stc.dameColorQDM());
+			 equipos.add(equipoQDM);
 			 forosXMLLoad = new ServicioLoadForosXML(equipos);
 	}
 	

@@ -63,7 +63,7 @@ class RectangleConTexto {
 			float limite=altoRectangle;
 			if(anchoRectangle<altoRectangle) limite=anchoRectangle;
 			//float size = map(limite, 0, 150, 7, 15);
-			//textSize(size);
+			textSize(tamTexto);
 			//	textMode(SCREEN);
 			
 			//float transparenciaDown = map(altoRectangle, 0, 150, 50, 100);
@@ -72,7 +72,7 @@ class RectangleConTexto {
 			//println(anchoRectangle);
 			String version="";
 			if(!comentario.estaTraducido()) version=" _ waiting translation _";
-			text(" > > "+comentario.dameTituloI18N()+version+"\n"+comentario.dameTextoI18N(), posXRectangle+margen, posYRectangle+margen, anchoRectangle-(margen*2), (altoRectangle-margen)-5);
+			text(" > > "+version+comentario.dameTextoI18N(), posXRectangle+margen, posYRectangle+margen, anchoRectangle-(margen*2), (altoRectangle-margen)-5);
 			// desactivado el recuento de letras y calculo de ancho ... consume mucho procesador
 			
 		}

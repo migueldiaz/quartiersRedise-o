@@ -1,18 +1,14 @@
 class ComentarioForo {
-	String titulo;
 	String texto;
-	String titulo_alternativo;
 	String texto_alternativo;
 	int parent;
 	int id;
 	Usuario usuario;
 	List<ComentarioForo> children=new ArrayList();
-	public ComentarioForo(int id, int parent, String titulo,String texto,String titulo_alternativo,String texto_alternativo, Usuario usuario){
+	public ComentarioForo(int id, int parent, String texto,String texto_alternativo, Usuario usuario){
 		this.id=id;
 		this.parent=parent;
-		this.titulo=titulo;
 		this.texto=texto;
-		this.titulo_alternativo=titulo_alternativo;
 		this.texto_alternativo=texto_alternativo;
 		this.usuario=usuario;
 	}
@@ -27,7 +23,7 @@ class ComentarioForo {
 	
 	}
 	public boolean estaTraducido(){
-		return (titulo!=null && texto != null);
+		return (texto != null);
 	}
  
 }

@@ -21,8 +21,6 @@ class ServicioLoadForosXML {
 			/* parsear fecha */
 			String texto = el.getChild("texto"+locale).getContent();
 			String texto_alternativo = el.getChild("texto"+otro_locale).getContent();
-			String titulo = el.getChild("titulo"+locale).getContent();
-			String titulo_alternativo = el.getChild("titulo"+otro_locale).getContent();
 			int idComentario = int(el.getChild("id").getContent());		
 			String idComentarioParentString = el.getChild("comentario-id").getContent();
 			int idComentarioParent = 0;
@@ -42,7 +40,7 @@ class ServicioLoadForosXML {
 			usuario = e.addUsuario(usuario);
 			
 			
-			ComentarioForo com=new ComentarioForo(idComentario, idComentarioParent, titulo,texto,titulo_alternativo,texto_alternativo, usuario);
+			ComentarioForo com=new ComentarioForo(idComentario, idComentarioParent, texto,texto_alternativo, usuario);
 			usuario.addComentario(com);
 			
 			e.comentarios.add(com);
@@ -55,6 +53,7 @@ class ServicioLoadForosXML {
 	
 
 	Equipo getEquipo(int id, ArrayList equipos) {
+	if(id==null)id=999;
 	for(Equipo e:equipos){
 		if(e.id==id) return e;
 	}

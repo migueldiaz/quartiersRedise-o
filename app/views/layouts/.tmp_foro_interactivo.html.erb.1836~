@@ -33,10 +33,11 @@
 						var pjs = Processing.getInstanceById(id);
 							pjs.reset();
 						}
-					function openModal(ide, usuario, texto){
+					function openModal(ide, usuario, titulo, texto){
 					//	console.log(usuario);
-						$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
+						$('#comentario_anterior').html(usuario+'<br>'+titulo+'<br>'+texto+"...");
 						$('#comentario').val('');
+						$('#titulo').val('');
 
 						//  $('#mask').click(function () {
 						//        $(this).hide();
@@ -79,11 +80,13 @@
 						        //Cancel the link behavior
 						        e.preventDefault();
 						       // alert('enviando!'+$('#comentario').val());
-							    if($('#comentario').val()==''){
+							   if($('#titulo').val()==''){
+							    alert('debe rellenar el titulo del comentario \n doivent remplir le titre commenter');
+							   }else if($('#comentario').val()==''){
 							    alert('debe rellenar el texto del comentario \n doivent remplir le texte commenter');
 							   }else{
 						        var pjs = Processing.getInstanceById('foro_interactivo');
-						        pjs.newComentario( $('#comentario').val());
+						        pjs.newComentario($('#titulo').val(), $('#comentario').val());
 						        $('#mask, .window').hide();
 								}
 								return false;
@@ -132,6 +135,8 @@
          <b>Respondiendo a:</b>
          <div id="comentario_anterior" style="width:80%;overflow:auto;height:130px">  </div>
 		 <hr>
+         <input type="text" id="titulo" size="80" /><br>
+         <br>
          <textarea id="comentario" rows="15" cols="90">escribe aqui tu comentario</textarea><br>
          </form>
         <!-- close button is defined as close class -->

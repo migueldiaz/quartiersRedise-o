@@ -8,7 +8,7 @@ public void reset(){
 	log.info("parandosss desde javascript to process");
 	
 }
-public void newComentario(String titulo, String texto){
+public void newComentario( String texto){
 	//println("comentarioAntID:"+reticulaRet.celdaSeleccionada.comentario.id+":::"+titulo+"---"+texto+"________from p5s");
 	$.ajax({
 	  type: "POST",
@@ -16,7 +16,7 @@ public void newComentario(String titulo, String texto){
 	    beforeSend: function( xhr ) {
     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
   },
-	  data: "forito=true&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+titulo
+	  data: "forito=true&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+texto.substring(0,10)
 	}).fail(function() { alert("error SENDING MESSAGE FORUM \n contact webmaster: juanantonioruz@gmail.com"); })
 	.done(function( msg ) {
 	//println("se fini la comunicacion"+msg);
@@ -30,6 +30,7 @@ int idForo;
 int usuarioforo_id;
 String locale;
 String otro_locale;
+int tamTexto=12;
 void setup(){
 //	font=loadFont("Courier");
 //textMode(SCREEN);	
@@ -90,6 +91,13 @@ void draw(){
 	
 	}
 public void keyPressed() {
+if(keyCode==187){
+	tamTexto++;
+}else if(keyCode==189){
+	if(tamTexto>10)
+	tamTexto--;
+}
+
 		 if(keyCode==UP){
 			log.debug("UP!");
 			reticulaRet.selectUP();
@@ -114,7 +122,7 @@ public void keyPressed() {
 		String tt="";
 		if(t!=null)
 		tt=t.substring(50);
-		  openModal(comentarioSeleccionado.id,comentarioSeleccionado.usuario.nombre, comentarioSeleccionado.titulo,comentarioSeleccionado.texto);
+		  openModal(comentarioSeleccionado.id,comentarioSeleccionado.usuario.nombre, comentarioSeleccionado.texto);
 		
 		}
 	}

@@ -11,7 +11,7 @@ class  CeldaRet extends ElementoReticulaAbstract implements TieneMedidaVariableA
 	public CeldaRet(CeldaRet anterior, CeldaRet parent, ColRet kolumna){
 		this(anterior, parent,kolumna,null,null);
 	}
-	public CeldaRet(CeldaRet anterior, CeldaRet parent, ColRet kolumna, ComentarioEscale comentario, RectangleConTexto rect) {
+	public CeldaRet(CeldaRet anterior, CeldaRet parent, ColRet kolumna, ComentarioForo comentario, RectangleConTexto rect) {
 		this.anterior = anterior;
 		this.parent = parent;
 		this.comentario = comentario;

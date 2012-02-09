@@ -22,6 +22,7 @@ class NavegadorTemporalComentarios {
 	public void display(CeldaRet celdaSeleccionada) {
 		for(int i=0; i<comentariosTime.size(); i++){
 			ComentarioForo comentario = comentariosTime.get(i);
+			stroke(100);
 			fill(comentario.usuario.equipo.col);
 			float posXComTime = i*widthComentarioTime+_x;
 			altoComTime = 35;
@@ -38,7 +39,7 @@ class NavegadorTemporalComentarios {
 	}
 
 	public ComentarioForo mouseClick(int mouseX, int mouseY) {
-		if(mouseY>0 && mouseY<altoComTime){
+		if(mouseY>0 && mouseY<(altoComTime+35)){
 		if(mouseX>_x && mouseX<(_x+_width)){
 			int pos=(int) ((mouseX-_x)/widthComentarioTime);
 			log.info("pos: "+pos);

@@ -283,11 +283,13 @@ float anchoColumna = getWidth() / cc.columnas;
 				float celdaHeight = celda.getHeight();
 				if (celda != celdaSeleccionada || (celda == celdaSeleccionada && normalizada)) {
 					fill(celda.color);
+					stroke(20);
 					rect(celdaX, celdaY, celdaWeight, celdaHeight);
 				} else {
-					noStroke();
 					fill(100);
+					stroke(20);
 					rect(celdaX, celdaY, celdaWeight, celdaHeight);
+					noStroke();
 					fill(celda.color);
 					rect(celdaX, celdaY, celdaWeight / 50, celdaHeight);
 					rect(celdaX, celdaY, celdaWeight / 3, celdaHeight / 50);
