@@ -1,18 +1,19 @@
 class CalculoRecursivo {
 	float res;
 	TieneMedidaVariableAnterior anterior;
-
+	TieneMedidaVariableAnterior parent;
 	public float calcula(TieneMedidaVariableAnterior celdaRet) {
 		anterior = celdaRet.getAnterior();
-		sumaParent();
+		parent=celdaRet.parent;
+		sumaAnterior();
 		return res;
 	}
 
-	private void sumaParent() {
-		if (anterior != null) {
+	private void sumaAnterior() {
+		if (anterior != null && anterior.parent==parent) {
 			res += anterior.getMedidaVariable();
 			anterior = anterior.getAnterior();
-			sumaParent();
+			sumaAnterior();
 		}
 
 	}

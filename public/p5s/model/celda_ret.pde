@@ -1,10 +1,10 @@
-class  CeldaRet extends ElementoReticulaAbstract implements TieneMedidaVariableAnterior,  TreeDisplayable {
+class  CeldaRet extends ElementoReticulaAbstract implements TieneMedidaVariableAnterior,  Displayable {
 	public ColRet columna;
 	public  int color;
 	RectangleConTexto rectangleConTexto;
 	
 
-	public  TreeDisplayable parent;
+	public  Displayable parent;
 	public  CeldaRet childrenSel;
 	public List<CeldaRet> childdren=new ArrayList<CeldaRet>();
 	public  ComentarioEscale comentario;
@@ -48,7 +48,9 @@ class  CeldaRet extends ElementoReticulaAbstract implements TieneMedidaVariableA
 	public float getY() {
 		if(parent==null)
 		return columna.getY()+getPosicionEnRelacionDeSumasPosicionesAnteriores();
-		return parent.getY()+getPosicionEnRelacionDeSumasPosicionesAnteriores();
+		float valor=parent.getY()+getPosicionEnRelacionDeSumasPosicionesAnteriores();
+	//		if(anterior!=null) valor-=anterior.getHeight();
+		return valor;
 		
 	}
 
@@ -73,7 +75,9 @@ class  CeldaRet extends ElementoReticulaAbstract implements TieneMedidaVariableA
 	}
 	public int getPosicion() {
 		if(getParent()!=null){
-			return getParent().getChildren().indexOf(this);
+		int pos=getParent().getChildren().indexOf(this);
+		//println(pos);
+			return pos;
 		}
 		return 0;
 	}
