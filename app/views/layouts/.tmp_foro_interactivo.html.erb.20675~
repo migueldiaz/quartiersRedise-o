@@ -155,7 +155,6 @@ data-processing-sources="../p5s/foro_interactivo.pde ../p5s/log.pde ../p5s/recta
 ../p5s/interfaces/elemento_reticula_abstract.pde 
 ../p5s/interfaces/displayable.pde 
 ../p5s/ui/navegador_usuarios.pde 
-../p5s/ui/navegador_tamanyos.pde 
 ../p5s/ui/navegador_temporal_comentarios.pde 
 ../p5s/forum/servicio_load_equipos.pde 
 ../p5s/forum/servicio_load_foros_XML.pde 

@@ -3,7 +3,7 @@ PFont font;
 ReticulaRet reticulaRet;
 NavegadorUsuarios navegadorUsuarios;
 NavegadorTemporalComentarios navegadorTemporalComentarios;
-
+NavegadorTamanyos navegadorTamanyos;
 public void reset(){
 	log.info("parandosss desde javascript to process");
 	
@@ -51,6 +51,7 @@ void setup(){
 	reticulaRet = new ReticulaRet("/"+equiposSitio+"/equipos.xml", "../foros/"+idForo+".xml",200, 80, width - 220, height-90);
 	navegadorUsuarios=new NavegadorUsuarios(reticulaRet.usuarios, reticulaRet.getHeight(), reticulaRet.getX(), reticulaRet.getY());
 	navegadorTemporalComentarios=new NavegadorTemporalComentarios(reticulaRet.comentariosOrdenadosFecha, reticulaRet.getX(),  reticulaRet.getWidth());
+	navegadorTamanyos=new NavegadorTamanyos();
 
 }
 void refresca(){
@@ -76,27 +77,35 @@ void draw(){
 	//textFont(font,102);
 	log.info("mensajes:"+reticulaRet.mensajes.size(),100,100);
 	log.info("usuarios:"+reticulaRet.usuarios.size(),100,120);
+	
 	navegadorUsuarios.display(reticulaRet.celdaSeleccionada);
 	navegadorTemporalComentarios.display(reticulaRet.celdaSeleccionada);
+
+	navegadorTamanyos.display();
+	
 	
 		
 }
 
 	public void mouseClicked() {
+	  if ((mouseButton == LEFT)) {
+	  	int res=navegadorTamanyos.mouseClick(mouseX, mouseY);
+	  	if(res==1 && tamTexto>9)	tamTexto--;
+	  	else if(res==2) 	tamTexto++;
+	  	
+	//selecciona	
 			reticulaRet.raton(mouseX, mouseY);
 			ComentarioForo u=navegadorUsuarios.mouseClick(mouseX, mouseY);
 		if(u!=null) reticulaRet.selecciona(u);
 		ComentarioForo com=navegadorTemporalComentarios.mouseClick(mouseX, mouseY);
 		if(com!=null) reticulaRet.selecciona(com);
+
+	  }else if  ((mouseButton == RIGHT)){
+	nuevoComentario();	  
+	  }
 	
 	}
 public void keyPressed() {
-if(keyCode==187){
-	tamTexto++;
-}else if(keyCode==189){
-	if(tamTexto>10)
-	tamTexto--;
-}
 
 		 if(keyCode==UP){
 			log.debug("UP!");
@@ -116,6 +125,11 @@ if(keyCode==187){
 
 			
 		}else if(key=='c'){
+	nuevoComentario();		
+		}
+	}
+
+void nuevoComentario(){
 		ComentarioForo comentarioSeleccionado=reticulaRet.celdaSeleccionada.comentario;
 		String t=comentarioSeleccionado.texto;
 		
@@ -123,9 +137,6 @@ if(keyCode==187){
 		if(t!=null)
 		tt=t.substring(50);
 		  openModal(comentarioSeleccionado.id,comentarioSeleccionado.usuario.nombre, comentarioSeleccionado.texto);
-		
-		}
-	}
 
-
+}
 
