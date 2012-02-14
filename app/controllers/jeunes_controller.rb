@@ -144,6 +144,7 @@ def equipos
   		@sitio=@jeunes.sitio
         respond_to do |format|
             format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre])}
+            format.html
     end
 end
 
