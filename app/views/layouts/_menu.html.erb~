@@ -1,3 +1,4 @@
+# encoding: utf-8
 <% if params[:controller]=="asociation" %>
 	<%if !@asociacion.nil? %>
 	<ul id="menu">
@@ -25,7 +26,7 @@
 			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
 		<%end%>
 		</li>
-		<li <%=menu_seleccionada_tris :documentacion %>><%=link_to t('documentacion'),jeunes_documentacion_path  %>
+		<li <%=menu_seleccionada_tris :documentacion %>>
 		<%if !@paginas.nil? && !@documentacion.nil?%>
 			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
 		<%end%>
