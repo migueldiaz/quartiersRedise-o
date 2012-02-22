@@ -1,3 +1,4 @@
+
 <div class="hilo">
 	<div class="fecha">(<%=hilo.created_at%>)</div>
 	<div class="mensaje">
@@ -9,7 +10,7 @@
 	
 		<div class="usuario">
 			<%if !hilo.usuarioforo.nil? then %>
-		<%=link_to hilo.usuarioforo.nombre,hilo.usuarioforo%> 
+		<%=link_to hilo.usuarioforo.nombre,usuarioforo_path(:id=>hilo.usuarioforo,:foro=>@foro)%> 
 		<%end%>
 		</div>
 		<br>

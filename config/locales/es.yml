@@ -1,5 +1,10 @@
 
 es: 
+ comments: 'comentarios'
+ showing: 'Viendo'
+ todos: 'todos'
+ sintrad: 'sin traducción'
+ sinrevisar: 'pendientes de revisar'
  usuariosforos: 'Usuarios de los foros'
  emailenuso: 'Ya existe un usuario con ese email'
  protagonistas: 'Protagonistas'

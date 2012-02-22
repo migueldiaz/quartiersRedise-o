@@ -1,4 +1,24 @@
-	 <table class="listado_registros">
+<!--Ayuda a la navegacion  , se puede extraer -->
+<%if current_user.tipo=='traductor'%>
+	<h4>
+	
+	<%=t('show')%> <%=link_to t('todos'),comentarios_path(:modo=>'todos',:vista=>'gestion')%>, 
+	     <%=link_to t('sintrad'),comentarios_path(:modo=>'sintrad',:vista=>'gestion')%>, 
+	  <%=link_to t('sinrevisar'),comentarios_path(:modo=>'sinrevisar',:vista=>'gestion')%>.&nbsp;
+	 <%=t('showing')+', '+t('comments')%>
+	<b>
+	<%if params[:modo]=='sintrad'%>
+	   <%=t('sintrad')%>
+	<%elsif params[:modo]=='sinrevisar'%>
+	  <%=t('sinrevisar')%>
+	<%else%>
+	 <%=t('todos')%>
+	<%end%>
+	</b>
+	</h4>
+<%end%>
+<!-- -------------------------------------- -->
+<table class="listado_registros">
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
 		:locals =>{ :n_columns=>10,:title=>t('comentarios'), 
 		:columns=>[t('tituloes'),t("textoes"), t('titulofr'),t("textofr"),t("created"),t("usuario"),t("equipo"), t("show"), t('edit'), t('destroy')]} %>

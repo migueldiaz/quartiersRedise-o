@@ -17,14 +17,15 @@
 </p>
 <div class="opciones_generales">
 	<ul  >
-		    
-
-
-<% if usuarioforologado==@usuarioforo ||params[:vista]%> 
+	    
+<% if usuarioforologado==@usuarioforo || params[:vista]%> 
 <%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('edit'), :path_volver=> edit_usuarioforo_path(@usuarioforo)} %>     
+<%elsif params[:foro] && !@usuarioforo.jeunes.nil?%>
+<li><%=link_to t('back'),jeunes_foro_path(:id=>params[:foro])%></li>
+<%elsif params[:foro] && !@usuarioforo.femmes.nil?%>
+<li><%=link_to t('back'),femmes_foro_path(:id=>params[:foro])%></li>
 <%else%>
-		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarioforos_path(:tipo=>session[:tipo_foro])} %>   
-
+	<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>usuarioforos_path(:tipo=>session[:tipo_foro])} %>   
 
 <%end%> 
 	</ul>

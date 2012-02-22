@@ -90,12 +90,12 @@ end
            <%= f.hidden_field :textoes,:value=>'' %>
      <%end%>  
    <%elsif params[:vista]%>
-     	<%if current_user.traduceA='es'%>
+     	<%if current_user.tipo=='traductor'%>
      			 <div class="field">
     				<%= f.label t :revisadofr %><br />
    					 <%= f.check_box :revisadofr %>
    				 </div>
-   	 	<%else%>
+
    	 			 <div class="field">
     				<%= f.label t :revisado %><br />
    					<%= f.check_box :revisado %>
