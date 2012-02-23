@@ -1,10 +1,31 @@
 class UsuarioforosController < ApplicationController
-layout 'mono'
 
-  def segun_proyecto
-    if @usuarioforo.jeunes.nil?
-    render :layout => 'mono'
-    end
+layout 'foro'
+
+before_filter :ubicacion,:require_login,:except=>:show
+
+def ubicacion
+puts '#########################' 
+   
+ 	if params[:foro] 
+ 	     @foro=Foro.where('id=?',params[:foro])
+ 		 if !@foro.jeunes.nil?
+    		  'juan_jeunes'
+ 		 elsif !@forero.femmes.nil?
+   			'juan_femmes'
+  		 end
+  	else
+    	 'mono'
+    	
+  	end 
+
+end
+
+
+def segun_proyecto
+   if @usuarioforo.jeunes.nil?
+   render :layout => 'mono'
+   end
  end
 
 def index
@@ -16,7 +37,7 @@ def index
        @femmes=Femmes.first
        @usuarios=@femmes.usuarioforos
    end
-       respond_to do |format|
+   respond_to do |format|
       format.html # index.html.erb
       format.json {render :json => @usuarios.to_json}
       end

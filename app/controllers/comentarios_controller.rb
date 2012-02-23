@@ -54,17 +54,11 @@ end
  end
   def index
     if params[:modo]=='sinrevisar'
-    	if current_user.traduceA=='es'   
-    		@comentarios=Comentario.find(:all, :conditions => "revisado = false")
-    	else
-    		@comentarios=Comentario.find(:all, :conditions => "revisadofr = false")
-        end
+    	
+    		@comentarios=Comentario.find(:all, :conditions => "revisado = false || revisadofr = false")
+    	
     elsif params[:modo]=='sintrad'
-    	if current_user.traduceA=='es'   
-		  	@comentarios = Comentario.find(:all, :conditions => "textoes = '' && tituloes = '' ")
-	   	else
-	      	@comentarios = Comentario.find(:all, :conditions => "textofr = '' && titulofr = ''")
-	   	end
+	 @comentarios = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' || textofr = '' || titulofr = '' ")
      elsif params[:modo]=='todos'
      @comentarios=Comentario.find(:all, :order => "created_at  DESC limit 20")
     
@@ -148,11 +142,11 @@ end
     @sitio=@foro.sitio
     ###OJO AQUI VALIDACION Y NOTIFICACION
      respond_to do |format| 
-      if @comentario.save && !@sitio.jeunes.nil?
-         	@traductores=Usuario.where(:tipo=>'traductor')	
-         	@traductores.each do |traductor|
-         	 AvisoMailer.traductor(traductor).deliver
-         end
+         if @comentario.save && !@sitio.jeunes.nil?
+         	#@traductores=Usuario.where(:tipo=>'traductor')	
+         	#@traductores.each do |traductor|
+         	# AvisoMailer.traductor(traductor).deliver
+            #end
          if(params[:forito]=='true')
          format.html {
           render :text=>@comentario.id
@@ -183,7 +177,7 @@ end
   def update
     @comentario = Comentario.find(params[:id])
 
-    ############Aqui enviamos los correos
+    ############Aqui enviamos los correos a to
     if @comentario.revisado==true && @comentario.revisadofr==true
      	@foro=@comentario.foro
      	@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
@@ -193,11 +187,13 @@ end
     end
     #############
    
-   
+   @traductores=Usuario.where(:tipo=>'traductor')	
+       @traductores.each do |traductor|
+          AvisoMailer.traductor(traductor).deliver
+     end
    
     respond_to do |format|
-      if @comentario.update_attributes(params[:comentario])
-       
+      if @comentario.update_attributes(params[:comentario])  
         format.html { redirect_to(comentario_path(@comentario,:vista=>'gestion'), :notice => t('exito')) }
         format.xml  { head :ok }
       else

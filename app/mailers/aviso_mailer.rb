@@ -16,7 +16,7 @@ class AvisoMailer < ActionMailer::Base
   end
   def error(url)
   @url=url
-  mail(:to=>'migueldiazgajete@gmail.com',:subject=>'Error 404 en QDM')
+  mail(:to=>'juanantonioruz@gmail.com',:subject=>'Error 404 en QDM')
   end
   
     

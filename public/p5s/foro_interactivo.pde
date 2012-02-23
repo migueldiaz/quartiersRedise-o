@@ -9,6 +9,11 @@ public void reset(){
 	
 }
 public void newComentario( String texto){
+String comentarioParentVar="&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id;
+if(comentarioPrincipal){
+comentarioParentVar="";
+comentarioPrincipal=false;
+}
 	//println("comentarioAntID:"+reticulaRet.celdaSeleccionada.comentario.id+":::"+titulo+"---"+texto+"________from p5s");
 	$.ajax({
 	  type: "POST",
@@ -16,19 +21,36 @@ public void newComentario( String texto){
 	    beforeSend: function( xhr ) {
     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
   },
-	  data: "forito=true&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+texto.substring(0,10)
+	  data: "forito=true"+comentarioParentVar+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+texto.substring(0,10)
 	}).fail(function() { alert("error SENDING MESSAGE FORUM \n contact webmaster: juanantonioruz@gmail.com"); })
 	.done(function( msg ) {
 	//println("se fini la comunicacion"+msg);
-	  //alert( "Data Saved: " + msg );
+	//  alert( "Data Saved: " + msg );
 	  refresca();
 	  reticulaRet.seleccionaComentarioPorID(msg);
 	});
 	
 }
+
+public boolean isUsuarioForoAdmin(){
+if(
+usuario_mail.equals("juanantonioruz@gmail.com") || 
+usuario_mail.equals("migueldiazgajete@gmail.com") ||
+usuario_mail.equals("jennifer.quintas@quartiersdumonde.org") ||
+usuario_mail.equals("ada.bazan@quartiersdumonde.org") ||
+usuario_mail.equals("natalia.resimont@quartiersdumonde.org") ||
+usuario_mail.equals("carine.troussel@quartiersdumonde.org") 
+){
+return true;
+}else{
+return false;
+}
+}
+
 int idForo;
 int usuarioforo_id;
 String locale;
+String usuario_mail;
 String otro_locale;
 int tamTexto=12;
 void setup(){
@@ -43,6 +65,9 @@ void setup(){
 	//smooth();
 	  idForo = Request.parameter('id');
 	  locale = Request.parameter('idioma');
+	  usuario_mail = Request.parameter('usuario_mail');
+	  usuario_mail=usuario_mail.replaceFirst("%40", "@");
+	  
 	  if(locale=="es") otro_locale="fr";
 	  else otro_locale="es";
 	  usuarioforo_id = Request.parameter('usuarioforo_id');
@@ -101,7 +126,7 @@ void draw(){
 		if(com!=null) reticulaRet.selecciona(com);
 
 	  }else if  ((mouseButton == RIGHT)){
-	nuevoComentario();	  
+	nuevoComentario(false);	  
 	  }
 	
 	}
@@ -125,18 +150,25 @@ public void keyPressed() {
 
 			
 		}else if(key=='c'){
-	nuevoComentario();		
+	nuevoComentario(false);		
+		}else if(key=='x' && isUsuarioForoAdmin()){
+	nuevoComentario(true);		
 		}
 	}
-
-void nuevoComentario(){
+boolean comentarioPrincipal=false;
+void nuevoComentario(boolean parentC){
+		if(parentC)
+		comentarioPrincipal=true;
 		ComentarioForo comentarioSeleccionado=reticulaRet.celdaSeleccionada.comentario;
 		String t=comentarioSeleccionado.texto;
-		
-		String tt="";
-		if(t!=null)
-		tt=t.substring(50);
-		  openModal(comentarioSeleccionado.id,comentarioSeleccionado.usuario.nombre, comentarioSeleccionado.texto);
-
+		int idComentarioSeleccionado=comentarioSeleccionado.id;
+		String respondiendoA=comentarioSeleccionado.usuario.nombre;
+		if(comentarioPrincipal){
+		 t= "comentario principal !!";
+		idComentarioSeleccionado= 0;
+		 respondiendoA= "";
+		 }
+		  openModal(idComentarioSeleccionado,respondiendoA, t);
+	
 }
 
