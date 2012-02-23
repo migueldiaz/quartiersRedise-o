@@ -35,6 +35,9 @@
 						}
 					function openModal(ide, usuario, texto){
 					//	console.log(usuario);
+											var pjs = Processing.getInstanceById("foro_interactivo");
+											//console.log(pjs.isUsuarioForoAdmin());
+
 						$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
 						$('#comentario').val('');
 
