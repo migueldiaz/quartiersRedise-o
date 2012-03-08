@@ -33,61 +33,73 @@
 						var pjs = Processing.getInstanceById(id);
 							pjs.reset();
 						}
-					function openModal(ide, usuario, texto){
-					//	console.log(usuario);
-						$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
-						$('#comentario').val('');
+	function openModal(ide, usuario, texto){
+	//	console.log(usuario);
+		var pjs = Processing.getInstanceById("foro_interactivo");
+		//console.log(pjs.isUsuarioForoAdmin());
 
-						//  $('#mask').click(function () {
-						//        $(this).hide();
-						//        $('.window').hide();
-						//    });         
-							   var id = "#dialog";
+		$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
+		$('#comentario').val('');
+		$('#titulo_comentario').html('hola'+pjs.getIdioma());
+
+		if(pjs.isTraductor()){
+		$('#otro_comentario').val('');
+		$('#titulo_otro_comentario').html('hola'+pjs.getOtroIdioma());
+							
+		}else{
+		$('#traductor').hide();
+			
+		}		
+		   var id = "#dialog";
         //Get the screen height and width
-        var maskHeight = $(document).height();
-        var maskWidth = $(window).width();
-     
-        //Set height and width to mask to fill up the whole screen
-        $('#mask').css({'width':maskWidth,'height':maskHeight});
-         
-        //transition effect     
-        $('#mask').fadeIn(1000);    
-        $('#mask').fadeTo("slow",0.8);  
-     
-        //Get the window height and width
-        var winH = $(window).height();
-        var winW = $(window).width();
-               
-        //Set the popup window to center
-        $(id).css('top',  winH/2-$(id).height()/2);
-        $(id).css('left', winW/2-$(id).width()/2);
-     
-        //transition effect
-        $(id).fadeIn(2000); 
-     
-  
-						}
+	        var maskHeight = $(document).height();
+	        var maskWidth = $(window).width();
+	     
+	        //Set height and width to mask to fill up the whole screen
+	        $('#mask').css({'width':maskWidth,'height':maskHeight});
+	         
+	        //transition effect     
+	        $('#mask').fadeIn(1000);    
+	        $('#mask').fadeTo("slow",0.8);  
+	     
+	        //Get the window height and width
+	        var winH = $(window).height();
+	        var winW = $(window).width();
+	               
+	        //Set the popup window to center
+	        $(id).css('top',  winH/2-$(id).height()/2);
+	        $(id).css('left', winW/2-$(id).width()/2);
+	     
+	        //transition effect
+	        $(id).fadeIn(2000); 
 
- $(document).ready(function () {
- $('.window .close').click(function (e) {
-						        //Cancel the link behavior
-						        e.preventDefault();
-						        $('#mask, .window').hide();
-						    });    
-						  $('.window .enviar').click(oki);
-						  function oki(e) {
-						        //Cancel the link behavior
-						        e.preventDefault();
-						       // alert('enviando!'+$('#comentario').val());
-							    if($('#comentario').val()==''){
-							    alert('debe rellenar el texto del comentario \n doivent remplir le texte commenter');
-							   }else{
-						        var pjs = Processing.getInstanceById('foro_interactivo');
-						        pjs.newComentario( $('#comentario').val());
-						        $('#mask, .window').hide();
-								}
-								return false;
-						    }    
+
+		}
+
+		 $(document).ready(function () {
+		 $('.window .close').click(function (e) {
+		        //Cancel the link behavior
+		        e.preventDefault();
+		        $('#mask, .window').hide();
+		    });    
+		  $('.window .enviar').click(oki);
+		  function oki(e) {
+		        //Cancel the link behavior
+		        e.preventDefault();
+		        var pjs = Processing.getInstanceById('foro_interactivo');
+
+		       // alert('enviando!'+$('#comentario').val());
+			    if($('#comentario').val()==''){
+			    alert('debe rellenar el texto del comentario '+pjs.getIdioma()+' \n doivent remplir le texte '+pjs.getIdioma()+' commenter');
+				}else if (pjs.isTraductor() && $('#otro_comentario').val()=='') {
+			    alert('debe rellenar el texto del comentario '+pjs.getOtroIdioma()+'  \n doivent remplir le texte '+pjs.getOtroIdioma()+' commenter');
+				
+			   }else{
+		        pjs.newComentario( $('#comentario').val(), $('#otro_comentario').val());
+		        $('#mask, .window').hide();
+				}
+				return false;
+		    }    
 
 });
 
@@ -132,12 +144,22 @@
          <b>Respondiendo a:</b>
          <div id="comentario_anterior" style="width:80%;overflow:auto;height:130px">  </div>
 		 <hr>
-         <textarea id="comentario" rows="15" cols="90">escribe aqui tu comentario</textarea><br>
+		 <div style="float:left;">
+		 <div id="titulo_comentario"></div>
+         <textarea id="comentario" rows="15" cols="35">escribe aqui tu comentario</textarea>
+		 </div>
+		 <div style="float:left;" id="traductor">
+		 <div id="titulo_otro_comentario"></div>
+         <textarea id="otro_comentario" rows="15" cols="35">escribe aqui tu comentario</textarea>
+		 </div>
          </form>
         <!-- close button is defined as close class -->
+		<div style="clear:both;">
+			
         <a href="#" class="close" style="color:white;background-color:black; padding:5px;">Cerrar</a>
         &nbsp;&nbsp;
         <a href="#" class="enviar" style="color:white;background-color:black; padding:5px;">Enviar</a>
+		</div>
  
     </div>
  

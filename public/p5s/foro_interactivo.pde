@@ -8,7 +8,11 @@ public void reset(){
 	log.info("parandosss desde javascript to process");
 	
 }
-public void newComentario( String texto){
+public void newComentario( String texto,  String otro_texto){
+String traduccion="";
+if(isTraductor()){
+traduccion="&comentario[revisado]=1&comentario[revisadofr]=1&comentario[texto"+otro_locale+"]="+otro_texto+"&comentario[titulo"+otro_locale+"]="+otro_texto.substring(0,10)
+}
 String comentarioParentVar="&comentario[comentario_id]="+reticulaRet.celdaSeleccionada.comentario.id;
 if(comentarioPrincipal){
 comentarioParentVar="";
@@ -21,7 +25,7 @@ comentarioPrincipal=false;
 	    beforeSend: function( xhr ) {
     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
   },
-	  data: "forito=true"+comentarioParentVar+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+texto.substring(0,10)
+	  data: "forito=true"+comentarioParentVar+"&comentario[usuarioforo_id]="+usuarioforo_id+"&comentario[foro_id]="+idForo+traduccion+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+texto.substring(0,10)
 	}).fail(function() { alert("error SENDING MESSAGE FORUM \n contact webmaster: juanantonioruz@gmail.com"); })
 	.done(function( msg ) {
 	//println("se fini la comunicacion"+msg);
@@ -32,6 +36,35 @@ comentarioPrincipal=false;
 	
 }
 
+
+public void tradComentario( String texto,  String otro_texto){
+String traduccion="";
+if(isTraductor()){
+traduccion="&comentario[revisado]=1&comentario[revisadofr]=1&comentario[texto"+otro_locale+"]="+otro_texto+"&comentario[titulo"+otro_locale+"]="+otro_texto.substring(0,10)
+}
+
+	//println("comentarioAntID:"+reticulaRet.celdaSeleccionada.comentario.id+":::"+titulo+"---"+texto+"________from p5s");
+	$.ajax({
+	  type: "POST",
+	  url: "/comentarios/update",
+	    beforeSend: function( xhr ) {
+    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+  },
+	  data: "forito=true&id="+reticulaRet.celdaSeleccionada.comentario.id+traduccion+"&comentario[texto"+locale+"]="+texto+"&comentario[titulo"+locale+"]="+texto.substring(0,10)
+	}).fail(function() { alert("error SENDING MESSAGE FORUM \n contact webmaster: juanantonioruz@gmail.com"); })
+	.done(function( msg ) {
+	//println("se fini la comunicacion"+msg);
+	 // alert( "Data Saved: " + msg );
+	  setup();
+	  reticulaRet.seleccionaComentarioPorID(msg);
+	});
+	
+}
+
+
+public boolean isTraductor(){
+return isUsuarioForoAdmin();
+}
 public boolean isUsuarioForoAdmin(){
 if(
 usuario_mail.equals("juanantonioruz@gmail.com") || 
@@ -45,6 +78,13 @@ return true;
 }else{
 return false;
 }
+}
+
+public String getIdioma(){
+	return locale;
+}
+public String getOtroIdioma(){
+	return otro_locale;
 }
 
 int idForo;
@@ -153,6 +193,9 @@ public void keyPressed() {
 	nuevoComentario(false);		
 		}else if(key=='x' && isUsuarioForoAdmin()){
 	nuevoComentario(true);		
+		}else if(key=='t' && isTraductor() && !reticulaRet.celdaSeleccionada.rectangleConTexto.comentario.estaTraducido()){
+		ComentarioForo cf=reticulaRet.celdaSeleccionada.rectangleConTexto.comentario;
+		openModalTraducir(cf.texto, cf.texto_alternativo);
 		}
 	}
 boolean comentarioPrincipal=false;
@@ -172,3 +215,12 @@ void nuevoComentario(boolean parentC){
 	
 }
 
+int dameColor(String hex){
+			tColor=toxi.color.TColor.newHex(hex);
+			int coloritx = color(mapeaValor(tColor.hue()), mapeaValor(tColor.saturation()),
+				mapeaValor(tColor.brightness()));
+return coloritx;
+}
+ 	protected float mapeaValor(float ta) {
+	return map(ta, 0, 1, 0, 100);
+	}

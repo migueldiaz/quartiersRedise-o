@@ -176,6 +176,16 @@ end
   # PUT /comentarios/1.xml
   def update
     @comentario = Comentario.find(params[:id])
+           if(params[:forito]=='true')
+          if @comentario.update_attributes(params[:comentario])
+                 respond_to do |format| 
+
+            format.html {
+          render :text=>@comentario.id
+          }
+          end
+          end
+       else
 
     ############Aqui enviamos los correos a to
     if @comentario.revisado==true && @comentario.revisadofr==true
@@ -201,6 +211,8 @@ end
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
       end
     end
+       end
+
   end
 
   # DELETE /comentarios/1

@@ -1,6 +1,6 @@
 class UsuarioforosController < ApplicationController
 
-layout 'foro'
+layout 'mono'
 
 before_filter :ubicacion,:require_login,:except=>:show
 
