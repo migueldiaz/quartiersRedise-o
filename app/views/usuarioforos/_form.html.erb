@@ -1,4 +1,4 @@
-<%= form_for(@usuarioforo) do |f| %>
+<%= form_for @usuarioforo, :html => {:multipart => true} do |f| %>
   <% if @usuarioforo.errors.any? %>
     <div id="error_explanation">
       <h2><%= t('avisoerror')%></h2>
@@ -19,6 +19,26 @@
     <%= f.label t :email %><br />
     <%= f.text_field :email %>
   </div>
+  
+  <!--Aqui imagen usuario-->
+  
+  <%if @usuarioforo.imagen_url.to_s!='' %>
+    <%= image_tag @usuarioforo.imagen_url.to_s,:size=>'200x150' %>
+    <div class="field">
+        <label>
+          <%= f.check_box :remove_imagen %>
+          <%= t('destroy')+' '+t('image')%>
+        </label>
+    </div>
+    <%end%>
+    <div class="field">
+        <label><%= t('image')%></label>
+        <%= f.file_field :imagen %>
+    </div>
+  
+  <!---->
+  
+  
  <div class="field">
     <%= f.label t :idioma %><br />
     <%= f.select :idioma,options_for_select([[t('es'), 'es'], [t('fr'), 'fr']]) %>

@@ -1,7 +1,9 @@
 <div class="detalle_gestion">
 <h1><%=t('show')+' '+t('usuario')%> </h1>
 <p id="notice"><%= notice %></p>
-
+ <%if @usuarioforo.imagen_url.to_s!='' %>
+    <%= image_tag @usuarioforo.imagen_url.to_s,:size=>'150x150' %>
+  <%end%>
 <p>
   <b><%=t('name')%></b>
   <%= @usuarioforo.nombre %>
@@ -11,6 +13,9 @@
   <b><%=t('email')%></b>
   <%= @usuarioforo.email %>
 </p>
+<!---->
+
+<!---->
 <p>
  <b><%=t('idioma')%></b>
   <%= t(@usuarioforo.idioma) %>

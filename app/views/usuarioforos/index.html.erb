@@ -1,4 +1,8 @@
-
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion",:locals => { :mensaje => t('new')+' usuario', :path_volver=>new_usuarioforo_path(:tipo=>params[:tipo]) } %>         
+	</ul>
+</div>
 <div class="listado_registros_div">
 	
  <table class="listado_registros">
@@ -22,11 +26,7 @@
 <% end %>
   </table>
 </div>
-<div class="opciones_generales">
-	<ul  >
-		<%=render :partial=>"/shared/opcion_gestion",:locals => { :mensaje => t('new')+' usuario', :path_volver=>new_usuarioforo_path(:tipo=>params[:tipo]) } %>         
-	</ul>
-</div>
+
 
 
 

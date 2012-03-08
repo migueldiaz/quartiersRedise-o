@@ -3,6 +3,7 @@ class Usuarioforo < ActiveRecord::Base
   belongs_to :femmes
   belongs_to :equipo
   has_many :comentarios
+  mount_uploader :imagen,ImagenUploader
  # validates_uniqueness_of :email
   validate :validaemail,:on=>:create
 
