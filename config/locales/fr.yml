@@ -2,13 +2,51 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+ informacion: 'Information:'
+ infoEs: 'Information en spagnol'
+ infoFr: 'Information en français'
+ paginas_de: 'Pages dans la section:'
+ asociacion: 'Asociation'
+ usuario: 'usuaire'
+ doces: 'Document en spagnol'
+ docfr: 'Document en français'
+ enlace: 'Link'
+ parrafo: 'paragraph'
+ documento: 'document'
+ documentos: 'documents'
+ proyecto: 'Project'
+ jeunes: 'jeunes du monde'
+ femmes: 'femmes du monde'
+ traductores: 'traducteurs'
+ administradores: 'administrateurs'
+ lasociacion: "L'asociation"
+ usuarios: 'Usuaires'
+ fondos: 'Backgrounds'
+ pagina: 'page'
+ tituloEs:  'Titre en spagnol'
+ tituloFr: 'Titre en français' 
+ tituloesp:  'Titre en spagnol'
+ titulofra: 'Titre en français' 
+ descr_esp: 'Description en spagnol'
+ descripciones: 'Description en français'
+ descripcionfr: 'Description en spagnol'
+ descr_fra: 'Description en français'
+ imagen_zoom: 'Image zoom'
+ imagen_mini: 'Image mini'
+ detalle: 'Detail'
+ protagonistas: 'Avec qui travaillons-nous?'
+ enfoque: 'Que faisons-nous?'
+ galeria: "Galerie d'images"
+ lequipos: 'Equipes'
+ actividades: 'Activités internationales'
  close: 'Fermer'
  qdm: 'BARRIOS DEL MUNDO'
  buscador: 'Buscador'
  qdmsubtitle: 'HISTOIRES URBAINES'
  page: 'page'
  section: 'section'
- tituloEventos: 'Events de'
+ tituloEventos: 'Actualités de'
+ eventos: 'Actualités'
  acceder: 'accès'
  nombre: 'utilisateur'
  imagen: 'Image'
@@ -28,15 +66,15 @@ fr:
  avisoTraductor: 'Éléments montrent Seule la langue non traduite'
  tradm: 'Traductor'
  equipo: 'équipe'
- foros: 'forums'
- femmes: 'femmes'
+ foros: 'Forums'
  presentacion: 'Présentation'
+ Presentacion: 'Qui sommes-nous?'
  proyectos: 'projets'
- documentacion: 'documentation'
- equipos: 'équipements'
+ documentacion: 'Documentation'
+ equipos: 'equipes'
  colaboradores: 'collaborateurs'
- agenda: 'agenda'
- contacto: 'Contact'
+ agenda: 'Actualités'
+ contacto: 'Contactez-nous'
  acceso: "l'accès"
  created: 'date de création'
  idioma: 'Langue'
@@ -46,6 +84,9 @@ fr:
  textofr: 'Texto français'
  french: 'français'
  tituloes: 'Titre en spagnol'
+ tituloesp: 'Titre en spagnol'
+ titulofra: 'Titre en français'
+ parrafos: 'Paragraphs'
  email: 'email'
  password: 'mot de passe'
  titulofr: 'Titre en français'
@@ -62,7 +103,7 @@ fr:
  es: "Español"
  fr: "Français"
  en: "Anglais"
- usuariosforo: 'Usurios de Foros'
+ usuariosforo: 'Usuarios de Foros'
  claveactual: 'Clave actual'
  description: "Chaque quartier..."
  title: "Titre"
@@ -71,7 +112,7 @@ fr:
  seccionfr: "Titre de la secion français"
  newsection: "Nouvelle section"
  setLanguage: "Choisiez la langue"
- evento: 'event'
+ evento: 'actualité'
  new: 'Nouveau'
  confirm: 'Etez-vous sure?'
  date:

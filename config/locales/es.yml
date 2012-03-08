@@ -1,5 +1,12 @@
 
 es: 
+ tituloesp: 'Título español'
+ titulofra: 'Título francés' 
+ descr_esp: 'Descripción español'
+ descr_fra: 'Descripción francés'
+ imagen_zoom: 'Imagen zoom'
+ imagen_mini: 'Imagen mini'
+ detalle: 'Detalle'
  comments: 'comentarios'
  showing: 'Viendo'
  todos: 'todos'
@@ -183,7 +190,6 @@ es:
  secciones: "Titulo de la seccion español"
  seccionfr: "Titulo de la seccion frances"
  setLanguage: "Ejija el idioma"
- evento: 'evento'
  new: 'Añadir'
  confirm: "Esta seguro?"
  time:
