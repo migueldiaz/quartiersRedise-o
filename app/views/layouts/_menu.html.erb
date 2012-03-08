@@ -1,12 +1,13 @@
 <% if params[:controller]=="asociation" %>
 	<%if !@asociacion.nil? %>
 	<ul id="menu">
+	
 		<%=render "asociation/presentaciones" %> 
-			<li <%=menu_seleccionada_bis asociation_vision_path %>><%=link_to t('vision'),asociation_vision_path%></li>
+		<!--	<li <%=menu_seleccionada_bis asociation_vision_path %>><%=link_to t('vision'),asociation_vision_path%></li>-->
 			<%=render "asociation/enfoque" %>
 			<%=render "asociation/protagonistas" %>    
-			<%=render "asociation/proyectos" %>  
-		<li <%=menu_seleccionada_bis asociation_colaborador_path %> ><%=link_to t('colaboradores'),asociation_colaborador_path%></li>
+		<!--	<%=render "asociation/proyectos" %>  -->
+		<!--<li <%=menu_seleccionada_bis asociation_colaborador_path %> ><%=link_to t('colaboradores'),asociation_colaborador_path%></li>-->
 		
 		<li <%=menu_seleccionada_bis asociation_agenda_path %>><%=link_to t('agenda'),asociation_agenda_path%></li>
 		<li <%=menu_seleccionada_bis asociation_contacto_path %>><%=link_to t('contacto'),asociation_contacto_path%></li>
@@ -20,7 +21,7 @@
     			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
     		<%end%>
     		</li>
-		<li <%=menu_seleccionada_tris :proyectos %>><%=link_to t('proyectos'),jeunes_proyectos_path  %>
+		<li <%=menu_seleccionada_tris :proyectos %>><%=link_to t('actividades'),jeunes_proyectos_path  %>
 		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
 			<ul class="submenu"><%=render 'jeunes/paginas'%></ul>
 		<%end%>
@@ -74,7 +75,7 @@
     			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
     		<%end%>
     		</li>
-		<li <%=menu_seleccionada_tris :proyectos %>><%=link_to t('proyectos'),femmes_proyectos_path  %>
+		<li <%=menu_seleccionada_tris :proyectos %>><%=link_to t('actividades'),femmes_proyectos_path  %>
 		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
 			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
 		<%end%>

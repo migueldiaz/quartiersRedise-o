@@ -187,12 +187,12 @@ end
           end
        else
 
-    ############Aqui enviamos los correos a to
+    ############Aqui enviamos los correos a todos los usuarios del foro
     if @comentario.revisado==true && @comentario.revisadofr==true
      	@foro=@comentario.foro
      	@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
      	@usuarios.each do |usuario|
-    		AvisoMailer.aviso_foro(usuario,@comentario).deliver
+    		#AvisoMailer.aviso_foro(usuario,@comentario).deliver
      	end
     end
     #############

@@ -46,4 +46,21 @@ Paginadocumentos::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # Only use best-standards-support built into browsers
+  config.action_dispatch.best_standards_support = :builtin
+    config.action_mailer.raise_delivery_errors = false
+config.log_level = :info
+  
+    #ActionMailer::Base.smtp_settings = 
+ config.action_mailer.smtp_settings ={
+
+:address => "mail.gandi.net",
+:port => 587,
+:authentication => :login,
+:user_name => 'qdm@miao.es',
+:domain=>'miao.es',
+:password => 'quartiers',
+:enable_starttls_auto=>true
+}
 end
