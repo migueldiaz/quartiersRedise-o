@@ -1,5 +1,6 @@
 
 es: 
+ position: 'Orden lista'
  tituloesp: 'Título español'
  titulofra: 'Título francés' 
  descr_esp: 'Descripción español'

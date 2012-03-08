@@ -26,8 +26,8 @@ titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo')) %>
 <!--Mostrar parrafos -->
 <table class="listado_registros">
     <%= render :partial => "/shared/cabecera_tabla_gestion",
-    :locals =>{ :n_columns=>9,:title=>titulo_pagina+': ('+t("parrafos")+')',
-    :columns=>[t('tituloesp'), t('titulofra'),t("descr_esp"), t("descr_fra"), t("imagen_zoom"), t("imagen_mini"), t("detalle"), t("edit"), t("destroy")]} %>
+    :locals =>{ :n_columns=>10,:title=>titulo_pagina+': ('+t("parrafos")+')',
+    :columns=>[t('tituloesp'), t('titulofra'),t("descr_esp"), t("descr_fra"), t("imagen_zoom"), t("imagen_mini"),t('position'), t("detalle"), t("edit"), t("destroy")]} %>
     <%= render :partial => "parrafos/parrafo", :collection => @pagina.parrafos %>
 </table>
 <div class="opciones_generales">
@@ -37,7 +37,7 @@ titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo')) %>
 </div>
 <table class="listado_registros">
     <%= render :partial => "/shared/cabecera_tabla_gestion",
-    :locals =>{ :n_columns=>8,:title=>titulo_pagina+": "+t('documentos'), :columns=>[t('doces'), t('enlace'),t('docfr'), t('enlace')]} %>
+    :locals =>{ :n_columns=>8,:title=>titulo_pagina+": "+t('documentos'), :columns=>[t('doces'), t('enlace'),t('docfr'), t('enlace'),t('position')]} %>
     <%= render :partial => "documentos/documento", :collection => @pagina.documentos %>
 </table>
 <div class="opciones_generales">

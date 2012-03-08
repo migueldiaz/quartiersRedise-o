@@ -2,7 +2,7 @@ class Parrafo < ActiveRecord::Base
   belongs_to :pagina
   mount_uploader :imagen,ImagenUploader
   mount_uploader :imagenmini,ImagenUploader
-  
+  #acts_as_list :scope=> :pagina
   validate :valida_parrafo
   #attr_accessible :tituloes
  
