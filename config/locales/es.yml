@@ -63,8 +63,8 @@ es:
  avisotitulo: 'Debe haber un título en al menos un idioma'
  avisoparrafo: 'El parrafo debe tener texto en al menos un idioma'
  exitom: 'Modificado correctamente'
- actividades: 'Actividades'
- red: 'Proyectos/actividades'
+ actividad: 'Actividades'
+ 
  proyecto: 'Proyecto'
  jeunes: 'jóvenes del mundo'
  femmes: 'mujeres del mundo'
@@ -105,6 +105,7 @@ es:
  lproyecto: 'Los proyectos'
  lequipos: 'Equipos'
  
+ red: 'Actividades'
  ltraductores: 'Equipo de traducción'
  zadmin: 'Zona de administración'
  textoes: "Texto en español"
@@ -138,10 +139,10 @@ es:
  revisadofr: 'Traducción revisada francés'
  contacto: 'Contactenos'
  created: 'fecha de creación'
- colaboradores: 'Colaboradores'
+ colaboradores: 'Socios'
  siAporta: 'Sí'
  noAporta: 'No'
- colaborador: 'colaborador'
+ colaborador: 'socio'
  aporta: 'Colabora económicamente'
  direccion: 'Dirección'
  nombreEs: 'Nombre en español'
