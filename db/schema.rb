@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030082759) do
+ActiveRecord::Schema.define(:version => 20120308180527) do
 
   create_table "add_protagonistas_to_paginas", :force => true do |t|
     t.integer  "protagonistas_id"
@@ -125,6 +125,10 @@ ActiveRecord::Schema.define(:version => 20111030082759) do
     t.boolean  "revisadofr",    :default => false
     t.text     "descripciones"
     t.text     "descripcionfr"
+    t.string   "documento"
+    t.string   "documentofr"
+    t.string   "titulodoces"
+    t.string   "titulodocfr"
   end
 
   create_table "femmes", :force => true do |t|
