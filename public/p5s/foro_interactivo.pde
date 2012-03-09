@@ -81,10 +81,13 @@ return false;
 }
 
 public String getIdioma(){
-	return locale;
+	if(locale=='es') return "Español";
+	else return "Français";
 }
 public String getOtroIdioma(){
-	return otro_locale;
+	if(otro_locale=='es') return "Español";
+	else return "Français";
+
 }
 
 int idForo;

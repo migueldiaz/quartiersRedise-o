@@ -40,11 +40,11 @@
 
 		$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
 		$('#comentario').val('');
-		$('#titulo_comentario').html('Mensaje en: '+pjs.getIdioma());
+		$('#titulo_comentario').html('hola'+pjs.getIdioma());
 
 		if(pjs.isTraductor()){
 		$('#otro_comentario').val('');
-		$('#titulo_otro_comentario').html('Mensaje en:'+pjs.getOtroIdioma());
+		$('#titulo_otro_comentario').html('hola'+pjs.getOtroIdioma());
 							
 		}else{
 		$('#traductor').hide();
@@ -64,11 +64,11 @@
 		//console.log(pjs.isUsuarioForoAdmin());
 
 		$('#comentario').val(texto);
-		$('#titulo_comentario').html('Mensaje en: '+pjs.getIdioma());
+		$('#titulo_comentario').html('hola'+pjs.getIdioma());
 
 		if(pjs.isTraductor()){
 		$('#otro_comentario').val(otro_texto);
-		$('#titulo_otro_comentario').html('Mensaje en: '+pjs.getOtroIdioma());
+		$('#titulo_otro_comentario').html('hola'+pjs.getOtroIdioma());
 							
 		}else{
 		$('#traductor').hide();
@@ -195,11 +195,11 @@
 		 <hr>
 		 <div style="float:left;">
 		 <div id="titulo_comentario"></div>
-         <textarea id="comentario" rows="15" cols="45">escribe aqui tu comentario</textarea>
+         <textarea id="comentario" rows="15" cols="35">escribe aqui tu comentario</textarea>
 		 </div>
 		 <div style="float:left;" id="traductor">
 		 <div id="titulo_otro_comentario"></div>
-         <textarea id="otro_comentario" rows="15" cols="45">escribe aqui tu comentario</textarea>
+         <textarea id="otro_comentario" rows="15" cols="35">escribe aqui tu comentario</textarea>
 		 </div>
          </form>
         <!-- close button is defined as close class -->
