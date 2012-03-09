@@ -92,7 +92,7 @@ class ForosController < ApplicationController
   # POST /foros.xml
   def create
     @foro = Foro.new(params[:foro])
-    
+   
 	  # params[:comentario][:created_at_admin]=Time.now.to_s
     #    params[:comentario][:textoes]=@foro.textoes
     #    params[:comentario][:tituloes]=@foro.tituloes
@@ -107,8 +107,15 @@ class ForosController < ApplicationController
   
     respond_to do |format|
       if @foro.save
+        ######################
+         @comentario=@foro.comentarios.create
+         @comentario.created_at=Time.now.to_s
+         @comentario.tituloes=@foro.tituloes
+         @comentario.save
+         ###Añadir los campos que quieras 
+        ###########
         
-     
+        
         
         format.html { redirect_to(@foro, :notice => t('exito')) }
         format.xml  { render :xml => @foro, :status => :created, :location => @foro }
