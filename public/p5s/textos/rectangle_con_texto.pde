@@ -60,7 +60,7 @@ class RectangleConTexto {
 			rect(posXRectangle, posYRectangle, anchoRectangle, altoRectangle);
 			popStyle();
 			}
-			if(isTraductor() && !comentario.estaTraducido()){
+			if(isTraductor() && comentario.necesitaTraduccion()){
 			fill(dameColor("FF0000"));
 			rect(posXRectangle, posYRectangle, 20, 20);
 			

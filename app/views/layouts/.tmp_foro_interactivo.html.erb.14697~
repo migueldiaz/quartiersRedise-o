@@ -50,7 +50,38 @@
 		$('#traductor').hide();
 			
 		}		
-		   var id = "#dialog";
+		preparaModal();
+
+		$('.window .traducir').hide();
+
+		}
+		
+		
+		function openModalTraducir(texto, otro_texto){
+	//	console.log(usuario);
+		var pjs = Processing.getInstanceById("foro_interactivo");
+		//console.log(pjs.isUsuarioForoAdmin());
+
+		$('#comentario').val(texto);
+		$('#titulo_comentario').html('hola'+pjs.getIdioma());
+
+		if(pjs.isTraductor()){
+		$('#otro_comentario').val(otro_texto);
+		$('#titulo_otro_comentario').html('hola'+pjs.getOtroIdioma());
+							
+		}else{
+		$('#traductor').hide();
+			
+		}		
+		preparaModal();
+
+		$('.window .enviar').hide();
+
+		}
+		
+
+		function preparaModal(){
+			   var id = "#dialog";
         //Get the screen height and width
 	        var maskHeight = $(document).height();
 	        var maskWidth = $(window).width();
@@ -72,8 +103,6 @@
 	     
 	        //transition effect
 	        $(id).fadeIn(2000); 
-
-
 		}
 
 		 $(document).ready(function () {
@@ -83,6 +112,7 @@
 		        $('#mask, .window').hide();
 		    });    
 		  $('.window .enviar').click(oki);
+		  $('.window .traducir').click(traductore);
 		  function oki(e) {
 		        //Cancel the link behavior
 		        e.preventDefault();
@@ -96,6 +126,23 @@
 				
 			   }else{
 		        pjs.newComentario( $('#comentario').val(), $('#otro_comentario').val());
+		        $('#mask, .window').hide();
+				}
+				return false;
+		    }    
+		  function traductore(e) {
+		        //Cancel the link behavior
+		        e.preventDefault();
+		        var pjs = Processing.getInstanceById('foro_interactivo');
+
+		       // alert('enviando!'+$('#comentario').val());
+			    if($('#comentario').val()==''){
+			    alert('debe rellenar el texto del comentario '+pjs.getIdioma()+' \n doivent remplir le texte '+pjs.getIdioma()+' commenter');
+				}else if (pjs.isTraductor() && $('#otro_comentario').val()=='') {
+			    alert('debe rellenar el texto del comentario '+pjs.getOtroIdioma()+'  \n doivent remplir le texte '+pjs.getOtroIdioma()+' commenter');
+				
+			   }else{
+		        pjs.tradComentario( $('#comentario').val(), $('#otro_comentario').val());
 		        $('#mask, .window').hide();
 				}
 				return false;
@@ -159,6 +206,7 @@
         <a href="#" class="close" style="color:white;background-color:black; padding:5px;">Cerrar</a>
         &nbsp;&nbsp;
         <a href="#" class="enviar" style="color:white;background-color:black; padding:5px;">Enviar</a>
+        <a href="#" class="traducir" style="color:white;background-color:black; padding:5px;">Traducir</a>
 		</div>
  
     </div>

@@ -193,7 +193,7 @@ public void keyPressed() {
 	nuevoComentario(false);		
 		}else if(key=='x' && isUsuarioForoAdmin()){
 	nuevoComentario(true);		
-		}else if(key=='t' && isTraductor() && !reticulaRet.celdaSeleccionada.rectangleConTexto.comentario.estaTraducido()){
+		}else if(key=='t' && isTraductor() ){
 		ComentarioForo cf=reticulaRet.celdaSeleccionada.rectangleConTexto.comentario;
 		openModalTraducir(cf.texto, cf.texto_alternativo);
 		}
