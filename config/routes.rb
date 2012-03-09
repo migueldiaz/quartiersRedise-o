@@ -89,6 +89,7 @@ Paginadocumentos::Application.routes.draw do
   match 'idioma/french'=> 'idioma#setfrench'
   match 'quartiers/prueba'=> 'quartiers#prueba'
   match 'quartiers/load'=> 'quartiers#load'
+  match 'comentarios/update'=> 'comentarios#update'
   
   
 

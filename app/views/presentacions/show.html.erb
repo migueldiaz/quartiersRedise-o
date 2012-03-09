@@ -8,9 +8,13 @@
 <div class="listado_registros_div">
 	
  <table class="listado_registros">
+ 	 <%if !@sitio.asociacion.nil?%> 
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>5,:title=>t('paginas_de')+" "+t('Presentacion'), :columns=>[t('tituloEs'), t('tituloFr')]} %>
+      <%else%>
+       <%= render :partial => "/shared/cabecera_tabla_gestion", 
 		:locals =>{ :n_columns=>5,:title=>t('paginas_de')+" "+t('presentacion'), :columns=>[t('tituloEs'), t('tituloFr')]} %>
-
+      <%end%>
 
    <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
   </table>

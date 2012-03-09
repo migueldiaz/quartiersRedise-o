@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+#gem 'acts_as_list'
 gem 'rake', '0.9.2.2'
 gem 'sunspot_rails'
 gem 'rails', '3.0.5'

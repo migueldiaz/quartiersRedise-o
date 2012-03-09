@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030082759) do
+ActiveRecord::Schema.define(:version => 20120308215420) do
 
   create_table "add_protagonistas_to_paginas", :force => true do |t|
     t.integer  "protagonistas_id"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20111030082759) do
     t.string  "archivofr"
     t.integer "foro_id"
     t.boolean "revisadofr", :default => false
+    t.integer "position",   :default => 10
   end
 
   create_table "enfoques", :force => true do |t|
@@ -111,6 +112,8 @@ ActiveRecord::Schema.define(:version => 20111030082759) do
     t.boolean  "revisadofr",    :default => false
     t.float    "x"
     t.float    "y"
+    t.string   "url"
+    t.string   "imagen"
   end
 
   create_table "eventos", :force => true do |t|
@@ -125,6 +128,10 @@ ActiveRecord::Schema.define(:version => 20111030082759) do
     t.boolean  "revisadofr",    :default => false
     t.text     "descripciones"
     t.text     "descripcionfr"
+    t.string   "documento"
+    t.string   "documentofr"
+    t.string   "titulodoces"
+    t.string   "titulodocfr"
   end
 
   create_table "femmes", :force => true do |t|
@@ -199,6 +206,7 @@ ActiveRecord::Schema.define(:version => 20111030082759) do
     t.string   "tituloes"
     t.string   "titulofr"
     t.boolean  "revisadofr", :default => false
+    t.integer  "position",   :default => 10
   end
 
   create_table "presentacions", :force => true do |t|
@@ -260,6 +268,7 @@ ActiveRecord::Schema.define(:version => 20111030082759) do
     t.datetime "updated_at"
     t.string   "idioma"
     t.integer  "equipo_id"
+    t.string   "imagen"
   end
 
   create_table "usuarios", :force => true do |t|

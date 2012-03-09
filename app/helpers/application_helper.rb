@@ -1,5 +1,18 @@
 module ApplicationHelper
   
+  ##Helper que detecta si la pagina es asociacion_> No tiene galeria
+  ## En views -> paginas -> show -> linea 48
+  def esasociacion(pagina)
+  	@pagina=Pagina.find(pagina)
+  	return true
+  	if !@pagina.presentacion.nil?
+  	   return !@pagina.presentacion.sitio.asociacion.nil?
+    elsif !@pagina.enfoque.nil?
+  	   return !@pagina.enfoque.sitio.asociacion.nil?
+    elsif !@pagina.protagonistas.nil?
+  	   return !@pagina.protagonistas.sitio.asociacion.nil? 
+  	end
+  end
   def nuevoscomentarios(identificador)
     
     @comentario=Comentario.find(identificador)

@@ -13,6 +13,11 @@
   
   
   <%= f.hidden_field :pagina_id %>
+  
+   <div class="field">
+    <%= f.label t :position %><br />
+    <%= f.select :position, (1..50) %>
+  </div>
   <div class="field">
     <%= f.label t :tituloes %><br />
     <%= f.text_field :tituloes %>

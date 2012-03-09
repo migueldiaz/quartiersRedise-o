@@ -92,9 +92,24 @@ class ForosController < ApplicationController
   # POST /foros.xml
   def create
     @foro = Foro.new(params[:foro])
-	
+    
+	  # params[:comentario][:created_at_admin]=Time.now.to_s
+    #    params[:comentario][:textoes]=@foro.textoes
+    #    params[:comentario][:tituloes]=@foro.tituloes
+    #    params[:comentario][:titulofr]=@foro.titulofr
+    #    params[:comentario][:usuarioforo_id]=Usuarioforo.where("email = :email AND femmes_id=:f_id", {:email=>'ada.bazan@quartiersdumonde.org', :f_id=>@foro.femmes_id}).first.id
+    #    params[:comentario][:revisado]=1
+    #    params[:comentario][:revisado_fr]=1
+    #    params[:comentario][:textofr]=@foro.textofr
+    #    params[:comentario][:foro_id]=@foro.id
+    #    @comentario = Comentario.create(params[:comentario])
+  
+  
     respond_to do |format|
       if @foro.save
+        
+     
+        
         format.html { redirect_to(@foro, :notice => t('exito')) }
         format.xml  { render :xml => @foro, :status => :created, :location => @foro }
       else

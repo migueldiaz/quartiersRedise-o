@@ -26,4 +26,7 @@ class ComentarioForo {
 		return (texto != null);
 	}
  
+ 	public boolean necesitaTraduccion(){
+		return (texto == null || texto_alternativo ==null);
+	}
 }

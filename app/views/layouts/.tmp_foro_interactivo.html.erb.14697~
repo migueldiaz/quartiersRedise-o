@@ -53,7 +53,6 @@
 		preparaModal();
 
 		$('.window .traducir').hide();
-		$('.window .enviar').show();
 
 		}
 		
@@ -77,7 +76,6 @@
 		preparaModal();
 
 		$('.window .enviar').hide();
-		$('.window .traducir').show();
 
 		}
 		

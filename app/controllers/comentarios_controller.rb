@@ -176,13 +176,23 @@ end
   # PUT /comentarios/1.xml
   def update
     @comentario = Comentario.find(params[:id])
+           if(params[:forito]=='true')
+          if @comentario.update_attributes(params[:comentario])
+                 respond_to do |format| 
 
-    ############Aqui enviamos los correos a to
+            format.html {
+          render :text=>@comentario.id
+          }
+          end
+          end
+       else
+
+    ############Aqui enviamos los correos a todos los usuarios del foro
     if @comentario.revisado==true && @comentario.revisadofr==true
      	@foro=@comentario.foro
      	@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
      	@usuarios.each do |usuario|
-    		AvisoMailer.aviso_foro(usuario,@comentario).deliver
+    		#AvisoMailer.aviso_foro(usuario,@comentario).deliver
      	end
     end
     #############
@@ -201,6 +211,8 @@ end
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
       end
     end
+       end
+
   end
 
   # DELETE /comentarios/1

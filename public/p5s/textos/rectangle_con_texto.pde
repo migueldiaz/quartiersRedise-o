@@ -60,6 +60,11 @@ class RectangleConTexto {
 			rect(posXRectangle, posYRectangle, anchoRectangle, altoRectangle);
 			popStyle();
 			}
+			if(isTraductor() && comentario.necesitaTraduccion()){
+			fill(dameColor("FF0000"));
+			rect(posXRectangle, posYRectangle, 20, 20);
+			
+			}
 			float limite=altoRectangle;
 			if(anchoRectangle<altoRectangle) limite=anchoRectangle;
 			//float size = map(limite, 0, 150, 7, 15);

@@ -14,8 +14,16 @@
    <%= @evento.tituloEs %>
 </p>
 <p>
+  <b><%= t('descripciones')%>:</b>
+   <%= @evento.descripciones %>
+</p>
+<p>
   <b><%= t('tituloFr')%>:</b>
    <%= @evento.tituloFr %>
+</p>
+<p>
+  <b><%= t('descripcionfr')%>:</b>
+   <%= @evento.descripcionfr %>
 </p>
 <% if @evento.imagen_url.to_s != "" %>
 <p>
@@ -23,6 +31,17 @@
 <%= image_tag @evento.imagen_url.to_s,:size=>'100x90' %>
 </p>
 <% end %>
+
+ <% if @evento.documento_url.to_s != "" %>
+	<p>    
+  	 <%= t('documento').capitalize+' '+t('tituloes')+': '+@evento.titulodoces+'  '%><%= link_to @evento.documento_url.to_s %>
+	</p>
+<%end%>
+<% if @evento.documentofr_url.to_s != "" %>
+	<p>    
+  	<%= t('documento').capitalize+' '+t('titulofr')+': '+@evento.titulodocfr+'  '%><%= link_to @evento.documentofr_url.to_s %>
+	</p>
+<%end%>
 
 <div class="opciones_generales">
 	<ul  >

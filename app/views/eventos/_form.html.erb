@@ -32,21 +32,65 @@
     <%= f.label t :descripcionfr%><br />
     <%= f.text_area :descripcionfr,:size=>'55x10' %>
    </div>
- 
+   <h2><%=t('imagen').capitalize%></h2>
    <div class="field">
-        <label><%=t('imagen')%></label>
+        <label><%=t('imagen').capitalize%></label>
       <%= f.file_field :imagen  %>
     </div>
     <% if @evento.imagen_url.to_s != "" %>
-<%= image_tag @evento.imagen_url.to_s %>
-
+		<%= image_tag @evento.imagen_url.to_s %>
+	<% end %>
+   
    <div class="field">
         <label>
           <%= f.check_box :remove_imagen %>
           Borrar la imagen
         </label>
     </div>
-<% end %>
+   
+    <!--------Aqui el nuevo documento para evento= actualidad -->
+   <br/>  
+   <h2><%=t('documento').capitalize%></h2>
+    <div class="field">
+    <%= f.label t(:doces) %><br />
+    <%= f.text_field :titulodoces %>
+  </div>
+   <div class="field">
+        <label><%=t('documento').capitalize%></label>
+      <%= f.file_field :documento  %>
+    </div>
+    <% if @evento.documento_url.to_s != "" %>
+		<%= link_to @evento.documento_url.to_s %>
+	 <div class="field">
+        <label>
+          <%= f.check_box :remove_documento %>
+          Borrar el documento
+        </label>
+    </div>
+	<% end %>
+  
+    <div class="field">
+    <%= f.label t(:docfr) %><br />
+    <%= f.text_field :titulodocfr %>
+  </div>
+   <div class="field">
+        <label><%=t('documento').capitalize%></label>
+      <%= f.file_field :documentofr  %>
+    </div>
+    <% if @evento.documentofr_url.to_s != "" %>
+		<%= link_to @evento.documentofr_url.to_s %>
+	 <div class="field">
+        <label>
+          <%= f.check_box :remove_documentofr %>
+          Borrar el documento
+        </label>
+    </div>
+	<% end %>
+    
+    
+    
+    <!-- -->
+
   <%if current_user.tipo=='traductor'%>
 	 <div class="field">
 		<%= f.label t :revisado %>
@@ -58,7 +102,7 @@
 	<%= f.hidden_field :revisadofr,:value=>false %>
 	<%= f.hidden_field :revisado,:value=>false %>
   <%end%>
-
+<br/>
   <div class="actions">
     <%= f.submit(t('save'), :class=>"button") %>
 	  </div>

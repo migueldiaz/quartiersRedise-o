@@ -11,7 +11,10 @@
       </ul>
     </div>
   <% end %>
- 
+   <div class="field">
+    <%= f.label t :position %><br />
+    <%= f.select :position, (1..50) %>
+  </div>
  
   <%=  f.hidden_field :foro_id%>
  <%=  f.hidden_field :pagina_id%>

@@ -28,12 +28,12 @@ config.log_level = :info
     #ActionMailer::Base.smtp_settings = 
  config.action_mailer.smtp_settings ={
 
-:address => "smtp.1and1.es",
+:address => "mail.gandi.net",
 :port => 587,
 :authentication => :login,
-:user_name => 'info@onrails.es',
-:domain=>'onrails.es',
-:password => 'peyote82',
+:user_name => 'qdm@miao.es',
+:domain=>'miao.es',
+:password => 'quartiers',
 :enable_starttls_auto=>true
 }
 end
