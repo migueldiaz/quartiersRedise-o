@@ -8,17 +8,10 @@ layout 'mono'
  
  
   if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @imagenes = Imagen.find(:all, :conditions => "piefoto='' ")
-	   else
-	    	 @imagenes = Imagen.find(:all, :conditions => "piefotofr='' ")	
-	   end
+  	 @imagenes = Imagen.find(:all, :conditions => "piefoto='' || piefotofr='' ")	
+
   elsif  params[:modo]=='sinrevisar'	
-   		if current_user.traduceA=='es'   
-			  @imagenes = Imagen.find(:all, :conditions => "revisado = 'false'")	
-	   	else
-	    	 @imagenes = Imagen.find(:all, :conditions => "revisadofr = 'false'")	
-	   	end
+   		@imagenes = Imagen.find(:all, :conditions => "revisado = 'false' || revisadofr = 'false'")	
   else
  	 @imagenes = Imagen.all
   end

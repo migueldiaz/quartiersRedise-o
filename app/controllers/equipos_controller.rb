@@ -4,18 +4,9 @@ class EquiposController < ApplicationController
  def index
  
   if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @equipos = Equipo.find(:all, :conditions => "descripcionEs=''")
-	   else
-	    	 @equipos = Equipo.find(:all, :conditions => "descripcionFr=''")	
-	   end
-  
+  	 @equipos = Equipo.find(:all, :conditions => "descripcionEs='' || descripcionFr=''")	
   elsif  params[:modo]=='sinrevisar'	
-   		if current_user.traduceA=='es'   
-			 @equipos = Equipo.find(:all, :conditions => "revisado = 'false'")	
-	   	else
-	    	  @equipos = Equipo.find(:all, :conditions => "revisadofr = 'false'")	
-	   	end	
+   	 @equipos = Equipo.find(:all, :conditions => "revisado = 'false' || revisadofr = 'false'")	
   elsif params[:id]
  	  @sitio=Sitio.find(params[:id])
  	  if !@sitio.jeunes.nil?

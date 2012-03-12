@@ -8,18 +8,10 @@ layout 'mono'
    require_traductor
  
   if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @documentos = Documento.find(:all, :conditions => "doces='' || arhivo=''")
-	   else
-	    	 @documentos = Documento.find(:all, :conditions => "docfr='' || archivofr=''")	
-	   end
-  
+	   @documentos = Documento.find(:all, :conditions => "docEs = '' || archivo = '' || docFr=''|| archivofr = '' " )
+	  
   elsif  params[:modo]=='sinrevisar'	
-   	 	if current_user.traduceA=='es'   
-			 @documentos = Documento.find(:all, :conditions => "revisado = 'false'")	 
-	   	else
-	    	 @documentos = Documento.find(:all, :conditions => "revisadofr = 'false'")	
-	   	end		
+   	 	@documentos = Documento.find(:all, :conditions =>  "revisado = false || revisadofr=false")
   else
  	 @documentos = Documento.all
   end

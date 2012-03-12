@@ -54,14 +54,11 @@ end
  end
   def index
     if params[:modo]=='sinrevisar'
-    	
-    		@comentarios=Comentario.find(:all, :conditions => "revisado = false || revisadofr = false")
-    	
+    	@comentarios=Comentario.find(:all, :conditions => "revisado = false || revisadofr = false")
     elsif params[:modo]=='sintrad'
-	 @comentarios = Comentario.find(:all, :conditions => "textoes = '' || tituloes = '' || textofr = '' || titulofr = '' ")
-     elsif params[:modo]=='todos'
-     @comentarios=Comentario.find(:all, :order => "created_at  DESC limit 20")
-    
+	 	@comentarios = Comentario.find(:all, :conditions => "textoes = '' || textofr = '' ")
+    elsif params[:modo]=='todos'
+    	@comentarios=Comentario.find(:all, :order => "created_at  DESC limit 20")
     else
     	@foro=Foro.find(params[:id])
     	@comentarios=@foro.comentarios

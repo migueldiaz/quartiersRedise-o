@@ -6,27 +6,16 @@ class EventosController < ApplicationController
   def index
 
    if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @eventos = Evento.find(:all, :conditions => "tituloEs = ''")
-	   else
-	    	 @eventos = Evento.find(:all, :conditions => "tituloFr = ''")	
-	   end
- 	elsif  params[:modo]=='todos'
- 	     @eventos = Evento.all
- 
- 	elsif  params[:modo]=='sinrevisar'
-   	 	if current_user.traduceA=='es'   
-			@eventos = Evento.find(:all, :conditions => "revisado = 'false'")	
-	   else
-	    	@eventos = Evento.find(:all, :conditions => "revisadofr = 'false'")	
-	   end	
-   	else
-   	   @sitio = Sitio.find(params[:id]) 
-       @eventos=@sitio.eventos.all
- 	 end
+  	 	@eventos = Evento.find(:all, :conditions => "tituloEs = '' || tituloFr=''")
+   elsif  params[:modo]=='todos'
+ 	    @eventos = Evento.all
+   elsif  params[:modo]=='sinrevisar' 
+	 	@eventos = Evento.find(:all, :conditions => "revisado = 'false' ||revisadofr = 'false'")	
+   else
+   		@sitio = Sitio.find(params[:id]) 
+       	@eventos=@sitio.eventos.all
+   end
 
-
-  # @eventos = Evento.where('sitio_id'=> @sitio)
   
     respond_to do |format|
       format.html # index.html.erb

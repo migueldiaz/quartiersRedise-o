@@ -22,8 +22,8 @@
 <!-- -------------------------------------- -->
 <table class="listado_registros">
 <%= render :partial => "/shared/cabecera_tabla_gestion", 
-		:locals =>{ :n_columns=>7,:title=>t('comentarios'), 
-		:columns=>[t('imagen'),t("piefoto"), t('piefotofr'),t("textofr"), t("show"), t('edit'), t('destroy')]} %>
+		:locals =>{ :n_columns=>7,:title=>t('imagenes'), 
+		:columns=>[t('imagen'),t('miniatura'),t("piefoto"), t('piefotofr'), t("show"), t('edit'), t('destroy')]} %>
 
 <%= render :partial => "imagens/imagen", :collection => @imagenes %>
 </table>

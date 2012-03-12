@@ -5,22 +5,13 @@ class PaginasController < ApplicationController
   before_filter :require_login
   def index
 
-     if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @paginas = Pagina.find(:all, :conditions => "tituloes=''")
-	   else
-	    	 @paginas = Pagina.find(:all, :conditions => "titulofr=''")	
-	   end
-  
-  elsif  params[:modo]=='sinrevisar'	
-   	   if current_user.traduceA=='es'   
-			@paginas = Pagina.find(:all, :conditions => "revisado = 'false'")
-	   else
-	    	@paginas = Pagina.find(:all, :conditions => "revisadofr = 'false'")
-	   end 	 	
-  else
- 	 @paginas = Pagina.all
-  end
+    if params[:modo]=='sintrad'
+		@paginas = Pagina.find(:all, :conditions => "tituloes='' || titulofr=''")	
+  	elsif  params[:modo]=='sinrevisar'	
+   	   @paginas = Pagina.find(:all, :conditions => "revisado = 'false' || revisadofr = 'false'")
+  	else
+ 	   @paginas = Pagina.all
+  	end
     
    respond_to do |format|
       format.html # index.html.erb

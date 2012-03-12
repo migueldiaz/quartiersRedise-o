@@ -5,18 +5,10 @@ class ForosController < ApplicationController
   def index
     	
     if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @foros = Foro.find(:all, :conditions => "tituloes=''")
-	   else
-	    	 @foros = Foro.find(:all, :conditions => "titulofr=''")	
-	   end
-  elsif  params[:modo]=='sinrevisar'	
-   		if current_user.traduceA=='es'   
-			 @foros = Foro.find(:all, :conditions => "revisado = 'false'")	
-	   	else
-	    	  @foros = Foro.find(:all, :conditions => "revisadofr = 'false'")	
-	   	end	
-  elsif params[:modo]=='todos'
+  	 @foros = Foro.find(:all, :conditions => "tituloes = '' || titulofr='' ")
+   elsif  params[:modo]=='sinrevisar'	
+   	 @foros = Foro.find(:all, :conditions => "revisado = false || revisadofr=false")
+   	elsif params[:modo]=='todos'
    @foros=Foro.all
   
   else

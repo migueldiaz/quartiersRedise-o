@@ -2,21 +2,13 @@ class ParrafosController < ApplicationController
 layout 'mono'
 before_filter :require_login
 def index 
-   if params[:modo]=='sintrad'
-  	   if current_user.traduceA=='es'   
-			 @parrafos = Parrafo.find(:all, :conditions => "textoes='' || piefoto=''")
-	   else
-	    	 @parrafos = Parrafo.find(:all, :conditions => "textofr='' || piefotofr=''")	
-	   end
-  elsif  params[:modo]=='sinrevisar'
-  		if current_user.traduceA=='es'   
-			 @parrafos = Parrafo.find(:all, :conditions => "revisado = 'false'")
-	   	else
-	    	 @parrafos = Parrafo.find(:all, :conditions => "revisadofr = 'false'")
-	   	end 		 	
-  else
- 	 @parrafos = Parrafo.all
-  end
+	if params[:modo]=='sintrad'
+		@parrafos = Parrafo.find(:all, :conditions => "textoes='' || textofr=''")
+  	elsif  params[:modo]=='sinrevisar'
+		@parrafos = Parrafo.find(:all, :conditions => "revisado = 'false' || revisadofr = 'false'")	
+  	else
+ 	 	@parrafos = Parrafo.all
+  	end
 end
 
 
