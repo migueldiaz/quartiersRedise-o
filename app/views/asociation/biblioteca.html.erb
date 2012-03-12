@@ -1,0 +1,21 @@
+<h1><%=t('documentacion')+': '+t('lasociacion')%></h1>
+
+<%= render 'busquedas/buscar'%>
+
+<%if params[:search]%>
+<p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+'. ' %><%=link_to t('destroy')+' '+'busqueda',asociation_biblioteca_path%></p>
+<%end%>
+<ul>
+<% @documentos.each do |documento|%>
+	<% if !documento.pagina.nil? && esasociacion(documento.pagina)%>
+		<% if spanish%>
+			<li><b><%=link_to documento.doces,documento.archivo_url.to_s%></b>
+			en <%=link_to documento.pagina.tituloes,asociation_pagina_path(:id=>documento.pagina)%></li>
+		<%else%>	
+			<li><b><%=link_to documento.docfr,documento.archivofr_url.to_s%></b>
+			dans <%=link_to documento.pagina.titulofr,asociation_pagina_path(:id=>documento.pagina)%></li>
+		<%end%>
+	<%end%>
+<%end%>
+</ul>
+<%= will_paginate @documentos %>

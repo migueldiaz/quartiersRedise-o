@@ -2,10 +2,10 @@ Paginadocumentos::Application.routes.draw do
 
   resources :videos
 
-    match 'comentarios/nuevos/:id'=> 'comentarios#nuevos'
-   match 'notifica' => 'email#new', :as => 'notifica', :via => :get
-   match 'notifica' => 'email#create', :as => 'notifica', :via => :post
-   resources :email
+  match 'comentarios/nuevos/:id'=> 'comentarios#nuevos'
+  match 'notifica' => 'email#new', :as => 'notifica', :via => :get
+  match 'notifica' => 'email#create', :as => 'notifica', :via => :post
+  resources :email
   get "desconectar" => "sesionforos#destroy", :as => "desconectar"
   get 'registroforo'=>"usuarioforos#new",:as=>'registroforo'
   get 'loginforo' => 'sesionforos#new', :as => 'loginforo'
@@ -23,6 +23,7 @@ Paginadocumentos::Application.routes.draw do
   resources :foros
   match 'contacto/correo/' => 'contactos#correo'
   ################################################
+  
   match 'quartiers/asociacion/' => 'quartiers#asociacion'
   match 'quartiers/seccion/' => 'quartiers#seccion'
   match 'quartiers/colaborador/' => 'quartiers#colaborador'
@@ -75,6 +76,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/equipo'=> 'femmes#equipo'
   match 'femmes/contacto'=> 'femmes#contacto'
   ################################################
+  match 'asociation/biblioteca/' => 'asociation#biblioteca'
   match '/asociation/'=> 'asociation#presentacion'
   match 'asociation/presentacion'=> 'asociation#presentacion'
   match 'asociation/vision'=> 'asociation#vision'

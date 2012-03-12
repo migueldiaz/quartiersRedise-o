@@ -1,18 +1,9 @@
- <%= form_tag busquedas_path, :method => :get do %>
-  <p>
+<p>
+ <%= form_tag asociation_biblioteca_path, :method => :get do %>
+    <%=t('buscar')%>: 
  	<%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
- </p>
- <b>Buscar:</b><p>
- Pagina<%= check_box_tag :paginas%>
- Documento<%= check_box_tag :documentos,params[:documentos]%>
- Equipo<%= check_box_tag :equipo,params[:equipo]%>
- Imagen<%= check_box_tag :imagenes,params[:imagenes]%></p><p>
- Texto<%= check_box_tag :texto,params[:texto]%>
- Evento<%= check_box_tag :eventos,params[:eventos]%>
- Colaborador<%= check_box_tag :colaborador,params[:colaborador]%>
- Todo<%= check_box_tag :todo,params[:todo]%>
-</p>
+    <%= submit_tag t "show", :name => nil %>
+
 <% end %>
-                   
+</p>                   
                  

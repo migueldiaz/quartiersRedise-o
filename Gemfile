@@ -6,6 +6,8 @@ gem 'sunspot_rails'
 gem 'rails', '3.0.5'
 gem 'carrierwave' 
 gem 'auto_html'
+gem 'will_paginate'
+gem  'acts_as_indexed'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'bcrypt-ruby' ,:require => 'bcrypt'

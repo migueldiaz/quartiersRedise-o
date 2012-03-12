@@ -1,7 +1,17 @@
 class AsociationController < ApplicationController
  	layout 'juan'
  	
- 	
+ 	def biblioteca
+ 		@asociacion=Asociacion.first
+ 		@sitio=@asociacion.sitio
+ 		if params[:search]
+ 		  @resultado = Documento.with_query(params[:search])
+ 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		   #@documentos.paginate(:page => params[:page], :per_page => 10)
+ 		else
+ 			@documentos=Documento.paginate(:page => params[:page], :per_page => 10)
+ 		end
+ 	end
  	
  	def vision
  		@asociacion=Asociacion.first
