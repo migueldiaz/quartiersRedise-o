@@ -7,6 +7,11 @@
         <%= link_to t('documento'),documentotabla.archivo_url.to_s %> 
    <% end %>
    </td>
+    <td>
+    <% if documentotabla.archivo_url.to_s != "" %>
+        <%= link_to t('documentofr'),documentotabla.archivofr_url.to_s %> 
+   <% end %>
+   </td>
    <td><%= link_to t('show'), documento_path(documentotabla)%></td>
    <td><%= link_to t('edit'), edit_documento_path(documentotabla)%></td>
    

@@ -75,8 +75,8 @@ end
 	end
 	
 	def presentacion
-  		@web=Web.first
-  		@asociacion=@web.asociacion
+  
+  		@asociacion=Asociacion.first
   		@presentacion=@asociacion.sitio.presentacion
   		@pagina=@presentacion.paginas.first
        if !@pagina.nil?
@@ -121,8 +121,7 @@ end
 	end
 	
 	def colaborador
-		@web=Web.first
-  		@asociacion=@web.asociacion
+		@asociacion=Asociacion.first
   		@sitio=@asociacion.sitio
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)
@@ -130,16 +129,14 @@ end
     end
     def agenda
     	
-    	@web=Web.first
-  		@asociacion=@web.asociacion
+    	@asociacion=Asociacion.first
   		@sitio=@asociacion.sitio
 
        @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC')  
 
      end	
     def contacto
-    	@web=Web.first
-  		@asociacion=@web.asociacion
+    	@asociacion=Asociacion.first
   		@sitio=@asociacion.sitio
      	@contacto=@sitio.contacto
         @email = Email.new

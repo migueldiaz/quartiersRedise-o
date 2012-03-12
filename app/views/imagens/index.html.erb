@@ -1,12 +1,30 @@
 <h1><%=t('imagenes')%></h1>
-<table>
-<tr>
-<th><%=t('imagen')%></th>
-<th><%=t('piefoto')%></th>
-<th><%=t('piefotofr')%></th>
-<th></th>
-<th></th>
-</tr>
+
+<!--Ayuda a la navegacion  , se puede extraer -->
+<%if current_user.tipo=='traductor'%>
+	<h4>
+	
+	<%=t('show')%> <%=link_to t('todos'),imagens_path(:modo=>'todos',:vista=>'gestion')%>, 
+	     <%=link_to t('sintrad'),imagens_path(:modo=>'sintrad',:vista=>'gestion')%>, 
+	  <%=link_to t('sinrevisar'),imagens_path(:modo=>'sinrevisar',:vista=>'gestion')%>.&nbsp;
+	 <%=t('showing')+', '+t('imagenes')%>
+	<b>
+	<%if params[:modo]=='sintrad'%>
+	   <%=t('sintrad')%>
+	<%elsif params[:modo]=='sinrevisar'%>
+	  <%=t('sinrevisar')%>
+	<%else%>
+	 <%=t('todos')%>
+	<%end%>
+	</b>
+	</h4>
+<%end%>
+<!-- -------------------------------------- -->
+<table class="listado_registros">
+<%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>7,:title=>t('comentarios'), 
+		:columns=>[t('imagen'),t("piefoto"), t('piefotofr'),t("textofr"), t("show"), t('edit'), t('destroy')]} %>
+
 <%= render :partial => "imagens/imagen", :collection => @imagenes %>
 </table>
 <br/>

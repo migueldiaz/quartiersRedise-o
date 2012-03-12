@@ -1,19 +1,29 @@
-<h1><%=t('parrafos')%></h1>
+<!--<h1><%=t('parrafos')%></h1>
+Ayuda a la navegacion  , se puede extraer -->
+<%if current_user.tipo=='traductor'%>
+	<h4>
+	
+	<%=t('show')%> <%=link_to t('todos'),parrafos_path(:modo=>'todos',:vista=>'gestion')%>, 
+	     <%=link_to t('sintrad'),parrafos_path(:modo=>'sintrad',:vista=>'gestion')%>, 
+	  <%=link_to t('sinrevisar'),parrafos_path(:modo=>'sinrevisar',:vista=>'gestion')%>.&nbsp;
+	 <%=t('showing')+', '+t('parrafos')%>
+	<b>
+	<%if params[:modo]=='sintrad'%>
+	   <%=t('sintrad')%>
+	<%elsif params[:modo]=='sinrevisar'%>
+	  <%=t('sinrevisar')%>
+	<%else%>
+	 <%=t('todos')%>
+	<%end%>
+	</b>
+	</h4>
+<%end%>
+<!-- -------------------------------------- -->
+<table class='listado_registros'>
 
-<table>
-  <tr>
-   <th><%=t('tituloes')%></th>
-   <th><%=t('titulofr')%></th> 
-   <th><%=t('textoes')%></th>
-   <th><%=t('textofr')%></th> 
-   <th><%=t('piefoto')%></th>
-   <th><%=t('piefotofr')%></th> 
-   <th></th>
-   <th></th>
-    <% if !current_user.tipo=='traductor'%>  
-    <th></th>
-    <%end%>
-   </tr>
+    <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>8,:title=>t('parrafos'), 
+	:columns=>[t('tituloes'),t("titulofr"), t("textoes"), t('textofr'),t("piefoto"),t("piefotofr"),t("show"),t("edit")]} %>
 
 <%  @parrafos.each do |parrafo| %>
   <tr>

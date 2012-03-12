@@ -60,7 +60,11 @@
 
 					<li><%= link_to t('show')+' '+t('traductores'),usuarios_path(:tipo=>'traductor')%></li>
 					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
-					</ul>				
+					</ul>		
+					<%elsif !current_user.nil? && current_user.tipo=='traductor'%>
+						<ul >
+						<%= render 'shared/opcionestraductor'%>
+					</ul>	
 					<%end%>
             	</div>
 				<div  id="rails_yield"></div>

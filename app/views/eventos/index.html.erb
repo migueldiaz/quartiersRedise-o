@@ -8,6 +8,26 @@ columns=[t("fecha"), t('tituloEs'), t('tituloFr'),t("imagen"), t("detalle"), t("
 end
  
 %>
+<!--Ayuda a la navegacion  , se puede extraer -->
+<%if current_user.tipo=='traductor'%>
+	<h4>
+	
+	<%=t('show')%> <%=link_to t('todos'),eventos_path(:modo=>'todos',:vista=>'gestion')%>, 
+	     <%=link_to t('sintrad'),eventos_path(:modo=>'sintrad',:vista=>'gestion')%>, 
+	  <%=link_to t('sinrevisar'),eventos_path(:modo=>'sinrevisar',:vista=>'gestion')%>.&nbsp;
+	 <%=t('showing')+', '+t('eventos')%>
+	<b>
+	<%if params[:modo]=='sintrad'%>
+	   <%=t('sintrad')%>
+	<%elsif params[:modo]=='sinrevisar'%>
+	  <%=t('sinrevisar')%>
+	<%else%>
+	 <%=t('todos')%>
+	<%end%>
+	</b>	
+	</h4>
+<%end%>
+<!-- -------------------------------------- -->
  <table class="listado_registros">
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
 		:locals =>{ :n_columns=>n_columnas,:title=>t('eventos'), 

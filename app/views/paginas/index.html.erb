@@ -1,22 +1,36 @@
 <h1><%=t('paginas')%></h1>
-
-<table>
-  <tr>
-    <th><%=t('tituloEs')%></th>
-    <th><%=t('tituloFr')%></th>
-    <th></th>
-    <th></th>
-   <% if !current_user.tipo=='traductor'%> 
-    <th></th><% end %>
-  </tr>
+<!--Ayuda a la navegacion  , se puede extraer -->
+<%if current_user.tipo=='traductor'%>
+	<h4>
+	
+	<%=t('show')%> <%=link_to t('todos'),paginas_path(:modo=>'todos',:vista=>'gestion')%>, 
+	     <%=link_to t('sintrad'),paginas_path(:modo=>'sintrad',:vista=>'gestion')%>, 
+	  <%=link_to t('sinrevisar'),paginas_path(:modo=>'sinrevisar',:vista=>'gestion')%>.&nbsp;
+	 <%=t('showing')+', '+t('paginas')%>
+	<b>
+	<%if params[:modo]=='sintrad'%>
+	   <%=t('sintrad')%>
+	<%elsif params[:modo]=='sinrevisar'%>
+	  <%=t('sinrevisar')%>
+	<%else%>
+	 <%=t('todos')%>
+	<%end%>
+	</b>
+	</h4>
+<%end%>
+<!-- -------------------------------------- -->
+<table class='listado_registros'>
+   <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>4,:title=>t('comentarios'), 
+		:columns=>[t('tituloes'),t("titulofr"), t("show"), t('edit')]} %>
 
 <% @paginas.each do |pagina| %>
   <tr>
     <td><%= pagina.tituloes %></td>
     <td><%= pagina.titulofr %></td>
-      <% if !current_user.tipo=='traductor'%>  
+     
     <td><%= link_to t('show'), pagina %></td>
-    <%end%>
+    
     <td><%= link_to t('edit'), edit_pagina_path(pagina) %></td>
    <% if !current_user.tipo=='traductor'%>  
     <td><%= link_to t('destroy'), pagina, :confirm => t('confirm'), :method => :delete %></td>

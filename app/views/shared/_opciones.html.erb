@@ -1,7 +1,6 @@
 <%
 style=" style='width:100%;padding:5px;font-size:12px;background-color:none;' "
 %>
-
 <% if !@sitio.asociacion.nil?%>
 <li <%=style%>><%= link_to t('Presentacion'),presentacion_path(:id=>@sitio)%></li>
 <!--<li <%=style%>><%= link_to  t('vision'),vision_path(:id=>@sitio)%></li>-->

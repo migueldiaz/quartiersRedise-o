@@ -31,6 +31,8 @@ class EquiposController < ApplicationController
  elsif  params[:tipo]=='femmes'
  @femmes=Femmes.first
  @equipos=@femmes.equipos
+ else 
+ @equipos=Equipo.all
  end
  
  respond_to do |format|

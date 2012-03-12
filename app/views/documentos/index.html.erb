@@ -1,11 +1,28 @@
 <h1><%=t('documentos')%></h1>
-<table>
-<tr>
-<th><%=t('nombreEs')%></th>
-<th><%=t('nombreFr')%></th>
-<th><%=t('enlace')%></th>
-<th></th>
-<th></th>
+  <!--Ayuda a la navegacion  , se puede extraer -->
+<%if current_user.tipo=='traductor'%>
+	<h4>
+	
+	<%=t('show')%> <%=link_to t('todos'),documentos_path(:modo=>'todos',:vista=>'gestion')%>, 
+	     <%=link_to t('sintrad'),documentos_path(:modo=>'sintrad',:vista=>'gestion')%>, 
+	  <%=link_to t('sinrevisar'),documentos_path(:modo=>'sinrevisar',:vista=>'gestion')%>.&nbsp;
+	 <%=t('showing')+', '+t('documentos')%>
+	<b>
+	<%if params[:modo]=='sintrad'%>
+	   <%=t('sintrad')%>
+	<%elsif params[:modo]=='sinrevisar'%>
+	  <%=t('sinrevisar')%>
+	<%else%>
+	 <%=t('todos')%>
+	<%end%>
+	</b>
+	</h4>
+<%end%>
+<!-- -------------------------------------- -->
+<table class='listado_registros'>
+ <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>6, :title=>t('documentos'), 
+		:columns=>[t('nombreEs') ,t('nombreFr') , t("enlace"),t('enlacefr'), t('show'), t('edit')]} %>
 </tr>
 <%= render :partial => "documentos/documentotabla", :collection => @documentos %>
 </table>

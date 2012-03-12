@@ -16,5 +16,5 @@
    
    <td><%= link_to t('show'), imagen%></td>
    <td><%= link_to t('edit'), edit_imagen_path(imagen)%></td>
-   <td><%= link_to t('destroy'), [imagen], :confirm => t('confirm'),  :method => :delete %>   </td>
+   <td><%= link_to_unless current_user.tipo=='traductor', t('destroy'), [imagen], :confirm => t('confirm'),  :method => :delete %>   </td>
  </tr>
