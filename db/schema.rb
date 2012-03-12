@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308215420) do
+ActiveRecord::Schema.define(:version => 20120312124416) do
 
   create_table "add_protagonistas_to_paginas", :force => true do |t|
     t.integer  "protagonistas_id"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20120308215420) do
     t.string  "archivofr"
     t.integer "foro_id"
     t.boolean "revisadofr", :default => false
-    t.integer "position",   :default => 50
+    t.integer "position",   :default => 10
   end
 
   create_table "enfoques", :force => true do |t|
@@ -206,7 +206,7 @@ ActiveRecord::Schema.define(:version => 20120308215420) do
     t.string   "tituloes"
     t.string   "titulofr"
     t.boolean  "revisadofr", :default => false
-    t.integer  "position",   :default => 50
+    t.integer  "position",   :default => 10
   end
 
   create_table "presentacions", :force => true do |t|
@@ -286,6 +286,15 @@ ActiveRecord::Schema.define(:version => 20120308215420) do
     t.string   "idioma"
     t.string   "tipo"
     t.string   "traduceA"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "url"
+    t.string   "descripciones"
+    t.string   "descripcionfr"
+    t.string   "imagen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "visions", :force => true do |t|

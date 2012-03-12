@@ -1,5 +1,7 @@
 Paginadocumentos::Application.routes.draw do
 
+  resources :videos
+
     match 'comentarios/nuevos/:id'=> 'comentarios#nuevos'
    match 'notifica' => 'email#new', :as => 'notifica', :via => :get
    match 'notifica' => 'email#create', :as => 'notifica', :via => :post

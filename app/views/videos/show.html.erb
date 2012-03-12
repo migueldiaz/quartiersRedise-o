@@ -1,0 +1,32 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= link_to 'Video',@video.url %>
+  
+</p>
+
+<%=render :inline=>@video.url_html%>
+
+<br/>
+
+<br/>
+<p>
+  <b>Descripciones:</b>
+  <%= @video.descripciones %>
+</p>
+
+<p>
+  <b>Descripcionfr:</b>
+  <%= @video.descripcionfr %>
+</p>
+
+<p>
+  <b>Imagen:</b>
+  <%= @video.imagen %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
