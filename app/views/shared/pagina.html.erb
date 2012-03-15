@@ -58,7 +58,7 @@ end
 
  <% if (!@pagina.documentos.empty?) then %>
 <div class="documentacion">
-<h2><%=t('documentacion')%></h2>
+<div class="ficha_izq_titulo"><%=t('documentacion')%></div>
 <ul>
 <% @pagina.documentos.each do |documento| %>
  		<% if documento.archivo_url.to_s != "" %>
