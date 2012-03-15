@@ -124,11 +124,15 @@ void setup(){
 }
 void refresca(){
 		CeldaRet c=reticulaRet.celdaSeleccionada;
+			  setup();
+	  reticulaRet.seleccionaComentarioPorID(c.comentario.id);
+		/*
 		reticulaRet.incluyeXML("/comentarios/nuevos/"+reticulaRet.dameUltimoIdComentario()+".xml",c.comentario);
 		navegadorTemporalComentarios.init(reticulaRet.comentariosOrdenadosFecha);
 		navegadorUsuarios.init(reticulaRet.usuarios);
 		log.info("alla va!");
 		r.reset();
+		*/
 }
 
 Refresco r=new Refresco();

@@ -103,6 +103,18 @@ class ForosController < ApplicationController
          @comentario=@foro.comentarios.create
          @comentario.created_at=Time.now.to_s
          @comentario.tituloes=@foro.tituloes
+         @comentario.titulofr=@foro.titulofr
+         @comentario.textofr=@foro.descripcionfr
+         @comentario.textoes=@foro.descripciones
+         sitio=Sitio.where("id=:f_id", {:f_id=>@foro.sitio_id}).first
+         if(sitio.femmes_id==1) 
+         idSitio=1
+       else
+         idSitio=0
+         end
+         logger.info idSitio.to_s+" __________________"
+         @comentario.usuarioforo_id=Usuarioforo.where("email = :email AND femmes_id=:f_id", {:email=>'ada.bazan@quartiersdumonde.org', :f_id=>idSitio}).first.id
+         @comentario.foro_id=@foro.id
          @comentario.save
          ###Añadir los campos que quieras 
         ###########

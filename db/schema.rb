@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20120312124416) do
     t.string  "archivofr"
     t.integer "foro_id"
     t.boolean "revisadofr", :default => false
-    t.integer "position",   :default => 10
+    t.integer "position",   :default => 50
   end
 
   create_table "enfoques", :force => true do |t|
@@ -206,7 +206,7 @@ ActiveRecord::Schema.define(:version => 20120312124416) do
     t.string   "tituloes"
     t.string   "titulofr"
     t.boolean  "revisadofr", :default => false
-    t.integer  "position",   :default => 10
+    t.integer  "position",   :default => 50
   end
 
   create_table "presentacions", :force => true do |t|
