@@ -2,6 +2,7 @@
 
   
   Ayuda a la navegacion  , se puede extraer -->
+  
 <%if current_user.tipo=='traductor'%>
 	<h4>
 	
@@ -22,7 +23,7 @@
 <%end%>
 <!-- -------------------------------------- -->
   
-  <%if current_user.tipo!='traductor'%>
+<%if current_user.tipo!='traductor'%>
   <div class="opciones_generales">
 	<ul  >
 	
@@ -32,7 +33,7 @@
 	
 	</ul>
 </div>
-	<%end%>
+<%end%>
 
  <table class="listado_registros">
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
@@ -46,7 +47,7 @@
     <td><%= foro.descripcionfr %></td>
     <td><%= link_to t('show'), foro %></td>
     <td><%= link_to t('edit'), edit_foro_path(foro) %></td>
-    <td><%= link_to_unless  current_user.tipo='traductor', t('destroy'),foro, :confirm => t('confirm'), :method => :delete %></td>
+    <td><%= link_to_unless  current_user.tipo=='traductor', t('destroy'),foro, :confirm => t('confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -34,13 +34,13 @@
             	<div class="span-4">
 
             		<ul class="menus" >
-            			<% if current_user!=nil and current_user.tipo!='traductor' %>
+     <% if !current_user.nil? && current_user.tipo=='admin' %>
 					<li class="<%=comprueba_admin_sel('asociacion', @sitio)%>"><%= link_to t('lasociacion'), asociacion_path(:id=>1) %> 
 					</li>
 					<% if !@sitio.nil? and !@sitio.asociacion.nil? %>
-					<ul style="padding-left:0em;" >
-						<%= render 'shared/opciones'%>
-					</ul>
+						<ul style="padding-left:0em;" >
+							<%= render 'shared/opciones'%>
+						</ul>
 					<% end %>
 					<li class="<%=comprueba_admin_sel('jeunes', @sitio)%>" style="z-index:1"><%= link_to t('proyecto')+' '+t('jeunes'), jeunes_sitio_path %> 
 					</li>
@@ -52,7 +52,7 @@
 
 					<li class="<%=comprueba_admin_sel('femmes', @sitio)%>"><%= link_to t('proyecto')+' '+t('femmes'), femmes_sitio_path %> 
 					</li>
-										<% if !@sitio.nil? and !@sitio.femmes.nil? %>
+					<% if !@sitio.nil? and !@sitio.femmes.nil? %>
 					<ul >
 						<%= render 'shared/opciones'%>
 					</ul>
@@ -61,10 +61,13 @@
 					<li><%= link_to t('show')+' '+t('traductores'),usuarios_path(:tipo=>'traductor')%></li>
 					<li><%= link_to t('show')+' '+t('administradores'),usuarios_path(:tipo=>'admin')%></li>
 					</ul>		
-					<%elsif !current_user.nil? && current_user.tipo=='traductor'%>
-						<ul >
-						<%= render 'shared/opcionestraductor'%>
-					</ul>	
+					
+		<%elsif !current_user.nil? && current_user.tipo=='traductor'%>
+				<ul>
+					<%= render 'shared/opcionestraductor'%>
+				</ul>	
+					
+					
 					<%end%>
             	</div>
 				<div  id="rails_yield"></div>

@@ -5,6 +5,6 @@
   <td><%= equipo.descripcionFr%></td>
   <td><%= link_to_unless current_user.tipo=='traductor', t('show')+' '+t('equipo'), equipo.sitio%></td> 
   <td><%= link_to t('edit'), edit_equipo_path(equipo)%></td> 
-  <td><%= link_to_unless current_user.tipo=='traductor', t('destroy'), equipo, :confirm => t('confirm'),  :method => :delete %></td>
+  <td><%= link_to_unless current_user.tipo!='admin', t('destroy'), equipo, :confirm => t('confirm'),  :method => :delete %></td>
  </tr>
 <%end%>

@@ -5,23 +5,22 @@ class ForosController < ApplicationController
   def index
     	
     if params[:modo]=='sintrad'
-  	 @foros = Foro.find(:all, :conditions => "tituloes = '' || titulofr='' ")
-   elsif  params[:modo]=='sinrevisar'	
+  	@foros = Foro.find(:all, :conditions => "tituloes = '' || titulofr='' ")
+   	elsif  params[:modo]=='sinrevisar'	
    	 @foros = Foro.find(:all, :conditions => "revisado = false || revisadofr=false")
    	elsif params[:modo]=='todos'
-   @foros=Foro.all
-  
-  else
+  	 @foros=Foro.all
+ 	 elsif params[:id]
     	@sitio=Sitio.find(params[:id])
     	@foros=@sitio.foros
     		if !@sitio.jeunes.nil?
-     	 		@jeunes=@sitio.jeunes
+     	 		@jeunes=Jeunes.first
      	 		if @jeunes.clave.nil?
         			 @jeunes.clave=Clave.new
      	 		end
      	 		@clave=@jeunes.clave
     		else
-    	 		@femmes=@sitio.femmes
+    	 		@femmes=Femmes.first
     	  		if @femmes.clave.nil?
          			@femmes.clave=Clave.new
       			end

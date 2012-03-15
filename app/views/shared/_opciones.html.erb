@@ -21,9 +21,8 @@ style=" style='width:100%;padding:5px;font-size:12px;background-color:none;' "
 	<%end%>
 <%end%>
 
-<!---->
 
-<!--!-->
+<!---->
 <% if !@sitio.femmes.nil? || !@sitio.jeunes.nil? %>
 <li <%=style%>><%= link_to t('lequipos'), equipos_path(:id=>@sitio)%></li>
 <li <%=style%>><%= link_to t('foros'), foros_path(:id=>@sitio)%></li>
