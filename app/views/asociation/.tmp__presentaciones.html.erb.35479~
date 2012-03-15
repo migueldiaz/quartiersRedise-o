@@ -1,0 +1,7 @@
+<%if !@paginas.nil? && !@presentacion.nil?%>
+	<li <%=menu_seleccionada 'pagina'%>><%=link_to t('Presentacion'),asociation_presentacion_path  %>
+		<ul class="submenu"><%=render 'asociation/paginas'%></ul>
+	</li>
+<% else %>
+	<li><%=link_to t('Presentacion'),asociation_presentacion_path  %></li>
+<%end%>

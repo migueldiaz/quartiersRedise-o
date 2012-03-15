@@ -6,15 +6,10 @@
         <li>
             <%=link_to t('fr'), url_for( :locale => 'fr' , :id=>params[:id]), :class=>comprueba('fr') %>
         </li>
-    </ul>
-</div>
-<div class="usuario_logueado" id="usuario_logueado" style="float:right;clear:both;">
-          <%if usuarioforologado%>
-		  <ul>
-		  	
           <li>
-    		<%= link_to t('desconectar')+':'+session[:usuarioforo_nombre],desconectar_url  %> 
-    </li>
-		  </ul> 
+          <%if usuarioforologado%> 
+    		<%= link_to t('desconectar')+": "+session[:usuarioforo_nombre],desconectar_url  %> 
 		<%end%>
+    </li>
+    </ul>
 </div>

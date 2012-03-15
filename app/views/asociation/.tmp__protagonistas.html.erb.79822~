@@ -1,0 +1,8 @@
+		    		<%if !@paginas.nil? && !@protagonistas.nil?%>
+				<li <%=menu_seleccionada 'pagina'%>><%=link_to t('protagonistas'),asociation_protagonistas_path  %>			
+						<ul class="submenu"><%=render 'asociation/paginas'%></ul>
+						</li>
+						<% else %>
+										<li><%=link_to t('protagonistas'),asociation_protagonistas_path  %>			
+					</li>	
+    		<%end%>
