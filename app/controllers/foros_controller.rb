@@ -100,7 +100,7 @@ class ForosController < ApplicationController
       if @foro.save
         ######################
          @comentario=@foro.comentarios.create
-         @comentario.created_at=Time.now.to_s
+         @comentario.created_at=Time.now
          @comentario.tituloes=@foro.tituloes
          @comentario.titulofr=@foro.titulofr
          @comentario.textofr=@foro.descripcionfr
