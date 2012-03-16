@@ -32,9 +32,11 @@ def index
   session[:tipo_foro]=params[:tipo]
 	if params[:tipo]=='jeunes'
 		@jeunes=Jeunes.first
+		@sitio=@jeunes.sitio
 		@usuarios=@jeunes.usuarioforos
     else
        @femmes=Femmes.first
+       @sitio=@femmes.sitio
        @usuarios=@femmes.usuarioforos
    end
    respond_to do |format|
@@ -46,19 +48,23 @@ end
 def new
 	if session[:tipo_foro]=='jeunes'
 		@jeunes=Jeunes.first
+		 @sitio=@jeunes.sitio
 		@usuarioforo=@jeunes.usuarioforos.new
     else
        @femmes=Femmes.first
+        @sitio=@femmes.sitio
        @usuarioforo=@femmes.usuarioforos.new 
     end
 end
 def show
 @usuarioforo=Usuarioforo.find(params[:id])
 	if !@usuarioforo.jeunes.nil?
-		@jeunes=@usuarioforo.jeunes
+		@jeunes=Jeunes.first
+		 @sitio=@jeunes.sitio
         @foros=@jeunes.sitio.foros
     else
-       @femmes=@usuarioforo.femmes
+         @femmes=Femmes.first
+		 @sitio=@femmes.sitio
         @foros=@femmes.sitio.foros
     end
     segun_proyecto

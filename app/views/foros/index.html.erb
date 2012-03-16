@@ -29,7 +29,8 @@
 	
 	<%=render :partial=>"/shared/opcion_gestion", 
 		:locals=>{:mensaje=> t('edit')+" "+t('claveactual'), :path_volver=>foro_clave_path(:id=>@clave)} %>  
-
+    <%=render :partial=>"/shared/opcion_gestion", 
+		:locals=>{:mensaje=> t('usuariosforo'), :path_volver=>usuarioforos_path(:tipo=>if !@sitio.jeunes.nil? then 'jeunes' else 'femmes' end)} %> 
 	
 	</ul>
 </div>
