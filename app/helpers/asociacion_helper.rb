@@ -10,10 +10,15 @@ module AsociacionHelper
   #logger.info "hola_menu_dcha"+content_for(:menu_dcha)
   #end
 #end
-
+@amplia=false
 def dame_class_izq
   if content_for?(:menu_izq)
+    logger.info "amplia css...."+@amplia.to_s
+    if @amplia
+  "span-6 contenido_central"
+    else
   "span-4 contenido_central"
+    end
   end
 end
 def dame_class_dcha
@@ -23,12 +28,16 @@ def dame_class_dcha
 end
 
 def dame_class_central
+  span_central=17
+  if @amplia
+    span_central=15
+  end
   if content_for?(:menu_izq) and content_for?(:menu_dcha)
   "span-13 contenido_central"
   elsif !content_for?(:menu_dcha) and content_for?(:menu_izq)
-  "span-17 contenido_central last"
+  "span-"+span_central.to_s+" contenido_central last"
   elsif !content_for?(:menu_izq) and content_for?(:menu_dcha)
-  "span-17 contenido_central "
+  "span-"+span_central.to_s+" contenido_central "
   else
     "span-23 contenido_central last"
   end
