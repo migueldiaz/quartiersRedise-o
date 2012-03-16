@@ -1,5 +1,11 @@
 
 es: 
+ name: 'Nombre'
+ apellido: 'Apellido'
+ organizacion: 'Organización'
+ ciudad: 'Ciudad'
+ mensaje: 'Mensaje'
+ telefono: 'Teléfono'
  documentofr: 'documento francés'
  enlacefr: 'Enlace archivo francés'
  entradas: 'archivos'
