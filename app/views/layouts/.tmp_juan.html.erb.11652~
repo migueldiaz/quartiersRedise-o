@@ -12,6 +12,7 @@
 	</div>
 
         <div class="container ">
+        	
             <div class="span-24 append-bottom" >
                 <div class="span-4 " style="text-align:left;" >
                     <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
@@ -20,7 +21,9 @@
                 <div class="span-20 last" >
 					<%=render  "/shared/menu_idioma"%>
 	                <hr class="space">
-	                <hr class="space">
+ <%if !usuarioforologado%>	             
+    <hr class="space">
+	<%end%>
 	                <hr class="space">
 					<hr class="space">
 					<div class="menu_superior " >
@@ -29,21 +32,25 @@
                 </div>
                 
             </div>
+			
 		 <div class="span-24">
 		<hr class="space"/>
 		</div>
+		
             <div class="span-24">
- <div class="<%= content_for?(:menu_izq) ? 'span-4 contenido_central' : 'span-1' %> ">
- 	<%=yield :menu_izq%>
-	</div>
-
-                <div class="<%= !content_for?(:menu_izq) ? 'span-17' : 'span-17' %> last contenido_central ">
-
+				 <div class="<%=dame_class_izq %> ">
+				 	<%=yield :menu_izq%>
+				</div>
+				
+                <div class="<%= dame_class_central%> ">
                     <%= yield %>
+                </div>
+                <div class="<%= dame_class_dcha%> ">
+                    <%= yield :menu_dcha %>
+                </div>
 
-                    
-                </div>
-                </div>
+            </div>
+				
                 <div class="span-24 append-bottom">
                     <hr class="space">
                     <div class="span-6 prepend-1 append-9">

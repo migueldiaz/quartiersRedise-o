@@ -90,6 +90,7 @@
     
     
     <!-- -->
+
   <%if current_user.tipo=='traductor'%>
 	 <div class="field">
 		<%= f.label t :revisado %>

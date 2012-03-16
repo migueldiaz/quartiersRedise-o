@@ -1,14 +1,23 @@
 <h1><%=t('agenda')%></h1>
 <hr class="space">
-
 <% @eventos.each do |evento| %>
 <div class="evento">
 	
-  <%= l evento.fecha,:format => "%d/%m/%Y %H:%M"%>
-  <h3> <%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></h3>
-    <% if evento.imagen_url.to_s != "" %>
-    <%= link_to image_tag(evento.imagen_url.to_s, :size=>"50x50",:class=>"image miniatura "), evento.imagen_url.to_s %>
-    <% end %>
+  <h2><%= l evento.fecha,:format => "%d/%m/%Y %H:%M"%> -  <%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></h2>
+   <% if evento.imagen_url.to_s != "" %>
+   <%= render :partial => "/shared/img", :locals => {
+:imagen=>evento.imagen_url, 
+:enlace_imagen=>evento.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>""
+}
+%> 	
+<%end%>
+
+  <div>
+  	<%=  auto_link(simple_format(evento.send(:descripcion.to_s+locale.to_s))) %>
+  </div>
+  
 
 </div>
 

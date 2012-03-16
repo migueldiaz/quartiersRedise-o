@@ -1,7 +1,0 @@
-<%if !@paginas.nil? && !@enfoque.nil?%>
-	<li <%=menu_seleccionada 'pagina'%>><%=link_to t('enfoque'),asociation_enfoque_path  %>			
-		<ul class="submenu"><%=render 'asociation/paginas'%></ul>
-	</li>
-<% else %>
-	<li><%=link_to t('enfoque'),asociation_enfoque_path  %>	</li>	
-<%end%>
