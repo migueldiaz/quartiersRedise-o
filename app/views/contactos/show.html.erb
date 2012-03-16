@@ -1,7 +1,7 @@
 <div class="detalle_gestion">
 <h2><%=t('informacion')+' '+t('contacto')%></h2>
   </br>
-  <p><b><%=t('email')%></b><%= @contacto.email %></p>
+  <p><b><%=t('email')%>:</b> <%= @contacto.email %></p>
   <p><b><%=t('infoEs')%></b>
   <%= simple_format(@contacto.infoEs) %></p>
   <p><b><%=t('infoFr')%></b><%= simple_format(@contacto.infoFr) %></p>
