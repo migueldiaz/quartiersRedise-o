@@ -1,4 +1,566 @@
+.alternativa_idioma {
+  color: yellow;
+}
+#navigation-show {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  top: 13%;
+}
+#navigation-show li {
+  width: 100%;
+  text-align: center;
+  background: url(http://localhost:3000/javascripts/images/drop-shadow.png) no-repeat center 122px;
+}
+#navigation-show li {
+  font-size: 16px;
+}
+#navigation-show li .limpia {
+  font-size: 50px;
+}
+#navigation-show li div.info {
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  width: 100%;
+  background-color: rgba(122, 122, 122, 0.37);
+}
+#navigation-show li div.infodet {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 60%;
+  text-align: left;
+  background-color: rgba(255, 255, 122, 0.57);
+  color: black;
+  padding: 5px;
+}
+#navigation-show li div.discreta {
+  position: absolute;
+  top: 150px;
+  left: 30%;
+  width: 60%;
+  text-align: left;
+  background-color: rgba(255, 255, 122, 0.57);
+  color: black;
+  padding: 5px;
+}
+#navigation-show li div.infodet2 {
+  position: absolute;
+  top: 60%;
+  right: 30%;
+  width: 50%;
+  text-align: right;
+  background-color: rgba(122, 255, 255, 0.37);
+  color: black;
+  padding: 5px;
+}
+.ltie9 #navigation-show li {
+  background: none;
+}
+#navigation-demo ul.nav {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+}
+#navigation-demo ul.nav li {
+  display: inline-block;
+  margin: 0 6px;
+  background: #fff;
+  height: 30px;
+  line-height: 33px;
+  cursor: pointer;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  color: #fe4801;
+  padding: 0 13px 0 13px;
+}
+.ltie8 #navigation-demo ul.nav li {
+  display: inline;
+}
+.button {
+  border: none;
+  background: #E5E5E5;
+  padding: 5px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  color: #7F7F7F;
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: -10px;
+  margin-right: 20px;
+  padding: 5px;
+}
+.remarca {
+  background-color: #ff7f4b;
+  color: #FFFFFF;
+}
+.button:hover {
+  background: #FE4A00;
+  color: #FFF;
+}
+.button:active {
+  background: #FE4A00;
+}
+.evento {
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  padding: 10px 7px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/*drop down menu*/
+div.menu_superior {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+div.menu_superior ul {
+  list-style: none;
+  margin-left: -27px;
+  padding: none;
+}
+div.menu_superior li {
+  font-size: 0.9em;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 7px;
+  margin-left: 0px;
+  margin-right: 1px;
+  float: left;
+  color: white;
+  background-color: black;
+}
+/*menu superior*/
+/*el menu ya es un ul por lo que la referencia a ul dentro de menu se refiere al segundo menu*/
+#menu ul {
+  list-style: none;
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 1.2em;
+}
+#menu ul a {
+  display: block;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+}
+#menu ul .submenu {
+  font-size: 1.2em;
+}
+#menu ul li ul {
+  margin-top: -3em;
+  margin-left: 7em;
+}
+#menu li {
+  float: left;
+  position: relative;
+  /* SHOW SUBMENU  1 */
 
+}
+#menu li.seleccionado {
+  background-color: #fe4a00;
+  color: black;
+}
+#menu li.seleccionado:hover {
+  background-color: black;
+  color: #fe4a00;
+}
+#menu li:hover ul, #menu li .over ul {
+  display: block;
+}
+#menu li:hover ul ul, #menu li .over ul ul {
+  display: none;
+}
+#menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+#menu li a:hover {
+  color: #fe4a00;
+}
+#menu li ul {
+  position: absolute;
+  margin-top: -0.2em;
+  margin-left: .5em;
+  /* for IE */
 
+  display: none;
+}
+#menu li ul.submenu a:hover {
+  background-color: black;
+  color: #fe4a00;
+}
+.ficha_izq_titulo {
+  font-style: italic;
+  font-size: 1.5em;
+  margin-bottom: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+h1, h2, h3 {
+  font-family: "Lora";
+}
+p {
+  font-family: "Nunito";
+}
+a.comment {
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 3px;
+  background-color: #1e90ff;
+  border: 1px solid #ffffff;
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: Nunito;
+}
+.hilo_foro .hilo {
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  color: #ff6e32;
+  background-color: #ff6e32;
+  padding: 5px;
+  margin-top: 10px;
+}
+.hilo_foro .hilo .usuario {
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 3px;
+  background-color: #fe4a00;
+  float: right;
+}
+.hilo_foro .hilo .comment {
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 3px;
+  background-color: #add8e6;
+  border: 1px solid #000000;
+  margin-left: 15px;
+  font-size: 1.2em;
+}
+.hilo_foro .hilo .close {
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 3px;
+  background-color: #add8e6;
+  border: 1px solid #000000;
+  font-size: 1.2em;
+  font-family: Nunito;
+}
+.hilo_foro .hilo .mensaje {
+  float: left;
+  font-size: 2em;
+  font-family: "Cabin Sketch";
+}
+.hilo_foro .hilo .descripcion {
+  font-family: "Gloria Hallelujah";
+  font-size: 1.2em;
+}
+.hilo_foro .hilo a {
+  color: black;
+  text-decoration: none;
+}
+.hilo_foro .hilo .hilo {
+  background-color: #ff9265;
+}
+.hilo_foro .hilo .hilo .usuario {
+  background-color: #ff804c;
+}
+.hilo_foro .hilo .hilo .hilo {
+  background-color: #ffb698;
+}
+.hilo_foro .hilo .hilo .hilo .usuario {
+  background-color: #ffa47f;
+}
+.hilo_foro .hilo .hilo .hilo .hilo {
+  background-color: #ffdacb;
+}
+.hilo_foro .hilo .hilo .hilo .hilo .usuario {
+  background-color: #ffc8b2;
+}
+.hilo_foro .hilo .hilo .hilo .hilo .hilo {
+  background-color: #fffefe;
+}
+.hilo_foro .hilo .hilo .hilo .hilo .hilo .usuario {
+  background-color: #ffece4;
+}
+.hilo_foro .hilo .detalle {
+  clear: both;
+  color: black;
+}
+.hilo_foro .subhilo {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+.ficha_izq_titulo {
+  font-family: "Lora";
+}
+label {
+  width: 100px;
+  /*Or however much space you need for the form’s labels*/
 
+  float: left;
+}
+/*subpaginas ejemplo:  http://localhost:3000/jeunes/pagina?id=25 */
+.subpaginas ul {
+  margin-left: -10px;
+  margin-top: -15px;
+  list-style: square outside none;
+}
+.subpaginas ul li {
+  font-family: "Gloria Hallelujah";
+  font-weight: 400;
+}
+.subpaginas ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.subpaginas ul li a:hover {
+  color: black;
+}
+.subpaginas ul li a .selected {
+  text-decoration: underline;
+  color: black;
+}
+/*opciones generales de gestion*/
+.opciones_generales {
+  margin-bottom: 70px;
+}
+.opciones_generales ul {
+  list-style: none outside none;
+  display: block;
+}
+.opciones_generales ul li {
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 5px;
+  float: left;
+  margin-right: 20px;
+  margin-left: -10px;
+  background-color: #E5E5E5;
+}
+.opciones_generales ul li .seleccionado {
+  background-color: #FE4A00;
+}
+.opciones_generales ul li:hover {
+  background-color: #FE4A00;
+}
+.opciones_generales ul li a {
+  color: #FFF;
+  padding: 2px;
+}
+.opciones_generales ul li a:hover {
+  color: white;
+}
+/*resto de asociacion.css*/
+body {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+  color: #272727;
+  font-size: 9pt;
+}
+.idioma {
+  font-size: 10px;
+  float: right;
+}
+.seleccionado {
+  color: #ff6600;
+}
+.transparent {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.container {
+  /* border-left: 1px dotted black;	 */
 
+}
+/*colaborador*/
+.colaborador {
+  float: left;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  height: 140px;
+  width: 200px;
+  margin-right: 10px;
+  margin-top: 10px;
+  overflow: visible;
+  padding: 30px 10px;
+  text-align: center;
+  white-space: nowrap;
+  -moz-box-shadow: 0 1px 1px #E1E1E1;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #BBBBBB;
+  margin: 0 3px 10px 0;
+  position: relative;
+}
+.colaborador .nombre {
+  width: 200px;
+  white-space: pre-wrap;
+}
+/*ficha*/
+.ficha {
+  padding: 10px;
+}
+.ficha .modulo_ficha {
+  margin-top: 20px;
+}
+.ficha .modulo_ficha .image {
+  margin: 10px 10px 10px 10px;
+  border-radius: 20px 3px;
+  border: 3px solid #fe4a00;
+}
+.ficha .modulo_ficha .texto {
+  color: black;
+  font-size: 13px;
+  text-align: justify;
+}
+.ficha .modulo_ficha .titulo {
+  font-size: 14px;
+  background-image: url(http://localhost:3000/javascripts/../images/cubito_ff9900.gif);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 16px;
+  margin-left: -2px;
+  margin-bottom: 10px;
+  color: white;
+}
+.ficha .modulo_ficha .titulo span {
+  color: white;
+  background-color: #fe4a00;
+  padding: 5px;
+}
+/*ficha central*/
+.contenido_central {
+  background-image: url(http://localhost:3000/javascripts/../images/t.png);
+  padding: 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+.contenido_central .titulo {
+  margin-top: 0px;
+  margin-bottom: 7px;
+  font-size: 22px;
+  padding-left: 5px;
+  font-family: "Lora";
+  font-weight: 400;
+}
+.contenido_central .titulo span {
+  color: white;
+  padding: 5px;
+}
+/*imagenes con sombra y con cita*/
+.img-shadow {
+  float: left;
+  background: url(/images/shadowAlpha.png) no-repeat bottom right !important;
+  background: url(/images/shadow.gif) no-repeat bottom right;
+  margin: 10px 0 0 10px !important;
+  margin: 10px 0 0 5px;
+  position: relative;
+}
+.img-shadow img {
+  display: block;
+  /*  position: relative; */
+
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  margin: -6px 6px 6px -6px;
+  padding: 2px;
+}
+.img-shadow cite {
+  position: absolute;
+  filter: alpha(opacity=55);
+  opacity: .55;
+  color: #fff;
+  background: #111;
+  bottom: 9px;
+  left: -3px;
+  right: 9px;
+  padding: 5px;
+  border-top: 1px solid #999;
+}
+/*div documentacion*/
+.documentacion ul, .paginas ul {
+  font-size: 1.5em;
+  margin-left: 0px;
+  margin-top: -15px;
+  list-style: square;
+}
+.documentacion li, .paginas li {
+  font-family: "Lora", "Walter Turncoat";
+  font-size: 0.9em;
+  font-weight: 400;
+  font-style: italic;
+}
+.documentacion li a, .paginas li a {
+  color: black;
+  text-decoration: none;
+}
+.documentacion li a:hover, .paginas li a:hover {
+  color: #fe4a00;
+}
+.documentacion li a .selected, .paginas li a .selected {
+  text-decoration: underline;
+  font-size: 1.3em;
+}
+.documentacion li .pdf, .paginas li .pdf {
+  list-style-image: url(http://localhost:3000/javascripts/../images/pdf_min.jpg);
+}
+.documentacion li .txt, .paginas li .txt {
+  list-style-image: url(http://localhost:3000/javascripts/../images/txt_min.jpg);
+}
+.documentacion li .doc, .paginas li .doc {
+  list-style-image: url(http://localhost:3000/javascripts/../images/doc_min.jpg);
+}
+.documentacion li .rtf, .paginas li .rtf {
+  list-style-image: url(http://localhost:3000/javascripts/../images/rtf_min.jpg);
+}
+.documentacion li .mov, .paginas li .mov {
+  list-style-image: url(http://localhost:3000/javascripts/../images/mov_min.jpg);
+}
+.documentacion li .mp3, .paginas li .mp3 {
+  list-style-image: url(http://localhost:3000/javascripts/../images/mp3_min.jpg);
+}
+/*menu de idiomas*/
+#idiomas ul li, #usuario_logueado ul li {
+  display: inline;
+}
+#idiomas ul li a, #usuario_logueado ul li a {
+  padding: 2px 7px;
+  color: white;
+  background-color: black;
+  margin: 5px;
+  opacity: 0.7;
+}
+#idiomas ul li a.seleccionado, #usuario_logueado ul li a.seleccionado {
+  opacity: 0.8;
+  color: blacK;
+  background-color: white;
+  margin: 5px;
+}
+#idiomas ul li a:hover, #usuario_logueado ul li a:hover {
+  opacity: 1;
+  margin: 5px;
+}
+.copy {
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+  padding: 10px;
+  text-align: center;
+}
