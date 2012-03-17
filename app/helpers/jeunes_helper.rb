@@ -15,5 +15,8 @@ end
   id_doc=Documentacion.where("sitio_id= :id_sitio",{:id_sitio=>id_sitio}).first.id
   Pagina.where("documentacion_id=:e_id", {:e_id=>id_doc})
 end
+  def dame_equipos
+  Equipo.where("jeunes_id=1")
+end
 
 end

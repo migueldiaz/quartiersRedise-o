@@ -42,19 +42,6 @@
 		<%end%>
 		</li>
 		<li <%=menu_seleccionada_bis jeunes_equipos_path %>><%=link_to t('lequipos'),jeunes_equipos_path %>
-		   <%if !@equipos.nil? %>
-				<ul class="submenu">
-					<% @equipos.each do |equipo| %>
-						<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
-					<%end%>
-				</ul>
-		   <%elsif @equipo.nil?%>
-				<ul class="submenu2">
-					<% dame_equipos.each do |equipo| %>
-						<li ><%=link_to equipo.nombre,jeunes_equipos_path(:anchor=>"equipo"+equipo.id.to_s) %> </li>
-					<%end%>
-				</ul>
-			<%end%>
 		  
 		    <%if !@equipo.nil? %>
 		    	<ul class="submenu"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
