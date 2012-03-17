@@ -1,12 +1,14 @@
-<h2><%=t('contacto')%></h2>
-<%  if !@contacto.nil?%>
-<% if spanish%> 
- <p><%= @contacto.infoEs %></p>
- <%else%>
- <p><%= @contacto.infoFr %></p>
- <%end%>
- <p><%=t('email')+' '%><%= @contacto.email %></p>
+<%
+@amplia=true
+content_for :menu_izq do %>
+
+<%  if @contacto.nil?%>
+	<p> Sin informacion de contacto</p>
 <%else%>
- Sin informacion de contaco
+	<p><%=simple_format(@contacto.method(:info.to_s+locale.to_s.capitalize).call)%></p>
+	<p><%=mail_to @contacto.email%></p>
 <%end%>
+<%end%>
+<h1><%=t('contacto')%></h1>
 <%= render 'email/form' %> 
+

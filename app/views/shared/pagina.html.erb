@@ -75,14 +75,14 @@ end
 <%
 content_for :menu_izq do
 
-if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas.nil?)) then%>
+if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas.nil? || !@red.nil? || !@documentacion.nil?)) then%>
 <div class="paginas">
 <div class="ficha_izq_titulo"><%=t('paginas')%></div>
 
 <ul>
 	
- <% @paginas.each do |pagina| %>
-	 	<li><%= link_to pagina.send(:titulo.to_s+local) ,asociation_pagina_path(:id=>pagina) %> </li> 
+<% @paginas.each do |pagi| %>
+	 	<li><%= link_to pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %> </li> 
 <% end %> 
 </ul>
 </div>

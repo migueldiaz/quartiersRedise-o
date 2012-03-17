@@ -197,7 +197,7 @@ float: left;
 	    font-size: 1.5em;
 	    margin-left: 0px;
 	    margin-top: -15px;
-		list-style:square;
+		list-style:circle;
 	}
 	li {
 	    font-family: "Lora","Walter Turncoat";
@@ -210,9 +210,10 @@ float: left;
 			& :hover{
 				color:@color_naranja;
 			}
-			.selected{
+			& .selected{
 			    text-decoration: underline;
-   				font-size: 1.3em;
+				color:@color_naranja;
+				background-color:white;
 			}
 		}
 		.pdf { list-style-image: url(../images/pdf_min.jpg);}	  
@@ -222,6 +223,7 @@ float: left;
 		.mov { list-style-image: url(../images/mov_min.jpg);}	  
 		.mp3 { list-style-image: url(../images/mp3_min.jpg);}	  
 	}
+	
 } 
 
 /*menu de idiomas*/
