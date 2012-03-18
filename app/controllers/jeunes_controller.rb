@@ -1,5 +1,24 @@
 class JeunesController < ApplicationController
  	layout 'juan_jeunes'
+ 	require 'will_paginate/array'
+def esjeunes(pagina)
+
+ return true
+end
+
+def biblioteca
+ 		@jeunes=Jeunes.first
+ 		@sitio=@jeunes.sitio	
+ 		@paginas=@sitio.paginas
+ 		@documentosjeunes=Documento.where(:pagina_id=>@paginas)
+ 		if params[:search]
+ 		  @resultado = @documentosjeunes.with_query(params[:search])
+ 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		else
+ 			@documentos=@documentosjeunes.paginate(:page => params[:page], :per_page => 10)
+ 		end
+ 	end
+ 	
  	
 #GET /quartiers/agenda
 def sitio

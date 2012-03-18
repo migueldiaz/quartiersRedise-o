@@ -1,6 +1,31 @@
 module ApplicationHelper
   
-  ##Helper que detecta si la pagina es asociacion_> No tiene galeria
+  ##Helper que detecta si la pagina es jeunes
+  def esjeunes(pagina)
+  	@pagina=Pagina.find(pagina)
+  	#return true
+  	if !@pagina.presentacion.nil?
+  	   return !@pagina.presentacion.sitio.jeunes.nil?
+    elsif !@pagina.red.nil?
+  	   return !@pagina.red.sitio.jeunes.nil?
+    elsif !@pagina.documentacion.nil? 
+  	   return !@pagina.documentacion.sitio.jeunes.nil?
+  	end
+  end
+  ##La pagina es femmes
+  def esfemmes(pagina)
+  	@pagina=Pagina.find(pagina)
+  	return true
+  	if !@pagina.presentacion.nil?
+  	   return !@pagina.presentacion.sitio.femmes.nil?
+    elsif !@pagina.red.nil?
+  	   return !@pagina.red.sitio.femmes.nil?
+    elsif !@pagina.documentacion.nil? @pagina.documentacion.sitio.nil?
+  	   return @pagina.documentacion.sitio..femmes.nil?
+  	end
+  end
+  
+  #La pagina es asociacion
   ## En views -> paginas -> show -> linea 48
   def esasociacion(pagina)
   	@pagina=Pagina.find(pagina)

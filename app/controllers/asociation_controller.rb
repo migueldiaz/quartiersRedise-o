@@ -4,11 +4,13 @@ class AsociationController < ApplicationController
  	def biblioteca
  		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
+ 		@paginas=@sitio.paginas
+ 		@documentosasoc=Documento.where(:pagina_id=>@paginas)
  		if params[:search]
- 		  @resultado = Documento.with_query(params[:search])
+ 		  @resultado = @documentosasoc.with_query(params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
- 			@documentos=Documento.paginate(:page => params[:page], :per_page => 10)
+ 			@documentos=@documentosasoc.paginate(:page => params[:page], :per_page => 10)
  		end
  		
  	end

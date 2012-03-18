@@ -1,6 +1,6 @@
 
 es: 
- biblioteca: 'Biblioteca'
+ biblioteca:'Biblioteca'
  name: 'Nombre'
  apellido: 'Apellido'
  organizacion: 'Organización'

@@ -1,5 +1,21 @@
 class FemmesController < ApplicationController
   layout 'juan_femmes'
+
+
+def biblioteca
+ 		@femmes=Femmes.first
+ 		@sitio=@femmes.sitio
+ 		@paginas=@sitio.paginas
+ 		@documentosfemmes=Documento.where(:pagina_id=>@paginas)
+ 		if params[:search]
+ 		  @resultado = @documentosfemmes.with_query(params[:search])
+ 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		else
+ 			@documentos=@documentosfemmes.paginate(:page => params[:page], :per_page => 10)
+ 		end
+ 		
+end
+
  	
 #GET /quartiers/agenda
 def sitio

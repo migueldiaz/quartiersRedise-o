@@ -11,7 +11,7 @@ gem  'acts_as_indexed'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'bcrypt-ruby' ,:require => 'bcrypt'
-gem 'mysql'
+gem 'mysql2', '~> 0.2.6'
 gem "browser"
 # Use unicorn as the web server
 # gem 'unicorn'

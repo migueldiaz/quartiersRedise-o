@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312124416) do
+ActiveRecord::Schema.define(:version => 20120318171817) do
 
   create_table "add_protagonistas_to_paginas", :force => true do |t|
     t.integer  "protagonistas_id"
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(:version => 20120312124416) do
     t.integer  "vision_id"
     t.integer  "enfoque_id"
     t.integer  "protagonistas_id"
+    t.integer  "sitio_id"
   end
 
   create_table "parrafos", :force => true do |t|
