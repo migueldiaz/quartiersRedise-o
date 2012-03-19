@@ -33,6 +33,7 @@
 
 		<%end%>
 		</li>
+		<!--
 		<li <%=menu_seleccionada_tris :documentacion %>><%=link_to t('documentacion'),jeunes_documentacion_path  %>
 		<%if !@paginas.nil? && !@documentacion.nil?%>
 			<ul class="submenu"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>@paginas} %></ul>
@@ -40,9 +41,9 @@
     			<ul class="submenu2"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>dame_documentacion_paginas} %></ul>
 
 		<%end%>
-		
+		-->
 		<!--Biblioteca-->
-		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('biblioteca'),jeunes_biblioteca_path  %>
+		<li <%=menu_seleccionada_tris :biblioteca %>><%=link_to t('biblioteca'),jeunes_biblioteca_path  %>
 		<!---->
 		
 		</li>

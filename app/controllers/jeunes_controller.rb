@@ -16,7 +16,9 @@ def biblioteca
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
  			@documentos=@documentosjeunes.paginate(:page => params[:page], :per_page => 10)
- 		end
+ 	end
+      @seccion_menu=:biblioteca
+
  	end
  	
  	

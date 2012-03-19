@@ -34,21 +34,16 @@
 		<hr class="space"/>
 		</div>
             <div class="span-24">
-				 <div class="<%=dame_class_izq %> ">
-				 	<%=yield :menu_izq%>
-				</div>
-				
-                <div class="<%= dame_class_central%> ">
-                    <%= yield %>
-                </div>
-                <div class="<%= dame_class_dcha%> ">
-                    <%= yield :menu_dcha %>
-                </div>
+ <div class="<%= content_for?(:menu_izq) ? 'span-3 contenido_central' : 'span-1' %> ">
+ 	<%=yield :menu_izq%>
+	</div>
 
-            </div>
-				
-				
-				
+                <div class="<%= !content_for?(:menu_izq) ? 'span-18' : 'span-18' %> last contenido_central ">
+                    <%= yield %>
+
+                    
+                </div>
+                </div>
                 <div class="span-24 append-bottom">
                     <hr class="space">
                     <div class="span-6 prepend-1 append-9">

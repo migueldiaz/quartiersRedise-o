@@ -55,6 +55,13 @@ def pagina
     	  @sitio=@red.sitio
     	   @paginas=@red.paginas
                   @seccion_menu=:actividades
+    else 
+    logger.info "+++++++++++++++++++++++++++++++++++++++++++++++++++++++cargando documentacion de equipe e"  
+        @documentacion=@pagina.documentacion
+                  @sitio=@documentacion.sitio
+
+        @paginas=@documentacion.paginas
+                @seccion_menu=:documentacion
 
     	end
     	  if !@pagina.pagina_id.nil?
@@ -138,6 +145,15 @@ def agenda
 
 end	
 
+def documentacion
+      @equipo=Equipo.find(params[:id])
+    @documentacion=@equipo.sitio.documentacion
+    @pagina=@documentacion.paginas.first
+
+  if !@documentacion.paginas.nil? && !@pagina.nil?
+      redirect_to equipe_pagina_path(:id=>@pagina)
+    end
+end
 
 def contacto
     	@equipo=Equipo.find(params[:id])

@@ -40,8 +40,26 @@
     			<ul class="submenu2"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>dame_documentacion_paginas} %></ul>
 
 		<%end%>
+		
+		<!--Biblioteca-->
+		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('biblioteca'),jeunes_biblioteca_path  %>
+		<!---->
+		
 		</li>
 		<li <%=menu_seleccionada_bis jeunes_equipos_path %>><%=link_to t('lequipos'),jeunes_equipos_path %>
+		   <%if !@equipos.nil? %>
+				<ul class="submenu">
+					<% @equipos.each do |equipo| %>
+						<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
+					<%end%>
+				</ul>
+		   <%elsif @equipo.nil?%>
+				<ul class="submenu2">
+					<% dame_equipos.each do |equipo| %>
+						<li ><%=link_to equipo.nombre,jeunes_equipos_path(:anchor=>"equipo"+equipo.id.to_s) %> </li>
+					<%end%>
+				</ul>
+			<%end%>
 		  
 		    <%if !@equipo.nil? %>
 		    	<ul class="submenu"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
@@ -94,6 +112,9 @@
 		<%if !@paginas.nil? && !@documentacion.nil?%>
 			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
 		<%end%>
+		<!--Biblioteca-->
+		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('biblioteca'),femmes_biblioteca_path  %>
+		<!---->
 		</li>
 		<li <%=menu_seleccionada_tris :foros %>><%=link_to t('foros'),femmes_foros_path %>
 		 	<%if !@foros.nil? %>

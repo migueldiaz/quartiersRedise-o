@@ -41,6 +41,7 @@ Paginadocumentos::Application.routes.draw do
   match 'equipe/actividades'=> 'equipe#actividades'
   match 'equipe/contacto'=> 'equipe#contacto'
   match 'equipe/sitio'=> 'equipe#sitio'
+  match 'equipe/documentacion'=> 'equipe#documentacion'
   
   #############################3
    match '/jeunes/biblioteca'=> 'jeunes#biblioteca'

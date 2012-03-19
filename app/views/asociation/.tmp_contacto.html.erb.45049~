@@ -1,0 +1,13 @@
+<%
+@amplia=true
+content_for :menu_izq do %>
+
+<%  if @contacto.nil?%>
+	<p> Sin informacion de contacto</p>
+<%else%>
+	<p><%=simple_format(@contacto.method(:info.to_s+locale.to_s.capitalize).call)%></p>
+	<p><%=mail_to @contacto.email%></p>
+<%end%>
+<%end%>
+<h1><%=t('contacto')%></h1>
+<%= render 'email/form' %> 
