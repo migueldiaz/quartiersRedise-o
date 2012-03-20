@@ -12,7 +12,11 @@
 </ul>
 </div>
 <%end%>
-<% @equipos.each do |equipo| %>
+
+
+
+
+	<% @equipos.each do |equipo| %>
  		<a name="equipo<%=equipo.id%>"></a> 
 		<h2><%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %></h2>
  		<p><%= equipo.method(:descripcion.to_s+locale.to_s.capitalize).call%><p>

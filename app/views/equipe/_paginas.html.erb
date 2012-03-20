@@ -1,8 +1,4 @@
-<% @paginas.each do |pagina| %>
-	 <%if spanish%>
-	 	<li><%= link_to pagina.tituloes ,equipe_pagina_path(:id=>pagina) %> </li> 
-	<%else%>
-		<li><%= link_to pagina.titulofr ,equipe_pagina_path(:id=>pagina) %> </li> 
- 	<%end%>
+<% modelito.each do |pagina| %>
+	 	<li><%= link_to pagina.send(:titulo.to_s+local) ,equipe_pagina_path(:id=>pagina) %> </li> 
 <% end %>
 	

@@ -1,0 +1,8 @@
+<% modelito.each do |pagina| %>
+	 <%if spanish%>
+	 	<li><%= link_to pagina.tituloes ,jeunes_pagina_path(:id=>pagina) %> </li> 
+	<%else%>
+		<li><%= link_to pagina.titulofr ,jeunes_pagina_path(:id=>pagina) %> </li> 
+ 	<%end%>
+<% end %>
+	

@@ -100,6 +100,7 @@ def colaborador
 end
 
 def actividades
+  logger.info "actividades"
 	@equipo=Equipo.find(params[:id]) 
     @sitio=@equipo.sitio
   	@red=@sitio.red

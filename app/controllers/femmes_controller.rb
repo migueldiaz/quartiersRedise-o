@@ -13,7 +13,8 @@ def biblioteca
  		else
  			@documentos=@documentosfemmes.paginate(:page => params[:page], :per_page => 10)
  		end
- 		
+ 		        @seccion_menu=:biblioteca
+
 end
 
  	
