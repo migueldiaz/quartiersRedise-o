@@ -22,6 +22,39 @@ div.menu_superior{
 /*menu superior*/
 /*el menu ya es un ul por lo que la referencia a ul dentro de menu se refiere al segundo menu*/
 @menu_font_size:1.2em;
+.menu_inferior{
+			a{
+			display:block;
+		background-color:white;
+		color:@color_naranja;
+		padding:2px;
+			text-decoration:none;
+			text-transform:uppercase;
+			& :hover{
+				background-color:gray;
+				color:white;
+
+			}
+		}
+		list-style:none;
+		font-family:"Nunito";
+		font-weight: 400;
+		font-size:@menu_font_size;
+	li{ 
+		font-size:0.9em;
+		.div_border(6px);
+		padding:7px;
+		margin-left:1px;	
+		margin-right:3px;
+		float:left;
+		color:@color_naranja;
+		.div_border(4px);
+
+		/* background-color:@color_naranja;
+		color:white;
+		*/
+	}
+}
 #menu{
 	ul{
 		a{
