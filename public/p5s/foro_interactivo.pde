@@ -203,6 +203,9 @@ public void keyPressed() {
 		}else if(key=='t' && isTraductor() ){
 		ComentarioForo cf=reticulaRet.celdaSeleccionada.rectangleConTexto.comentario;
 		openModalTraducir(cf.texto, cf.texto_alternativo);
+		}else if(key=='a'){
+		ComentarioForo cf=reticulaRet.celdaSeleccionada.rectangleConTexto.comentario;
+		openModalDetalle(cf.texto);
 		}
 	}
 boolean comentarioPrincipal=false;

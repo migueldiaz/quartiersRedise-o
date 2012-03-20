@@ -37,7 +37,9 @@ jQuery(function($){
 					<%elsif params[:controller]=="femmes" or !@femmes.nil?%>
 				
 					<%=js_slideshow @femmes.sitio.fondos%>
-						<%elsif params[:controller]=="jeunes" or !@jeunes.nil?%>
+						<%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]!="equipe") 
+						logger.info "jolllllll"%>
+						
 					<%=js_slideshow @jeunes.sitio.fondos%>
 						<%elsif params[:controller]=="equipe"%>
 						<%=js_slideshow @equipo.sitio.fondos%>

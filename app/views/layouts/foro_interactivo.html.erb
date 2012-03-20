@@ -40,6 +40,14 @@
 		//console.log(pjs.isUsuarioForoAdmin());
 
 		$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
+				$('#comentario_anterior').css('height', '130px');
+		$('#respondiendo_a').show();
+
+				$('#comentario').show();
+		$('#titulo_comentario').show();
+		$('#otro_comentario').show();
+		$('#titulo_otro_comentario').show();
+
 		$('#comentario').val('');
 		$('#titulo_comentario').html('Mensaje en: '+pjs.getIdioma());
 
@@ -57,6 +65,25 @@
 		$('.window .enviar').show();
 
 		}
+	function openModalDetalle( texto){
+	//	console.log(usuario);
+		var pjs = Processing.getInstanceById("foro_interactivo");
+		//console.log(pjs.isUsuarioForoAdmin());
+
+		$('#comentario_anterior').html(texto);
+		$('#comentario_anterior').css('height', '300px');
+		$('#comentario').hide();
+		$('#respondiendo_a').hide();
+		$('#titulo_comentario').hide();
+		$('#otro_comentario').hide();
+		$('#titulo_otro_comentario').hide();
+
+		preparaModal();
+
+		$('.window .traducir').hide();
+		$('.window .enviar').hide();
+
+		}
 		
 		
 		function openModalTraducir(texto, otro_texto){
@@ -65,6 +92,13 @@
 		//console.log(pjs.isUsuarioForoAdmin());
 
 		$('#comentario').val(texto);
+		$('#comentario_anterior').css('height', '130px');
+	$('#comentario').show();
+			$('#respondiendo_a').show();
+	$('#titulo_comentario').show();
+		$('#otro_comentario').show();
+		$('#titulo_otro_comentario').show();
+
 		$('#titulo_comentario').html('Mensaje en: '+pjs.getIdioma());
 
 		if(pjs.isTraductor()){
@@ -191,7 +225,7 @@
  
     <div id="dialog" class="window">
          <form id="formulario">
-         <b>Respondiendo a:</b>
+         <div id="respondiendo_a"><b>Respondiendo a:</b></div>
          <div id="comentario_anterior" style="width:80%;overflow:auto;height:130px">  </div>
 		 <hr>
 		 <div style="float:left;">
