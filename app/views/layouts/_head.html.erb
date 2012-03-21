@@ -16,7 +16,7 @@
 <link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
 <%if params[:controller]=="asociation"%> 
 <%= stylesheet_link_tag('asociacion') %>
-<%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]!="equipe") %> 
+<%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]=="equipe") %> 
 <%= stylesheet_link_tag('jeunes') %>
 
 <%else%>
