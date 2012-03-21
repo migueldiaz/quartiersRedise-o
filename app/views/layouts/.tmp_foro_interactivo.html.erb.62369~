@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>FORO INTERACTIVO</title>
+
+
+<%= javascript_include_tag('processing-1.3.6') %>          
+<%= javascript_include_tag('toxiclibs') %>          
+<%= javascript_include_tag('jquery-1.7.1') %>          
+
+  <%= csrf_meta_tag %>
+
+ <script type="text/javascript">
+ 	 var Request = {	
+ 	parameter: function(name) {
+ 		return this.parameters()[name];
+ 	},
+ 	
+ 	parameters: function() {
+ 		var result = {};
+ 		var url = window.location.href;
+ 		var parameters = url.slice(url.indexOf('?') + 1).split('&');
+ 		
+ 		for(var i = 0;  i < parameters.length; i++) {
+ 			var parameter = parameters[i].split('=');
+ 			result[parameter[0]] = parameter[1];
+ 		}
+ 		return result;
+ 	}
+ }
+					function drawSomeText(id) {
+						var pjs = Processing.getInstanceById(id);
+							pjs.reset();
+						}
+						
+	function openModal(ide, usuario, texto){
+	//	console.log(usuario);
+		var pjs = Processing.getInstanceById("foro_interactivo");
+		//console.log(pjs.isUsuarioForoAdmin());
+
+		$('#comentario_anterior').html(usuario+'<br>'+texto+"...");
+				$('#comentario_anterior').css('height', '130px');
+		$('#respondiendo_a').show();
+
+				$('#comentario').show();
+		$('#titulo_comentario').show();
+		$('#otro_comentario').show();
+		$('#titulo_otro_comentario').show();
+
+		$('#comentario').val('');
+		$('#titulo_comentario').html('Mensaje en: '+pjs.getIdioma());
+
+		if(pjs.isTraductor()){
+		$('#otro_comentario').val('');
+		$('#titulo_otro_comentario').html('Mensaje en:'+pjs.getOtroIdioma());
+							
+		}else{
+		$('#traductor').hide();
+			
+		}		
+		preparaModal();
+
+		$('.window .traducir').hide();
+		$('.window .enviar').show();
+
+		}
+	function openModalDetalle( texto){
+	//	console.log(usuario);
+		var pjs = Processing.getInstanceById("foro_interactivo");
+		//console.log(pjs.isUsuarioForoAdmin());
+
+		$('#comentario_anterior').html(texto);
+		$('#comentario_anterior').css('height', '300px');
+		$('#comentario').hide();
+		$('#respondiendo_a').hide();
+		$('#titulo_comentario').hide();
+		$('#otro_comentario').hide();
+		$('#titulo_otro_comentario').hide();
+
+		preparaModal();
+
+		$('.window .traducir').hide();
+		$('.window .enviar').hide();
+
+		}
+		
+		
+		function openModalTraducir(texto, otro_texto){
+	//	console.log(usuario);
+		var pjs = Processing.getInstanceById("foro_interactivo");
+		//console.log(pjs.isUsuarioForoAdmin());
+
+		$('#comentario').val(texto);
+		$('#comentario_anterior').css('height', '130px');
+	$('#comentario').show();
+			$('#respondiendo_a').show();
+	$('#titulo_comentario').show();
+		$('#otro_comentario').show();
+		$('#titulo_otro_comentario').show();
+
+		$('#titulo_comentario').html('Mensaje en: '+pjs.getIdioma());
+
+		if(pjs.isTraductor()){
+		$('#otro_comentario').val(otro_texto);
+		$('#titulo_otro_comentario').html('Mensaje en: '+pjs.getOtroIdioma());
+							
+		}else{
+		$('#traductor').hide();
+			
+		}		
+		preparaModal();
+
+		$('.window .enviar').hide();
+		$('.window .traducir').show();
+
+		}
+		
+
+		function preparaModal(){
+			   var id = "#dialog";
+        //Get the screen height and width
+	        var maskHeight = $(document).height();
+	        var maskWidth = $(window).width();
+	     
+	        //Set height and width to mask to fill up the whole screen
+	        $('#mask').css({'width':maskWidth,'height':maskHeight});
+	         
+	        //transition effect     
+	        $('#mask').fadeIn(1000);    
+	        $('#mask').fadeTo("slow",0.8);  
+	     
+	        //Get the window height and width
+	        var winH = $(window).height();
+	        var winW = $(window).width();
+	               
+	        //Set the popup window to center
+	        $(id).css('top',  winH/2-$(id).height()/2);
+	        $(id).css('left', winW/2-$(id).width()/2);
+	     
+	        //transition effect
+	        $(id).fadeIn(2000); 
+		}
+
+		 $(document).ready(function () {
+		 $('.window .close').click(function (e) {
+		        //Cancel the link behavior
+		        e.preventDefault();
+		        $('#mask, .window').hide();
+		    });    
+		  $('.window .enviar').click(oki);
+		  $('.window .traducir').click(traductore);
+		  function oki(e) {
+		        //Cancel the link behavior
+		        e.preventDefault();
+		        var pjs = Processing.getInstanceById('foro_interactivo');
+
+		       // alert('enviando!'+$('#comentario').val());
+			    if($('#comentario').val()==''){
+			    alert('debe rellenar el texto del comentario '+pjs.getIdioma()+' \n doivent remplir le texte '+pjs.getIdioma()+' commenter');
+				}else if (pjs.isTraductor() && $('#otro_comentario').val()=='') {
+			    alert('debe rellenar el texto del comentario '+pjs.getOtroIdioma()+'  \n doivent remplir le texte '+pjs.getOtroIdioma()+' commenter');
+				
+			   }else{
+		        pjs.newComentario( $('#comentario').val(), $('#otro_comentario').val());
+		        $('#mask, .window').hide();
+				}
+				return false;
+		    }    
+		  function traductore(e) {
+		        //Cancel the link behavior
+		        e.preventDefault();
+		        var pjs = Processing.getInstanceById('foro_interactivo');
+
+		       // alert('enviando!'+$('#comentario').val());
+			    if($('#comentario').val()==''){
+			    alert('debe rellenar el texto del comentario '+pjs.getIdioma()+' \n doivent remplir le texte '+pjs.getIdioma()+' commenter');
+				}else if (pjs.isTraductor() && $('#otro_comentario').val()=='') {
+			    alert('debe rellenar el texto del comentario '+pjs.getOtroIdioma()+'  \n doivent remplir le texte '+pjs.getOtroIdioma()+' commenter');
+				
+			   }else{
+		        pjs.tradComentario( $('#comentario').val(), $('#otro_comentario').val());
+		        $('#mask, .window').hide();
+				}
+				return false;
+		    }    
+
+});
+
+
+						
+</script>
+    <style>
+ 
+/* Z-index of #mask must lower than #boxes .window */
+#mask {
+  position:absolute;
+  z-index:9000;
+  background-color:gray;
+  display:none;
+}
+   
+#boxes .window {
+  position:absolute;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+ 
+/* Customize your modal window here, you can add background image too */
+#boxes #dialog {
+  width:100%; 
+  height:100%;
+}
+</style>
+
+</head>
+<body>
+<div id="boxes">
+ 
+     
+    <!-- #customize your modal window here -->
+ 
+    <div id="dialog" class="window">
+         <form id="formulario">
+         <div id="respondiendo_a"><b>Respondiendo a:</b></div>
+         <div id="comentario_anterior" style="width:80%;overflow:auto;height:130px">  </div>
+		 <hr>
+		 <div style="float:left;">
+		 <div id="titulo_comentario"></div>
+         <textarea id="comentario" rows="15" cols="45">escribe aqui tu comentario</textarea>
+		 </div>
+		 <div style="float:left;" id="traductor">
+		 <div id="titulo_otro_comentario"></div>
+         <textarea id="otro_comentario" rows="15" cols="45">escribe aqui tu comentario</textarea>
+		 </div>
+         </form>
+        <!-- close button is defined as close class -->
+		<div style="clear:both;">
+			
+        <a href="#" class="close" style="color:white;background-color:black; padding:5px;">Cerrar</a>
+        &nbsp;&nbsp;
+        <a href="#" class="enviar" style="color:white;background-color:black; padding:5px;">Enviar</a>
+        <a href="#" class="traducir" style="color:white;background-color:black; padding:5px;">Traducir</a>
+		</div>
+ 
+    </div>
+ 
+    <!-- Do not remove div#mask, because you'll need it to fill the whole screen --> 
+    <div id="mask"></div>
+</div>
+<canvas id="foro_interactivo" 
+data-processing-sources="../p5s/foro_interactivo.pde ../p5s/log.pde ../p5s/rectangulo.pde ../p5s/equipo.pde ../p5s/servicio_toxi_color.pde 
+../p5s/model/reticula_ret.pde 
+../p5s/model/fila_ret.pde 
+../p5s/model/col_ret.pde 
+../p5s/model/celda_ret.pde 
+../p5s/ajax/refresco.pde 
+../p5s/textos/rectangle_con_texto.pde 
+../p5s/interfaces/elemento_reticula_abstract.pde 
+../p5s/interfaces/displayable.pde 
+../p5s/ui/navegador_usuarios.pde 
+../p5s/ui/navegador_tamanyos.pde 
+../p5s/ui/navegador_temporal_comentarios.pde 
+../p5s/forum/servicio_load_equipos.pde 
+../p5s/forum/servicio_load_foros_XML.pde 
+../p5s/forum/servicio_load_equipos_XML.pde 
+../p5s/forum/servicio_mensajes.pde 
+../p5s/calculos/calculo_profundidad_columna.pde 
+../p5s/calculos/redimensionador_posicionador_elementos.pde 
+../p5s/calculos/marca_posicion.pde 
+../p5s/calculos/calculo_recursivo.pde 
+../p5s/calculos/calculo_unidades_por_posicion_de_modulo.pde 
+../p5s/calculos/calculo_marcas.pde 
+../p5s/calculos/calculo_children_sel.pde 
+../p5s/calculos/resultado_busca_selda_seleccion.pde 
+../p5s/usuario.pde 
+../p5s/comentario_foro.pde"></canvas>  
+<!--  
+<a href="#" onclick="drawSomeText('foro_interactivo')" text="lanza" >jolin</a>
+-->  
+</body>
+</html>

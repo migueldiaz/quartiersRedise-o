@@ -241,11 +241,14 @@ div.menu_superior li {
   font-weight: 400;
   text-decoration: underline;
 }
-h1, h2, h3 {
-  font-family: "Lora";
+h1, h2 {
+  font-family: "Cabin Sketch";
+}
+h1 {
+  font-size: 5em;
 }
 p {
-  font-family: "Nunito";
+  font-family: "Gloria Hallelujah";
 }
 a.comment {
   -webkit-border-radius: 6px 6px 6px 6px;
@@ -302,6 +305,11 @@ a.comment {
   font-size: 2em;
   font-family: "Cabin Sketch";
 }
+.hilo_foro .hilo .fecha {
+  color: black;
+  font-family: "Cabin Sketch";
+  font-size: 0.8em;
+}
 .hilo_foro .hilo .descripcion {
   font-family: "Gloria Hallelujah";
   font-size: 1.2em;
@@ -341,9 +349,6 @@ a.comment {
 .hilo_foro .subhilo {
   margin-left: 15px;
   margin-bottom: 5px;
-}
-.ficha_izq_titulo {
-  font-family: "Lora";
 }
 label {
   width: 100px;
