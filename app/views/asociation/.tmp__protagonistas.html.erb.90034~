@@ -1,7 +1,7 @@
 <%
 stilo=""
 indice="2"
-if((menu_seleccionada('pagina')=="class='seleccionado'" and !@protagonistas.nil?)  || menu_seleccionada('colaborador_no_aportan')=="class='seleccionado'" || menu_seleccionada('colaborador_aportan')=="class='seleccionado'")
+if(menu_seleccionada('pagina')=="class='seleccionado'" || menu_seleccionada('colaborador_no_aportan')=="class='seleccionado'" || menu_seleccionada('colaborador_aportan')=="class='seleccionado'")
 stilo="class='seleccionado'"
 if(menu_seleccionada('colaborador_no_aportan')=="class='seleccionado'" or menu_seleccionada('colaborador_aportan')=="class='seleccionado'")
 indice=""
