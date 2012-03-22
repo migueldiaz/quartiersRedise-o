@@ -22,6 +22,7 @@ Paginadocumentos::Application.routes.draw do
   get "foro/clave" => "claves#edit", :as => "foro/clave"
   resources :foros
   match 'contacto/correo/' => 'contactos#correo'
+  match 'p5' => 'asociation#p5'
   ################################################
   
   match 'quartiers/asociacion/' => 'quartiers#asociacion'

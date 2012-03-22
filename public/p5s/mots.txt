@@ -1,0 +1,18 @@
+Listes de mots clés/Listas de palabras clave
+
+Noms des villes et des quartiers du réseau/Nombres de las ciudades y de los barrios de la red
+
+"Rio de Janeiro-La Maré-Paris-Belleville-Dakar-Pikine-Ndiago-Grand Yoff-Wakhinane-Bamako-Dialakorodji-Sikoro-Niamakoro-Salé-Hay Inbiat-Sidi Moussa-Laâyayda-Ouarzazate-Sidi Daoud-Taskoukte-Bogota-Suba-Loma Verde-Chapinero-El Alto-Bruxelles-Forest"
+
+"BDM","red","QDM","réseau",
+Mots-clés projet FDM/Palabras clave MDM
+
+
+
+
+
+Mots-clés projet HU/Palabras clave HU (jóvenes)
+
+{"jóvenes","participación","poder","protagonismo ","barrios populares","chicas y chicos","trayectorias","expresión","arte y cultura","cambio","ciudadania","intercambios","igualdad","políticas publicas"};
+
+{"jeunes","participation","pouvoir","protagonisme ","quartiers populaires","filles et garcons","trajectoires","expression","art et culture","changement","citoyenneté","identités","identidades","échanges","égalité","politiques publiques"};

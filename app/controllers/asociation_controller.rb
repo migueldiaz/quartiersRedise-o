@@ -1,6 +1,11 @@
 class AsociationController < ApplicationController
  	layout 'juan'
  	
+  
+  def p5
+     render :layout=>'last_p5'
+  end
+  
  	def biblioteca
  		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
