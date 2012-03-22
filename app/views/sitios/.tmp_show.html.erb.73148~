@@ -1,0 +1,46 @@
+<% if !@sitio.jeunes.nil? %>
+<h1><%=t('proyecto')+' '+t('jeunes')%></h1> 
+<%end%>
+
+<% if !@sitio.asociacion.nil? %>
+<h1><%=t('asociacion')%></h1> 
+<%end%>
+<% if !@sitio.femmes.nil? %>
+<h1><%=t('proyecto')+' '+t('femmes')%></h1> 
+<%end%>
+<% if !@sitio.equipo.nil? %>
+<h1><%=t('team')+' '+@sitio.equipo.nombre%></h1>
+<%end%>
+<%# coding: utf-8 %>
+
+
+
+<p id="notice"><%= notice %></p>
+<ul>
+<%= render 'shared/opciones'%>
+</ul>
+	
+
+  <% if !@sitio.equipo.nil? %>
+		<h4><%=t('infoEquipo')%></h4>
+		<ul>
+			<li><%= link_to t('show')+' '+t('info')+' '+t('equipo'),equipo_path(@sitio.equipo)   %></li>
+			<li><%= link_to t('edit')+' '+t('info')+' '+t('equipo'),edit_equipo_path(@sitio.equipo)  %></li>
+  <%end%>
+ <br/>
+  <%if current_user.tipo=='traductor'%>
+		<li><%= link_to t('back')+' '+t('equipos'), equipos_path(:modo=>'sintrad') %></li>
+  <%elsif current_user.tipo=='admin'%>
+     <li><%= link_to t('back'), admin_url %></li> 
+  <%else%>
+ 	<%if !@jeunes.nil? %>
+      <li><%= link_to t('back'), sitio_path(:id=>@jeunes.sitio) %></li>	
+    <%elsif !@femmes.nil?%>
+       <li><%= link_to t('back'), sitio_path(:id=>@femmes.sitio) %></li>
+	<%end%>
+		
+  <%end%>
+  </ul>
+<!--<%= link_to 'Edit', edit_sitio_path(@sitio) %> |
+<%= link_to 'Back', sitios_path %>-->
+

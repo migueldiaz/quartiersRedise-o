@@ -81,7 +81,7 @@ Paginadocumentos::Application.routes.draw do
   match 'femmes/contacto'=> 'femmes#contacto'
   ################################################
   match 'asociation/biblioteca/' => 'asociation#biblioteca'
-  match '/asociation/'=> 'asociation#presentacion'
+  match '/asociation/'=> 'asociation#agenda'
   match 'asociation/presentacion'=> 'asociation#presentacion'
   match 'asociation/vision'=> 'asociation#vision'
   match 'asociation/enfoque'=> 'asociation#enfoque'
@@ -89,6 +89,8 @@ Paginadocumentos::Application.routes.draw do
   match 'asociation/pagina'=> 'asociation#pagina'
    match 'asociation/vision'=> 'asociation#vision'
   match 'asociation/colaborador'=> 'asociation#colaborador'
+  match 'asociation/colaborador_aportan'=> 'asociation#colaborador_aportan'
+  match 'asociation/colaborador_no_aportan'=> 'asociation#colaborador_no_aportan'
   match 'asociation/agenda'=> 'asociation#agenda'
   match 'asociation/proyectos'=> 'asociation#proyectos'
   match 'asociation/contacto'=> 'asociation#contacto'

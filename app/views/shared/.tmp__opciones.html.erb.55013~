@@ -9,7 +9,6 @@ style=" style='width:100%;padding:5px;font-size:12px;background-color:none;' "
 <li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
 <li <%=style%>><%= link_to  t('agenda'),eventos_path(:id=>@sitio)%> </li>
 <li <%=style%>><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
-	  <li <%=style%>><%= link_to  t('colaboradores'),colaboradors_path(:id=>@sitio)%> </li>
 <%else%>
 <li <%=style%>><%= link_to t('presentacion'),presentacion_path(:id=>@sitio)%></li>
 	<% if @sitio.equipo.nil?%>

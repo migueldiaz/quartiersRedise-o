@@ -133,9 +133,26 @@ end
 		@aportan=@sitio.colaboradors.where('aporta'=>true)
 		@noaportan=@sitio.colaboradors.where('aporta'=>false)
     
-    end
+  end
+  
+    def colaborador_aportan
+    @asociacion=Asociacion.first
+      @sitio=@asociacion.sitio
+    @aportan=@sitio.colaboradors.where('aporta'=>true)
+    
+  end
+
+    def colaborador_no_aportan
+    @asociacion=Asociacion.first
+      @sitio=@asociacion.sitio
+    @noaportan=@sitio.colaboradors.where('aporta'=>false)
+    
+  end
+
+  
+  
     def agenda
-    	
+    	@seccion_menu="agenda"
     	@asociacion=Asociacion.first
   		@sitio=@asociacion.sitio
 

@@ -9,7 +9,7 @@
 <!--[if gte IE 9]> <html class="notready ie ltie10 ie9"><![endif]-->
 	<meta charset="utf-8">
 
-	<title><%=t('qdm')%> www.quartiersdumonde.org</title>
+	<title>DESARROLLO EN GANDI QuartiersDumonde.org</title>
 
 	<!-- link href='http://fonts.googleapis.com/css?family=Josefin+Slab:regular,bolditalic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css' -->
@@ -82,7 +82,8 @@ less="colors_index.less"
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
-<canvas id="last_p5" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
+	 <canvas id="foros" 
+data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>
   
 									<!--
 									<div class="infodet">
@@ -121,9 +122,8 @@ data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foro
 
 									<div class="info"><%=t('femmes')%>><%=link_to t('entrar'),femmes_presentacion_path  %>  </div>
 
-										 <canvas id="foros" 
-data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>
-
+<canvas id="last_p5" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
+									
 	</li>
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="limpia">
 					
