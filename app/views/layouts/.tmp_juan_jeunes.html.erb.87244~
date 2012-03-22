@@ -1,6 +1,6 @@
 <html>
 		<%=render :file => "/layouts/_head.html.erb", :locals => {
-:google_fonts=>"http://fonts.googleapis.com/css?family=Permanent+Marker|Patua+One|Yanone+Kaffeesatz:400,300,700,200",
+:google_fonts=>"http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Gloria+Hallelujah|Cabin+Sketch:700|Sue+Ellen+Francisco|Nunito:400|Walter+Turncoat",
 :less=>"colors_jeunes.less"
 } %>
 

@@ -83,12 +83,7 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 	
 <% @paginas.each do |pagi| %>
 	 	<li><%= link_to pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %> </li> 
-<% end 
-if(!@protagonsitas.nil? )%>
-
-<%end%> 
-			<li  ><%=link_to t('aportan'),asociation_colaborador_aportan_path%></li>
-			<li  ><%=link_to t('noaportan'),asociation_colaborador_no_aportan_path%></li>
+<% end %> 
 </ul>
 </div>
 <% end 
