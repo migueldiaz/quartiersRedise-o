@@ -17,7 +17,7 @@
 <%if params[:controller]=="asociation"%> 
 <%= stylesheet_link_tag('asociacion') %>
 <%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]=="equipe") %> 
-<link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
+<%= stylesheet_link_tag('jeunes') %>
 
 <%else%>
 <link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
