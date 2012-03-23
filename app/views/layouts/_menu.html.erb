@@ -107,7 +107,7 @@
     		<%end%>
 
     		</li>
-		<li <%=menu_seleccionada_tris :proyectos %>><%=link_to t('actividades'),femmes_proyectos_path  %>
+		<li <%=menu_seleccionada_tris :actividades %>><%=link_to t('actividades'),femmes_proyectos_path  %>
 		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
     			<ul class="submenu"><%=render :file=>'femmes/_paginas', :locals => {:modelito=>@paginas} %></ul>
 			<%elsif @red.nil?%>

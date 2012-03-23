@@ -1,16 +1,59 @@
 @import "functions.less";
 @import "menu_superior.less";
 @color_naranja:#fe4a00;
+@font-face {
+    font-family: "Lora Regular";
+    src: url(/fonts/Lora/Lora-Regular.ttf);
+}
+@font-face {
+    font-family: "Open Sans Condensed Bold";
+    src: url(/fonts/Open_Sans_Condensed/OpenSans-CondBold.ttf);
+}
+@font-face {
+    font-family: "Yanone Kaffeesatz Regular";
+    src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf);
+}
+@font-face {
+    font-family: "Nunito Regular";
+    src: url(/fonts/Nunito/Nunito-Regular.ttf);
+}
+
 h1, h2,h3 {
-	font-family:"Lora";
+	font-family:"Open Sans Condensed Bold";
 font-style:normal;
 
 }
 p{
-	font-family:"Nunito";
+	font-family:"Yanone Kaffeesatz Regular";
 text-align:justify;
+font-size:1.5em;
+
 	
 }
+.ficha_izq_titulo{
+font-family:"Open Sans Condensed Bold";	
+}
+.paginas{
+		
+font-family:"Yanone Kaffeesatz Regular";	
+font-size:1.1em;
+font-style:normal; 
+	li a & .selected{
+font-family:"Open Sans Condensed Bold";	
+	}
+	li a:hover{
+
+	}
+	}
+
+.documentacion{
+	 a{
+font-family:"Yanone Kaffeesatz Regular";	
+font-style:normal; 
+
+	}
+}
+
 a.comment{
 			.div_border(6px);
 				padding:3px;
@@ -107,8 +150,5 @@ a.comment{
 	
 }
 
-.ficha_izq_titulo{
-	font-family:"Lora";
-}
 
 @import "resto.less";

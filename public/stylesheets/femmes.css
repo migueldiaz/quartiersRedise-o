@@ -240,14 +240,48 @@ div.menu_superior li {
   font-weight: 400;
   text-decoration: underline;
 }
+@font-face {
+  font-family: "Open Sans Condensed Bold";
+  src: url(/fonts/Open_Sans_Condensed/OpenSans-CondBold.ttf);
+}
+@font-face {
+  font-family: "Yanone Kaffeesatz Regular";
+  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf);
+}
+@font-face {
+  font-family: "Yanone Kaffeesatz Bold";
+  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Bold.ttf);
+}
+@font-face {
+  font-family: "Yanone Kaffeesatz Light";
+  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Light.ttf);
+}
 h1, h2 {
-  font-family: "Open Sans Condensed";
+  font-family: "Open Sans Condensed Bold";
+  font-style: normal;
 }
 h1 {
-  font-size: 5em;
+  font-size: 3em;
 }
 p {
-  font-family: "Lora";
+  font-family: "Yanone Kaffeesatz Regular";
+  text-align: justify;
+  font-size: 1.5em;
+}
+.paginas {
+  font-family: "Yanone Kaffeesatz Light";
+  font-size: 1.1em;
+  font-style: normal;
+}
+.paginas li a.selected {
+  font-family: "Yanone Kaffeesatz Light";
+}
+.paginas li a:hover {
+  font-family: "Yanone Kaffeesatz Light";
+}
+.documentacion a {
+  font-family: "Yanone Kaffeesatz Light";
+  font-style: normal;
 }
 a.comment {
   -webkit-border-radius: 6px 6px 6px 6px;

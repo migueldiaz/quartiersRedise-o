@@ -14,15 +14,15 @@
 <%= javascript_include_tag('jquery-1.6.4') %>       
 <%= javascript_include_tag('supersized.3.2.5') %> 
 <%if params[:controller]=="asociation"%> 
-<link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
-<!--%= stylesheet_link_tag('asociacion') %-->
+<!-- link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/ -->
+<!%= stylesheet_link_tag('asociacion') %>
 <link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
 <%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]=="equipe") %> 
 <%= stylesheet_link_tag('jeunes') %>
 <!-- link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>" -->
 
 <%elsif params[:controller]=="femmes" or (!@femmes.nil? and params[:controller]=="equipe") %> 
-<link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
+<!--link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/ -->
 <%= stylesheet_link_tag('femmes') %>
 <!-- link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>" -->
 <%else%>

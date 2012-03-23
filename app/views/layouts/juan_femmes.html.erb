@@ -7,16 +7,19 @@
     <body>
     	<div id="loading">&nbsp;</div>
 
-	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
+	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; border-bottom: solid 1px black; ">
 		<p>&nbsp;</p>
 	</div>
 
         <div class="container ">
             <div class="span-24 append-bottom" >
 
-                <div class="span-24 " >
-                <h1 style="line-height:0.6"><%=t('qdmfemmes') %></h1>
-                <h2 style="color:white;"><%=t('qdmfemmessubtitle')%></h2>
+                <div class="span-24 " style="margin-top:-16px;">
+                	<div style="font-size:2.5em;float:left;font-family:'Open Sans Condensed Bold';">
+                <span style="line-height:0.6; "><%=t('qdmfemmes') %></span>
+                <span style="">- <%=t('qdmfemmessubtitle')%></span>
+				</div>
+
 				<%=render  "/shared/menu_idioma"%>
 
 <div class="menu_superior " >

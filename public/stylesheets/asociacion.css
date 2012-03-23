@@ -235,17 +235,50 @@ div.menu_superior li {
   color: #fe4a00;
 }
 .ficha_izq_titulo {
-  font-style: italic;
   font-size: 1.5em;
   margin-bottom: 18px;
   font-weight: 400;
   text-decoration: underline;
 }
+@font-face {
+  font-family: "Lora Regular";
+  src: url(/fonts/Lora/Lora-Regular.ttf);
+}
+@font-face {
+  font-family: "Open Sans Condensed Bold";
+  src: url(/fonts/Open_Sans_Condensed/OpenSans-CondBold.ttf);
+}
+@font-face {
+  font-family: "Yanone Kaffeesatz Regular";
+  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf);
+}
+@font-face {
+  font-family: "Nunito Regular";
+  src: url(/fonts/Nunito/Nunito-Regular.ttf);
+}
 h1, h2, h3 {
-  font-family: "Lora";
+  font-family: "Open Sans Condensed Bold";
+  font-style: normal;
 }
 p {
-  font-family: "Nunito";
+  font-family: "Yanone Kaffeesatz Regular";
+  text-align: justify;
+  font-size: 1.5em;
+}
+.ficha_izq_titulo {
+  font-family: "Open Sans Condensed Bold";
+}
+.paginas {
+  font-family: "Yanone Kaffeesatz Regular";
+  font-size: 1.1em;
+  font-style: normal;
+}
+.paginas li a.selected {
+  font-family: "Open Sans Condensed Bold";
+}
+.documentacion a {
+  font-family: "Yanone Kaffeesatz Regular";
+  font-style: normal;
 }
 a.comment {
   -webkit-border-radius: 6px 6px 6px 6px;
@@ -341,9 +374,6 @@ a.comment {
 .hilo_foro .subhilo {
   margin-left: 15px;
   margin-bottom: 5px;
-}
-.ficha_izq_titulo {
-  font-family: "Lora";
 }
 label {
   width: 100px;
@@ -517,7 +547,6 @@ body {
   background-color: #fff;
   border: 1px solid #a9a9a9;
   margin: -6px 6px 6px -6px;
-  padding: 2px;
 }
 .img-shadow cite {
   position: absolute;
@@ -539,10 +568,8 @@ body {
   list-style: circle;
 }
 .documentacion li, .paginas li {
-  font-family: "Lora", "Walter Turncoat";
   font-size: 0.9em;
   font-weight: 400;
-  font-style: italic;
 }
 .documentacion li a, .paginas li a {
   color: black;

@@ -1,4 +1,5 @@
 <%
+docya=false
 if(!@original.nil?) then
 %>
 	<h2><%= link_to @original.send(:titulo.to_s+local)+">" ,send(pathito+"_pagina_path", :id=>@original) %> <%=@pagina.send(:titulo.to_s+local)%></h2>
@@ -52,23 +53,6 @@ end
 
 <%end%>
 
-<% content_for :menu_dcha do%>
-
- <% if (!@pagina.documentos.empty?) then %>
-<div class="documentacion">
-<div class="ficha_izq_titulo"><%=t('documentacion')%></div>
-<ul>
-<% @pagina.documentos.each do |documento| %>
- 		<% if documento.archivo_url.to_s != "" %>
- 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.archivo_url.to_s %></li>
-		<%else%>
-			<li>FALTA DOC EN BD!! :::: <%= documento.doces %></li>
-  		<% end %>	
-<%end%>
-</ul>
-</div>
-
-<% end %>
 
 <%
 content_for :menu_izq do
@@ -84,10 +68,10 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 	 		<%= link_to pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
 			<%if (pagi==@pagina) 
 			@amplia=true%>
-			<ul style="margin-top:10px;">
+			<ul style="margin-top:10px;margin-left:-20px;">
 				<% pagi.parrafos.each do |parrafo| 
 				if parrafo.send(:titulo.to_s+local)!="" %>
-				<li style="font-size:0.7em;"><a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
+				<li style="font-size:0.6em;"><a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
 				<%end
 				end%>
 			</ul>
@@ -102,7 +86,8 @@ if(!@protagonsitas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 </ul>
 </div>
 <% end %>
- <% if (!@pagina.documentos.empty?) then %>
+ <% if (!@pagina.documentos.empty?) then  
+docya=true%>
 <div class="documentacion">
 <div class="ficha_izq_titulo"><%=t('documentacion')%></div>
 <ul>
@@ -119,6 +104,23 @@ if(!@protagonsitas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 <%end%>
 <%end%>
 
+<% content_for :menu_dcha do%>
+
+ <% if (!@pagina.documentos.empty? and !docya) then %>
+<div class="documentacion">
+<div class="ficha_izq_titulo"><%=t('documentacion')%></div>
+<ul>
+<% @pagina.documentos.each do |documento| %>
+ 		<% if documento.archivo_url.to_s != "" %>
+ 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.archivo_url.to_s %></li>
+		<%else%>
+			<li>FALTA DOC EN BD!! :::: <%= documento.doces %></li>
+  		<% end %>	
+<%end%>
+</ul>
+</div>
+
+<% end %>
 
 
   <% if (!@pagina.paginas.empty?) then %>

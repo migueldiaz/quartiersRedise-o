@@ -72,7 +72,7 @@ def pagina
 		elsif !@pagina.red.nil?
 	  		@red=@sitio.red
 	  		@paginas=@red.paginas
-                @seccion_menu=:proyectos
+                @seccion_menu=:actividades
 
 		else 
 	  		@documentacion=@sitio.documentacion
