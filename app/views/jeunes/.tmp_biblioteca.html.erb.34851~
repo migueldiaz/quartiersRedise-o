@@ -1,0 +1,28 @@
+<h2><%=t('biblioteca')+': '+t('jeunes')%></h2>
+<!--
+<h2>Docs:<%=@documentos%></h2>
+<h2>Paginas:<%=@paginas.size%></h2>
+<ul>
+<%@documentos.each do |documento|%>
+<li><%=documento.doces%></li>
+
+<%end%>
+</ul>
+-->
+<%= render 'busquedas/buscarjeunes'%>
+
+<%if params[:search]%>
+<p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %><%=link_to t('destroy')+' '+'busqueda',jeunes_biblioteca_path%></p>
+<%end%>
+<ul>
+<% @documentos.each do |documento|%>
+		<% if spanish%>
+			<li><b><%=link_to documento.doces,documento.archivo_url.to_s%></b>
+			en <%=link_to documento.pagina.tituloes,jeunes_pagina_path(:id=>documento.pagina)%></li>
+		<%else%>	
+			<li><b><%=link_to documento.docfr,documento.archivofr_url.to_s%></b>
+			dans <%=link_to documento.pagina.titulofr,jeunes_pagina_path(:id=>documento.pagina)%></li>
+		<%end%>
+	<%end%>
+</ul>
+<%= will_paginate @documentos %>

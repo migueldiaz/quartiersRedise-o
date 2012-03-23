@@ -54,7 +54,7 @@ def pagina
     	  @red=@pagina.red
     	  @sitio=@red.sitio
     	   @paginas=@red.paginas
-                  @seccion_menu=:actividades
+                  @seccion_menu=:red
     else 
     logger.info "+++++++++++++++++++++++++++++++++++++++++++++++++++++++cargando documentacion de equipe e"  
         @documentacion=@pagina.documentacion

@@ -9,7 +9,7 @@ style=""
 			<ul class="submenu2"><%=render :file=>'equipe/_paginas', :locals => {:modelito=>dame_paginas_presentaciones} %></ul>
 			<%end%>
 </li>
-<li <%=menu_seleccionada_tris :red %> <%=style%>><%= link_to t('red'),equipe_actividades_path(:id=>@equipo)%>
+<li <%=menu_seleccionada_tris :actividades %> <%=style%>><%= link_to t('red'),equipe_actividades_path(:id=>@equipo)%>
 <%if !@paginas.nil? && !@red.nil?%>
     	<ul class="submenu"><%=render :file=>'equipe/_paginas',:locals => {:modelito=>@paginas}%></ul>
    <%elsif @red.nil?%>

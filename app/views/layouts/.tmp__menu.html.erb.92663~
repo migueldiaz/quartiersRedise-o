@@ -24,7 +24,7 @@
     			<ul class="submenu2"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>dame_presentacion_paginas} %></ul>
     		<%end%>
     		</li>
-		<li <%=menu_seleccionada_tris :actividades %>><%=link_to t('actividades'),jeunes_proyectos_path  %>
+		<li <%=menu_seleccionada_tris :proyectos %>><%=link_to t('actividades'),jeunes_proyectos_path  %>
 		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
 			<ul class="submenu"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>@paginas} %></ul>
 			<%elsif @red.nil?%>

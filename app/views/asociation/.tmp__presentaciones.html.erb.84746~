@@ -1,0 +1,15 @@
+<%if !@paginas.nil? && !@presentacion.nil?%>
+	<li <%=menu_seleccionada 'pagina'%>><%=link_to t('Presentacion'),asociation_presentacion_path  %>
+		<ul class="submenu"><%=render 'asociation/paginas'%></ul>
+	</li>
+<% else %>
+	<li><%=link_to t('Presentacion'),asociation_presentacion_path  %>
+	
+				<ul class="submenu2">
+				<% dame_quienes_somos_paginas.each do |pagina| %>
+		 	<li><%= link_to pagina.send(:titulo.to_s+local) ,asociation_presentacion_path(:id=>pagina) %> </li> 
+			<% end %>
+			</ul>
+
+	</li>
+<%end%>

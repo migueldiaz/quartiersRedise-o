@@ -240,56 +240,14 @@ div.menu_superior li {
   font-weight: 400;
   text-decoration: underline;
 }
-@font-face {
-  font-family: "Patua One";
-  src: url(/fonts/Patua_One/PatuaOne-Regular.ttf);
-}
-@font-face {
-  font-family: "Yanone Kaffeesatz Bold";
-  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Bold.ttf);
-}
-@font-face {
-  font-family: "Yanone Kaffeesatz Regular";
-  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf);
-}
-@font-face {
-  font-family: "Yanone Kaffeesatz Light";
-  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Light.ttf);
-}
-@font-face {
-  font-family: "Yanone Kaffeesatz Thin";
-  src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Thin.ttf);
-}
 h1, h2 {
-  font-family: "Patua One";
-  font-style: normal;
+  font-family: "Open Sans Condensed";
 }
 h1 {
-  font-size: 3em;
+  font-size: 5em;
 }
 p {
-  font-family: "Yanone Kaffeesatz Regular";
-  text-align: justify;
-  font-size: 1.6em;
-  margin-top: 0px;
-}
-.ficha_izq_titulo {
-  font-family: "Yanone Kaffeesatz Regular";
-}
-.paginas {
-  font-family: "Yanone Kaffeesatz Light";
-  font-size: 1.1em;
-  font-style: normal;
-}
-.paginas li a.selected {
-  font-family: "Yanone Kaffeesatz Regular";
-}
-.paginas li a:hover {
-  font-family: "Yanone Kaffeesatz Regular";
-}
-.documentacion a {
-  font-family: "Yanone Kaffeesatz Light";
-  font-style: normal;
+  font-family: "Lora";
 }
 a.comment {
   -webkit-border-radius: 6px 6px 6px 6px;

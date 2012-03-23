@@ -1,34 +1,61 @@
 @import "functions.less";
 @import "menu_superior.less";
 @color_naranja:#fe4a00;
+@font-face {
+    font-family: "Patua One";
+    src: url(/fonts/Patua_One/PatuaOne-Regular.ttf);
+}
+@font-face {
+    font-family: "Yanone Kaffeesatz Bold";
+    src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Bold.ttf);
+}
+@font-face {
+    font-family: "Yanone Kaffeesatz Regular";
+    src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf);
+}
+@font-face {
+    font-family: "Yanone Kaffeesatz Light";
+    src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Light.ttf);
+}
+@font-face {
+    font-family: "Yanone Kaffeesatz Thin";
+    src: url(/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Thin.ttf);
+}
+
 h1, h2 {
-font-family:"Permanent Marker";
 font-family:"Patua One";
+font-style:normal;
 
 }
 h1{
-	font-size:5em;
+	font-size:3em;
 }
 p{
-font-family:"Yanone Kaffeesatz";	
-font-weight: 400; 
+font-family:"Yanone Kaffeesatz Regular";	
+text-align:justify;
+font-size:1.6em;
+margin-top:0px;
 }
 .ficha_izq_titulo{
-font-family:"Yanone Kaffeesatz";	
-font-weight: 700; 
+font-family:"Yanone Kaffeesatz Regular";	
 }
 .paginas{
 		
-		font-family:"Yanone Kaffeesatz";	
-font-weight: 300;
+font-family:"Yanone Kaffeesatz Light";	
+font-size:1.1em;
 font-style:normal; 
+	li a & .selected{
+font-family:"Yanone Kaffeesatz Regular";	
+	}
+	li a:hover{
+font-family:"Yanone Kaffeesatz Regular";	
 
+	}
 	}
 
 .documentacion{
 	 a{
-		font-family:"Yanone Kaffeesatz";	
-font-weight: 300;
+font-family:"Yanone Kaffeesatz Light";	
 font-style:normal; 
 
 	}

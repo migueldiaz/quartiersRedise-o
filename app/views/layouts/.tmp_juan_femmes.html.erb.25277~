@@ -1,13 +1,13 @@
 <html>
 		<%=render :file => "/layouts/_head.html.erb", :locals => {
-:google_fonts=>"http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Gloria+Hallelujah|Cabin+Sketch:700|Sue+Ellen+Francisco|Nunito:400|Walter+Turncoat",
-:less=>"colors_jeunes.less"
+:google_fonts=>"http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700",
+:less=>"colors_femmes.less"
 } %>
 
     <body>
     	<div id="loading">&nbsp;</div>
 
-	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; border-bottom: solid 1px black; ">
+	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
 		<p>&nbsp;</p>
 	</div>
 
@@ -15,11 +15,8 @@
             <div class="span-24 append-bottom" >
 
                 <div class="span-24 " >
-                	<div style="font-size:2.5em;float:left;font-family:'Patua One';">
-                <span style="line-height:0.6; "><%=@equipo.nombre %></span>
-                <span style="font-size:0.5em;"> <%=t('qdm') %> - <%=t('qdmsubtitle')%></span>
-				</div>
-
+                <h1 style="line-height:0.6"><%=t('qdmfemmes') %></h1>
+                <h2 style="color:white;"><%=t('qdmfemmessubtitle')%></h2>
 				<%=render  "/shared/menu_idioma"%>
 
 <div class="menu_superior " >
@@ -36,7 +33,8 @@
 		 <div class="span-24">
 		<hr class="space"/>
 		</div>
-            <div class="span-24">
+          
+ <div class="span-24">
 				 <div class="<%=dame_class_izq %> ">
 				 	<%=yield :menu_izq%>
 				</div>
@@ -49,13 +47,11 @@
                 </div>
 
             </div>
-				
 				  <div class="span-24" >
 	            <div class="prepend-4 last">
 				<%=render "/layouts/menu_inferior"%>
 	            </div>
             </div>
-				
                 <div class="span-24 append-bottom">
                     <hr class="space">
                     <div class="span-6 prepend-1 append-9">
@@ -70,7 +66,7 @@
                 </div>
             </div>
         </div>
-		<div id="supersized"></div>
+				<div id="supersized"></div>
 
     </body>
 </html>

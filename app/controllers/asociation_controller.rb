@@ -97,6 +97,7 @@ end
 	  		@sitio=@pagina.presentacion.sitio
 	  		@presentacion=@sitio.presentacion
 		    @paginas=@presentacion.paginas
+        @seccion_menu=:Presentacion
 		elsif !@pagina.red.nil?
 	  		@sitio=@pagina.red.sitio
 	  		@red=@sitio.red
@@ -109,10 +110,12 @@ end
 	  	    @sitio=@pagina.enfoque.sitio
 	  		@enfoque=@sitio.enfoque
 	  		@paginas=@enfoque.paginas
+        @seccion_menu=:enfoque
 	  	elsif !@pagina.protagonistas.nil?
 	  	    @sitio=@pagina.protagonistas.sitio
 	  		@protagonistas=@sitio.protagonistas
 	  		@paginas=@protagonistas.paginas
+        @seccion_menu=:protagonistas
 		end
 		@asociacion=Asociacion.first
 	    

@@ -2,8 +2,9 @@
 <hr class="space">
 <% @eventos.each do |evento| %>
 <div class="evento">
-	
-  <h2><%= l evento.fecha,:format => "%d/%m/%Y %H:%M"%> -  <%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></h2>
+	 		<a name="evento<%=evento.id%>"></a> 
+
+  <h2><%= l evento.fecha,:format => "%d/%m/%Y"%> -  <%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></h2>
    <% if evento.imagen_url.to_s != "" %>
    <%= render :partial => "/shared/img", :locals => {
 :imagen=>evento.imagen_url, 
@@ -24,3 +25,17 @@
 <hr class="space">
 
 <%end%>
+<%
+content_for :menu_izq do %>
+
+<div class="paginas">
+<div class="ficha_izq_titulo"><%=t('agenda')%></div>
+
+<ul>
+	
+<% @eventos.each do |evento| %>
+	 	<li><%= link_to evento.send(:titulo.to_s+locale.to_s.capitalize), asociation_agenda_path( :anchor=>"evento"+evento.id.to_s) %> </li> 
+<% end %>
+</ul>
+</div>
+<% end %>

@@ -75,7 +75,7 @@ content_for :menu_izq do
 
 if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas.nil? || !@red.nil? || !@documentacion.nil?)) then%>
 <div class="paginas">
-<div class="ficha_izq_titulo"><%=t(if (@seccion_menu.nil?) then 'paginas' else @seccion_menu end)%></div>
+<div class="ficha_izq_titulo"><%=t('paginas')%></div>
 
 <ul>
 	
