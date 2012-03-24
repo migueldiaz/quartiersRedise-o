@@ -19,17 +19,16 @@ String[] colores={"fe4a00", "b5afaf", "ffffff", "ffb629", "ff813b", "ff640d", "f
 ArrayList elementos=new ArrayList();
 
 void setup(){
-elementos.add(ciudades);
-elementos.add(mujeres);
-elementos.add(femmes);
-elementos.add(jovenes);
-elementos.add(jeunes);
-
+	elementos.add(ciudades);
+	elementos.add(mujeres);
+	elementos.add(femmes);
+	elementos.add(jovenes);
+	elementos.add(jeunes);
 
 	font=loadFont("Courier");
-textMode(SCREEN);	
-textFont(font, sizeTexto); 
+	textMode(SCREEN);	
 	hint(DISABLE_OPENGL_2X_SMOOTH);
+
 	colorMode(HSB, 100);
 	background(80);
 	size(800, 400);
@@ -55,8 +54,8 @@ void resetPosiciones(){
  posicionX=0;
  posicionY=0;
 }
-int limiteRandomSup=20;
-int limiteRandomInf=10;
+int limiteRandomSup=5;
+int limiteRandomInf=5;
 int sizeTexto=60;
 int posicionX=0;
 int posicionY=0;
@@ -81,6 +80,7 @@ void draw(){
 }
 
 public void pinta(){
+	textFont(font, sizeTexto+(int)random(-20,50)); 
 	background(dameColor(colores[2]));
   for(int posicion=posicionInicial; posicionInicial<mensaje.length(); posicionInicial++){
 
@@ -102,14 +102,14 @@ public void pinta(){
     	float randomRect=random(-limiteRandomSup,-limiteRandomInf);
     	float randomRectPos=random(limiteRandomInf, limiteRandomSup);
 		fill(dameColor(colores[(int)random(8,10)]));
-        rect(posicionX+randomRectPos, posicionY+randomRectPos, anchoCaracter+randomRect, rectHeight+randomRect);
-        fill(dameColor(colores[(int)random(3,7)]));
-    text(caracterActual, posicionX+random(-5,5), posicionY+alturaMaximaExacta+random(-5,5));
-    posicionX=posicionX+anchoCaracter;
     if((posicionY+alturaMaximaExacta+alturaMinimaExacta)>=height){
 		resetPosiciones();
 		break;
      }
+        rect(posicionX+randomRectPos, posicionY+randomRectPos, anchoCaracter+randomRect, rectHeight+randomRect);
+        fill(dameColor(colores[(int)random(3,7)]));
+    text(caracterActual, posicionX+random(-5,5), posicionY+alturaMaximaExacta+random(-5,5));
+    posicionX=posicionX+anchoCaracter;
      
      if(posicionInicial==mensaje.length()-2){
 		finalAlcanzado=true;      
