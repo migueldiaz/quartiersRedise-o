@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318171817) do
+ActiveRecord::Schema.define(:version => 20120326100743) do
 
   create_table "add_protagonistas_to_paginas", :force => true do |t|
     t.integer  "protagonistas_id"
@@ -290,10 +290,10 @@ ActiveRecord::Schema.define(:version => 20120318171817) do
   end
 
   create_table "videos", :force => true do |t|
-    t.string   "url"
-    t.string   "descripciones"
-    t.string   "descripcionfr"
-    t.string   "imagen"
+    t.string   "tituloes"
+    t.string   "titulofr"
+    t.text     "html"
+    t.integer  "pagina_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

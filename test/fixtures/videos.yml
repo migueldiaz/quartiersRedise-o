@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  url: MyString
-  descripciones: MyString
-  descripcionfr: MyString
-  imagen: MyString
+  tituloes: MyString
+  titulofr: MyString
+  html: MyText
+  pagina_id: 1
 
 two:
-  url: MyString
-  descripciones: MyString
-  descripcionfr: MyString
-  imagen: MyString
+  tituloes: MyString
+  titulofr: MyString
+  html: MyText
+  pagina_id: 1

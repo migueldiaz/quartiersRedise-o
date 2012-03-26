@@ -27,7 +27,8 @@ class VideosController < ApplicationController
   # GET /videos/new
   # GET /videos/new.xml
   def new
-    @video = Video.new
+    @pagina=Pagina.find(params[:id])
+    @video = @pagina.videos.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -76,10 +77,11 @@ class VideosController < ApplicationController
   # DELETE /videos/1.xml
   def destroy
     @video = Video.find(params[:id])
+    @pagina=@video.pagina
     @video.destroy
 
     respond_to do |format|
-      format.html { redirect_to(videos_url) }
+      format.html { redirect_to(@pagina) }
       format.xml  { head :ok }
     end
   end

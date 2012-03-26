@@ -1,6 +1,7 @@
 
 es: 
- biblioteca:'Biblioteca'
+ videos: 'videos'
+ biblioteca: 'Biblioteca'
  name: 'Nombre'
  apellido: 'Apellido'
  organizacion: 'Organización'
@@ -115,7 +116,7 @@ es:
  qdm: 'BARRIOS DEL MUNDO'
  qdmsubtitle: 'HISTORIAS URBANAS'
  qdmfemmes: 'MUJERES DEL MUNDO'
- qdmfemmessubtitle: 'UNA RED DE PROTRAGONISTAS SOLIDARIAS'
+ qdmfemmessubtitle: 'UNA RED DE PROTAGONISTAS SOLIDARIAS'
  ##########
  es: "Español"
  fr: "Français"

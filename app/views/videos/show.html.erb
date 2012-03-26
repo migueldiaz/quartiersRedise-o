@@ -1,32 +1,25 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Url:</b>
-  <%= link_to 'Video',@video.url %>
-  
-</p>
-
-<%=render :inline=>@video.url_html%>
 
 <br/>
 
 <br/>
+
 <p>
-  <b>Descripciones:</b>
-  <%= @video.descripciones %>
+  <b><%=t 'tituloes'%></b>
+  <%= @video.tituloes %>
+</p>
+<p>
+  <b><%=t 'titulofr'%></b>
+  <%= @video.titulofr %>
 </p>
 
 <p>
-  <b>Descripcionfr:</b>
-  <%= @video.descripcionfr %>
-</p>
-
-<p>
-  <b>Imagen:</b>
-  <%= @video.imagen %>
+  <b>Html</b>
+  <%= @video.html %>
 </p>
 
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= link_to 'Back', pagina_path(@video.pagina) %>

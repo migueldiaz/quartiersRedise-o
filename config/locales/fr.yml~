@@ -2,6 +2,8 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+ videos: 'videos'
+ biblioteca: 'Bibliothèque'
  name: 'Prénom'
  apellido: 'Nom'
  organizacion: 'Organisation'
