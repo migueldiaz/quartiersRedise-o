@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   include AutoHtml
   layout 'mono'
+  before_filter :require_login
   
   # GET /videos
   # GET /videos.xml
