@@ -2,33 +2,32 @@
 style=" style='width:100%;padding:5px;font-size:12px;background-color:none;' "
 %>
 <% if !@sitio.asociacion.nil?%>
-<li <%=style%>><%= link_to t('Presentacion'),presentacion_path(:id=>@sitio)%></li>
-<!--<li <%=style%>><%= link_to  t('vision'),vision_path(:id=>@sitio)%></li>-->
-<li <%=style%>><%= link_to  t('enfoque'),enfoque_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to  t('protagonistas'),protagonistas_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to  t('agenda'),eventos_path(:id=>@sitio)%> </li>
-<li <%=style%>><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
-	  <li <%=style%>><%= link_to  t('colaboradores'),colaboradors_path(:id=>@sitio)%> </li>
+	<li <%=style%>><%= link_to t('Presentacion'),presentacion_path(:id=>@sitio)%></li>
+	<!--<li <%=style%>><%= link_to  t('vision'),vision_path(:id=>@sitio)%></li>-->
+	<li <%=style%>><%= link_to  t('enfoque'),enfoque_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to  t('protagonistas'),protagonistas_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to  t('agenda'),eventos_path(:id=>@sitio)%> </li>
+	<li <%=style%>><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
+	 <li <%=style%>><%= link_to  t('colaboradores'),colaboradors_path(:id=>@sitio)%> </li>
 <%else%>
-<li <%=style%>><%= link_to t('presentacion'),presentacion_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to t('presentacion'),presentacion_path(:id=>@sitio)%></li>
 	<% if @sitio.equipo.nil?%>
-	   <li <%=style%>><%= link_to  t('actividades'),red_path(:id=>@sitio)%></li>
-	
+	  	 <li <%=style%>><%= link_to  t('actividades'),red_path(:id=>@sitio)%></li>
 	<%else%>
-	  <li <%=style%>><%= link_to  t('red'),red_path(:id=>@sitio)%></li>
-	  <li <%=style%>><%= link_to  t('colaboradores'),colaboradors_path(:id=>@sitio)%> </li>
-	  <li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
+	  	<li <%=style%>><%= link_to  t('red'),red_path(:id=>@sitio)%></li>
+	  	<li <%=style%>><%= link_to  t('colaboradores'),colaboradors_path(:id=>@sitio)%> </li>
+	  	<li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
 	<%end%>
 <%end%>
 
 
 <!---->
 <% if !@sitio.femmes.nil? || !@sitio.jeunes.nil? %>
-<li <%=style%>><%= link_to t('lequipos'), equipos_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to t('foros'), foros_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
-<li <%=style%>><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to t('lequipos'), equipos_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to t('foros'), foros_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to t('documentacion'), documentacion_path(:id=>@sitio)%></li>
+	<li <%=style%>><%= link_to  t('contacto'), contacto_path(:id=>@sitio)%></li>
 <%end%>
 
 <li <%=style%>><%= link_to  t('fondos'),fondos_path(:id=>@sitio)%></li>

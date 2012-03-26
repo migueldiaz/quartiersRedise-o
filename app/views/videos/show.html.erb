@@ -7,19 +7,18 @@
 <br/>
 
 <p>
-  <b><%=t 'tituloes'%></b>
+  <b><%=t 'tituloes'%>: </b>
   <%= @video.tituloes %>
 </p>
 <p>
-  <b><%=t 'titulofr'%></b>
+  <b><%=t 'titulofr'%>: </b>
   <%= @video.titulofr %>
 </p>
 
 <p>
-  <b>Html</b>
-  <%= @video.html %>
+  <%=h render :inline=>@video.html%> 
 </p>
 
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', pagina_path(@video.pagina) %>
+<%= link_to t('edit'), edit_video_path(@video) %> |
+<%= link_to t('back'), pagina_path(@video.pagina) %>
