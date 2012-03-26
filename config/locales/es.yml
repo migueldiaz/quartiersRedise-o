@@ -1,5 +1,7 @@
 
 es: 
+ video: 'video'
+ videos: 'videos'
  biblioteca: 'Biblioteca'
  name: 'Nombre'
  apellido: 'Apellido'

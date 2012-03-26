@@ -1,6 +1,20 @@
 class FemmesController < ApplicationController
   layout 'juan_femmes'
 
+def videos
+ 		@femmes=Femmes.first
+ 		@sitio=@femmes.sitio
+ 		@paginas=@sitio.paginas
+ 		@videosfemmes=Video.where(:pagina_id=>@paginas)
+ 		if params[:search]
+ 		  @resultado = @videosfemmes.with_query(params[:search])
+ 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		else
+ 			@videos=@videosfemmes.paginate(:page => params[:page], :per_page => 10)
+ 		end
+ 		      #  @seccion_menu=:biblioteca
+
+end
 
 def biblioteca
  		@femmes=Femmes.first

@@ -6,6 +6,22 @@ class AsociationController < ApplicationController
      render :layout=>'last_p5'
   end
   
+ 	def videos
+ 		@asociacion=Asociacion.first
+ 		@sitio=@asociacion.sitio
+ 		@paginas=@sitio.paginas
+ 		@videosasoc=Video.where(:pagina_id=>@paginas)
+ 		if params[:search]
+ 		  @resultado = @videosasoc.with_query(params[:search])
+ 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		else
+ 		  @videos=@videosasoc.paginate(:page => params[:page], :per_page => 10)
+ 		end
+ 		
+ 	end
+ 	
+ 	
+ 	
  	def biblioteca
  		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
@@ -19,6 +35,8 @@ class AsociationController < ApplicationController
  		end
  		
  	end
+ 	
+ 	
  	
  	def vision
  		@asociacion=Asociacion.first

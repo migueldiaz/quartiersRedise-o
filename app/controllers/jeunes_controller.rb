@@ -6,6 +6,22 @@ def esjeunes(pagina)
  return true
 end
 
+def videos
+ 		@jeunes=Jeunes.first
+ 		@sitio=@jeunes.sitio	
+ 		@paginas=@sitio.paginas
+ 		@videosjeunes=Video.where(:pagina_id=>@paginas)
+ 		if params[:search]
+ 		  @resultado = @videosjeunes.with_query(params[:search])
+ 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		else
+ 			@videos=@videosjeunes.paginate(:page => params[:page], :per_page => 10)
+ 	end
+     # @seccion_menu=:biblioteca   
+end
+
+
+
 def biblioteca
  		@jeunes=Jeunes.first
  		@sitio=@jeunes.sitio	
@@ -18,8 +34,7 @@ def biblioteca
  			@documentos=@documentosjeunes.paginate(:page => params[:page], :per_page => 10)
  	end
       @seccion_menu=:biblioteca
-
- 	end
+end
  	
  	
 #GET /quartiers/agenda
