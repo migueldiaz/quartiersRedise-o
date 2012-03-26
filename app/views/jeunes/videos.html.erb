@@ -1,21 +1,24 @@
 <h1><%=t('videos').capitalize+': '+t('jeunes')%></h1>
 
-<%= render 'busquedas/buscar'%>
+<%= render 'busquedas/buscarvideojeunes'%>
 
 <%if params[:search]%>
 <p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %><%=link_to t('destroy')+' '+'busqueda',jeunes_videos_path%></p>
 <%end%>
-<ul>
+
 <% @videos.each do |video|%>
 
+		<p>		
+ 		<%=render :inline=>video.html%><br/>
 		<% if spanish%>
-			<li><b><%=video.tituloes%></b>
-			en <%=link_to video.pagina.tituloes,asociation_pagina_path(:id=>video.pagina)%></li>
+			<b><%=video.tituloes%></b>
+			en <%=link_to video.pagina.tituloes,jeunes_pagina_path(:id=>video.pagina)%></li>
 		<%else%>	
-			<li><b><%=video.tituloes%></b>
-			dans <%=link_to video.pagina.titulofr,asociation_pagina_path(:id=>video.pagina)%></li>
+			<b><%=video.tituloes%>
+			dans <%=link_to video.pagina.titulofr,jeunes_pagina_path(:id=>video.pagina)%></li>
 		<%end%>
+		
+		</p>
 	
 <%end%>
-</ul>
 <%= will_paginate @videos %>

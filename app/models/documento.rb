@@ -1,5 +1,5 @@
 class Documento < ActiveRecord::Base
-  require 'ostruct'
+  #require 'ostruct'
   acts_as_indexed :fields => [:doces, :docfr]
   belongs_to :pagina
   belongs_to :foro
