@@ -10,7 +10,7 @@
 #navigation-show li {
   width: 100%;
   text-align: center;
-  background: url(http://localhost:3000/javascripts/images/drop-shadow.png) no-repeat center 122px;
+  background: url(/images/drop-shadow.png) no-repeat center 122px;
 }
 #navigation-show li {
   font-size: 16px;
@@ -506,7 +506,7 @@ body {
 }
 .ficha .modulo_ficha .titulo {
   font-size: 14px;
-  background-image: url(http://localhost:3000/javascripts/../images/cubito_ff9900.gif);
+  background-image: url(/images/cubito_ff9900.gif);
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 16px;
@@ -521,7 +521,7 @@ body {
 }
 /*ficha central*/
 .contenido_central {
-  background-image: url(http://localhost:3000/javascripts/../images/t.png);
+  background-image: url(/images/t.png);
   padding: 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
@@ -592,22 +592,22 @@ body {
   background-color: white;
 }
 .documentacion li .pdf, .paginas li .pdf {
-  list-style-image: url(http://localhost:3000/javascripts/../images/pdf_min.jpg);
+  list-style-image: url(/images/pdf_min.jpg);
 }
 .documentacion li .txt, .paginas li .txt {
-  list-style-image: url(http://localhost:3000/javascripts/../images/txt_min.jpg);
+  list-style-image: url(/images/txt_min.jpg);
 }
 .documentacion li .doc, .paginas li .doc {
-  list-style-image: url(http://localhost:3000/javascripts/../images/doc_min.jpg);
+  list-style-image: url(/images/doc_min.jpg);
 }
 .documentacion li .rtf, .paginas li .rtf {
-  list-style-image: url(http://localhost:3000/javascripts/../images/rtf_min.jpg);
+  list-style-image: url(/images/rtf_min.jpg);
 }
 .documentacion li .mov, .paginas li .mov {
-  list-style-image: url(http://localhost:3000/javascripts/../images/mov_min.jpg);
+  list-style-image: url(/images/mov_min.jpg);
 }
 .documentacion li .mp3, .paginas li .mp3 {
-  list-style-image: url(http://localhost:3000/javascripts/../images/mp3_min.jpg);
+  list-style-image: url(/images/mp3_min.jpg);
 }
 /*menu de idiomas*/
 #idiomas ul li, #usuario_logueado ul li {
