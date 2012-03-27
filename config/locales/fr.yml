@@ -2,6 +2,8 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+ slogan: '... de toutes façons, chaque quartier est un monde ...'
+ entrar: 'entrer'
  video: 'video'
  videos: 'videos'
  biblioteca: 'Bibliothèque'
@@ -25,7 +27,7 @@ fr:
  infoEs: 'Information en spagnol'
  infoFr: 'Information en français'
  paginas_de: 'Pages dans la section:'
- asociacion: 'Asociation'
+ asociacion: 'Association'
  usuario: 'usuaire'
  doces: 'Document en spagnol'
  docfr: 'Document en français'

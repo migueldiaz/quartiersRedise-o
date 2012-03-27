@@ -31,24 +31,10 @@ end
 %> 	
 <p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
  <% end %>
-  <% if (!@pagina.videos.empty?) then  %>
-  <hr class="space"/>
-<div class="galeria">
-<h1><%=t('videos')%></h1>
-<% @pagina.videos.each do |video| %>
-					<a name="video<%=video.id%>"/>
-					<h2><%=video.send(:titulo.to_s+local)%></h2>
- 	<%= video.html.html_safe %>
-<%end%>
-</div>
-
-<%end%>
-
 
 <% if !@pagina.imagens.empty? then %>
-  <hr class="space"/>
 <div class="galeria">
-<h1><%=t('galeria')%></h1>
+<h2><%=t('galeria')%></h2>
 <% @pagina.imagens.each do |imagen| %>
 <div class="ficha colaborador">
 
@@ -100,18 +86,6 @@ if(!@protagonsitas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 </ul>
 </div>
 <% end %>
-  <% if (!@pagina.videos.empty?) then  %>
-<div class="documentacion">
-<div class="ficha_izq_titulo"><%=t('videos')%></div>
-<ul>
-<% @pagina.videos.each do |video| %>
-				<li ><a href="#video<%=video.id%>"><%= video.send(:titulo.to_s+local) %></a></li>
-<%end%>
-</ul>
-</div>
-
-<%end%>
-
  <% if (!@pagina.documentos.empty?) then  
 docya=true%>
 <div class="documentacion">

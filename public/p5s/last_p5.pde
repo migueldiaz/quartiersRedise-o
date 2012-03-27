@@ -1,3 +1,6 @@
+/* @pjs preload="pde/peter_medium.png"; */
+	PImage mapa;
+
 Log log=new Log();
 PFont font;
 
@@ -13,7 +16,8 @@ String[] jeunes={"jeunes","participation","pouvoir","protagonisme ","quartiers p
 
 String[] colores={"fe4a00", "b5afaf", "ffffff", "ffb629", "ff813b", "ff640d", "ffd648", "ffad10", "f6f6f6", "fbfbfb", "dedede", "d4d3d2"};
  
-ArrayList elementos=new ArrayList();
+ArrayList elementos_es=new ArrayList();
+ArrayList elementos_fr=new ArrayList();
 
 String[]  titulos_es={"BDM", "red", "mujeres", "jóvenes"};
 
@@ -22,11 +26,18 @@ String[]  titulos_fr={"QDM", "réseau", "femmes", "jeunes"};
 
 
 void setup(){
-	elementos.add(ciudades);
-	elementos.add(mujeres);
-	elementos.add(femmes);
-	elementos.add(jovenes);
-	elementos.add(jeunes);
+	mapa = loadImage("pde/peter_medium.png");
+
+	elementos_es.add(ciudades);
+	elementos_es.add(mujeres);
+	elementos_es.add(jovenes);
+	elementos_fr.add(ciudades);
+	elementos_fr.add(femmes);
+	elementos_fr.add(jeunes);
+
+	titulos=titulos_es;
+	eles=elementos_es;
+	
 
 	font=loadFont("Courier");
 	textMode(SCREEN);	
@@ -42,8 +53,10 @@ void setup(){
 	logea("jovenes", jovenes);
 	logea("jeunes", jeunes);
 	*/
-	 mensaje=titulos_es[0];
+	 mensaje=titulos[0];
+	 contadorTitulos++;
 	 pinta(200);
+	 esTitulo=true;
 }
 
 int limiteRandomSup=5;
@@ -55,15 +68,38 @@ int posicionInicial=0;
 String mensaje;
 boolean finalAlcanzado;
 int contadorElementos=0;
-void draw(){
+int contadorTitulos=0;
+int contadorApariciones=0;
+boolean esTitulo;
+ArrayList eles;
 
-	if(frameCount%(30*10)==0){
+void inicio(){
+ contadorElementos=0;
+ contadorApariciones=0;
+
+}
+
+void draw(){
+	
+	if(frameCount%(30*2)==0){
 		if(finalAlcanzado){
+		contadorApariciones++;
+		if(contadorApariciones%2!=0){
+		
+		log.debug("titulos");
+		int posicion=contadorTitulos%titulos.length();
+			mensaje=titulos[posicion];
+		contadorTitulos++;
+		if(mensaje==titulos[0])
+		inicio();		
+		}else{
+		log.debug("elementos");
+				int posicion=contadorElementos%eles.size();
+			mensaje=eles.get(posicion).toString();
 		contadorElementos++;
-			fill(100);
-			rect(0,0,width, height);
-			mensaje=jovenes.toString();
-			 mensaje=elementos.get(contadorElementos%elementos.size()).toString();
+		esTitulo=false;
+		
+		}
 			
 			posicionInicial=-1;
 			resetPosiciones();
@@ -86,8 +122,10 @@ void resetPosiciones(){
 }
 
 public void pinta(int sizeT){
-			fill(100);
-			rect(0,0,width, height);
+	fill(100);
+	rect(0,0,width, height);
+			image(mapa, 0, 0,width,height);
+	
 	textFont(font, sizeT); 
   for(int posicion=posicionInicial; posicionInicial<mensaje.length(); posicionInicial++){
 
@@ -108,14 +146,14 @@ public void pinta(int sizeT){
     	float rectHeight=alturaMaximaExacta+alturaMinimaExacta;
     	float randomRect=random(-limiteRandomSup,-limiteRandomInf);
     	float randomRectPos=random(limiteRandomInf, limiteRandomSup);
-		fill(dameColor(colores[(int)random(8,10)]));
+		fill(dameColor(colores[(int)random(8,10)]), random(50,80));
 	    if((posicionY+alturaMaximaExacta+alturaMinimaExacta)>=height){
 			resetPosiciones();
 			break;
 	     }
         rect(posicionX+randomRectPos, posicionY+randomRectPos, anchoCaracter+randomRect, rectHeight+randomRect);
         float posXRandom=posicionX+random(-5,5);
-        float posYRandom=posicionY+alturaMaximaExacta+random(-5,5);
+        float posYRandom=posicionY+alturaMaximaExacta+random(-3,3);
         
      //filo blanco   
     fill(100);

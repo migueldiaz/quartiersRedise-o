@@ -48,7 +48,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    mysql2 (0.2.18)
+    mysql2 (0.2.13)
     nokogiri (1.5.2)
     polyglot (0.3.3)
     pr_geohash (1.0.0)

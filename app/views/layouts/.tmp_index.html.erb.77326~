@@ -72,6 +72,7 @@ less="colors_index.less"
 		<div id="main-show">
 			<div style="position: absolute; z-index: 1; display: none; left: 0px; top: 0px; visibility: hidden; opacity: 0;" id="introduction" class="page">
 
+				<h1 id="title">Welcome/bienvenido</h1>
 				<div id="intro-show">
 				</div>
 			</div>
@@ -96,7 +97,7 @@ less="colors_index.less"
 </li>
 					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 					
-														<div class="info"><%=t('asociacion').upcase%>><%=link_to t('entrar'),asociation_path, :title=>"title asociacion"  %> </div>
+														<div class="info"><%=t('asociacion')%>><%=link_to t('entrar'),asociation_path, :title=>"title asociacion"  %> </div>
 <canvas id="foros_escale" 
 data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde  pde/servicio_toxi_color.pde pde/escala.pde pde/servicio_escala.pde pde/transicion_escala.pde pde/comentario_escala_mapa.pde pde/movimiento.pde pde/mensaje.pde pde/log.pde"></canvas>  								
 <!--
@@ -111,14 +112,14 @@ data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pd
 					
 					</li>
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-									<div class="info"><%=t('qdmsubtitle').upcase%>><%=link_to t('entrar') ,jeunes_presentacion_path  %></div>
+									<div class="info"><%=t('jeunes')%>><%=link_to t('entrar') ,jeunes_presentacion_path  %></div>
 
 						<canvas id="foros_bandas" 
 data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/rectangulo_banda.pde pde/servicio_toxi_color.pde"></canvas>  			
 					</li>
 					<li  style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 
-									<div class="info"><%=t('femmes').upcase%>><%=link_to t('entrar'),femmes_presentacion_path  %>  </div>
+									<div class="info"><%=t('femmes')%>><%=link_to t('entrar'),femmes_presentacion_path  %>  </div>
 
 										 <canvas id="foros" 
 data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>
@@ -135,14 +136,14 @@ data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/c
 
 					<ul class="nav">
 					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;" onclick="reseteaP5('foros')">HOME</li>
-					<li onclick="reseteaP5('foros_escale')"><%=t('asociacion').upcase%></li>
-					<li onclick="reseteaP5('foros_bandas')"><%=t('qdmsubtitle').upcase%></li>
-					<li><%=t('qdmfemmes').upcase%></li>
-					<li><%=t('contacto').upcase%></li>
+					<li onclick="reseteaP5('foros_escale')"><%=t('asociacion')%></li>
+					<li onclick="reseteaP5('foros_bandas')"><%=t('jeunes')%></li>
+					<li><%=t('femmes')%></li>
+					<li><%=t('contacto')%></li>
 				</ul>
 
 				
-				<p id="ultima_slogan"><%=t('slogan')%></p>
+				<p id="ultima_slogan">... de toutes façons, chaque quartier est un monde ...</p>
 			
 			</div>
 		</div>
