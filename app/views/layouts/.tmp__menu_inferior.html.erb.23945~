@@ -1,9 +1,0 @@
-<ul class="menu_inferior" >
-		<li><%=link_to t('asociacion'),asociation_path%></li>
-		<li>+</li>
-		<li><%=link_to t('qdmsubtitle'),jeunes_path%></li>
-		<li>+</li>
-		<li><%=link_to t('qdmfemmes'),femmes_path%></li>
-		<li>+</li>
-		<li><%=link_to t('contacto'),asociation_contacto_path%></li>
-</ul>

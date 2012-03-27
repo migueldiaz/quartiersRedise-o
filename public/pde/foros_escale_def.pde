@@ -12,12 +12,18 @@
 public void parar(){
 	//comentariosRepresentados= new ArrayList();
 	noLoop();
+	
 }
 public void reset(){
+setup();
 	loop();
 }
 
 void setup(){
+	 comentariosRepresentados = new ArrayList();
+	 equipos = new ArrayList();
+	 equiposDB = new ArrayList();
+
 	frameRate(15);
 	font=loadFont("Courier New");
 	mapa = loadImage("pde/peter_medium.png");

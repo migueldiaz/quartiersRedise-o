@@ -15,7 +15,6 @@ void parar(){
 	noLoop();
 }
 void reset(){
-		log.info("try reset!");
 		 comentariosRepresentados= new ArrayList();
  equipos = new ArrayList();
  equiposRepresentados = new ArrayList();

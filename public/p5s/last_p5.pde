@@ -23,7 +23,11 @@ String[]  titulos_es={"BDM", "red", "mujeres", "jóvenes"};
 
 String[]  titulos_fr={"QDM", "réseau", "femmes", "jeunes"};
 
-
+void reset(){
+setup();
+}
+void parar(){
+}
 
 void setup(){
 	mapa = loadImage("pde/peter_medium.png");

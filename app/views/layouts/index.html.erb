@@ -29,7 +29,7 @@ less="colors_index.less"
 	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8" >	 -->
 
 <script type="text/javascript">
-	var mycars=["foros","foros_escale", "foros_bandas"];
+	var mycars=["foros_last","foros_escale", "foros_bandas", "foros_def"];
 					function reseteaP5(id){
 						Processing.getInstanceById(id).reset();
 						for (var i = 0; i < mycars.length; i++) {
@@ -72,6 +72,7 @@ less="colors_index.less"
 		<div id="main-show">
 			<div style="position: absolute; z-index: 1; display: none; left: 0px; top: 0px; visibility: hidden; opacity: 0;" id="introduction" class="page">
 
+			<h1 id="title"> </h1>
 				<div id="intro-show">
 				</div>
 			</div>
@@ -81,7 +82,7 @@ less="colors_index.less"
 					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
 
 									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
-<canvas id="last_p5" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
+<canvas id="foros_last" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
   
 									<!--
 									<div class="infodet">
@@ -120,7 +121,7 @@ data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foro
 
 									<div class="info"><%=t('femmes').upcase%>><%=link_to t('entrar'),femmes_presentacion_path  %>  </div>
 
-										 <canvas id="foros" 
+										 <canvas id="foros_def" 
 data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>
 
 	</li>
@@ -134,10 +135,10 @@ data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/c
 				</ul>
 
 					<ul class="nav">
-					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;" onclick="reseteaP5('foros')">HOME</li>
+					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;" onclick="reseteaP5('foros_last')">HOME</li>
 					<li onclick="reseteaP5('foros_escale')"><%=t('asociacion').upcase%></li>
 					<li onclick="reseteaP5('foros_bandas')"><%=t('qdmsubtitle').upcase%></li>
-					<li><%=t('qdmfemmes').upcase%></li>
+					<li onclick="reseteaP5('foros_def')"><%=t('qdmfemmes').upcase%></li>
 					<li><%=t('contacto').upcase%></li>
 				</ul>
 
