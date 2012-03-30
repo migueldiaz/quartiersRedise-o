@@ -20,7 +20,7 @@
 <%else%>
 <%if params[:controller]=="asociation"%> 
 <!-- link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/ -->
-<!%= stylesheet_link_tag('asociacion') %>
+<%= stylesheet_link_tag('asociacion') %>
 <link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
 <%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]=="equipe") %> 
 <%= stylesheet_link_tag('jeunes') %>
