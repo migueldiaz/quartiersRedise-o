@@ -72,6 +72,7 @@ less="colors_index.less"
 		<div id="main-show">
 			<div style="position: absolute; z-index: 1; display: none; left: 0px; top: 0px; visibility: hidden; opacity: 0;" id="introduction" class="page">
 
+			<h1 id="title"> </h1>
 				<div id="intro-show">
 				</div>
 			</div>

@@ -154,7 +154,7 @@ def equipo
          @seccion=@sitio.presentacion.seccion
          @pagina=@seccion.paginas.first  
          if !@seccion.nil?
-          redirect_to femmes_pagina_path(:id=>@agina) 
+          redirect_to femmes_pagina_path(:id=>@pagina) 
      
          end
        end
