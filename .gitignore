@@ -4,4 +4,7 @@ log/*.log
 tmp/
 config/environment.rb
 config/database.yml
+public/stylesheets/asociacion.css
+public/stylesheets/jeunes.css
+public/stylesheets/femmes.css
 Gemfile
