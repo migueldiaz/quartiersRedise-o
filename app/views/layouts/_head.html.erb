@@ -1,7 +1,7 @@
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        	<meta http-equiv="X-UA-Compatible" content="IE=8">
- 		<title><%=t('qdm') %></title>
+ 		<title><%=request.host.include? "localhost"%><%=t('qdm') %></title>
 <!--[if lt IE 8]>
     <link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection">
 <![endif]-->
