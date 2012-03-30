@@ -13,7 +13,7 @@
 <%= stylesheet_link_tag('supersized') %>
 <%= javascript_include_tag('jquery-1.6.4') %>       
 <%= javascript_include_tag('supersized.3.2.5') %> 
-<%if request.host=="localhost"%>
+<%if request.host.include? "localhost"%>
 <!-- link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/ -->
 <link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
 <%= javascript_include_tag('less-1.1.3.min') %>          
