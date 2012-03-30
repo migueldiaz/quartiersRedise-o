@@ -1,7 +1,7 @@
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        	<meta http-equiv="X-UA-Compatible" content="IE=8">
- 		<title><%=request.host.include? "localhost"%><%=t('qdm') %></title>
+ 		<title><%=t('qdm') %></title>
 <!--[if lt IE 8]>
     <link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection">
 <![endif]-->
@@ -21,7 +21,6 @@
 <%if params[:controller]=="asociation"%> 
 <!-- link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/ -->
 <%= stylesheet_link_tag('asociacion') %>
-<link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
 <%elsif params[:controller]=="jeunes" or (!@jeunes.nil? and params[:controller]=="equipe") %> 
 <%= stylesheet_link_tag('jeunes') %>
 <!-- link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>" -->
