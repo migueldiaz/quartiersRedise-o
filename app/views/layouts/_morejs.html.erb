@@ -52,7 +52,19 @@ jQuery(function($){
 		</script>
 <%end %>
  <script type="text/javascript">
- $(document).ready(function() {
+
+        $(window).scroll(function(){
+if($("#nav_paginas").length!=0){
+var incremento=-50;
+if($(window).scrollTop()<50) incremento=0;
+$("#nav_paginas").stop().animate({"marginTop": ($(window).scrollTop() +incremento) + "px"}, "slow" );			
+}
+}
+);
+
+$(document).ready(function() {
+
+
 
     $(".miniatura").load(
 	function() {
