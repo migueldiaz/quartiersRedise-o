@@ -1,0 +1,165 @@
+
+<% if params[:controller]=="asociation" %>
+	<%if !@asociacion.nil? %>
+	<ul id="menu">
+		<li <%=menu_seleccionada_tris "agenda" %>><%=link_to t('agenda'),asociation_agenda_path%></li>
+		<%=render "asociation/presentaciones" %> 
+		<!--	<li <%=menu_seleccionada_bis asociation_vision_path %>><%=link_to t('vision'),asociation_vision_path%></li>-->
+			<%=render "asociation/enfoque" %>
+			<%=render "asociation/protagonistas" %>    
+		<!--	<%=render "asociation/proyectos" %>  -->
+		<!--<li <%=menu_seleccionada_bis asociation_colaborador_path %> ><%=link_to t('colaboradores'),asociation_colaborador_path%></li>-->
+		
+	<li <%=menu_seleccionada_bis asociation_biblioteca_path %>><%=link_to t('documentacion'),asociation_biblioteca_path%></li>
+	<li <%=menu_seleccionada_bis asociation_videos_path %>><%=link_to t('videos'),asociation_videos_path%></li>
+		<li <%=menu_seleccionada_bis asociation_contacto_path %>><%=link_to t('contacto'),asociation_contacto_path%></li>
+	</ul>
+	<%end%>
+<% end %>
+	<% if params[:controller]=="jeunes" %>
+	<ul id="menu">
+		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('presentacion'),jeunes_presentacion_path  %>
+    		<%if !@presentacion.nil? && !@paginas.nil?  %>
+    			<ul class="submenu"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>@paginas} %></ul>
+				<%elsif @presentacion.nil?%>
+    			<ul class="submenu2"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>dame_presentacion_paginas} %></ul>
+    		<%end%>
+    		</li>
+		<li <%=menu_seleccionada_tris :actividades %>><%=link_to t('actividades'),jeunes_proyectos_path  %>
+		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
+			<ul class="submenu"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>@paginas} %></ul>
+			<%elsif @red.nil?%>
+    			<ul class="submenu2"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>dame_red_paginas} %></ul>
+
+		<%end%>
+		</li>
+		<!--
+		
+		<li <%=menu_seleccionada_tris :documentacion %>><%=link_to t('documentacion'),jeunes_documentacion_path  %>
+		<%if !@paginas.nil? && !@documentacion.nil?%>
+			<ul class="submenu"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>@paginas} %></ul>
+						<%elsif @documentacion.nil?%>
+    			<ul class="submenu2"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>dame_documentacion_paginas} %></ul>
+
+		<%end%>
+		-->
+		<!---->
+		
+		</li>
+		<li <%=menu_seleccionada_bis jeunes_equipos_path %>><%=link_to t('lequipos'),jeunes_equipos_path %>
+		   <%if !@equipos.nil? %>
+				<ul class="submenu">
+					<% @equipos.each do |equipo| %>
+						<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
+					<%end%>
+				</ul>
+		   <%elsif @equipo.nil?%>
+				<ul class="submenu2">
+					<% dame_equipos.each do |equipo| %>
+						<li ><%=link_to equipo.nombre,jeunes_equipos_path(:anchor=>"equipo"+equipo.id.to_s) %> </li>
+					<%end%>
+				</ul>
+			<%end%>
+		  
+		    <%if !@equipo.nil? %>
+		    	<ul class="submenu"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
+		    	<ul class="submenu"><%=render 'equipe/opciones'%></ul>
+		        </ul>
+		    <%end%>
+		    </li>
+		<li <%=menu_seleccionada_tris :foros %>><%=link_to t('foros'),jeunes_foros_path %>
+		 	<%if !@foros.nil? %>
+		    	<ul class="submenu"><%=render 'jeunes/foros'%></ul>
+		    <%end%>
+		    </li>
+					<!--Biblioteca-->
+		<li <%=menu_seleccionada_tris :biblioteca %>><%=link_to t('biblioteca'),jeunes_biblioteca_path  %>
+		<li <%=menu_seleccionada_tris :biblioteca %>><%=link_to t('videos'),jeunes_videos_path  %>
+		<!--<li <%=menu_seleccionada_bis jeunes_colaborador_path %>><%=link_to t('colaboradores'),jeunes_colaborador_path%></li>-->
+		<!--<li <%=menu_seleccionada_bis jeunes_agenda_path %>><%=link_to t('agenda'),jeunes_agenda_path%></li>-->
+		<li <%=menu_seleccionada_bis jeunes_contacto_path %>><%=link_to t('contacto'),jeunes_contacto_path%></li>
+		<!--<li <%=menu_seleccionada_bis jeunes_buscador_path %>><%=link_to t('buscador'),jeunes_buscador_path%></li>-->
+	</ul>
+	<%end%>
+
+
+	<% if params[:controller]=="equipe" %>
+		<ul id="menu">
+			<%
+			path_equipos_general=femmes_equipos_path
+			if !@equipo.jeunes.nil?
+			path_equipos_general=jeunes_equipos_path
+			end
+			%> 
+			<li><%=link_to t('lequipos'),path_equipos_general %></li>
+		    <%if !@equipo.nil? %>
+				<li class="seleccionado"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
+				<%=render 'equipe/opciones'%>
+		    <%end%>
+		</ul>
+	<%end%>
+
+		<% if params[:controller]=="femmes" %>
+	<ul id="menu">
+		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('presentacion'),femmes_presentacion_path  %>
+		    		<%if !@presentacion.nil? && !@paginas.nil?  %>
+    			<ul class="submenu"><%=render :file=>'femmes/_paginas', :locals => {:modelito=>@paginas} %></ul>
+				<%elsif @presentacion.nil?%>
+    			<ul class="submenu2"><%=render :file=>'femmes/_paginas', :locals => {:modelito=>dame_paginas_presentaciones_femmes} %></ul>
+    		<%end%>
+
+    		</li>
+		<li <%=menu_seleccionada_tris :actividades %>><%=link_to t('actividades'),femmes_proyectos_path  %>
+		<%if !@paginas.nil? && !@red.nil? && @equipo.nil?%>
+    			<ul class="submenu"><%=render :file=>'femmes/_paginas', :locals => {:modelito=>@paginas} %></ul>
+			<%elsif @red.nil?%>
+    			<ul class="submenu2"><%=render :file=>'femmes/_paginas', :locals => {:modelito=>dame_paginas_actividades_femmes} %></ul>
+	<%end%>
+		</li>
+		<li <%=menu_seleccionada_bis femmes_equipos_path %>><%=link_to t('equipos'),femmes_equipos_path %>
+		  		   <%if !@equipos.nil? %>
+				<ul class="submenu">
+					<% @equipos.each do |equipo| %>
+						<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
+					<%end%>
+				</ul>
+		   <%elsif @equipo.nil?%>
+				<ul class="submenu2">
+					<% dame_equipos_femmes.each do |equipo| %>
+						<li ><%=link_to equipo.nombre,femmes_equipos_path(:anchor=>"equipo"+equipo.id.to_s) %> </li>
+					<%end%>
+				</ul>
+			<%end%>
+
+		    <%if !@equipo.nil? %>
+		    	<ul class="submenu"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%>
+		    	<ul class="submenu"><%=render 'equipe/opciones'%></ul>
+		        </ul>
+		    <%end%>
+		    </li>	<li <%=menu_seleccionada_tris :foros %>><%=link_to t('foros'),femmes_foros_path %>
+		 	<%if !@foros.nil? %>
+		    	<ul class="submenu"><%=render 'femmes/foros'%></ul>
+		    <%end%>
+		    </li>
+		<!--li <%=menu_seleccionada_tris :documentacion %>><%=link_to t('documentacion'),femmes_documentacion_path  %>
+		<%if !@paginas.nil? && !@documentacion.nil?%>
+			<ul class="submenu"><%=render 'femmes/paginas'%></ul>
+		<%end%>
+		-->
+		<!--Biblioteca-->
+		<li <%=menu_seleccionada_tris :biblioteca %>><%=link_to t('biblioteca'),femmes_biblioteca_path  %>
+		<li <%=menu_seleccionada_tris :biblioteca %>><%=link_to t('videos'),femmes_videos_path  %>
+		<!---->
+		</li>
+	
+		<% if !@equipo.nil?%>
+		
+		<!--<li <%=menu_seleccionada_bis femmes_colaborador_path %>><%=link_to t('colaboradores'),femmes_colaborador_path%></li>-->
+		<%end%>
+		<!--<li <%=menu_seleccionada_bis femmes_agenda_path %>><%=link_to t('agenda'),femmes_agenda_path%></li>-->
+		<li <%=menu_seleccionada_bis femmes_contacto_path %>><%=link_to t('contacto'),femmes_contacto_path%></li>
+	</ul>
+	<%end%>
+
+	
+	

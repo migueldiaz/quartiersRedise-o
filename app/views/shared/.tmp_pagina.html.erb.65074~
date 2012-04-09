@@ -1,8 +1,4 @@
 <%
-edita_galeria=false
-if !@pagina.red.nil?
-edita_galeria=true
-end
 docya=false
 if(!@original.nil?) then
 %>
@@ -49,7 +45,7 @@ end
 <%end%>
 
 
-<% if edita_galeria and !@pagina.imagens.empty? then %>
+<% if !@pagina.imagens.empty? then %>
   <hr class="space"/>
 <div class="galeria">
 <h1><%=t('galeria')%></h1>

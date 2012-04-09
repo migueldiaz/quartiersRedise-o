@@ -1,10 +1,6 @@
-<% 
-edita_galeria=false
-if !@pagina.presentacion.nil?
+<% if !@pagina.presentacion.nil?
 path_v=presentacion_path(@pagina.presentacion.sitio)
 elsif !@pagina.red.nil?
-edita_galeria=true
-
 path_v= red_path(@pagina.red.sitio)
 elsif !@pagina.documentacion.nil?
 path_v= documentacion_path(@pagina.documentacion.sitio)
@@ -71,7 +67,7 @@ titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo')) %>
         <%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('new')+' '+t('documento'), :path_volver=>new_documento_path(:id=>@pagina)} %>
     </ul>
 </div>
-<% if edita_galeria%>
+<% if !esasociacion(@pagina)%>
 <table class="listado_registros">
     <%= render :partial => "/shared/cabecera_tabla_gestion",
     :locals =>{ :n_columns=>7,:title=>titulo_pagina+": "+t('galeria'), :columns=>[t('zoom'), t('min')]} %>
