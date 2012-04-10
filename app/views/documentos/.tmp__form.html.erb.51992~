@@ -20,7 +20,7 @@
  <%=  f.hidden_field :pagina_id%>
   <div class="field">
     <%= f.label t :tipo %><br />
-    <%= f.select(:tipo, dameTipos(session[:sitio_id].to_s)) %>
+    <%= f.select(:tipo, dameTipos(session[:sitio_id])) %>
   </div>
   <div class="field">
     <%= f.label t :doces %><br />

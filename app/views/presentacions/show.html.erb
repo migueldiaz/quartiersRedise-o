@@ -16,7 +16,7 @@
 		:locals =>{ :n_columns=>5,:title=>t('paginas_de')+" "+t('presentacion'), :columns=>[t('tituloEs'), t('tituloFr')]} %>
       <%end%>
 
-   <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas %>
+   <%= render :partial => "paginas/pagina", :collection => @presentacion.paginas, :locals=>{:sitio_id=>@sitio.id} %>
   </table>
 </div>
 <div class="opciones_generales">

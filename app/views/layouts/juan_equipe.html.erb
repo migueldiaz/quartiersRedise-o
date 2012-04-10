@@ -37,7 +37,7 @@
 		<hr class="space"/>
 		</div>
             <div class="span-24">
-				 <div class="<%=dame_class_izq %> " id="nav_paginas">
+				 <div class="<%=dame_class_izq %> " id="<%= if !yield(:menu_izq).blank? then 'nav_paginas' end%>">
 				 	<%=yield :menu_izq%>
 				</div>
 				

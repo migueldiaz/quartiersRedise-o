@@ -1,5 +1,13 @@
 
-es: 
+es:
+ tipos_as_1: 'documentacion general e informes' 
+ tipos_as_2: 'formaciones' 
+ tipos_as_3: 'estudios y trabajos' 
+ tipos_as_4: 'articulos, participaciones a conferencias' 
+ tipos_as_5: 'publicaciones' 
+ tipos_as_6: 'textos de referencia' 
+ tipos_as_7: 'galerias de fotos' 
+ en: 'en' 
  slogan: '... de todas formas, cada barrio es un mundo ...'
  entrar: 'entrar'
  video: 'video'

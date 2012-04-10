@@ -12,15 +12,19 @@ def videos
  		else
  			@videos=@videosfemmes.paginate(:page => params[:page], :per_page => 10)
  		end
- 		      #  @seccion_menu=:biblioteca
+ 		        @seccion_menu=:videos
 
 end
 
 def biblioteca
  		@femmes=Femmes.first
  		@sitio=@femmes.sitio
+          session[:sitio_id]=@sitio.id
+
  		@paginas=@sitio.paginas
  		@documentosfemmes=Documento.where(:pagina_id=>@paginas)
+    logger.info @documentosfemmes.length
+    logger.info "ofuuuu"
  		if params[:search]
  		  @resultado = @documentosfemmes.with_query(params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)

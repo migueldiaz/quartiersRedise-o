@@ -10,5 +10,5 @@
  	   <%= render :partial => "/shared/cabecera_tabla_gestion", 
 		:locals =>{ :n_columns=>5,:title=>t('actividades'), 
 		:columns=>[t('tituloEs'), t('tituloFr'),"detalle", "editar", "borrar"]} %>
-   <%= render :partial => "paginas/pagina", :collection => @red.paginas %>
+   <%= render :partial => "paginas/pagina", :collection => @red.paginas,:locals=>{:sitio_id=>@sitio.id} %>
 </table>

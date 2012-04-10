@@ -19,7 +19,8 @@ layout 'mono'
   def show
    logger.info '*******************************show'
    @sitio = Sitio.find(params[:id])
-   
+    session[:sitio_id]=@sitio.id
+     
     if !@sitio.equipo.nil?
        @equipo=@sitio.equipo
        if !@equipo.jeunes.nil?

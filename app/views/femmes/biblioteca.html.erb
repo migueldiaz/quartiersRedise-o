@@ -1,19 +1,2 @@
-<h2><%=t('biblioteca')+': '+t('femmes')%></h2>
+<%=render(:file => "/shared/biblioteca.html.erb",:locals => {:proyecto=>"femmes", :todos=>@documentosfemmes, :trad_pro=>'femmes', :tipos_doc=>tipos_femmes} )  %>
 
-<%= render 'busquedas/buscarfemmes'%>
-
-<%if params[:search]%>
-<p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %><%=link_to t('destroy')+' '+'busqueda',femmes_biblioteca_path%></p>
-<%end%>
-<ul>
-<% @documentos.each do |documento|%>
-		<% if spanish%>
-			<li><b><%=link_to documento.doces,documento.archivo_url.to_s%></b>
-			en <%=link_to documento.pagina.tituloes,femmes_pagina_path(:id=>documento.pagina)%></li>
-		<%else%>	
-			<li><b><%=link_to documento.docfr,documento.archivofr_url.to_s%></b>
-			dans <%=link_to documento.pagina.titulofr,femmes_pagina_path(:id=>documento.pagina)%></li>
-		<%end%>
-	<%end%>
-</ul>
-<%= will_paginate @documentos %>

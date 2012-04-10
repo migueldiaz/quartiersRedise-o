@@ -25,6 +25,8 @@ class AsociationController < ApplicationController
  	def biblioteca
  		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
+          session[:sitio_id]=@sitio.id
+
  		@paginas=@sitio.paginas
  		@documentosasoc=Documento.where(:pagina_id=>@paginas)
  		if params[:search]

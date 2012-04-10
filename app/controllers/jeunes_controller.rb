@@ -17,14 +17,16 @@ def videos
  		else
  			@videos=@videosjeunes.paginate(:page => params[:page], :per_page => 10)
  	end
-     # @seccion_menu=:biblioteca   
+     @seccion_menu=:videos   
 end
 
 
 
 def biblioteca
+
  		@jeunes=Jeunes.first
  		@sitio=@jeunes.sitio	
+      session[:sitio_id]=@sitio.id
  		@paginas=@sitio.paginas
  		@documentosjeunes=Documento.where(:pagina_id=>@paginas)
  		if params[:search]

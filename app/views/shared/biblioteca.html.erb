@@ -1,0 +1,58 @@
+<h1><%=t('documentacion')+': '+t(trad_pro)%></h1>
+
+<%= render :partial =>'busquedas/buscar', :locals=>{:proyecto=>proyecto}%>
+
+<%
+if params[:search]%>
+<p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %><%=link_to t('destroy')+' '+'busqueda',send(proyecto+"_biblioteca_path")%></p>
+<% @documentos.each do |documento|%>
+<%= render :partial => "/documentos/documento_de_lista", :locals => {
+:dd=>documento,
+:pathito=>send(proyecto+"_pagina_path",:id=>documento.pagina)
+
+}
+%>
+<%end%>
+
+
+<%= will_paginate @documentos %>
+
+<%else%>
+
+
+<%
+
+valores=Hash.new
+todos.each do |documento|
+
+if valores[documento.tipo]==nil then
+	valores[documento.tipo]=Array.new
+end
+	valores[documento.tipo].push documento
+end
+
+
+%>
+
+<% 
+tipos_doc.sort {|a,b| a[1] <=> b[1]}.each do |documento|
+v=valores[documento[1]]
+if(!v.nil?)
+%>
+<h2><%=dameNombre(documento[1],tipos_as)%></h2>
+
+
+<ul>
+<% v.each do |dd|%>
+<%= render :partial => "/documentos/documento_de_lista", :locals => {
+:dd=>dd,
+:pathito=>send(proyecto+"_pagina_path",:id=>dd.pagina)
+}
+%>
+	
+<%end%>
+</ul>
+<%end%>
+<%end%>
+<%end%>
+
