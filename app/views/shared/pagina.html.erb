@@ -115,7 +115,7 @@ if(!@protagonsitas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 :imagen=>video.thumbnail, 
 :enlace_imagen=>"#video"+video.id.to_s, 
 :imagen_class=>"left",
-:imagen_title=>video.send(:titulo.to_s+local),
+:imagen_title=>"PLAY: "+video.send(:titulo.to_s+local),
 :galeria=>false,
 :lightbox=>false,
 }

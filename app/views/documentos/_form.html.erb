@@ -19,6 +19,10 @@
   <%=  f.hidden_field :foro_id%>
  <%=  f.hidden_field :pagina_id%>
   <div class="field">
+    <%= f.label t :tipo %><br />
+    <%= f.select(:tipo, tipos_as) %>
+  </div>
+  <div class="field">
     <%= f.label t :doces %><br />
     <%= f.text_field :doces %>
   </div>

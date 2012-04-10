@@ -37,10 +37,9 @@ end
 <% 
 tipos_as.sort {|a,b| a[1] <=> b[1]}.each do |documento|
 v=valores[documento[1]]
-if(!v.nil?)
 %>
-<h2><%=dameNombre(documento[1],tipos_as)%> >> <%=v.length%></h2>
-<%end%>
+
+oooo<%=v%><br>
 <%end%>
 
 

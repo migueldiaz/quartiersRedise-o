@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409235023) do
+ActiveRecord::Schema.define(:version => 20120410004604) do
 
   create_table "add_protagonistas_to_paginas", :force => true do |t|
     t.integer  "protagonistas_id"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20120409235023) do
     t.integer "foro_id"
     t.boolean "revisadofr", :default => false
     t.integer "position",   :default => 50
+    t.integer "tipo",       :default => 0
   end
 
   create_table "enfoques", :force => true do |t|
