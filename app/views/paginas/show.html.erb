@@ -54,7 +54,7 @@ titulo_pagina=@pagina.send(dame_nombre_metodo_bis('titulo')) %>
 
 <table class="listado_registros">
     <%= render :partial => "/shared/cabecera_tabla_gestion",
-    :locals =>{ :n_columns=>6,:title=>titulo_pagina+": "+t('videos'), :columns=>[t('tituloes'), t('titulofr'),t('html'),]} %>
+    :locals =>{ :n_columns=>7,:title=>titulo_pagina+": "+t('videos'), :columns=>[t('tituloes'), t('titulofr'),t('html'),t('thumbnail')]} %>
     <%= render :partial => "videos/video", :collection => @pagina.videos %>
 </table>
 <div class="opciones_generales">

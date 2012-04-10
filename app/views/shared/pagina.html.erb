@@ -107,9 +107,23 @@ if(!@protagonsitas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
   <% if (!@pagina.videos.empty?) then  %>
 <div class="documentacion">
 <div class="ficha_izq_titulo"><%=t('videos')%></div>
-<ul>
+<ul style="list-style-type: none;margin-left:-19px">
 <% @pagina.videos.each do |video| %>
-				<li ><a href="#video<%=video.id%>"><%= video.send(:titulo.to_s+local) %></a></li>
+				<li >
+					<%if (!video.thumbnail.blank?) then%>
+					<%= render :partial => "/shared/img", :locals => {
+:imagen=>video.thumbnail, 
+:enlace_imagen=>"#video"+video.id.to_s, 
+:imagen_class=>"left",
+:imagen_title=>video.send(:titulo.to_s+local),
+:galeria=>false,
+:lightbox=>false,
+}
+%> 	
+<%else%>
+<a href="#video<%=video.id%>"><%= video.send(:titulo.to_s+local) %></a>
+	<%end%>
+					</li>
 <%end%>
 </ul>
 </div>

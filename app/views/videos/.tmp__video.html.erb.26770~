@@ -5,9 +5,6 @@
    <td>
     <%=video.html%>
    </td>
-   <td>
-    <%=video.thumbnail%>
-   </td>
   
    <td><%= link_to t('show'), video_path(video)%></td>
    <td><%= link_to t('edit'), edit_video_path(video)%></td>
