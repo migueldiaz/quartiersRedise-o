@@ -83,13 +83,13 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 	
 <% @paginas.each do |pagi| %>
 	 	<li>
-	 		<%= link_to " - "+pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
+	 		<%= link_to pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
 			<%if (pagi==@pagina) 
 			@amplia=true%>
-			<ul style="margin-top:10px;">
+			<ul style="margin-top:10px;margin-left:-20px;">
 				<% pagi.parrafos.each do |parrafo| 
 				if parrafo.send(:titulo.to_s+local)!="" %>
-				<li >* <a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
+				<li style="font-size:0.6em;"><a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
 				<%end
 				end%>
 			</ul>

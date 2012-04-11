@@ -191,26 +191,30 @@ float: left;
 
 
 /*div documentacion*/
+ul, ol{
+	padding-left:10px;
+}
 .documentacion, .paginas{
 	ul {
-	    font-size: 1.5em;
+	    font-size: 17px;
 	    margin-left: 0px;
 	    margin-top: -15px;
-		list-style:circle;
+	    margin-bottom: 5px;
+		list-style:none;
 	}
 	li {
 	    font-size: 0.9em;
+		margin-left:3px;
 	    font-weight: 400;
 		a{
 		    color: black;
     		text-decoration: none;
 			& :hover{
 				color:@color_naranja;
+				background-color:white;
 			}
 			& .selected{
-			    text-decoration: underline;
 				color:@color_naranja;
-				background-color:white;
 			}
 		}
 		.pdf { list-style-image: url(../images/pdf_min.jpg);}	  

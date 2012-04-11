@@ -8,7 +8,6 @@ div.menu_superior{
 		list-style:none;
 		margin-left:-27px;
 		padding:none;
-	}
 	li{ 
 		font-size:0.9em;
 		.div_border(6px);
@@ -17,6 +16,7 @@ div.menu_superior{
 		margin-right:1px;
 		float:left;
 		.white_on_black;
+	}
 	}
 }
 /*menu superior*/
@@ -65,7 +65,6 @@ div.menu_superior{
 			}
 		}
 		list-style:none;
-		font-family:"Nunito";
 		font-weight: 400;
 		font-size:@menu_font_size;
 		.submenu{
@@ -109,9 +108,14 @@ div.menu_superior{
 		}
 		ul {
 			position:absolute;
+			
+
 			margin-top:-0.2em;
 			margin-left:.5em; /* for IE */
 			display:none;
+
+			font-size:@menu_font_size;
+
 			& .submenu a:hover{
 					background-color:black;
 					color:@color_naranja;
@@ -122,8 +126,8 @@ div.menu_superior{
 
 }
 .ficha_izq_titulo{
-	font-size: 1.5em;
+	color:@color_naranja;
+	font-size: 1.7em;
 	margin-bottom:18px;
-	font-weight:400;
-	text-decoration:underline;
+	
 }
