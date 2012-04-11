@@ -13,12 +13,27 @@ else
 <h1><%=@pagina.send(:titulo.to_s+local)%></h1>
 <%
 end
+hay_videos_final_pagina=false
+ @pagina.videos.each do |video|
+	if video.position==0
+	 hay_videos_final_pagina=true
+	break
+	end
+end
+
 %>
 
-<% @pagina.parrafos.each do |parrafo| %>
+<% contador=1
+@pagina.parrafos.each do |parrafo| 
+
+%>
+	<%=posiciona_video (@pagina.videos, contador)%>
+
 		<a name="parrafo<%=parrafo.id%>"></a>
  		<h2><%= parrafo.send(:titulo.to_s+local) %> </h2> 
 <%
+contador+=1
+
 if !parrafo.imagenmini_url.nil? and !parrafo.imagenmini_url.empty?
 @img_existente=parrafo.imagenmini_url
 else
@@ -35,7 +50,7 @@ end
 %> 	
 <p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
  <% end %>
-  <% if (!@pagina.videos.empty?) then  %>
+  <% if (!@pagina.videos.empty? and hay_videos_final_pagina) then  %>
   <hr class="space"/>
 <div class="galeria">
 <h1><%=t('videos')%></h1>
@@ -83,13 +98,13 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 	
 <% @paginas.each do |pagi| %>
 	 	<li>
-	 		<%= link_to pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
+	 		<%= link_to " - "+pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
 			<%if (pagi==@pagina) 
 			@amplia=true%>
-			<ul style="margin-top:10px;margin-left:-20px;">
+			<ul style="margin-top:10px;">
 				<% pagi.parrafos.each do |parrafo| 
 				if parrafo.send(:titulo.to_s+local)!="" %>
-				<li style="font-size:0.6em;"><a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
+				<li >* <a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
 				<%end
 				end%>
 			</ul>

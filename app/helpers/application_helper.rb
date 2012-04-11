@@ -1,5 +1,20 @@
 module ApplicationHelper
   
+  
+  def posiciona_video (videos, contador)
+    html=""
+     videos.each do |video|
+  if video.position==contador.to_int
+  html<<"<a name='video"+video.id.to_s+"'/><h2>"+video.send(:titulo.to_s+local)+"</h2>"+video.html
+
+end
+
+end
+  return html.html_safe
+    
+  end
+  
+  
   ##Helper que detecta si la pagina es jeunes
   def esjeunes(pagina)
   	@pagina=Pagina.find(pagina)

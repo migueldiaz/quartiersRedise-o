@@ -13,6 +13,10 @@
       </ul>
     </div>
   <% end %>
+   <div class="field">
+    <%= f.label t :position %><br />
+    <%= f.select :position, (0..50) %>
+  </div>
 
   <div class="field">
     <%= f.label :tituloes %><br />
