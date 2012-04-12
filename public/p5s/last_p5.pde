@@ -45,11 +45,13 @@ void setup(){
 
 	font=loadFont("Courier");
 	textMode(SCREEN);	
+	textFont(font, sizeTexto); 
+	
 	hint(DISABLE_OPENGL_2X_SMOOTH);
 
 	colorMode(HSB, 100);
 	background(80);
-	size(800, 400);
+	size(470, 350);
 	/*
 	logea("ciudades", ciudades);
 	logea("mujeres", mujeres);
@@ -65,7 +67,7 @@ void setup(){
 
 int limiteRandomSup=5;
 int limiteRandomInf=5;
-int sizeTexto=60;
+int sizeTexto=30;
 int posicionX=0;
 int posicionY=0;
 int posicionInicial=0;
@@ -85,7 +87,7 @@ void inicio(){
 
 void draw(){
 	
-	if(frameCount%(30*2)==0){
+	if(frameCount%(30*5)==0){
 		if(finalAlcanzado){
 		contadorApariciones++;
 		if(contadorApariciones%2!=0){
@@ -109,7 +111,7 @@ void draw(){
 			resetPosiciones();
 			finalAlcanzado=false;
 		}
-		pinta(sizeTexto+(int)random(-20,50));
+		pinta(sizeTexto);
 	}
 }
 
@@ -130,7 +132,6 @@ public void pinta(int sizeT){
 	rect(0,0,width, height);
 			image(mapa, 0, 0,width,height);
 	
-	textFont(font, sizeT); 
   for(int posicion=posicionInicial; posicionInicial<mensaje.length(); posicionInicial++){
 
     char caracterActual=mensaje.charAt(posicionInicial);

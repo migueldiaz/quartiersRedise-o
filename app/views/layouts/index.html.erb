@@ -1,158 +1,85 @@
-<!DOCTYPE HTML>
-<html class="not-ie ready"><head>
+<html>
+	<%=render :file => "/layouts/_head_index.html.erb", :locals => {
+:google_fonts=>"http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700",
+:less=>"colors_femmes.less"
 
-<!--[if !IE]>  --> <!-- <![endif]-->
-<!--[if lt IE 6]>  <html class="notready ie ltie9 ltie8 ltie7 ie5"><![endif]-->
-<!--[if IE 6]>     <html class="notready ie ltie9 ltie8 ltie7 ie6"><![endif]-->
-<!--[if IE 7]>     <html class="notready ie ltie9 ltie8 ie7"><![endif]-->
-<!--[if IE 8]>     <html class="notready ie ltie9 ie8"><![endif]-->
-<!--[if gte IE 9]> <html class="notready ie ltie10 ie9"><![endif]-->
-	<meta charset="utf-8">
+} %>
+    <body  >
 
-	<title><%=t('qdm')%> www.quartiersdumonde.org</title>
+        <div class="container" id="content">
+        	
+            <div class="span-24 append-bottom" >
+                <div class="span-4 " style="text-align:left;" >
+                    <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
+                </div>
 
-	<!-- link href='http://fonts.googleapis.com/css?family=Josefin+Slab:regular,bolditalic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css' -->
-	
-	<%
-google_fonts="http://fonts.googleapis.com/css?family=Josefin+Slab:regular,bolditalic|Josefin+Sans|Love+Ya+Like+A+Sister|Gloria+Hallelujah|Cabin+Sketch:700|Sue+Ellen+Francisco|Nunito:400|Walter+Turncoat"
-less="colors_index.less"
-	
-%>
-<link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>">
-<%= javascript_include_tag('less-1.1.3.min') %>          
-<%= javascript_include_tag('processing-1.3.6') %>          
-<%= javascript_include_tag('toxiclibs') %>          
-
-<link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/>
-	<!-- link href="slideshow_files/css.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="slideshow_files/style.css" type="text/css" media="screen" title="no title" charset="utf-8" >	 -->
-
-<script type="text/javascript">
-	var mycars=["foros_last","foros_escale", "foros_bandas", "foros_def"];
-					function reseteaP5(id){
-						Processing.getInstanceById(id).reset();
-						for (var i = 0; i < mycars.length; i++) {
-							var carIn = mycars[i];
-								//alert("examinando"+carIn+"dddd"+id);								
-							if (carIn != id) {
-								//alert("parando"+carIn);								
-								Processing.getInstanceById(carIn).parar();
-							}
-							
-						}
-					}
-					
-</script>
-
-</head>
- <body>
-
-	<img id="wallpaper" src="slideshow_files/background.jpg">
-		<div id="content">
-		
-		<ul style="top: 0px;" id="nav">
-		    <li >
-		    <%=link_to( t('es'), url_for( :locale => 'es', :id=>params[:id] ) , :class=>comprueba('es')) if esfrances %>
-			<%=t('es') if !esfrances %>
-			</li>
+                <div class="span-20 last" >
+					<%=render  "/shared/menu_idioma"%>
+	                <hr class="space">
+ <%if !usuarioforologado%>	             
+    <hr class="space">
+	<%end%>
+	                <hr class="space">
+					<hr class="space">
+					<div class="menu_superior">
+				<ul id="menu" >
+		<li class="seleccionado"><%=link_to t('home'),root_path%></li>
+		<li><%=link_to t('asociacion'),asociation_path%></li>
+		<li><%=link_to t('qdmsubtitle'),jeunes_path%></li>
+		<li><%=link_to t('qdmfemmes'),femmes_path%></li>
+		<li><%=link_to t('contacto'),asociation_contacto_path%></li>
+</ul>		
+</div>
+                </div>
+                
+            </div>
 			
-		    <li >
-			<%=link_to( t('fr'), url_for( :locale => 'fr', :id=>params[:id] ) , :class=>comprueba('fr')) if spanish %>
-				<%=t('fr') if !spanish %>
-
-			</li>
-			<!-- li class="current" ><a href="#">mapa-web</a></li -->
-			<!-- li class=""><div style="padding:5px;">
-			<form> Buscar: <input size="5" type="text" name="buscar"/><img src="imgs/search1.gif"/></form>
-			</div></li -->
-			<!-- li class="" >logging/registro</li -->
-		</ul>
 		
-		<div id="main-show">
-			<div style="position: absolute; z-index: 1; display: none; left: 0px; top: 0px; visibility: hidden; opacity: 0;" id="introduction" class="page">
+            <div class="span-24">
+            <div class="span-12">
+            	
+			
+					<canvas id="foros_last" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
+            </div>
+            <div class="span-12 last">
+            			<h2><%=t('slogan')%></h2>
 
-				<div id="intro-show">
+            	<% @eventos.each do |evento| %>
+				
+            <div class="mosaic-block bar">
+
+			<a href="<%=asociation_agenda_path( :anchor=>"evento"+evento.id.to_s)%>"  class="mosaic-overlay" style="display: inline; left: 0px; bottom: -52px; ">
+				<div class="details">
+					<h4><%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></h4>
+					<p>más valor</p>
+				</div>
+			</a>
+			<div class="mosaic-backdrop">
+				<%=image_tag(evento.imagen_url, :width=>"200", :height=>"150")%>
 				</div>
 			</div>
+				<%end%>
+		
+		<div class="clearfix"></div>
+            </div>
 
-			<div style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" id="navigation-demo" class="page">
-				<ul id="navigation-show">
-					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-
-									<div class="info">Bienvenido al site QuartiersDuMonde.org</div>
-<canvas id="foros_last" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
-  
-									<!--
-									<div class="infodet">
-												
-
-									 </div>
-									<div class="infodet2">
-									 </div>
-
-						<h1>HOLA</h1>
-						-->
-</li>
-					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-					
-														<div class="info"><%=t('asociacion').upcase%>><%=link_to t('entrar'),asociation_path, :title=>"title asociacion"  %> </div>
-<canvas id="foros_escale" 
-data-processing-sources="pde/foros_escale_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde  pde/servicio_toxi_color.pde pde/escala.pde pde/servicio_escala.pde pde/transicion_escala.pde pde/comentario_escala_mapa.pde pde/movimiento.pde pde/mensaje.pde pde/log.pde"></canvas>  								
-<!--
-									<div class="discreta">
-										
-					Ficha de asociación QDM: pequeña descripción, últimas noticias y enlace a pagina de información detallada de asociación
-					<hr>
-					El acceso a la información detallada se presenta en otro diseño de página más acorde a una mayor cantidad de información
-	 </div>
--->
-
-					
-					</li>
-					<li style="position: absolute; z-index: 0; display: block; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-									<div class="info"><%=t('qdmsubtitle').upcase%>><%=link_to t('entrar') ,jeunes_presentacion_path  %></div>
-
-						<canvas id="foros_bandas" 
-data-processing-sources="pde/foros_bandas.pde pde/log.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/rectangulo_banda.pde pde/servicio_toxi_color.pde"></canvas>  			
-					</li>
-					<li  style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" >
-
-									<div class="info"><%=t('femmes').upcase%>><%=link_to t('entrar'),femmes_presentacion_path  %>  </div>
-
-										 <canvas id="foros_def" 
-data-processing-sources="pde/foros_def.pde pde/servicio_load_foros_XML.pde pde/comentario_foro.pde pde/equipo.pde pde/usuario.pde pde/fila.pde pde/rectangulo.pde pde/servicio_toxi_color.pde pde/log.pde"></canvas>
-
-	</li>
-					<li style="position: absolute; z-index: 0; display: none; left: 0px; top: 0px; visibility: visible; opacity: 1;" class="limpia">
-					
-					
-
-
-
-								Información de contacto y enlaces para seguimiento en facebook, feed de videos (blip.tv, vimeo...) ...</li>
-				</ul>
-
-					<ul class="nav">
-					<li style="background-color: rgb(200, 0, 25); background-position: 0px 0px;" onclick="reseteaP5('foros_last')">HOME</li>
-					<li onclick="reseteaP5('foros_escale')"><%=t('asociacion').upcase%></li>
-					<li onclick="reseteaP5('foros_bandas')"><%=t('qdmsubtitle').upcase%></li>
-					<li onclick="reseteaP5('foros_def')"><%=t('qdmfemmes').upcase%></li>
-					<li><%=t('contacto').upcase%></li>
-				</ul>
-
-				
-				<p id="ultima_slogan"><%=t('slogan')%></p>
+            </div>
 			
-			</div>
-		</div>
-		<cite id="copy">designed / developed by <a href="http://enjava.com/">enjava.com</a></cite>
-	</div>
-	
-	
-	<script type="text/javascript" src="slideshow_files/mootools-yui-compressed.js"></script>
-	<script type="text/javascript" charset="utf-8" src="slideshow_files/combined-google.js"></script>
-	<script type="text/javascript" charset="utf-8" src="slideshow_files/demo.js"></script>
-</body>
+            <div class="span-24" >
 
+
+			<hr class="space">
+		<h2><%=t('slogan')%></h2>
+			<hr class="space">
+			<hr class="space">
+            </div>
+				
+                <div class="span-24 append-bottom copy" style="color:black;">
+                        2011©QuartierDuMonde
+                   
+                </div>
+            </div>
+        </div>
+
+    </body>
 </html>

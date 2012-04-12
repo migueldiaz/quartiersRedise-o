@@ -2,7 +2,11 @@ class QuartiersController < ApplicationController
   	layout 'juan'
  	def index 
   	#@eventos = Evento.where('sitio_id'=> @sitio)
-  		@web=Web.first
+            @asociacion=Asociacion.first
+      @sitio=@asociacion.sitio
+
+       @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC')  
+
   		#@sitio=@web.asociacion.sitio
           respond_to do |format|
       format.html  {render :layout => 'index'}  
