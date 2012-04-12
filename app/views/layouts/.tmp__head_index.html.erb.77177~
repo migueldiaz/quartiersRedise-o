@@ -24,8 +24,6 @@
 <!--link href='<%=google_fonts%>' rel='stylesheet' type='text/css'/ -->
 <%= stylesheet_link_tag('femmes') %>
 <!-- link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>" -->
-<%else%>
-<%= stylesheet_link_tag('femmes') %>
 <%end%>
 <%end%>
 <%= javascript_include_tag('processing-1.3.6') %>          
