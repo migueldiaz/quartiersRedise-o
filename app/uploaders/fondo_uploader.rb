@@ -1,9 +1,10 @@
 # encoding: utf-8
 
-class ImagenUploader < CarrierWave::Uploader::Base
+class FondoUploader < CarrierWave::Uploader::Base
+  include CarrierWave::RMagick
 
   # Include RMagick or ImageScience support:
-  include CarrierWave::RMagick
+  # include CarrierWave::RMagick
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
@@ -24,7 +25,7 @@ class ImagenUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
-  process :resize_to_limit => [700, 500]  
+  process :resize_to_limit => [1200, 800]  
 
   # def scale(width, height)
   #   # do something

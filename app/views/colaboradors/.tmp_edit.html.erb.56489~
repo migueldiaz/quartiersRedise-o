@@ -1,0 +1,19 @@
+<div class="detalle_gestion">
+<h1><%=t('edit')+' '+t('colaborador')%></h1>
+
+<%= render 'form' %>
+
+
+<div class="opciones_generales">
+	<ul  >
+		<%=render :partial=>"/shared/opcion_gestion", :locals=>{:mensaje=>t('show'), :path_volver=> @colaborador} %>         
+<%if current_user.tipo=='traductor'%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:modo=>'sintrad')} %>   
+
+<%else%>
+		<%=render :partial=>"/shared/opcion_volver", :locals=>{:path_volver=>colaboradors_path(:id=>@colaborador.sitio)} %>   
+<%end%>
+
+</ul>
+</div>
+</div>
