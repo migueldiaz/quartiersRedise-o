@@ -67,6 +67,8 @@ fr:
  enfoque: 'Que faisons-nous?'
  galeria: "Galerie d'images"
  lequipos: 'Equipes'
+ red: 'Activités'
+
  actividades: 'Activités internationales'
  close: 'Fermer'
  qdm: 'BARRIOS DEL MUNDO'
@@ -101,7 +103,7 @@ fr:
  proyectos: 'projets'
  documentacion: 'Documentation'
  equipos: 'equipes'
- colaboradores: 'collaborateurs'
+ colaboradores: 'Partenaires'
  agenda: 'Actualités'
  contacto: 'Contactez-nous'
  acceso: "l'accès"
