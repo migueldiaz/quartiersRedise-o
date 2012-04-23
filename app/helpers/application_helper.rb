@@ -1,10 +1,10 @@
 module ApplicationHelper
   
   
-  def posiciona_video (videos, contador)
+  def posiciona_video (videos, c)
     html=""
      videos.each do |video|
-  if video.position==contador.to_int
+  if video.position==c.to_int
   html<<"<a name='video"+video.id.to_s+"'/><h2>"+video.send(:titulo.to_s+local)+"</h2>"+video.html
 
 end

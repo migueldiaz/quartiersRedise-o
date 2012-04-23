@@ -28,7 +28,7 @@ contador=1
 @pagina.parrafos.each do |parrafo| 
 
 %>
-	<%=posiciona_video (@pagina.videos, contador)%>
+	<%=posiciona_video(@pagina.videos, contador)%>
 
 		<a name="parrafo<%=parrafo.id%>"></a>
  		<h2><%= parrafo.send(:titulo.to_s+local) %> </h2> 
@@ -52,7 +52,7 @@ end
 <p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
  <% end %>
  <% contador.upto(50) do |i|  %>
-	<%=posiciona_video (@pagina.videos, i)%>
+	<%=posiciona_video(@pagina.videos, i)%>
 <%end%>
 
   <% if (!@pagina.videos.empty? and hay_videos_final_pagina) then  %>
