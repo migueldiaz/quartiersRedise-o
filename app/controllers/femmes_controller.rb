@@ -67,7 +67,7 @@ def presentacion
   	@presentacion=@femmes.sitio.presentacion
   	@pagina=@presentacion.paginas.first
 	if !@presentacion.paginas.nil? && !@pagina.nil?
-  		redirect_to femmes_pagina_path(:id=>@pagina)
+  		redirect_to femmes_pagina_path(:id=>@pagina, :p5js=>true)
   	end
 end
 def documentacion
@@ -80,6 +80,8 @@ def documentacion
 end
 
 def pagina
+      @p5js=params[:p5js]
+
 		@pagina=Pagina.find(params[:id])
 		@femmes=Femmes.first
 		@sitio=@femmes.sitio
@@ -143,7 +145,7 @@ def equipos
   		@equipos=@femmes.equipos
   		@sitio=@femmes.sitio
         respond_to do |format|
-            format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre])}
+            format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre, :x, :y])}
             format.html
     end
 end

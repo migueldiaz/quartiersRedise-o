@@ -45,6 +45,13 @@
 				</div>
 				
                 <div class="<%= dame_class_central%> ">
+                	<%if @p5js %>
+					<input type="hidden" id="path" value="jeunes"/>
+					<input type="hidden" id="map_image" value="carte_peters"/>
+                	<div style="text-align:center">
+					<canvas id="foros_last" data-processing-sources="../p5s/last_jeunes.pde ../p5s/equipo_mini.pde ../p5s/log.pde ../p5s/servicio_load_equipos_mini_XML.pde"></canvas>  
+                	</div>	
+					<%end%>
                     <%= yield %>
                 </div>
                 <div class="<%= dame_class_dcha%> ">

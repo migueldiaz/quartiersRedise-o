@@ -1,9 +1,3 @@
-<%
-if(!@equipo.x.nil?)
-@onload="precarga(#{@equipo.x}, #{@equipo.y});"
-end
- %>
-
 <%= form_for @equipo, :html => {:multipart => true} do  |f| %>
 <% if @equipo.errors.any? %>
     <div id="error_explanation">
@@ -41,14 +35,15 @@ end
         <%= f.file_field :imagen %>
     </div>
   
-   <div class="field">
-    <%= f.hidden_field :x %>
-    <%= f.hidden_field :y %>
-   	    <%= f.label t "hacer click para situar en mapa a este equipo"  %><br />
-
-		<canvas id="mapita" data-processing-sources="/p5s/map_edit.pde  /p5s/log.pde "></canvas>  
-
-   	</div>
+  <!---->
+    <div class="field">
+    <%= f.label t :x  %><br />
+    <%= f.text_field :x %>
+  </div>
+  <div class="field">
+    <%= f.label t :y  %><br />
+    <%= f.text_field :y %>
+  </div>
   
    <div class="field">
     <%= f.label t :descripcionEs  %><br />

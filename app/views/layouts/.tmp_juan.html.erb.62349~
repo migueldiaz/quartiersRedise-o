@@ -1,57 +1,48 @@
 <html>
-		<%=render :file => "/layouts/_head.html.erb", :locals => {
+	<%=render :file => "/layouts/_head.html.erb", :locals => {
 :google_fonts=>"http://fonts.googleapis.com/css?family=Lora:400,400italic|Tinos|Open+Sans+Condensed:300|Nunito:300,400,700",
-:less=>"colors_femmes.less"
+:less=>"colors.less"
+
 } %>
-
-
     <body>
     	<div id="loading">&nbsp;</div>
 
-	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; border-bottom: solid 1px black; ">
+	<div id="capa_t" class="transparent" style="background-color:white;position:absolute; top:0px; left:0px;   width:100%; text-align:left; z-index:-1; ">
 		<p>&nbsp;</p>
 	</div>
 
         <div class="container ">
+        	
             <div class="span-24 append-bottom" >
-
-                <div class="span-24 " style="margin-top:-16px;">
-                	<div style="font-size:2.5em;float:left;font-family:'Open Sans Condensed Bold';">
-                <span style="line-height:0.6; "><%=t('qdmfemmes') %></span>
-                <span style="">- <%=t('qdmfemmessubtitle')%></span>
-				</div>
-
-				<%=render  "/shared/menu_idioma"%>
-
-<div class="menu_superior " >
-
-<%=render "/layouts/menu" %>
-
-</div>
-                </div>
-                <!-- div class="span-5 append-1 last " style="text-align:right;" >
+                <div class="span-4 " style="text-align:left;" >
                     <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
-                </div -->
+                </div>
+
+                <div class="span-20 last" >
+					<%=render  "/shared/menu_idioma"%>
+	                <hr class="space">
+ <%if !usuarioforologado%>	             
+    <hr class="space">
+	<%end%>
+	                <hr class="space">
+					<hr class="space">
+					<div class="menu_superior " >
+					<%=render "/layouts/menu" %>
+					</div>
+                </div>
                 
             </div>
+			
 		 <div class="span-24">
 		<hr class="space"/>
 		</div>
-          
- <div class="span-24">
+		
+            <div class="span-24">
 				 <div class="<%=dame_class_izq %> " id="<%= if !yield(:menu_izq).blank? then 'nav_paginas' end%>">
-				 	<%=yield :menu_izq%>
+				 	<%=yield  :menu_izq%>
 				</div>
 				
                 <div class="<%= dame_class_central%> ">
-                	<%if @p5js %>
-					<input type="hidden" id="path" value="femmes"/>
-					<input type="hidden" id="map_image" value="carte_peters"/>
-                	<div style="text-align:center">
-					<canvas id="foros_last" data-processing-sources="../p5s/last_jeunes.pde ../p5s/equipo_mini.pde ../p5s/log.pde ../p5s/servicio_load_equipos_mini_XML.pde"></canvas>  
-                	</div>	
-					<%end%>
-
                     <%= yield %>
                 </div>
                 <div class="<%= dame_class_dcha%> ">
@@ -59,11 +50,12 @@
                 </div>
 
             </div>
-				  <div class="span-24" >
+            <div class="span-24" >
 	            <div class="prepend-4 last">
 				<%=render "/layouts/menu_inferior"%>
 	            </div>
             </div>
+				
                 <div class="span-24 append-bottom">
                     <hr class="space">
                     <div class="span-6 prepend-1 append-9">
@@ -78,7 +70,7 @@
                 </div>
             </div>
         </div>
-				<div id="supersized"></div>
+		<div id="supersized"></div>
 
     </body>
 </html>

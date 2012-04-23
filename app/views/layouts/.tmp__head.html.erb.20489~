@@ -31,13 +31,9 @@
 <!-- link rel="stylesheet/less" type="text/css" href="/javascripts/<%=less%>" -->
 <%end%>
 <%end%>
-<%= javascript_include_tag('processing-1.3.6') %>    
-<%= javascript_include_tag('toxiclibs') %>          
-      
 <%= javascript_include_tag('jquery.lightbox-0.5') %>          
 <%= javascript_include_tag('rails-jquery') %>          
 <%= javascript_include_tag('menu') %>
-
 <%=render "/layouts/morejs" %> 
 
 <!--       
