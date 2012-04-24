@@ -118,10 +118,10 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 			<%end%> 
 		</li> 
 <% end 
-if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
+if(!@protagonsitas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 
-			<li  ><%=link_to t('aportan_new'),asociation_colaborador_aportan_path%></li>
-			<li  ><%=link_to t('noaportan_new'),asociation_colaborador_no_aportan_path%></li>
+			<li  ><%=link_to t('aportan'),asociation_colaborador_aportan_path%></li>
+			<li  ><%=link_to t('noaportan'),asociation_colaborador_no_aportan_path%></li>
 <%end%> 
 </ul>
 </div>

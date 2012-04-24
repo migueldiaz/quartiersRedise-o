@@ -26,6 +26,8 @@ fr:
  entradas: 'archives'
  resultado: 'Résultats'
  buscar: 'Recherche'
+ aportan_new: 'LES PARTENAIRES INSTITUTIONNELS ET FINANCIERS'
+ noaportan_new: 'LES ENTITÉS MEMBRES DU RÉSEAU'
  will_paginate:
     previous_label: "&#8592; Précédent"
     next_label: "Suivant &#8594;"

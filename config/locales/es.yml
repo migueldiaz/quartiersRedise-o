@@ -113,6 +113,8 @@ es:
  traductores: 'traductores'
  aportan: 'Socios colaborativos'
  noaportan: 'Socios asociativos'
+ aportan_new: 'LOS SOCIOS INSTITUCIONALES Y FINANCIEROS'
+ noaportan_new: 'ENTIDADES MIEMBROS DE LAS REDES'
  sitios: 'Sitios'
  sitio: 'sitio'
  presentacion: 'Presentación'
