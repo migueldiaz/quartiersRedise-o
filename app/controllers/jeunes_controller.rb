@@ -121,7 +121,6 @@ def documentacion
 end
 
 def pagina
-    logger.warn "eeeeeeeeeeeee"+params[:p5js]
     @p5js=params[:p5js]
 		@pagina=Pagina.find(params[:id])
 		@jeunes=Jeunes.first
