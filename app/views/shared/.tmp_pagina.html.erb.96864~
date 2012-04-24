@@ -49,7 +49,7 @@ end
 :imagen_title=>parrafo.method(dame_nombre_metodo 'piefoto').call
 }
 %> 	
-<p><%=simple_format(parrafo.method(:texto.to_s+locale.to_s).call)%><p>
+<p><%=linkea (parrafo.method(:texto.to_s+locale.to_s).call) %><p>
  <% end %>
  <% contador.upto(50) do |i|  %>
 	<%=posiciona_video(@pagina.videos, i)%>
@@ -58,7 +58,6 @@ end
   <% if (!@pagina.videos.empty? and hay_videos_final_pagina) then  %>
   <hr class="space"/>
 <div class="galeria">
-<h1><%=t('videos')%></h1>
 <% @pagina.videos.each do |video| %>
 					<a name="video<%=video.id%>"/>
 					<h2><%=video.send(:titulo.to_s+local)%></h2>

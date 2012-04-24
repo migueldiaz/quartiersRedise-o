@@ -2,7 +2,6 @@
 edita_galeria=false
 if !@pagina.presentacion.nil?
 path_v=presentacion_path(@pagina.presentacion.sitio)
-edita_galeria=true
 elsif !@pagina.red.nil?
 edita_galeria=true
 
