@@ -1,6 +1,12 @@
 module ApplicationHelper
   
   
+ def linkea valor
+    texto=simple_format(valor)
+  texto.gsub!(/\[.*?\]/){|e| "<a target='_self' href="+e.split("|")[1].gsub(/\]/, '')+">"+e.split("|")[0].gsub(/\[/, "")+"</a>"}  
+  return auto_link(texto)
+ end
+  
   def posiciona_video (videos, c)
     html=""
      videos.each do |video|
