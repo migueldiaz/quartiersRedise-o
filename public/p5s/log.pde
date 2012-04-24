@@ -1,7 +1,7 @@
 class Log {
 	
 	public void info(String mensaje){
-		println("INFO:____ "+mensaje);
+		//println("INFO:____ "+mensaje);
 	}	
 	public void debug(String mensaje){
 	
