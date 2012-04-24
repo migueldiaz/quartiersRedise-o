@@ -55,7 +55,7 @@
 				</div>
 			</a>
 			<div class="mosaic-backdrop">
-				<%=image_tag(evento.imagen_url, :width=>"200", :height=>"150") unless evento.imagen_url.nil?%>
+				<%=image_tag(evento.imagen_url, :width=>"200", :height=>"150")%>
 				</div>
 			</div>
 				<%end%>

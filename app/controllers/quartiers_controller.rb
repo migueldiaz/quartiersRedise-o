@@ -5,7 +5,7 @@ class QuartiersController < ApplicationController
             @asociacion=Asociacion.first
       @sitio=@asociacion.sitio
 
-       @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC')  
+       @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC', :limit=>6)  
 
   		#@sitio=@web.asociacion.sitio
           respond_to do |format|
