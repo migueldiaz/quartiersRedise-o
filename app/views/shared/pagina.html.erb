@@ -105,13 +105,13 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 	
 <% @paginas.each do |pagi| %>
 	 	<li>
-	 		<%= link_to " - "+pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
+	 		<%= link_to " * "+pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
 			<%if (pagi==@pagina) 
 			@amplia=true%>
 			<ul style="margin-top:10px;">
 				<% pagi.parrafos.each do |parrafo| 
 				if parrafo.send(:titulo.to_s+local)!="" %>
-				<li >* <a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
+				<li >* * <a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
 				<%end
 				end%>
 			</ul>
@@ -120,8 +120,8 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 <% end 
 if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 
-			<li  ><%=link_to t('aportan_new'),asociation_colaborador_aportan_path%></li>
-			<li  ><%=link_to t('noaportan_new'),asociation_colaborador_no_aportan_path%></li>
+			<li  > <%=link_to " * "+t('aportan_new'),asociation_colaborador_aportan_path%></li>
+			<li  > <%=link_to " * "+t('noaportan_new'),asociation_colaborador_no_aportan_path%></li>
 <%end%> 
 </ul>
 </div>
