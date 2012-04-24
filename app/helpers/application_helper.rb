@@ -3,7 +3,10 @@ module ApplicationHelper
   
  def linkea valor
     texto=simple_format(valor)
-  texto.gsub!(/\[.*?\]/){|e| "<a target='_self' href="+e.split("|")[1].gsub(/\]/, '')+">"+e.split("|")[0].gsub(/\[/, "")+"</a>"}  
+    
+
+ texto.gsub!(/\[.*?\]/){|e| if e.split("|").length>1 then "<a target='_self' href=\"#{e.split("|")[1].gsub(/\]/, '')}\">"+e.split("|")[0].gsub(/\[/, "")+"</a>" else e end }  
+ #texto.gsub!(/\[.*?\]/){|e| e.split("|")[1].gsub(/\]/, '') unless e.split("|")[1].nil?}  
   return auto_link(texto)
  end
   
