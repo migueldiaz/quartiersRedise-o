@@ -59,6 +59,9 @@ var incremento=-160;
 if($(window).scrollTop()<50 ){
 incremento=0;
 }	
+if($("#nav_paginas").height()>$(window).height())
+margin_top=0;
+else
 margin_top=($(window).scrollTop() +incremento)
 
 $("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
