@@ -1,4 +1,4 @@
-<h1><%=t('aportan_new')%></h1>
+<h1><%=t('aportan')%></h1>
 <div class="ficha ">
 <% if !@aportan.nil?%>
 		<% @aportan.each do |colaborador| %>

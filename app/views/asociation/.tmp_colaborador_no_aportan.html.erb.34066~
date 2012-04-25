@@ -1,12 +1,15 @@
-<h1><%=t('aportan_new')%></h1>
-<div class="ficha ">
-<% if !@aportan.nil?%>
-		<% @aportan.each do |colaborador| %>
+<h1 ><%=t('noaportan')%></h1>
+<div class="ficha">
+<% if !@noaportan.nil?%>
+		<% @noaportan.each do |colaborador| %>
+
 			<%=render "/shared/ficha_colaborador",  :colaborador=>colaborador %>
+		
 		<%end%>
-<%end%>
+	
+	<%end%>
 </div>
 
 			<%=render "menu_protagonistas_colaborador" %>
 
-
+	

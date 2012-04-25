@@ -3,7 +3,20 @@
 <% @foros.each do |foro| 
 trad=Traduccion.new(foro, :titulo)
 %>
-<li><h2><%= link_to trad.resultado,femmes_foro_path(:id=>foro, :locale=>I18n.locale), :style=>trad.alternativaCSS %></h2>
- <h4><%= link_to 'interactivo',femmes_forito_path(:usuario_mail=>session[:usuarioforo_nombre], :usuarioforo_id=>session[:usuarioforo_id], :id=>foro,:equipos=>'femmes', :idioma=>I18n.locale), :style=>trad.alternativaCSS %></h4></li>
+<li>
+ <span style="font-size:20px;"><%= link_to trad.resultado ,femmes_forito_path(:usuario_mail=>session[:usuarioforo_nombre], :usuarioforo_id=>session[:usuarioforo_id], :id=>foro,:equipos=>'femmes', :idioma=>I18n.locale), :style=>trad.alternativaCSS %></span>
+ <%if !foro.documentos.empty? %>
+ <br><b style="font-size:10px;"><%=t('documentacion')%></b>
+ <ul>
+ 	
+<% foro.documentos.each do |documento| 
+	trad=Traduccion.new(documento, :doc) %> 
+<li><%= link_to trad.resultado,documento.archivo_url.to_s, :style=>trad.alternativaCSS %></li>
+
+<%end%>
+<%end%>
+ </ul>
+ </li>
 <%end%>
 </ul>
+
