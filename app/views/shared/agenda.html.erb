@@ -46,7 +46,7 @@ titulete=" * "+ evento.send(:titulo.to_s+locale.to_s.capitalize)
 titulete_mini=truncate(titulete, :length => 40)
 %>
 
-	 	<li> <%= link_to titulete_mini, asociation_agenda_path( :anchor=>"evento"+evento.id.to_s),:onmouseout =>"$(this).text('#{titulete_mini}');",  :onmouseover => "$(this).text('#{titulete}');", %> </li> 
+	 	<li> <%= link_to titulete_mini, asociation_agenda_path( :anchor=>"evento"+evento.id.to_s),:onmouseout =>"$(this).text('#{titulete_mini}');",  :onmouseover => "$(this).text('#{titulete}');" %> </li> 
 <% end %>
 </ul>
 </div>
