@@ -43,7 +43,7 @@ end
 %>
  	 
 <%= render :partial => "/shared/img", :locals => {
-:imagen=>@img_existente, 
+:imagen=>thumbea(parrafo.imagen_url), 
 :enlace_imagen=>parrafo.imagen_url, 
 :imagen_class=>"left",
 :imagen_title=>parrafo.method(dame_nombre_metodo 'piefoto').call
@@ -76,7 +76,7 @@ end
 <div class="ficha colaborador">
 
 <%= render :partial => "/shared/img", :locals => {
-:imagen=>imagen.imagenmini_url, 
+:imagen=>thumbea(imagen.imagen_url), 
 :enlace_imagen=>imagen.imagen_url, 
 :imagen_class=>"left",
 :imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call,

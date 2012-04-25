@@ -1,6 +1,8 @@
 module ApplicationHelper
   
-  
+  def thumbea valor
+    valor.gsub(/\/(?!.*\/)/, '/thumb_') unless valor.nil?
+  end
  def linkea valor
     texto=simple_format(valor)
     

@@ -7,7 +7,7 @@
   <h2><%= l evento.fecha,:format => "%d/%m/%Y"%> -  <%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></h2>
    <% if evento.imagen_url.to_s != "" %>
    <%= render :partial => "/shared/img", :locals => {
-:imagen=>thumbea(evento.imagen_url), 
+:imagen=>evento.imagen_url, 
 :enlace_imagen=>evento.imagen_url, 
 :imagen_class=>"left",
 :imagen_title=>""
