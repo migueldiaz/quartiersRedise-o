@@ -52,13 +52,16 @@ jQuery(function($){
 		</script>
 <%end %>
  <script type="text/javascript">
-
         $(window).scroll(function(){
-			console.log($(window).scrollTop()+"....."+$("#nav_paginas").height()+"-------"+$(window).height());
 if($("#nav_paginas").length!=0){
-var incremento=-50;
-if($(window).scrollTop()<50 || true==true) incremento=0;
-$("#nav_paginas").stop().animate({"marginTop": ($(window).scrollTop() +incremento) + "px"}, "slow" );			
+var margin_top;	
+var incremento=-160;
+if($(window).scrollTop()<50 ){
+incremento=0;
+}	
+margin_top=($(window).scrollTop() +incremento)
+
+$("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
 }
 }
 );

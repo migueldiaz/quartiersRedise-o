@@ -103,27 +103,15 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 
 <ul>
 	
-<% @paginas.each do |pagi| 
-titulete=" * "+ pagi.send(:titulo.to_s+local)
-if pagi != @pagina
-titulete_mini=truncate(titulete, :length => 40)
-else
-titulete_mini=titulete
-end
-%>
+<% @paginas.each do |pagi| %>
 	 	<li>
-	 		<%= link_to titulete_mini, send(pathito+"_pagina_path", :id=>pagi),:onmouseout =>"$(this).text('#{titulete_mini}');",  :onmouseover => "$(this).text('#{titulete}');", :class=>if (pagi==@pagina) then 'selected' end %>
+	 		<%= link_to " * "+pagi.send(:titulo.to_s+local), send(pathito+"_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %>
 			<%if (pagi==@pagina) 
 			@amplia=true%>
 			<ul style="margin-top:10px;">
 				<% pagi.parrafos.each do |parrafo| 
-				if parrafo.send(:titulo.to_s+local)!="" 
-titulete=parrafo.send(:titulo.to_s+local)
-titulete_mini= truncate(titulete, :length => 40)
-
-%>
-				<li >* * <a href="#parrafo<%=parrafo.id%>" onmouseout ="$(this).text('<%=titulete_mini%>');" 
-				onmouseover ="$(this).text('<%=titulete%>');"><%= titulete_mini %></a></li>
+				if parrafo.send(:titulo.to_s+local)!="" %>
+				<li >* * <a href="#parrafo<%=parrafo.id%>"><%= parrafo.send(:titulo.to_s+local) %></a></li>
 				<%end
 				end%>
 			</ul>

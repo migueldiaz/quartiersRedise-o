@@ -52,12 +52,41 @@ jQuery(function($){
 		</script>
 <%end %>
  <script type="text/javascript">
-
+		var ultimo=0;
         $(window).scroll(function(){
 if($("#nav_paginas").length!=0){
+var margin_top;	
 var incremento=-50;
-if($(window).scrollTop()<50) incremento=0;
-$("#nav_paginas").stop().animate({"marginTop": ($(window).scrollTop() +incremento) + "px"}, "slow" );			
+if($(window).scrollTop()<50 ){
+	
+incremento=0;
+margin_top=($(window).scrollTop() +incremento)
+}else{
+	
+			principio_top=$("#nav_paginas").parent().offset().top;
+			pantalla=$(window).height();
+			altura_navegador=$("#nav_paginas").height();
+			posicion_scroll=$(window).scrollTop();
+if(altura_navegador-pantalla>10){
+margin_top=0;			
+	console.log("ultimo: "+ultimo+"  posicion_scroll: "+posicion_scroll+"  principio_top: "+principio_top+"  altura_navegador: "+altura_navegador);
+	if((posicion_scroll)>(ultimo+altura_navegador)){
+	console.log("mayor que");
+	ultimo=posicion_scroll;
+	margin_top=(posicion_scroll -principio_top);
+
+	}else{
+		
+	console.log("menor que");
+	margin_top=($(window).scrollTop() +incremento)
+
+	}
+	
+}else
+margin_top=($(window).scrollTop() +incremento)
+
+}
+$("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
 }
 }
 );
