@@ -4,6 +4,7 @@ module ApplicationHelper
     valor.gsub(/\/(?!.*\/)/, '/thumb_') unless valor.nil?
   end
  def linkea valor
+   valor.gsub!(/desarrollo.quartiersdumonde.org/, "#{request.host}")
     texto=simple_format(valor)
     
 
