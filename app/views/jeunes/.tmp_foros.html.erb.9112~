@@ -1,0 +1,11 @@
+<h1><%= t('foros')+' '+t('jeunes')%></h1>
+<ul>
+<% @foros.each do |foro| 
+trad=Traduccion.new(foro, :titulo)
+%>
+<li><h2><%= link_to trad.resultado,jeunes_foro_path(:id=>foro, :locale=>I18n.locale), :style=>trad.alternativaCSS %></h2>
+ <h4><%= link_to 'interactivo',jeunes_forito_path(:usuario_mail=>session[:usuarioforo_nombre], :usuarioforo_id=>session[:usuarioforo_id], :id=>foro,:equipos=>'jeunes', :idioma=>I18n.locale), :style=>trad.alternativaCSS %></h4></li>
+
+<%end%>
+</ul>
+

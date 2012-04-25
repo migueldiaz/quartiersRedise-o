@@ -40,7 +40,7 @@ public void init(List<UsuarioForo> usuarios) {
 			rect(0, posY, _x-50, heightUsuarioBox);
 			fill(usu.equipo.col);
 			rect(0, posY, distanciaNumero, heightUsuarioBox);
-			textSize(10);
+			textSize(12);
 			fill(100);
 			log.info("["+usu.comentarios.size()+"]"+usu.nombre);
 			text("["+usu.comentarios.size()+"]", 1, posY+heightUsuarioBox/2);
