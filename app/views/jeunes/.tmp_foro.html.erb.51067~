@@ -1,3 +1,0 @@
-<h1>Hola</h1>
-
-<%=render(:file => "/shared/foro.html.erb",:locals => {:pathito=>"jeunes"} )  %>

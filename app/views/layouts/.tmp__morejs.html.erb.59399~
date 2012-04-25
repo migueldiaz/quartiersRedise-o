@@ -54,10 +54,9 @@ jQuery(function($){
  <script type="text/javascript">
 
         $(window).scroll(function(){
-			console.log($(window).scrollTop()+"....."+$("#nav_paginas").height()+"-------"+$(window).height());
 if($("#nav_paginas").length!=0){
 var incremento=-50;
-if($(window).scrollTop()<50 || true==true) incremento=0;
+if($(window).scrollTop()<50) incremento=0;
 $("#nav_paginas").stop().animate({"marginTop": ($(window).scrollTop() +incremento) + "px"}, "slow" );			
 }
 }

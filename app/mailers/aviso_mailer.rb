@@ -15,8 +15,10 @@ class AvisoMailer < ActionMailer::Base
     mail(:to => usuario.email, :subject => "Nuevas traducciones en el sitio")
   end
   def error(url)
+  if !url.include? "php"
   @url=url
   mail(:to=>'juanantonioruz@gmail.com',:subject=>'Error 404 en QDM')
+  end
   end
   
     
