@@ -18,7 +18,10 @@ style=""
     <%end%>
 </li>
 <!--<li <%=menu_seleccionada_bis equipe_agenda_path %> <%=style%>><%= link_to t('agenda'),equipe_agenda_path(:id=>@equipo)%></li>-->
+
 <li <%=menu_seleccionada_bis equipe_colaboradores_path %> <%=style%>><%= link_to t('colaboradores'),equipe_colaboradores_path(:id=>@equipo)%></li>
+
+
 <!--<li <%=menu_seleccionada_bis equipe_contacto_path %> <%=style%>><%= link_to t('contacto'),equipe_contacto_path(:id=>@equipo)%></li>-->
 <!--La nueva documentacion de los equipos en este enlace-->
 <li <%=menu_seleccionada_tris :documentacion %> <%=style%>><%= link_to t('documentacion'),equipe_documentacion_path(:id=>@equipo)%>

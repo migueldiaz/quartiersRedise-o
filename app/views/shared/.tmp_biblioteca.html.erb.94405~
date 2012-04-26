@@ -1,32 +1,20 @@
 <script>
 	function despliega_categoria(nombre_categoria){
-		var width_actual;
-		var width_demas;
-		
 		var biblioteca_categoria_parent=nombre_categoria.parent();
 	if(biblioteca_categoria_parent.data('desplegado')){
 		
 	 biblioteca_categoria_parent.data('desplegado',false);
-	 width_actual=90/$(".nombre_biblioteca_categoria").size();
-	 width_demas=width_actual;
 	}else{
 		console.log(biblioteca_categoria_parent.data('desplegado'));
 	 biblioteca_categoria_parent.data('desplegado', true);
- 	 width_actual=85;
-	 width_demas=5/$(".nombre_biblioteca_categoria").size();
-
 	}
-	// nombre_categoria.append(". Desplegado: "+biblioteca_categoria_parent.data('desplegado'));
+	 
+	biblioteca_categoria_parent.animate({ width: '100%'}, 1000);
+	nombre_categoria.append(". Desplegado: "+biblioteca_categoria_parent.data('desplegado'));
 	$.each($(".nombre_biblioteca_categoria"), 
 		function(){
 		if($(this).text() != nombre_categoria.text() ){
-		$(this).parent().animate({ width: width_demas+'%'}, 500);
-		$(this).parent().animate({ height: '100px'}, 500);
-		}else{
-		nombre_categoria.parent().animate({ width: width_actual+'%'}, 1000);
-		nombre_categoria.parent().animate({
-			height: '70%'
-		},1000);
+			$(this).parent().hide("slow");			
 		}
 	}
 	);
@@ -40,12 +28,7 @@
 
 <%
 if params[:search]%>
-<div class='biblioteca_categoria' style="width:90%; overflow:scroll; height:50%;">
-			<div class="nombre_biblioteca_categoria">
-<h3><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %> <b><%=link_to t('destroy')+' '+'busqueda',send(proyecto+"_biblioteca_path")%></b></h3>
-</div>
-<div class="descripcion">
-	
+<p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %><%=link_to t('destroy')+' '+'busqueda',send(proyecto+"_biblioteca_path")%></p>
 <% @documentos.each do |documento|%>
 <%= render :partial => "/documentos/documento_de_lista", :locals => {
 :dd=>documento,
@@ -55,10 +38,8 @@ if params[:search]%>
 %>
 <%end%>
 
-</div>
 
 <%= will_paginate @documentos %>
-</div>
 
 <%else%>
 
@@ -83,9 +64,7 @@ v=valores[documento[1]]
 if(!v.nil?)
 %>
 <div class='biblioteca_categoria' >
-			<div class="nombre_biblioteca_categoria" onclick="despliega_categoria($(this));">
-				<h3>[<%=v.size()%>] <%=dameNombre(documento[1],tipos_as)%></h3>
-				</div>
+			<div class="nombre_biblioteca_categoria" onclick="despliega_categoria($(this));"><%=dameNombre(documento[1],tipos_as)%></div>
 				<div class="descripcion">
 
 
