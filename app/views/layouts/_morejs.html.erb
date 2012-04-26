@@ -55,7 +55,7 @@ jQuery(function($){
         $(window).scroll(function(){
 if($("#nav_paginas").length!=0){
 var margin_top;	
-var incremento=-60;
+var incremento=-100;
 if($(window).scrollTop()<50 ){
 incremento=0;
 }	
@@ -71,7 +71,17 @@ $("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );
 
 $(document).ready(function() {
 
-$(".biblioteca_categoria").data('desplegado', false );
+$(".biblioteca_categoria").data('desplegado', false ).mouseenter(function() {
+  $(this).css('backgroundColor','#E5E5E5');
+}).mouseleave(function(){
+       $(this).css('backgroundColor','white');
+    });
+$(".foro_categoria").mouseenter(function() {
+  $(this).css('backgroundColor','#E5E5E5');
+}).mouseleave(function(){
+       $(this).css('backgroundColor','white');
+    });
+
 
     $(".miniatura").load(
 	function() {

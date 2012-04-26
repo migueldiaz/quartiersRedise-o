@@ -2,16 +2,19 @@
 	function despliega_categoria(nombre_categoria){
 		var width_actual;
 		var width_demas;
-		
+		var height_actual;
 		var biblioteca_categoria_parent=nombre_categoria.parent();
+		
 	if(biblioteca_categoria_parent.data('desplegado')){
 		
 	 biblioteca_categoria_parent.data('desplegado',false);
 	 width_actual=90/$(".nombre_biblioteca_categoria").size();
 	 width_demas=width_actual;
+ 	 height_actual='100px';
 	}else{
 		console.log(biblioteca_categoria_parent.data('desplegado'));
 	 biblioteca_categoria_parent.data('desplegado', true);
+ 	 height_actual='70%';
  	 width_actual=85;
 	 width_demas=5/$(".nombre_biblioteca_categoria").size();
 
@@ -25,7 +28,7 @@
 		}else{
 		nombre_categoria.parent().animate({ width: width_actual+'%'}, 1000);
 		nombre_categoria.parent().animate({
-			height: '70%'
+			height: height_actual
 		},1000);
 		}
 	}
@@ -82,8 +85,8 @@ tipos_doc.sort {|a,b| a[1] <=> b[1]}.each do |documento|
 v=valores[documento[1]]
 if(!v.nil?)
 %>
-<div class='biblioteca_categoria' >
-			<div class="nombre_biblioteca_categoria" onclick="despliega_categoria($(this));">
+<div class='biblioteca_categoria' onclick="despliega_categoria($(this).find('.nombre_biblioteca_categoria'));">
+			<div class="nombre_biblioteca_categoria" >
 				<h3>[<%=v.size()%>] <%=dameNombre(documento[1],tipos_as)%></h3>
 				</div>
 				<div class="descripcion">
