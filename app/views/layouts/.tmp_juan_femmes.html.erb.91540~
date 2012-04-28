@@ -13,7 +13,7 @@
 	</div>
 
         <div class="container ">
-            <div class="span-24 append-bottom" id="cabecera">
+            <div class="span-24 append-bottom" >
 
                 <div class="span-24 " style="margin-top:-16px;">
                 	<div style="font-size:2.5em;float:left;font-family:'Open Sans Condensed Bold';">

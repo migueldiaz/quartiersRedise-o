@@ -52,19 +52,50 @@ jQuery(function($){
 		</script>
 <%end %>
  <script type="text/javascript">
+ var last_scroll=0;
         $(window).scroll(function(){
+//console.log("nav_paginas_pos_y: "+nav_paginas_pos_y+"  scroll_pos_y: "+scroll_pos_y);
 if($("#nav_paginas").length!=0){
-var margin_top;	
-var incremento=-100;
-if($(window).scrollTop()<50 ){
+		var margin_top=0;	
+        var div_nav_paginas=$("#nav_paginas");
+        var nav_paginas_pos_y=div_nav_paginas.css("margin-top");
+        var pos_y=div_nav_paginas.offset().top;
+        var nav_paginas_heigth=div_nav_paginas.height()+100;
+        var screen_heigth=$(window).height();
+        var scroll_actual=$(window).scrollTop();
+        
+        //var espacio_oculto=scroll_actual-nav_paginas_pos_y.replace("px", "");
+        var espacio_oculto_superior=scroll_actual-pos_y;
+        var espacio_oculto_maximo=nav_paginas_heigth-screen_heigth;
+		var div_mayor_screen=espacio_oculto_maximo>0;
+if(div_mayor_screen){
+if(espacio_oculto_superior>espacio_oculto_maximo && espacio_oculto_superior>0 ){
+//console.log("pos_y: "+pos_y+"  scroll_actual: "+scroll_actual);
+//console.log("espacio_oculto_superior: "+espacio_oculto_superior);
+//console.log("nav_paginas_heigth: "+nav_paginas_heigth+" screen_heigth:"+screen_heigth);
+//console.log("espacio_oculto_maximo: "+espacio_oculto_maximo);
+
+
+var incremento=0;
+if($(window).scrollTop()<pos_y ){
 incremento=0;
 }	
-if($("#nav_paginas").height()>$(window).height())
-margin_top=0;
-else
-margin_top=($(window).scrollTop() +incremento)
+margin_top=($(window).scrollTop() -$("#nav_paginas").height()+50);
 
 $("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
+}else if(scroll_actual<last_scroll){//espacio_oculto_superior>espacio_oculto_maximo
+//console.log("scroll_actual: "+scroll_actual+ "  last_scroll: "+last_scroll);
+margin_top=($(window).scrollTop() -$("#nav_paginas").height()+50);
+if($(window).scrollTop()<($("#nav_paginas").height()+50))margin_top=0; 
+$("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
+}
+last_scroll=scroll_actual;
+}else{//div_mayor_screen?
+
+margin_top=($(window).scrollTop() -$("#nav_paginas").height()+50);
+if($(window).scrollTop()<($("#nav_paginas").height()+50))margin_top=0; 
+$("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
+}
 }
 }
 );
