@@ -9,8 +9,8 @@ content_for :menu_izq do
 <% dame_protagonistas_paginas.each do |pagi| %>
 	 	<li><%= link_to " * "+pagi.send(:titulo.to_s+local), send("asociation_pagina_path", :id=>pagi), :class=>if (pagi==@pagina) then 'selected' end %> </li> 
 <% end %> 
-			<li  ><%=link_to " * "+t('aportan_new'),asociation_colaborador_a_path, :class=>if (!@aportan.nil?) then 'selected' end%></li>
-			<li  ><%=link_to " * "+t('noaportan_new'),asociation_colaborador_n_path,  :class=>if (!@noaportan.nil?) then 'selected' end%></li>
+			<li  ><%=link_to " * "+t('aportan_new'),asociation_colaborador_aportan_path, :class=>if (!@aportan.nil?) then 'selected' end%></li>
+			<li  ><%=link_to " * "+t('noaportan_new'),asociation_colaborador_no_aportan_path,  :class=>if (!@noaportan.nil?) then 'selected' end%></li>
 </ul>
 </div>
 <% end %>
