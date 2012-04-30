@@ -11,7 +11,7 @@ has_many :parrafos, :dependent => :destroy, :order => "position ASC"
 has_many :imagens, :dependent => :destroy
 has_many :documentos, :dependent => :destroy, :order => "position ASC"
 has_many :paginas, :dependent => :destroy
-has_many :videos, :dependent => :destroy
+has_many :videos, :dependent => :destroy, :order => "position ASC"
 
 validate :valida_titulo
  

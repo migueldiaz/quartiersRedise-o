@@ -95,7 +95,7 @@ int usuarioforo_id;
 String locale;
 String usuario_mail;
 String otro_locale;
-int tamTexto=12;
+int tamTexto=13;
 void setup(){
 //	font=loadFont("Courier");
 //textMode(SCREEN);	
@@ -120,7 +120,6 @@ void setup(){
 	navegadorUsuarios=new NavegadorUsuarios(reticulaRet.usuarios, reticulaRet.getHeight(), reticulaRet.getX(), reticulaRet.getY());
 	navegadorTemporalComentarios=new NavegadorTemporalComentarios(reticulaRet.comentariosOrdenadosFecha, reticulaRet.getX(),  reticulaRet.getWidth());
 	navegadorTamanyos=new NavegadorTamanyos();
-
 }
 void refresca(){
 		CeldaRet c=reticulaRet.celdaSeleccionada;
@@ -147,7 +146,7 @@ void draw(){
 	reticulaRet.display();
 	fill(10);	
 	//textFont(font,102);
-	//textSize(tamTexto);
+	textSize(tamTexto);
 	log.info("mensajes:"+reticulaRet.mensajes.size(),100,100);
 	log.info("usuarios:"+reticulaRet.usuarios.size(),100,120);
 	
