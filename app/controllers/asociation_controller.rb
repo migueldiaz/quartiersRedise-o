@@ -178,9 +178,10 @@ end
     	@seccion_menu="agenda"
     	@asociacion=Asociacion.first
   		@sitio=@asociacion.sitio
-
        @eventos=@sitio.eventos.find(:all, :order => 'fecha DESC')  
-
+    if(!params[:id].blank?)
+       @evento_sel=Evento.find(params[:id])
+  end
      end	
     def contacto
     	@asociacion=Asociacion.first

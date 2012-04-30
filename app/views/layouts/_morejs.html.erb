@@ -60,7 +60,7 @@ if($("#nav_paginas").length!=0){
         var div_nav_paginas=$("#nav_paginas");
         var nav_paginas_pos_y=div_nav_paginas.css("margin-top");
         var pos_y=div_nav_paginas.offset().top;
-        var nav_paginas_heigth=div_nav_paginas.height()+100;
+        var nav_paginas_heigth=div_nav_paginas.height()+200;
         var screen_heigth=$(window).height();
         var scroll_actual=$(window).scrollTop();
         
@@ -75,33 +75,63 @@ if(espacio_oculto_superior>espacio_oculto_maximo && espacio_oculto_superior>0 ){
 //console.log("nav_paginas_heigth: "+nav_paginas_heigth+" screen_heigth:"+screen_heigth);
 //console.log("espacio_oculto_maximo: "+espacio_oculto_maximo);
 
+//console.log("aqui!"+$('#central_info').height());		
 
 var incremento=0;
 if($(window).scrollTop()<pos_y ){
 incremento=0;
 }	
-margin_top=($(window).scrollTop() -$("#nav_paginas").height()+50);
-
+margin_top=($(window).scrollTop() - $("#cabecera").height());
+if((($('#central_info').height()-$("#nav_paginas").height())>margin_top))
 $("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
 }else if(scroll_actual<last_scroll){//espacio_oculto_superior>espacio_oculto_maximo
 //console.log("scroll_actual: "+scroll_actual+ "  last_scroll: "+last_scroll);
-margin_top=($(window).scrollTop() -$("#nav_paginas").height()+50);
+margin_top=($(window).scrollTop() -$("#cabecera").height());
 if($(window).scrollTop()<($("#nav_paginas").height()+50))margin_top=0; 
 $("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
 }
 last_scroll=scroll_actual;
 }else{//div_mayor_screen?
 
-margin_top=($(window).scrollTop() -$("#nav_paginas").height()+50);
+margin_top=($(window).scrollTop() -$("#cabecera").height());
 if($(window).scrollTop()<($("#nav_paginas").height()+50))margin_top=0; 
-$("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );			
+$("#nav_paginas").stop().animate({"marginTop": margin_top + "px"}, "slow" );	
 }
 }
 }
 );
-
+function FB_AddThis() {
+   var enlace = null;
+   //Mediante el selector jQuery pongo en un array
+   //todos los botones de compartir en facebook que
+   //haya creado el plugin AddThis
+   var misaddthis = $("a.addthis_button_facebook");
+ 
+   //Ahora compruebo si está definido el enlace del primero
+   //de ellos ya que hay que esperar a que el plugin los genere
+   try {
+      enlace = typeof($(misaddthis[0]).attr("href"));
+   } catch (e) { }
+ 
+   //Si el enlace no está definido aún repito la llamada
+   if (enlace == "undefined") {
+      setTimeout(FB_AddThis, 100);
+   } else {
+      //Si ya están los enlaces generados procedo a cambiarlos
+      for (var i=0; i<misaddthis.length; i++) {
+         cambiarEnlaceFB(misaddthis[i]);
+      }
+   }
+}
+ 
+function cambiarEnlaceFB(id) {
+   //Cambiamos el enlace del botón por este otro en el que se le pasa
+   //el título, la imagen, la url y la descripción que previamente hemos
+   //configurado en el plugin AddThis
+   $(id).attr('href', "http://www.facebook.com/sharer.php?s=100&p[title]="+encodeURIComponent($(id).parent().attr("addthis:title"))+"&p[url]="+encodeURIComponent($(id).parent().attr("addthis:url"))+"&p[images][0]="+encodeURIComponent($(id).parent().attr("addthis:image"))+"&p[summary]="+encodeURIComponent($(id).parent().attr("addthis:description")));
+}
 $(document).ready(function() {
-
+//FB_AddThis();
 $(".biblioteca_categoria").data('desplegado', false ).mouseenter(function() {
   $(this).css('backgroundColor','#E5E5E5');
 }).mouseleave(function(){
@@ -114,12 +144,12 @@ $(".foro_categoria").mouseenter(function() {
     });
 
 
-    $(".miniatura").load(
-	function() {
-		    if($(this).width()>200){ $(this).width(200);}
-		if($(this).height()>150){$(this).height(150);}
-		}
-		);
+//    $(".miniatura").load(
+//	function() {
+//		    if($(this).width()>200){ $(this).width(200);}
+//		if($(this).height()>150){$(this).height(150);}
+//		}
+//		);
 		
   $(".miniatura_socio").load(function() {
     if($(this).width()>200){ 

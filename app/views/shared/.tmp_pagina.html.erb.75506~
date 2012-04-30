@@ -132,8 +132,8 @@ titulete_mini= truncate(titulete, :length => 40)
 <% end 
 if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 
-			<li  > <%=link_to " * "+t('aportan_new'),asociation_colaborador_aportan_path%></li>
-			<li  > <%=link_to " * "+t('noaportan_new'),asociation_colaborador_no_aportan_path%></li>
+			<li  > <%=link_to " * "+t('aportan_new'),asociation_colaborador_a_path%></li>
+			<li  > <%=link_to " * "+t('noaportan_new'),asociation_colaborador_n_path%></li>
 <%end%> 
 </ul>
 </div>
@@ -152,6 +152,8 @@ if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 :imagen_title=>"PLAY: "+video.send(:titulo.to_s+local),
 :galeria=>false,
 :lightbox=>false,
+:width=>"200px"
+
 }
 %> 	
 <%else%>
@@ -171,7 +173,7 @@ docya=true%>
 <ul>
 <% @pagina.documentos.each do |documento| %>
  		<% if documento.archivo_url.to_s != "" %>
- 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.archivo_url.to_s %></li>
+ 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.method("archivo"+if locale.to_s!='fr' then '' else 'fr' end+"_url").call.to_s %></li>
 		<%else%>
 			<li>FALTA DOC EN BD!! :::: <%= documento.doces %></li>
   		<% end %>	
