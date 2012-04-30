@@ -40,12 +40,12 @@ public void init(List<UsuarioForo> usuarios) {
 			rect(0, posY, _x-50, heightUsuarioBox);
 			fill(usu.equipo.col);
 			rect(0, posY, distanciaNumero, heightUsuarioBox);
-			textSize(12);
+			textSize(14);
 			fill(100);
 			log.info("["+usu.comentarios.size()+"]"+usu.nombre);
 			text("["+usu.comentarios.size()+"]", 1, posY+heightUsuarioBox/2);
 			fill(colorTexto);
-			text(usu.nombre, distanciaNumero+5, posY+heightUsuarioBox/2);
+			text(usu.nombre.substr(0,19), distanciaNumero+5, posY+heightUsuarioBox/2);
 		}		
 	}
 

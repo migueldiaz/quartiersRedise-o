@@ -147,6 +147,7 @@ void draw(){
 	reticulaRet.display();
 	fill(10);	
 	//textFont(font,102);
+	//textSize(tamTexto);
 	log.info("mensajes:"+reticulaRet.mensajes.size(),100,100);
 	log.info("usuarios:"+reticulaRet.usuarios.size(),100,120);
 	
