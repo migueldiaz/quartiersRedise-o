@@ -48,7 +48,7 @@
 				
             <div class="mosaic-block bar">
 
-			<a href="<%=asociation_agenda_path( :id=>evento.id)%>"  class="mosaic-overlay" style="display: inline; left: 0px; bottom: -52px; ">
+			<a href="<%=asociation_agenda_path( :anchor=>"evento"+evento.id.to_s)%>"  class="mosaic-overlay" style="display: inline; left: 0px; bottom: -52px; ">
 				<div class="details">
 					<span style="color:white;"><%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></span>
 				</div>
