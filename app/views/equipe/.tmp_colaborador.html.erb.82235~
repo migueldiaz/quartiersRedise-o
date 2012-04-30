@@ -1,4 +1,5 @@
 
+<h2><%=t('aportan_new')%></h2>
 	<%if !@aportan.nil?%>
 		<% @aportan.each do |colaborador| %>
 			<%if spanish%>
@@ -13,6 +14,8 @@
 			<% end %>
 		<%end%>
 	<%end%>
+
+<h2><%=t('noaportan_new')%></h2>
 	<%if !@noaportan.nil?%>
 		<% @noaportan.each do |colaboradorno| %>
 			<%if spanish%>
