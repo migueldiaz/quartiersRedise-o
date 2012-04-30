@@ -1,1 +1,0 @@
-<%=render(:file => "/shared/biblioteca.html.erb",:locals => {:proyecto=>"jeunes", :todos=>@documentosjeunes, :trad_pro=>'jeunes', :tipos_doc=>tipos_jeunes} )  %>

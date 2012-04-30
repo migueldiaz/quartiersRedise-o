@@ -37,15 +37,15 @@ public void init(List<UsuarioForo> usuarios) {
 			float distanciaNumero=20;
 			fill(colorFondo);
 			noStroke();
-			rect(0, posY, _x-20, heightUsuarioBox);
+			rect(0, posY, _x-5, heightUsuarioBox);
 			fill(usu.equipo.col);
 			rect(0, posY, distanciaNumero, heightUsuarioBox);
-			//textSize(14);
+			//textSize(tamTexto);
 			fill(100);
-			log.info("["+usu.comentarios.size()+"]"+usu.nombre);
-			text("["+usu.comentarios.size()+"]", 1, posY+heightUsuarioBox/2);
+			log.info(""+usu.comentarios.size()+"/"+usu.nombre);
+			text(""+usu.comentarios.size()+"/", 1, posY+heightUsuarioBox/2);
 			fill(colorTexto);
-			text(usu.nombre.substr(0,25), distanciaNumero+5, posY+heightUsuarioBox/2);
+			text(usu.nombre.substr(0,18), distanciaNumero+5, posY+heightUsuarioBox/2);
 		}		
 	}
 

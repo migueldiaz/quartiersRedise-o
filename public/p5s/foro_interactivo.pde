@@ -97,9 +97,9 @@ String usuario_mail;
 String otro_locale;
 int tamTexto=13;
 void setup(){
-//	font=loadFont("Courier");
+	font=loadFont("Courier");
 //textMode(SCREEN);	
-//textFont(font, 180); 
+textFont(font, tamTexto); 
 	hint(DISABLE_OPENGL_2X_SMOOTH);
 	colorMode(HSB, 100);
 	background(80);
@@ -145,8 +145,7 @@ void draw(){
 	noStroke();
 	reticulaRet.display();
 	fill(10);	
-	//textFont(font,102);
-	textSize(tamTexto);
+	//textSize(tamTexto);
 	log.info("mensajes:"+reticulaRet.mensajes.size(),100,100);
 	log.info("usuarios:"+reticulaRet.usuarios.size(),100,120);
 	
@@ -164,6 +163,7 @@ void draw(){
 	  	int res=navegadorTamanyos.mouseClick(mouseX, mouseY);
 	  	if(res==1 && tamTexto>9)	tamTexto--;
 	  	else if(res==2) 	tamTexto++;
+	  	textFont(font,tamTexto);
 	  	
 	//selecciona	
 			reticulaRet.raton(mouseX, mouseY);
