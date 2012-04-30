@@ -2,7 +2,7 @@
 content_for :menu_izq do
 %>
 <div class="paginas">
-<div class="ficha_izq_titulo"><%=t('protagonistas')%></div>
+<div class="ficha_izq_titulo"><%=t('paginas')%></div>
 
 <ul>
 	

@@ -3,9 +3,17 @@
 %>
 <h1><%=t('agenda')%></h1>
 <hr class="space">
-<% @eventos.each do |evento| %>
-hola
-<%end%>
+<%
+if !@evento_sel.nil? then
+%>
+<%=render(:partial => "/shared/evento.html.erb", :locals => {:evento=>@evento_sel} )  %>
+<%else%>
+<%@eventos.each do |evento| %>
+<%=render(:partial => "/shared/evento.html.erb", :locals => {:evento=>evento}  )  %>
+<%
+end
+end
+%>
 <%
 content_for :menu_izq do %>
 
@@ -24,7 +32,7 @@ titulete_mini=truncate(titulete, :length => 40)
 					<%if (!evento.imagen_url.blank?) then%>
 	   <%= render :partial => "/shared/img", :locals => {
 :imagen=>thumbea(evento.imagen_url), 
-:enlace_imagen=>"#evento"+evento.id.to_s, 
+:enlace_imagen=>"./asociation/agenda?id="+evento.id.to_s, 
 :imagen_class=>"left",
 :imagen_title=>titulo,
 :galeria=>false,
