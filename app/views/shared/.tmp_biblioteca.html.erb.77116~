@@ -65,7 +65,7 @@ if params[:search]%>
 
 <%else%>
 
-<h3><%=t('intro_biblioteca')%></h3>
+
 <%
 
 valores=Hash.new
@@ -87,7 +87,7 @@ if(!v.nil?)
 %>
 <div class='biblioteca_categoria' onclick="despliega_categoria($(this).find('.nombre_biblioteca_categoria'));">
 			<div class="nombre_biblioteca_categoria" >
-				<h3><%=dameNombre(documento[1],tipos_as)%></h3>
+				<h3>[<%=v.size()%>] <%=dameNombre(documento[1],tipos_as)%></h3>
 				</div>
 				<div class="descripcion">
 

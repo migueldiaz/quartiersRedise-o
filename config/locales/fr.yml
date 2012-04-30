@@ -2,6 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+ intro_biblioteca: 'into biblio fr' 
  tipos_as_1: 'la documentation générale et les rapports' 
  tipos_as_2: 'formations' 
  tipos_as_3: 'des études et des' 

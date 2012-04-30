@@ -7,7 +7,7 @@
 	
 				<ul class="submenu2">
 				<% dame_quienes_somos_paginas.each do |pagina| %>
-		 	<li><%= link_to pagina.send(:titulo.to_s+local) ,asociation_pagina_path(:id=>pagina) %> </li> 
+		 	<li><%= link_to pagina.send(:titulo.to_s+local) ,asociation_presentacion_path(:id=>pagina) %> </li> 
 			<% end %>
 			</ul>
 
