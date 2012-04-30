@@ -1,6 +1,6 @@
 module DocumentosHelper
 def tipos_as 
-  {'no asignado'=>0, t('tipos_as_1') => 1, 'formaciones' => 2,'estudios y trabajos' => 3,'articulos, participaciones a conferencias' => 4,'publicaciones' => 5,'textos de referencia' => 6,'galerias de fotos' => 7}
+  {t('no_asignado')=>0, t('tipos_as_1') => 1, t('tipos_as_2') => 2,t('tipos_as_3') => 3,t('tipos_as_4') => 4,t('tipos_as_5') => 5,t('tipos_as_6') => 6,t('tipos_as_7') => 7,t('tipos_as_8') => 8}
 end
 
 def dameTipos val
@@ -23,9 +23,9 @@ def dameNombre valor, coleccion
 end
 
 def tipos_femmes 
-  {'no asignado'=>0, 'informes de actividades y sistematizacion' => 1, 'informes de formacion' => 2,'otros documentos' => 3}
+ tipos_as
 end
 def tipos_jeunes
-  tipos_femmes
+  tipos_as
 end
 end

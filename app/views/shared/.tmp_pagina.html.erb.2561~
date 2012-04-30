@@ -132,8 +132,8 @@ titulete_mini= truncate(titulete, :length => 40)
 <% end 
 if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 
-			<li  > <%=link_to " * "+t('noaportan_new'),asociation_colaborador_n_path%></li>
 			<li  > <%=link_to " * "+t('aportan_new'),asociation_colaborador_a_path%></li>
+			<li  > <%=link_to " * "+t('noaportan_new'),asociation_colaborador_n_path%></li>
 <%end%> 
 </ul>
 </div>

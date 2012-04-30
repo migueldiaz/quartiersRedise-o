@@ -1,0 +1,29 @@
+
+	<%if !@aportan.nil?%>
+		<% @aportan.each do |colaborador| %>
+			<%if spanish%>
+				<h4><%= colaborador.nombreEs %></h4>
+				<p><%= colaborador.infoEs %></p>
+			<%else%>
+				<h4><%= colaborador.nombreFr %></h4>
+				<p><%=colaborador.infoFr %></p>
+			<%end%>
+			<% if colaborador.imagen_url.to_s != "" %>
+				<%= image_tag colaborador.imagen_url.to_s %>
+			<% end %>
+		<%end%>
+	<%end%>
+	<%if !@noaportan.nil?%>
+		<% @noaportan.each do |colaboradorno| %>
+			<%if spanish%>
+				<h4><%= colaboradorno.nombreEs %></h4>
+				<p><%= colaboradorno.infoEs %></p>
+			<%else%>
+				<h4><%= colaboradonor.nombreFr %></h4>
+				<p><%=colaboradorno.infoFr %></p>
+			<%end%>
+			<% if colaboradorno.imagen_url.to_s != "" %>
+				<%= image_tag colaboradorno.imagen_url.to_s %>
+			<% end %>
+		<%end%>
+	<%end%>
