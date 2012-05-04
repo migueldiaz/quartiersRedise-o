@@ -173,9 +173,9 @@ docya=true%>
 <ul>
 <% @pagina.documentos.each do |documento| %>
  		<% if documento.archivo_url.to_s != "" %>
- 		 	<li><%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.method("archivo"+if locale.to_s!='fr' then '' else 'fr' end+"_url").call.to_s %></li>
+ 		 	<li>> <%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.method("archivo"+if locale.to_s!='fr' then '' else 'fr' end+"_url").call.to_s %></li>
 		<%else%>
-			<li>FALTA DOC EN BD!! :::: <%= documento.doces %></li>
+			<li>> FALTA DOC EN BD!! :::: <%= documento.doces %></li>
   		<% end %>	
 <%end%>
 </ul>

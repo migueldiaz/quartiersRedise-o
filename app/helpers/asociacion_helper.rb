@@ -28,5 +28,13 @@ def dame_protagonistas_paginas
   Pagina.where("protagonistas_id=:e_id", {:e_id=>id_protagonistas})
 end
 
+def dame_path doc
+  if doc.pagina.nil?
+    "pagina nula: #{doc.doces}"
+  else
+    "el path de #{doc.pagina}" 
+  end    
+end
+
 
 end

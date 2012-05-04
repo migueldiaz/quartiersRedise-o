@@ -25,15 +25,16 @@ class AsociationController < ApplicationController
  	def biblioteca
  		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
-          session[:sitio_id]=@sitio.id
+     session[:sitio_id]=@sitio.id
 
- 		@paginas=@sitio.paginas
- 		@documentosasoc=Documento.where(:pagina_id=>@paginas)
+# 		@paginas=@sitio.paginas
+# 		@documentosasoc=Documento.where(:pagina_id=>@paginas)
+ 		@documentosasoc=Documento.find(:all)
  		if params[:search]
  		  @resultado = @documentosasoc.with_query(params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
- 			@documentos=@documentosasoc.paginate(:page => params[:page], :per_page => 10)
+ 			@documentos=@documentosasoc
  		end
  		
  	end

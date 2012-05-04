@@ -1,0 +1,11 @@
+<li>
+	<b>
+<%if !current_user.nil? and is_admin() then%>
+<%=link_to "edit only admin",edit_documento_path(dd)%>
+
+<%end %>
+<%= link_to dd.send(:doc.to_s+locale.to_s), dd.archivo_url.to_s %>
+</b>
+<%= t('en') %>
+<%=link_to dd.pagina.method(:titulo.to_s+locale.to_s).call,pathito %>
+</li>

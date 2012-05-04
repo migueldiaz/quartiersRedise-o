@@ -65,7 +65,7 @@ if params[:search]%>
 
 <%else%>
 
-<h3><%=t('intro_biblioteca')%></h3>
+<h4>** <%=t('intro_biblioteca')%></h4>
 <%
 
 valores=Hash.new
