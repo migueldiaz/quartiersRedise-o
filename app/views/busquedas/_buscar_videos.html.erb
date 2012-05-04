@@ -1,0 +1,9 @@
+<p>
+ <%= form_tag send(proyecto+"_videos_path"), :method => :get do %>
+    <%=t('buscar')%>: 
+ 	<%= text_field_tag :search, params[:search] %>
+    <%= submit_tag t "show", :name => nil %>
+
+<% end %>
+</p>                   
+                 

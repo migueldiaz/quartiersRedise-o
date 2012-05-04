@@ -7,15 +7,14 @@ class AsociationController < ApplicationController
   end
   
  	def videos
- 		@asociacion=Asociacion.first
+		@asociacion=Asociacion.first
  		@sitio=@asociacion.sitio
- 		@paginas=@sitio.paginas
- 		@videosasoc=Video.where(:pagina_id=>@paginas)
+# 		@paginas=@sitio.paginas
  		if params[:search]
- 		  @resultado = @videosasoc.with_query(params[:search])
+ 		  @resultado = Video.with_query(params[:search])
  		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
- 		  @videos=@videosasoc.paginate(:page => params[:page], :per_page => 10)
+ 		  @videos=Video.find(:all)
  		end
  		
  	end
@@ -29,12 +28,11 @@ class AsociationController < ApplicationController
 
 # 		@paginas=@sitio.paginas
 # 		@documentosasoc=Documento.where(:pagina_id=>@paginas)
- 		@documentosasoc=Documento.find(:all)
  		if params[:search]
- 		  @resultado = @documentosasoc.with_query(params[:search])
+ 		  @resultado = Documento.with_query(params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
- 			@documentos=@documentosasoc
+ 			@documentos=Documento.find(:all)
  		end
  		
  	end

@@ -11,6 +11,34 @@ module AsociacionHelper
   #end
 #end
 
+def dame_sitio pagina
+  if !pagina.presentacion.nil?
+        pagina.presentacion.sitio
+    elsif !pagina.red.nil?
+        pagina.red.sitio
+      elsif !pagina.vision.nil?
+          pagina.vision.sitio
+      elsif !pagina.enfoque.nil?
+          pagina.enfoque.sitio
+      elsif !pagina.protagonistas.nil?
+          pagina.protagonistas.sitio
+    end
+end
+
+def dame_proyecto pagina
+  sitio=dame_sitio pagina
+  if !sitio.jeunes.nil?
+    "jeunes"
+  elsif !sitio.femmes.nil?
+    "femmes"
+  elsif !sitio.asociacion.nil?
+    "asociation"
+  else
+    "equipe"
+    
+  end
+  
+end
 
 def dame_enfoque_paginas
   id_sitio=Sitio.where("asociacion_id=1").first.id

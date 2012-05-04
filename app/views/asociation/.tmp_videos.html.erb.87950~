@@ -57,7 +57,6 @@
 <%= will_paginate @videos %>
 
 <%else%>
-<h4>** <%=t('intro_biblioteca')%></h4>
 <!-- NO HAY BUSQUEDA! -->
 <%
 
@@ -88,7 +87,7 @@ if(!v.nil?)
 <% v.each do |dd|%>
 <%= render :partial => "/documentos/video_de_lista", :locals => {
 :dd=>dd,
-:pathito=>send((dame_proyecto dd.pagina)+"_pagina_path",:id=>dd.pagina)
+:pathito=>send("asociation_pagina_path",:id=>dd.pagina)
 }
 %>
 <%end%>
