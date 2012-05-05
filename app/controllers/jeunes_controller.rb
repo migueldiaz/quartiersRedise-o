@@ -15,9 +15,9 @@ def videos
  		@videosjeunes=Video.where(:pagina_id=>@paginas)
  		if params[:search]
  		  @resultado = @videosjeunes.with_query("^"+params[:search])
- 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
- 			@videos=@videosjeunes.paginate(:page => params[:page], :per_page => 10)
+ 			@videos=@videosjeunes.paginate(:page => params[:page], :per_page => 100)
  	end
      @seccion_menu=:videos   
 end
@@ -29,7 +29,9 @@ def biblioteca
  		@jeunes=Jeunes.first
  		@sitio=@jeunes.sitio	
       session[:sitio_id]=@sitio.id
- 		@paginas=@sitio.paginas
+    @paginas=[]
+    @paginas+=@sitio.paginas
+    @jeunes.equipos.map{|e| @paginas+= e.sitio.paginas}
  		@documentosjeunes=Documento.where(:pagina_id=>@paginas)
  		if params[:search]
  		  @resultado = @documentosjeunes.with_query("^"+params[:search])

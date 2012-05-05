@@ -4,13 +4,15 @@ class FemmesController < ApplicationController
 def videos
  		@femmes=Femmes.first
  		@sitio=@femmes.sitio
- 		@paginas=@sitio.paginas
+    @paginas=[]
+    @paginas+=@sitio.paginas
+    @femmes.equipos.map{|e| @paginas+= e.sitio.paginas}
  		@videosfemmes=Video.where(:pagina_id=>@paginas)
  		if params[:search]
  		  @resultado = @videosfemmes.with_query("^"+params[:search])
- 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
- 			@videos=@videosfemmes.paginate(:page => params[:page], :per_page => 10)
+ 			@videos=@videosfemmes.paginate(:page => params[:page], :per_page => 100)
  		end
  		        @seccion_menu=:videos
 
@@ -21,7 +23,9 @@ def biblioteca
  		@sitio=@femmes.sitio
           session[:sitio_id]=@sitio.id
 
- 		@paginas=@sitio.paginas
+    @paginas=[]
+    @paginas+=@sitio.paginas
+    @femmes.equipos.map{|e| @paginas+= e.sitio.paginas}
  		@documentosfemmes=Documento.where(:pagina_id=>@paginas)
     logger.info @documentosfemmes.length
     logger.info "ofuuuu"
