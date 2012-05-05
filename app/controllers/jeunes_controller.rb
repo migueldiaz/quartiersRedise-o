@@ -12,7 +12,7 @@ def videos
  		@paginas=@sitio.paginas
  		@videosjeunes=Video.where(:pagina_id=>@paginas)
  		if params[:search]
- 		  @resultado = @videosjeunes.with_query(params[:search])
+ 		  @resultado = @videosjeunes.with_query("^"+params[:search])
  		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
  			@videos=@videosjeunes.paginate(:page => params[:page], :per_page => 10)
@@ -30,7 +30,7 @@ def biblioteca
  		@paginas=@sitio.paginas
  		@documentosjeunes=Documento.where(:pagina_id=>@paginas)
  		if params[:search]
- 		  @resultado = @documentosjeunes.with_query(params[:search])
+ 		  @resultado = @documentosjeunes.with_query("^"+params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
  			@documentos=@documentosjeunes.paginate(:page => params[:page], :per_page => 100)

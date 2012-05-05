@@ -7,7 +7,7 @@ def videos
  		@paginas=@sitio.paginas
  		@videosfemmes=Video.where(:pagina_id=>@paginas)
  		if params[:search]
- 		  @resultado = @videosfemmes.with_query(params[:search])
+ 		  @resultado = @videosfemmes.with_query("^"+params[:search])
  		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
  		else
  			@videos=@videosfemmes.paginate(:page => params[:page], :per_page => 10)
@@ -26,7 +26,7 @@ def biblioteca
     logger.info @documentosfemmes.length
     logger.info "ofuuuu"
  		if params[:search]
- 		  @resultado = @documentosfemmes.with_query(params[:search])
+ 		  @resultado = @documentosfemmes.with_query("^"+params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
  			@documentos=@documentosfemmes.paginate(:page => params[:page], :per_page => 100)

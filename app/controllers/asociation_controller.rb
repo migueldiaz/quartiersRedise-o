@@ -29,7 +29,7 @@ class AsociationController < ApplicationController
 # 		@paginas=@sitio.paginas
 # 		@documentosasoc=Documento.where(:pagina_id=>@paginas)
  		if params[:search]
- 		  @resultado = Documento.where("foro_id is null and pagina_id is not null").with_query(params[:search])
+ 		  @resultado = Documento.where("foro_id is null and pagina_id is not null").with_query("^"+params[:search])
  		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
  			@documentos=Documento.where("foro_id is null and pagina_id is not null")
