@@ -25,13 +25,6 @@
     <%= f.label t :tituloes %><br />
     <%= f.text_field :tituloes %>
   </div>
-  
-   <div class="field">
-    <%= f.label t :position %><br />
-    <%= f.select :position, (0..50) %>
-  </div>
-
-
   <div class="field">
     <%= f.label t :titulofr %><br />
     <%= f.text_field :titulofr %>

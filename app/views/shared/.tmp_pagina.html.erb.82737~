@@ -102,8 +102,8 @@ if (!@paginas.nil? && (!@presentacion.nil? || !@enfoque.nil?  || !@protagonistas
 <div class="ficha_izq_titulo"><%=t(if (@seccion_menu.nil?) then 'paginas' else @seccion_menu end)%></div>
 
 <ul>
-
-<% @paginas.sort{|a,b| a.position <=> b.position}.each do |pagi| 
+	
+<% @paginas.each do |pagi| 
 titulete=" * "+ pagi.send(:titulo.to_s+local)
 if pagi != @pagina
 titulete_mini=truncate(titulete, :length => 40)

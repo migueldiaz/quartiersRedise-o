@@ -5,7 +5,7 @@
 <% else %>
 	<li><%=link_to t('enfoque'),asociation_enfoque_path  %>	
 			<ul class="submenu2">
-				<% dame_enfoque_paginas.sort{|a,b| a.position <=> b.position}.each do |pagina| %>
+				<% dame_enfoque_paginas.each do |pagina| %>
 		 	<li><%= link_to pagina.send(:titulo.to_s+local) ,asociation_pagina_path(:id=>pagina) %> </li> 
 			<% end %>
 			</ul>

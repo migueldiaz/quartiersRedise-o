@@ -1,4 +1,4 @@
-<% modelito.sort{|a,b| a.position <=> b.position}.each do |pagina| %>
+<% modelito.each do |pagina| %>
 	 <%if spanish%>
 	 	<li><%= link_to pagina.tituloes ,femmes_pagina_path(:id=>pagina) %> </li> 
 	<%else%>
