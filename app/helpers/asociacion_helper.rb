@@ -12,12 +12,19 @@ module AsociacionHelper
 #end
 
 def dame_sitio pagina
-  if !pagina.presentacion.nil?
+    if pagina.nil?
+       puts "pagina nula!"
+       return "pagina nula!"
+      elsif !pagina.presentacion.nil?
         pagina.presentacion.sitio
     elsif !pagina.red.nil?
         pagina.red.sitio
-      elsif !pagina.vision.nil?
-          pagina.vision.sitio
+    elsif !pagina.pagina.nil?
+        return dame_sitio pagina.pagina
+    elsif !pagina.documentacion.nil?
+        pagina.documentacion.sitio
+    elsif !pagina.vision.nil?
+        pagina.vision.sitio
       elsif !pagina.enfoque.nil?
           pagina.enfoque.sitio
       elsif !pagina.protagonistas.nil?
@@ -27,7 +34,10 @@ end
 
 def dame_proyecto pagina
   sitio=dame_sitio pagina
-  if !sitio.jeunes.nil?
+  
+  if sitio.nil?
+    return 
+  elsif !sitio.jeunes.nil?
     "jeunes"
   elsif !sitio.femmes.nil?
     "femmes"
@@ -39,6 +49,15 @@ def dame_proyecto pagina
   end
   
 end
+def aver pagina
+  if pagina.nil? 
+    return 
+    end
+  res=(dame_proyecto pagina)
+if !res.nil?
+ send(res+"_pagina_path",:id=>pagina)
+end
+end 
 
 def dame_enfoque_paginas
   id_sitio=Sitio.where("asociacion_id=1").first.id

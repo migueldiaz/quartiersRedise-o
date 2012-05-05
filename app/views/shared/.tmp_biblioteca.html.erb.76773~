@@ -48,15 +48,26 @@ if params[:search]%>
 <h3><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %> <b><%=link_to t('destroy')+' '+'busqueda',send(proyecto+"_biblioteca_path")%></b></h3>
 </div>
 <div class="descripcion">
-	
+<ul>
 <% @documentos.each do |documento|%>
-<%= render :partial => "/documentos/documento_de_lista", :locals => {
-:dd=>documento,
-:pathito=>send(proyecto+"_pagina_path",:id=>documento.pagina)
-
-}
-%>
+	pathito=aver(documento.pagina)
+	<li>
+<b>
+<%if !current_user.nil? and is_admin() then%>
+<%=link_to "edit only admin",edit_documento_path(documento)%>
+<%end %>
+<%= link_to dd.send(:doc.to_s+locale.to_s), documento.archivo_url.to_s %>
+</b>
+<% if !dd.pagina.nil? then%>
+<br> &nbsp;&nbsp;&nbsp;<%= t('sito') %> >>
+<%if !pathito.nil?%>
+<%=link_to documento.pagina.method(:titulo.to_s+locale.to_s).call ,pathito %>
 <%end%>
+<%end%>
+</li>
+<%end%>
+
+</ul>	
 
 </div>
 
@@ -91,17 +102,31 @@ if(!v.nil?)
 				</div>
 				<div class="descripcion">
 
-
 <ul>
-<% v.each do |dd|%>
-<%= render :partial => "/documentos/documento_de_lista", :locals => {
-:dd=>dd,
-:pathito=>send(proyecto+"_pagina_path",:id=>dd.pagina)
-}
+<% v.each do |cocu|
+	pathito=aver(cocu.pagina)
 %>
 	
+	<li>
+		<b><%=cocu.pagina%>
+<%if !current_user.nil? and is_admin() then%>
+<%=link_to "edit only admin",edit_documento_path(cocu)%>
+<%end %>
+<%= link_to cocu.send(:doc.to_s+locale.to_s), cocu.archivo_url.to_s %>
+</b>
+<% if !pathito.nil? then%>
+<br> &nbsp;&nbsp;&nbsp;<%= t('sito') %> >>
+<%=link_to cocu.pagina.method(:titulo.to_s+locale.to_s).call ,pathito %>
 <%end%>
+
+		
+	</li>
+<%end%>
+
+
+	
 </ul>
+
 					</div>		
 </div>
 <%end%>
