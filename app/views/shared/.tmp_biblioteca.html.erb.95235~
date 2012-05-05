@@ -49,22 +49,24 @@ if params[:search]%>
 </div>
 <div class="descripcion">
 <ul>
-<% @documentos.each do |documento|%>
-	pathito=aver(documento.pagina)
+<% @documentos.each do |cocu|
+	pathito=aver(cocu.pagina)
+%>
+	
 	<li>
-<b>
+		<b>
 <%if !current_user.nil? and is_admin() then%>
-<%=link_to "edit only admin",edit_documento_path(documento)%>
+<%=link_to "edit only admin",edit_documento_path(cocu)%>
 <%end %>
-<%= link_to dd.send(:doc.to_s+locale.to_s), documento.archivo_url.to_s %>
+<%= link_to cocu.send(:doc.to_s+locale.to_s), cocu.archivo_url.to_s %>
 </b>
-<% if !dd.pagina.nil? then%>
+<% if !pathito.nil? then%>
 <br> &nbsp;&nbsp;&nbsp;<%= t('sito') %> >>
-<%if !pathito.nil?%>
-<%=link_to documento.pagina.method(:titulo.to_s+locale.to_s).call ,pathito %>
+<%=link_to cocu.pagina.method(:titulo.to_s+locale.to_s).call ,pathito %>
 <%end%>
-<%end%>
-</li>
+
+		
+	</li>
 <%end%>
 
 </ul>	
@@ -108,7 +110,7 @@ if(!v.nil?)
 %>
 	
 	<li>
-		<b><%=cocu.pagina%>
+		<b>
 <%if !current_user.nil? and is_admin() then%>
 <%=link_to "edit only admin",edit_documento_path(cocu)%>
 <%end %>

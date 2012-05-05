@@ -31,9 +31,9 @@ def biblioteca
  		@documentosjeunes=Documento.where(:pagina_id=>@paginas)
  		if params[:search]
  		  @resultado = @documentosjeunes.with_query(params[:search])
- 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
- 			@documentos=@documentosjeunes.paginate(:page => params[:page], :per_page => 10)
+ 			@documentos=@documentosjeunes.paginate(:page => params[:page], :per_page => 100)
  	end
       @seccion_menu=:biblioteca
 end

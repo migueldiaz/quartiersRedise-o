@@ -12,7 +12,7 @@ class AsociationController < ApplicationController
 # 		@paginas=@sitio.paginas
  		if params[:search]
  		  @resultado = Video.with_query(params[:search])
- 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		  @videos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
  		  @videos=Video.find(:all)
  		end

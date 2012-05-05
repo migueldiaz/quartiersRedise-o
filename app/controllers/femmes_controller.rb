@@ -27,9 +27,9 @@ def biblioteca
     logger.info "ofuuuu"
  		if params[:search]
  		  @resultado = @documentosfemmes.with_query(params[:search])
- 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 10)
+ 		  @documentos=@resultado.paginate(:page=> params[:page],:per_page => 100)
  		else
- 			@documentos=@documentosfemmes.paginate(:page => params[:page], :per_page => 10)
+ 			@documentos=@documentosfemmes.paginate(:page => params[:page], :per_page => 100)
  		end
  		        @seccion_menu=:biblioteca
 

@@ -63,4 +63,9 @@ config.log_level = :info
 :password => 'quartiers',
 :enable_starttls_auto=>true
 }
+ActsAsIndexed.configure do |config|
+  config.min_word_size = 2
+  # More config as required...
+end
+
 end
