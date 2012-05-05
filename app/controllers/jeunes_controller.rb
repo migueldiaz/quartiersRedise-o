@@ -9,7 +9,9 @@ end
 def videos
  		@jeunes=Jeunes.first
  		@sitio=@jeunes.sitio	
- 		@paginas=@sitio.paginas
+    @paginas=[]
+ 		@paginas+=@sitio.paginas
+    @jeunes.equipos.map{|e| @paginas+= e.sitio.paginas}
  		@videosjeunes=Video.where(:pagina_id=>@paginas)
  		if params[:search]
  		  @resultado = @videosjeunes.with_query("^"+params[:search])
