@@ -68,6 +68,30 @@ end
 <%end%>
 
 
+<% if edita_galeria and !@pagina.imagens.empty? then %>
+  <hr class="space"/>
+<div class="galeria">
+<h1><%=t('galeria')%></h1>
+<% @pagina.imagens.each do |imagen| %>
+<div class="ficha colaborador">
+
+<%= render :partial => "/shared/img", :locals => {
+:imagen=>thumbea(imagen.imagen_url), 
+:enlace_imagen=>imagen.imagen_url, 
+:imagen_class=>"left",
+:imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call,
+:galeria=>true
+}
+%> 	
+</div>
+
+<%end%>
+
+
+</div>
+<hr class="space"><hr class="space">
+
+<%end%>
 
  <% if (!@pagina.documentos.empty?) then  
 docya=true%>
@@ -158,32 +182,6 @@ if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 </div>
 
 <%end%>
-
-
-<% if edita_galeria and !@pagina.imagens.empty? then %>
-<div class="documentacion">
-<div class="ficha_izq_titulo"><%=t('galeria')%></div>
-<ul style="list-style-type: none;margin-left:-19px">
-<% @pagina.imagens.each do |imagen| %>
-				<li >
-					<%= render :partial => "/shared/img", :locals => {
-:imagen=>thumbea(imagen.imagen_url), 
-:enlace_imagen=>imagen.imagen_url, 
-:imagen_class=>"left",
-:imagen_title=>imagen.method(dame_nombre_metodo 'piefoto').call,
-:galeria=>true
-}
-%> 	
-
-					</li>
-<%end%>
-</ul>
-</div>
-
-<%end%>
-
-
-
 
 
 <%end%>

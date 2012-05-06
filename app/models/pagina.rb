@@ -10,7 +10,7 @@ belongs_to :pagina,:foreign_key => "pagina_id"
 has_many :parrafos, :dependent => :destroy, :order => "position ASC"
 has_many :imagens, :dependent => :destroy
 has_many :documentos, :dependent => :destroy, :order => "position ASC"
-has_many :paginas, :dependent => :destroy
+has_many :paginas, :dependent => :destroy, :order => "position ASC"
 has_many :videos, :dependent => :destroy, :order => "position ASC"
 
 validate :valida_titulo

@@ -1,4 +1,4 @@
 class Documentacion < ActiveRecord::Base
   belongs_to :sitio
-  has_many :paginas
+  has_many :paginas, :order => "position ASC"
 end
