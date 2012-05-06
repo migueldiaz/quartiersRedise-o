@@ -1,10 +1,10 @@
  <%
 if current_user.tipo!='traductor'
-n_columnas=8
-columns=[t('nombreEs'), t('nombreFr'), t('position'),t("url"),t("imagen"), "detalle", "editar", "borrar"]
+n_columnas=7
+columns=[t('nombreEs'), t('nombreFr'),t("url"),t("imagen"), "detalle", "editar", "borrar"]
 else
-n_columnas=8
-columns=[t('nombreEs'), t('nombreFr'),t('position'),t("url"), t("imagen"), "detalle", "editar"]
+n_columnas=6
+columns=[t('nombreEs'), t('nombreFr'),t("url"), t("imagen"), "detalle", "editar"]
 end
  
 %>

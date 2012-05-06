@@ -59,8 +59,8 @@ end
   <hr class="space"/>
 <div class="galeria">
 <% @pagina.videos.each do |video| %>
-					<a name="video<%=video.id%>"/>
-					<h2><%=video.send(:titulo.to_s+local)%></h2>
+					<a name="video<%=video.id%>"> </a>	
+					<h3>VIDEO: <%=video.send(:titulo.to_s+local)%></h3>
  	<%= video.html.html_safe %>
 <%end%>
 </div>
@@ -93,7 +93,24 @@ end
 
 <%end%>
 
+ <% if (!@pagina.documentos.empty?) then  
+docya=true%>
+<div class="documentacion">
+<div class="ficha_izq_titulo"><%=t('documentacion')%></div>
+<ul>
+<% @pagina.documentos.each do |documento| %>
+ 		<% if documento.archivo_url.to_s != "" %>
+			<li> <%= link_to image_tag("pdf.png", :height=>"30px"), documento.method("archivo"+if locale.to_s!='fr' then '' else 'fr' end+"_url").call.to_s %>
+			<%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.method("archivo"+if locale.to_s!='fr' then '' else 'fr' end+"_url").call.to_s , :class=>"doc_enlace"%></li>
 
+		<%else%>
+			<li>> FALTA DOC EN BD!! :::: <%= documento.doces %></li>
+  		<% end %>	
+<%end%>
+</ul>
+</div>
+
+<%end%>
 <%
 content_for :menu_izq do
 
@@ -157,7 +174,7 @@ if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 }
 %> 	
 <%else%>
-<a href="#video<%=video.id%>"><%= video.send(:titulo.to_s+local) %></a>
+<a href="#video<%=video.id%>"></a><%= video.send(:titulo.to_s+local) %>
 	<%end%>
 					</li>
 <%end%>
@@ -166,22 +183,7 @@ if(!@protagonistas.nil? or !@aportan.nil? or !@noaportan.nil?)%>
 
 <%end%>
 
- <% if (!@pagina.documentos.empty?) then  
-docya=true%>
-<div class="documentacion">
-<div class="ficha_izq_titulo"><%=t('documentacion')%></div>
-<ul>
-<% @pagina.documentos.each do |documento| %>
- 		<% if documento.archivo_url.to_s != "" %>
- 		 	<li>> <%= link_to documento.method(:doc.to_s+locale.to_s).call, documento.method("archivo"+if locale.to_s!='fr' then '' else 'fr' end+"_url").call.to_s %></li>
-		<%else%>
-			<li>> FALTA DOC EN BD!! :::: <%= documento.doces %></li>
-  		<% end %>	
-<%end%>
-</ul>
-</div>
 
-<%end%>
 <%end%>
 
 <% content_for :menu_dcha do%>

@@ -3,7 +3,6 @@
    
     <td><%= colaboradorNo.nombreEs %></td>
     <td><%= colaboradorNo.nombreFr %></td>
-    <td><%= colaboradorNo.position %></td>
     <td><%= colaboradorNo.url %></td>
     <td> <% if colaboradorNo.imagen_url.to_s != "" %>
     <%= image_tag colaboradorNo.imagen_url.to_s,:size=>'80x70' %>

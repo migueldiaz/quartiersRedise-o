@@ -18,7 +18,8 @@
 	
 	<br style="clear:both;">
 	<h3><%=t('documentacion')%></h3>
-	<%= link_to evento.method(:titulodoc.to_s+locale.to_s).call, if locale.to_s=='es' then evento.documento.to_s else evento.documentofr.to_s end%>
+	<%= link_to image_tag("pdf.png", :height=>"30px"), if locale.to_s=='es' then evento.documento.to_s else evento.documentofr.to_s end%>
+	<%= link_to evento.method(:titulodoc.to_s+locale.to_s).call, if locale.to_s=='es' then evento.documento.to_s else evento.documentofr.to_s end, :class=>"doc_enlace"%>
 	<%end%>
 <!-- AddThis Button BEGIN -->
 <!-- AddThis Button END -->

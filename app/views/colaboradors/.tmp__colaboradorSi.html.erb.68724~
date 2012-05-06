@@ -2,8 +2,6 @@
  <tr>
    <td><%= colaboradorSi.nombreEs %></td>
     <td><%= colaboradorSi.nombreFr %></td>
-	    <td><%= colaboradorSi.position %></td>
-
      <td><%= colaboradorSi.url %></td>
    <td> <% if colaboradorSi.imagen_url.to_s != "" %>
     <%= image_tag colaboradorSi.imagen_url.to_s,:size=>'80x70' %>

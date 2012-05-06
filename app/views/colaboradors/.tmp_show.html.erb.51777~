@@ -11,12 +11,6 @@
   <%= @colaborador.nombreFr %>
 </p>
 
-
-<p>
-  <b><%=t('position') %></b>
-  <%= @colaborador.position %>
-</p>
-
 <p>
   <b><%=t('aporta') %></b>
   <% if @colaborador.aporta %>

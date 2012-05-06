@@ -1,7 +1,7 @@
 <h1 ><%=t('noaportan_new')%></h1>
 <div class="ficha">
 <% if !@noaportan.nil?%>
-		<% @noaportan.each do |colaborador| %>
+		<% @noaportan.sort{|a,b| a.position <=> b.position}.each do |colaborador| %>
 
 			<%=render "/shared/ficha_colaborador",  :colaborador=>colaborador %>
 		

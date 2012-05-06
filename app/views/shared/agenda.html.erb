@@ -32,15 +32,16 @@ titulete_mini=truncate(titulete, :length => 40)
 					<%if (!evento.imagen_url.blank?) then%>
 	   <%= render :partial => "/shared/img", :locals => {
 :imagen=>thumbea(evento.imagen_url), 
-:enlace_imagen=>"./asociation/agenda?id="+evento.id.to_s, 
+:enlace_imagen=>"/asociation/agenda?id="+evento.id.to_s, 
 :imagen_class=>"left",
-:imagen_title=>titulo,
+:imagen_title=>nil,
 :galeria=>false,
 :lightbox=>false,
 :width=>"200px"
 
 }
 %> 	
+	 		 <%= link_to titulo, asociation_agenda_path( :anchor=>"evento"+evento.id.to_s) %> 
 
 					
 <%else%>

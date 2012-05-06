@@ -1,7 +1,9 @@
 module ApplicationHelper
   
   def thumbea valor
-    valor.gsub(/\/(?!.*\/)/, '/thumb_') unless valor.nil?
+    valor.gsub!(/\/(?!.*\/)/, '/thumb_') unless valor.nil?
+    puts valor
+    valor
   end
  def linkea valor
    valor.gsub!(/desarrollo.quartiersdumonde.org/, "#{request.host}")

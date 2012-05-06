@@ -1,4 +1,0 @@
-<% modelito.each do |pagina| %>
-	 	<li><%= link_to pagina.send(:titulo.to_s+local) ,equipe_pagina_path(:id=>pagina) %> </li> 
-<% end %>
-	
