@@ -56,5 +56,8 @@
 		
 		</p>
 <%end%>
+<%if params[:search]%>
+
 <%= will_paginate @videos %>
+<%end%>
 
