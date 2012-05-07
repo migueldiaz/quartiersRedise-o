@@ -19,7 +19,7 @@ module ApplicationHelper
     html=""
      videos.each do |video|
   if video.position==c.to_int
-  html<<"<a name='video"+video.id.to_s+"'></a><h2>"+video.send(:titulo.to_s+local)+"</h2>"+video.html
+  html<<"<a name='video"+video.id.to_s+"'></a><h3>VIDEO: "+video.send(:titulo.to_s+local)+"</h3>"+video.html
 
 end
 
