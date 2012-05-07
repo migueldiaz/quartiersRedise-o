@@ -50,7 +50,7 @@
 
 			<a href="<%=asociation_agenda_path( :id=>evento.id)%>"  class="mosaic-overlay" style="display: inline; left: 0px; bottom: -52px; ">
 				<div class="details">
-					<span style="color:white;"><%=  evento.method(:titulo.to_s+locale.to_s.capitalize).call %></span>
+					<span style="color:white;"><%=  evento.send(:titulo.to_s+locale.to_s.capitalize) %></span>
 				</div>
 			</a>
 			<div class="mosaic-backdrop">
