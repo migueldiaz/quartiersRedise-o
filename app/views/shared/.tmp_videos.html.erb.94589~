@@ -44,8 +44,6 @@
 
 <%if params[:search]%>
 <p><%=t('resultado')+': '+@resultado.size.to_s+' '+t('entradas')+' . ' %><%=link_to t('destroy')+' '+'busqueda',send(proy+"_videos_path")%></p>
-<%end%>
-
 <% @videos.each do |video|%>
  		<p>		
  		<%=render :inline=>video.html%><br/>
@@ -58,3 +56,46 @@
 <%end%>
 <%= will_paginate @videos %>
 
+<%else%>
+<h4>** <%=t('intro_biblioteca')%></h4>
+<!-- NO HAY BUSQUEDA! -->
+<%
+
+valores=Hash.new
+@videos.each do |video|
+
+if valores[video.tipo]==nil then
+	valores[video.tipo]=Array.new
+end
+	valores[video.tipo].push video
+end
+
+
+%>
+
+
+<% 
+tipos_as.sort {|a,b| a[1] <=> b[1]}.each do |video|
+v=valores[video[1]]
+if(!v.nil?)
+%>
+<div class='biblioteca_categoria' onclick="despliega_categoria($(this).find('.nombre_biblioteca_categoria'));">
+<div class="nombre_biblioteca_categoria" >
+<h3><%=dameNombre(video[1],tipos_as)%></h3>
+</div>
+<div class="descripcion">
+<ul>
+<% v.each do |dd|%>
+<%= render :partial => "/documentos/video_de_lista", :locals => {
+:dd=>dd,
+:pathito=>send((dame_proyecto dd.pagina)+"_pagina_path",:id=>dd.pagina)
+}
+%>
+<%end%>
+</ul>
+</div>		
+</div>
+
+<%end%>
+<%end%>
+<%end%>
