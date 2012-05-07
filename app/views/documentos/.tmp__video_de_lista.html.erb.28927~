@@ -3,7 +3,7 @@
 <%if !current_user.nil? and is_admin() then%>
 <%=link_to "edit only admin",edit_video_path(dd)%>
 <%end %>
-<b><%=dd.method(:titulo.to_s+locale.to_s).call%></b>
+<b><%=dd.send(:titulo.to_s+locale.to_s)%></b>
 <br> &nbsp;&nbsp;&nbsp;<%= t('sito') %> >>
 <%=link_to dd.pagina.method(:titulo.to_s+locale.to_s).call ,pathito %>
 </li>

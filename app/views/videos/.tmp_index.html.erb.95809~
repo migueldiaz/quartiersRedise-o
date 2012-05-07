@@ -1,0 +1,22 @@
+<h1><%=t('videos').capitalize%></h1>
+<table class='listado_registros'>
+
+    <%= render :partial => "/shared/cabecera_tabla_gestion", 
+		:locals =>{ :n_columns=>5,:title=>t('parrafos'), 
+	:columns=>[t('tituloes'),t("titulofr"),t('video'),t("show"),t("edit")]} %>
+  
+<% @videos.each do |video| %>
+  <tr>
+   
+    <td><%= video.tituloes %></td>
+    <td><%= video.titulofr %></td>
+    <td><%=h render :inline=>video.html%> </td>
+    <td><%= link_to 'Show', video %></td>
+    <td><%= link_to 'Edit', edit_video_path(video) %></td>
+   <!-- <td><%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %></td>-->
+  </tr>
+<% end %>
+</table>
+
+<br />
+

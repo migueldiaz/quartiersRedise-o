@@ -1,0 +1,5 @@
+<h1><%=t('new')+' '+t('video')%></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('back'), pagina_path(@pagina) %>

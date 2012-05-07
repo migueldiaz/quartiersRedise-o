@@ -1,0 +1,24 @@
+
+<p id="notice"><%= notice %></p>
+
+
+<br/>
+
+<br/>
+
+<p>
+  <b><%=t 'tituloes'%>: </b>
+  <%= @video.tituloes %>
+</p>
+<p>
+  <b><%=t 'titulofr'%>: </b>
+  <%= @video.titulofr %>
+</p>
+
+<p>
+  <%=h render :inline=>@video.html%> 
+</p>
+
+
+<%= link_to t('edit'), edit_video_path(@video) %> |
+<%= link_to t('back'), pagina_path(@video.pagina) %>
