@@ -1,4 +1,4 @@
-/* @pjs preload="/images/peters.jpg"; */
+/* @pjs preload="/images/peters_jeunes.jpg","/images/peters_femmes.jpg"; */
 	PImage mapa;
 
 Log log=new Log();
@@ -6,14 +6,16 @@ PFont font;
 
 String[] ciudades={"Rio de Janeiro","La Maré","Paris","Belleville","Dakar","Pikine","Ndiago","Grand Yoff","Wakhinane","Bamako","Dialakorodji","Sikoro"};
 String[] colores={"fe4a00", "b5afaf", "ffffff", "ffb629", "ff813b", "ff640d", "ffd648", "ffad10", "f6f6f6", "fbfbfb", "dedede", "d4d3d2"};
-
+String colorFemme="ff0000";
+String colorJeune="fe4a00";
 
 void reset(){
 setup();
 }
-
+boolean jeunes;
 void setup(){
-	mapa = loadImage("/images/"+$("#map_image").val()+".jpg");
+	 jeunes=($("#path").val()=="jeunes");
+	mapa = loadImage("/images/peters_"+$("#path").val()+".jpg");
 
 	ellipseMode(CORNER);
 	
@@ -37,16 +39,24 @@ void setup(){
 String mensaje;
 ArrayList equipos=new ArrayList();
 int medida=10;
-int abajo=20;
+int abajo=15;
 void draw(){
 
 	image(mapa,0,0);
-	fill(dameColor(colores[0]));
+	if (jeunes)
+	fill(dameColor(colorJeune));
+	else
+	fill(dameColor(colorFemme));
 	for(EquipoMini em:equipos){
 	
-		ellipse(em.cx, em.cy+abajo, medida, medida);
 				if(mouseX>=em.cx && mouseX<=(em.cx+medida) && mouseY>=em.cy+abajo && mouseY<=(em.cy+medida+abajo)){
+				pushStyle();
+				fill(dameColor("666666"));
 		text(em.nombre, em.cx,em.cy+abajo);	
+		ellipse(em.cx, em.cy+abajo, medida, medida);
+				popStyle();
+		}else{
+		ellipse(em.cx, em.cy+abajo, medida, medida);
 		}
 		
 	}
