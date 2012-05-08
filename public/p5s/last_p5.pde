@@ -12,13 +12,18 @@ void parar(){
 }
 
 void setup(){
+	idioma=$('#localizacion').val();
+	if(idioma=="es"){
 	jovenes = loadImage("images/jovenes.png");
-	jeunes = loadImage("images/jeunes.png");
 	bdm = loadImage("images/bdm.png");
+	mujeres = loadImage("images/mujeres.png");
+	lista={bdm,  jovenes,  mujeres};
+	}else{
+	jeunes = loadImage("images/jeunes.png");
 	qdm = loadImage("images/qdm.png");
 	femmes = loadImage("images/femmes.png");
-	mujeres = loadImage("images/mujeres.png");
-	lista={qdm, bdm, jovenes, jeunes, mujeres, femmes};
+	lista={ qdm, jeunes, femmes};
+	}
 	
 
 	font=loadFont("Courier");
