@@ -1,5 +1,0 @@
-                    <div class="titulo ">
-						<span >
-						<%=title %>
-						<span>
-                    </div>

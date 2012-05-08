@@ -23,7 +23,7 @@
 	height:150px;
 	margin:10px;
 	background:#111 url(../img/progress.gif) no-repeat center center;
-	border:1px solid #fff;
+	border:1px solid #fe4a00;
 	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);
 }
 
@@ -58,13 +58,13 @@
 			opacity:0;
 			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
 			filter:alpha(opacity=00);
-			background:url(../img/bg-black.png);
+			background:url(../img/bg-orange.png);
 		}
 		
 		.bar .mosaic-overlay {
 			bottom:-100px;
 			height:100px;
-			background:url(../img/bg-black.png);
+			background:url(../img/bg-orange.png);
 		}
 		
 		.bar2 .mosaic-overlay {
@@ -84,6 +84,6 @@
 		.bar3 .mosaic-overlay {
 			top:-100px;
 			height:100px;
-			background:url(../img/bg-black.png);
+			background:url(../img/bg-orange.png);
 		}
 		/*** End Animation Styles ***/

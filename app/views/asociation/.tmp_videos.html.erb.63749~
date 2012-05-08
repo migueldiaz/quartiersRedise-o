@@ -1,1 +1,0 @@
-<%=render(:file => "/shared/videos.html.erb",:locals => {:proy=>"asociation"})  %>
