@@ -1,4 +1,4 @@
-/* @pjs preload="/images/carte_peters.jpg"; */
+/* @pjs preload="/images/peters.jpg"; */
 	PImage mapa;
 
 Log log=new Log();
@@ -26,7 +26,7 @@ void setup(){
 
 	colorMode(HSB, 100);
 	background(80);
-	size(548, 342);
+	size(548, 411);
 	ServicioLoadEquiposMiniXML loadEq=new ServicioLoadEquiposMiniXML();
 	equipos=loadEq.procesaXML("/"+$("#path").val()+"/equipos.xml");
 	
@@ -37,16 +37,16 @@ void setup(){
 String mensaje;
 ArrayList equipos=new ArrayList();
 int medida=10;
-
+int abajo=20;
 void draw(){
 
-	image(mapa,0,0);	
+	image(mapa,0,0);
 	fill(dameColor(colores[0]));
 	for(EquipoMini em:equipos){
 	
-		ellipse(em.cx, em.cy, medida, medida);
-				if(mouseX>=em.cx && mouseX<=(em.cx+medida) && mouseY>=em.cy && mouseY<=(em.cy+medida)){
-		text(em.nombre, em.cx,em.cy);	
+		ellipse(em.cx, em.cy+abajo, medida, medida);
+				if(mouseX>=em.cx && mouseX<=(em.cx+medida) && mouseY>=em.cy+abajo && mouseY<=(em.cy+medida+abajo)){
+		text(em.nombre, em.cx,em.cy+abajo);	
 		}
 		
 	}
