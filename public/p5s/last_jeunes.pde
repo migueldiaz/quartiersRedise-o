@@ -1,4 +1,4 @@
-/* @pjs preload="/images/peters_jeunes.jpg","/images/peters_femmes.jpg"; */
+/* @pjs preload="/images/mapa_def_2.gif","/images/mapa_def_2.gif"; */
 	PImage mapa;
 
 Log log=new Log();
@@ -15,7 +15,7 @@ setup();
 boolean jeunes;
 void setup(){
 	 jeunes=($("#path").val()=="jeunes");
-	mapa = loadImage("/images/peters_"+$("#path").val()+".jpg");
+	mapa = loadImage("/images/mapa_def_2.gif");
 
 	ellipseMode(CORNER);
 	
@@ -24,14 +24,13 @@ void setup(){
 	textMode(SCREEN);	
 	textSize(20);
 	noStroke();
-	hint(DISABLE_OPENGL_2X_SMOOTH);
 
 	colorMode(HSB, 100);
 	background(80);
-	size(548, 411);
+	size(548, 365);
 	ServicioLoadEquiposMiniXML loadEq=new ServicioLoadEquiposMiniXML();
 	equipos=loadEq.procesaXML("/"+$("#path").val()+"/equipos.xml");
-	
+	smooth();
 
 }
 
@@ -39,7 +38,7 @@ void setup(){
 String mensaje;
 ArrayList equipos=new ArrayList();
 int medida=10;
-int abajo=15;
+int abajo=5;
 void draw(){
 
 	image(mapa,0,0);

@@ -149,7 +149,7 @@ def equipos
   		@equipos=@femmes.equipos
   		@sitio=@femmes.sitio
         respond_to do |format|
-            format.xml {render :xml => @equipos.sort_by( &:id).to_xml(:only => [:id, :nombre, :x, :y])}
+            format.xml {render :xml => @equipos.each{|e| e.nombre=e.nombre.upcase}.sort_by( &:id).to_xml(:only => [:id, :nombre, :x, :y])}
             format.html
     end
 end

@@ -1,24 +1,26 @@
 <input type="hidden" id="path" value="femmes"/>
 <input type="hidden" id="map_image" value="carte_peters"/>
- <div style="margin:0 auto;width:560px;margin-bottom:30px;margin-top:0px;">
-<h2><%=t('lequipos')%></h2>
-<%=t('equipos_femmes')%>
-</div>
 <div style="text-align:center">
 <canvas id="foros_last" data-processing-sources="../p5s/last_jeunes.pde ../p5s/equipo_mini.pde ../p5s/log.pde ../p5s/servicio_load_equipos_mini_XML.pde"></canvas>  
 </div>	
- 	<hr class="space"/>
- 	<hr class="space"/>
- 	<hr class="space"/>
+
+  <%if !@equipos.nil?%>
+
     <% content_for :menu_izq do%>
 
 <div class="subpaginas">
-	<hr class="space"/>
+	<h2><%=t('equipos')%></h2>
 
-<ul style="list-style-type:none;">
+<ul>
 	<% @equipos.each do |equipo| %>
 	<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
 <%end%>
 </ul>
 </div>
+<%end%>
+<% @equipos.each do |equipo| %>
+ 		<a name="equipo<%=equipo.id%>"></a> 
+		<h2><%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %></h2>
+ 		<p><%= equipo.method(:descripcion.to_s+locale.to_s.capitalize).call%><p>
+	<%end%>
 <%end%>
