@@ -215,6 +215,8 @@ void nuevoComentario(boolean parentC){
 		ComentarioForo comentarioSeleccionado=reticulaRet.celdaSeleccionada.comentario;
 		String t=comentarioSeleccionado.texto;
 		int idComentarioSeleccionado=comentarioSeleccionado.id;
+		if(!parentC && idComentarioSeleccionado==0) 
+		return; 
 		String respondiendoA=comentarioSeleccionado.usuario.nombre;
 		if(comentarioPrincipal){
 		 t= "comentario principal !!";
