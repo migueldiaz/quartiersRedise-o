@@ -135,6 +135,9 @@ void refresca(){
 }
 
 Refresco r=new Refresco();
+    PImage b_imagen_usuario;
+
+boolean una;
 void draw(){
 	background(100);
 	if(frameCount%(30*30)==0){
@@ -154,8 +157,16 @@ void draw(){
 
 	navegadorTamanyos.display();
 	
+	if(b_imagen_usuario!=null ){
 	
-		
+	altura=map(b_imagen_usuario.height, 0,b_imagen_usuario.height,0,100);
+		pushStyle();
+		fill(reticulaRet.celdaSeleccionada.color);
+		rect(reticulaRet.celdaSeleccionada.getX()-105, reticulaRet.celdaSeleccionada.getY()-5, 100+5, altura+10)
+		popStyle();
+    	image(b_imagen_usuario, reticulaRet.celdaSeleccionada.getX()-100, reticulaRet.celdaSeleccionada.getY(), 100, altura);
+		}
+	
 }
 
 	public void mouseClicked() {
@@ -194,7 +205,7 @@ public void keyPressed() {
 		}else if(key=='r'){
 			log.info("RESET!");
 			reticulaRet.reset();
-
+			b_imagen_usuario=null;
 			
 		}else if(key=='c'){
 	nuevoComentario(false);		

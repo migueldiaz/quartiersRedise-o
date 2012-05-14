@@ -210,8 +210,29 @@ def buscador
 end
 def forito
    
-  foro
- render :layout=>'foro_interactivo'
+ if !usuarioforologado
+      redirect_to jeunes_acceso_path
+     elsif usuarioforologado.jeunes.nil?
+      redirect_to femmes_foros_path
+    end
+  @foro=Foro.find(params[:id])
+  @jeunes=@foro.sitio.jeunes
+@arr_images=Array.new
+  @foro.comentarios.each  do |c| 
+    if !c.usuarioforo.imagen.blank? then
+      if !@arr_images.include? c.usuarioforo.imagen.to_s then
+      @arr_images<<c.usuarioforo.imagen.to_s
+      end
+      end 
+      end  
+   ##########Visualizacion correos unicos
+   #@usuarios=@foro.comentarios.collect(&:usuarioforo).uniq
+   #@correos=@usuarios.collect(&:email).uniq
+   
+   ##########  
+  
+  
+   render :layout=>'foro_interactivo'
 end
 
 end

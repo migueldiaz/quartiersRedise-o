@@ -33,12 +33,17 @@ class ServicioLoadForosXML {
 
 			String nombreUsuario = el.getChild("usuarioforo").getChild("nombre").getContent();
 			String mailUsuario = el.getChild("usuarioforo").getChild("email").getContent();
+		
 			int idUsuario = el.getChild("usuarioforo").getChild("id").getContent();
 
 			
 			Usuario usuario = new Usuario(idUsuario, nombreUsuario,	mailUsuario, e);
 			usuario = e.addUsuario(usuario);
-			
+			Object o=el.getChild("usuarioforo").getChild("imagen");
+			if(o!=null){
+			String imagenUsuario = o.getContent();
+			usuario.setImagen(imagenUsuario);
+			}	
 			
 			ComentarioForo com=new ComentarioForo(idComentario, idComentarioParent, texto,texto_alternativo, usuario);
 			usuario.addComentario(com);

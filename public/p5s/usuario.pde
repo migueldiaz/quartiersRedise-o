@@ -3,6 +3,7 @@ class Usuario {
 	int id;
 	String nombre;
 	String mail;
+	String imagen;
 	Equipo equipo;
 	ArrayList comentarios = new ArrayList();
 	ArrayList comentariosRepresentados = new ArrayList();
@@ -21,7 +22,15 @@ class Usuario {
  	public void addComentario(ComentarioForo c) {
 		comentarios.add(c);
 	}
- 
+ 	public void setImagen(String image){
+ 		this.imagen=image;
+ 	}
+ 	public boolean tieneImagen(){
+ 		return this.imagen!=null;
+ 	}
+ 	public String getImagen(){
+ 		return "/uploads/usuarioforo/imagen/"+this.id+"/thumb_"+this.imagen;
+ 	}
  
   	public boolean equals(Object obj) {
 		if (this == obj)

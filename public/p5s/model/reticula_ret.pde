@@ -356,6 +356,7 @@ float anchoColumna = getWidth() / cc.columnas;
 	}
 
 	private void recalculaRet(boolean normaliza) {
+	
 		ColRet columnaSeleccionada = celdaSeleccionada.getColumna();
 		FilaRet filaSeleccionada = columnaSeleccionada.getFila();
 
@@ -390,6 +391,12 @@ float anchoColumna = getWidth() / cc.columnas;
 					redimensionadorPosicionadorElementos.recursivoDescNormaliza(subChild);
 				else
 					redimensionadorPosicionadorElementos.recursivoDesc(subChild, celdaSeleccionada);
+
+
+		if(celdaSeleccionada.comentario.usuario.tieneImagen())
+			 b_imagen_usuario=loadImage(celdaSeleccionada.comentario.usuario.getImagen());
+			 else
+			 b_imagen_usuario=null;
 
 	}
 	
@@ -558,6 +565,7 @@ float anchoColumna = getWidth() / cc.columnas;
 			busca(c, comentarioTimeSel);
 			if (buscada != null) {
 				celdaSeleccionada = buscada;
+				
 			}
 		}
 		recalculaRet();

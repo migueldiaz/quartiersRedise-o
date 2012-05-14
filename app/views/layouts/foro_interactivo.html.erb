@@ -12,6 +12,25 @@
   <%= csrf_meta_tag %>
 
  <script type="text/javascript">
+ 	function preloader() 
+ {
+ 
+     // counter
+     var i = 0;
+ 
+     // create object
+     imageObj = new Image();
+ 
+     // set image list
+     images = <%=@arr_images.to_s.html_safe%>;
+ 
+     // start preloading
+     for(i=0; i<images.length; i++) 
+     {
+          imageObj.src=images[i].replace(/\/(?!.*\/)/,"/thumb_");
+     }
+ 
+ } 
  	 var Request = {	
  	parameter: function(name) {
  		return this.parameters()[name];
@@ -217,7 +236,7 @@
 </style>
 
 </head>
-<body>
+<body onload="preloader();">
 <div id="boxes">
  
      

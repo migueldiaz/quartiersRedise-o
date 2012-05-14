@@ -18,6 +18,8 @@ def videos
 
 end
 
+
+
 def biblioteca
  		@femmes=Femmes.first
  		@sitio=@femmes.sitio
@@ -207,8 +209,22 @@ def foro
 end
 def forito
    
-  foro
- render :layout=>'foro_interactivo'
+  if !usuarioforologado
+      redirect_to femmes_acceso_path
+     elsif usuarioforologado.femmes.nil?
+      redirect_to femmes_acceso_path
+    end
+  @foro=Foro.find(params[:id])
+  @femmes=@foro.sitio.femmes
+  @arr_images=Array.new
+  @foro.comentarios.each  do |c| 
+    if !c.usuarioforo.imagen.blank? then
+      if !@arr_images.include? c.usuarioforo.imagen.to_s then
+      @arr_images<<c.usuarioforo.imagen.to_s
+      end
+      end 
+      end
+  render :layout=>'foro_interactivo'
 end
 
 end
