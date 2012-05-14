@@ -88,6 +88,23 @@ div.menu_superior{
 				color:@color_naranja;
 			}
 		} 
+		& .home{
+			background-color:white;
+			color:@color_naranja;
+			.bordear(@color_naranja);
+			& :hover{
+				background-color:@color_naranja;
+				color:white;
+			}
+			a{
+			display:block;
+			color:@color_naranja;
+			text-decoration:none;
+			&:hover{
+				color:white;
+			}
+		}
+		}
 
 		float:left;
 		position:relative;

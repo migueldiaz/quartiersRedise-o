@@ -2,7 +2,6 @@
 <% if params[:controller]=="asociation" %>
 	<%if !@asociacion.nil? %>
 	<ul id="menu">
-		<li class='home'><%=link_to t('home'),root_path%></li>
 		<li <%=menu_seleccionada_tris "agenda" %>><%=link_to t('agenda'),asociation_agenda_path%></li>
 		<%=render "asociation/presentaciones" %> 
 		<!--	<li <%=menu_seleccionada_bis asociation_vision_path %>><%=link_to t('vision'),asociation_vision_path%></li>-->
@@ -19,8 +18,6 @@
 <% end %>
 	<% if params[:controller]=="jeunes" %>
 	<ul id="menu">
-		<li class='home'><%=link_to t('home'),root_path%></li>
-
 		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('presentacion'),jeunes_presentacion_path  %>
     		<%if !@presentacion.nil? && !@paginas.nil?  %>
     			<ul class="submenu"><%=render :file=>'jeunes/_paginas', :locals => {:modelito=>@paginas} %></ul>
@@ -88,8 +85,7 @@
 
 	<% if params[:controller]=="equipe" %>
 		<ul id="menu">
-			<li class='home'><%=link_to t('home'),root_path%></li>
-		<%
+			<%
 			path_equipos_general=femmes_equipos_path
 			if !@equipo.jeunes.nil?
 			path_equipos_general=jeunes_equipos_path
@@ -105,8 +101,7 @@
 
 		<% if params[:controller]=="femmes" %>
 	<ul id="menu">
-			<li class='home'><%=link_to t('home'),root_path%></li>
-	<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('presentacion'),femmes_presentacion_path  %>
+		<li <%=menu_seleccionada_tris :presentacion %>><%=link_to t('presentacion'),femmes_presentacion_path  %>
 		    		<%if !@presentacion.nil? && !@paginas.nil?  %>
     			<ul class="submenu"><%=render :file=>'femmes/_paginas', :locals => {:modelito=>@paginas} %></ul>
 				<%elsif @presentacion.nil?%>

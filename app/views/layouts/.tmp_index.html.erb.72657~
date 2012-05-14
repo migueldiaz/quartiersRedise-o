@@ -23,7 +23,7 @@
 					<hr class="space">
 					<div class="menu_superior">
 				<ul id="menu" >
-		<li class="home"><%=link_to t('home'),root_path%></li>
+		<li class="seleccionado"><%=link_to t('home'),root_path%></li>
 		<li><%=link_to t('asociacion'),asociation_path%></li>
 		<li><%=link_to t('qdmsubtitle'),jeunes_path%></li>
 		<li><%=link_to t('qdmfemmes'),femmes_path%></li>
