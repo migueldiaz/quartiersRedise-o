@@ -76,23 +76,7 @@ div.menu_superior{
 			}
 		}
 	}
-
-
-		li{
-				background-color:black;
-			& :hover{
-				background-color:@color_naranja;
-				color:white;
-			}
-		& .seleccionado{
-			background-color:@color_naranja;
-			color:black;
-			& :hover{
-				background-color:black;
-				color:@color_naranja;
-			}
-		} 
-		& .home{
+	li.home{
 			background-color:white;
 			color:@color_naranja;
 			.bordear(@color_naranja);
@@ -110,6 +94,22 @@ div.menu_superior{
 		}
 		}
 
+
+		li{
+				background-color:black;
+			& :hover{
+				background-color:@color_naranja;
+				color:white;
+			}
+		& .seleccionado{
+			background-color:@color_naranja;
+			color:black;
+			& :hover{
+				background-color:black;
+				color:@color_naranja;
+			}
+		} 
+		
 		float:left;
 		position:relative;
 		/* SHOW SUBMENU  1 */
