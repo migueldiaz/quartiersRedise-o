@@ -17,7 +17,7 @@
 
 <ul style="list-style-type:none;">
 	<% @equipos.each do |equipo| %>
-	<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
+	<li > <%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %> </li>
 <%end%>
 </ul>
 </div>

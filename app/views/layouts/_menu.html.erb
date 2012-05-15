@@ -53,13 +53,15 @@
 		   <%if !@equipos.nil? %>
 				<ul class="submenu">
 					<% @equipos.each do |equipo| %>
-						<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
+						<li > <%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %> </li>
+
 					<%end%>
 				</ul>
 		   <%elsif @equipo.nil?%>
 				<ul class="submenu2">
 					<% dame_equipos.each do |equipo| %>
-						<li ><%=link_to equipo.nombre,jeunes_equipos_path(:anchor=>"equipo"+equipo.id.to_s) %> </li>
+						<li > <%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %> </li>
+
 					<%end%>
 				</ul>
 			<%end%>
@@ -97,7 +99,7 @@
 			%> 
 			<li><%=link_to t('lequipos'),path_equipos_general %></li>
 		    <%if !@equipo.nil? %>
-				<li class="seleccionado"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
+				<li class="home"><%= link_to @equipo.nombre,equipe_sitio_path(:id=>@equipo)%></li>
 				<%=render 'equipe/opciones'%>
 		    <%end%>
 		</ul>
@@ -125,13 +127,13 @@
 		  		   <%if !@equipos.nil? %>
 				<ul class="submenu">
 					<% @equipos.each do |equipo| %>
-						<li > <a href="#equipo<%=equipo.id%>"><%=equipo.nombre%></a> </li>
+						<li > <%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %> </li>
 					<%end%>
 				</ul>
 		   <%elsif @equipo.nil?%>
 				<ul class="submenu2">
 					<% dame_equipos_femmes.each do |equipo| %>
-						<li ><%=link_to equipo.nombre,femmes_equipos_path(:anchor=>"equipo"+equipo.id.to_s) %> </li>
+						<li > <%=link_to equipo.nombre,equipe_sitio_path(:id=>equipo) %> </li>
 					<%end%>
 				</ul>
 			<%end%>

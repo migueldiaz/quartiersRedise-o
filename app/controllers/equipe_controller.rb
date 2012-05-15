@@ -5,7 +5,7 @@ class EquipeController < ApplicationController
 #selecciona mujer y si no coge por defecto el de jovenes
   def segun_proyecto
     if @equipo.jeunes.nil?
-    render :layout => 'juan_femmes'
+    render :layout => 'juan_equipe_femmes'
     end
  end
 #GET /quartiers/agenda
