@@ -33,6 +33,7 @@
 <%= javascript_include_tag('rails-jquery') %>          
 <%= javascript_include_tag('menu') %>
 <%= javascript_include_tag('mosaic.1.0.1') %>
+<%= javascript_include_tag('jquery.cycle.all.latest.js') %>
 
 <script type="text/javascript">  
 			
@@ -41,14 +42,25 @@
 					animation	:	'slide'
 				});
 		    });
-		    
+		    $(document).ready(function() {
+    $('.slideshow').cycle({
+		fx: 'fade',
+		speed:  5000
+		});
+});
+
 		</script>
 		
 		<style type="text/css">
-		
+
 			/*Demo Styles*/
-			body{ background:#e9e8e4 url('img/bg-grid.png');; }
-				.mosaic-block{ /* left:50%; top:50%; margin-left:-200px; margin-top:-125px; */width:200px;height:150 }
+			body{ background-color:white; }
+			.span-24{ background-color:white; 
+				border-right: 1px dotted #fe4a00;	
+	border-left: 1px dotted #fe4a00;	
+	margin-bottom:5px;
+}
+				.mosaic-block{ /* left:50%; top:50%; margin-left:-200px; margin-top:-125px; */width:180px;height:150;margin:5px; }
 				.clearfix{ display: block; height: 0; clear: both; visibility: hidden; }
 						
 				.details{ margin:15px 20px; }	
@@ -56,6 +68,9 @@
 					p{ font:300 12px 'Lucida Grande', Tahoma, Verdana, sans-serif; color:#aaa; text-shadow:1px 1px 0 rgb(0,0,0);}
 					a{ text-decoration:none; }
 		
+.slideshow { }
+.slideshow img { }
+
 		</style>
 
     </head>

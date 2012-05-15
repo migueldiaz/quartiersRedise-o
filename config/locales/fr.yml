@@ -2,6 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 fr:
+ home:'HOME'
  equipos_jeunes: 'Le réseau Suds Nords Quartiers du Monde : Histoires Urbaines est composé d’équipes en Amérique latine : Bogota (Colombie), El Alto (Bolivie) et Rio de Janeiro (Brésil) et en Afrique : Salé (Maroc), Bamako (Mali) et Pikine (Sénégal).' 
  equipos_femmes: 'Le réseau Suds Nords Femmes du Monde : un réseau de protagonistes solidaires est composé d’équipes en Amérique latine : Bogota (Colombie), El Alto (Bolivie) et Rio de Janeiro (Brésil), en Afrique : Ouarzazate et Taskoukte (Maroc), Bamako (Mali) et Pikine (Sénégal) et en Europe : Paris (France) et Bruxelles (Belgique).' 
  intro_biblioteca: 'Cliquez sur les différentes catégories pour agrandir la vue' 

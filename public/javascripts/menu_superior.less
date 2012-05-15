@@ -59,7 +59,6 @@ div.menu_superior{
 	ul{
 		a{
 			display:block;
-			.white_on_black;
 			text-decoration:none;
 			& :hover{
 			}
@@ -80,6 +79,11 @@ div.menu_superior{
 
 
 		li{
+				background-color:black;
+			& :hover{
+				background-color:@color_naranja;
+				color:white;
+			}
 		& .seleccionado{
 			background-color:@color_naranja;
 			color:black;
@@ -120,7 +124,6 @@ div.menu_superior{
 			color:white;
 			text-decoration:none;
 			&:hover{
-				color:@color_naranja;
 			}
 		}
 		ul {

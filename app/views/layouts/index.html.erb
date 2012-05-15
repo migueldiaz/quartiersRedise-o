@@ -8,9 +8,9 @@
 <input type="hidden" value="<%=local%>" id="localizacion"/>
         <div class="container" id="content">
         	
-            <div class="span-24 append-bottom" >
+            <div class="span-24 last copy" >
                 <div class="span-4 " style="text-align:left;" >
-                    <img src="/imgs_asociacion/logo.png" alt="logo_qdm_a.gif" >
+                    <img src="/images/log.jpg" alt="logo_qdm_a.gif" >
                 </div>
 
                 <div class="span-20 last" >
@@ -36,12 +36,13 @@
 			
 		
             <div class="span-24">
-            <div class="span-12">
+            <div class="span-14 slideshow" >
             	
-			
-					<canvas id="foros_last" data-processing-sources="../p5s/last_p5.pde ../p5s/log.pde"></canvas>  
-            </div>
-            <div class="span-12 last">
+		<img src="/images/bdm_<%=local%>.jpg" /> 
+		<img src="/images/jeunes_<%=local%>.jpg" /> 
+		<img src="/images/femmes_<%=local%>.jpg" /> 
+	            </div>
+            <div class="span-10 last">
             			<h2><%=t('slogan')%></h2>
 
             	<% @eventos.each do |evento| %>
@@ -68,7 +69,6 @@
 
 
 			<hr class="space">
-		<h2><%=t('slogan')%></h2>
 			<hr class="space">
 			<hr class="space">
             </div>
