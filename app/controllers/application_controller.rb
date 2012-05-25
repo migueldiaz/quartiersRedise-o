@@ -11,10 +11,14 @@ class ApplicationController < ActionController::Base
   def record_not_found
     session[:usuario]=nil
      @url= request.url
+     if !request.env['HTTP_REFERER'].nil?
      mensaje="Error al acceder a "+@url+" Se ha enviado el aviso correspondiente. Peticion realizada desde: #{request.env['HTTP_REFERER']}"
-     flash[:error] = mensaje
     AvisoMailer.error(mensaje).deliver
-    redirect_to login_path
+  else
+     mensaje="Pongase en contacto con juanantonioruz@gmail.com para indicarle el error. Contact with juanantonioruz@gmail.com and communicate the details of this error"
+    end 
+     flash[:error] = mensaje
+    redirect_to root_path
    
     #render :text => "404 No encontrado", :status => 404
   end

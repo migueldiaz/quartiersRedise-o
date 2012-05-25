@@ -5,11 +5,6 @@
 
 } %>
     <body  >
-    	<% if !flash[:error].nil?%>
-		<script>
-			alert('<%= flash[:error] %>');
-		</script>
-		<%end%>
 <input type="hidden" value="<%=local%>" id="localizacion"/>
         <div class="container" id="content">
         	

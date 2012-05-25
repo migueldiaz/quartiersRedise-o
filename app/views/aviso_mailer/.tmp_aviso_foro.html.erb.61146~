@@ -1,0 +1,16 @@
+<%if @idioma=='es'%>
+
+Nuevo comentario: <%= @foro.tituloes  %> 
+   <%=@comentario.tituloes%>
+   
+    <%=@comentario.textoes%>
+
+<%else%>
+Nouveaux comentaire: <%= @foro.tituloes  %> 
+   <%=@comentario.titulofr%>
+   
+    <%=@comentario.textofr%>
+<%end%>
+
+
+

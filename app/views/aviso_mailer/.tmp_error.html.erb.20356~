@@ -1,0 +1,2 @@
+<h1>Error en QDM</h1>
+<p>Se ha procedido un error mientras el usuario accedia a <%=link_to @url,@url%></p>
