@@ -3,7 +3,7 @@ class ServicioToxiColor {
 	public  ArrayList iniciaColoresEquiposBis() {
 		ArrayList listaColoresEquipo=new ArrayList();
 		listaColoresEquipo.add(toxi.color.TColor.newHex("8b0000"));
-		listaColoresEquipo.add(toxi.color.TColor.newHex("ff0000"));
+		listaColoresEquipo.add(toxi.color.TColor.newHex("f48989"));
 		listaColoresEquipo.add(toxi.color.TColor.newHex("adff2f"));
 		listaColoresEquipo.add(toxi.color.TColor.newHex("f4e200"));
 		listaColoresEquipo.add(toxi.color.TColor.newHex("8b008b"));
