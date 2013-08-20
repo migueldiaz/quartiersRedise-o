@@ -1,3 +1,8 @@
+/* @pjs preload="/images/open_in_new_window_inv.png"; */
+
+  PImage open_in_new_window ;
+
+
 Log log=new Log();
 PFont font;
 ReticulaRet reticulaRet;
@@ -97,6 +102,7 @@ String usuario_mail;
 String otro_locale;
 int tamTexto=13;
 void setup(){
+     open_in_new_window = loadImage("/images/open_in_new_window_inv.png");
 	font=loadFont("Courier");
 //textMode(SCREEN);	
 textFont(font, tamTexto); 
@@ -162,6 +168,7 @@ void draw(){
 	altura=map(b_imagen_usuario.height, 0,b_imagen_usuario.height,0,100);
 		pushStyle();
 		fill(reticulaRet.celdaSeleccionada.color);
+
 		rect(reticulaRet.celdaSeleccionada.getX()-105, reticulaRet.celdaSeleccionada.getY()-5, 100+5, altura+10)
 		popStyle();
     	image(b_imagen_usuario, reticulaRet.celdaSeleccionada.getX()-100, reticulaRet.celdaSeleccionada.getY(), 100, altura);

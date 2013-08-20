@@ -292,12 +292,13 @@ float anchoColumna = getWidth() / cc.columnas;
 					noStroke();
 					fill(celda.color);
 					rect(celdaX, celdaY, celdaWeight / 50, celdaHeight);
+
 					rect(celdaX, celdaY, celdaWeight / 3, celdaHeight / 50);
 
 					rect(celdaX + celdaWeight - celdaWeight / 50, celdaY, celdaWeight / 50, celdaHeight);
 					rect(celdaX + celdaWeight - celdaWeight / 3, celdaY + celdaHeight - celdaHeight / 50,
 							celdaWeight / 3, celdaHeight / 50);
-
+					image(open_in_new_window, celdaX, celdaY, 28, 28);
 				}
 				fill(0);
 				//|| celda==celdaSeleccionada ampliar condicion para que aparezca texto en celda seleccionada
@@ -333,10 +334,21 @@ float anchoColumna = getWidth() / cc.columnas;
 						for (CeldaRet celda : kolumna.getCeldas()) {
 							boolean encimaCelda = isOverCelda(mouseX, mouseY, (CeldaRet) celda);
 							if (encimaCelda) {
+								boolean encimaOpenWindow = isOverCeldaOpenWindow(mouseX, mouseY, (CeldaRet) celda);
+								if(celdaSeleccionada==celda && encimaOpenWindow){
+								var mm=celda.rectangleConTexto.comentario.dameTextoI18N();
+								openModalDetalle(mm);
+
+									}														
+//								console.dir("celda "+celdaSeleccionada.getColumna().getPosicion()+" fila: "+celdaSeleccionada.getFila().getPosicion()); 
+//								console.dir("celda "+celda.getColumna().getPosicion()+" fila: "+celda.getFila().getPosicion());
+
 								log.debug("OVER CELDA click pos sel: " + celda);
+
 								seleccionaPrimeraCeldaSiHayDistancia(celdaSeleccionada, celda);
 								//log.info("celda" + celda.comentario.texto);
-								log.info("celda" + celda);
+
+
 								recalculaRet();
 
 								break;
@@ -409,6 +421,17 @@ float anchoColumna = getWidth() / cc.columnas;
 		boolean encima = coincideHor && coindiceV;
 		return encima;
 	}
+	private boolean isOverCeldaOpenWindow(int mouseX, int mouseY, CeldaRet selda) {
+
+		float x1 = selda.getX();
+		      float y1 = selda.getY();
+
+		      	    boolean coincideHor = mouseX > x1 && mouseX < (x1 + 28);
+			    	    boolean coindiceV = mouseY > y1 && mouseY < y1 + 28;
+				    	    boolean encima = coincideHor && coindiceV;
+					    	    return encima;
+						    }
+
 	private boolean isOverCelda(int mouseX, int mouseY, CeldaRet selda) {
 
 		float x1 = selda.getX();
